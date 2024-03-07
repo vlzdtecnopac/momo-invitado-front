@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
+
+@font-face {
+    font-family: 'Stacion';
+    src: url('./assets/fonts/regular/Stacion-Regular.eot');
+    src: url('./assets/fonts/regular/Stacion-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/regular/Stacion-Regular.woff2') format('woff2'),
+        url('./assets/fonts/regular/Stacion-Regular.woff') format('woff'),
+        url('./assets/fonts/regular/Stacion-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Stacion';
+    src: url('./assets/fonts/light/Stacion-Light.eot');
+    src: url('./assets/fonts/light/Stacion-Light.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/light/Stacion-Light.woff2') format('woff2'),
+        url('./assets/fonts/light/Stacion-Light.woff') format('woff'),
+        url('./assets/fonts/light/Stacion-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Stacion';
+    src: url('./assets/fonts/italic/Stacion-Italic.eot');
+    src: url('./assets/fonts//italic/Stacion-Italic.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/italic/Stacion-Italic.woff2') format('woff2'),
+        url('./assets/fonts/italic/Stacion-Italic.woff') format('woff'),
+        url('./assets/fonts/italic/Stacion-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+$dark-blue: #2E418E;
+$light-blue: #D5EAFB;
+$dark-blue-hover: #2c46ad;
+$red: #F3726C;
+$light-grey: #9499A1;
+$gray-text: #777672;
+$completed: #79BF80;
+$pending: #F2B45D;
+$orange: #FF6010;
+$cream: #EDEBDF;
+$black: #212121;
+$white: #FFFFFF;
+
+
+$cell-shadow: #F4F4F4;
+$green: #79BF80;
+$yellow: #F2B45D;
+$red: #F3726C;
+$grey: #F4F4F4;
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h2,
+h3 {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0px;
+}
+
+p {
+    font-family: "Stacion", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+input {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* Estilo del scrollbar */
+/* Ancho del scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Color del fondo del scrollbar */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Color del indicador del scrollbar */
+::-webkit-scrollbar-thumb {
+    height: 40px;
+    background-color: #06074967;
+}
+
+/* Hover sobre el indicador del scrollbar */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #08093e67;
+}

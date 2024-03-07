@@ -1,0 +1,99 @@
+@import "../../index.scss";
+
+.component-login-form {
+    .form-group {
+        position: relative;
+        margin: 25px 0px;
+    }
+
+    .login-form {
+        position: relative;
+
+        .input {
+            z-index: 9;
+            position: relative;
+            background: transparent;
+            padding: 10px 10px 10px 45px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+            width: 300px;
+
+            &.small-text {
+                font-size: 24px;
+            }
+
+            &.medium-text {
+                font-size: 28px;
+            }
+
+            &.large-text {
+                font-size: 32px
+            }
+
+            &:focus-visible {
+                outline: none;
+            }
+
+
+            &::placeholder {
+                color: #fff;
+            }
+        }
+
+        .icon {
+            background-size: cover;
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            display: block;
+            z-index: 99;
+            top: 0px;
+            left: 4px;
+            bottom: 0px;
+            margin: auto;
+            top: 0px;
+            left: 10px;
+        }
+
+        .icon-email {
+            background-image: url("../../assets/icons/mail.svg");
+        }
+
+        .icon-password {
+            background-image: url("../../assets/icons/lock.svg");
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+
+            .login-buttom {
+                width: 320px;
+                height: 50px;
+                padding: 10px;
+                border-radius: 32px;
+                background: $orange;
+                border: none;
+                color: #fff;
+                font-family: "Red Hat Display", sans-serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+
+                a {
+                    color: #fff;
+                }
+
+                &:hover {
+                    background: #e35108;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+}
