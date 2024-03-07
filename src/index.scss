@@ -43,8 +43,10 @@
 }
 
 
-$dark-blue: #2E418E;
+$white: #FFFFFF;
+$cream: #EDEBDF;
 $light-blue: #D5EAFB;
+$dark-blue: #2E418E;
 $dark-blue-hover: #2c46ad;
 $red: #F3726C;
 $light-grey: #9499A1;
@@ -52,17 +54,42 @@ $gray-text: #777672;
 $completed: #79BF80;
 $pending: #F2B45D;
 $orange: #FF6010;
-$cream: #EDEBDF;
 $black: #212121;
-$white: #FFFFFF;
-
-
 $cell-shadow: #F4F4F4;
 $green: #79BF80;
 $yellow: #F2B45D;
 $red: #F3726C;
 $grey: #F4F4F4;
 
+.loader {
+    margin: 0px 40px 0px 40px;
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: l5 1s infinite linear alternate;
+}
+
+@keyframes l5 {
+    0% {
+        box-shadow: 20px 0 #edebdf, -20px 0 #edebdf;
+        background: #edebdf
+    }
+
+    33% {
+        box-shadow: 20px 0 #fcfbf55b, -20px 0 #fcfbf55b;
+        background: #fcfbf55b
+    }
+
+    66% {
+        box-shadow: 20px 0 #f6f4eeba, -20px 0 #f6f4eeba;
+        background: #f6f4eeba
+    }
+
+    100% {
+        box-shadow: 20px 0 #ddddbe, -20px 0 #ddddbe;
+        background: #ddddbe
+    }
+}
 
 body {
     margin: 0;

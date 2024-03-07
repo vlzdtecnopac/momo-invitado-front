@@ -1,0 +1,40 @@
+@import "../../index.scss";
+
+.loader_page {
+  position: absolute;
+  height: 100vh;
+
+  .loader_content {
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 99999;
+
+    .loader_page_circle {
+      border: 4px solid  $dark-blue;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border-right-color: transparent;
+      animation: rot 1s linear infinite;
+      box-shadow: 0px 0px 20px  $dark-blue inset;
+    }
+
+    .logo_page_loader {
+      position: fixed;
+      width: 170px;
+    }
+
+    @keyframes rot {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

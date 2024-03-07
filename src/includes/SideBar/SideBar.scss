@@ -1,0 +1,212 @@
+@import "../../index.scss";
+
+.sidebar {
+    width: 78px;
+    height: 530px;
+    background: $white;
+    margin-top: 40px;
+    margin-left: 25px;
+    color: $white;
+    font-size: 18px;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    border-radius: 16px;
+    display: block;
+    align-content: center;
+    max-height: 530px;
+    border-radius: 16px;
+
+    :-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    .options__menu {
+        padding: 0;
+        margin: 12px 0px;
+
+        .option {
+            padding: 22px 0px;
+            width: auto;
+
+            &.active {
+                background-color: $dark-blue;
+            }
+
+            &:hover {
+                background-color: $dark-blue;
+            }
+
+            .icon {
+                width: 30px;
+                height: 30px;
+                display: block;
+                background-size: contain;
+                margin: auto;
+            }
+
+            .inventory-icon {
+                background-color: $dark-blue;
+                -webkit-mask-image: url(/src/assets/icons/inventory.svg);
+                mask-image: url(/src/assets/icons/inventory.svg);
+                mask-size: 100%;
+
+                &.active {
+                    background-color: $white;
+                }
+
+                &:hover {
+                    background-color: $white;
+                    cursor: pointer;
+                }
+
+
+            }
+
+            .orders-icon {
+                background-color: $dark-blue;
+
+                -webkit-mask-image: url(/src/assets/icons/orders.svg);
+                mask-image: url(/src/assets/icons/orders.svg);
+                mask-size: 100%;
+
+                &.active {
+                    background-color: $white;
+                }
+
+                &:hover {
+                    background-color: #fff;
+                    cursor: pointer;
+                }
+
+            }
+
+            .alert-icon {
+                background-color: $dark-blue;
+                -webkit-mask-image: url(/src/assets/icons/alert.svg);
+                mask-image: url(/src/assets/icons/alert.svg);
+                mask-size: 100%;
+
+                &.active {
+                    background-color: $white;
+                }
+
+                &:hover {
+                    background-color: #fff;
+                    cursor: pointer;
+                }
+            }
+
+            .config-icon {
+                background-color: $dark-blue;
+                -webkit-mask-image: url(/src/assets/icons/alert.svg);
+                mask-image: url(/src/assets/icons/config.svg);
+                mask-size: 100%;
+
+                &.active {
+                    background-color: $white;
+                }
+
+                &:hover {
+                    background-color: #fff;
+                    cursor: pointer;
+                }
+            }
+
+
+        }
+
+
+        &.selected {
+            background-color: $dark-blue;
+            color: $white;
+
+            .option .option-icon {
+                filter: invert(100%);
+            }
+        }
+
+        a {
+            color: $dark-blue;
+            cursor: default;
+            display: block;
+            position: relative;
+            transition: color 300ms;
+
+            &:hover {
+                color: $white;
+                background: $dark-blue;
+            }
+
+            &.selected:before {
+                content: '';
+                width: 3px;
+                height: 80%;
+                border-radius: 30px;
+                background: $white;
+                position: absolute;
+                top: 10%;
+                left: 77px;
+                -webkit-border-radius: 30px;
+                -moz-border-radius: 30px;
+                -ms-border-radius: 30px;
+                -o-border-radius: 30px;
+            }
+
+
+
+            .down {
+                margin-top: 200px;
+            }
+        }
+    }
+
+    .logout {
+        margin: auto;
+        text-align: center;
+        margin-top: 120px;
+        display: block;
+        padding: 22px 0px;
+
+        &:hover {
+            background-color: #2E418E;
+        }
+
+
+        .logout-icon {
+            width: 30px;
+            height: 30px;
+            display: block;
+            background-color: #2E418E;
+            -webkit-mask-image: url(/src/assets/icons/logout.svg);
+            mask-image: url(/src/assets/icons/logout.svg);
+            mask-size: 100%;
+            text-align: center;
+            margin: auto;
+
+            &.active {
+                background-color: $white;
+            }
+
+            &:hover {
+                background-color: #fff;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .body_move {
+        margin-left: 0px;
+    }
+
+    .menu__side_move {
+        width: 80px;
+        left: -80px;
+    }
+}

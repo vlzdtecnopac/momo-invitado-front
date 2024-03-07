@@ -1,0 +1,68 @@
+@import "../../index.scss";
+
+.card {
+    background: $cream;
+    border-radius: 10px;
+    width: 200px;
+    height: 180px;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .container {
+        display: block;
+        text-align: center;
+    }
+
+    .text-add {
+        p {
+            color: #79be81;
+            font-weight: 700;
+            text-align: center;
+            margin: 0px;
+        }
+    }
+
+    .icon {
+        padding-top: 15px;
+        width: 45px;
+    }
+
+
+    .text_active {
+        color: $dark-blue;
+        text-align: center;
+        margin: 10px 0px 15px 0px;
+
+        .text {
+            font-weight: 800;
+            text-align: center;
+            margin: 0px;
+            font-size: 26px;
+
+
+        }
+
+        .subtext {
+            font-weight: 800;
+            text-align: center;
+            margin: 0px;
+            font-size: 26px;
+
+        }
+
+        .state {
+            font-family: "Stacion", sans-serif;
+            font-weight: 300;
+            font-style: italic;
+            text-align: center;
+            font-size: 22px;
+            margin: 0px;
+
+
+        }
+    }
+
+}
