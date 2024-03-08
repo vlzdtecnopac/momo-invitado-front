@@ -10,33 +10,47 @@ import { useState } from "react";
 
 function OrderHerePage() {
   const numberInit = 1;
-  const stateInit = { color1: "#EDEBDF", color2: "#D5EAFB" };
+  const stateInitBackground = { color1: "#EDEBDF", color2: "#D5EAFB" };
+  const stateButtonActive = { color: "#2E418E", text: "#EDEBDF" };
+
   const [keyAnimation, setKeyAnimation] = useState<number>(numberInit);
 
-  const [colorState, setColorState] = useState(stateInit);
+  const [colorState, setColorState] = useState(stateInitBackground);
+  const [colorButtonActive, setColorButtonActive] = useState(stateButtonActive);
 
   const handleAnimationStart = () => {
     console.log("La transición ha comenzado");
-
     if (keyAnimation == 1) {
-      console.log("Aqui Layout 1");
-    } else if (keyAnimation == 1) {
-      console.log("Aqui Layout 2");
+      //Btn Active
+      setColorButtonActive(stateButtonActive);
+    } else if (keyAnimation == 2) {
+       //Btn Active
+       setColorButtonActive(stateButtonActive);
+     
     } else if (keyAnimation == 3) {
-      console.log("Aqui Layout 3");
+       //Btn Active
+       setColorButtonActive({ color: "#EDEBDF", text: "#2E418E" });
+     
     }
   };
 
   const handleAnimationComplete = () => {
     console.log("La transición ha terminado");
     if (keyAnimation == 1) {
+      //Background
       setColorState({ color1: "#D5EAFB", color2: "#2E418E" });
+      //State Key
       setKeyAnimation(2);
     } else if (keyAnimation == 2) {
+      //Background
       setColorState({ color1: "#2E418E", color2: "#EDEBDF" });
+
+      //State Key
       setKeyAnimation(3);
     } else if (keyAnimation == 3) {
-      setColorState(stateInit);
+      //Background
+      setColorState(stateInitBackground);
+      //State Key
       setKeyAnimation(numberInit);
     }
   };
@@ -45,23 +59,20 @@ function OrderHerePage() {
     <>
       <motion.div
         key={keyAnimation}
+        className="order_here_page"
         onAnimationStart={handleAnimationStart}
         onAnimationComplete={handleAnimationComplete}
         animate={{ backgroundColor: [colorState.color1, colorState.color2] }}
         transition={{
-          delay: 20,
+          delay: 5,
           duration: 10,
           repeat: 0,
         }}
         style={{
           width: "100vw",
           height: "100vh",
-          // Add other styles as needed
         }}
       >
-        {/* Your component content */}
-      </motion.div>
-      <div className="order_here_page">
         <div className="imagotipo">
           <img className="isotipo" src={isotipo} alt="isotipo" />
           <img className="logo" src={logo} alt="logo" />
@@ -73,10 +84,14 @@ function OrderHerePage() {
         </div>
         <div className="btns">
           <div className="right">
-            <div className="lang">
+            <motion.button
+              key={keyAnimation}
+              style={{ backgroundColor: colorButtonActive.color }}
+              className="lang"
+            >
               <img src={mxIcon} className="es-icon"></img>
-              <span className="es">Español</span>
-            </div>
+              <span  style={{ color: colorButtonActive.text }} className="es">Español</span>
+            </motion.button>
             <div className="lang">
               <img src={usaIcon} className="en-icon"></img>
               <span className="en">Ingles</span>
@@ -91,7 +106,7 @@ function OrderHerePage() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
