@@ -11,6 +11,7 @@
         height: 100vh;
     }
 
+
     .sidebar-left {
         width: 60%;
 
@@ -28,12 +29,22 @@
 
     .logo-business {
         padding-top: 100px;
-
         width: 188px;
         display: block;
         text-align: center;
         margin: auto;
+
+        @media screen and (min-width: 1440px) {
+            width: 376px;
+        }
+
+        @media screen and (min-width: 2560px) {
+            width: 500px;
+        }
+
+
     }
+
 
     .center-container {
         display: flex;
@@ -56,16 +67,12 @@
                 justify-content: center;
                 margin: 25px auto;
 
-                &.small-text {
-                    font-size: 34px;
+                @media screen and (min-width: 1440px) {
+                    font-size: 32px;
                 }
 
-                &.medium-text {
-                    font-size: 38px;
-                }
-
-                &.large-text {
-                    font-size: 42px
+                @media screen and (min-width: 2560px) {
+                    font-size: 40px;
                 }
             }
 
@@ -80,16 +87,12 @@
                 font-weight: normal;
                 font-style: normal;
 
-                &.small-text {
+                @media screen and (min-width: 1440px) {
                     font-size: 22px;
                 }
 
-                &.medium-text {
-                    font-size: 26px;
-                }
-
-                &.large-text {
-                    font-size: 30px
+                @media screen and (min-width: 2560px) {
+                    font-size: 38px;
                 }
             }
         }

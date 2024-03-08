@@ -4,6 +4,7 @@ import { LoaderPage } from "../includes/loader/Loader";
 
 const LazyLoginPage = lazy(() => import("../pages/login/LoginPage"));
 const LazyWelcomePage = lazy(() => import("../pages/welcome/WelcomePage"));
+const LazyOrderHerePage = lazy(() => import("../pages/orderHere/OrderHere"));
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -27,6 +28,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyWelcomePage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/order-here",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyOrderHerePage />
       </Suspense>
     ),
   },

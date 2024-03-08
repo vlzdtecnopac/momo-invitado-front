@@ -1,0 +1,118 @@
+@import "../../index.scss";
+
+.order_here_page {
+    animation: changeColor 12s alternate infinite;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 165px;
+
+    .imagotipo {
+        display: flex;
+        flex-direction: column;
+        width: 276px;
+        height: 232px;
+        margin: 0 auto;
+
+        .isotipo {
+            width: 100px;
+            margin: 0 auto;
+            height: 121px;
+        }
+
+        .logo {
+            width: 276px;
+            height: 80px;
+            // animation: changeSvgColor 12s infinite ease-in-out;
+        }
+    }
+
+
+    .btn-container {
+        margin: 0 auto;
+
+        .btn {
+            width: 523px;
+            height: 102px;
+            border-radius: 51px;
+            border: none;
+            color: $white ;
+            background: $orange;
+
+            h2 {
+                font-size: 50px
+            }
+        }
+    }
+
+    .btns {
+        display: flex;
+        justify-content: space-between;
+
+        .right {
+            display: flex;
+
+            gap: 13px;
+
+            .lang {
+                width: 100px;
+                height: 75px;
+                background: $dark-blue;
+                border-radius: 10px;
+
+                .es-icon {
+                    mask-image: url(/src/assets/icons/mexico_flag.svg);
+                    mask-size: 100%;
+
+                }
+
+                .es,
+                .en {
+                    display: flex;
+                    justify-content: center;
+                    align-items: end;
+                }
+
+
+                .en-icon {
+                    mask-image: url(/src/assets/icons/usa_flag.svg);
+                    mask-size: 100%;
+                }
+
+
+            }
+
+        }
+
+        .left {}
+    }
+}
+
+@keyframes changeSvgColor {
+    0% {
+        fill: $dark-blue;
+    }
+
+    50% {
+        fill: $dark-blue;
+    }
+
+    100% {
+        fill: $cream;
+    }
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: $cream;
+    }
+
+    50% {
+        background-color: $light-blue;
+    }
+
+    100% {
+        background-color: $dark-blue;
+    }
+}
