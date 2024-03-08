@@ -64,13 +64,13 @@
                 height: 75px;
                 border-radius: 10px;
                 border: 0px;
-                
-                &:hover{
+
+                &:hover {
                     cursor: pointer;
                 }
 
                 .es-icon {
-                  margin: 10px auto;
+                    margin: 10px auto;
                 }
 
                 .es,
@@ -79,16 +79,14 @@
                     justify-content: center;
                     align-items: end;
                     font-family: "Stacion";
-                    
+
                 }
 
 
                 .en-icon {
-                    padding-top: 9px;
-                    padding-left: 35px;
+                    margin: 10px auto;
+
                 }
-
-
             }
 
         }
