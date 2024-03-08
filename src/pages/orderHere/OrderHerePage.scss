@@ -2,12 +2,11 @@
 
 .order_here_page {
     // animation: changeColor 12s alternate infinite;
-    width: 100vw;
-    height: 100vh;
+
     display: flex;
     flex-direction: column;
     padding-top: 165px;
-    background: $dark-blue;
+
 
     .imagotipo {
         display: flex;
@@ -58,19 +57,20 @@
 
         .right {
             display: flex;
-
             gap: 13px;
 
             .lang {
                 width: 100px;
                 height: 75px;
-                background: $dark-blue;
                 border-radius: 10px;
-                cursor: pointer;
+                border: 0px;
+                
+                &:hover{
+                    cursor: pointer;
+                }
 
                 .es-icon {
-                    padding-top: 9px;
-                    padding-left: 35px;
+                  margin: 10px auto;
                 }
 
                 .es,
@@ -79,8 +79,7 @@
                     justify-content: center;
                     align-items: end;
                     font-family: "Stacion";
-                    color: $cream ;
-
+                    
                 }
 
 
