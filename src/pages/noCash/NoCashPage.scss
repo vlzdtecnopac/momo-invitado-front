@@ -1,0 +1,151 @@
+@import "../../index.scss";
+
+.no_cash_page {
+    width: 100vw;
+    height: 100vh;
+    background: $dark-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 900px;
+
+    .title {
+        color: $cream;
+
+    }
+
+    .img {
+        width: 120px;
+    }
+
+    .text {
+        color: $cream;
+        width: 754px;
+        height: 439px;
+        padding-bottom: 20px;
+
+        p {
+            font-weight: 300;
+            font-size: 24px;
+        }
+
+        li {
+            font-family: "Stacion", sans-serif;
+            font-weight: 300;
+            font-size: 24px;
+        }
+    }
+
+    .btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
+        margin: 0 70px;
+
+        .left {
+            display: flex;
+            gap: 13px;
+
+            .lang {
+                width: 100px;
+                height: 75px;
+                border-radius: 10px;
+                border: 0px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .es-icon {
+                    margin: 10px auto;
+                }
+
+                .es,
+                .en {
+                    display: flex;
+                    justify-content: center;
+                    align-items: end;
+                    font-family: "Stacion";
+
+                }
+
+            }
+
+            .en-icon {
+                margin: 10px auto;
+
+            }
+        }
+
+        .center {
+            height: 100%;
+
+            .btn {
+
+                width: 400px;
+                height: 70px;
+                border-radius: 51px;
+                border: none;
+                color: $white ;
+                background: $orange;
+                cursor: pointer;
+
+                h2 {
+                    font-size: 40px
+                }
+            }
+
+        }
+
+        .right {
+            .back {
+                width: 250px;
+                height: 50px;
+                border-radius: 129px;
+                border: 2px solid $cream;
+                display: flex;
+                justify-content: center;
+
+                .back-icon {
+                    width: 35px;
+                    height: 40px;
+                }
+
+                .text {
+                    width: 145px;
+                    height: 40px;
+                    font-weight: 700;
+                    font-size: 30px;
+                    font-family: "Red Hat Display", "serif";
+                }
+            }
+        }
+    }
+
+    .no-cash {
+        width: 261px;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        cursor: pointer;
+        background: $cream;
+        border-radius: 10px;
+        text-align: center;
+        padding: 0 13px;
+
+        .icon {
+            fill: $cream;
+        }
+
+        .text {
+            font-family: Stacion;
+            font-size: 16px;
+            font-weight: 400;
+            color: $dark-blue ;
+        }
+    }
+
+}

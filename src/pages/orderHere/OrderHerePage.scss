@@ -1,12 +1,9 @@
 @import "../../index.scss";
 
 .order_here_page {
-    // animation: changeColor 12s alternate infinite;
-
     display: flex;
     flex-direction: column;
     padding-top: 165px;
-
 
     .imagotipo {
         display: flex;
@@ -24,7 +21,6 @@
         .logo {
             width: 276px;
             height: 80px;
-            // animation: changeSvgColor 12s infinite ease-in-out;
             margin-bottom: 30px;
         }
     }
@@ -53,6 +49,7 @@
         justify-content: space-between;
         align-items: center;
         height: 100%;
+        width: 90%;
         margin: 0 70px;
 
         .right {
@@ -78,10 +75,9 @@
                     display: flex;
                     justify-content: center;
                     align-items: end;
-                    font-family: "Stacion";
+                    font-family: "Stacion", serif;
 
                 }
-
 
                 .en-icon {
                     margin: 10px auto;

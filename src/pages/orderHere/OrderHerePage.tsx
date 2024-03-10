@@ -17,10 +17,15 @@ function OrderHerePage() {
     border: "solid 1.5px #2E418E",
     text: "#2E418E",
   };
+  const stateNoCashBackground = { color: "#2E418E", text: "#EDEBDF" };
+
   const stateButtonOrder = { color: "#FF6010" };
   const [keyAnimation, setKeyAnimation] = useState<number>(numberInit);
   const [colorState, setColorState] = useState(stateInitBackground);
   const [colorButtonActive, setColorButtonActive] = useState(stateButtonActive);
+  const [colorButtonNoCash, setColorButtonNoCash] = useState(
+    stateNoCashBackground
+  );
   const [colorButtonInactive, setColorButtonInactive] =
     useState(stateButtonInactive);
   const [orderColorState, setOrderColorState] = useState(stateButtonOrder);
@@ -32,11 +37,13 @@ function OrderHerePage() {
       setColorButtonActive(stateButtonActive);
       setOrderColorState(stateButtonOrder);
       setColorButtonInactive(stateButtonInactive);
+      setColorButtonNoCash(stateNoCashBackground);
     } else if (keyAnimation == 2) {
       //Btn Active
       setColorButtonActive(stateButtonActive);
       setOrderColorState({ color: "#2E418E" });
       setColorButtonInactive(stateButtonInactive);
+      setColorButtonNoCash(stateNoCashBackground);
     } else if (keyAnimation == 3) {
       //Btn Active
       setColorButtonActive({ color: "#EDEBDF", text: "#2E418E" });
@@ -46,6 +53,7 @@ function OrderHerePage() {
         border: "solid 1.5px #EDEBDF",
         text: "#EDEBDF",
       });
+      setColorButtonNoCash({ color: "#EDEBDF", text: "#2E418E" });
     }
   };
 
@@ -58,7 +66,7 @@ function OrderHerePage() {
       setKeyAnimation(2);
     } else if (keyAnimation == 2) {
       //Background
-      setColorState({ color1: "#2E418E", color2: "#EDEBDF" });
+      setColorState({ color1: "#2e418e", color2: "#EDEBDF" });
       //State Key
       setKeyAnimation(3);
     } else if (keyAnimation == 3) {
@@ -145,7 +153,6 @@ function OrderHerePage() {
               style={{
                 backgroundColor: colorButtonInactive.color,
                 border: colorButtonInactive.border,
-                color: colorButtonInactive.text,
               }}
               transition={{
                 duration: 1,
@@ -158,20 +165,41 @@ function OrderHerePage() {
                 src={usaIcon}
                 className="en-icon"
               ></img>
-              <span className="en">Ingles</span>
+              <span
+                style={{ color: colorButtonInactive.text }}
+                className="en"
+              >
+                Ingles
+              </span>
             </motion.button>
           </div>
           <div className="left">
-            <div className="no-cash">
+            <motion.div
+              key={keyAnimation}
+              style={{
+                backgroundColor: colorButtonNoCash.color,
+              }}
+              transition={{
+                duration: 1,
+                ease: [0, 0.71, 0.2, 1.01],
+                repeat: 0,
+              }}
+              className="no-cash"
+            >
               <img
                 className="icon"
                 src={noCashIcon}
                 alt="no-cash"
               />
-              <span className="text">
+              <span
+                style={{
+                  color: colorButtonNoCash.text,
+                }}
+                className="text"
+              >
                 No aceptamos efectivo. <br /> Descubre por qué
               </span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </motion.div>

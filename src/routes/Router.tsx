@@ -7,6 +7,7 @@ const LazyWelcomePage = lazy(() => import("../pages/welcome/WelcomePage"));
 const LazyOrderHerePage = lazy(
   () => import("../pages/orderHere/OrderHerePage")
 );
+const LazyNoCashPage = lazy(() => import("../pages/noCash/NoCashPage"));
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -38,6 +39,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyOrderHerePage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/no-cash",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyNoCashPage />
       </Suspense>
     ),
   },
