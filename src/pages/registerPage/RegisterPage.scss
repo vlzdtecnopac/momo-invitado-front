@@ -87,7 +87,7 @@
                 font-style: normal;
 
                 @media screen and (min-width: 1440px) {
-                    font-size: 22px;
+                    font-size: 28px;
                 }
 
                 @media screen and (min-width: 2560px) {
@@ -98,61 +98,102 @@
 
         }
     }
-}
 
-.register-options {
-    display: flex;
-    flex-direction: column;
-
-    gap: 35px;
-
-    .custom-btn {
+    .register-options {
         display: flex;
         flex-direction: column;
-        min-width: 630px;
-        min-height: 100px;
-        align-items: center;
-        padding: 10px 15px;
-        border: 1px solid $cream;
-        border-radius: 5px;
-        background-color: transparent;
-        color: white;
-        cursor: pointer;
+        gap: 35px;
+
+        .custom-btn {
+            display: flex;
+            flex-direction: column;
+            min-width: 630px;
+            min-height: 100px;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid $cream;
+            border-radius: 5px;
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                /* Move hover to the top level */
+                background-color: $dark-blue;
+
+                .icon {
+                    /* Target icon directly */
+                    background-color: $dark-blue;
+                    /* Change icon background on hover */
+                }
+            }
 
 
-    }
-
-    .registered .icon {
-        background-image: url("/src/assets/icons/user.svg");
-        background-repeat: no-repeat;
-        margin-bottom: 8px;
-    }
-
-    .create .icon {
-        background-image: url("/src/assets/icons/user-square.svg");
-        background-repeat: no-repeat;
-        margin-bottom: 8px;
-
-    }
-
-    .no-register .icon {
-        background-image: url("/src/assets/icons/user-octagon.svg");
-        background-repeat: no-repeat;
-        margin-bottom: 8px;
-    }
-
-    .custom-btn .icon {
-        width: 50px;
-        height: 50px;
-    }
+            &:hover {
+                color: $dark-blue ;
+                background: $dark-blue;
+                background-color: $cream;
+                border: $dark-blue;
 
 
+            }
 
-    .custom-btn .text {
-        margin-left: 5px;
+        }
 
-        font-family: "Red Hat Display", "serif";
-        font-weight: 700;
-        font-size: 25px;
+        .registered .icon {
+            background-color: $cream;
+            -webkit-mask-image: url("/src/assets/icons/user.svg");
+            mask-image: url("/src/assets/icons/user.svg");
+            mask-size: 100%;
+            background-repeat: no-repeat;
+            margin-bottom: 8px;
+        }
+
+        .create .icon {
+            background-color: $cream;
+            -webkit-mask-image: url("/src/assets/icons/user-square.svg");
+            mask-image: url("/src/assets/icons/user-square.svg");
+            mask-size: 100%;
+            background-repeat: no-repeat;
+            margin-bottom: 8px;
+
+        }
+
+        .no-register .icon {
+            background-color: $cream;
+            -webkit-mask-image: url("/src/assets/icons/user-octagon.svg");
+            mask-image: url("/src/assets/icons/user-octagon.svg");
+            mask-size: 100%;
+            background-repeat: no-repeat;
+            margin-bottom: 8px;
+
+
+            &:hover {
+                background-color: $dark-blue;
+            }
+
+
+        }
+
+        .custom-btn .icon {
+            width: 50px;
+            height: 50px;
+
+
+        }
+
+
+
+        .custom-btn .text {
+            margin-left: 5px;
+            font-family: "Red Hat Display",
+                "serif";
+            font-weight: 700;
+            font-size: 25px;
+
+            &:hover {
+                color: $dark-blue;
+            }
+        }
     }
 }

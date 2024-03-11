@@ -1,12 +1,12 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import isotipo from "/src/assets/icons/isotipo.svg";
 import mxIcon from "/src/assets/icons/mexico_flag.svg";
 import usaIcon from "/src/assets/icons/usa_flag.svg";
-import logo from "/src/assets/icons/logo.svg";
-import noCashIcon from "/src/assets/icons/no_cash.svg";
-
+import LogoMomo from "../../components/Logo/LogoMomo";
 import "./OrderHerePage.scss";
-import { useState } from "react";
+import NoCash from "../../components/NoCash/NoCash";
+import { Link } from "react-router-dom";
 
 function OrderHerePage() {
   const numberInit = 1;
@@ -67,6 +67,7 @@ function OrderHerePage() {
     } else if (keyAnimation == 2) {
       //Background
       setColorState({ color1: "#2e418e", color2: "#EDEBDF" });
+
       //State Key
       setKeyAnimation(3);
     } else if (keyAnimation == 3) {
@@ -86,8 +87,8 @@ function OrderHerePage() {
         onAnimationComplete={handleAnimationComplete}
         animate={{ backgroundColor: [colorState.color1, colorState.color2] }}
         transition={{
-          delay: 5,
-          duration: 10,
+          delay: 8,
+          duration: 4,
           repeat: 0,
         }}
         style={{
@@ -96,16 +97,14 @@ function OrderHerePage() {
         }}
       >
         <div className="imagotipo">
-          <img
-            className="isotipo"
-            src={isotipo}
-            alt="isotipo"
-          />
-          <img
-            className="logo"
-            src={logo}
-            alt="logo"
-          />
+          <div className="logo">
+            <img
+              className="isotipo"
+              src={isotipo}
+              alt="isotipo"
+            />
+            <LogoMomo color={colorButtonNoCash.color} />
+          </div>
         </div>
         <div className="btn-container">
           <motion.button
@@ -174,32 +173,30 @@ function OrderHerePage() {
             </motion.button>
           </div>
           <div className="left">
-            <motion.div
-              key={keyAnimation}
-              style={{
-                backgroundColor: colorButtonNoCash.color,
-              }}
-              transition={{
-                duration: 1,
-                ease: [0, 0.71, 0.2, 1.01],
-                repeat: 0,
-              }}
-              className="no-cash"
-            >
-              <img
-                className="icon"
-                src={noCashIcon}
-                alt="no-cash"
-              />
-              <span
+            <Link to="/no-cash">
+              <motion.div
+                key={keyAnimation}
                 style={{
-                  color: colorButtonNoCash.text,
+                  backgroundColor: colorButtonNoCash.color,
                 }}
-                className="text"
+                transition={{
+                  duration: 1,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  repeat: 0,
+                }}
+                className="no-cash"
               >
-                No aceptamos efectivo. <br /> Descubre por qué
-              </span>
-            </motion.div>
+                <NoCash color={colorState.color1} />
+                <span
+                  style={{
+                    color: colorButtonNoCash.text,
+                  }}
+                  className="text"
+                >
+                  No aceptamos efectivo. <br /> Descubre por qué
+                </span>
+              </motion.div>
+            </Link>
           </div>
         </div>
       </motion.div>

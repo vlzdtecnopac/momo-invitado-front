@@ -3,6 +3,7 @@ import mxIcon from "/src/assets/icons/mexico_flag.svg";
 import back from "/src/assets/icons/arrow_left.svg";
 import usaIcon from "/src/assets/icons/usa_flag.svg";
 import coffee from "../../assets/coffee-momo.png";
+import { Link } from "react-router-dom";
 function NoCashPage() {
   return (
     <div className="no_cash_page">
@@ -63,14 +64,16 @@ function NoCashPage() {
           </button>
         </div>
         <div className="right">
-          <div className="back">
-            <img
-              className="back-icon"
-              src={back}
-              alt="back"
-            />
-            <span className="text">Regresar</span>
-          </div>
+          <Link to="/order-here">
+            <div className="back">
+              <img
+                className="back-icon"
+                src={back}
+                alt="back"
+              />
+              <span className="text">Regresar</span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

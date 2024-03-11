@@ -7,21 +7,19 @@
 
     .imagotipo {
         display: flex;
-        flex-direction: column;
-        width: 276px;
-        height: 251px;
-        margin: 0 auto;
-
-        .isotipo {
-            width: 100px;
-            margin: 0 auto;
-            height: 121px;
-        }
+        justify-content: center;
 
         .logo {
-            width: 276px;
-            height: 80px;
+            width: 500px;
             margin-bottom: 30px;
+            display: block;
+            text-align: center;
+
+            .isotipo {
+                width: 125px;
+                margin: 0 auto;
+                display: block;
+            }
         }
     }
 
@@ -30,8 +28,8 @@
         margin: 0 auto;
 
         .btn {
-            width: 523px;
-            height: 102px;
+            width: 350px;
+            height: 70px;
             border-radius: 51px;
             border: none;
             color: $white ;
@@ -39,7 +37,8 @@
             cursor: pointer;
 
             h2 {
-                font-size: 50px
+                margin: 0px;
+                font-size: 35px
             }
         }
     }
