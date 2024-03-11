@@ -8,6 +8,9 @@ const LazyOrderHerePage = lazy(
   () => import("../pages/orderHere/OrderHerePage")
 );
 const LazyNoCashPage = lazy(() => import("../pages/noCash/NoCashPage"));
+const LazyRegisterPage = lazy(
+  () => import("../pages/registerPage/RegisterPage")
+);
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -47,6 +50,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyNoCashPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/register",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyRegisterPage />
       </Suspense>
     ),
   },

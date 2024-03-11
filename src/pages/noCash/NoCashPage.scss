@@ -11,11 +11,14 @@
 
     .title {
         color: $cream;
+        margin-top: 40px;
+        margin-bottom: 20px;
 
     }
 
     .img {
         width: 120px;
+        margin-bottom: 20px;
     }
 
     .text {
@@ -26,13 +29,13 @@
 
         p {
             font-weight: 300;
-            font-size: 24px;
+            font-size: 20px;
         }
 
         li {
             font-family: "Stacion", sans-serif;
             font-weight: 300;
-            font-size: 24px;
+            font-size: 20px;
         }
     }
 
@@ -89,11 +92,12 @@
                 border-radius: 51px;
                 border: none;
                 color: $white ;
+                margin-top: 40px;
                 background: $orange;
                 cursor: pointer;
 
                 h2 {
-                    font-size: 40px
+                    font-size: 30px
                 }
             }
 
@@ -107,6 +111,10 @@
                 border: 2px solid $cream;
                 display: flex;
                 justify-content: center;
+
+                &:hover {
+                    cursor: pointer;
+                }
 
                 .back-icon {
                     width: 35px;

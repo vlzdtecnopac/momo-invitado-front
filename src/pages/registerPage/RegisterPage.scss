@@ -1,0 +1,158 @@
+@import "../../index.scss";
+
+.register_page {
+    background: $dark-blue;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+
+    @media screen and (max-width: 790px) {
+        display: block;
+        height: 100vh;
+    }
+
+
+    .left {
+        width: 60%;
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @media screen and (max-width: 790px) {
+                display: none;
+            }
+        }
+    }
+
+
+    .logo-business {
+        width: 188px;
+        display: block;
+        text-align: center;
+        margin: auto;
+
+        @media screen and (min-width: 1440px) {
+            width: 376px;
+        }
+
+        @media screen and (min-width: 2560px) {
+            width: 500px;
+        }
+
+
+    }
+
+
+    .center-container {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .column-right {
+        margin: 40px auto;
+        width: 100%;
+
+        @media screen and (max-width: 790px) {
+            margin: auto;
+        }
+
+        .text {
+            .h2 {
+                color: $cream;
+                display: flex;
+                justify-content: center;
+                margin: 25px auto;
+
+                @media screen and (min-width: 1440px) {
+                    font-size: 32px;
+                }
+
+                @media screen and (min-width: 2560px) {
+                    font-size: 40px;
+                }
+            }
+
+            .parrafo-subtitulo {
+                color: $cream;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                margin: 10px auto;
+                display: block;
+                font-family: 'Stacion';
+                font-weight: normal;
+                font-style: normal;
+
+                @media screen and (min-width: 1440px) {
+                    font-size: 22px;
+                }
+
+                @media screen and (min-width: 2560px) {
+                    font-size: 38px;
+                }
+            }
+
+
+        }
+    }
+}
+
+.register-options {
+    display: flex;
+    flex-direction: column;
+
+    gap: 35px;
+
+    .custom-btn {
+        display: flex;
+        flex-direction: column;
+        min-width: 630px;
+        min-height: 100px;
+        align-items: center;
+        padding: 10px 15px;
+        border: 1px solid $cream;
+        border-radius: 5px;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+
+
+    }
+
+    .registered .icon {
+        background-image: url("/src/assets/icons/user.svg");
+        background-repeat: no-repeat;
+        margin-bottom: 8px;
+    }
+
+    .create .icon {
+        background-image: url("/src/assets/icons/user-square.svg");
+        background-repeat: no-repeat;
+        margin-bottom: 8px;
+
+    }
+
+    .no-register .icon {
+        background-image: url("/src/assets/icons/user-octagon.svg");
+        background-repeat: no-repeat;
+        margin-bottom: 8px;
+    }
+
+    .custom-btn .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+
+
+    .custom-btn .text {
+        margin-left: 5px;
+
+        font-family: "Red Hat Display", "serif";
+        font-weight: 700;
+        font-size: 25px;
+    }
+}
