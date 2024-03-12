@@ -8,6 +8,7 @@ import foodIcon from "../../assets/icons/croissant.svg";
 import combosIcon from "../../assets/icons/combos.svg";
 import drinksIcon from "../../assets/icons/other_drinks.svg";
 import storeIcon from "../../assets/icons/our_store.svg";
+import banner from "../../assets/Banner.jpg";
 import "./ProductsPage.scss";
 
 const categories = [
@@ -49,22 +50,25 @@ function ProductsPage() {
   return (
     <>
       <Layout>
-        <div className="products_page grid-4_xs-1">
-          {categories.map((category, index) => (
-            <div
-              key={index}
-              className="col card-container"
-            >
-              <div className="card">
-                <img
-                  className="icon"
-                  src={category.icon}
-                  alt={category.text}
-                />
-                <p className="text">{category.text}</p>
+        <div className="products_page">
+          <div className="categories grid-4_xs-1">
+            {categories.map((category, index) => (
+              <div
+                key={index}
+                className="col options-container"
+              >
+                <button className="custom-btn">
+                  <img src={category.icon}></img>
+                  <span className="text">{category.text}</span>
+                </button>
               </div>
-            </div>
-          ))}
+            ))}
+            <img
+              className="banner"
+              src={banner}
+              alt="banner"
+            />
+          </div>
         </div>
       </Layout>
     </>
