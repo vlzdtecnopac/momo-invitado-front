@@ -1,18 +1,45 @@
 @import "../../index.scss";
 
 .head {
+    position: fixed;
     display: flex;
     justify-content: space-between;
-    background-color: #2E418E;
+    background-color: $dark-blue;
+    width: 100%;
+    height: 85px;
+    border-bottom: 1px solid $cream;
+
 
     .column_start {
         width: 250px;
+
+        .back {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+
+            .back-icon {
+                width: 27px;
+            }
+
+            .text {
+                font-family: "Red Hat Display", sans-serif;
+                font-weight: 700;
+                font-size: 28px;
+                color: $cream;
+            }
+        }
     }
 
     .column_center {
         width: auto;
         display: flex;
         justify-content: center;
+
+        .logo {
+            width: 130px;
+        }
     }
 
     .column_end {
@@ -21,75 +48,29 @@
         padding: 10px;
 
         .welcome-text {
-            width: 150px;
+            width: 146px;
             color: $cream;
 
             .welcome {
-                &.small-text {
-                    font-size: 20px;
-                }
-
-                &.medium-text {
-                    font-size: 24px;
-                }
-
-                &.large-text {
-                    font-size: 26px;
-                }
+                font-weight: 700;
 
             }
 
-            .store {
-                &.small-text {
-                    font-size: 16px;
-                }
-
-                &.medium-text {
-                    font-size: 18px;
-                }
-
-                &.large-text {
-                    font-size: 20px
-                }
-
+            .name {
+                font-family: "Stacion", sans-serif;
+                font-size: 18px;
+                font-weight: 300;
             }
         }
-    }
 
-    .logo {
-        width: 130px;
-        height: 49.23px;
-        margin: auto;
-        display: block;
-
-    }
-
-    .welcome {
-        width: 146px;
-        height: 22px;
-        font-family: "Red Hat Display", serif;
-        font-size: 22px;
-        font-weight: 700;
-        text-align: left;
-        margin: 0 50px 5px 0;
-        color: $cream
-    }
-
-    .store {
-        font-size: 16px;
-        text-align: left;
-        margin: 0;
-
-    }
-
-    .profile-pic {
-        width: 50px;
-        height: 50px;
-        border-radius: 33px;
-        -webkit-border-radius: 33px;
-        -moz-border-radius: 33px;
-        -ms-border-radius: 33px;
-        -o-border-radius: 33px;
-
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 33px;
+            -webkit-border-radius: 33px;
+            -moz-border-radius: 33px;
+            -ms-border-radius: 33px;
+            -o-border-radius: 33px;
+        }
     }
 }

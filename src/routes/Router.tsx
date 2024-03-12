@@ -1,6 +1,8 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { LoaderPage } from "../includes/loader/Loader";
+import HotOrColdPage from "../pages/hotOrCold/HotOrColdPage";
+import ProductsPage from "../pages/products/ProductsPage";
 
 const LazyLoginPage = lazy(() => import("../pages/login/LoginPage"));
 const LazyWelcomePage = lazy(() => import("../pages/welcome/WelcomePage"));
@@ -58,6 +60,22 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyRegisterPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/hot-or-cold",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <HotOrColdPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/products",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <ProductsPage />
       </Suspense>
     ),
   },

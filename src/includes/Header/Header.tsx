@@ -1,30 +1,37 @@
-import logoMomo from "../../assets/logo.svg";
-import profilePic from "../../assets/profile-pic.jpg";
-import { useDesignStore } from "../../store/design.store";
+import logoMomo from "../../assets/icons/logo.svg";
+import back from "/src/assets/icons/arrow_left.svg";
+
 import "./Header.scss";
 
 function Header() {
-  const { typeTypography } = useDesignStore();
-
   return (
     <header className="head">
-      <div className="column_start"></div>
+      <div className="column_start">
+        <div className="back">
+          <img
+            className="back-icon"
+            src={back}
+            alt="back"
+          />
+          <span className="text">Regresar</span>
+        </div>
+      </div>
       <div className="column_center">
         <img
           className="logo"
           src={logoMomo}
-          alt="logo"
+          alt=""
         />
       </div>
       <div className="column_end">
         <div className="welcome-text">
-          <p className={`welcome ${typeTypography}-text`}>Bienvenida</p>
-          <p className={`store ${typeTypography}-text`}>Tienda 1</p>
+          <h3 className="Welcome">Bienvenido</h3>
+          <h4 className="name">Invitado</h4>
         </div>
         <img
           className="profile-pic"
-          src={profilePic}
-          alt="logo"
+          src="https://placehold.co/50x50"
+          alt="photo"
         />
       </div>
     </header>
