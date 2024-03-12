@@ -1,4 +1,6 @@
 import logoMomo from "../../assets/icons/logo.svg";
+import momoPic from "../../assets/icons/momo-pic.svg";
+
 import back from "/src/assets/icons/arrow_left.svg";
 
 import "./Header.scss";
@@ -30,7 +32,7 @@ function Header() {
         </div>
         <img
           className="profile-pic"
-          src="https://placehold.co/50x50"
+          src={momoPic}
           alt="photo"
         />
       </div>
