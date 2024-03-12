@@ -5,6 +5,27 @@
     overflow: hidden;
     background-color: $dark-blue;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+
+
+    .card-container {
+        .card {
+            width: 200px;
+            height: 250px;
+
+
+            .icon {
+                width: 50px;
+            }
+
+            .text {
+                color: $cream;
+                font-weight: 700;
+                font-size: 26px;
+                width: 166px;
+            }
+        }
+
+    }
 
 }

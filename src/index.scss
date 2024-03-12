@@ -4,15 +4,14 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
 
 @font-face {
     font-family: 'Stacion';
-    src: url('./assets/fonts/regular/Stacion-Regular.eot');
-    src: url('./assets/fonts/regular/Stacion-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/regular/Stacion-Regular.woff2') format('woff2'),
-        url('./assets/fonts/regular/Stacion-Regular.woff') format('woff'),
-        url('./assets/fonts/regular/Stacion-Regular.ttf') format('truetype');
+    src: url('src/assets/fonts/regular/Stacion-Regular.eot');
+    src: url('src/assets/fonts/regular/Stacion-Regular.eot?#iefix') format('embedded-opentype'),
+        url('src/assets/fonts/regular/Stacion-Regular.woff2') format('woff2'),
+        url('src/assets/fonts/regular/Stacion-Regular.woff') format('woff'),
+        url('src/assets/fonts/regular/Stacion-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -20,11 +19,11 @@
 
 @font-face {
     font-family: 'Stacion';
-    src: url('./assets/fonts/light/Stacion-Light.eot');
-    src: url('./assets/fonts/light/Stacion-Light.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/light/Stacion-Light.woff2') format('woff2'),
-        url('./assets/fonts/light/Stacion-Light.woff') format('woff'),
-        url('./assets/fonts/light/Stacion-Light.ttf') format('truetype');
+    src: url('src/assets/fonts/light/Stacion-Light.eot');
+    src: url('src/assets/fonts/light/Stacion-Light.eot?#iefix') format('embedded-opentype'),
+        url('src/assets/fonts/light/Stacion-Light.woff2') format('woff2'),
+        url('src/assets/fonts/light/Stacion-Light.woff') format('woff'),
+        url('src/assets/fonts/light/Stacion-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -32,11 +31,11 @@
 
 @font-face {
     font-family: 'Stacion';
-    src: url('./assets/fonts/italic/Stacion-Italic.eot');
-    src: url('./assets/fonts//italic/Stacion-Italic.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/italic/Stacion-Italic.woff2') format('woff2'),
-        url('./assets/fonts/italic/Stacion-Italic.woff') format('woff'),
-        url('./assets/fonts/italic/Stacion-Italic.ttf') format('truetype');
+    src: url('src/assets/fonts/italic/Stacion-Italic.eot');
+    src: url('src/assets/fonts//italic/Stacion-Italic.eot?#iefix') format('embedded-opentype'),
+        url('src/assets/fonts/italic/Stacion-Italic.woff2') format('woff2'),
+        url('src/assets/fonts/italic/Stacion-Italic.woff') format('woff'),
+        url('src/assets/fonts/italic/Stacion-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
     font-display: swap;

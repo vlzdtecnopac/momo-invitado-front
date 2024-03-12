@@ -8,6 +8,7 @@ interface CardProps {
   subText?: string;
   state?: string;
   backgroundColor?: string;
+  textColor?: string;
 }
 
 const Card: React.FC<CardProps> = ({

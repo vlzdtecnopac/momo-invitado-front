@@ -4,9 +4,9 @@ import isotipo from "/src/assets/icons/isotipo.svg";
 import mxIcon from "/src/assets/icons/mexico_flag.svg";
 import usaIcon from "/src/assets/icons/usa_flag.svg";
 import LogoMomo from "../../components/Logo/LogoMomo";
-import "./OrderHerePage.scss";
 import NoCash from "../../components/NoCash/NoCash";
 import { Link } from "react-router-dom";
+import "./OrderHerePage.scss";
 
 function OrderHerePage() {
   const numberInit = 1;
@@ -81,7 +81,7 @@ function OrderHerePage() {
   return (
     <>
       <motion.div
-        key={keyAnimation}
+        key={`frame-1_${keyAnimation}`}
         className="order_here_page"
         onAnimationStart={handleAnimationStart}
         onAnimationComplete={handleAnimationComplete}
@@ -108,7 +108,7 @@ function OrderHerePage() {
         </div>
         <div className="btn-container">
           <motion.button
-            key={keyAnimation}
+            key={`frame-2_${keyAnimation}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             style={{
@@ -127,7 +127,7 @@ function OrderHerePage() {
         <div className="btns">
           <div className="right">
             <motion.button
-              key={keyAnimation}
+              key={`frame-3_${keyAnimation}`}
               style={{ backgroundColor: colorButtonActive.color }}
               transition={{
                 duration: 1,
@@ -140,15 +140,15 @@ function OrderHerePage() {
                 src={mxIcon}
                 className="es-icon"
               ></img>
-              <span
+              <p
                 style={{ color: colorButtonActive.text }}
                 className="es"
               >
                 Español
-              </span>
+              </p>
             </motion.button>
             <motion.button
-              key={keyAnimation}
+              key={`frame-4_${keyAnimation}`}
               style={{
                 backgroundColor: colorButtonInactive.color,
                 border: colorButtonInactive.border,
@@ -175,7 +175,7 @@ function OrderHerePage() {
           <div className="left">
             <Link to="/no-cash">
               <motion.div
-                key={keyAnimation}
+                key={`frame-5_${keyAnimation}`}
                 style={{
                   backgroundColor: colorButtonNoCash.color,
                 }}
