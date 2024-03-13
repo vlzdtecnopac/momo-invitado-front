@@ -1,8 +1,6 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { LoaderPage } from "../includes/loader/Loader";
-import HotOrColdPage from "../pages/hotOrCold/HotOrColdPage";
-import ProductsPage from "../pages/products/ProductsPage";
 
 const LazyLoginPage = lazy(() => import("../pages/login/LoginPage"));
 const LazyWelcomePage = lazy(() => import("../pages/welcome/WelcomePage"));
@@ -12,6 +10,16 @@ const LazyOrderHerePage = lazy(
 const LazyNoCashPage = lazy(() => import("../pages/noCash/NoCashPage"));
 const LazyRegisterPage = lazy(
   () => import("../pages/registerPage/RegisterPage")
+);
+const LazyHotOrColdPage = lazy(
+  () => import("../pages/hotOrCold/HotOrColdPage")
+);
+const LazyProductCategoryPage = lazy(
+  () => import("../pages/productCategories/ProductCategoryPage")
+);
+
+const LazyProductsPage = lazy(
+  () => import("../pages/productsPage/ProductsPage")
 );
 
 const BrowserRoutes = createBrowserRouter([
@@ -67,7 +75,15 @@ const BrowserRoutes = createBrowserRouter([
     path: "/hot-or-cold",
     element: (
       <Suspense fallback={<LoaderPage />}>
-        <HotOrColdPage />
+        <LazyHotOrColdPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/categories",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyProductCategoryPage />
       </Suspense>
     ),
   },
@@ -75,7 +91,7 @@ const BrowserRoutes = createBrowserRouter([
     path: "/products",
     element: (
       <Suspense fallback={<LoaderPage />}>
-        <ProductsPage />
+        <LazyProductsPage />
       </Suspense>
     ),
   },

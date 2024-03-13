@@ -1,0 +1,19 @@
+@import "../../index.scss";
+
+.products_page {
+    height: 100%;
+    width: 100vw;
+    background-color: $light-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        margin-top: 63px;
+        display: flex;
+        border-radius: 10px;
+        justify-content: center;
+        padding: 0;
+    }
+
+}

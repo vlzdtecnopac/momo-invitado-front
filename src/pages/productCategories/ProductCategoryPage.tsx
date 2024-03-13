@@ -1,6 +1,6 @@
 import Layout from "../../includes/layout/Layout";
 import banner from "../../assets/Banner.jpg";
-import "./ProductsPage.scss";
+import "./ProductCategoryPage.scss";
 import { useLocation, useNavigate } from "react-router-dom";
 import CustomButton from "../../components/CustomButton/CustomButton";
 
