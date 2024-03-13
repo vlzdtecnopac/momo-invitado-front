@@ -1,13 +1,4 @@
 import Layout from "../../includes/layout/Layout";
-
-// import coffeeIcon from "../../assets/icons/coffee_mug.svg";
-// import teaIcon from "../../assets/icons/tea_mug.svg";
-// import coffeeTeaIcon from "../../assets/icons/coffee_tea.svg";
-// import specialsIcon from "../../assets/icons/specials.svg";
-// import foodIcon from "../../assets/icons/croissant.svg";
-// import combosIcon from "../../assets/icons/combos.svg";
-// import drinksIcon from "../../assets/icons/other_drinks.svg";
-// import storeIcon from "../../assets/icons/our_store.svg";
 import banner from "../../assets/Banner.jpg";
 import "./ProductsPage.scss";
 import { useLocation, useNavigate } from "react-router-dom";

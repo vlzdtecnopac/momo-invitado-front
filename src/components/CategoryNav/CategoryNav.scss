@@ -1,5 +1,42 @@
+@import "../../index.scss";
+
 .cat_nav {
+    background: $dark-blue;
+    width: 100%;
+    display: flex;
+
+
     .categories {
         list-style: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+
+
+        padding-top: 100px;
+
+
+        .category {
+            border: 0;
+
+            button {
+                width: 100px;
+                border: 2px solid $cream;
+                border-radius: 10px;
+                height: 75px;
+                background-color: transparent;
+                color: $cream;
+                font-family: "Stacion";
+                font-weight: 400;
+                font-size: 18px;
+
+                &:hover {
+                    cursor: pointer;
+                    background: $cream;
+                    color: $dark-blue ;
+                }
+            }
+        }
     }
 }

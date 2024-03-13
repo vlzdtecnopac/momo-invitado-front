@@ -32,7 +32,10 @@ function CategoryNav() {
     <nav className="cat_nav">
       <ul className="categories">
         {categories.map((category, index) => (
-          <li key={index}>
+          <li
+            className="category"
+            key={index}
+          >
             <button>{category.text}</button>
           </li>
         ))}
