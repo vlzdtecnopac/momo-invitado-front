@@ -107,22 +107,24 @@ function OrderHerePage() {
           </div>
         </div>
         <div className="btn-container">
-          <motion.button
-            key={`frame-2_${keyAnimation}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            style={{
-              backgroundColor: orderColorState.color,
-            }}
-            transition={{
-              duration: 1,
-              ease: [0, 0.71, 0.2, 1.01],
-              repeat: 0,
-            }}
-            className="btn"
-          >
-            <h2>Ordena aquí</h2>
-          </motion.button>
+          <Link to="/categories">
+            <motion.button
+              key={`frame-2_${keyAnimation}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              style={{
+                backgroundColor: orderColorState.color,
+              }}
+              transition={{
+                duration: 1,
+                ease: [0, 0.71, 0.2, 1.01],
+                repeat: 0,
+              }}
+              className="btn"
+            >
+              <h2>Ordena aquí</h2>
+            </motion.button>
+          </Link>
         </div>
         <div className="btns">
           <div className="right">
@@ -168,7 +170,7 @@ function OrderHerePage() {
                 style={{ color: colorButtonInactive.text }}
                 className="en"
               >
-                Ingles
+                English
               </span>
             </motion.button>
           </div>

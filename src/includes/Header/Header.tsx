@@ -2,7 +2,6 @@ import logoMomo from "../../assets/icons/logo.svg";
 import momoPic from "../../assets/icons/momo-pic.svg";
 
 import back from "/src/assets/icons/arrow_left.svg";
-
 import "./Header.scss";
 
 function Header() {
@@ -15,7 +14,7 @@ function Header() {
             src={back}
             alt="back"
           />
-          <span className="text">Regresar</span>
+          <span className="text ">Regresar</span>
         </div>
       </div>
       <div className="column_center">

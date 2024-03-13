@@ -16,7 +16,7 @@ function HotOrColdPage() {
                   </button>
                   <button className="custom-btn coffee-bean">
                     <span className="icon"></span>
-                    <span className="text">Café a granel</span>
+                    <span className="text">Café granel</span>
                   </button>
                 </div>
               </div>
