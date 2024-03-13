@@ -29,6 +29,9 @@ const LazyProductCategoryPage = lazy(
 const LazyProductsPage = lazy(
   () => import("../pages/productsPage/ProductsPage")
 );
+const LazyProductDetailPage = lazy(
+  () => import("../pages/productDetail/ProductDetailPage")
+);
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -116,6 +119,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyProductsPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/product-detail",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyProductDetailPage />
       </Suspense>
     ),
   },
