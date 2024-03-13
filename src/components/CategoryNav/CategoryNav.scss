@@ -3,6 +3,7 @@
 .cat_nav {
     background: $dark-blue;
     width: 100%;
+    position: fixed;
     display: flex;
 
 
@@ -12,10 +13,8 @@
         display: flex;
         justify-content: center;
         gap: 25px;
-
-
         padding-top: 100px;
-
+        padding-bottom: 17px;
 
         .category {
             border: 0;

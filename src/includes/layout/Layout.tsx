@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Header from "../Header/Header";
 import "./Layout.scss";
+
 interface DynamicLayoutProps {
   children: ReactNode;
 }
