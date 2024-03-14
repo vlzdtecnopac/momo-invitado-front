@@ -6,16 +6,15 @@ import sugar from "../../assets/icons/sugar.svg";
 import extra from "../../assets/icons/extra.svg";
 import lid from "../../assets/icons/lid.svg";
 import recicle from "../../assets/icons/recicle.svg";
-import "./ProductDetailPage.scss";
+import "./DrinkDetailPage.scss";
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
-import ComplemetCard from "../../components/ComplementCard/ComplemetCard";
+import Slider from "../../components/Slider/Slider";
 
-function ProductDetailPage() {
+function DrinkDetailPage() {
   return (
     <Layout>
       <CategoryNav />
-
       <div className="page-container">
         <div className="product_detail">
           <div className="grid-2">
@@ -126,20 +125,21 @@ function ProductDetailPage() {
                   <div className="container">
                     <div className="block">
                       <h3 className="text">Con tapa</h3>
-                      <h3 className="text recicle">
+                      <h3 className="text">
                         Sin tapa{" "}
-                        <img
-                          className="recicle-icon"
-                          src={recicle}
-                          alt="recicle-icon"
-                        />
+                        <span className="recicle">
+                          <img
+                            className="recicle-icon"
+                            src={recicle}
+                            alt="recicle-icon"
+                          />
+                        </span>
                         <span className="recicle-text">
                           Ayúdanos a cuidar el planeta
                         </span>
                       </h3>{" "}
                     </div>
                   </div>
-
                   <div className="lid-options">
                     <span className="extra">
                       <input
@@ -160,11 +160,12 @@ function ProductDetailPage() {
                 <hr className="separator" />
                 <div className="complement">
                   <h3 className="text complement_title">Acompaña tu bebida</h3>
+                  <div className="cards">
+                    <Slider />
+                  </div>
                 </div>
+                <hr className="separator" />
 
-                <div>
-                  <ComplemetCard />
-                </div>
                 <div className="btn-container">
                   <button className="add-cart-btn">
                     Agregar al carrito $47
@@ -178,4 +179,4 @@ function ProductDetailPage() {
     </Layout>
   );
 }
-export default ProductDetailPage;
+export default DrinkDetailPage;

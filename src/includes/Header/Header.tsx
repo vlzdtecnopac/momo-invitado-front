@@ -27,7 +27,7 @@ function Header() {
       <div className="column_end">
         <div className="welcome-text">
           <h3 className="Welcome">Bienvenido</h3>
-          <h4 className="name">Invitado</h4>
+          <h4 className="user-name">Invitado</h4>
         </div>
         <img
           className="profile-pic"

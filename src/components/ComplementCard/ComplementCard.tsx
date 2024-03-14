@@ -1,14 +1,16 @@
 import "./ComplementCard.scss";
 import coldTea from "../../assets/cold-tea.png";
 
-function ComplemetCard() {
+function ComplementCard() {
   return (
     <div className="complement_card">
-      <img
-        className="img"
-        src={coldTea}
-        alt=""
-      />
+      <div className="card-img">
+        <img
+          className="img"
+          src={coldTea}
+          alt=""
+        />
+      </div>
       <div className="complement-text">
         <h3 className="name">Croissant de almendra</h3>
         <div className="even">
@@ -28,4 +30,4 @@ function ComplemetCard() {
     </div>
   );
 }
-export default ComplemetCard;
+export default ComplementCard;

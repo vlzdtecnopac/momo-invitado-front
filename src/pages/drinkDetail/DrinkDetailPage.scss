@@ -69,6 +69,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                padding: 50px;
 
                 .add-cart-btn {
                     background-color: $orange;
@@ -80,7 +81,7 @@
                     font-family: "Red Hat Display";
                     font-weight: 700;
                     font-size: 20px;
-                    cursor: pointer
+                    cursor: pointer;
                 }
             }
         }
@@ -99,15 +100,11 @@
     color: $cream;
     padding: 10px;
 
-    .text .recicle {
+    .text {
 
         .recicle-icon {
-
             padding-left: 12px;
-
         }
-
-
 
         .recicle-text {
             font-family: Stacion;
@@ -164,11 +161,20 @@
     height: 48px;
 }
 
+.complement {
+    height: 255px;
+}
+
 .complement_title {
     padding-left: 130px;
 }
 
-.card {
-    padding-left: 130px;
+.cards {
+    display: flex;
+    margin: 10px 10px 10px 20px;
 
+}
+
+.recicle {
+    margin: 0 5px;
 }
