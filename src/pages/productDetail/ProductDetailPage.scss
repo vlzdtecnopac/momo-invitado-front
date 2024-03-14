@@ -1,90 +1,94 @@
 @import "../../index.scss";
 
-.product_detail {
-    width: 100%;
-    height: 100vh;
-    background-color: $light-blue;
-    display: flex;
-    justify-content: space-around;
-    align-items: end;
+.page-container {
+    // padding-top: 180px;
 
-    .details {
-        width: 731px;
-        height: 621px;
-        background: $dark-blue;
-        border-radius: 16px;
+    .product_detail {
+        width: 100%;
+        height: 100vh;
+        background-color: $light-blue;
+        display: flex;
+        justify-content: space-around;
+        align-items: end;
 
+        .details {
+            width: 731px;
+            height: 621px;
+            background: $dark-blue;
+            border-radius: 16px;
+            overflow-y: auto;
 
-        .size,
-        .milk {
-            display: flex;
-            justify-content: space-evenly;
-            padding-top: 40px;
-            margin-bottom: 16px;
-
-            .size-container {
-                padding-right: 120px;
-
-            }
-
-            .container {
+            .size,
+            .milk {
                 display: flex;
-                align-items: center;
-                gap: 16px;
+                justify-content: space-evenly;
+                padding-top: 40px;
+                margin-bottom: 16px;
+
+                .size-container {
+                    padding-right: 120px;
+
+                }
+
+                .container {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
 
 
-            }
+                }
 
 
 
-            .options {
-                display: flex;
-                gap: 18px;
-                justify-content: end;
+                .options {
+                    display: flex;
+                    gap: 18px;
+                    justify-content: end;
 
-                .option {
-                    width: 120px;
-                    height: 44px;
-                    background: transparent;
-                    border: 1px solid $cream;
-                    border-radius: 5px;
-                    color: $cream;
-                    font-size: 16px;
-                    font-weight: 700;
+                    .option {
+                        width: 120px;
+                        height: 44px;
+                        background: transparent;
+                        border: 1px solid $cream;
+                        border-radius: 5px;
+                        color: $cream;
+                        font-size: 16px;
+                        font-weight: 700;
 
-                    .extra-price {
-                        font-weight: 400;
-                    }
+                        .extra-price {
+                            font-weight: 400;
+                        }
 
-                    &:hover {
-                        cursor: pointer;
-                        background-color: $orange;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $orange;
+                        }
                     }
                 }
             }
-        }
 
-        .btn-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-top: 40px;
+            .btn-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
-            .add-cart-btn {
-                background-color: $orange;
-                color: $cream;
-                border: none;
-                border-radius: 16px;
-                width: 300px;
-                height: 46px;
-                font-family: "Red Hat Display";
-                font-weight: 700;
-                font-size: 20px;
-                cursor: pointer
+                .add-cart-btn {
+                    background-color: $orange;
+                    color: $cream;
+                    border: none;
+                    border-radius: 16px;
+                    width: 300px;
+                    height: 46px;
+                    font-family: "Red Hat Display";
+                    font-weight: 700;
+                    font-size: 20px;
+                    cursor: pointer
+                }
             }
         }
     }
+
 }
 
 .separator {
@@ -92,11 +96,33 @@
     margin: 0 auto;
 }
 
+
+
 .text {
     color: $cream;
     padding: 10px;
 
+    .text .recicle {
+
+        .recicle-icon {
+
+            padding-left: 12px;
+
+        }
+
+
+
+        .recicle-text {
+            font-family: Stacion;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            align-items: center;
+            width: 230px;
+        }
+    }
 }
+
 
 .extra {
     display: flex;
@@ -119,10 +145,16 @@
             margin: 24px;
 
         }
+
+
     }
 
     .lid-options {
-        padding-left: 355px;
+        padding-left: 90px;
+
+        .extra {
+            margin: 24px;
+        }
     }
 }
 
