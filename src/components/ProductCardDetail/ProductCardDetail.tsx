@@ -18,7 +18,7 @@ const ProductCardDetail: React.FC<ProductCardDetailProps> = ({
         src={img}
         alt="product"
       />
-      <h2 className="name">{name}</h2>
+      <h2 className="product-name">{name}</h2>
       <h3 className="description">{description}</h3>
     </div>
   );

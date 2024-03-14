@@ -34,11 +34,7 @@
                     display: flex;
                     align-items: center;
                     gap: 16px;
-
-
                 }
-
-
 
                 .options {
                     display: flex;
@@ -61,6 +57,7 @@
 
                         &:hover {
                             cursor: pointer;
+                            border: none;
                             background-color: $orange;
                         }
                     }
@@ -165,4 +162,13 @@
 .icon {
     width: 48px;
     height: 48px;
+}
+
+.complement_title {
+    padding-left: 130px;
+}
+
+.card {
+    padding-left: 130px;
+
 }

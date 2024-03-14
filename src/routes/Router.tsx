@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { LoaderPage } from "../includes/loader/Loader";
+import ComplemetCard from "../components/ComplementCard/ComplemetCard";
 
 const LazyLoginPage = lazy(() => import("../pages/login/LoginPage"));
 const LazyWelcomePage = lazy(() => import("../pages/welcome/WelcomePage"));
@@ -127,6 +128,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyProductDetailPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/comp-card",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <ComplemetCard />
       </Suspense>
     ),
   },

@@ -1,0 +1,59 @@
+@import "../../index.scss";
+
+.complement_card {
+    border-radius: 12px;
+    width: 120px;
+    height: 138px;
+}
+
+.img {
+    width: 136px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.name {
+    width: 105px;
+    height: 38px;
+    font-family: "Red Hat Display";
+    font-size: 17px;
+    font-weight: 700;
+    text-align: left;
+    color: $dark-blue;
+    margin: 0px auto;
+    padding-top: 10px;
+}
+
+.price {
+    width: 21px;
+    height: 11px;
+    font-family: Stacion;
+    font-size: 13px;
+    font-weight: 300;
+    text-align: left;
+    color: $orange;
+    margin-left: 10px;
+
+}
+
+.radio {
+    text-align: right;
+    width: 15px;
+    height: 15px;
+}
+
+.even {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 35px;
+}
+
+.complement-text {
+    background-color: $white;
+    width: 136px;
+    height: 99px;
+    border-radius: 0 0 12px 12px;
+}

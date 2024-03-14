@@ -9,7 +9,7 @@ import recicle from "../../assets/icons/recicle.svg";
 import "./ProductDetailPage.scss";
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
-import ProductCard from "../../components/ProductCard/ProductCard";
+import ComplemetCard from "../../components/ComplementCard/ComplemetCard";
 
 function ProductDetailPage() {
   return (
@@ -159,13 +159,11 @@ function ProductDetailPage() {
                 </div>
                 <hr className="separator" />
                 <div className="complement">
-                  <h3 className="text">Acompaña tu bebida</h3>
-                  {/*  */}
-                  <ProductCard
-                    img={""}
-                    price="22"
-                    name="Chocolate"
-                  />
+                  <h3 className="text complement_title">Acompaña tu bebida</h3>
+                </div>
+
+                <div>
+                  <ComplemetCard />
                 </div>
                 <div className="btn-container">
                   <button className="add-cart-btn">
