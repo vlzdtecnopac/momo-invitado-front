@@ -6,10 +6,10 @@ import sugar from "../../assets/icons/sugar.svg";
 import extra from "../../assets/icons/extra.svg";
 import lid from "../../assets/icons/lid.svg";
 import recicle from "../../assets/icons/recicle.svg";
-import "./DrinkDetailPage.scss";
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Slider from "../../components/Slider/Slider";
+import "./DrinkDetailPage.scss";
 
 function DrinkDetailPage() {
   return (

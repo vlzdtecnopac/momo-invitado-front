@@ -1,15 +1,15 @@
 @import "../../index.scss";
 
 .page-container {
-    // padding-top: 180px;
+    overflow: hidden;
 
     .drink_detail {
         width: 100%;
-        height: 100vh;
+        height: 683px;
         background-color: $light-blue;
         display: flex;
         justify-content: space-around;
-        align-items: end;
+        padding-top: 30px;
 
         .details {
             width: 731px;
