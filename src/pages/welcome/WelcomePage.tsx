@@ -13,22 +13,21 @@ import axios from "axios";
 import { tokenHeader } from "../../helpers/token-header.helper";
 
 interface KioskoDataActive {
-    "id": number,
-    "kiosko_id": string,
-    "shopping_id": string,
-    "state": boolean,
-    "nombre": string,
-    "create_at": Date,
-    "update_at": Date
+  id: number;
+  kiosko_id: string;
+  shopping_id: string;
+  state: boolean;
+  nombre: string;
+  create_at: Date;
+  update_at: Date;
 }
 
 function WelcomePage() {
   const navigate = useNavigate();
   const { dataEmployee, fetchEmployeeData } = useEmployeeStore();
   const { dataStore, fetchStoreData } = useShoppingStore();
-  const [ kioskoActive, setKioskoActive] = useState<KioskoDataActive>();
+  const [kioskoActive, setKioskoActive] = useState<KioskoDataActive>();
   const [loader, setIsLoading] = useState<Boolean>(true);
-
 
   useEffect(() => {
     if (loader) {
@@ -36,29 +35,33 @@ function WelcomePage() {
         const employeeId = localStorage.getItem("employee-id");
         if (employeeId) {
           await fetchEmployeeData(employeeId);
-          await fetchStoreData(dataEmployee[0]?.shopping_id);
           setIsLoading(false);
           //setTimeout(() => navigate("/order-here"), 4000);
         }
       };
-   
       fetchDataOnMount();
     }
   }, []);
 
-  useEffect(()=>{
-    if(!loader){
-      setIsLoading(false);
-      searchKiosko(dataEmployee[0]?.shopping_id);
+  useEffect(() => {
+    if (!loader) {
+      const consult = async () => {
+        await fetchStoreData(dataEmployee[0]?.shopping_id);
+        await searchKiosko(dataEmployee[0]?.shopping_id);
+      };
+      consult();
     }
-  },[dataEmployee, loader])
+  }, [loader]);
 
   const searchKiosko = async (shopping_id: string) => {
-    const responseKiosko: KioskoDataActive = await axios.get(`${import.meta.env.VITE_API_URL}/kioskos/activate/?shopping_id=${shopping_id}&state=false`, {headers: tokenHeader});
+    const responseKiosko: KioskoDataActive = await axios.get(
+      `${
+        import.meta.env.VITE_API_URL
+      }/kioskos/activate/?shopping_id=${shopping_id}&state=false`,
+      { headers: tokenHeader }
+    );
     setKioskoActive(responseKiosko);
-  }
-
-
+  };
 
   return (
     <>
@@ -82,7 +85,7 @@ function WelcomePage() {
             <div className="store-card">
               <Card
                 icon={kioskIcon}
-                text="Kiosko"
+                text={kioskoActive?.nombre}
                 subText="Tienda 1"
                 state={false}
               />
