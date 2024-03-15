@@ -3,7 +3,7 @@
 .component-login-form {
     .form-group {
         position: relative;
-        margin: 25px 0px;
+        margin: 10px 0px;
     }
 
     .login-form {
@@ -23,8 +23,8 @@
             color: #fff;
             font-weight: 700;
             font-size: 18px;
-            width: 500px;
-            height: 79px;
+            width: 400px;
+            height: 60px;
 
             @media screen and (min-width: 1440px) {
                 font-size: 16px;
@@ -73,9 +73,8 @@
             justify-content: center;
 
             .login-buttom {
-                width: 320px;
-                height: 50px;
-                padding: 10px;
+                width: 250px;
+                height: 45px;
                 border-radius: 32px;
                 background: $orange;
                 border: none;
