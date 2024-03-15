@@ -13,6 +13,8 @@ import axios from "axios";
 import { tokenHeader } from "../../helpers/token-header.helper";
 
 interface KioskoDataActive {
+  name_shopping: string
+  data:{
   id: number;
   kiosko_id: string;
   shopping_id: string;
@@ -20,6 +22,7 @@ interface KioskoDataActive {
   nombre: string;
   create_at: Date;
   update_at: Date;
+  }
 }
 
 function WelcomePage() {
@@ -36,7 +39,6 @@ function WelcomePage() {
         if (employeeId) {
           await fetchEmployeeData(employeeId);
           setIsLoading(false);
-          //setTimeout(() => navigate("/order-here"), 4000);
         }
       };
       fetchDataOnMount();
@@ -47,20 +49,21 @@ function WelcomePage() {
     if (!loader) {
       const consult = async () => {
         await fetchStoreData(dataEmployee[0]?.shopping_id);
-        await searchKiosko(dataEmployee[0]?.shopping_id);
+        const resp = await searchKiosko(dataEmployee[0]?.shopping_id);
+        setKioskoActive(resp.data);
+      //setTimeout(() => navigate("/order-here"), 4000);
       };
       consult();
     }
   }, [loader]);
 
   const searchKiosko = async (shopping_id: string) => {
-    const responseKiosko: KioskoDataActive = await axios.get(
+     return await axios.get(
       `${
         import.meta.env.VITE_API_URL
       }/kioskos/activate/?shopping_id=${shopping_id}&state=false`,
       { headers: tokenHeader }
     );
-    setKioskoActive(responseKiosko);
   };
 
   return (
@@ -85,8 +88,8 @@ function WelcomePage() {
             <div className="store-card">
               <Card
                 icon={kioskIcon}
-                text={kioskoActive?.nombre}
-                subText="Tienda 1"
+                text={kioskoActive?.data.nombre}
+                subText={kioskoActive?.name_shopping}
                 state={false}
               />
             </div>
