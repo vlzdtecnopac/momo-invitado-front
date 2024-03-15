@@ -3,8 +3,16 @@ import kdsOnIcon from "../../assets/icons/kds-on.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
 import Card from "../../components/Card/Card";
 import "./WelcomePage.scss";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function WelcomePage() {
+  const navigate = useNavigate();
+  useEffect(()=> {
+      setTimeout(()=> {
+            navigate("/order-here");
+      }, 4000)
+  },[])
   return (
     <div className="component-welcome">
       <div className="logo-container">
