@@ -4,20 +4,46 @@ import { LoaderPage } from "../includes/loader/Loader";
 
 const LazyLoginPage = lazy(() => import("../pages/login/LoginPage"));
 const LazyWelcomePage = lazy(() => import("../pages/welcome/WelcomePage"));
-const LazyOrderHerePage = lazy(() => import("../pages/orderHere/OrderHerePage"));
+const LazyOrderHerePage = lazy(
+  () => import("../pages/orderHere/OrderHerePage")
+);
 const LazyNoCashPage = lazy(() => import("../pages/noCash/NoCashPage"));
-const LazyRegisterPage = lazy(() => import("../pages/registerPage/RegisterPage"));
-const LazyHotOrColdPage = lazy(() => import("../pages/hotOrCold/HotOrColdPage"));
-const LazyMerchOrCoffeePage = lazy(() => import("../pages/merchOrCoffee/MerchOrCoffeePage"));
-const LazySweetSaltySnacksPage = lazy(() => import("../pages/sweetSaltySnacks/SweetSaltySnacksPage"));
-const LazyProductCategoryPage = lazy(() => import("../pages/productCategories/ProductCategoryPage"));
-const LazyProductsPage = lazy(() => import("../pages/productsPage/ProductsPage"));
-const LazyDrinkDetailPage = lazy(() => import("../pages/drinkDetail/DrinkDetailPage"));
-const LazyFoodDetailPage = lazy(() => import("../pages/foodDetail/FoodDetailPage"));
-const LazyMerchDetailPage = lazy(() => import("../pages/merchDetail/MerchDetailPage"));
-const LazyCoffeeDetailPage = lazy(() => import("../pages/coffeeDetail/CoffeeDetailPage"));
-const LazyOtherDrinksDetailPage = lazy(() => import("../pages/otherDrinksDetail/OtherDrinksDetailPage"));
-const LazyCombosDetailPage = lazy(() => import("../pages/combosDetail/CombosDetailPage"));
+const LazyRegisterPage = lazy(
+  () => import("../pages/registerPage/RegisterPage")
+);
+const LazyHotOrColdPage = lazy(
+  () => import("../pages/hotOrCold/HotOrColdPage")
+);
+const LazyMerchOrCoffeePage = lazy(
+  () => import("../pages/merchOrCoffee/MerchOrCoffeePage")
+);
+const LazySweetSaltySnacksPage = lazy(
+  () => import("../pages/sweetSaltySnacks/SweetSaltySnacksPage")
+);
+const LazyProductCategoryPage = lazy(
+  () => import("../pages/productCategories/ProductCategoryPage")
+);
+const LazyProductsPage = lazy(
+  () => import("../pages/productsPage/ProductsPage")
+);
+const LazyDrinkDetailPage = lazy(
+  () => import("../pages/drinkDetail/DrinkDetailPage")
+);
+const LazyFoodDetailPage = lazy(
+  () => import("../pages/foodDetail/FoodDetailPage")
+);
+const LazyMerchDetailPage = lazy(
+  () => import("../pages/merchDetail/MerchDetailPage")
+);
+const LazyCoffeeDetailPage = lazy(
+  () => import("../pages/coffeeDetail/CoffeeDetailPage")
+);
+const LazyOtherDrinksDetailPage = lazy(
+  () => import("../pages/otherDrinksDetail/OtherDrinksDetailPage")
+);
+const LazyCombosDetailPage = lazy(
+  () => import("../pages/combosDetail/CombosDetailPage")
+);
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -153,6 +179,22 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyCombosDetailPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/checkout",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyCheckoutPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyNotFound />
       </Suspense>
     ),
   },

@@ -132,7 +132,7 @@
 
 
     .sauce-options {
-        padding-left: 250px;
+        padding-left: 290px;
         display: flex;
         text-align: center;
         flex-direction: column;
@@ -140,12 +140,10 @@
     }
 
     .extra-options {
-        padding-left: 290px;
+        padding-left: 235px;
 
-        .extra,
-        .sauce {
+        .extra {
             margin: 24px;
-
         }
 
 
@@ -186,6 +184,8 @@
 .recicle {
     margin: 0 5px;
 }
+
+
 
 .step {
     color: $cream;
