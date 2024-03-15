@@ -10,33 +10,55 @@ import { useEmployeeStore } from "../../store/employee.store";
 import "./WelcomePage.scss";
 import { LoaderPage } from "../../loader/Loader";
 import axios from "axios";
+import { tokenHeader } from "../../helpers/token-header.helper";
+
+interface KioskoDataActive {
+    "id": number,
+    "kiosko_id": string,
+    "shopping_id": string,
+    "state": boolean,
+    "nombre": string,
+    "create_at": Date,
+    "update_at": Date
+}
 
 function WelcomePage() {
   const navigate = useNavigate();
   const { dataEmployee, fetchEmployeeData } = useEmployeeStore();
   const { dataStore, fetchStoreData } = useShoppingStore();
+  const [ kioskoActive, setKioskoActive] = useState<KioskoDataActive>();
   const [loader, setIsLoading] = useState<Boolean>(true);
+
 
   useEffect(() => {
     if (loader) {
       const fetchDataOnMount = async () => {
         const employeeId = localStorage.getItem("employee-id");
         if (employeeId) {
-          searchKiosko();
           await fetchEmployeeData(employeeId);
           await fetchStoreData(dataEmployee[0]?.shopping_id);
           setIsLoading(false);
           //setTimeout(() => navigate("/order-here"), 4000);
         }
       };
+   
       fetchDataOnMount();
     }
-  }, [loader, dataStore]);
+  }, []);
 
-  const searchKiosko = async () => {
-    const kioskosInactives = await axios.post(`${import.meta.env.VITE_API_URL}/kioskos/?shopping_id=${dataStore[0].shopping_id}&state=false`);
-    console.log(kioskosInactives);
+  useEffect(()=>{
+    if(!loader){
+      setIsLoading(false);
+      searchKiosko(dataEmployee[0]?.shopping_id);
+    }
+  },[dataEmployee, loader])
+
+  const searchKiosko = async (shopping_id: string) => {
+    const responseKiosko: KioskoDataActive = await axios.get(`${import.meta.env.VITE_API_URL}/kioskos/activate/?shopping_id=${shopping_id}&state=false`, {headers: tokenHeader});
+    setKioskoActive(responseKiosko);
   }
+
+
 
   return (
     <>
