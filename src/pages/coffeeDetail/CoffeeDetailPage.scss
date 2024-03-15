@@ -2,7 +2,7 @@
 
 .page-container {
 
-    .food_detail {
+    .coffee_detail {
         width: 100%;
         height: 100vh;
         background-color: $light-blue;
@@ -16,14 +16,18 @@
             background: $dark-blue;
             border-radius: 16px;
 
-            .size,
-            .milk {
+            .type,
+            .size {
                 display: flex;
                 justify-content: space-evenly;
                 padding-top: 40px;
                 margin-bottom: 16px;
 
                 .size-container {
+                    padding-right: 20px;
+                }
+
+                .type-container {
                     padding-right: 120px;
 
                 }
@@ -131,7 +135,7 @@
     }
 
     .extra-options {
-        padding-left: 310px;
+        padding-left: 240px;
 
         .extra {
             margin: 24px;

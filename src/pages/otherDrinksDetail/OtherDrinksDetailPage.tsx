@@ -1,26 +1,24 @@
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
-import product from "../../assets/product2.jpg";
+import product from "../../assets/product5.jpg";
 import sauce from "../../assets/icons/sauce.svg";
 import Layout from "../../includes/layout/Layout";
 import temperature from "../../assets/icons/temperature.svg";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Slider from "../../components/Slider/Slider";
-import "./FoodDetailPage.scss";
+import "./OtherDrinksDetailPage.scss";
 
-function FoodDetailPage() {
+function OtherDrinksDetailPage() {
   return (
     <Layout>
       <CategoryNav />
       <div className="page-container">
-        <div className="food_detail">
+        <div className="other_drinks_detail">
           <div className="grid-2">
             <div className="col-3 img-col">
               <ProductCardDetail
                 img={product}
-                name="Croissant de
-                almendras"
-                description="Croissant de
-                almendras"
+                name="Botella ecopack 100% reciclable"
+                description="Botella ecopack 100% reciclable"
               />
             </div>
             <div className="col-9 details-col detail-card">
@@ -40,42 +38,10 @@ function FoodDetailPage() {
                     <button className="option">Caliente</button>
                   </div>
                 </div>
-                <hr className="separator" />
-                <div className="extra">
-                  <img
-                    className="icon"
-                    src={sauce}
-                    alt="extra"
-                  />
-                  <div className="container">
-                    <div className="block">
-                      <h3 className="text">Salsa macha</h3>
-                      <h3 className="text">Salsa chipotle</h3>
-                    </div>
-                  </div>
 
-                  <div className="extra-options">
-                    <span className="extra">
-                      10$
-                      <input
-                        className="checkbox"
-                        name="10"
-                        type="checkbox"
-                      />
-                    </span>
-                    <span className="extra">
-                      20$
-                      <input
-                        name="20"
-                        className="checkbox"
-                        type="checkbox"
-                      />
-                    </span>
-                  </div>
-                </div>
                 <hr className="separator" />
                 <div className="complement">
-                  <h3 className="text complement_title">Acompaña tu comida</h3>
+                  <h3 className="text complement_title">Acompaña tu bebida</h3>
                   <div className="cards">
                     <Slider />
                   </div>
@@ -96,4 +62,4 @@ function FoodDetailPage() {
     </Layout>
   );
 }
-export default FoodDetailPage;
+export default OtherDrinksDetailPage;
