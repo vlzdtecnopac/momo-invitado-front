@@ -44,6 +44,9 @@ const LazyCoffeeDetailPage = lazy(
 const LazyOtherDrinksDetailPage = lazy(
   () => import("../pages/otherDrinksDetail/OtherDrinksDetailPage")
 );
+const LazyCombosDetailPage = lazy(
+  () => import("../pages/combosDetail/CombosDetailPage")
+);
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -171,6 +174,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyOtherDrinksDetailPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/combos-detail",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyCombosDetailPage />
       </Suspense>
     ),
   },
