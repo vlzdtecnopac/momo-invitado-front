@@ -47,6 +47,8 @@ const LazyOtherDrinksDetailPage = lazy(
 const LazyCombosDetailPage = lazy(
   () => import("../pages/combosDetail/CombosDetailPage")
 );
+const LazyCheckoutPage = lazy(() => import("../pages/checkout/CheckoutPage"));
+const LazyNotFound = lazy(() => import("../pages/404/404"));
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -182,6 +184,22 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyCombosDetailPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/checkout",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyCheckoutPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyNotFound />
       </Suspense>
     ),
   },

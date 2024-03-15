@@ -194,7 +194,7 @@ function CombosDetailPage() {
                   </div>
 
                   <div className="sauce-options">
-                    <span className="sauce">
+                    <span className="extra sauce">
                       10$
                       <input
                         className="checkbox"
@@ -202,7 +202,7 @@ function CombosDetailPage() {
                         type="checkbox"
                       />
                     </span>
-                    <span className="sauce">
+                    <span className="extra">
                       20$
                       <input
                         name="20"
