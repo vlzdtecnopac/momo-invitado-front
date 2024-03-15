@@ -73,7 +73,6 @@ function FoodDetailPage() {
                     </span>
                   </div>
                 </div>
-
                 <hr className="separator" />
                 <div className="complement">
                   <h3 className="text complement_title">Acompaña tu bebida</h3>
