@@ -3,16 +3,34 @@ import kdsOnIcon from "../../assets/icons/kds-on.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
 import Card from "../../components/Card/Card";
 import "./WelcomePage.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useShoppingStore } from "../../store/shopping.store";
+import { tokenHeader } from "../../helpers/token-header.helper";
+import { useEmployeeStore } from "../../store/employee.store";
 
 function WelcomePage() {
   const navigate = useNavigate();
-  useEffect(()=> {
-      setTimeout(()=> {
-            navigate("/order-here");
-      }, 4000)
-  },[])
+  const { dataEmployee, fetchEmployeeData } = useEmployeeStore();
+  const { dataStore, fetchStoreData } = useShoppingStore();
+  const [loader, setIsLoading] = useState<Boolean>(true);
+
+
+  useEffect(() => {
+    if (loader) {
+      const fetchDataOnMount = async () => {
+        const employeeId = localStorage.getItem("employee-id");
+        if (employeeId) {
+          await fetchEmployeeData(employeeId);
+          await fetchStoreData(dataEmployee[0]?.shopping_id);
+        }
+        setIsLoading(false);
+        //setTimeout(() => navigate("/order-here"), 4000);
+      };
+      fetchDataOnMount();
+    }
+  }, [loader]);
+
   return (
     <div className="component-welcome">
       <div className="logo-container">

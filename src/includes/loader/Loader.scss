@@ -6,15 +6,17 @@
 
   .loader_content {
     position: fixed;
+    top: 0px;
     right: 0px;
     left: 0px;
     margin: auto;
-    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     z-index: 99999;
+    background: #ffffff59;
+    width: 100vw;
 
     .loader_page_circle {
       border: 4px solid  $dark-blue;
