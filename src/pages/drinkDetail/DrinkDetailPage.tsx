@@ -1,5 +1,5 @@
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
-import product from "../../assets/product.jpg";
+import product from "../../assets/product1.jpg";
 import glass from "../../assets/icons/glass.svg";
 import milk from "../../assets/icons/bottle.svg";
 import sugar from "../../assets/icons/sugar.svg";
@@ -16,7 +16,7 @@ function DrinkDetailPage() {
     <Layout>
       <CategoryNav />
       <div className="page-container">
-        <div className="product_detail">
+        <div className="drink_detail">
           <div className="grid-2">
             <div className="col-3 img-col">
               <ProductCardDetail
