@@ -27,7 +27,7 @@ export const useShoppingStore = create<DesignStoreInterface>((set) => ({
   fetchStoreData: async (shopping_id) =>  new Promise((resolve, reject) => {
       axios.get(`${import.meta.env.VITE_API_URL}/shopping/?shopping_id=${shopping_id}`, {headers: tokenHeader})
         .then((response) => {
-          set((state) => ({ ...state, data: response.data }));
+          set((state) => ({ ...state, dataStore: response.data }));
           resolve(response.data);
         })
         .catch((error) => {

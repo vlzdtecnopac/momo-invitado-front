@@ -6,7 +6,7 @@ interface CardProps {
   icon: string;
   text?: string;
   subText?: string;
-  state?: string;
+  state?: boolean;
   backgroundColor?: string;
   textColor?: string;
 }
