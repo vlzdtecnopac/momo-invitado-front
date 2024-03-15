@@ -1,6 +1,5 @@
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
 import product from "../../assets/product5.jpg";
-import sauce from "../../assets/icons/sauce.svg";
 import Layout from "../../includes/layout/Layout";
 import temperature from "../../assets/icons/temperature.svg";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";

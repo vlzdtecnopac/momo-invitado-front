@@ -7,7 +7,7 @@ import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Slider from "../../components/Slider/Slider";
 import "./MerchDetailPage.scss";
 
-function FoodDetailPage() {
+function MerchDetailPage() {
   return (
     <Layout>
       <CategoryNav />
@@ -17,8 +17,10 @@ function FoodDetailPage() {
             <div className="col-3 img-col">
               <ProductCardDetail
                 img={product}
-                name="Camiseta t-shirt color azul"
-                description="Camiseta t-shirt color azul"
+                name="Croissant de
+                almendras"
+                description="Croissant de
+                almendras"
               />
             </div>
             <div className="col-9 details-col detail-card">
@@ -30,20 +32,12 @@ function FoodDetailPage() {
                       src={tshirt}
                       alt="size"
                     />
-                    <h3 className="text">Talla</h3>
+                    <h3 className="text">Temperatura</h3>
                   </div>
 
                   <div className="options">
-                    <button className="option">
-                      Chico <br /> <span className="extra-price">S</span>
-                    </button>
-                    <button className="option">
-                      Mediano <br /> <span className="extra-price">M</span>
-                    </button>
-                    <button className="option">
-                      Grande <br />
-                      <span className="extra-price">L</span>
-                    </button>
+                    <button className="option">Al tiempo</button>
+                    <button className="option">Caliente</button>
                   </div>
                 </div>
                 <hr className="separator" />
@@ -65,36 +59,17 @@ function FoodDetailPage() {
 
                   <div className="extra-options">
                     <span className="extra">
+                      10$
                       <input
                         className="checkbox"
-                        name="green"
+                        name="10"
                         type="checkbox"
                       />
                     </span>
                     <span className="extra">
+                      20$
                       <input
-                        name="dark-blue"
-                        className="checkbox"
-                        type="checkbox"
-                      />
-                    </span>
-                    <span className="extra">
-                      <input
-                        name="orange"
-                        className="checkbox"
-                        type="checkbox"
-                      />
-                    </span>
-                    <span className="extra">
-                      <input
-                        name="light-blue"
-                        className="checkbox"
-                        type="checkbox"
-                      />
-                    </span>
-                    <span className="extra">
-                      <input
-                        name="cream"
+                        name="20"
                         className="checkbox"
                         type="checkbox"
                       />
@@ -103,12 +78,14 @@ function FoodDetailPage() {
                 </div>
                 <hr className="separator" />
                 <div className="complement">
-                  <h3 className="text complement_title">Acompaña compra</h3>
+                  <h3 className="text complement_title">Acompaña tu comida</h3>
                   <div className="cards">
                     <Slider />
                   </div>
                 </div>
+
                 <hr className="separator" />
+
                 <div className="btn-container">
                   <button className="add-cart-btn">
                     Agregar al carrito $47
@@ -122,4 +99,4 @@ function FoodDetailPage() {
     </Layout>
   );
 }
-export default FoodDetailPage;
+export default MerchDetailPage;
