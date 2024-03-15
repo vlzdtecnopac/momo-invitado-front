@@ -14,15 +14,18 @@ const LazyRegisterPage = lazy(
 const LazyHotOrColdPage = lazy(
   () => import("../pages/hotOrCold/HotOrColdPage")
 );
+
 const LazyMerchOrCoffeePage = lazy(
   () => import("../pages/merchOrCoffee/MerchOrCoffeePage")
 );
+
 const LazySweetSaltySnacksPage = lazy(
   () => import("../pages/sweetSaltySnacks/SweetSaltySnacksPage")
 );
 const LazyProductCategoryPage = lazy(
   () => import("../pages/productCategories/ProductCategoryPage")
 );
+
 const LazyProductsPage = lazy(
   () => import("../pages/productsPage/ProductsPage")
 );
@@ -44,6 +47,8 @@ const LazyOtherDrinksDetailPage = lazy(
 const LazyCombosDetailPage = lazy(
   () => import("../pages/combosDetail/CombosDetailPage")
 );
+const LazyCheckoutPage = lazy(() => import("../pages/checkout/CheckoutPage"));
+const LazyNotFound = lazy(() => import("../pages/404/404"));
 
 const BrowserRoutes = createBrowserRouter([
   {
