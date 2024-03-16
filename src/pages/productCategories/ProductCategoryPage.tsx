@@ -71,13 +71,13 @@ function ProductsPage() {
                 />
               </li>
             ))}
-            <img
+          </ul>
+        </nav>
+        <img
               className="banner"
               src={banner}
               alt="banner"
             />
-          </ul>
-        </nav>
       </Layout>
     </>
   );

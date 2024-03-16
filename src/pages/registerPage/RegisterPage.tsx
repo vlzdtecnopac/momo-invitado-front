@@ -1,6 +1,7 @@
-import "./RegisterPage.scss";
 import imgRegister from "../../assets/register-img.jpg";
 import logoMomo from "../../assets/icons/logo.svg";
+import "./RegisterPage.scss";
+
 function RegisterPage() {
   return (
     <div className="register_page">
