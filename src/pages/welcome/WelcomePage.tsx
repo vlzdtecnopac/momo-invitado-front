@@ -8,8 +8,9 @@ import { useNavigate } from "react-router-dom";
 import { useShoppingStore } from "../../store/shopping.store";
 import { useEmployeeStore } from "../../store/employee.store";
 import { tokenHeader } from "../../helpers/token-header.helper";
-import "./WelcomePage.scss";
 import { LoaderPage } from "../../includes/loader/Loader";
+import "./WelcomePage.scss";
+
 
 interface KioskoDataActive {
   name_shopping: string;
@@ -107,7 +108,7 @@ function WelcomePage() {
             </div>
             <div className="loader"></div>
             <div className="card-group">
-              {dataStore.map((item: any, i: number) => (
+              {dataStore.length > 0 && dataStore.map((item: any, i: number) => (
                 <Card
                   key={i}
                   icon={kdsOnIcon}
