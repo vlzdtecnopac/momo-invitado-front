@@ -1,29 +1,33 @@
 @import "../../index.scss";
 
 .products_page {
-    height: 100vh;
     overflow: hidden;
     background-color: $dark-blue;
     justify-content: center;
     align-items: flex-end;
+    height: 100vh;
 
     .categories {
-        width: 984px;
-        height: 560px;
+        width: 880px;
+        height: 400px;
         display: flex;
-        align-content: center;
-        margin: 100px auto;
+        margin: 99px auto 0px auto;
+        padding: 0px;
+        overflow-y: auto;
 
         .options-container {
             display: flex;
             justify-content: center;
-            padding-bottom: 45px;
         }
     }
-
-    .banner {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
+    .content-slider{
+        width: 890px;
+        margin: 10px auto;
+        .banner {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+        }
     }
+   
 }

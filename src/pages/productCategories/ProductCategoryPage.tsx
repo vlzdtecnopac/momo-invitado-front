@@ -1,15 +1,14 @@
 import Layout from "../../includes/layout/Layout";
 import banner from "../../assets/Banner.jpg";
-import "./ProductCategoryPage.scss";
-import { useLocation, useNavigate } from "react-router-dom";
+
 import CustomButton from "../../components/CustomButton/CustomButton";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "./ProductCategoryPage.scss";
 
 function ProductsPage() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleNavegation = (nav: string) => navigate(nav);
-
   const categoriesNav = [
     {
       icon: "coffee-icon",
@@ -51,17 +50,34 @@ function ProductsPage() {
       text: "Nuestra Tienda",
       router: "",
     },
+    {
+      icon: "store-icon",
+      text: "Nuestra Tienda",
+      router: "",
+    },
+    {
+      icon: "store-icon",
+      text: "Nuestra Tienda",
+      router: "",
+    },
+    {
+      icon: "store-icon",
+      text: "Nuestra Tienda",
+      router: "",
+    },
+    {
+      icon: "store-icon",
+      text: "Nuestra Tienda",
+      router: "",
+    },
   ];
   return (
     <>
       <Layout>
-        <nav className="products_page">
+        <div className="products_page">
           <ul className="categories grid-4_xs-1">
             {categoriesNav.map((category, index) => (
-              <li
-                key={index}
-                className="col options-container"
-              >
+              <li key={index} className="col options-container">
                 <CustomButton
                   icon={category.icon}
                   text={category.text}
@@ -72,12 +88,38 @@ function ProductsPage() {
               </li>
             ))}
           </ul>
-        </nav>
-        <img
-              className="banner"
-              src={banner}
-              alt="banner"
-            />
+          <div className="content-slider">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={5}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              790: {
+                slidesPerView: 1,
+                spaceBetween: 5,
+              },
+              950: {
+                slidesPerView: 1,
+                spaceBetween: 5,
+              },
+              1990: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+              },
+            }}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <img className="banner" src={banner} alt="banner" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="banner" src={banner} alt="banner" />
+            </SwiperSlide>
+          </Swiper>
+          </div>
+        </div>
       </Layout>
     </>
   );
