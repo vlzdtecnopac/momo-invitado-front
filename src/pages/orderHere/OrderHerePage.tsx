@@ -78,8 +78,6 @@ function OrderHerePage() {
     }
   };
 
-
-
   return (
     <>
       <motion.div
@@ -99,14 +97,24 @@ function OrderHerePage() {
         }}
       >
         <div className="imagotipo">
-          <div className="logo">
-            <img
-              className="isotipo"
-              src={isotipo}
-              alt="isotipo"
-            />
+          <motion.div
+            className="logo"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.3,
+              ease: [0, 0.71, 0.2, 1.01],
+              scale: {
+                type: "spring",
+                damping: 5,
+                stiffness: 100,
+                restDelta: 0.001,
+              },
+            }}
+          >
+            <img className="isotipo" src={isotipo} alt="isotipo" />
             <LogoMomo color={colorButtonNoCash.color} />
-          </div>
+          </motion.div>
         </div>
         <div className="btn-container">
           <Link to="/categories">
@@ -140,14 +148,8 @@ function OrderHerePage() {
               }}
               className="lang"
             >
-              <img
-                src={mxIcon}
-                className="es-icon"
-              ></img>
-              <p
-                style={{ color: colorButtonActive.text }}
-                className="es"
-              >
+              <img src={mxIcon} className="es-icon"></img>
+              <p style={{ color: colorButtonActive.text }} className="es">
                 Español
               </p>
             </motion.button>
@@ -164,14 +166,8 @@ function OrderHerePage() {
               }}
               className="lang"
             >
-              <img
-                src={usaIcon}
-                className="en-icon"
-              ></img>
-              <span
-                style={{ color: colorButtonInactive.text }}
-                className="en"
-              >
+              <img src={usaIcon} className="en-icon"></img>
+              <span style={{ color: colorButtonInactive.text }} className="en">
                 English
               </span>
             </motion.button>

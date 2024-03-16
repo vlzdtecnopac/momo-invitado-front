@@ -3,6 +3,7 @@ import logo from "../../assets/icons/logo.svg";
 import kdsOnIcon from "../../assets/icons/kds-on.svg";
 import kioskIcon from "../../assets/icons/kiosko.svg";
 import Card from "../../components/Card/Card";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useShoppingStore } from "../../store/shopping.store";
@@ -10,7 +11,6 @@ import { useEmployeeStore } from "../../store/employee.store";
 import { tokenHeader } from "../../helpers/token-header.helper";
 import { LoaderPage } from "../../includes/loader/Loader";
 import "./WelcomePage.scss";
-
 
 interface KioskoDataActive {
   name_shopping: string;
@@ -89,18 +89,30 @@ function WelcomePage() {
               {(() => {
                 if (kioskoActive != undefined) {
                   return (
-                    <Card
-                      icon={kioskIcon}
-                      text={kioskoActive?.data.nombre}
-                      subText={kioskoActive?.name_shopping}
-                      state={false}
-                    />
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        duration: 0.8,
+                        delay: 0.5,
+                        ease: [0, 0.71, 0.2, 1.01],
+                      }}
+                    >
+                      <Card
+                        icon={kioskIcon}
+                        text={kioskoActive?.data.nombre}
+                        subText={kioskoActive?.name_shopping}
+                        state={false}
+                      />
+                    </motion.div>
                   );
                 } else {
                   return (
                     <div className="text-not-kiosko">
-                      <p>No hay kioskos disponibles, solicita uno con el
-                      administrador</p>
+                      <p>
+                        No hay kioskos disponibles, solicita uno con el
+                        administrador
+                      </p>
                     </div>
                   );
                 }
@@ -108,15 +120,26 @@ function WelcomePage() {
             </div>
             <div className="loader"></div>
             <div className="card-group">
-              {dataStore.length > 0 && dataStore.map((item: any, i: number) => (
-                <Card
-                  key={i}
-                  icon={kdsOnIcon}
-                  text={item.name_shopping}
-                  subText={`No. ${item.no_shooping}`}
-                  state={true}
-                />
-              ))}
+              {dataStore.length > 0 &&
+                dataStore.map((item: any, i: number) => (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.5,
+                      ease: [0, 0.71, 0.2, 1.01],
+                    }}
+                  >
+                    <Card
+                      key={i}
+                      icon={kdsOnIcon}
+                      text={item.name_shopping}
+                      subText={`No. ${item.no_shooping}`}
+                      state={true}
+                    />
+                  </motion.div>
+                ))}
             </div>
           </div>
         </div>
