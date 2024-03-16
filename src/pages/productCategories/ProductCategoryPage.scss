@@ -9,8 +9,8 @@
 
     .categories {
         width: 880px;
-        height: 400px;
         display: flex;
+        flex-wrap: wrap;
         margin: 99px auto 0px auto;
         padding: 0px;
         overflow-y: auto;
