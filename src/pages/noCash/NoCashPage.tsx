@@ -1,11 +1,13 @@
-import "./NoCashPage.scss";
+import { Link } from "react-router-dom";
 import mxIcon from "/src/assets/icons/mexico_flag.svg";
 import back from "/src/assets/icons/arrow_left.svg";
 import usaIcon from "/src/assets/icons/usa_flag.svg";
 import coffee from "../../assets/coffee-momo.png";
-import { Link } from "react-router-dom";
+import LayoutBlank from "../../includes/layout/LayoutBlank";
+import "./NoCashPage.scss";
 function NoCashPage() {
   return (
+    <LayoutBlank>
     <div className="no_cash_page">
       <h2 className="title">No efectivo</h2>
       <img
@@ -77,6 +79,7 @@ function NoCashPage() {
         </div>
       </div>
     </div>
+    </LayoutBlank>
   );
 }
 export default NoCashPage;

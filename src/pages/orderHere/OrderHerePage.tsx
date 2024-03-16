@@ -1,22 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import isotipo from "/src/assets/icons/isotipo.svg";
 import mxIcon from "/src/assets/icons/mexico_flag.svg";
 import usaIcon from "/src/assets/icons/usa_flag.svg";
 import LogoMomo from "../../components/Logo/LogoMomo";
 import NoCash from "../../components/NoCash/NoCash";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./OrderHerePage.scss";
-import { useEmployeeStore } from "../../store/employee.store";
-import { useShoppingStore } from "../../store/shopping.store";
-import { SocketContext } from "../../context/SocketContext";
+import LayoutBlank from "../../includes/layout/LayoutBlank";
+
 
 function OrderHerePage() {
-  const navigate = useNavigate();
-  const { socket } = useContext(SocketContext);
-  const { dataEmployee, fetchEmployeeData } = useEmployeeStore();
-  const { dataStore, fetchStoreData } = useShoppingStore();
-  const [loading, setIsLoading] = useState<Boolean>(true);
+
 
   const numberInit = 1;
   const stateInitBackground = { color1: "#EDEBDF", color2: "#D5EAFB" };
@@ -87,39 +82,8 @@ function OrderHerePage() {
     }
   };
 
-
-  useEffect(() => {
-    if (loading) {
-      const fetchDataOnMount = async () => {
-        const employeeId = localStorage.getItem("employee-id");
-        if (employeeId) {
-          fetchEmployeeData(employeeId).then(
-            async (resp: any) => {
-              await fetchStoreData(resp[0].shopping_id);
-              setIsLoading(false);
-            }
-          );
-        }
-      };
-      fetchDataOnMount();
-    }
-  }, []);
-
-  useEffect(() => {
-      socket.on("kiosko-verify-socket", (resp: any) => {
-        if (dataStore[0]?.shopping_id == resp.shopping_id) {
-          if(localStorage.getItem('kiosko-momo') == resp.kiosko_id){
-              localStorage.removeItem('kiosko-momo');
-              localStorage.removeItem('token-momo');
-              localStorage.removeItem('employee-id');
-              navigate("/");
-          }
-        }
-      });
-  }, [loading, socket]);
-
   return (
-    <>
+    <LayoutBlank>
       <motion.div
         key={`frame-1_${keyAnimation}`}
         className="order_here_page"
@@ -240,7 +204,7 @@ function OrderHerePage() {
           </div>
         </div>
       </motion.div>
-    </>
+    </LayoutBlank>
   );
 }
 export default OrderHerePage;

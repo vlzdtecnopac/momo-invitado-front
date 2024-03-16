@@ -2,9 +2,12 @@ import { motion } from "framer-motion";
 import imgRegister from "../../assets/register-img.jpg";
 import logoMomo from "../../assets/icons/logo.svg";
 import "./RegisterPage.scss";
+import LayoutBlank from "../../includes/layout/LayoutBlank";
 
 function RegisterPage() {
+
   return (
+    <LayoutBlank>
     <div className="register_page">
       <div className="left">
         <img className="image" src={imgRegister} alt="img" />
@@ -57,6 +60,7 @@ function RegisterPage() {
         </div>
       </div>
     </div>
+    </LayoutBlank>
   );
 }
 export default RegisterPage;
