@@ -106,7 +106,6 @@ function OrderHerePage() {
   }, []);
 
   useEffect(() => {
-    if (!loading) {
       socket.on("kiosko-verify-socket", (resp: any) => {
         if (dataStore[0]?.shopping_id == resp.shopping_id) {
           if(localStorage.getItem('kiosko-momo') == resp.kiosko_id){
@@ -117,7 +116,6 @@ function OrderHerePage() {
           }
         }
       });
-    }
   }, [loading, socket]);
 
   return (
