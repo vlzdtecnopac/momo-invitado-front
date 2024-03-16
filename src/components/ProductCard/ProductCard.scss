@@ -1,18 +1,15 @@
 @import "../../index.scss";
 
 .product_card {
-    width: 270px;
-    height: 350px;
-
+    width: 100%;
 
     .img {
         border-radius: 12px 12px 0 0;
-
         width: 100%;
     }
 
     .price {
-        width: 270px;
+        width: 100%;
         height: 39px;
         background: $dark-blue;
         border-radius: 4px 4px 12px 12px;

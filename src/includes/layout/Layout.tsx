@@ -1,10 +1,11 @@
 import React, { ReactNode, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
-import "./Layout.scss";
 import { SocketContext } from "../../context/SocketContext";
 import { useShoppingStore } from "../../store/shopping.store";
 import { useEmployeeStore } from "../../store/employee.store";
-import { useNavigate } from "react-router-dom";
+
+import "./Layout.scss";
 
 interface DynamicLayoutProps {
   children: ReactNode;
@@ -52,7 +53,7 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
   return (
     <>
       <Header />
-      <div className="col-12_sm-11_md-11_lg-11 layout">{props.children}</div>
+      <div className="col-12_sm-12_md-12_lg-12 p-0">{props.children}</div>
     </>
   );
 };

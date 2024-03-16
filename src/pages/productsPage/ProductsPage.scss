@@ -1,20 +1,18 @@
 @import "../../index.scss";
 
+.products_category{
+    position: fixed;
+    width: 100vw;
+    z-index: 99;
+}
+
 .products_page {
-    height: 100%;
+    padding: 207px 0px 0px 0px;
+    position: relative;
     width: 100vw;
     background-color: $light-blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 190px;
-
-    .container {
-        margin-top: 63px;
-        display: flex;
-        border-radius: 10px;
-        justify-content: center;
-        padding: 0;
+    .container-product{
+        width: 950px;
+        margin: auto;
     }
-
 }
