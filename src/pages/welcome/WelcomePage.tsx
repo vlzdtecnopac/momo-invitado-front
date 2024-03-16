@@ -50,6 +50,7 @@ function WelcomePage() {
       const consult = async () => {
         await fetchStoreData(dataEmployee[0]?.shopping_id);
         const resp = await searchKiosko(dataEmployee[0]?.shopping_id);
+        localStorage.setItem('kiosko-momo', resp.data.data.kiosko_id);
         setKioskoActive(resp.data);
         setTimeout(() => navigate("/order-here"), 4000);
       };
