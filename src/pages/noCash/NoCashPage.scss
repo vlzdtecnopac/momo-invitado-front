@@ -86,16 +86,19 @@
             height: 100%;
 
             .btn {
-
                 width: 400px;
-                height: 70px;
                 border-radius: 51px;
                 border: none;
                 color: $white ;
                 margin-top: 40px;
                 background: $orange;
+                display: block;
+                text-align: center;
+                padding: 10px 0px;
+               &:hover{
                 cursor: pointer;
-
+                background: #f1570a;
+               }
                 h2 {
                     font-size: 30px
                 }
@@ -111,6 +114,7 @@
                 border: 2px solid $cream;
                 display: flex;
                 justify-content: center;
+                align-items: center;
 
                 &:hover {
                     cursor: pointer;

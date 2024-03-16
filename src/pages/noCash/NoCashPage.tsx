@@ -59,9 +59,9 @@ function NoCashPage() {
           </button>
         </div>
         <div className="center">
-          <button className="btn">
+          <Link to="/register" className="btn">
             <h2>Ordena aquí</h2>
-          </button>
+          </Link>
         </div>
         <div className="right">
           <Link to="/order-here">
