@@ -1,21 +1,28 @@
 import logoMomo from "../../assets/icons/logo.svg";
 import momoPic from "../../assets/icons/momo-pic.svg";
+import { useNavigate } from 'react-router';
 
 import back from "/src/assets/icons/arrow_left.svg";
 import "./Header.scss";
 
 function Header() {
+  const navigate = useNavigate();
+
+  const handleBackHeader = () => {
+    navigate(-1)
+  }
+
   return (
     <header className="head">
       <div className="column_start">
-        <div className="back">
+        <button onClick={()=> handleBackHeader()} className="back">
           <img
             className="back-icon"
             src={back}
             alt="back"
           />
           <span className="text ">Regresar</span>
-        </div>
+        </button>
       </div>
       <div className="column_center">
         <img
