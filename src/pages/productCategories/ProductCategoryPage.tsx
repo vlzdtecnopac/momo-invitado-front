@@ -50,26 +50,8 @@ function ProductsPage() {
       text: "Nuestra Tienda",
       router: "",
     },
-    {
-      icon: "store-icon",
-      text: "Nuestra Tienda",
-      router: "",
-    },
-    {
-      icon: "store-icon",
-      text: "Nuestra Tienda",
-      router: "",
-    },
-    {
-      icon: "store-icon",
-      text: "Nuestra Tienda",
-      router: "",
-    },
-    {
-      icon: "store-icon",
-      text: "Nuestra Tienda",
-      router: "",
-    },
+    
+   
   ];
   return (
     <>
