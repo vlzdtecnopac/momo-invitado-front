@@ -116,11 +116,12 @@
             border-radius: 5px;
             background-color: transparent;
             color: $cream;
-            cursor: pointer;
+        
 
             &:hover {
                 /* Move hover to the top level */
                 background-color: $dark-blue;
+                cursor: pointer;
 
                 .icon {
                     /* Target icon directly */
@@ -178,6 +179,7 @@
         }
 
         .custom-btn .text {
+            width: 100%;
             margin-left: 5px;
             font-family: "Red Hat Display",
                 "serif";
