@@ -124,6 +124,7 @@ function WelcomePage() {
               {dataStore.length > 0 &&
                 dataStore.map((item: any, i: number) => (
                   <motion.div
+                    key={i}
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
@@ -133,7 +134,6 @@ function WelcomePage() {
                     }}
                   >
                     <Card
-                      key={i}
                       icon={kdsOnIcon}
                       text={item.name_shopping}
                       subText={`No. ${item.no_shooping}`}
