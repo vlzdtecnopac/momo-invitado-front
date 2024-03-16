@@ -1,0 +1,95 @@
+@import "../../index.scss";
+
+.resume_card {
+    .left-column {
+        margin-right: 27px;
+
+        .product-image {
+            width: 89px;
+            border-radius: 11px;
+            margin-bottom: 15px;
+        }
+
+        .product-quantity {
+            .plus {
+                width: 24px;
+                height: 24px;
+                border: none;
+                color: $white ;
+                background: $orange;
+                border-radius: 6px;
+                cursor: pointer;
+
+
+            }
+
+            .quantity {
+                color: $black;
+                margin: 1px 12px;
+            }
+
+            .minus {
+                width: 24px;
+                height: 24px;
+                border: none;
+                font-size: 18px;
+                color: $orange;
+                background: $white;
+                border: 1px solid $orange;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .right-column {
+
+        title {
+            width: 246px;
+            height: 24px;
+        }
+
+        .details {
+            width: 246px;
+            color: $dark-blue;
+
+            .detail {
+
+                color: $black;
+            }
+
+            .extra-price {
+                padding-left: 80px;
+                color: $black;
+
+            }
+        }
+
+        .end {
+            justify-content: end;
+
+            .subtotal {
+                font-family: "Red Hat Display";
+                font-size: 24px;
+                font-weight: 800;
+                line-height: 32px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+
+            .trash {
+                width: 28px;
+                height: 28px;
+                background-image: url("/src/assets/icons/trash.png");
+                mask-size: 100%;
+                margin-left: 30px;
+                border: none;
+                color: $orange;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
