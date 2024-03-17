@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "./ProductCategoryPage.scss";
+import { Pagination } from "swiper/modules";
 
 function ProductsPage() {
   const categoriesNav = [
@@ -50,8 +51,6 @@ function ProductsPage() {
       text: "Nuestra Tienda",
       router: "",
     },
-    
-   
   ];
   return (
     <>
@@ -59,7 +58,10 @@ function ProductsPage() {
         <div className="products_page">
           <ul className="categories grid-4_xs-1">
             {categoriesNav.map((category, index) => (
-              <li key={index} className="col options-container">
+              <li
+                key={index}
+                className="col options-container"
+              >
                 <CustomButton
                   icon={category.icon}
                   text={category.text}
@@ -71,35 +73,42 @@ function ProductsPage() {
             ))}
           </ul>
           <div className="content-slider">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={5}
-            pagination={{
-              clickable: true,
-            }}
-            breakpoints={{
-              790: {
-                slidesPerView: 1,
-                spaceBetween: 5,
-              },
-              950: {
-                slidesPerView: 1,
-                spaceBetween: 5,
-              },
-              1990: {
-                slidesPerView: 1,
-                spaceBetween: 15,
-              },
-            }}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <img className="banner" src={banner} alt="banner" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className="banner" src={banner} alt="banner" />
-            </SwiperSlide>
-          </Swiper>
+            <Swiper
+              modules={[Pagination]}
+              slidesPerView={1}
+              spaceBetween={5}
+              pagination={true}
+              breakpoints={{
+                790: {
+                  slidesPerView: 1,
+                  spaceBetween: 5,
+                },
+                950: {
+                  slidesPerView: 1,
+                  spaceBetween: 5,
+                },
+                1990: {
+                  slidesPerView: 1,
+                  spaceBetween: 15,
+                },
+              }}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <img
+                  className="banner"
+                  src={banner}
+                  alt="banner"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className="banner"
+                  src={banner}
+                  alt="banner"
+                />
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </Layout>

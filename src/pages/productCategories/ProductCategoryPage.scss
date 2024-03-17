@@ -20,14 +20,18 @@
             justify-content: center;
         }
     }
-    .content-slider{
-        width: 890px;
-        margin: 10px auto;
+
+    .content-slider {
+        width: 100%;
+        margin: 0;
+        position: fixed;
+        bottom: 0;
+
         .banner {
             width: 100%;
             display: flex;
             justify-content: flex-start;
         }
     }
-   
+
 }
