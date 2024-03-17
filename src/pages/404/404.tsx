@@ -12,11 +12,6 @@ function NotFound() {
             alt="logo"
           />
           <h2 className="fail">¡Lo sentimos!</h2>
-          <img
-            src={momo}
-            alt="alert"
-            className="wrong"
-          />
           <h2 className="notfound-text">
             <span className="notfound-space">Error 404</span> <br />
             <span className="notfound-space">Página no encontrada</span>
