@@ -10,11 +10,13 @@ import "./FoodDetailPage.scss";
 function FoodDetailPage() {
   return (
     <Layout>
-      <CategoryNav />
+      <div className="products_category">
+         <CategoryNav />
+      </div>
       <div className="page-container">
         <div className="food_detail">
           <div className="grid-2">
-            <div className="col-3 img-col">
+            <div className="col-3">
               <ProductCardDetail
                 img={product}
                 name="Croissant de

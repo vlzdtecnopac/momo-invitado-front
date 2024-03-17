@@ -5,16 +5,18 @@ import Layout from "../../includes/layout/Layout";
 import temperature from "../../assets/icons/temperature.svg";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Slider from "../../components/Slider/Slider";
-import "./FoodDetailPage.scss";
+
 
 function FoodDetailPage() {
   return (
     <Layout>
-      <CategoryNav />
+      <div className="products_category">
+        <CategoryNav />
+      </div>
       <div className="page-container">
         <div className="food_detail">
           <div className="grid-2">
-            <div className="col-3 img-col">
+            <div className="col-3">
               <ProductCardDetail
                 img={product}
                 name="Croissant de
@@ -27,11 +29,7 @@ function FoodDetailPage() {
               <div className="details">
                 <div className="size">
                   <div className=" size-container container">
-                    <img
-                      className="icon"
-                      src={temperature}
-                      alt="size"
-                    />
+                    <img className="icon" src={temperature} alt="size" />
                     <h3 className="text">Temperatura</h3>
                   </div>
 
@@ -42,11 +40,7 @@ function FoodDetailPage() {
                 </div>
                 <hr className="separator" />
                 <div className="extra">
-                  <img
-                    className="icon"
-                    src={sauce}
-                    alt="extra"
-                  />
+                  <img className="icon" src={sauce} alt="extra" />
                   <div className="container">
                     <div className="block">
                       <h3 className="text">Salsa macha</h3>
@@ -57,19 +51,11 @@ function FoodDetailPage() {
                   <div className="extra-options">
                     <span className="extra">
                       10$
-                      <input
-                        className="checkbox"
-                        name="10"
-                        type="checkbox"
-                      />
+                      <input className="checkbox" name="10" type="checkbox" />
                     </span>
                     <span className="extra">
                       20$
-                      <input
-                        name="20"
-                        className="checkbox"
-                        type="checkbox"
-                      />
+                      <input name="20" className="checkbox" type="checkbox" />
                     </span>
                   </div>
                 </div>

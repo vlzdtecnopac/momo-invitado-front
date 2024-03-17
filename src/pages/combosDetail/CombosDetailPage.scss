@@ -13,7 +13,6 @@
 
         .details {
             width: 731px;
-            height: 621px;
             background: $dark-blue;
             border-radius: 16px;
             overflow-y: auto;
@@ -69,7 +68,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 50px;
 
                 .add-cart-btn {
                     background-color: $orange;

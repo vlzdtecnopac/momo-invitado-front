@@ -1,7 +1,16 @@
 @import "../../index.scss";
-
+.products_category{
+    position: fixed;
+    width: 100%;
+}
 .page-container {
+    padding-top: 180px;
     overflow: hidden;
+
+    .container-options-product{
+        height: 500px;
+        overflow-y: auto;
+    }
 
     .drink_detail {
         width: 100%;
@@ -13,7 +22,6 @@
 
         .details {
             width: 731px;
-            height: 621px;
             background: $dark-blue;
             border-radius: 16px;
             overflow-y: auto;
@@ -69,7 +77,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: 50px;
+                margin: 10px 0px;
 
                 .add-cart-btn {
                     background-color: $orange;
@@ -91,7 +99,7 @@
 
 .separator {
     width: 85%;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 

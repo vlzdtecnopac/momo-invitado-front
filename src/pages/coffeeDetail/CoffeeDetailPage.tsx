@@ -10,11 +10,13 @@ import "./CoffeeDetailPage.scss";
 function CoffeeDetailPage() {
   return (
     <Layout>
-      <CategoryNav />
+      <div className="products_category">
+        <CategoryNav />
+      </div>
       <div className="page-container">
         <div className="coffee_detail">
           <div className="grid-2">
-            <div className="col-3 img-col">
+            <div className="col-3">
               <ProductCardDetail
                 img={product}
                 name="Café MOMO"
@@ -23,59 +25,55 @@ function CoffeeDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
-                <div className="type">
-                  <div className=" type-container container">
-                    <img
-                      className="icon"
-                      src={beans}
-                      alt="type"
-                    />
-                    <h3 className="text">Tipo de café</h3>
-                  </div>
+                <div className="container-options">
+                  <div className="type">
+                    <div className=" type-container container">
+                      <img className="icon" src={beans} alt="type" />
+                      <h3 className="text">Tipo de café</h3>
+                    </div>
 
-                  <div className="options">
-                    <button className="option">Molido</button>
-                    <button className="option">En grano</button>
+                    <div className="options">
+                      <button className="option">Molido</button>
+                      <button className="option">En grano</button>
+                    </div>
+                  </div>
+                  <hr className="separator" />
+                  <div className="size">
+                    <div className=" size-container container">
+                      <img className="icon" src={coffeeBag} alt="size" />
+                      <h3 className="text">Tamaño</h3>
+                    </div>
+                    <div className="options">
+                      <button className="option">
+                        Chico <br /> <span className="extra-price">250gr</span>
+                      </button>
+                      <button className="option">
+                        Mediano <br />{" "}
+                        <span className="extra-price">500gr</span>
+                      </button>
+                      <button className="option">
+                        Grande <br />
+                        <span className="extra-price">1Kg</span>
+                      </button>
+                    </div>
+                  </div>
+                  <hr className="separator" />
+                  <div className="complement">
+                    <h3 className="text complement_title">
+                      Acompaña tu compra
+                    </h3>
+                    <div className="cards">
+                      <Slider />
+                    </div>
                   </div>
                 </div>
-                <hr className="separator" />
-
-                <div className="size">
-                  <div className=" size-container container">
-                    <img
-                      className="icon"
-                      src={coffeeBag}
-                      alt="size"
-                    />
-                    <h3 className="text">Tamaño</h3>
-                  </div>
-                  <div className="options">
-                    <button className="option">
-                      Chico <br /> <span className="extra-price">250gr</span>
-                    </button>
-                    <button className="option">
-                      Mediano <br /> <span className="extra-price">500gr</span>
-                    </button>
-                    <button className="option">
-                      Grande <br />
-                      <span className="extra-price">1Kg</span>
+                <div className="container-payment">
+                  <hr className="separator" />
+                  <div className="btn-container">
+                    <button className="add-cart-btn">
+                      Agregar al carrito $47
                     </button>
                   </div>
-                </div>
-                <hr className="separator" />
-                <div className="complement">
-                  <h3 className="text complement_title">Acompaña tu compra</h3>
-                  <div className="cards">
-                    <Slider />
-                  </div>
-                </div>
-
-                <hr className="separator" />
-
-                <div className="btn-container">
-                  <button className="add-cart-btn">
-                    Agregar al carrito $47
-                  </button>
                 </div>
               </div>
             </div>

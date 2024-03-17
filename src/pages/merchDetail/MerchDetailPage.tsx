@@ -14,7 +14,7 @@ function MerchDetailPage() {
       <div className="page-container">
         <div className="merch_detail">
           <div className="grid-2">
-            <div className="col-3 img-col">
+            <div className="col-3">
               <ProductCardDetail
                 img={product}
                 name="Croissant de

@@ -13,7 +13,7 @@ function OtherDrinksDetailPage() {
       <div className="page-container">
         <div className="other_drinks_detail">
           <div className="grid-2">
-            <div className="col-3 img-col">
+            <div className="col-3">
               <ProductCardDetail
                 img={product}
                 name="Botella ecopack 100% reciclable"
