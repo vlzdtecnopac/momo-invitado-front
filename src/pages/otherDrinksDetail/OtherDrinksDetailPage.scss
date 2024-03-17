@@ -1,14 +1,19 @@
 @import "../../index.scss";
+.category-product-drink{
+    position: fixed;
+    width: 100%;
+    z-index: 99
+}
 
 .page-container {
 
     .other_drinks_detail {
         width: 100%;
-        height: 683px;
+        height: 100dvh;
         background-color: $light-blue;
         display: flex;
         justify-content: space-around;
-        align-items: end;
+        padding-top: 210px;
 
         .details {
             width: 731px;
@@ -66,6 +71,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                padding: 10px 0px;
          
 
                 .add-cart-btn {

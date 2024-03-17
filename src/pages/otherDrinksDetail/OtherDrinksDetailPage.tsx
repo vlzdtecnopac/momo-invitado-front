@@ -9,7 +9,9 @@ import "./OtherDrinksDetailPage.scss";
 function OtherDrinksDetailPage() {
   return (
     <Layout>
+      <div className="category-product-drink">
       <CategoryNav />
+      </div>
       <div className="page-container">
         <div className="other_drinks_detail">
           <div className="grid-2">
