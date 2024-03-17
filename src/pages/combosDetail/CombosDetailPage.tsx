@@ -15,7 +15,9 @@ import "./CombosDetailPage.scss";
 function CombosDetailPage() {
   return (
     <Layout>
+      <div className="page-category">
       <CategoryNav />
+      </div>
       <div className="page-container">
         <div className="combos_detail">
           <div className="grid-2">
@@ -28,9 +30,9 @@ function CombosDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
+                <div className="content-detail-page">
                 <h2 className="step">Paso 1: Configura tu bebida </h2>
                 <hr className="separator" />
-
                 <div className="size">
                   <div className=" size-container container">
                     <img
@@ -211,6 +213,7 @@ function CombosDetailPage() {
                       />
                     </span>
                   </div>
+                </div>
                 </div>
                 <div className="btn-container">
                   <button className="add-cart-btn">
