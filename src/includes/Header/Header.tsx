@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router';
 
 import back from "/src/assets/icons/arrow_left.svg";
 import "./Header.scss";
+import { useLanguage } from "../../context/Langi18nContext";
 
 function Header() {
+  const { translate, setLanguage, language } = useLanguage();
   const navigate = useNavigate();
 
   const handleBackHeader = () => {
@@ -21,7 +23,7 @@ function Header() {
             src={back}
             alt="back"
           />
-          <span className="text ">Regresar</span>
+          <span className="text "> {translate("backText")}</span>
         </button>
       </div>
       <div className="column_center">
@@ -33,7 +35,7 @@ function Header() {
       </div>
       <div className="column_end">
         <div className="welcome-text">
-          <h3 className="Welcome">Bienvenido</h3>
+          <h3 className="Welcome">{translate("wellcome")}</h3>
           <h4 className="user-name">Invitado</h4>
         </div>
         <img

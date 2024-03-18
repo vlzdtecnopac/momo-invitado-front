@@ -5,7 +5,10 @@ import usaIcon from "/src/assets/icons/usa_flag.svg";
 import coffee from "../../assets/coffee-momo.png";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import "./NoCashPage.scss";
+import { useLanguage } from "../../context/Langi18nContext";
 function NoCashPage() {
+  const { translate, setLanguage, language } = useLanguage();
+
   return (
     <LayoutBlank>
     <div className="no_cash_page">
@@ -62,18 +65,18 @@ function NoCashPage() {
         </div>
         <div className="center">
           <Link to="/register" className="btn">
-            <h2>Ordena aquí</h2>
+            <h2>{translate("orderHere")}</h2>
           </Link>
         </div>
         <div className="right">
-          <Link to="/order-here">
+          <Link className="text-align-back" to="/order-here">
             <div className="back">
               <img
                 className="back-icon"
                 src={back}
                 alt="back"
               />
-              <span className="text">Regresar</span>
+              <span className="text">{translate("backText")}</span>
             </div>
           </Link>
         </div>
