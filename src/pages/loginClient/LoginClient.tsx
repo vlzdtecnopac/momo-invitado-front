@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 import imgRegister from "../../assets/register-img.jpg";
 import logoMomo from "../../assets/icons/logo.svg";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
+import back from "../../assets/icons/arrow_left.svg";
 import { useLanguage } from "../../context/Langi18nContext";
-import "./RegisterPage.scss";
+import "./LoginClient.scss";
 import { Link } from "react-router-dom";
 
-function RegisterPage() {
+function LoginClient() {
   const { translate } = useLanguage();
 
   return (
@@ -44,30 +45,35 @@ function RegisterPage() {
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
               >
-                <h2 className="h2">{`!${translate("welcome")}¡`}</h2>
-                <p className="parrafo-subtitulo">{translate("registerSub")}</p>
+                <h2 className="h2">Iniciar sesión</h2>
+                <p className="parrafo-subtitulo">
+                  Selecciona una opción de ingreso
+                </p>
               </motion.div>
               <div className="register-options">
-                <Link to="../login-client">
-                  <button className="custom-btn registered">
-                    <span className="icon"></span>
-                    <span className="text">
-                      {translate("customerRegistered")}
-                    </span>
-                  </button>
-                </Link>
-                <Link
-                  to="/create-account"
-                  className="custom-btn create"
-                >
+                <button className="custom-btn phone">
                   <span className="icon"></span>
-                  <span className="text">{translate("createAccount")}</span>
-                </Link>
-                <button className="custom-btn no-register">
+                  <span className="text">Telefono</span>
+                </button>
+
+                <button className="custom-btn mail">
                   <span className="icon"></span>
-                  <span className="text">{translate("oderAccount")}</span>
+                  <span className="text">Correo Electrónico</span>
                 </button>
               </div>
+              <Link
+                className="text-align-back"
+                to="/register"
+              >
+                <div className="back">
+                  <img
+                    className="back-icon"
+                    src={back}
+                    alt="back"
+                  />
+                  <span className="text">Atras</span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -75,4 +81,4 @@ function RegisterPage() {
     </LayoutBlank>
   );
 }
-export default RegisterPage;
+export default LoginClient;
