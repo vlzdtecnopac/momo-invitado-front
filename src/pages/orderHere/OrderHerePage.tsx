@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+
 import isotipo from "/src/assets/icons/isotipo.svg";
 import mxIcon from "/src/assets/icons/mexico_flag.svg";
 import usaIcon from "/src/assets/icons/usa_flag.svg";
 import LogoMomo from "../../components/Logo/LogoMomo";
 import NoCash from "../../components/NoCash/NoCash";
-import { Link, useNavigate } from "react-router-dom";
-import "./OrderHerePage.scss";
+
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import { useLanguage } from "../../context/Langi18nContext";
+import "./OrderHerePage.scss";
 
 function OrderHerePage() {
   const navigate = useNavigate();

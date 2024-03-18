@@ -43,14 +43,18 @@ function NoCashPage() {
       </div>
       <div className="btns">
         <div className="left">
-          <button className="lang">
+          <button 
+              onClick={() => setLanguage("es")}
+          className="lang">
             <img
               src={mxIcon}
               className="es-icon"
             ></img>
             <span className="es">Español</span>
           </button>
-          <button className="lang">
+          <button 
+              onClick={() => setLanguage("en")}
+          className="lang">
             <img
               src={usaIcon}
               className="en-icon"
