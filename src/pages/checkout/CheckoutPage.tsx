@@ -120,6 +120,7 @@ function CheckoutPage() {
                 name="cupon"
                 className="cupon-code"
               />
+              <i className="cupon-icon"></i>
             </div>
             <button className="add-cupon-btn">Agregar</button>
           </div>

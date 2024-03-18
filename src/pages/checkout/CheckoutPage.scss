@@ -280,14 +280,30 @@
         .cupon {
             display: inline-flex;
             align-items: center;
+
+            .form-group{
+                position: relative;
+                .cupon-icon{
+                    background-image: url(../../assets/icons/cupon_icon.svg);
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    position: absolute;
+                    top: 4px;
+                }
+            }
             .cupon-code {
                 width: 197px;
                 height: 37px;
                 border-radius: 5px;
                 background: transparent;
                 border: 1px solid $cream;
-                padding: 11px 16px 11px 16px;
+                padding: 11px 16px 11px 34px;
                 margin: 0px 5px 0px 0px;
+                color: white;
+                &:placeholder{
+                    color: #fff
+                }
             }
         }
 
