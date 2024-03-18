@@ -22,11 +22,13 @@
     }
 
     .content-slider {
-        width: 100%;
-        margin: 0;
+        width: 890px;
+        margin: auto;
+        bottom: 10px;
         position: fixed;
-        bottom: 0;
-
+        left: 0px;
+        right: 0px;
+    
         .banner {
             width: 100%;
             display: flex;
