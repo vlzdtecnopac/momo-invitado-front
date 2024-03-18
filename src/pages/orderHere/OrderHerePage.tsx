@@ -5,13 +5,15 @@ import mxIcon from "/src/assets/icons/mexico_flag.svg";
 import usaIcon from "/src/assets/icons/usa_flag.svg";
 import LogoMomo from "../../components/Logo/LogoMomo";
 import NoCash from "../../components/NoCash/NoCash";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./OrderHerePage.scss";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
+import { useLanguage } from "../../context/Langi18nContext";
 
 
 function OrderHerePage() {
-
+  const navigate =  useNavigate();
+  const { translate, setLanguage } = useLanguage();
 
   const numberInit = 1;
   const stateInitBackground = { color1: "#EDEBDF", color2: "#D5EAFB" };
@@ -82,6 +84,14 @@ function OrderHerePage() {
     }
   };
 
+  const  HandlePageInit = () => {
+    navigate("/categories");
+  }
+
+  const HandleNotCash = () => {
+    navigate("/no-cash")
+  }
+
   return (
     <LayoutBlank>
       <motion.div
@@ -121,7 +131,6 @@ function OrderHerePage() {
           </motion.div>
         </div>
         <div className="btn-container">
-          <Link to="/categories">
             <motion.button
               key={`frame-2_${keyAnimation}`}
               initial={{ opacity: 0 }}
@@ -135,10 +144,10 @@ function OrderHerePage() {
                 repeat: 0,
               }}
               className="btn"
+              onClick={()=> HandlePageInit()}
             >
-              <h2>Ordena aquí</h2>
+              <h2>{translate('orderHere')}</h2>
             </motion.button>
-          </Link>
         </div>
         <div className="btns">
           <div className="right">
@@ -150,12 +159,13 @@ function OrderHerePage() {
                 ease: [0, 0.71, 0.2, 1.01],
                 repeat: 0,
               }}
+              onClick={() => setLanguage('es')}
               className="lang"
             >
               <img src={mxIcon} className="es-icon"></img>
-              <p style={{ color: colorButtonActive.text }} className="es">
+              <span style={{ color: colorButtonActive.text }} className="es">
                 Español
-              </p>
+              </span>
             </motion.button>
             <motion.button
               key={`frame-4_${keyAnimation}`}
@@ -168,6 +178,7 @@ function OrderHerePage() {
                 ease: [0, 0.71, 0.2, 1.01],
                 repeat: 0,
               }}
+              onClick={() => setLanguage('en')}
               className="lang"
             >
               <img src={usaIcon} className="en-icon"></img>
@@ -177,7 +188,6 @@ function OrderHerePage() {
             </motion.button>
           </div>
           <div className="left">
-            <Link to="/no-cash">
               <motion.div
                 key={`frame-5_${keyAnimation}`}
                 style={{
@@ -188,6 +198,7 @@ function OrderHerePage() {
                   ease: [0, 0.71, 0.2, 1.01],
                   repeat: 0,
                 }}
+                onClick={() => HandleNotCash()}
                 className="no-cash"
               >
                 <NoCash color={colorState.color1} />
@@ -196,11 +207,9 @@ function OrderHerePage() {
                     color: colorButtonNoCash.text,
                   }}
                   className="text"
-                >
-                  No aceptamos efectivo. <br /> Descubre por qué
+                >{translate('notAcceptEffecty')}
                 </span>
               </motion.div>
-            </Link>
           </div>
         </div>
       </motion.div>
