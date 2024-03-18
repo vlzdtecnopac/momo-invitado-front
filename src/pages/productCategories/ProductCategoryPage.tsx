@@ -11,8 +11,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { tokenHeader } from "../../helpers/token-header.helper";
 import { LoaderPage } from "../../loader/Loader";
+import { useNavigate } from "react-router-dom";
 
 function ProductsPage() {
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [loader, setLoader] =  useState<Boolean>(true);
 
@@ -40,7 +42,7 @@ function ProductsPage() {
                   icon={category.class}
                   text={category.name_category}
                   onClick={function (): void {
-                    throw new Error("Function not implemented.");
+                    navigate(category.sub_category)
                   }}
                 />
               </li>
