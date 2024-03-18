@@ -2,8 +2,11 @@
 
 .checkout_container {
     background-color: $light-blue;
+    // padding: 21px 30px;
+    gap: 20px;
 
     .tip {
+        width: 610px;
         background-color: $dark-blue;
         width: 610px;
         border-radius: 12px;
@@ -11,8 +14,7 @@
         padding: 35px;
 
         .tip-text {
-            margin: auto auto;
-            padding-left: 20px;
+            padding: 60px;
 
             .tip-icon {
                 display: flex;
@@ -22,10 +24,7 @@
                 -webkit-mask-image: url(/src/assets/icons/dollar-circle.svg);
                 mask-image: url(/src/assets/icons/dollar-circle.svg);
                 mask-size: 100%;
-
             }
-
-
         }
 
 
@@ -69,4 +68,209 @@
 
 
     }
+
+    .pay-info {
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        align-items: center;
+        margin: 0 auto;
+
+        .form-group {
+            width: 100%;
+
+            .client-name {
+                width: 100%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                height: 36px;
+
+            }
+
+
+
+
+            .icon-user {
+                width: 16px;
+                height: 16px;
+                -webkit-mask-image: url(/src/assets/icons/user.svg);
+                mask-image: url(/src/assets/icons/user.svg);
+                background-color: $black;
+            }
+        }
+
+
+        .text {
+            font-family: "Red Hat Display";
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+
+
+        }
+
+        .pay-method {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+
+            .card-type {
+                display: flex;
+                gap: 25px;
+
+
+                .type {
+                    width: 152px;
+                    height: 37px;
+                    border: none;
+                    background: $light-blue;
+                    border-radius: 8px;
+                    font-family: "Stacion", serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $dark-blue;
+                    align-items: center;
+
+                    &:hover {
+                        cursor: pointer;
+                        background: $orange;
+                        color: $cream;
+                    }
+                }
+            }
+
+            .card,
+            .cash {
+                height: 70px;
+                border: none;
+                background: $light-blue;
+                border-radius: 8px;
+                font-family: "Stacion", serif;
+                font-size: 14px;
+                font-weight: 400;
+                color: $dark-blue;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                &:hover {
+                    cursor: pointer;
+                    background: $orange;
+                    color: $cream;
+
+                    .card-icon,
+                    .cash-icon {
+                        background: $cream;
+                    }
+
+                }
+            }
+
+            .card {
+
+                .card-icon {
+                    width: 24px;
+                    height: 24px;
+                    -webkit-mask-image: url(/src/assets/icons/card.svg);
+                    mask-image: url(/src/assets/icons/card.svg);
+                    background-color: $dark-blue;
+                    mask-size: 100%;
+                    margin-top: 10px;
+
+
+                }
+            }
+
+            .cash {
+
+                .cash-icon {
+                    width: 24px;
+                    height: 24px;
+                    -webkit-mask-image: url(/src/assets/icons/wallet.svg);
+                    mask-image: url(/src/assets/icons/wallet.svg);
+                    background-color: $dark-blue;
+                    mask-size: 100%;
+                    margin-top: 10px;
+
+                }
+            }
+        }
+
+        .cancel {
+            width: 251px;
+            height: 47px;
+            border: 2px solid $cream;
+            background: transparent;
+            border-radius: 14px;
+            font-family: "Red Hat Display";
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            color: $cream;
+            margin-top: 52px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .products {
+        width: 374px;
+        background-color: $dark-blue;
+        border-radius: 12px;
+        color: $cream;
+        padding: 20px;
+
+        .product {
+
+            padding-bottom: 10px;
+        }
+    }
+
+
+    .checkout {
+        min-width: 374px;
+        background-color: $dark-blue;
+        border-radius: 12px;
+        color: $cream;
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        padding-top: 20px;
+
+        .cupon {
+            .cupon-code {
+                width: 197px;
+                height: 37px;
+                border-radius: 5px;
+                background: transparent;
+                border: 1px solid $cream;
+                padding: 11px 16px 11px 16px;
+            }
+        }
+
+        .add-cupon-btn {
+            width: 111px;
+            height: 32px;
+            border-radius: 8px;
+            border: none;
+            font-family: "Red Hat Display", serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: $dark-blue;
+            background: $light-blue;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .total {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
