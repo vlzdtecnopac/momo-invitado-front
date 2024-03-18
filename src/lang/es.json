@@ -2,5 +2,16 @@
     "notAcceptEffecty": "No aceptamos efectivo. Descubre por qué",
     "orderHere": "Ordena aqui",
     "backText": "Regresaer",
-    "wellcome": "Bienvenido"
+    "wellcome": "Bienvenido",
+    "registerSub": "Regístrate y descubre un mundo de beneficios.",
+    "customerRegistered": "Cliente Registrado",
+    "createAccount": "Crear Cuenta",
+    "oderAccount": "Ordena Sin Registrarte",
+    "notEffective": "No Efectivo",
+    "subNotEffectiveHeader": "En MOMO Coffee, estamos comprometidos con la mejora continua de nuestros servicios y la seguridad de nuestros clientes y empleados. Es por ello que al no manejar efectivo:",
+    "subNotEffectiveFooter": "Nos comprometemos a proporcionar una experiencia de compra eficiente, segura y moderna. Para consultas, contáctanos sin dudarlo.",
+    "subListOne": "Mejoramos condiciones de higiene y evitamos contaminación de productos.",
+    "subListTwo": "Agilizamos nuestras operaciones para que recibas tu café en pocos minutos.",
+    "subListThree": "Reducimos riesgos asociados con robos a local y a nuestros clientes."
+
 }

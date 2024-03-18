@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import imgRegister from "../../assets/register-img.jpg";
 import logoMomo from "../../assets/icons/logo.svg";
-import "./RegisterPage.scss";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
+import { useLanguage } from "../../context/Langi18nContext";
+import "./RegisterPage.scss";
 
 function RegisterPage() {
+  const { translate, setLanguage, language } = useLanguage();
 
   return (
     <LayoutBlank>
@@ -37,23 +39,24 @@ function RegisterPage() {
                 ease: [0, 0.71, 0.2, 1.01],
               }}
             >
-              <h2 className="h2">¡Bienvenid@!</h2>
+              <h2 className="h2">{`!${translate("wellcome")}¡`}</h2>
               <p className="parrafo-subtitulo">
-                Regístrate y descubre un mundo <br /> de beneficios.
+                {translate("wellcome")}
+                {translate("registerSub")}
               </p>
             </motion.div>
             <div className="register-options">
               <button className="custom-btn registered">
                 <span className="icon"></span>
-                <span className="text">Cliente registrado</span>
+                <span className="text">{translate("customerRegistered")}</span>
               </button>
               <button className="custom-btn create">
                 <span className="icon"></span>
-                <span className="text">Crear cuenta</span>
+                <span className="text">{translate("createAccount")}</span>
               </button>
               <button className="custom-btn no-register">
                 <span className="icon"></span>
-                <span className="text">Ordena sin registrarte</span>
+                <span className="text">{translate("oderAccount")}</span>
               </button>
             </div>
           </div>

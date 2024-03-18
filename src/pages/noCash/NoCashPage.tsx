@@ -12,7 +12,7 @@ function NoCashPage() {
   return (
     <LayoutBlank>
     <div className="no_cash_page">
-      <h2 className="title">No efectivo</h2>
+      <h2 className="title">{translate("notEffective")}</h2>
       <img
         className="img"
         src={coffee}
@@ -20,30 +20,25 @@ function NoCashPage() {
       />
       <div className="text">
         <p>
-          En MOMO Coffee, estamos comprometidos con la mejora continua de
-          nuestros servicios y la seguridad de nuestros clientes y empleados. Es
-          por ello que al no manejar efectivo:
+          {translate("subNotEffectiveHeader")}
         </p>
         <br />
         <ul>
           <li>
-            Mejoramos condiciones de higiene y evitamos contaminación de
-            productos
+            {translate("subListOne")}
           </li>
           <br />
           <li>
-            Agilizamos nuestras operaciones para que recibas tu café en pocos
-            minutos
+          {translate("subListTwo")}
           </li>
           <br />
           <li>
-            Reducimos riesgos asociados con robos a local y a nuestros clientes
+          {translate("subListThree")}
           </li>
         </ul>
         <br />
         <p>
-          Nos comprometemos a proporcionar una experiencia de compra eficiente,
-          segura y moderna. Para consultas, contáctanos sin dudarlo
+        {translate("subNotEffectiveFooter")}
         </p>
       </div>
       <div className="btns">
