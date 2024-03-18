@@ -2,7 +2,7 @@
     "notAcceptEffecty": "We do not accept cash. Find out why",
     "orderHere": "Order here",
     "backText": "Back",
-    "wellcome": "Wellcome",
+    "welcome": "Welcome",
     "registerSub": "Sign up and discover a world of benefits.",
     "customerRegistered": "Customer Registered",
     "createAccount": "Create Account",
@@ -12,5 +12,10 @@
     "subNotEffectiveFooter": "We are committed to providing an efficient, secure and modern shopping experience. For inquiries, please contact us without hesitation.",
     "subListOne": "We improve hygiene conditions and avoid product contamination.",
     "subListTwo": "We speed up our operations so that you receive your coffee in just a few minutes.",
-    "subListThree": "We reduce the risks associated with theft of premises and our customers."
+    "subListThree": "We reduce the risks associated with theft of premises and our customers.",
+    "hot": "Hot",
+    "cold": "Cold",
+    "sweet": "Sweet",
+    "salty": "Salty",
+    "bulkCoffee": "Bulk coffee"
 }

@@ -128,27 +128,3 @@ function CheckoutPage() {
 }
 
 export default CheckoutPage;
-
-//         <button>Agregar cupón</button>
-//         <div className="flex justify-between mb-2">
-//           <span>Subtotal (2 productos)</span>
-//           <span>$50</span>
-//         </div>
-//         <div className="flex justify-between mb-2">
-//           <span>Propina</span>
-//           <span>$50</span>
-//         </div>
-//         <div className="flex justify-between mb-2">
-//           <span>Cupón</span>
-//           <span>$0</span>
-//         </div>
-//         <div className="border-b border-dashed border-white mb-4"></div>
-//         <div className="flex justify-between mb-4">
-//           <span>Total</span>
-//           <span>$0.00</span>
-//         </div>
-//         <button>Pagar</button>
-//       </div>
-//     </div>
-//   </div>
-// </div>;
