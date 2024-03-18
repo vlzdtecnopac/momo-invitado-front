@@ -129,17 +129,29 @@ function CheckoutPage() {
             <button className="add-cupon-btn">Agregar</button>
           </div>
           <div></div>
-          <div className="total grid 2">
-            <div className="col-8">
-              <h3>Subtotal (4 productos)</h3>
-              <h3>Propina</h3>
-              <h3>Cupón (MOMO Coffee)</h3>
-            </div>
-            <div className="col-12">
-              <span>$ 50</span>
-              <span>$ 50</span>
-              <span>$ -20</span>
-            </div>
+          <div className="total">
+            <table>
+              <tr>
+                <td>Subtotal  (4 productos)</td>
+                <td>$ 50</td>
+              </tr>
+              <tr>
+                <td>Propina</td>
+                <td>$ 50</td>
+              </tr>
+              <tr>
+                <td>Cupón (MOMO Coffee)</td>
+                <td>$ 50</td>
+              </tr>
+            </table>
+            <hr />
+            <table>
+            <tr>
+                <td>Total</td>
+                <td>$ 50</td>
+              </tr>
+            </table>
+            <button>Pagar</button>
           </div>
         </section>
       </div>
