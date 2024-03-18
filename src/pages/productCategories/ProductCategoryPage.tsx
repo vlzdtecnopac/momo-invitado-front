@@ -34,7 +34,7 @@ function ProductsPage() {
     <>
      {loader? <LoaderPage/> : ""}
       <Layout>
-        <div className="products_page">
+        <div className="products_page_category">
           <ul className="categories grid-4_xs-1">
             {categories.map((category: any, index) => (
               <li key={index} className="col options-container">
