@@ -2,19 +2,24 @@
 
 .checkout_container {
     background-color: $light-blue;
-    // padding: 21px 30px;
-    gap: 20px;
+    img{
+        width: 100%;
+    }
 
     .tip {
-        width: 610px;
         background-color: $dark-blue;
-        width: 610px;
         border-radius: 12px;
         color: $cream;
-        padding: 35px;
+        padding: 20px;
+        max-height: 660px;
+        overflow-y: auto;
+
+        h2{
+            font-size: 22px;
+        }
 
         .tip-text {
-            padding: 60px;
+            padding: 20px 0px;
 
             .tip-icon {
                 display: flex;
@@ -27,7 +32,14 @@
             }
         }
 
-
+        .tip-subtext{
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            font-family: "Red Hat Display";
+            gap: 10px;
+            margin: 80px 0px 0px 0px;
+        }
 
         .tip-options {
             display: flex;
@@ -49,11 +61,26 @@
                 font-weight: 700;
                 text-align: left;
                 color: $dark-blue;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
 
                 &:hover {
                     cursor: pointer;
                 }
 
+                .dolar-icon{
+                    background-image: url("../../assets/icons/dollar-circle-blue.svg");
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+                    background-size: contain;
+                    margin-top: 28px;
+                }
+
+                .middle {
+                    width: 140px;
+                }
 
                 .percentange {
                     font-family: "Red Hat Display";
@@ -78,24 +105,30 @@
 
         .form-group {
             width: 100%;
+            position: relative;
 
             .client-name {
                 width: 100%;
                 margin-top: 20px;
                 margin-bottom: 20px;
                 height: 36px;
-
+                padding: 20px;
+                padding-left: 30px;
+                font-size: 18px;
+                
             }
 
-
-
-
             .icon-user {
-                width: 16px;
-                height: 16px;
+                width: 22px;
+                height: 22px;
+                z-index: 9999;
+                top: 30px;
+                left: 5px;
+                mask-size: contain;
                 -webkit-mask-image: url(/src/assets/icons/user.svg);
                 mask-image: url(/src/assets/icons/user.svg);
                 background-color: $black;
+                position: absolute;
             }
         }
 
@@ -217,30 +250,36 @@
     }
 
     .products {
-        width: 374px;
         background-color: $dark-blue;
         border-radius: 12px;
         color: $cream;
-        padding: 20px;
+        padding: 10px 20px;
+        max-height: 660px;
+        overflow-y: auto;
 
         .product {
-
-            padding-bottom: 10px;
+            background: $cream;
+            margin: 10px auto;
+            width: 100%;
+            border-radius: 12px;
+            padding-right: 18px;
         }
     }
 
 
     .checkout {
-        min-width: 374px;
         background-color: $dark-blue;
         border-radius: 12px;
         color: $cream;
-        display: flex;
-        justify-content: space-around;
-        align-items: start;
         padding-top: 20px;
-
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px 10px;
         .cupon {
+            display: inline-flex;
+            align-items: center;
             .cupon-code {
                 width: 197px;
                 height: 37px;
@@ -248,6 +287,7 @@
                 background: transparent;
                 border: 1px solid $cream;
                 padding: 11px 16px 11px 16px;
+                margin: 0px 5px 0px 0px;
             }
         }
 

@@ -1,17 +1,14 @@
 @import "../../index.scss";
 
 .checkout_card {
-    background: $cream;
-    width: 334px;
-    height: 193px;
-    border-radius: 12px;
-    padding-right: 18px;
-
+    padding: 5px;
     .left-column {
+        text-align: center;
         .product-image {
             padding-top: 10px;
             width: 89px;
             border-radius: 11px;
+            object-fit: contain;
         }
 
         .product-quantity {
@@ -31,20 +28,22 @@
 
         .title {
             padding-top: 10px;
-
             width: 218px;
             height: 48px;
             color: $black !important;
         }
 
         .details {
+            width: 100%;
+            display: block;
             padding-top: 10px;
-            width: 218px;
-            height: 30px;
             color: $dark-blue;
+            font-family: "Red Hat Display", serif;
+            font-size: 14px;
+            padding: 20px 0px;
+            list-style: none;
 
             .detail {
-
                 width: 100%;
                 color: $black;
             }
@@ -59,17 +58,13 @@
 
         .end {
             justify-content: end;
+            display: flex;
 
             .subtotal {
                 font-family: "Red Hat Display";
                 font-size: 24px;
                 font-weight: 800;
-                line-height: 32px;
-                letter-spacing: 0em;
-                text-align: left;
                 color: black;
-                margin-top: 10px;
-                padding-top: 60px;
             }
         }
     }

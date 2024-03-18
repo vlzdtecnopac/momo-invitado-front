@@ -15,19 +15,19 @@ function ProductCheckoutCard() {
       </div>
       <div className="right-column col-8">
         <h3 className="title">Macadamia Black Tea Soda</h3>
-        <div className="details">
-          <p>Chico | Regular | Menos azúcar | Sin tapa</p>
-          <p className="detail">
+        <ul className="details">
+          <li>Chico | Regular | Menos azúcar | Sin tapa</li>
+          <li className="detail">
             Extra de café <span className="extra-price">$10</span>
-          </p>
-          <p className="detail">
+          </li>
+          <li className="detail">
             Extra de café<span className="extra-price">$10</span>
-          </p>
-          <p className="detail">
+          </li>
+          <li className="detail">
             Extra de café <span className="extra-price">$10</span>
-          </p>
-        </div>
-        <div className="grid-2 end">
+          </li>
+        </ul>
+        <div className="end">
           <div className="subtotal">$134.00</div>
         </div>
       </div>
