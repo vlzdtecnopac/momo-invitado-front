@@ -6,7 +6,6 @@
     position: sticky;
     display: flex;
 
-
     .categories {
         list-style: none;
         width: 100%;
@@ -20,7 +19,7 @@
             border: 0;
 
             button {
-                width: 100px;
+                width: 120px;
                 border: 2px solid $cream;
                 border-radius: 10px;
                 height: 75px;

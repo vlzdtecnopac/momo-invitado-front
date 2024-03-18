@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import "./CategoryNav.scss";
 import axios from "axios";
 import { tokenHeader } from "../../helpers/token-header.helper";
 import { LoaderPage } from "../../includes/loader/Loader";
+import "./CategoryNav.scss";
 
 function CategoryNav() {
   const [categories, setCategories] = useState([]);
