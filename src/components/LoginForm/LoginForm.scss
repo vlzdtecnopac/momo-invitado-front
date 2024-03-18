@@ -39,14 +39,7 @@
             width: 400px;
             height: 60px;
 
-            @media screen and (min-width: 1440px) {
-                font-size: 16px;
-            }
-
-            @media screen and (min-width: 2560px) {
-                font-size: 32px;
-            }
-
+      
 
             &:focus-visible {
                 outline: none;
@@ -107,10 +100,7 @@
                     cursor: pointer;
                 }
 
-                // @media screen and (min-width: 1440px) {
-                //     font-size: 26px;
-                //     width: 640px;
-                // }
+            
 
                 @media screen and (min-width: 2560px) {
                     font-size: 44px;
