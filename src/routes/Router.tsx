@@ -48,6 +48,10 @@ const LazyOtherDrinksDetailPage = lazy(
 const LazyCombosDetailPage = lazy(
   () => import("../pages/combosDetail/CombosDetailPage")
 );
+
+const CreateAccountPage = lazy(
+  () => import("../pages/createAccountPage/CreateAccountPage")
+);
 const LazyCheckoutPage = lazy(() => import("../pages/checkout/CheckoutPage"));
 const LazyNotFound = lazy(() => import("../pages/404/404"));
 
@@ -97,6 +101,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyRegisterPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/create-account",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <CreateAccountPage />
       </Suspense>
     ),
   },

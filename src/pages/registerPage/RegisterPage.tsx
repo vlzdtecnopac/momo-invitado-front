@@ -4,6 +4,7 @@ import logoMomo from "../../assets/icons/logo.svg";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import { useLanguage } from "../../context/Langi18nContext";
 import "./RegisterPage.scss";
+import { Link } from "react-router-dom";
 
 function RegisterPage() {
   const { translate, setLanguage, language } = useLanguage();
@@ -50,10 +51,10 @@ function RegisterPage() {
                 <span className="icon"></span>
                 <span className="text">{translate("customerRegistered")}</span>
               </button>
-              <button className="custom-btn create">
+              <Link to="/create-account" className="custom-btn create">
                 <span className="icon"></span>
                 <span className="text">{translate("createAccount")}</span>
-              </button>
+              </Link>
               <button className="custom-btn no-register">
                 <span className="icon"></span>
                 <span className="text">{translate("oderAccount")}</span>

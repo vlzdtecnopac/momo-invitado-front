@@ -25,9 +25,13 @@ function ProductsPage() {
   },[loader])
 
   const consultCategory = async() =>{
+    try{
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/category/`, {headers: tokenHeader});
     setCategories(response.data);
     setLoader(false);
+    }catch(e){
+      console.log(e);
+    }
   }
 
   return (
