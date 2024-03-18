@@ -1,10 +1,14 @@
 import barista from "../../assets/barista.png";
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";
 import Modal from "../../components/Modal/Modal";
+import CategoryNav from "../../components/CategoryNav/CategoryNav";
+import Layout from "../../includes/layout/Layout";
 import "./CheckoutPage.scss";
 
 function CheckoutPage() {
-  return (
+  return (<>
+  <Layout>
+    <CategoryNav/>
     <div className="checkout_container grid-3">
       <div className="col-5">
         <section className="tip">
@@ -142,6 +146,8 @@ function CheckoutPage() {
 
       {/*<Modal actionKey={""} />*/}
     </div>
+    </Layout>
+    </>
   );
 }
 
