@@ -34,7 +34,10 @@
             border: none;
             color: $white ;
             background: $orange;
-            cursor: pointer;
+
+            &:hover {
+                cursor: pointer;
+            }
 
             h2 {
                 margin: 0px;
@@ -88,8 +91,6 @@
         }
 
         .left {
-
-
             .no-cash {
                 width: 261px;
                 height: 75px;
