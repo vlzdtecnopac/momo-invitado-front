@@ -1,46 +1,40 @@
+import { useEffect, useState } from "react";
 import "./CategoryNav.scss";
+import axios from "axios";
+import { tokenHeader } from "../../helpers/token-header.helper";
+import { LoaderPage } from "../../includes/loader/Loader";
 
 function CategoryNav() {
-  const categories = [
-    {
-      text: "Café",
-    },
-    {
-      text: "Té",
-    },
-    {
-      text: "Cafe con Té",
-    },
-    {
-      text: "Especiales MOMO",
-    },
-    {
-      text: "Alimentos",
-    },
-    {
-      text: "Combos",
-    },
-    {
-      text: "Otras Bebidas",
-    },
-    {
-      text: "Nuestra Tienda",
-    },
-  ];
+  const [categories, setCategories] = useState([]);
+  const [loader, setLoader] =  useState<Boolean>(true);
 
-  return (
+
+  useEffect(()=> {
+    if(loader){
+    consultCategory();
+    }
+  },[loader])
+
+  const consultCategory = async() =>{
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/category/`, {headers: tokenHeader});
+    setCategories(response.data);
+    setLoader(false);
+  }
+  return (<>
+    {loader? <LoaderPage/> : ""}
     <nav className="cat_nav">
       <ul className="categories">
-        {categories.map((category, index) => (
+        {categories.map((category: any, index: number) => (
           <li
             className="category"
             key={index}
           >
-            <button>{category.text}</button>
+            <button>{category.name_category}</button>
           </li>
         ))}
       </ul>
     </nav>
+    </>
   );
 }
 
