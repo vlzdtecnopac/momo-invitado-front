@@ -1,0 +1,81 @@
+.congrats-success {
+    .shadow-effect {
+        position: fixed;
+        background: #4d4d4d6b;
+        height: 100vh;
+        width: 100%;
+        z-index: 88;
+        left: 0px;
+        top: 0px;
+    }
+
+    .congrats {
+        position: fixed;
+        width: 631px;
+        height: 550px;
+        background: #D5EAFB;
+        border-radius: 16px;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        z-index: 999;
+
+        .congrats-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 142px;
+            gap: 21px;
+
+
+            .congrats-img {
+                width: 228px;
+                margin: 0 auto;
+
+            }
+
+            .congrat {
+                color: #000;
+                margin: 0 auto;
+
+                &.small-text {
+                    font-size: 20px;
+                }
+
+                &.medium-text {
+                    font-size: 24px;
+                }
+
+                &.large-text {
+                    font-size: 28px
+                }
+
+            }
+
+            .congrat-text {
+                margin: 0 auto;
+                width: 224px;
+                text-align: center;
+                height: 42px;
+                font-weight: 500;
+                font-size: 16px;
+                font-family: "Red Hat Display", "serif";
+
+                &.small-text {
+                    font-size: 14px;
+                }
+
+                &.medium-text {
+                    font-size: 16px;
+                }
+
+                &.large-text {
+                    font-size: 20px
+                }
+
+            }
+
+        }
+    }
+}

@@ -2,6 +2,7 @@ import Layout from "../../includes/layout/Layout";
 import barista from "../../assets/barista.png";
 import "./CheckoutPage.scss";
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";
+import Modal from "../../components/Modal/Modal";
 function CheckoutPage() {
   return (
     // <Layout>
@@ -120,6 +121,7 @@ function CheckoutPage() {
           <span>$ -20</span>
         </div>
       </div>
+      <Modal actionKey={""} />
     </div>
     // </Layout >
   );
