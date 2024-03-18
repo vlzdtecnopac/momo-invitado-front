@@ -11,7 +11,7 @@ export const Langi18nConText = createContext<any | null>(null);
 export const useLanguage = () => useContext(Langi18nConText);
 
 export const Langi18nProvider: React.FC<DynamicLayoutProps> =  ({ children }) => {
-    const [language, setLanguage] = useState('en');
+    const [language, setLanguage] = useState('es');
     const languages: any = {
         en,
         es,
