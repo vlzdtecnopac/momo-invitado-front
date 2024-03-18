@@ -7,62 +7,38 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "./ProductCategoryPage.scss";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { tokenHeader } from "../../helpers/token-header.helper";
+import { LoaderPage } from "../../loader/Loader";
 
 function ProductsPage() {
-  const categoriesNav = [
-    {
-      icon: "coffee-icon",
-      text: "Café",
-      router: "",
-    },
-    {
-      icon: "tea-icon",
-      text: "Té",
-      router: "",
-    },
-    {
-      icon: "coffee-tea-icon",
-      text: "Cafe con Té",
-      router: "",
-    },
-    {
-      icon: "specials-icon",
-      text: "Especiales MOMO",
-      router: "",
-    },
-    {
-      icon: "food-icon",
-      text: "Alimentos",
-      router: "",
-    },
-    {
-      icon: "combos-icon",
-      text: "Combos",
-      router: "",
-    },
-    {
-      icon: "drinks-icon",
-      text: "Otras Bebidas",
-      router: "",
-    },
-    {
-      icon: "store-icon",
-      text: "Nuestra Tienda",
-      router: "",
-    },
-    
-   
-  ];
+  const [categories, setCategories] = useState([]);
+  const [loader, setLoader] =  useState<Boolean>(true);
+
+  useEffect(()=> {
+    if(loader){
+    consultCategory();
+    }
+  },[loader])
+
+  const consultCategory = async() =>{
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/category/`, {headers: tokenHeader});
+    setCategories(response.data);
+    setLoader(false);
+  }
+
   return (
     <>
+     {loader? <LoaderPage/> : ""}
       <Layout>
         <div className="products_page">
           <ul className="categories grid-4_xs-1">
-            {categoriesNav.map((category, index) => (
+            {categories.map((category: any, index) => (
               <li key={index} className="col options-container">
                 <CustomButton
-                  icon={category.icon}
-                  text={category.text}
+                  icon={category.class}
+                  text={category.name_category}
                   onClick={function (): void {
                     throw new Error("Function not implemented.");
                   }}
