@@ -6,8 +6,8 @@ interface LogoProps {
 const LogoMomo: React.FC<LogoProps> = ({ color }) => {
   return (
     <svg
-      width="188"
-      height="70"
+      width="280"
+      height="90"
       viewBox="0 0 188 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
