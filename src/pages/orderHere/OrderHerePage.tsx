@@ -10,10 +10,9 @@ import "./OrderHerePage.scss";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import { useLanguage } from "../../context/Langi18nContext";
 
-
 function OrderHerePage() {
-  const navigate =  useNavigate();
-  const { translate, setLanguage } = useLanguage();
+  const navigate = useNavigate();
+  const { translate, setLanguage, language } = useLanguage();
 
   const numberInit = 1;
   const stateInitBackground = { color1: "#EDEBDF", color2: "#D5EAFB" };
@@ -84,13 +83,13 @@ function OrderHerePage() {
     }
   };
 
-  const  HandlePageInit = () => {
+  const HandlePageInit = () => {
     navigate("/categories");
-  }
+  };
 
   const HandleNotCash = () => {
-    navigate("/no-cash")
-  }
+    navigate("/no-cash");
+  };
 
   return (
     <LayoutBlank>
@@ -131,85 +130,111 @@ function OrderHerePage() {
           </motion.div>
         </div>
         <div className="btn-container">
-            <motion.button
-              key={`frame-2_${keyAnimation}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              style={{
-                backgroundColor: orderColorState.color,
-              }}
-              transition={{
-                duration: 1,
-                ease: [0, 0.71, 0.2, 1.01],
-                repeat: 0,
-              }}
-              className="btn"
-              onClick={()=> HandlePageInit()}
-            >
-              <h2>{translate('orderHere')}</h2>
-            </motion.button>
+          <motion.button
+            key={`frame-2_${keyAnimation}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            style={{
+              backgroundColor: orderColorState.color,
+            }}
+            transition={{
+              duration: 1,
+              ease: [0, 0.71, 0.2, 1.01],
+              repeat: 0,
+            }}
+            className="btn"
+            onClick={() => HandlePageInit()}
+          >
+            <h2>{translate("orderHere")}</h2>
+          </motion.button>
         </div>
         <div className="btns">
           <div className="right">
             <motion.button
               key={`frame-3_${keyAnimation}`}
-              style={{ backgroundColor: colorButtonActive.color }}
+              style={{
+                backgroundColor:
+                  language == "es"
+                    ? colorButtonActive.color
+                    : colorButtonInactive.color,
+                border: language == "es" ? colorButtonInactive.border : "",
+              }}
               transition={{
                 duration: 1,
                 ease: [0, 0.71, 0.2, 1.01],
                 repeat: 0,
               }}
-              onClick={() => setLanguage('es')}
+              onClick={() => setLanguage("es")}
               className="lang"
             >
               <img src={mxIcon} className="es-icon"></img>
-              <span style={{ color: colorButtonActive.text }} className="es">
+              <span
+                style={{
+                  color:
+                    language == "es"
+                      ? colorButtonActive.text
+                      : colorButtonInactive.text,
+                }}
+                className="es"
+              >
                 Español
               </span>
             </motion.button>
             <motion.button
               key={`frame-4_${keyAnimation}`}
               style={{
-                backgroundColor: colorButtonInactive.color,
-                border: colorButtonInactive.border,
+                backgroundColor:
+                  language == "en"
+                    ? colorButtonActive.color
+                    : colorButtonInactive.color,
+                border: language == "en" ? colorButtonInactive.border : "",
               }}
               transition={{
                 duration: 1,
                 ease: [0, 0.71, 0.2, 1.01],
                 repeat: 0,
               }}
-              onClick={() => setLanguage('en')}
+              onClick={() => setLanguage("en")}
               className="lang"
             >
               <img src={usaIcon} className="en-icon"></img>
-              <span style={{ color: colorButtonInactive.text }} className="en">
+              <span
+                style={{
+                  color:
+                    language == "en"
+                      ? colorButtonActive.text
+                      : colorButtonInactive.text,
+                }}
+                className="en"
+              >
                 English
               </span>
             </motion.button>
           </div>
           <div className="left">
-              <motion.div
-                key={`frame-5_${keyAnimation}`}
+            <motion.div
+              key={`frame-5_${keyAnimation}`}
+              style={{
+                backgroundColor: colorButtonNoCash.color,
+              }}
+              transition={{
+                duration: 1,
+                ease: [0, 0.71, 0.2, 1.01],
+                repeat: 0,
+              }}
+              onClick={() => HandleNotCash()}
+              className="no-cash"
+            >
+              <NoCash color={colorState.color1} />
+              <span
                 style={{
-                  backgroundColor: colorButtonNoCash.color,
+                  color: colorButtonNoCash.text,
                 }}
-                transition={{
-                  duration: 1,
-                  ease: [0, 0.71, 0.2, 1.01],
-                  repeat: 0,
-                }}
-                onClick={() => HandleNotCash()}
-                className="no-cash"
+                className="text"
               >
-                <NoCash color={colorState.color1} />
-                <span
-                  style={{
-                    color: colorButtonNoCash.text,
-                  }}
-                  className="text"
-                >{translate('notAcceptEffecty')}
-                </span>
-              </motion.div>
+                {translate("notAcceptEffecty")}
+              </span>
+            </motion.div>
           </div>
         </div>
       </motion.div>

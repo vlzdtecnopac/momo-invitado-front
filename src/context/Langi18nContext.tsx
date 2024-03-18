@@ -20,7 +20,7 @@ export const Langi18nProvider: React.FC<DynamicLayoutProps> =  ({ children }) =>
       const translate = (key: number) => languages[language][key] || key;
 
       return(
-        <Langi18nConText.Provider value={{ translate, setLanguage }}>
+        <Langi18nConText.Provider value={{ translate, setLanguage, language }}>
             {children}
         </Langi18nConText.Provider>
       );
