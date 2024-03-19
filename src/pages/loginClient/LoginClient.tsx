@@ -60,8 +60,8 @@ function LoginClient() {
                   <span className="icon"></span>
                   <span className="text">{translate("email")}</span>
                 </button>
+                <hr />
               </div>
-              <hr />
               <div className="phone-option">
                 <p className="parrafo-subtitulo">{translate("enterPhone")}</p>
                 <div className="input">
@@ -81,7 +81,6 @@ function LoginClient() {
                 <button className="login-btn">{translate("signInBtn")}</button>
               </div>
               <hr />
-
               <div className="email-option">
                 <p className="parrafo-subtitulo">{translate("enterEmail")}</p>
                 <div className="input">

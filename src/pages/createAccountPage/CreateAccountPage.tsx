@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import logoMomo from "../../assets/icons/logo.svg";
+import { useLanguage } from "../../context/Langi18nContext";
+
 import "./CreateAccountPage.scss";
 
 function CreateAccountPage() {
+  const { translate } = useLanguage();
+
   return (
     <LayoutBlank>
       <div className="create-account-page">
@@ -84,9 +88,9 @@ function CreateAccountPage() {
                   style={{ padding: "0px 8px" }}
                 >
                   <input
-                    name="email"
+                    name="phone"
                     placeholder="Teléfono"
-                    type="email"
+                    type="number"
                     className="input"
                   />
                 </div>
@@ -109,20 +113,22 @@ function CreateAccountPage() {
                   className="link_term"
                   to={`/`}
                 >
-                  Acepta nuestros Términos y Condiciones de Privacidad
+                  {translate("acceptTerms")}
                 </Link>
               </div>
             </div>
             <div className="grid-3_xs-1">
               <div className="col-6">
-                <button className="btn-cancelar">Cancelar Registro</button>
+                <button className="btn-cancelar">
+                  {translate("cancelRegister")}
+                </button>
               </div>
               <div className="col-6">
                 <button
                   type="submit"
                   className="btn-register"
                 >
-                  Registreme
+                  {translate("register")}
                 </button>
               </div>
             </div>

@@ -218,6 +218,10 @@
                 text-align: left;
                 color: $cream;
 
+                option {
+                    background-color: $dark-blue;
+                }
+
                 &::placeholder {
                     color: $cream;
                 }
