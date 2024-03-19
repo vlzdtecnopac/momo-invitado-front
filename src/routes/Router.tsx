@@ -5,9 +5,6 @@ import Cart from "../components/Cart/Cart";
 
 const LazyLoginPage = lazy(() => import("../pages/login/LoginPage"));
 const LazyWelcomePage = lazy(() => import("../pages/welcome/WelcomePage"));
-const LazyClientWelcomePage = lazy(
-  () => import("../pages/clientWelcome/ClientWelcomePage")
-);
 const LazyOrderHerePage = lazy(
   () => import("../pages/orderHere/OrderHerePage")
 );
@@ -86,14 +83,7 @@ const BrowserRoutes = createBrowserRouter([
       </Suspense>
     ),
   },
-  {
-    path: "/client-welcome",
-    element: (
-      <Suspense fallback={<LoaderPage />}>
-        <LazyClientWelcomePage />
-      </Suspense>
-    ),
-  },
+ 
   {
     path: "/order-here",
     element: (

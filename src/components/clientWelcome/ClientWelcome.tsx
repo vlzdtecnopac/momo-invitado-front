@@ -4,9 +4,13 @@ import logo from "../../assets/icons/logo.svg";
 import checkIcon from "../../assets/icons/check.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 
-import "./ClientWelcomePage.scss";
+import "./ClientWelcome.scss";
 
-function ClientWelcomePage() {
+interface ClientWelcomeProps {
+  data: any;
+}
+
+const ClientWelcomeComponent: React.FC<ClientWelcomeProps> = ({data}) => {
   const { translate } = useLanguage();
 
   return (
@@ -52,4 +56,4 @@ function ClientWelcomePage() {
   );
 }
 
-export default ClientWelcomePage;
+export default ClientWelcomeComponent;
