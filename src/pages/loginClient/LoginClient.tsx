@@ -14,11 +14,19 @@ function LoginClient() {
     <LayoutBlank>
       <div className="login_client_page">
         <div className="left">
-          <img
-            className="image"
+        <motion.img
+              className="image"
             src={imgRegister}
-            alt="img"
+            alt="logo-momo"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.9,
+              delay: 0.5,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
           />
+  
         </div>
         <div className="column-right">
           <div className="center-container">
