@@ -11,7 +11,7 @@ function RegisterPage() {
 
   return (
     <LayoutBlank>
-      <div className="register_page">
+      <div className="register_page_momo">
         <div className="left">
           <img
             className="image"
