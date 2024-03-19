@@ -67,6 +67,7 @@ $grey: #F4F4F4;
     animation: l5 1s infinite linear alternate;
 }
 
+
 @keyframes l5 {
     0% {
         box-shadow: 20px 0 #edebdf, -20px 0 #edebdf;
@@ -144,6 +145,7 @@ input[type="checkbox"] {
     position: absolute;
     opacity: 0;
 }
+
 
 /* Style the custom checkbox */
 .custom-checkbox {
