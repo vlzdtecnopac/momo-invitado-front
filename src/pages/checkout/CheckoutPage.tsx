@@ -3,14 +3,18 @@ import ProductCheckoutCard from "../../components/productCheckoutCard/ProductChe
 import Modal from "../../components/Modal/Modal";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
+import { useLanguage } from "../../context/Langi18nContext";
+
 import "./CheckoutPage.scss";
 
 function CheckoutPage() {
+  const { translate } = useLanguage();
+
   return (
     <>
       <Layout>
         <div className="category-fixed">
-        <CategoryNav />
+          <CategoryNav />
         </div>
         <div className="checkout_background">
           <div className="checkout_container grid-3">
@@ -18,13 +22,16 @@ function CheckoutPage() {
               <section className="tip">
                 <div className="grid-2">
                   <div className="col-5">
-                    <img alt="Barista" src={barista} />
+                    <img
+                      alt="Barista"
+                      src={barista}
+                    />
                   </div>
                   <div className="col-7 tip-text">
-                    <h2>Los baristas son las estrellas de nuestro trabajo</h2>
+                    <h2>{translate("baristaTipText")}</h2>
                     <div className="tip-subtext">
                       <i className="tip-icon"></i>{" "}
-                      <span>Agrega tu propina</span>
+                      <span>{translate("addTip")}</span>
                     </div>
                   </div>
                 </div>
@@ -32,16 +39,14 @@ function CheckoutPage() {
                   <div className="col">
                     <button className="tip-button">
                       <div className="percentange">0%</div>
-                      <div className="middle">Hoy no quiero dejar propina</div>
+                      <div className="middle">{translate("noTip")}</div>
                       <div>
                         <i className="dolar-icon"></i>
                       </div>
                     </button>
                     <button className="tip-button">
                       <div className="percentange">5%</div>
-                      <div className="middle">
-                        ¡Un extra para nuestros héroes!
-                      </div>
+                      <div className="middle">¡{translate("bonus")}!</div>
                       <div>
                         <i className="dolar-icon"></i>
                       </div>
@@ -50,14 +55,16 @@ function CheckoutPage() {
                   <div className="col-6">
                     <button className="tip-button">
                       <div className="percentange">10%</div>
-                      <div className="middle">¡Excelente elección!</div>
+                      <div className="middle">
+                        ¡{translate("excellentChoice")}!
+                      </div>
                       <div>
                         <i className="dolar-icon"></i>
                       </div>
                     </button>
                     <button className="tip-button">
                       <div className="percentange">15%</div>
-                      <div className="middle">¡Un gesto increíble!</div>
+                      <div className="middle">¡{translate("gesture")}!</div>
                       <div>
                         <i className="dolar-icon"></i>
                       </div>
@@ -65,8 +72,8 @@ function CheckoutPage() {
                   </div>
                   <div className="col-12 decide">
                     <button className="tip-button">
-                      <div className="percentange">Otra</div>
-                      <div className="middle">¡Tú decides!</div>
+                      <div className="percentange">{translate("other")}</div>
+                      <div className="middle">¡{translate("youDecide")}!</div>
                       <div>
                         <i className="dolar-icon"></i>
                       </div>
@@ -85,22 +92,24 @@ function CheckoutPage() {
                     />
                     <i className="icon-user"></i>
                   </div>
-                  <h2 className="text">Selecciona tu método de pago</h2>
+                  <h2 className="text">{translate("selectPayMethod")}</h2>
                   <div className="pay-method">
                     <button className="card">
-                      <i className="card-icon"></i>Tarjeta
+                      <i className="card-icon"></i>
+                      {translate("card")}
                     </button>
                     <hr />
                     <div className="card-type">
-                      <button className="type">Credito</button>
-                      <button className="type">Debito</button>
+                      <button className="type">{translate("credit")}</button>
+                      <button className="type">{translate("debit")}</button>
                     </div>
                     <hr />
                     <button className="cash">
-                      <i className="cash-icon"></i>Efectivo
+                      <i className="cash-icon"></i>
+                      {translate("cash")}
                     </button>
                   </div>
-                  <button className="cancel">Cancelar</button>
+                  <button className="cancel">{translate("cancel")}</button>
                 </div>
               </section>
             </div>
@@ -133,7 +142,7 @@ function CheckoutPage() {
                     />
                     <i className="cupon-icon"></i>
                   </div>
-                  <button className="add-cupon-btn">Agregar</button>
+                  <button className="add-cupon-btn">{translate("add")}</button>
                 </div>
                 <div></div>
                 <div className="total">

@@ -1,4 +1,5 @@
 @import "../../index.scss";
+
 .category-fixed {
   position: fixed;
   width: 100%;
@@ -15,7 +16,7 @@
     max-width: 1390px;
     margin: auto;
 
-  
+
     img {
       width: 100%;
     }
@@ -133,7 +134,7 @@
         .icon-user {
           width: 22px;
           height: 22px;
-          z-index: 9999;
+          z-index: 7;
           top: 30px;
           left: 5px;
           mask-size: contain;
@@ -279,12 +280,14 @@
       justify-content: space-between;
       padding: 10px 10px;
       max-height: 500px;
+
       .cupon {
         display: inline-flex;
         align-items: center;
 
         .form-group {
           position: relative;
+
           .cupon-icon {
             background-image: url(../../assets/icons/cupon_icon.svg);
             width: 30px;
@@ -294,6 +297,7 @@
             top: 4px;
           }
         }
+
         .cupon-code {
           width: 197px;
           height: 37px;
@@ -303,6 +307,7 @@
           padding: 11px 16px 11px 34px;
           margin: 0px 5px 0px 0px;
           color: white;
+
           &::placeholder {
             color: #fff;
           }
@@ -325,20 +330,22 @@
         }
       }
     }
+
     .border-dashed {
       border-style: dashed;
       border: 0.5;
       margin: 20px 0px;
     }
+
     .total {
       display: flex;
       flex-direction: column;
-      
+
       table {
         font-family: "Red Hat Display", serif;
       }
 
-      .sub-total{
+      .sub-total {
         width: 240px;
       }
 
