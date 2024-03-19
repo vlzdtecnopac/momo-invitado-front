@@ -96,6 +96,7 @@ function CreateAccountPage() {
             }}
             validationSchema={CreateAccountSchema}
             onSubmit={async (values) => {
+              isLoader(true);
               try {
                 let selectCountry;
                 countries.map((country: any) => {
@@ -119,7 +120,10 @@ function CreateAccountPage() {
                   data,
                   { headers: tokenHeader }
                 );
+                isLoader(false);
+                navigate("/client-welcome");
               } catch (e) {
+                isLoader(false);
                 console.log(e);
               }
             }}
