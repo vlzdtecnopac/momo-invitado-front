@@ -4,15 +4,15 @@ import logoMomo from "../../assets/icons/logo.svg";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import back from "../../assets/icons/arrow_left.svg";
 import { useLanguage } from "../../context/Langi18nContext";
-import "./LoginClient.scss";
 import { Link } from "react-router-dom";
+import "./LoginClient.scss";
 
 function LoginClient() {
   const { translate } = useLanguage();
 
   return (
     <LayoutBlank>
-      <div className="register_page">
+      <div className="login_client_page">
         <div className="left">
           <img
             className="image"
@@ -61,6 +61,29 @@ function LoginClient() {
                   <span className="text">Correo Electrónico</span>
                 </button>
               </div>
+              <hr />
+
+              <div className="phone-option">
+                <p className="parrafo-subtitulo">
+                  Digita tu numero de telefono
+                </p>
+                <div className="input">
+                  <select className="country_id">
+                    <option value="55">+55</option>
+                    <option value="56">+56</option>
+                    <option value="57">+57</option>
+                    <option value="58">+58</option>
+                    <option value="59">+59</option>
+                  </select>
+                  <input
+                    type="number"
+                    placeholder="Teléfono"
+                    className="phone"
+                  />
+                </div>
+                <button className="login-btn">Ingresar</button>
+              </div>
+              <div className="mail-option"></div>
               <Link
                 className="text-align-back"
                 to="/register"

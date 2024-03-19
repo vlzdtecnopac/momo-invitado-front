@@ -11,7 +11,7 @@
         width: 880px;
         display: flex;
         flex-wrap: wrap;
-        margin: 99px auto 0px auto;
+        margin: 200px auto 0px auto;
         padding: 0px;
         overflow-y: auto;
 
@@ -22,13 +22,13 @@
     }
 
     .content-slider {
-        width: 890px;
+        width: 100%;
         margin: auto;
-        bottom: 10px;
+        bottom: 0px;
         position: fixed;
         left: 0px;
         right: 0px;
-    
+
         .banner {
             width: 100%;
             display: flex;
