@@ -39,6 +39,39 @@
     .form-group {
         position: relative;
     }
+
+    .icon-user{
+        background-image: url(./../../assets/icons/user.svg);
+        background-size: cover;
+        width: 25px;
+        height: 25px;
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+    }
+
+    .icon-phone{
+        background-image: url(./../../assets/icons/call_white.svg);
+        background-size: cover;
+        width: 25px;
+        height: 25px;
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+    }
+
+    .icon-email{
+        background-image: url(./../../assets/icons/mail.svg);
+        background-size: cover;
+        width: 25px;
+        height: 25px;
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+    }
     .select{
         width: 95px;
         padding: 10px 15px;
@@ -80,7 +113,7 @@
         padding: 22px 10px;
         font-size: 18px;
         border-radius: 4px;
-
+        padding-left: 45px;
         &::placeholder {
             color: $white
         }

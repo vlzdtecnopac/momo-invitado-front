@@ -1,3 +1,4 @@
+import axios from "axios";
 import { motion } from "framer-motion";
 import { Formik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,10 +9,10 @@ import LayoutBlank from "../../includes/layout/LayoutBlank";
 import logoMomo from "../../assets/icons/logo.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 
-import "./CreateAccountPage.scss";
 import { LoaderPage } from "../../loader/Loader";
 import { tokenHeader } from "../../helpers/token-header.helper";
-import axios from "axios";
+
+import "./CreateAccountPage.scss";
 
 const CreateAccountSchema = Yup.object().shape({
   firstName: Yup.string().required("El nombre es requerido."),
@@ -204,15 +205,18 @@ function CreateAccountPage() {
                       </select>
                     </div>
                     <div className="col-9" style={{ padding: "0px 8px" }}>
-                      <input
-                        name="phone"
-                        placeholder="Número Telefonico"
-                        type="number"
-                        className="input"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.phone}
-                      />
+                      <section className="form-group">
+                        <input
+                          name="phone"
+                          placeholder="Número Telefonico"
+                          type="number"
+                          className="input"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          value={values.phone}
+                        />
+                        <i className="icon-phone"></i>
+                      </section>
                     </div>
                     {(() => {
                       if (errors.phone && touched.phone) {
