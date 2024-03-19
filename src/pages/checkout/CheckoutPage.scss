@@ -1,336 +1,334 @@
 @import "../../index.scss";
-
-.checkout_container {
-    background-color: $light-blue;
-    padding: 10px;
-    img{
+.category-fixed{
+        position: fixed;
         width: 100%;
+        z-index: 99;
+}
+
+
+.checkout_background {
+  background-color: $light-blue;
+  height: 100vh;
+  padding-top: 190px;
+
+  .checkout_container {
+    padding: 10px;
+    max-width: 1390px;
+    margin: auto;
+    img {
+      width: 100%;
     }
 
     .tip {
-        background-color: $dark-blue;
-        border-radius: 12px;
-        color: $cream;
-        padding: 20px;
-        max-height: 660px;
-        overflow-y: auto;
+      background-color: $dark-blue;
+      border-radius: 12px;
+      color: $cream;
+      padding: 20px;
+      max-height: 500px;
+      overflow-y: auto;
 
-        h2{
-            font-size: 22px;
+      h2 {
+        font-size: 22px;
+      }
+
+      .tip-text {
+        padding: 20px 0px;
+
+        .tip-icon {
+          display: flex;
+          width: 26px;
+          height: 26px;
+          background-color: $cream;
+          -webkit-mask-image: url(/src/assets/icons/dollar-circle.svg);
+          mask-image: url(/src/assets/icons/dollar-circle.svg);
+          mask-size: 100%;
+        }
+      }
+
+      .tip-subtext {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        font-family: "Red Hat Display";
+        gap: 10px;
+        margin: 80px 0px 0px 0px;
+      }
+
+      .tip-options {
+        display: flex;
+
+        .decide {
+          display: flex;
+          justify-content: center;
         }
 
-        .tip-text {
-            padding: 20px 0px;
+        .tip-button {
+          width: 255px;
+          min-height: 60px;
+          background: $light-blue;
+          border: none;
+          margin: 5px;
+          border-radius: 10px;
+          font-family: "Red Hat Display";
+          font-size: 16px;
+          font-weight: 700;
+          text-align: left;
+          color: $dark-blue;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
 
-            .tip-icon {
-                display: flex;
-                width: 26px;
-                height: 26px;
-                background-color: $cream;
-                -webkit-mask-image: url(/src/assets/icons/dollar-circle.svg);
-                mask-image: url(/src/assets/icons/dollar-circle.svg);
-                mask-size: 100%;
-            }
-        }
+          &:hover {
+            cursor: pointer;
+          }
 
-        .tip-subtext{
-            display: flex;
-            align-items: center;
-            justify-content: left;
+          .dolar-icon {
+            background-image: url("../../assets/icons/dollar-circle-blue.svg");
+            width: 20px;
+            height: 20px;
+            display: block;
+            background-size: contain;
+            margin-top: 28px;
+          }
+
+          .middle {
+            width: 140px;
+          }
+
+          .percentange {
             font-family: "Red Hat Display";
-            gap: 10px;
-            margin: 80px 0px 0px 0px;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            padding: 0 10px 0px 10px;
+          }
         }
-
-        .tip-options {
-            display: flex;
-
-            .decide {
-                display: flex;
-                justify-content: center;
-            }
-
-            .tip-button {
-                width: 255px;
-                min-height: 60px;
-                background: $light-blue;
-                border: none;
-                margin: 5px;
-                border-radius: 10px;
-                font-family: "Red Hat Display";
-                font-size: 16px;
-                font-weight: 700;
-                text-align: left;
-                color: $dark-blue;
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-
-                &:hover {
-                    cursor: pointer;
-                }
-
-                .dolar-icon{
-                    background-image: url("../../assets/icons/dollar-circle-blue.svg");
-                    width: 20px;
-                    height: 20px;
-                    display: block;
-                    background-size: contain;
-                    margin-top: 28px;
-                }
-
-                .middle {
-                    width: 140px;
-                }
-
-                .percentange {
-                    font-family: "Red Hat Display";
-                    font-size: 24px;
-                    font-weight: 700;
-                    text-align: center;
-                    padding: 0 10px 0px 10px;
-
-                }
-            }
-        }
-
-
+      }
     }
 
     .pay-info {
+      display: flex;
+      flex-direction: column;
+      width: 320px;
+      align-items: center;
+      margin: 0 auto;
+
+      .form-group {
+        width: 100%;
+        position: relative;
+
+        .client-name {
+          width: 100%;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          height: 36px;
+          padding: 20px;
+          padding-left: 30px;
+          font-size: 18px;
+        }
+
+        .icon-user {
+          width: 22px;
+          height: 22px;
+          z-index: 9999;
+          top: 30px;
+          left: 5px;
+          mask-size: contain;
+          -webkit-mask-image: url(/src/assets/icons/user.svg);
+          mask-image: url(/src/assets/icons/user.svg);
+          background-color: $black;
+          position: absolute;
+        }
+      }
+
+      .text {
+        font-family: "Red Hat Display";
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .pay-method {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        width: 320px;
-        align-items: center;
-        margin: 0 auto;
+        gap: 25px;
 
-        .form-group {
-            width: 100%;
-            position: relative;
+        .card-type {
+          display: flex;
+          gap: 25px;
 
-            .client-name {
-                width: 100%;
-                margin-top: 20px;
-                margin-bottom: 20px;
-                height: 36px;
-                padding: 20px;
-                padding-left: 30px;
-                font-size: 18px;
-                
-            }
-
-            .icon-user {
-                width: 22px;
-                height: 22px;
-                z-index: 9999;
-                top: 30px;
-                left: 5px;
-                mask-size: contain;
-                -webkit-mask-image: url(/src/assets/icons/user.svg);
-                mask-image: url(/src/assets/icons/user.svg);
-                background-color: $black;
-                position: absolute;
-            }
-        }
-
-
-        .text {
-            font-family: "Red Hat Display";
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 20px;
-
-
-        }
-
-        .pay-method {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-
-            .card-type {
-                display: flex;
-                gap: 25px;
-
-
-                .type {
-                    width: 152px;
-                    height: 37px;
-                    border: none;
-                    background: $light-blue;
-                    border-radius: 8px;
-                    font-family: "Stacion", serif;
-                    font-size: 14px;
-                    font-weight: 400;
-                    color: $dark-blue;
-                    align-items: center;
-
-                    &:hover {
-                        cursor: pointer;
-                        background: $orange;
-                        color: $cream;
-                    }
-                }
-            }
-
-            .card,
-            .cash {
-                height: 70px;
-                border: none;
-                background: $light-blue;
-                border-radius: 8px;
-                font-family: "Stacion", serif;
-                font-size: 14px;
-                font-weight: 400;
-                color: $dark-blue;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-
-                &:hover {
-                    cursor: pointer;
-                    background: $orange;
-                    color: $cream;
-
-                    .card-icon,
-                    .cash-icon {
-                        background: $cream;
-                    }
-
-                }
-            }
-
-            .card {
-
-                .card-icon {
-                    width: 24px;
-                    height: 24px;
-                    -webkit-mask-image: url(/src/assets/icons/card.svg);
-                    mask-image: url(/src/assets/icons/card.svg);
-                    background-color: $dark-blue;
-                    mask-size: 100%;
-                    margin-top: 10px;
-
-
-                }
-            }
-
-            .cash {
-
-                .cash-icon {
-                    width: 24px;
-                    height: 24px;
-                    -webkit-mask-image: url(/src/assets/icons/wallet.svg);
-                    mask-image: url(/src/assets/icons/wallet.svg);
-                    background-color: $dark-blue;
-                    mask-size: 100%;
-                    margin-top: 10px;
-
-                }
-            }
-        }
-
-        .cancel {
-            width: 251px;
-            height: 47px;
-            border: 2px solid $cream;
-            background: transparent;
-            border-radius: 14px;
-            font-family: "Red Hat Display";
-            font-size: 18px;
-            font-weight: 700;
-            text-align: center;
-            color: $cream;
-            margin-top: 52px;
+          .type {
+            width: 152px;
+            height: 37px;
+            border: none;
+            background: $light-blue;
+            border-radius: 8px;
+            font-family: "Stacion", serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: $dark-blue;
+            align-items: center;
 
             &:hover {
-                cursor: pointer;
+              cursor: pointer;
+              background: $orange;
+              color: $cream;
             }
+          }
         }
+
+        .card,
+        .cash {
+          height: 70px;
+          border: none;
+          background: $light-blue;
+          border-radius: 8px;
+          font-family: "Stacion", serif;
+          font-size: 14px;
+          font-weight: 400;
+          color: $dark-blue;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          &:hover {
+            cursor: pointer;
+            background: $orange;
+            color: $cream;
+
+            .card-icon,
+            .cash-icon {
+              background: $cream;
+            }
+          }
+        }
+
+        .card {
+          .card-icon {
+            width: 24px;
+            height: 24px;
+            -webkit-mask-image: url(/src/assets/icons/card.svg);
+            mask-image: url(/src/assets/icons/card.svg);
+            background-color: $dark-blue;
+            mask-size: 100%;
+            margin-top: 10px;
+          }
+        }
+
+        .cash {
+          .cash-icon {
+            width: 24px;
+            height: 24px;
+            -webkit-mask-image: url(/src/assets/icons/wallet.svg);
+            mask-image: url(/src/assets/icons/wallet.svg);
+            background-color: $dark-blue;
+            mask-size: 100%;
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .cancel {
+        width: 251px;
+        height: 47px;
+        border: 2px solid $cream;
+        background: transparent;
+        border-radius: 14px;
+        font-family: "Red Hat Display";
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        color: $cream;
+        margin-top: 52px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
 
     .products {
-        background-color: $dark-blue;
-        border-radius: 12px;
-        color: $cream;
-        padding: 10px 20px;
-        max-height: 660px;
-        overflow-y: auto;
+      background-color: $dark-blue;
+      border-radius: 12px;
+      color: $cream;
+      padding: 10px 20px;
+      max-height: 500px;
+      overflow-y: auto;
 
-        .product {
-            background: $cream;
-            margin: 10px auto;
-            width: 100%;
-            border-radius: 12px;
-            padding-right: 18px;
-        }
+      .product {
+        background: $cream;
+        margin: 10px auto;
+        width: 100%;
+        border-radius: 12px;
+        padding-right: 18px;
+      }
     }
 
-
     .checkout {
-        background-color: $dark-blue;
-        border-radius: 12px;
-        color: $cream;
-        padding-top: 20px;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 10px 10px;
-        .cupon {
-            display: inline-flex;
-            align-items: center;
+      background-color: $dark-blue;
+      border-radius: 12px;
+      color: $cream;
+      padding-top: 20px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 10px;
+      max-height: 500px;
+      .cupon {
+        display: inline-flex;
+        align-items: center;
 
-            .form-group{
-                position: relative;
-                .cupon-icon{
-                    background-image: url(../../assets/icons/cupon_icon.svg);
-                    width: 30px;
-                    height: 30px;
-                    display: block;
-                    position: absolute;
-                    top: 4px;
-                }
-            }
-            .cupon-code {
-                width: 197px;
-                height: 37px;
-                border-radius: 5px;
-                background: transparent;
-                border: 1px solid $cream;
-                padding: 11px 16px 11px 34px;
-                margin: 0px 5px 0px 0px;
-                color: white;
-                &:placeholder{
-                    color: #fff
-                }
-            }
+        .form-group {
+          position: relative;
+          .cupon-icon {
+            background-image: url(../../assets/icons/cupon_icon.svg);
+            width: 30px;
+            height: 30px;
+            display: block;
+            position: absolute;
+            top: 4px;
+          }
         }
-
-        .add-cupon-btn {
-            width: 111px;
-            height: 32px;
-            border-radius: 8px;
-            border: none;
-            font-family: "Red Hat Display", serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: $dark-blue;
-            background: $light-blue;
-
-            &:hover {
-                cursor: pointer;
-            }
+        .cupon-code {
+          width: 197px;
+          height: 37px;
+          border-radius: 5px;
+          background: transparent;
+          border: 1px solid $cream;
+          padding: 11px 16px 11px 34px;
+          margin: 0px 5px 0px 0px;
+          color: white;
+          &:placeholder {
+            color: #fff;
+          }
         }
+      }
+
+      .add-cupon-btn {
+        width: 111px;
+        height: 32px;
+        border-radius: 8px;
+        border: none;
+        font-family: "Red Hat Display", serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: $dark-blue;
+        background: $light-blue;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
 
     .total {
-        display: flex;
-        flex-direction: column;
-        table{
-            font-family: "Red Hat Display", serif;
-        }
+      display: flex;
+      flex-direction: column;
+      table {
+        font-family: "Red Hat Display", serif;
+      }
     }
-
+  }
 }
