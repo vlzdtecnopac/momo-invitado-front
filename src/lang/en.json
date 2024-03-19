@@ -20,9 +20,15 @@
     "bulkCoffee": "Bulk coffee",
     "enterPhone": "Enter your phone number",
     "enterEmail": "Enter your email",
-    "email": "Email",
     "phone": "Phone",
     "signInBtn": "Sign in",
     "signIn": "Sign in",
-    "selectSignInOption": "Select a sign in option"
+    "selectSignInOption": "Select a sign in option",
+    "register": "Register",
+    "cancelRegister": "Cancel Register",
+    "enterDataPerson": "Enter yuo personal data.",
+    "accepTerm": "Accept our terms and condition of privacy.",
+    "lastName": "Apellido",
+    "name": "Nombre"
+
 }

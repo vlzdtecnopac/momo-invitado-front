@@ -35,6 +35,11 @@
             cursor: pointer;
 
             &:hover {
+                
+                .text{
+                    color: $dark-blue
+                }
+
                 /* Move hover to the top level */
                 background-color: $dark-blue;
 

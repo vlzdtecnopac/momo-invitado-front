@@ -20,9 +20,15 @@
     "bulkCoffee": "Café Granel",
     "enterPhone": "Digita tu numero de teléfono",
     "enterEmail": "Digita tu correo electronico",
-    "email": "Correo eléctronico",
     "phone": "Teléfono",
     "signInBtn": "Ingresar",
     "signIn": "Iniciar sesión",
-    "selectSignInOption": "Selecciona una opción de ingreso"
+    "selectSignInOption": "Selecciona una opción de ingreso",
+    "register": "Registreme",
+    "cancelRegister": "Cancelar Registro",
+    "enterDataPerson": "Digita tus datos personales.",
+    "accepTerm": "Acepta nuestros Términos y Condiciones de Privacidad",
+    "email": "Correo Electrónico",
+    "lastName": "Apellido",
+    "name": "Nombre"
 }

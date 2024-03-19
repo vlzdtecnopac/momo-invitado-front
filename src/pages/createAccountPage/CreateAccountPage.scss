@@ -1,7 +1,18 @@
 @import "../../index.scss";
-
-.create-account-page {
-    height: 100vh;
+.alert-error{
+    font-family: 'Stacion';
+    font-weight: normal;
+    background: $orange;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 10px;
+    position: relative;
+    text-align: center;
+    width: 290px;
+    margin: auto auto 10px auto;
+}
+.create-account-page{
+    height: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +20,8 @@
 
     .logo-business {
         width: 220px;
-        margin: 5px 0px;
+        margin: 10px 0px;
+        margin-top: -70px;
     }
 
     .title {
@@ -27,18 +39,16 @@
     .form-group {
         position: relative;
     }
-
-    .select {
+    .select{
+        width: 95px;
         padding: 10px 15px;
         background: transparent;
         border: 1px $white solid;
         border-radius: 4px;
-        font-size: 20px;
+        font-size: 18px;
+        font-weight: 500;
         color: $white;
-        margin: 8px 0px;
-        font-size: 26px;
-        font-weight: 700;
-        height: 79px;
+        margin: 8.4px 0px;
     }
 
     .section-resgister {
@@ -54,9 +64,8 @@
 
         .input {
             width: 100%;
-            font-size: 28px;
-            font-weight: 700;
-            height: 79px;
+            font-size: 18px;
+            font-weight: 500;
         }
     }
 
@@ -82,7 +91,7 @@
         margin: 10px 0px;
         font-family: "Red Hat Display", sans-serif;
         color: $white;
-        margin: 20px 0px;
+        margin: 10px 0px;
         font-size: 18px;
 
         .link_term {
