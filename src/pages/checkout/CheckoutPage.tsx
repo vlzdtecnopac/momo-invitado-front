@@ -151,14 +151,14 @@ function CheckoutPage() {
                       <td>$ 50</td>
                     </tr>
                   </table>
-                  <hr />
+                  <hr className="border-dashed" />
                   <table>
                     <tr>
                       <td>Total</td>
                       <td>$ 50</td>
                     </tr>
                   </table>
-                  <button>Pagar</button>
+                  <button className="btn-payment">Pagar</button>
                 </div>
               </section>
             </div>
