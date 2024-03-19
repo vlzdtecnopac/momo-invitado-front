@@ -25,7 +25,7 @@
         width: 220px;
         display: block;
         text-align: center;
-        margin: 30px auto;
+        margin: 10px auto;
 
     }
 
@@ -59,7 +59,7 @@
                 display: block;
                 font-family: 'Stacion';
                 font-weight: 300;
-                font-size: 26px;
+                font-size: 24px;
                 font-style: normal;
                 margin: 20px auto;
                 width: 530px;
@@ -73,13 +73,13 @@
     .register-options {
         display: flex;
         flex-direction: column;
-        gap: 35px;
+        gap: 28px;
 
         .custom-btn {
             display: flex;
             flex-direction: column;
             min-width: 630px;
-            height: 130px;
+            height: 110px;
             align-items: center;
             padding: 10px 15px;
             border: 2px solid $cream;
@@ -135,17 +135,15 @@
             background-repeat: no-repeat;
             margin-bottom: 8px;
 
-
             &:hover {
                 background-color: $dark-blue;
             }
 
-
         }
 
         .custom-btn .icon {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
         }
 
         .custom-btn .text {
@@ -154,7 +152,7 @@
             font-family: "Red Hat Display",
                 "serif";
             font-weight: 700;
-            font-size: 32px;
+            font-size: 28px;
 
             &:hover {
                 color: $dark-blue;
