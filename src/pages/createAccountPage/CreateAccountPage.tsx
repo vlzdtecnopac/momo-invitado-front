@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import logoMomo from "../../assets/icons/logo.svg";
 import "./CreateAccountPage.scss";
+import { Link } from "react-router-dom";
 
 function CreateAccountPage() {
   return (
@@ -20,42 +21,91 @@ function CreateAccountPage() {
               ease: [0, 0.71, 0.2, 1.01],
             }}
           />
-          <h2>Registrarme</h2>
-          <p>Digita tus datos personales</p>
-          <div className="section-form">
-          <form>
-            <input
-              name="nombre"
-              placeholder="Nombre"
-              type="text"
-              className="input"
-            />
-            <input
-              name="apellido"
-              placeholder="Apellido"
-              type="text"
-              className="input"
-            />
-            <input
-              name="email"
-              placeholder="email"
-              type="email"
-              className="input"
-            />
-            <div>
-              <input type="checkbox" name="check" /> Acepta nuestros Términos y
-              Condiciones de Privacidad
+
+<motion.h2
+           className="title"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.5,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
+          > Registrarme</motion.h2>
+          <motion.p
+          className="subTitle"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.5,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
+          > Digita tus datos personales </motion.p>
+
+          <form className="form">
+            <div className="section-form">
+              <section className="form-group">
+                <input
+                  name="nombre"
+                  placeholder="Nombre"
+                  type="text"
+                  className="input"
+                />
+                <i className="icon-user"></i>
+              </section>
+              <section className="form-group">
+                <input
+                  name="apellido"
+                  placeholder="Apellido"
+                  type="text"
+                  className="input"
+                />
+                <i className="icon-user"></i>
+              </section>
+              <div className="grid-2_xs-2">
+                <div className="col-3" style={{padding: '0px 5px'}}>
+                  <select className="select">
+                    <option>ES</option>
+                    <option>COL</option>
+                  </select>
+                </div>
+                <div className="col-9" style={{padding: '0px 8px'}}>
+                <input
+                  name="email"
+                  placeholder="Correo Electrónico"
+                  type="email"
+                  className="input"
+                />
+                </div>
+              </div>
+              <section className="form-group">
+                <input
+                  name="email"
+                  placeholder="Correo Electrónico"
+                  type="email"
+                  className="input"
+                />
+                <i className="icon-email"></i>
+              </section>
+              <div className="term-condition">
+                <input type="checkbox" name="check" />
+                <Link className="link_term" to={`/`}>
+                  Acepta nuestros Términos y Condiciones de Privacidad
+                </Link>
+              </div>
             </div>
             <div className="grid-3_xs-1">
               <div className="col-6">
-                <button>Cancelar</button>
+                <button className="btn-cancelar">Cancelar Registro</button>
               </div>
               <div className="col-6">
-                <button type="submit">Registreme</button>
+                <button type="submit" className="btn-register">
+                  Registreme
+                </button>
               </div>
             </div>
           </form>
-          </div>
         </div>
       </div>
     </LayoutBlank>
