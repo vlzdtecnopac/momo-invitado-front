@@ -45,28 +45,26 @@ function LoginClient() {
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
               >
-                <h2 className="h2">Iniciar sesión</h2>
+                <h2 className="h2">{translate("signIn")}</h2>
                 <p className="parrafo-subtitulo">
-                  Selecciona una opción de ingreso
+                  {translate("selectSignInOption")}
                 </p>
               </motion.div>
               <div className="register-options">
                 <button className="custom-btn phone">
                   <span className="icon"></span>
-                  <span className="text">Telefono</span>
+                  <span className="text">{translate("phone")}</span>
                 </button>
 
                 <button className="custom-btn mail">
                   <span className="icon"></span>
-                  <span className="text">Correo Electrónico</span>
+                  <span className="text">{translate("email")}</span>
                 </button>
               </div>
               <hr />
-
+              {/* Phone Option */}
               <div className="phone-option">
-                <p className="parrafo-subtitulo">
-                  Digita tu numero de telefono
-                </p>
+                <p className="parrafo-subtitulo">{translate("enterPhone")}</p>
                 <div className="input">
                   <select className="country_id">
                     <option value="55">+55</option>
@@ -77,13 +75,25 @@ function LoginClient() {
                   </select>
                   <input
                     type="number"
-                    placeholder="Teléfono"
+                    placeholder={translate("phone")}
                     className="phone"
                   />
                 </div>
-                <button className="login-btn">Ingresar</button>
+                <button className="login-btn">{translate("signInBtn")}</button>
               </div>
-              <div className="mail-option"></div>
+              <hr />
+              {/* Email Option */}
+              <div className="email-option">
+                <p className="parrafo-subtitulo">{translate("enterEmail")}</p>
+                <div className="input">
+                  <input
+                    type="email"
+                    placeholder={translate("email")}
+                    className="email"
+                  />
+                </div>
+                <button className="login-btn">{translate("signInBtn")}</button>
+              </div>
               <Link
                 className="text-align-back"
                 to="/register"
@@ -94,7 +104,7 @@ function LoginClient() {
                     src={back}
                     alt="back"
                   />
-                  <span className="text">Atras</span>
+                  <span className="text">{translate("backText")}</span>
                 </div>
               </Link>
             </div>

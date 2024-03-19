@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import logoMomo from "../../assets/icons/logo.svg";
 import "./CreateAccountPage.scss";
-import { Link } from "react-router-dom";
 
 function CreateAccountPage() {
   return (
@@ -22,8 +22,8 @@ function CreateAccountPage() {
             }}
           />
 
-<motion.h2
-           className="title"
+          <motion.h2
+            className="title"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -31,9 +31,12 @@ function CreateAccountPage() {
               delay: 0.5,
               ease: [0, 0.71, 0.2, 1.01],
             }}
-          > Registrarme</motion.h2>
+          >
+            {" "}
+            Registrarme
+          </motion.h2>
           <motion.p
-          className="subTitle"
+            className="subTitle"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -41,7 +44,10 @@ function CreateAccountPage() {
               delay: 0.5,
               ease: [0, 0.71, 0.2, 1.01],
             }}
-          > Digita tus datos personales </motion.p>
+          >
+            {" "}
+            Digita tus datos personales{" "}
+          </motion.p>
 
           <form className="form">
             <div className="section-form">
@@ -64,19 +70,25 @@ function CreateAccountPage() {
                 <i className="icon-user"></i>
               </section>
               <div className="grid-2_xs-2">
-                <div className="col-3" style={{padding: '0px 5px'}}>
+                <div
+                  className="col-3"
+                  style={{ padding: "0px 5px" }}
+                >
                   <select className="select">
-                    <option>ES</option>
-                    <option>COL</option>
+                    <option>+55</option>
+                    <option>+56</option>
                   </select>
                 </div>
-                <div className="col-9" style={{padding: '0px 8px'}}>
-                <input
-                  name="email"
-                  placeholder="Correo Electrónico"
-                  type="email"
-                  className="input"
-                />
+                <div
+                  className="col-9"
+                  style={{ padding: "0px 8px" }}
+                >
+                  <input
+                    name="email"
+                    placeholder="Teléfono"
+                    type="email"
+                    className="input"
+                  />
                 </div>
               </div>
               <section className="form-group">
@@ -89,8 +101,14 @@ function CreateAccountPage() {
                 <i className="icon-email"></i>
               </section>
               <div className="term-condition">
-                <input type="checkbox" name="check" />
-                <Link className="link_term" to={`/`}>
+                <input
+                  type="checkbox"
+                  name="check"
+                />
+                <Link
+                  className="link_term"
+                  to={`/`}
+                >
                   Acepta nuestros Términos y Condiciones de Privacidad
                 </Link>
               </div>
@@ -100,7 +118,10 @@ function CreateAccountPage() {
                 <button className="btn-cancelar">Cancelar Registro</button>
               </div>
               <div className="col-6">
-                <button type="submit" className="btn-register">
+                <button
+                  type="submit"
+                  className="btn-register"
+                >
                   Registreme
                 </button>
               </div>

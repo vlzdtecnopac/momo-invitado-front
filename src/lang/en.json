@@ -17,5 +17,12 @@
     "cold": "Cold",
     "sweet": "Sweet",
     "salty": "Salty",
-    "bulkCoffee": "Bulk coffee"
+    "bulkCoffee": "Bulk coffee",
+    "enterPhone": "Enter your phone number",
+    "enterEmail": "Enter your email",
+    "email": "Email",
+    "phone": "Phone",
+    "signInBtn": "Sign in",
+    "signIn": "Sign in",
+    "selectSignInOption": "Select a sign in option"
 }

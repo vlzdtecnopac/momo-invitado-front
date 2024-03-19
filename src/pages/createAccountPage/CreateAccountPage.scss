@@ -1,90 +1,99 @@
 @import "../../index.scss";
 
-.create-account-page{
+.create-account-page {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $dark-blue;
 
-    .logo-business{
+    .logo-business {
         width: 220px;
         margin: 5px 0px;
     }
 
-    .title{
+    .title {
         color: $white;
     }
 
-    .subTitle{
+    .subTitle {
         color: $white;
     }
 
-    .form{
+    .form {
         margin-top: 20px;
     }
 
-    .form-group{
+    .form-group {
         position: relative;
     }
-    .select{
+
+    .select {
         padding: 10px 15px;
         background: transparent;
         border: 1px $white solid;
         border-radius: 4px;
         font-size: 20px;
-        font-weight: 500;
         color: $white;
         margin: 8px 0px;
+        font-size: 26px;
+        font-weight: 700;
+        height: 79px;
     }
 
-    .section-resgister{
+    .section-resgister {
         width: 530px;
         margin: auto;
         text-align: center;
     }
 
-    .section-form{
+    .section-form {
         display: block;
         width: 400px;
         margin: auto;
-        .input{
+
+        .input {
             width: 100%;
+            font-size: 28px;
+            font-weight: 700;
+            height: 79px;
         }
     }
 
-    .input{
+    .input {
         background: transparent;
         border: $white 1px solid;
         margin: 8px 0px;
         height: 40px;
         padding: 10px;
-        font-size: 18px;
+        font-size: 28px;
         color: $white;
         padding: 22px 10px;
         font-size: 18px;
         border-radius: 4px;
-        &::placeholder{
+
+        &::placeholder {
             color: $white
         }
     }
 
-    .term-condition{
+    .term-condition {
         display: flex;
         margin: 10px 0px;
         font-family: "Red Hat Display", sans-serif;
         color: $white;
         margin: 20px 0px;
         font-size: 18px;
-        .link_term{
+
+        .link_term {
             color: $white ;
             font-size: 14px;
 
         }
-        
+
     }
 
-    .btn-cancelar{
+    .btn-cancelar {
         background: transparent;
         color: $white;
         border-radius: 20px;
@@ -95,12 +104,13 @@
         font-size: 18px;
         border: 1px $white solid;
         margin: 0px 5px;
-        &:hover{
+
+        &:hover {
             cursor: pointer;
         }
     }
 
-    .btn-register{
+    .btn-register {
         background: $orange;
         color: $white;
         padding: 10px;
@@ -112,7 +122,8 @@
         font-weight: 600;
         font-size: 18px;
         margin: 0px 5px;
-        &:hover{
+
+        &:hover {
             background-color: #de470b;
             cursor: pointer;
         }

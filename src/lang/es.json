@@ -17,5 +17,12 @@
     "cold": "Frio",
     "sweet": "Dulce",
     "salty": "Salado",
-    "bulkCoffee": "Café Granel"
+    "bulkCoffee": "Café Granel",
+    "enterPhone": "Digita tu numero de teléfono",
+    "enterEmail": "Digita tu correo electronico",
+    "email": "Correo eléctronico",
+    "phone": "Teléfono",
+    "signInBtn": "Ingresar",
+    "signIn": "Iniciar sesión",
+    "selectSignInOption": "Selecciona una opción de ingreso"
 }

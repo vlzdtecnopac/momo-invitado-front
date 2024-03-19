@@ -195,8 +195,6 @@
         }
     }
 
-
-
     .phone-option {
         display: flex;
         flex-direction: column;
@@ -242,27 +240,33 @@
         }
 
 
-        .login-btn {
-            width: 320px;
-            height: 50px;
-            border: none;
-            border-radius: 32px;
-            color: $cream;
-            background: $orange;
-            font-family: "Red Hat Display";
-            font-size: 28px;
-            font-weight: 700;
-            text-align: center;
-            margin: 50px auto;
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
 
 
     }
 
+    .email-option {
+        .input {
+            display: flex;
+            justify-content: center;
+
+            .email {
+                width: 500px;
+                height: 79px;
+                font-family: "Red Hat Display";
+                border: 2px solid $cream;
+                color: $cream;
+                font-size: 28px;
+                font-weight: 700;
+                text-align: left;
+                background: transparent;
+                border-radius: 5px;
+
+                &::placeholder {
+                    color: $cream;
+                }
+            }
+        }
+    }
 }
 
 .parrafo-subtitulo {
@@ -276,5 +280,24 @@
     margin: 20px auto;
     width: 544px;
     padding-bottom: 30px;
+}
 
+.login-btn {
+    width: 320px;
+    height: 50px;
+    border: none;
+    border-radius: 32px;
+    color: $cream;
+    background: $orange;
+    font-family: "Red Hat Display";
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
