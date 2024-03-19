@@ -1,7 +1,18 @@
 @import "../../index.scss";
-
+.alert-error{
+    font-family: 'Stacion';
+    font-weight: normal;
+    background: $orange;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 10px;
+    position: relative;
+    text-align: center;
+    width: 290px;
+    margin: auto auto 10px auto;
+}
 .create-account-page{
-    height: 100vh;
+    height: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
