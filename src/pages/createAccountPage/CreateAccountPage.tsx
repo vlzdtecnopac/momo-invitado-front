@@ -114,8 +114,7 @@ function CreateAccountPage() {
                   email: values.email,
                   country: selectCountry,
                 };
-                console.log(data);
-
+            
                 await axios.post(
                   `${import.meta.env.VITE_API_URL}/users/client/register`,
                   data,
@@ -147,7 +146,7 @@ function CreateAccountPage() {
                   <section className="form-group">
                     <input
                       name="firstName"
-                      placeholder={translate("name")}
+                      placeholder={translate("firstName")}
                       type="text"
                       className="input"
                       onChange={handleChange}
@@ -249,7 +248,7 @@ function CreateAccountPage() {
                       <span className="custom-checkbox"></span>
                     </label>
                     <Link className="link_term" to={`/`}>
-                      {translate("accepTerm")}
+                      {translate("acceptTerms")}
                     </Link>
                   </div>
                 </div>

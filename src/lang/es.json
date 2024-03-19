@@ -42,5 +42,10 @@
     "debit": "Débito",
     "credit": "Crédito",
     "cash": "Efectivo",
-    "add": "Agregar"
+    "add": "Agregar",
+    "enterDataPerson": "Digita tus datos personales",
+    "firstName": "Nombres",
+    "lastName": "Apelldios",
+    "email": "Correo Electrónico",
+    "acceptTerm": "Acepta nuestros Términos y Condiciones de Privacidad"
 }

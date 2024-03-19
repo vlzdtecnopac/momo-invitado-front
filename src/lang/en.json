@@ -42,5 +42,9 @@
     "debit": "Debit",
     "credit": "Credit",
     "cash": "Cash",
-    "add": "Add"
+    "add": "Add",
+    "enterDataPerson": "Enter your personal data.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email"
 }
