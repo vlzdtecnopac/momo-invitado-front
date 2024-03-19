@@ -139,3 +139,46 @@ a {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #08093e67;
 }
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Style the custom checkbox */
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+/* Style the checked state */
+.custom-checkbox::after {
+    content: '\2713';
+    font-size: 14px;
+    color: $white;
+    background: $dark-blue;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    display: none;
+    border-radius: 4px;
+}
+
+/* Show the checked state when the checkbox is checked */
+input[type="checkbox"]:checked + .custom-checkbox::after {
+    display: block;
+}
+
+/* Style the label */
+.label-text {
+    margin-left: 10px;
+}
