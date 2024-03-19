@@ -299,7 +299,7 @@
           padding: 11px 16px 11px 34px;
           margin: 0px 5px 0px 0px;
           color: white;
-          &:placeholder {
+          &::placeholder {
             color: #fff;
           }
         }
