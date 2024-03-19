@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Formik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as Yup from "yup";
 
@@ -19,6 +19,7 @@ const CreateAccountSchema = Yup.object().shape({
 });
 
 function CreateAccountPage() {
+  const  navigate = useNavigate();
   const { translate } = useLanguage();
   const [countries, setCountries] = useState([]);
   const [selectedCountryCode, setSelectedCountryCode] = useState("+57");
@@ -35,6 +36,8 @@ function CreateAccountPage() {
     };
     fetchCountries();
   }, []); 
+
+  const cancelHandlerRegister = () => navigate("/");
 
 
   return (
@@ -185,7 +188,7 @@ function CreateAccountPage() {
             </div>
             <div className="grid-3_xs-1">
               <div className="col-6">
-                <button className="btn-cancelar">
+                <button onClick={()=>cancelHandlerRegister()} className="btn-cancelar">
                 {translate("cancelRegister")}
                 </button>
               </div>
