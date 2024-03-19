@@ -28,14 +28,15 @@
         position: relative;
     }
     .select{
+        width: 95px;
         padding: 10px 15px;
         background: transparent;
         border: 1px $white solid;
         border-radius: 4px;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 500;
         color: $white;
-        margin: 8px 0px;
+        margin: 8.4px 0px;
     }
 
     .section-resgister{
@@ -74,7 +75,7 @@
         margin: 10px 0px;
         font-family: "Red Hat Display", sans-serif;
         color: $white;
-        margin: 20px 0px;
+        margin: 10px 0px;
         font-size: 18px;
         .link_term{
             color: $white ;

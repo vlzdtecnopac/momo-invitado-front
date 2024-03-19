@@ -21,5 +21,8 @@
     "register": "Register",
     "cancelRegister": "Cancel Register",
     "enterDataPerson": "Enter yuo personal data.",
-    "accepTerm": "Accept our terms and condition of privacy."
+    "accepTerm": "Accept our terms and condition of privacy.",
+    "email": "Email",
+    "lastName": "Apellido",
+    "name": "Nombre"
 }

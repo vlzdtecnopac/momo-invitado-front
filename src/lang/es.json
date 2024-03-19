@@ -21,5 +21,8 @@
     "register": "Registreme",
     "cancelRegister": "Cancelar Registro",
     "enterDataPerson": "Digita tus datos personales.",
-    "accepTerm": "Acepta nuestros Términos y Condiciones de Privacidad"
+    "accepTerm": "Acepta nuestros Términos y Condiciones de Privacidad",
+    "email": "Correo Electrónico",
+    "lastName": "Apellido",
+    "name": "Nombre"
 }

@@ -86,11 +86,17 @@ function DrinkDetailPage() {
                     <div className="extra-options">
                       <span className="extra">
                         10$
-                        <input className="checkbox" name="10" type="checkbox" />
+                        <label>
+                        <input name="10"  type="checkbox" />
+                        <span className="custom-checkbox"></span>
+                        </label>
                       </span>
                       <span className="extra">
                         20$
-                        <input name="20" className="checkbox" type="checkbox" />
+                        <label>
+                        <input name="20"  type="checkbox" />
+                        <span className="custom-checkbox"></span>
+                        </label>
                       </span>
                     </div>
                   </div>
@@ -143,8 +149,6 @@ function DrinkDetailPage() {
                   </div>
                 </div>
                 <div className="container-btn-payment">
-                  <hr className="separator" />
-
                   <div className="btn-container">
                     <button className="add-cart-btn">
                       Agregar al carrito $47

@@ -4,9 +4,27 @@ import logoMomo from "../../assets/icons/logo.svg";
 import "./CreateAccountPage.scss";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
+import { useEffect, useState } from "react";
 
 function CreateAccountPage() {
   const { translate } = useLanguage();
+  const [countries, setCountries] = useState([]);
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+57");
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch('./src/dummy/listCountry.json');
+        const data = await response.json();
+        setCountries(data);
+      } catch (error) {
+        console.error('Error fetching countries data:', error);
+      }
+    };
+    fetchCountries();
+  }, []); 
+
+
   return (
     <LayoutBlank>
       <div className="create-account-page">
@@ -54,7 +72,7 @@ function CreateAccountPage() {
               <section className="form-group">
                 <input
                   name="nombre"
-                  placeholder="Nombre"
+                  placeholder={translate("name")}
                   type="text"
                   className="input"
                 />
@@ -63,7 +81,7 @@ function CreateAccountPage() {
               <section className="form-group">
                 <input
                   name="apellido"
-                  placeholder="Apellido"
+                  placeholder={translate("lastName")}
                   type="text"
                   className="input"
                 />
@@ -72,14 +90,13 @@ function CreateAccountPage() {
               <div className="grid-2_xs-2">
                 <div className="col-3" style={{ padding: "0px 5px" }}>
                   <select className="select">
-                    <option>ES</option>
-                    <option>COL</option>
+                    {countries && countries.length > 0 && countries.map((country: any, index: number)=> (<option  key={index} selected={selectedCountryCode === country.dial_code} >{country.dial_code}</option>))}
                   </select>
                 </div>
                 <div className="col-9" style={{ padding: "0px 8px" }}>
                   <input
                     name="email"
-                    placeholder="Correo Electrónico"
+                    placeholder="Número Telefonico"
                     type="email"
                     className="input"
                   />
@@ -88,7 +105,7 @@ function CreateAccountPage() {
               <section className="form-group">
                 <input
                   name="email"
-                  placeholder="Correo Electrónico"
+                  placeholder={translate("email")}
                   type="email"
                   className="input"
                 />
