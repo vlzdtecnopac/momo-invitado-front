@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import pay from "../../assets/icons/payment-icon.svg";
-import "./Modal.scss";
+import pay from "../../../assets/icons/payment-icon.svg";
+import "./ContinuePayment.scss";
 
 interface ModalProps {
   actionKey: React.Key;
 }
 
-const Modal: React.FC<ModalProps> = ({ actionKey }) => {
+const ContinuePayment: React.FC<ModalProps> = ({ actionKey }) => {
   return (
     <div className="modal-container">
       <div className="shadow-effect"></div>
@@ -37,4 +37,4 @@ const Modal: React.FC<ModalProps> = ({ actionKey }) => {
     </div>
   );
 };
-export default Modal;
+export default ContinuePayment;

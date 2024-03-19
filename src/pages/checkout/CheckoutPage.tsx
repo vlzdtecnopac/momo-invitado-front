@@ -1,11 +1,12 @@
 import barista from "../../assets/barista.png";
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";
-import Modal from "../../components/Modal/Modal";
+import ContinuePaymentModal from "../../components/Modal/ContinuePayment/ContinuePayment";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./CheckoutPage.scss";
+import FailedPayment from "../../components/Modal/FailedPayment/FailedPayment";
 
 function CheckoutPage() {
   const { translate } = useLanguage();
@@ -171,7 +172,8 @@ function CheckoutPage() {
                 </div>
               </section>
             </div>
-            {/*<Modal actionKey={""} />*/}
+            {/* <ContinuePaymentModal actionKey={""} /> */}
+            <FailedPayment actionKey={""} />
           </div>
         </div>
       </Layout>
