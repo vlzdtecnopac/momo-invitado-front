@@ -61,7 +61,6 @@ function CreateAccountPage() {
               ease: [0, 0.71, 0.2, 1.01],
             }}
           />
-
           <motion.h2
             className="title"
             initial={{ opacity: 0, scale: 0.5 }}
@@ -91,13 +90,12 @@ function CreateAccountPage() {
             initialValues={{
               firstName: "",
               lastName: "",
-              numberCode: "",
+              numberCode: selectedCountryCode,
               phone: "",
               email: "",
             }}
             validationSchema={CreateAccountSchema}
             onSubmit={async (values) => {
-         
               try {
                 let selectCountry;
                 countries.map((country: any) => {
@@ -112,11 +110,15 @@ function CreateAccountPage() {
                   phone: values.phone,
                   code: values.numberCode,
                   email: values.email,
-                  country: selectCountry
+                  country: selectCountry,
                 };
+                console.log(data);
 
-                await axios.post(`${import.meta.env.VITE_API_URL}/users/client/register`, data, { headers: tokenHeader });
-                
+                await axios.post(
+                  `${import.meta.env.VITE_API_URL}/users/client/register`,
+                  data,
+                  { headers: tokenHeader }
+                );
               } catch (e) {
                 console.log(e);
               }
