@@ -72,11 +72,11 @@ function RegisterPage() {
                   className="custom-btn create"
                 >
                   <span className="icon"></span>
-                  <span className="text">{translate("createAccount")}</span>
+                  <p className="text">{translate("createAccount")}</p>
                 </Link>
                 <Link to="/categories" className="custom-btn no-register">
                   <span className="icon"></span>
-                  <span className="text">{translate("oderAccount")}</span>
+                  <p className="text">{translate("oderAccount")}</p>
                 </Link>
               </div>
             </div>
