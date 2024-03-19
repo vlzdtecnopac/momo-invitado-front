@@ -7,6 +7,8 @@ const LoginPage = () => {
   useEffect(()=>{
     if(localStorage.getItem("token-momo")){
       navigate("/order-here")
+    }else{
+      localStorage.clear();
     }
   })
   return (
