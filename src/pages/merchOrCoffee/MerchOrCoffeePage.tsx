@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
 import Layout from "../../includes/layout/Layout";
+import { useLanguage } from "../../context/Langi18nContext";
 import "./MerchOrCoffeePage.scss";
 
 function HotOrColdPage() {
+  const { translate } = useLanguage();
+
   return (
     <>
       <Layout>
@@ -10,14 +14,18 @@ function HotOrColdPage() {
             <div className="center-container">
               <div className="container">
                 <div className="options">
-                  <button className="custom-btn merch">
-                    <span className="icon"></span>
-                    <span className="text">Merch</span>
-                  </button>
-                  <button className="custom-btn coffee-bean">
-                    <span className="icon"></span>
-                    <span className="text">Café granel</span>
-                  </button>
+                  <Link to="../products">
+                    <button className="custom-btn merch">
+                      <span className="icon"></span>
+                      <span className="text">Merch</span>
+                    </button>
+                  </Link>
+                  <Link to="../products">
+                    <button className="custom-btn coffee-bean">
+                      <span className="icon"></span>
+                      <span className="text">{translate("bulkCoffee")}</span>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

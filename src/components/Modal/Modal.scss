@@ -1,4 +1,4 @@
-.congrats-success {
+.modal-container {
     .shadow-effect {
         position: fixed;
         background: #4d4d4d6b;
@@ -9,10 +9,10 @@
         top: 0px;
     }
 
-    .congrats {
+    .modal {
         position: fixed;
-        width: 631px;
-        height: 550px;
+        width: 720px;
+        height: 511px;
         background: #D5EAFB;
         border-radius: 16px;
         margin: auto;
@@ -22,58 +22,36 @@
         bottom: 0px;
         z-index: 999;
 
-        .congrats-container {
+        .container {
             display: flex;
             flex-direction: column;
-            margin-top: 142px;
-            gap: 21px;
 
+            margin-top: 130px;
+            margin-bottom: 130px;
 
-            .congrats-img {
+            .img {
                 width: 228px;
                 margin: 0 auto;
+                padding-bottom: 21px;
 
             }
 
-            .congrat {
+            .text {
                 color: #000;
                 margin: 0 auto;
-
-                &.small-text {
-                    font-size: 20px;
-                }
-
-                &.medium-text {
-                    font-size: 24px;
-                }
-
-                &.large-text {
-                    font-size: 28px
-                }
-
+                font-family: "Red Hat Display";
+                font-size: 20px;
+                font-weight: 700;
             }
 
-            .congrat-text {
+            .sub-text {
                 margin: 0 auto;
-                width: 224px;
+                width: 194px;
                 text-align: center;
-                height: 42px;
-                font-weight: 500;
+                // height: 42px;
+                font-weight: 600;
                 font-size: 16px;
                 font-family: "Red Hat Display", "serif";
-
-                &.small-text {
-                    font-size: 14px;
-                }
-
-                &.medium-text {
-                    font-size: 16px;
-                }
-
-                &.large-text {
-                    font-size: 20px
-                }
-
             }
 
         }

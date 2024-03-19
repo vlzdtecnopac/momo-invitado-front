@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import coffee from "../../assets/coffee-momo.png";
+import pay from "../../assets/icons/payment-icon.svg";
 import "./Modal.scss";
 
 interface ModalProps {
@@ -9,11 +9,11 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ actionKey }) => {
   return (
-    <div className="congrats-success">
+    <div className="modal-container">
       <div className="shadow-effect"></div>
       <motion.div
         key={actionKey}
-        className="congrats"
+        className="modal"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -22,15 +22,15 @@ const Modal: React.FC<ModalProps> = ({ actionKey }) => {
           ease: [0, 0.55, 0.2, 1.01],
         }}
       >
-        <div className="congrats-container">
+        <div className="container">
           <img
-            className="congrats-img"
-            src={coffee}
+            className="img"
+            src={pay}
             alt="momo-coffee"
           />
-          <h2 className={`congrat`}>¡Felicidades!</h2>
-          <p className={`congrat-text`}>
-            Tus cambios se han guardado exitosamente.
+          <h2 className={`text`}>Continua el proceso</h2>
+          <p className={`sub-text`}>
+            siguiendo las instrucciones de la terminal de pago.{" "}
           </p>
         </div>
       </motion.div>

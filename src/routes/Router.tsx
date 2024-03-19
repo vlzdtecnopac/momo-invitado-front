@@ -12,6 +12,9 @@ const LazyNoCashPage = lazy(() => import("../pages/noCash/NoCashPage"));
 const LazyRegisterPage = lazy(
   () => import("../pages/registerPage/RegisterPage")
 );
+const LazyLoginClientPage = lazy(
+  () => import("../pages/loginClient/LoginClient")
+);
 const LazyHotOrColdPage = lazy(
   () => import("../pages/hotOrCold/HotOrColdPage")
 );
@@ -101,6 +104,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyRegisterPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/login-client",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyLoginClientPage />
       </Suspense>
     ),
   },

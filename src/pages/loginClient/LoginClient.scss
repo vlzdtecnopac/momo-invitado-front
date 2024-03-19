@@ -1,0 +1,194 @@
+@import "../../index.scss";
+
+.register_page {
+    background: $dark-blue;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+
+    .left {
+        width: 60%;
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @media screen and (max-width: 790px) {
+                display: none;
+            }
+        }
+    }
+
+
+    .logo-business {
+        width: 220px;
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+
+
+    .center-container {
+        display: flex;
+        justify-content: center;
+
+        .container {
+            .text-align-back {
+                padding-top: 113px;
+                text-align: center;
+                margin: auto;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .back {
+                width: 250px;
+                height: 50px;
+                border-radius: 129px;
+                border: 2px solid $cream;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .back-icon {
+                    width: 35px;
+                    height: 40px;
+                }
+
+                .text {
+                    width: 145px;
+                    height: 40px;
+                    font-weight: 700;
+                    font-size: 30px;
+                    font-family: "Red Hat Display", "serif";
+                    padding: 0;
+                    color: $cream;
+                }
+            }
+        }
+    }
+
+
+    .column-right {
+        margin: 40px auto;
+        width: 100%;
+
+        @media screen and (max-width: 790px) {
+            margin: auto;
+        }
+
+        .text {
+            .h2 {
+                color: $cream;
+                display: flex;
+                justify-content: center;
+                margin: 5px auto;
+                font-size: 28px;
+            }
+
+            .parrafo-subtitulo {
+                color: $cream;
+                text-align: center;
+                display: block;
+                font-family: 'Stacion';
+                font-weight: 300;
+                font-size: 20px;
+                font-style: normal;
+                margin: 20px auto;
+                width: 320px;
+
+            }
+
+
+        }
+    }
+
+    .register-options {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .custom-btn {
+            display: flex;
+            flex-direction: column;
+            min-width: 541px;
+            height: 110px;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid $cream;
+            border-radius: 5px;
+            background-color: transparent;
+            color: $cream;
+            text-align: center;
+
+
+            &:hover {
+                /* Move hover to the top level */
+                background-color: $dark-blue;
+                cursor: pointer;
+
+                .icon {
+                    /* Target icon directly */
+                    background-color: $dark-blue;
+                    /* Change icon background on hover */
+                }
+            }
+
+            &:hover {
+                color: $dark-blue;
+                background: $dark-blue;
+                background-color: $cream;
+                border: $dark-blue;
+            }
+        }
+
+        .phone .icon {
+            background-color: $cream;
+            -webkit-mask-image: url("/src/assets/icons/phone.svg");
+            mask-image: url("/src/assets/icons/phone.svg");
+            mask-size: 100%;
+            background-repeat: no-repeat;
+            margin-bottom: 8px;
+        }
+
+
+        .mail .icon {
+            background-color: $cream;
+            -webkit-mask-image: url("/src/assets/icons/mail.svg");
+            mask-image: url("/src/assets/icons/mail.svg");
+            mask-size: 100%;
+            background-repeat: no-repeat;
+            margin-bottom: 8px;
+
+
+            &:hover {
+                background-color: $dark-blue;
+            }
+
+
+        }
+
+        .custom-btn .icon {
+            width: 45px;
+            height: 45px;
+        }
+
+        .custom-btn .text {
+            width: 100%;
+            margin-left: 5px;
+            font-family: "Red Hat Display",
+                "serif";
+            font-weight: 700;
+            font-size: 20px;
+
+            &:hover {
+                color: $dark-blue;
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@
     "notAcceptEffecty": "No aceptamos efectivo. Descubre por qué",
     "orderHere": "Ordena aqui",
     "backText": "Regresar",
-    "wellcome": "Bienvenido",
+    "welcome": "Bienvenido",
     "registerSub": "Regístrate y descubre un mundo de beneficios.",
     "customerRegistered": "Cliente Registrado",
     "createAccount": "Crear Cuenta",
@@ -12,6 +12,10 @@
     "subNotEffectiveFooter": "Nos comprometemos a proporcionar una experiencia de compra eficiente, segura y moderna. Para consultas, contáctanos sin dudarlo.",
     "subListOne": "Mejoramos condiciones de higiene y evitamos contaminación de productos.",
     "subListTwo": "Agilizamos nuestras operaciones para que recibas tu café en pocos minutos.",
-    "subListThree": "Reducimos riesgos asociados con robos a local y a nuestros clientes."
-
+    "subListThree": "Reducimos riesgos asociados con robos a local y a nuestros clientes.",
+    "hot": "Caliente",
+    "cold": "Frio",
+    "sweet": "Dulce",
+    "salty": "Salado",
+    "bulkCoffee": "Café Granel"
 }
