@@ -17,5 +17,9 @@
     "cold": "Cold",
     "sweet": "Sweet",
     "salty": "Salty",
-    "bulkCoffee": "Bulk coffee"
+    "bulkCoffee": "Bulk coffee",
+    "register": "Register",
+    "cancelRegister": "Cancel Register",
+    "enterDataPerson": "Enter yuo personal data.",
+    "accepTerm": "Accept our terms and condition of privacy."
 }

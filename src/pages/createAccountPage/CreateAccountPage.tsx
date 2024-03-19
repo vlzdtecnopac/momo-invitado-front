@@ -3,8 +3,10 @@ import LayoutBlank from "../../includes/layout/LayoutBlank";
 import logoMomo from "../../assets/icons/logo.svg";
 import "./CreateAccountPage.scss";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../context/Langi18nContext";
 
 function CreateAccountPage() {
+  const { translate } = useLanguage();
   return (
     <LayoutBlank>
       <div className="create-account-page">
@@ -32,8 +34,7 @@ function CreateAccountPage() {
               ease: [0, 0.71, 0.2, 1.01],
             }}
           >
-            {" "}
-            Registrarme
+            {translate("register")}
           </motion.h2>
           <motion.p
             className="subTitle"
@@ -45,8 +46,7 @@ function CreateAccountPage() {
               ease: [0, 0.71, 0.2, 1.01],
             }}
           >
-            {" "}
-            Digita tus datos personales{" "}
+            {translate("enterDataPerson")}
           </motion.p>
 
           <form autoComplete="false" className="form">
@@ -100,17 +100,19 @@ function CreateAccountPage() {
                   <span className="custom-checkbox"></span>
                 </label>
                 <Link className="link_term" to={`/`}>
-                  Acepta nuestros Términos y Condiciones de Privacidad
+                {translate("accepTerm")}
                 </Link>
               </div>
             </div>
             <div className="grid-3_xs-1">
               <div className="col-6">
-                <button className="btn-cancelar">Cancelar Registro</button>
+                <button className="btn-cancelar">
+                {translate("cancelRegister")}
+                </button>
               </div>
               <div className="col-6">
                 <button type="submit" className="btn-register">
-                  Registreme
+                {translate("register")}
                 </button>
               </div>
             </div>

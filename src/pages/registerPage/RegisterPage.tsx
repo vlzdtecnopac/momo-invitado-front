@@ -13,9 +13,20 @@ function RegisterPage() {
     <LayoutBlank>
       <div className="register_page_momo">
         <div className="left">
+        <motion.img
+          className="image"
+          src={imgRegister}
+          alt="img"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+        />
           <img
             className="image"
-            src={imgRegister}
             alt="img"
           />
         </div>

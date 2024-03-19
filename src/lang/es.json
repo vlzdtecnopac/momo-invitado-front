@@ -17,5 +17,9 @@
     "cold": "Frio",
     "sweet": "Dulce",
     "salty": "Salado",
-    "bulkCoffee": "Café Granel"
+    "bulkCoffee": "Café Granel",
+    "register": "Registreme",
+    "cancelRegister": "Cancelar Registro",
+    "enterDataPerson": "Digita tus datos personales.",
+    "accepTerm": "Acepta nuestros Términos y Condiciones de Privacidad"
 }
