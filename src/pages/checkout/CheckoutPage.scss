@@ -7,13 +7,15 @@
 
 .checkout_background {
   background-color: $light-blue;
-  height: 100vh;
+  height: 120vh;
   padding-top: 190px;
 
   .checkout_container {
     padding: 10px;
     max-width: 1390px;
     margin: auto;
+
+  
     img {
       width: 100%;
     }
@@ -124,6 +126,8 @@
           padding: 20px;
           padding-left: 30px;
           font-size: 18px;
+          border-radius: 4px;
+          border: 0px;
         }
 
         .icon-user {
@@ -329,9 +333,15 @@
     .total {
       display: flex;
       flex-direction: column;
+      
       table {
         font-family: "Red Hat Display", serif;
       }
+
+      .sub-total{
+        width: 240px;
+      }
+
       .btn-payment {
         background: $orange;
         color: white;

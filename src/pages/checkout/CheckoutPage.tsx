@@ -154,7 +154,7 @@ function CheckoutPage() {
                   <hr className="border-dashed" />
                   <table>
                     <tr>
-                      <td>Total</td>
+                      <td className="sub-total">Total</td>
                       <td>$ 50</td>
                     </tr>
                   </table>
