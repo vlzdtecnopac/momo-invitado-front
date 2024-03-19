@@ -2,9 +2,13 @@ import { motion } from "framer-motion";
 
 import logo from "../../assets/icons/logo.svg";
 import checkIcon from "../../assets/icons/check.svg";
+import { useLanguage } from "../../context/Langi18nContext";
+
 import "./ClientWelcomePage.scss";
 
 function ClientWelcomePage() {
+  const { translate } = useLanguage();
+
   return (
     <div className="success_fully">
       <div className="container">
@@ -14,7 +18,7 @@ function ClientWelcomePage() {
             src={logo}
             alt="logo"
           />
-          <h2 className={`success`}>Bienvenido</h2>
+          <h2 className={`success`}>{translate("welcome")}</h2>
           <motion.div
             className="box"
             initial={{ opacity: 0, scale: 0.5 }}
@@ -38,9 +42,7 @@ function ClientWelcomePage() {
           </motion.div>
           <h2 className={`text`}>
             <span className="space">Michael Gonzalez</span> <br />
-            <span className="light-text">
-              Estamos emocionados de tenerte de vuelta en
-            </span>
+            <span className="light-text">{translate("welcomeText")}</span>
             <br />
             MOMO.
           </h2>
