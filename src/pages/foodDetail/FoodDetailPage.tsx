@@ -88,9 +88,6 @@ function FoodDetailPage() {
                     <Slider />
                   </div>
                 </div>
-
-                <hr className="separator" />
-
                 <div className="btn-container">
                   <button className="add-cart-btn">
                     Agregar al carrito $47
