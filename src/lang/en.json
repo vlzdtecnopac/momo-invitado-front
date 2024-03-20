@@ -44,6 +44,7 @@
     "cash": "Cash",
     "add": "Add",
     "enterDataPerson": "Enter your personal data.",
+    "name": "Name",
     "firstName": "First Name",
     "lastName": "Last Name",
     "email": "Email",
@@ -61,5 +62,11 @@
     "receiptSent": "Your receipt has been sent correctly.",
     "orderClientOk": "Your order is being prepared and in a few minutes you will have the best of MOMO in your hands.",
     "continueShopping": "Continue shopping",
-    "exit": "Exit"
+    "exit": "Exit",
+    "great": "Great",
+    "finishOrder": "Finish Order",
+    "thanks": "Thanks for your purchase",
+    "thanksText": "In a few minutes you will have the best of MOMO in your hands Help us with your name to call you when your order is ready, or when your order is ready, or sign up to take advantage of exclusive benefits!",
+    "momoPrivacy": "At MoMo, we take care of your privacy.",
+    "momoPrivacyData": "Here we explain how we handle your data:"
 }

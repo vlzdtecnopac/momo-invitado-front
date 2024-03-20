@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 
 import logo from "../../assets/icons/logo.svg";
 import coffee from "../../assets/coffee-momo.png";
-// import { useLanguage } from "../../context/Langi18nContext";
+import { useLanguage } from "../../context/Langi18nContext";
 
 import "./GuestOrderOk.scss";
 
 function GuestOrderOk() {
-  // const { translate } = useLanguage();
+  const { translate } = useLanguage();
 
   return (
     <div className="success_fully">
@@ -43,16 +43,14 @@ function GuestOrderOk() {
           </motion.div>
 
           <p className="text">
-            ¡Gracias por tu compra! <br /> En pocos minutos tendrás lo mejor de
-            MOMO en tus manos Ayúdanos con tu nombre para llamarte cuando tu
-            pedido esté listo, o regístrate para aprovechar beneficios
-            exclusivos!
+            <span>¡{translate("thanks")}!</span> <br />{" "}
+            {translate("thanksText")}
           </p>
           <div className="client">
             <section className="form-group">
               <input
                 name="name"
-                placeholder="Nombre"
+                placeholder={translate("name")}
                 type="text"
                 className="name"
               />
@@ -60,8 +58,8 @@ function GuestOrderOk() {
             </section>
           </div>
           <div className="btns">
-            <button className="shop">Finalizar orden</button>
-            <button className="exit">Registrarme</button>
+            <button className="shop">{translate("finishOrder")}</button>
+            <button className="exit">{translate("register")}</button>
           </div>
         </div>
       </div>

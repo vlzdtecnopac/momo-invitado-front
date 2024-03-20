@@ -11,6 +11,7 @@ import SuccessPayment from "../../components/Modal/SuccessPayment/SuccessPayment
 import ReceiptSent from "../../components/Modal/ReceiptSend/ReceiptSent";
 import FailedPayment from "../../components/Modal/FailedPayment/FailedPayment";
 import ContinuePayment from "../../components/Modal/ContinuePayment/ContinuePayment";
+import Terms from "../../components/Modal/terms/Terms";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -197,6 +198,7 @@ function CheckoutPage() {
             {/* <FailedPayment actionKey={""} /> */}
             {/* <SuccessPayment actionKey={""} /> */}
             {/* <ReceiptSent actionKey={""} /> */}
+            <Terms actionKey={""} />
           </div>
         </div>
       </Layout>
