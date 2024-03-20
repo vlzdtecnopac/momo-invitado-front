@@ -6,9 +6,28 @@ import Layout from "../../includes/layout/Layout";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./CheckoutPage.scss";
+import { useState } from "react";
+
+function MethodsCard() {
+  const { translate } = useLanguage();
+  return (
+    <>
+      <hr />
+      <div className="card-type">
+        <button className="type">{translate("credit")}</button>
+        <button className="type">{translate("debit")}</button>
+      </div>
+    </>
+  );
+}
 
 function CheckoutPage() {
+  const [stateCard , setStateCard] =  useState<boolean>(false);
   const { translate } = useLanguage();
+
+  const optionHandlerCard  = (state: boolean) => {
+    setStateCard(!state)
+  }
 
   return (
     <>
@@ -22,10 +41,7 @@ function CheckoutPage() {
               <section className="tip">
                 <div className="grid-2">
                   <div className="col-5">
-                    <img
-                      alt="Barista"
-                      src={barista}
-                    />
+                    <img alt="Barista" src={barista} />
                   </div>
                   <div className="col-7 tip-text">
                     <h2>{translate("baristaTipText")}</h2>
@@ -94,15 +110,11 @@ function CheckoutPage() {
                   </div>
                   <h2 className="text">{translate("selectPayMethod")}</h2>
                   <div className="pay-method">
-                    <button className="card">
+                    <button onClick={() => optionHandlerCard(stateCard)} className="card">
                       <i className="card-icon"></i>
                       {translate("card")}
                     </button>
-                    <hr />
-                    <div className="card-type">
-                      <button className="type">{translate("credit")}</button>
-                      <button className="type">{translate("debit")}</button>
-                    </div>
+                    {stateCard && <MethodsCard/>}
                     <hr />
                     <button className="cash">
                       <i className="cash-icon"></i>
