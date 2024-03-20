@@ -123,18 +123,21 @@ function DrinkDetailPage() {
                     </div>
                     <div className="lid-options">
                       <span className="extra">
+                      <label>
                         <input
                           name="lid"
-                          className="checkbox"
                           type="checkbox"
                         />
+                        </label>
                       </span>
                       <span className="extra">
+                      <label>
                         <input
                           name="no-lid"
-                          className="checkbox"
                           type="checkbox"
                         />
+                         <span className="custom-checkbox"></span>
+                        </label>
                       </span>
                     </div>
                   </div>

@@ -34,11 +34,13 @@
 
         .container {
             .text-align-back {
-                padding-top: 50px;
                 text-align: center;
-                margin: auto;
-                display: flex;
-                justify-content: flex-end;
+                background: transparent;
+                border: 0px;
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+            
             }
 
             .back {
@@ -89,7 +91,7 @@
                 display: flex;
                 justify-content: center;
                 margin: 5px auto;
-                font-size: 38px;
+                font-size: 34px;
             }
 
             .parrafo-subtitulo {
@@ -200,7 +202,7 @@
         .input {
             display: flex;
             justify-content: center;
-            gap: 32px;
+            gap: 26px;
 
             .country_id,
             .phone {
@@ -211,12 +213,12 @@
             }
 
             .country_id {
-                width: 109px;
                 font-family: "Red Hat Display";
-                font-size: 28px;
+                font-size: 26px;
                 font-weight: 700;
                 text-align: left;
                 color: $cream;
+                padding: 10px 15px;
 
                 option {
                     background-color: $dark-blue;
@@ -228,9 +230,9 @@
             }
 
             .phone {
-                width: 360px;
+                padding: 10px 15px;
                 font-family: "Red Hat Display";
-                font-size: 28px;
+                font-size: 26px;
                 font-weight: 700;
                 text-align: left;
                 color: $cream;
@@ -253,11 +255,11 @@
 
             .email {
                 width: 500px;
-                height: 79px;
+                padding: 20px 20px;
                 font-family: "Red Hat Display";
                 border: 2px solid $cream;
                 color: $cream;
-                font-size: 28px;
+                font-size: 26px;
                 font-weight: 700;
                 text-align: left;
                 background: transparent;
@@ -277,7 +279,7 @@
     display: block;
     font-family: 'Stacion';
     font-weight: 300;
-    font-size: 26px;
+    font-size: 24px;
     font-style: normal;
     margin: 20px auto;
     width: 544px;
@@ -285,8 +287,7 @@
 }
 
 .login-btn {
-    width: 320px;
-    height: 50px;
+    display: block;
     border: none;
     border-radius: 32px;
     color: $cream;
@@ -295,9 +296,9 @@
     font-size: 28px;
     font-weight: 700;
     text-align: center;
-    margin: 50px auto;
-    display: flex;
-    justify-content: center;
+    margin: 20px auto;
+    padding: 10px 20px;
+    width: 300px;
 
     &:hover {
         cursor: pointer;
