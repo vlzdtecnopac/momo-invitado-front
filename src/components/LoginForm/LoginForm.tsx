@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
-import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
-import { Formik } from "formik";
+import * as Yup from "yup";
+import moment from "moment";
 import axios from "axios";
+import { Formik } from "formik";
+
 
 import { SocketContext } from "../../context/SocketContext";
 import { LoaderPage } from "../../includes/loader/Loader";
@@ -46,6 +48,7 @@ function LoginForm() {
                   setError("Usuario Inactivo");
                   return;
                 }
+                localStorage.setItem("start_session", moment().format('YYYY/MM/DD, h:mm:ss a'))
                 localStorage.setItem("token-momo", resp.data.token);
                 localStorage.setItem("employee-id", resp.data.employee_id);
                 socket.emit("kiosko-socket", {

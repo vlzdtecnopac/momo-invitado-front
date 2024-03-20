@@ -1,5 +1,6 @@
 import React, { ReactNode, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import moment from "moment";
 import Header from "../Header/Header";
 import { SocketContext } from "../../context/SocketContext";
 import { useShoppingStore } from "../../store/shopping.store";
@@ -15,10 +16,18 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
   const navigate = useNavigate();
   const { socket } = useContext(SocketContext);
   const { dataStore, fetchStoreData } = useShoppingStore();
-  const { fetchEmployeeData } = useEmployeeStore();
+  const {  dataEmployee, fetchEmployeeData } = useEmployeeStore();
   const [loading, setIsLoading] = useState<Boolean>(true);
 
   useEffect(() => {
+    let start_session = localStorage.getItem("start_session");
+    if(start_session != undefined){
+      let currentTime =  moment();
+      if (currentTime.diff(start_session, 'hours') >= 1) {
+        renewToken(currentTime);
+      }
+    }
+
     if (loading) {
       const fetchDataOnMount = async () => {
         const employeeId = localStorage.getItem("employee-id");
@@ -49,6 +58,14 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
       });
     }
   }, [loading]);
+
+  const renewToken = async (currentTime: any) => {
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/update_token`,{
+      "id": dataEmployee[0]?.employee_id
+  });
+   localStorage.setItem("start_session", currentTime.format('YYYY/MM/DD, h:mm:ss a'));
+   localStorage.setItem('token-momo', response.data.token);
+  }
 
   return (
     <>
