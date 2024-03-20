@@ -6,7 +6,7 @@ import back from "../../assets/icons/arrow_left.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 import { Link } from "react-router-dom";
 import "./LoginClient.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function EnterByEmail() {
   const { translate } = useLanguage();
@@ -26,17 +26,40 @@ export function EnterByEmail() {
 }
 
 export function EnterByPhone() {
+  const [countries, setCountries] = useState([]);
+  const [selectedCountryCode] = useState("+57");
   const { translate } = useLanguage();
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch("./src/dummy/listCountry.json");
+        const data = await response.json();
+        setCountries(data);
+      } catch (error) {
+        console.error("Error fetching countries data:", error);
+      }
+    };
+    fetchCountries();
+  }, []);
+
   return (
     <div className="phone-option">
       <p className="parrafo-subtitulo">{translate("enterPhone")}</p>
       <div className="input">
         <select className="country_id">
-          <option value="55">+55</option>
-          <option value="56">+56</option>
-          <option value="57">+57</option>
-          <option value="58">+58</option>
-          <option value="59">+59</option>
+        {countries &&
+                          countries.length > 0 &&
+                          countries.map((country: any, index: number) => (
+                            <option
+                              key={index}
+                              selected={
+                                selectedCountryCode === country.dial_code
+                              }
+                            >
+                              {country.dial_code}
+                            </option>
+                          ))}
         </select>
         <input
           type="number"

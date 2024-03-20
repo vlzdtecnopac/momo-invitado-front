@@ -31,7 +31,7 @@ function CreateAccountPage() {
   const { translate } = useLanguage();
   const [countries, setCountries] = useState([]);
   const [success, setSuccess] = useState(null);
-  const [selectedCountryCode, setSelectedCountryCode] = useState("+57");
+  const [selectedCountryCode] = useState("+57");
 
   useEffect(() => {
     const fetchCountries = async () => {
