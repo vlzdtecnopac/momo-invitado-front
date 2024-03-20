@@ -1,35 +1,81 @@
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
+
 import imgRegister from "../../assets/register-img.jpg";
 import logoMomo from "../../assets/icons/logo.svg";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import back from "../../assets/icons/arrow_left.svg";
 import { useLanguage } from "../../context/Langi18nContext";
-import { Link } from "react-router-dom";
-import "./LoginClient.scss";
-import { useEffect, useState } from "react";
 import { LoaderPage } from "../../loader/Loader";
+import { tokenHeader } from "../../helpers/token-header.helper";
+import "./LoginClient.scss";
 
 export function EnterByEmail() {
   const { translate } = useLanguage();
+  const [loader, isLoader] = useState<Boolean>(false);
+  const [inputEmail, setInputEmail] = useState<String>("");
+  const [error, setError] = useState("");
+
+  const handlerLoginSession = async (data: any) => {
+    try {
+      isLoader(true);
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/users/client/login`,
+        data,
+        { headers: tokenHeader }
+      );
+      console.log(response.data[0]);
+      setError("");
+      isLoader(false);
+    } catch (e: any) {
+      console.log(`Error login client:  ${e}`);
+      setError(e.response.data.msg);
+      isLoader(false);
+    }
+  };
+
+  const selectedEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputEmail(e.target.value);
+  };
+
   return (
-    <div className="email-option">
-      <p className="parrafo-subtitulo">{translate("enterEmail")}</p>
-      <div className="input">
-        <input
-          type="email"
-          placeholder={translate("email")}
-          className="email"
-        />
+    <>
+      {loader ? <LoaderPage /> : ""}
+      {error ? <div className="alert-error">{error}</div> : ""}
+      <div className="email-option">
+        <p className="parrafo-subtitulo">{translate("enterEmail")}</p>
+        <div className="input">
+          <input
+            type="email"
+            placeholder={translate("email")}
+            className="email"
+            onChange={(e) => selectedEmail(e)}
+          />
+        </div>
+        <button
+          onClick={() => {
+            let data = {
+              email: inputEmail,
+            };
+            handlerLoginSession(data);
+          }}
+          className="login-btn"
+        >
+          {translate("signInBtn")}
+        </button>
       </div>
-      <button className="login-btn">{translate("signInBtn")}</button>
-    </div>
+    </>
   );
 }
 
 export function EnterByPhone() {
   const [countries, setCountries] = useState([]);
   const [loader, isLoader] = useState<Boolean>(false);
-  const [selectedCountryCode] = useState("+57");
+  const [selectCountryCode, selectedCountryCode] = useState("+57");
+  const [inputPhoneValue, setInputPhoneValue] = useState("");
+  const [error, setError] = useState("");
   const { translate } = useLanguage();
 
   useEffect(() => {
@@ -40,38 +86,76 @@ export function EnterByPhone() {
         const data = await response.json();
         setCountries(data);
         isLoader(false);
-      } catch (error) {
-        console.error("Error fetching countries data:", error);
+      } catch (e) {
+        console.error("Error fetching countries data:", e);
       }
     };
     fetchCountries();
   }, []);
 
+  const selectedCountry = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    selectedCountryCode(e.target.value);
+  };
+
+  const selectedPhone = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputPhoneValue(e.target.value);
+  };
+
+  const handlerLoginSession = async (data: any) => {
+    try {
+      isLoader(true);
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/users/client/login`,
+        data,
+        { headers: tokenHeader }
+      );
+      console.log(response.data[0]);
+      setError("");
+      isLoader(false);
+    } catch (e: any) {
+      isLoader(false);
+      setError(e.response.data.msg);
+      console.log(`Error Login client: ${e}`);
+    }
+  };
+
   return (
     <>
       {loader ? <LoaderPage /> : ""}
+      {error ? <div className="alert-error">{error}</div> : ""}
       <div className="phone-option">
         <p className="parrafo-subtitulo">{translate("enterPhone")}</p>
         <div className="input">
-          <select className="country_id">
+          <select
+            onChange={(e) => selectedCountry(e)}
+            value={selectCountryCode}
+            className="country_id"
+          >
             {countries &&
               countries.length > 0 &&
               countries.map((country: any, index: number) => (
-                <option
-                  key={index}
-                  selected={selectedCountryCode === country.dial_code}
-                >
-                  {country.dial_code}
-                </option>
+                <option key={index}>{country.dial_code}</option>
               ))}
           </select>
           <input
             type="number"
             placeholder={translate("phone")}
             className="phone"
+            onChange={(e) => selectedPhone(e)}
           />
         </div>
-        <button className="login-btn">{translate("signInBtn")}</button>
+        <button
+          onClick={() => {
+            let data = {
+              phone: inputPhoneValue,
+              code: selectCountryCode,
+            };
+            handlerLoginSession(data);
+          }}
+          className="login-btn"
+        >
+          {translate("signInBtn")}
+        </button>
       </div>
     </>
   );

@@ -17,9 +17,9 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
   const navigate = useNavigate();
   const { socket } = useContext(SocketContext);
   const { dataStore, fetchStoreData } = useShoppingStore();
-  const {  dataEmployee, fetchEmployeeData } = useEmployeeStore();
+  const { fetchEmployeeData } = useEmployeeStore();
   const [loading, setIsLoading] = useState<Boolean>(true);
-
+  const employeeId = localStorage.getItem("employee-id");
   useEffect(() => {
     let start_session = localStorage.getItem("start_session");
     if(start_session){
@@ -31,7 +31,6 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
 
     if (loading) {
       const fetchDataOnMount = async () => {
-        const employeeId = localStorage.getItem("employee-id");
         if (employeeId) {
           fetchEmployeeData(employeeId).then(
             async (resp: any) => {
@@ -61,12 +60,13 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
   }, [loading]);
 
   const renewToken = async (currentTime: any) => {
-    const employeeId = localStorage.getItem("employee-id");
+   
     const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/update_token`,{
       "id": employeeId
   });
    localStorage.setItem("start_session", currentTime.format('YYYY/MM/DD, h:mm:ss a'));
    localStorage.setItem('token-momo', response.data.token);
+   window.location.reload();
   }
 
   return (

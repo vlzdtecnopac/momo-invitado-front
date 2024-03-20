@@ -38,8 +38,8 @@ function ProductsPage() {
 
   return (
     <>
-      {loader ? <LoaderPage /> : ""}
       <Layout>
+      {loader ? <LoaderPage /> : ""}
         <div className="products_page_category">
           <ul className="categories grid-4_xs-1">
             {categories.map((category: any, index) => (

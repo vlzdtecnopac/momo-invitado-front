@@ -45,6 +45,7 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
   });
    localStorage.setItem("start_session", currentTime.format('YYYY/MM/DD, h:mm:ss a'));
    localStorage.setItem('token-momo', response.data.token);
+   window.location.reload();
   }
 
   useEffect(() => {
