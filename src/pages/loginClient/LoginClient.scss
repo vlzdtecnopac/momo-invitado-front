@@ -34,11 +34,13 @@
 
         .container {
             .text-align-back {
-                padding-top: 50px;
                 text-align: center;
-                margin: auto;
-                display: flex;
-                justify-content: flex-end;
+                background: transparent;
+                border: 0px;
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+            
             }
 
             .back {
@@ -89,7 +91,7 @@
                 display: flex;
                 justify-content: center;
                 margin: 5px auto;
-                font-size: 38px;
+                font-size: 34px;
             }
 
             .parrafo-subtitulo {
@@ -253,11 +255,11 @@
 
             .email {
                 width: 500px;
-                height: 79px;
+                padding: 20px 20px;
                 font-family: "Red Hat Display";
                 border: 2px solid $cream;
                 color: $cream;
-                font-size: 28px;
+                font-size: 26px;
                 font-weight: 700;
                 text-align: left;
                 background: transparent;
@@ -277,7 +279,7 @@
     display: block;
     font-family: 'Stacion';
     font-weight: 300;
-    font-size: 26px;
+    font-size: 24px;
     font-style: normal;
     margin: 20px auto;
     width: 544px;
