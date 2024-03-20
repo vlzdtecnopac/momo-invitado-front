@@ -6,11 +6,21 @@ import { useLanguage } from "../../context/Langi18nContext";
 
 import "./ClientWelcome.scss";
 
+interface ClientInterface {
+
+client_id: string;
+email: string;
+first_name: string;
+last_name: string;
+phone: string
+}
+
 interface ClientWelcomeProps {
-  data: any;
+  data: ClientInterface;
 }
 
 const ClientWelcomeComponent: React.FC<ClientWelcomeProps> = ({data}) => {
+  console.log(data);
   const { translate } = useLanguage();
 
   return (
@@ -45,7 +55,7 @@ const ClientWelcomeComponent: React.FC<ClientWelcomeProps> = ({data}) => {
             />
           </motion.div>
           <h2 className={`text`}>
-            <span className="space">Michael Gonzalez</span> <br />
+            <span className="space">{data.first_name +  " " + data.last_name}</span> <br />
             <span className="light-text">{translate("welcomeText")}</span>
             <br />
             MOMO.
