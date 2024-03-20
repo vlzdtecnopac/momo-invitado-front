@@ -57,6 +57,9 @@ const CreateAccountPage = lazy(
 );
 const LazyCheckoutPage = lazy(() => import("../pages/checkout/CheckoutPage"));
 const LazyNotFound = lazy(() => import("../pages/404/404"));
+const LazyClientOrderOk = lazy(
+  () => import("../pages/clientOrderOk/ClientOrderOk")
+);
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -83,7 +86,7 @@ const BrowserRoutes = createBrowserRouter([
       </Suspense>
     ),
   },
- 
+
   {
     path: "/order-here",
     element: (
@@ -225,6 +228,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <Cart />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/client-order-ok",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyClientOrderOk />
       </Suspense>
     ),
   },

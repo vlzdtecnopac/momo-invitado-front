@@ -58,5 +58,8 @@
     "receipt": "¿Cómo prefieres tu recibo?",
     "printed": "Impreso",
     "congrat": "Felicidades",
-    "receiptSent": "Tu recibo ha sido enviado correctamente."
+    "receiptSent": "Tu recibo ha sido enviado correctamente.",
+    "orderClientOk": "Tu pedido está en preparación y en pocos minutos tendrás lo mejor de MOMO en tus manos.",
+    "continueShopping": "Seguir comprando",
+    "exit": "Salir"
 }

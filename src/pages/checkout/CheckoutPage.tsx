@@ -7,6 +7,10 @@ import { useLanguage } from "../../context/Langi18nContext";
 
 import "./CheckoutPage.scss";
 import { useState } from "react";
+import SuccessPayment from "../../components/Modal/SuccessPayment/SuccessPayment";
+import ReceiptSent from "../../components/Modal/ReceiptSend/ReceiptSent";
+import FailedPayment from "../../components/Modal/FailedPayment/FailedPayment";
+import ContinuePayment from "../../components/Modal/ContinuePayment/ContinuePayment";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -22,12 +26,12 @@ function MethodsCard() {
 }
 
 function CheckoutPage() {
-  const [stateCard , setStateCard] =  useState<boolean>(false);
+  const [stateCard, setStateCard] = useState<boolean>(false);
   const { translate } = useLanguage();
 
-  const optionHandlerCard  = (state: boolean) => {
-    setStateCard(!state)
-  }
+  const optionHandlerCard = (state: boolean) => {
+    setStateCard(!state);
+  };
 
   return (
     <>
@@ -41,7 +45,10 @@ function CheckoutPage() {
               <section className="tip">
                 <div className="grid-2">
                   <div className="col-5">
-                    <img alt="Barista" src={barista} />
+                    <img
+                      alt="Barista"
+                      src={barista}
+                    />
                   </div>
                   <div className="col-7 tip-text">
                     <h2>{translate("baristaTipText")}</h2>
@@ -110,11 +117,14 @@ function CheckoutPage() {
                   </div>
                   <h2 className="text">{translate("selectPayMethod")}</h2>
                   <div className="pay-method">
-                    <button onClick={() => optionHandlerCard(stateCard)} className="card">
+                    <button
+                      onClick={() => optionHandlerCard(stateCard)}
+                      className="card"
+                    >
                       <i className="card-icon"></i>
                       {translate("card")}
                     </button>
-                    {stateCard && <MethodsCard/>}
+                    {stateCard && <MethodsCard />}
                     <hr />
                     <button className="cash">
                       <i className="cash-icon"></i>
@@ -183,7 +193,7 @@ function CheckoutPage() {
                 </div>
               </section>
             </div>
-            {/* <ContinuePaymentModal actionKey={""} /> */}
+            {/* <ContinuePayment actionKey={""} /> */}
             {/* <FailedPayment actionKey={""} /> */}
             {/* <SuccessPayment actionKey={""} /> */}
             {/* <ReceiptSent actionKey={""} /> */}

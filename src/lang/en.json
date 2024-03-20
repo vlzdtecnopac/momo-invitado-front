@@ -58,5 +58,8 @@
     "receipt": "How do you prefer your receipt?",
     "printed": "Printed",
     "congrat": "Congratulations",
-    "receiptSent": "Your receipt has been sent correctly."
+    "receiptSent": "Your receipt has been sent correctly.",
+    "orderClientOk": "Your order is being prepared and in a few minutes you will have the best of MOMO in your hands.",
+    "continueShopping": "Continue shopping",
+    "exit": "Exit"
 }
