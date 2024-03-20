@@ -62,7 +62,6 @@ function MerchDetailPage() {
                       10$
                       <label>
                       <input
-                        className="checkbox"
                         name="10"
                         type="checkbox"
                       />
@@ -74,7 +73,6 @@ function MerchDetailPage() {
                       <label>
                       <input
                         name="20"
-                        className="checkbox"
                         type="checkbox"
                       />
                        <span className="custom-checkbox"></span>

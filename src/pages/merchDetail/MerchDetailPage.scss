@@ -79,7 +79,10 @@
                     font-family: "Red Hat Display";
                     font-weight: 700;
                     font-size: 20px;
-                    cursor: pointer;
+                    margin: 10px;
+                    &:hover{
+                        cursor: pointer;
+                    }
                 }
             }
         }
