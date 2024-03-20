@@ -7,6 +7,7 @@ import { useLanguage } from "../../context/Langi18nContext";
 import { Link } from "react-router-dom";
 import "./LoginClient.scss";
 import { useEffect, useState } from "react";
+import { LoaderPage } from "../../loader/Loader";
 
 export function EnterByEmail() {
   const { translate } = useLanguage();
@@ -27,15 +28,18 @@ export function EnterByEmail() {
 
 export function EnterByPhone() {
   const [countries, setCountries] = useState([]);
+  const [loader, isLoader] = useState<Boolean>(false);
   const [selectedCountryCode] = useState("+57");
   const { translate } = useLanguage();
 
   useEffect(() => {
     const fetchCountries = async () => {
+      isLoader(true);
       try {
         const response = await fetch("./src/dummy/listCountry.json");
         const data = await response.json();
         setCountries(data);
+        isLoader(false);
       } catch (error) {
         console.error("Error fetching countries data:", error);
       }
@@ -44,31 +48,32 @@ export function EnterByPhone() {
   }, []);
 
   return (
-    <div className="phone-option">
-      <p className="parrafo-subtitulo">{translate("enterPhone")}</p>
-      <div className="input">
-        <select className="country_id">
-        {countries &&
-                          countries.length > 0 &&
-                          countries.map((country: any, index: number) => (
-                            <option
-                              key={index}
-                              selected={
-                                selectedCountryCode === country.dial_code
-                              }
-                            >
-                              {country.dial_code}
-                            </option>
-                          ))}
-        </select>
-        <input
-          type="number"
-          placeholder={translate("phone")}
-          className="phone"
-        />
+    <>
+      {loader ? <LoaderPage /> : ""}
+      <div className="phone-option">
+        <p className="parrafo-subtitulo">{translate("enterPhone")}</p>
+        <div className="input">
+          <select className="country_id">
+            {countries &&
+              countries.length > 0 &&
+              countries.map((country: any, index: number) => (
+                <option
+                  key={index}
+                  selected={selectedCountryCode === country.dial_code}
+                >
+                  {country.dial_code}
+                </option>
+              ))}
+          </select>
+          <input
+            type="number"
+            placeholder={translate("phone")}
+            className="phone"
+          />
+        </div>
+        <button className="login-btn">{translate("signInBtn")}</button>
       </div>
-      <button className="login-btn">{translate("signInBtn")}</button>
-    </div>
+    </>
   );
 }
 
@@ -135,7 +140,10 @@ function LoginClient() {
                     return (
                       <>
                         <EnterByPhone />
-                        <button className="text-align-back"  onClick={() => stateHandlerLogin("init")} >
+                        <button
+                          className="text-align-back"
+                          onClick={() => stateHandlerLogin("init")}
+                        >
                           <div className="back">
                             <img className="back-icon" src={back} alt="back" />
                             <span className="text">
@@ -149,7 +157,10 @@ function LoginClient() {
                     return (
                       <>
                         <EnterByEmail />
-                        <button className="text-align-back"  onClick={() => stateHandlerLogin("init")} >
+                        <button
+                          className="text-align-back"
+                          onClick={() => stateHandlerLogin("init")}
+                        >
                           <div className="back">
                             <img className="back-icon" src={back} alt="back" />
                             <span className="text">
