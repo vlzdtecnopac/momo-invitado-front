@@ -12,8 +12,6 @@ function Cart() {
         <OrderResumeCard />
         <hr className="separator" />
         <OrderResumeCard />
-        <hr className="separator" />
-        <OrderResumeCard />
       </div>
       <div className="right">
         <div className="grid-2 subtotal">
