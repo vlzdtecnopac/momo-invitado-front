@@ -6,6 +6,7 @@ import back from "../../assets/icons/arrow_left.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 import { Link } from "react-router-dom";
 import "./LoginClient.scss";
+import { useState } from "react";
 
 export function EnterByEmail() {
   const { translate } = useLanguage();
@@ -50,6 +51,12 @@ export function EnterByPhone() {
 
 function LoginClient() {
   const { translate } = useLanguage();
+
+  const [stateLogin, setStateLogin] = useState<String>();
+
+  const stateHandlerLogin = (option: string) => {
+    setStateLogin(option);
+  };
 
   return (
     <LayoutBlank>
@@ -98,23 +105,69 @@ function LoginClient() {
                   {translate("selectSignInOption")}
                 </p>
               </motion.div>
-              <div className="register-options">
-                <button className="custom-btn phone">
-                  <span className="icon"></span>
-                  <span className="text">{translate("phone")}</span>
-                </button>
 
-                <button className="custom-btn mail">
-                  <span className="icon"></span>
-                  <span className="text">{translate("email")}</span>
-                </button>
-              </div>
-              <Link className="text-align-back" to="/register">
-                <div className="back">
-                  <img className="back-icon" src={back} alt="back" />
-                  <span className="text">{translate("backText")}</span>
-                </div>
-              </Link>
+              {(() => {
+                switch (stateLogin) {
+                  case "phone":
+                    return (
+                      <>
+                        <EnterByPhone />
+                        <Link className="text-align-back" to="/register">
+                          <div className="back">
+                            <img className="back-icon" src={back} alt="back" />
+                            <span className="text">
+                              {translate("backText")}
+                            </span>
+                          </div>
+                        </Link>
+                      </>
+                    );
+                  case "email":
+                    return (
+                      <>
+                        <EnterByEmail />
+                        <Link className="text-align-back" to="/register">
+                          <div className="back">
+                            <img className="back-icon" src={back} alt="back" />
+                            <span className="text">
+                              {translate("backText")}
+                            </span>
+                          </div>
+                        </Link>
+                      </>
+                    );
+                  default:
+                    return (
+                      <>
+                        <div className="register-options">
+                          <button
+                            onClick={() => stateHandlerLogin("phone")}
+                            className="custom-btn phone"
+                          >
+                            <span className="icon"></span>
+                            <span className="text">{translate("phone")}</span>
+                          </button>
+
+                          <button
+                            onClick={() => stateHandlerLogin("email")}
+                            className="custom-btn mail"
+                          >
+                            <span className="icon"></span>
+                            <span className="text">{translate("email")}</span>
+                          </button>
+                        </div>
+                        <Link className="text-align-back" to="/register">
+                          <div className="back">
+                            <img className="back-icon" src={back} alt="back" />
+                            <span className="text">
+                              {translate("backText")}
+                            </span>
+                          </div>
+                        </Link>
+                      </>
+                    );
+                }
+              })()}
             </div>
           </div>
         </div>
