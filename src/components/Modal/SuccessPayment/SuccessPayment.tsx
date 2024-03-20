@@ -1,14 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
-import coffee from "../../../assets/coffee-momo.png";
+import clock from "../../../assets/icons/clock.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
-import "./FailedPayment.scss";
+
+import "./SuccessPayment.scss";
 
 interface ModalProps {
   actionKey: React.Key;
 }
 
-const FailedPayment: React.FC<ModalProps> = ({ actionKey }) => {
+const SuccessPayment: React.FC<ModalProps> = ({ actionKey }) => {
   const { translate } = useLanguage();
 
   return (
@@ -28,22 +29,21 @@ const FailedPayment: React.FC<ModalProps> = ({ actionKey }) => {
         <div className="container">
           <img
             className="img"
-            src={coffee}
+            src={clock}
             alt="momo-coffee"
           />
-          <h2 className={`text`}>¡{translate("wentWrong")}!</h2>
           <p className={`sub-text`}>
-            <span className="try-again">{translate("tryAgain")}</span> <br />
-            {translate("tryAgainText")}
-            <p className="sub-text">¡{translate("problemHelp")}!</p>
+            {translate("successPayment")}
+            <span className="bold">{translate("receipt")}</span>
           </p>
+
           <div className="btns">
-            <button className="cancel">{translate("cancel")}</button>
-            <button className=" try">{translate("retryPayment")}</button>
+            <button className="cancel">{translate("printed")}</button>
+            <button className=" try">Virtual</button>
           </div>
         </div>
       </motion.div>
     </div>
   );
 };
-export default FailedPayment;
+export default SuccessPayment;

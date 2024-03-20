@@ -46,5 +46,17 @@
     "enterDataPerson": "Enter your personal data.",
     "firstName": "First Name",
     "lastName": "Last Name",
-    "email": "Email"
+    "email": "Email",
+    "continueProcess": "Continue the process",
+    "followInstructions": "by following the instructions on the payment terminal.",
+    "wentWrong": "Apparently something went wrong",
+    "tryAgain": "Let's try again.",
+    "tryAgainText": "Your payment could not be processed.Please verify your card and try again,If you can't, consider another card or payment method.",
+    "problemHelp": "If there is a problem, we are here to help you",
+    "retryPayment": "Retry payment",
+    "successPayment": "¡Payment received successfully! Your order is in process.",
+    "receipt": "How do you prefer your receipt?",
+    "printed": "Printed",
+    "congrat": "Congratulations",
+    "receiptSent": "Your receipt has been sent correctly."
 }

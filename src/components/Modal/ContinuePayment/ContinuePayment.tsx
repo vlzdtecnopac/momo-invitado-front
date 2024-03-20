@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import pay from "../../../assets/icons/payment-icon.svg";
+import { useLanguage } from "../../../context/Langi18nContext";
 import "./ContinuePayment.scss";
 
 interface ModalProps {
@@ -8,6 +9,8 @@ interface ModalProps {
 }
 
 const ContinuePayment: React.FC<ModalProps> = ({ actionKey }) => {
+  const { translate } = useLanguage();
+
   return (
     <div className="modal-container">
       <div className="shadow-effect"></div>
@@ -28,10 +31,8 @@ const ContinuePayment: React.FC<ModalProps> = ({ actionKey }) => {
             src={pay}
             alt="momo-coffee"
           />
-          <h2 className={`text`}>Continua el proceso</h2>
-          <p className={`sub-text`}>
-            siguiendo las instrucciones de la terminal de pago.{" "}
-          </p>
+          <h2 className={`text`}>{translate("continueProcess")}</h2>
+          <p className={`sub-text`}>{translate("followInstructions")}</p>
         </div>
       </motion.div>
     </div>

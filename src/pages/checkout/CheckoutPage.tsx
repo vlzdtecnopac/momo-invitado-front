@@ -7,6 +7,8 @@ import { useLanguage } from "../../context/Langi18nContext";
 
 import "./CheckoutPage.scss";
 import FailedPayment from "../../components/Modal/FailedPayment/FailedPayment";
+import SuccessPayment from "../../components/Modal/SuccessPayment/SuccessPayment";
+import ReceiptSent from "../../components/Modal/ReceiptSend/ReceiptSent";
 
 function CheckoutPage() {
   const { translate } = useLanguage();
@@ -173,7 +175,9 @@ function CheckoutPage() {
               </section>
             </div>
             {/* <ContinuePaymentModal actionKey={""} /> */}
-            <FailedPayment actionKey={""} />
+            {/* <FailedPayment actionKey={""} /> */}
+            {/* <SuccessPayment actionKey={""} /> */}
+            {/* <ReceiptSent actionKey={""} /> */}
           </div>
         </div>
       </Layout>
