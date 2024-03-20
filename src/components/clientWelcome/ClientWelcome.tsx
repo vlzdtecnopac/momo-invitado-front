@@ -5,6 +5,8 @@ import checkIcon from "../../assets/icons/check.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./ClientWelcome.scss";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface ClientInterface {
 
@@ -20,8 +22,12 @@ interface ClientWelcomeProps {
 }
 
 const ClientWelcomeComponent: React.FC<ClientWelcomeProps> = ({data}) => {
-  console.log(data);
+  const navigate =  useNavigate();
   const { translate } = useLanguage();
+
+  useEffect(()=> {
+    setTimeout(()=>navigate("/categories"), 3000)
+  },[])
 
   return (
     <div className="success_fully">
