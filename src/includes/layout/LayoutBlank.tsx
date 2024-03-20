@@ -13,10 +13,10 @@ interface DynamicLayoutProps {
 const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
   const navigate = useNavigate();
   const { socket } = useContext(SocketContext);
-  const { dataEmployee, fetchEmployeeData } = useEmployeeStore();
+  const { fetchEmployeeData } = useEmployeeStore();
   const { dataStore, fetchStoreData } = useShoppingStore();
   const [loading, setIsLoading] = useState<Boolean>(true);
-
+  const employeeId = localStorage.getItem("employee-id");
   useEffect(() => {
     let start_session = localStorage.getItem("start_session");
     if(start_session){
@@ -27,7 +27,6 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
     }
     if (loading) {
       const fetchDataOnMount = async () => {
-        const employeeId = localStorage.getItem("employee-id");
         if (employeeId) {
           fetchEmployeeData(employeeId).then(async (resp: any) => {
             await fetchStoreData(resp[0].shopping_id);
@@ -41,7 +40,6 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
 
 
   const renewToken = async (currentTime: any) => {
-    const employeeId = localStorage.getItem("employee-id");
     const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/update_token`,{
       "id": employeeId
   });
