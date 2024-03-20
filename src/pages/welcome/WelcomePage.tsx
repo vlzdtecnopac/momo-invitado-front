@@ -11,6 +11,7 @@ import { useEmployeeStore } from "../../store/employee.store";
 import { tokenHeader } from "../../helpers/token-header.helper";
 import { LoaderPage } from "../../includes/loader/Loader";
 import "./WelcomePage.scss";
+import LayoutBlank from "../../includes/layout/LayoutBlank";
 
 interface KioskoDataActive {
   name_shopping: string;
@@ -68,7 +69,7 @@ function WelcomePage() {
   };
 
   return (
-    <>
+    <LayoutBlank>
       {loader ? <LoaderPage /> : ""}
       <div className="component-welcome">
         <div className="logo-container">
@@ -145,7 +146,7 @@ function WelcomePage() {
           </div>
         </div>
       </div>
-    </>
+      </LayoutBlank>
   );
 }
 
