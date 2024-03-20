@@ -112,28 +112,28 @@ function LoginClient() {
                     return (
                       <>
                         <EnterByPhone />
-                        <Link className="text-align-back" to="/register">
+                        <button className="text-align-back"  onClick={() => stateHandlerLogin("init")} >
                           <div className="back">
                             <img className="back-icon" src={back} alt="back" />
                             <span className="text">
                               {translate("backText")}
                             </span>
                           </div>
-                        </Link>
+                        </button>
                       </>
                     );
                   case "email":
                     return (
                       <>
                         <EnterByEmail />
-                        <Link className="text-align-back" to="/register">
+                        <button className="text-align-back"  onClick={() => stateHandlerLogin("init")} >
                           <div className="back">
                             <img className="back-icon" src={back} alt="back" />
                             <span className="text">
                               {translate("backText")}
                             </span>
                           </div>
-                        </Link>
+                        </button>
                       </>
                     );
                   default:
