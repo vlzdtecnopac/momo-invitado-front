@@ -60,19 +60,25 @@ function MerchDetailPage() {
                   <div className="extra-options">
                     <span className="extra">
                       10$
+                      <label>
                       <input
                         className="checkbox"
                         name="10"
                         type="checkbox"
                       />
+                        <span className="custom-checkbox"></span>
+                      </label>
                     </span>
                     <span className="extra">
                       20$
+                      <label>
                       <input
                         name="20"
                         className="checkbox"
                         type="checkbox"
                       />
+                       <span className="custom-checkbox"></span>
+                      </label>
                     </span>
                   </div>
                 </div>
