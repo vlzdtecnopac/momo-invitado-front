@@ -60,7 +60,7 @@ function RegisterPage() {
               </motion.div>
               <div className="register-options">
                 <Link to="../login-client">
-                  <button className="custom-btn registered">
+                  <button className="custom-btn-register registered">
                     <span className="icon"></span>
                     <span className="text">
                       {translate("customerRegistered")}
@@ -69,12 +69,12 @@ function RegisterPage() {
                 </Link>
                 <Link
                   to="/create-account"
-                  className="custom-btn create"
+                  className="custom-btn-register create"
                 >
                   <span className="icon"></span>
                   <p className="text">{translate("createAccount")}</p>
                 </Link>
-                <Link to="/categories" className="custom-btn no-register">
+                <Link to="/categories" className="custom-btn-register no-register">
                   <span className="icon"></span>
                   <p className="text">{translate("oderAccount")}</p>
                 </Link>

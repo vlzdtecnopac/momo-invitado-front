@@ -76,11 +76,10 @@
         flex-direction: column;
         gap: 20px;
 
-        .custom-btn {
+        .custom-btn-register {
             display: flex;
             flex-direction: column;
             min-width: 630px;
-            height: 125px;
             align-items: center;
             padding: 10px 15px;
             border: 2px solid $cream;
@@ -88,6 +87,24 @@
             background-color: transparent;
             color: $cream;
             text-align: center;
+
+            .icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .text {
+                width: 100%;
+                margin-left: 5px;
+                font-family: "Red Hat Display",
+                    "serif";
+                font-weight: 700;
+                font-size: 28px;
+    
+                &:hover {
+                    color: $dark-blue;
+                }
+            }
     
             &:hover {
                 /* Move hover to the top level */
@@ -141,23 +158,6 @@
             }
 
         }
-
-        .custom-btn .icon {
-            width: 40px;
-            height: 40px;
-        }
-
-        .custom-btn .text {
-            width: 100%;
-            margin-left: 5px;
-            font-family: "Red Hat Display",
-                "serif";
-            font-weight: 700;
-            font-size: 28px;
-
-            &:hover {
-                color: $dark-blue;
-            }
-        }
+    
     }
 }
