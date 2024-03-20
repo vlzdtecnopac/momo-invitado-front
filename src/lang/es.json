@@ -43,9 +43,20 @@
     "credit": "Crédito",
     "cash": "Efectivo",
     "add": "Agregar",
-    "enterDataPerson": "Digita tus datos personales",
+    "enterDataPerson": "Digita tus datos personales.",
     "firstName": "Nombres",
-    "lastName": "Apelldios",
+    "lastName": "Apellidos",
     "email": "Correo Electrónico",
-    "acceptTerm": "Acepta nuestros Términos y Condiciones de Privacidad"
+    "continueProcess": "Continua el proceso",
+    "followInstructions": "siguiendo las instrucciones de la terminal de pago.",
+    "wentWrong": "Al parecer algo salió mal",
+    "tryAgain": "Intentémoslo de nuevo.",
+    "tryAgainText": "Tu pago no pudo ser procesado. Por favor verifica tu tarjeta y vuelve a intentar,si no lo logras, considera otra tarjeta o método de pago.",
+    "problemHelp": "Si hay algún problema, estamos para ayudarte",
+    "retryPayment": "Reintentar pago",
+    "successPayment": "¡Pago recibido con éxito! Tu orden está en proceso.",
+    "receipt": "¿Cómo prefieres tu recibo?",
+    "printed": "Impreso",
+    "congrat": "Felicidades",
+    "receiptSent": "Tu recibo ha sido enviado correctamente."
 }

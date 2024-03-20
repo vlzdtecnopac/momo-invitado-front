@@ -184,7 +184,9 @@ function CheckoutPage() {
               </section>
             </div>
             {/* <ContinuePaymentModal actionKey={""} /> */}
-            {/*<FailedPayment actionKey={""} />*/}
+            {/* <FailedPayment actionKey={""} /> */}
+            {/* <SuccessPayment actionKey={""} /> */}
+            {/* <ReceiptSent actionKey={""} /> */}
           </div>
         </div>
       </Layout>
