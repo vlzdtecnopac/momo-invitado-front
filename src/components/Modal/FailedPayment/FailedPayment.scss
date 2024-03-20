@@ -1,0 +1,98 @@
+@import "../../../index.scss";
+
+.modal-container {
+    .shadow-effect {
+        position: fixed;
+        background: #4d4d4d6b;
+        height: 100vh;
+        width: 100%;
+        z-index: 88;
+        left: 0px;
+        top: 0px;
+    }
+
+    .modal {
+        position: fixed;
+        width: 720px;
+        height: 511px;
+        background: #D5EAFB;
+        border-radius: 16px;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        z-index: 999;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 65px;
+            margin-bottom: 130px;
+
+            .img {
+                width: 168px;
+                margin: 0 auto;
+                padding-bottom: 21px;
+
+            }
+
+            .text {
+                color: #000;
+                margin: 0 auto;
+                font-family: "Red Hat Display";
+                font-size: 24px;
+                font-weight: 700;
+                padding-bottom: 20px;
+            }
+
+            .sub-text {
+                margin: 0 auto;
+                width: 400px;
+                text-align: center;
+                font-weight: 600;
+                font-size: 16px;
+                font-family: "Red Hat Display", "serif";
+
+                .try-again {
+                    font-weight: 700;
+                    font-size: 20px;
+                }
+            }
+
+            .btns {
+                display: flex;
+                justify-content: center;
+                gap: 21px;
+                padding-top: 21px;
+
+                .cancel,
+                .try {
+                    width: 200px;
+                    height: 46px;
+                    font-family: "Red Hat Display", serif;
+                    font-size: 20px;
+                    font-weight: 700;
+                    text-align: center;
+                    border: none;
+                    border-radius: 32px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .cancel {
+                    background: $light-blue;
+                    color: $dark-blue;
+                    border: 1px solid $dark-blue;
+                }
+
+                .try {
+                    background: $orange;
+                    color: $cream;
+                }
+            }
+        }
+    }
+}
