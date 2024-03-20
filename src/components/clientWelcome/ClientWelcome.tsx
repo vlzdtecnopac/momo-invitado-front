@@ -4,9 +4,23 @@ import logo from "../../assets/icons/logo.svg";
 import checkIcon from "../../assets/icons/check.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 
-import "./ClientWelcomePage.scss";
+import "./ClientWelcome.scss";
 
-function ClientWelcomePage() {
+interface ClientInterface {
+
+client_id: string;
+email: string;
+first_name: string;
+last_name: string;
+phone: string
+}
+
+interface ClientWelcomeProps {
+  data: ClientInterface;
+}
+
+const ClientWelcomeComponent: React.FC<ClientWelcomeProps> = ({data}) => {
+  console.log(data);
   const { translate } = useLanguage();
 
   return (
@@ -41,7 +55,7 @@ function ClientWelcomePage() {
             />
           </motion.div>
           <h2 className={`text`}>
-            <span className="space">Michael Gonzalez</span> <br />
+            <span className="space">{data.first_name +  " " + data.last_name}</span> <br />
             <span className="light-text">{translate("welcomeText")}</span>
             <br />
             MOMO.
@@ -52,4 +66,4 @@ function ClientWelcomePage() {
   );
 }
 
-export default ClientWelcomePage;
+export default ClientWelcomeComponent;

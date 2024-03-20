@@ -14,6 +14,8 @@ import { tokenHeader } from "../../helpers/token-header.helper";
 
 import "./CreateAccountPage.scss";
 
+import ClientWelcomeComponent from "../../components/clientWelcome/ClientWelcome";
+
 const CreateAccountSchema = Yup.object().shape({
   firstName: Yup.string().required("El nombre es requerido."),
   lastName: Yup.string().required("El apellido es requerido."),
@@ -28,6 +30,7 @@ function CreateAccountPage() {
   const navigate = useNavigate();
   const { translate } = useLanguage();
   const [countries, setCountries] = useState([]);
+  const [success, setSuccess] = useState(null);
   const [selectedCountryCode, setSelectedCountryCode] = useState("+57");
 
   useEffect(() => {
@@ -115,15 +118,16 @@ function CreateAccountPage() {
                   country: selectCountry,
                 };
             
-                await axios.post(
+                const response = await axios.post(
                   `${import.meta.env.VITE_API_URL}/users/client/register`,
                   data,
                   { headers: tokenHeader }
                 );
+                setSuccess(response.data);
                 isLoader(false);
-                navigate("/client-welcome");
               } catch (e) {
                 isLoader(false);
+                setSuccess(null);
                 console.log(e);
               }
             }}
@@ -272,6 +276,7 @@ function CreateAccountPage() {
           </Formik>
         </div>
       </div>
+      {success !== null  && <ClientWelcomeComponent data={success}/>}
     </LayoutBlank>
   );
 }
