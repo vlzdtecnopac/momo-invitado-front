@@ -192,16 +192,14 @@ function CreateAccountPage() {
                         onBlur={handleBlur}
                         name="numberCode"
                         className="select"
+                        value={values.numberCode}
                       >
                         {countries &&
                           countries.length > 0 &&
                           countries.map((country: any, index: number) => (
                             <option
                               key={index}
-                              selected={
-                                selectedCountryCode === country.dial_code
-                              }
-                            >
+>
                               {country.dial_code}
                             </option>
                           ))}
