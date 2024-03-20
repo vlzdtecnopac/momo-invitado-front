@@ -19,7 +19,7 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
 
   useEffect(() => {
     let start_session = localStorage.getItem("start_session");
-    if(start_session != undefined){
+    if(start_session){
       let currentTime =  moment();
       if (currentTime.diff(start_session, 'hours') >= 1) {
         renewToken(currentTime);
@@ -41,8 +41,9 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
 
 
   const renewToken = async (currentTime: any) => {
+    const employeeId = localStorage.getItem("employee-id");
     const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/update_token`,{
-      "id": dataEmployee[0]?.employee_id
+      "id": employeeId
   });
    localStorage.setItem("start_session", currentTime.format('YYYY/MM/DD, h:mm:ss a'));
    localStorage.setItem('token-momo', response.data.token);
