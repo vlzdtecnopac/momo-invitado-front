@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import isotipo from "/src/assets/icons/isotipo.svg";
@@ -127,7 +127,11 @@ function OrderHerePage() {
               },
             }}
           >
-            <img className="isotipo" src={isotipo} alt="isotipo" />
+            <img
+              className="isotipo"
+              src={isotipo}
+              alt="isotipo"
+            />
             <LogoMomo color={colorButtonNoCash.color} />
           </motion.div>
         </div>
@@ -169,7 +173,10 @@ function OrderHerePage() {
               onClick={() => setLanguage("es")}
               className="lang"
             >
-              <img src={mxIcon} className="es-icon"></img>
+              <img
+                src={mxIcon}
+                className="es-icon"
+              ></img>
               <span
                 style={{
                   color:
@@ -199,7 +206,10 @@ function OrderHerePage() {
               onClick={() => setLanguage("en")}
               className="lang"
             >
-              <img src={usaIcon} className="en-icon"></img>
+              <img
+                src={usaIcon}
+                className="en-icon"
+              ></img>
               <span
                 style={{
                   color:
