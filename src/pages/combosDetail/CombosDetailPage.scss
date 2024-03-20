@@ -2,15 +2,15 @@
 .page-category{
     position: fixed;
     width: 100%;
+    z-index: 99;
 }
 
 .page-container {
     height: 100vh;
     .combos_detail {
         position: relative;
-        padding-top: 100px;
+        padding-top: 200px;
         width: 100%;
-        height: 100vh;
         background-color: $light-blue;
         display: flex;
         justify-content: space-around;
@@ -86,9 +86,8 @@
                     font-family: "Red Hat Display";
                     font-weight: 700;
                     font-size: 20px;
-                    margin: 10px auto;
                     display: block;
-                    margin: 10px;
+                    margin: 10px auto;
                     &:hover{
                         cursor: pointer;
                     }
