@@ -3,10 +3,9 @@ import axios from "axios";
 import { tokenHeader } from "../../helpers/token-header.helper";
 import { LoaderPage } from "../../includes/loader/Loader";
 import "./CategoryNav.scss";
-import { useNavigate } from "react-router-dom";
 
 function CategoryNav() {
-  const navigate = useNavigate();
+
   const [categories, setCategories] = useState([]);
   const [loader, setLoader] =  useState<Boolean>(true);
 
@@ -24,7 +23,6 @@ function CategoryNav() {
     setLoader(false);
     }catch(e){
       console.log(e);
-      navigate("/")
     }
   }
   return (<>

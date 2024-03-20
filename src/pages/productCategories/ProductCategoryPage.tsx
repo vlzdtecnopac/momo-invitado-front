@@ -33,7 +33,6 @@ function ProductsPage() {
       setLoader(false);
     } catch (e) {
       console.log(e);
-      navigate("/")
     }
   };
 
