@@ -1,22 +1,21 @@
 @import "../../index.scss";
 
-.category-list{
+.category-product-merch{
     position: fixed;
-    z-index: 77;
+    width: 100%;
+    z-index: 99
 }
+
 
 .page-container {
     width: 100%;
-    padding-top: 80px;
     background-color: $light-blue;
    
     .merch_detail {
-        width: 100%;
-        height: 683px;
-        
         display: flex;
         justify-content: space-around;
         align-items: end;
+        padding-top: 190px;
 
         .details {
             width: 731px;

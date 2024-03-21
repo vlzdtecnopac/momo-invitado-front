@@ -10,7 +10,7 @@ import "./MerchDetailPage.scss";
 function MerchDetailPage() {
   return (
     <Layout>
-      <div className="category-list">
+      <div className="category-product-merch">
       <CategoryNav />
       </div>
       <div className="page-container">

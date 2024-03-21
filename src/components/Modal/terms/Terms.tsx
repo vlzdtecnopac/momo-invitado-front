@@ -5,7 +5,7 @@ import "./Terms.scss";
 
 const Terms = () => {
   const { translate } = useLanguage();
-
+  
   return (
     <div className="modal-container">
       <div className="shadow-effect"></div>
@@ -38,7 +38,7 @@ const Terms = () => {
           <p className="sub-text">
             {translate("trust")} <br /> {translate("questions")}
           </p>
-          <button className="continue">{translate("continue")}</button>
+          <button type="button" className="continue">{translate("continue")}</button>
         </div>
       </motion.div>
     </div>
