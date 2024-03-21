@@ -1,7 +1,8 @@
 import OrderResumeCard from "../OrderResumeCard/OrderResumeCard";
 import "./Cart.scss";
 function Cart() {
-  return (
+  return (<>
+    <button className="cart-momo"><span>Ver Carrito</span> <i className="icon-cart"></i></button>
     <div className="cart">
       <div className="left">
         <div className="grid-2 resume">
@@ -20,7 +21,8 @@ function Cart() {
         </div>
         <button className="pay">Continuar al pago</button>
       </div>
-    </div>
+  </div>
+    </>
   );
 }
 export default Cart;

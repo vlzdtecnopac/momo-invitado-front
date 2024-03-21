@@ -6,6 +6,8 @@ import { useShoppingStore } from "../../store/shopping.store";
 import { useEmployeeStore } from "../../store/employee.store";
 import { LoaderPage } from "../loader/Loader";
 import "./Layout.scss";
+import Card from "../../components/Card/Card";
+import Cart from "../../components/Cart/Cart";
 
 interface DynamicLayoutProps {
   children: ReactNode;

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { LoaderPage } from "../../includes/loader/Loader";
-import "./CategoryNav.scss";
+
 import axiosInstance from "../../helpers/axios.helper";
+import Cart from "../Cart/Cart";
+import "./CategoryNav.scss";
 
 function CategoryNav() {
 
@@ -26,6 +28,7 @@ function CategoryNav() {
   }
   return (<>
     {loader? <LoaderPage/> : ""}
+    <Cart />
     <nav className="cat_nav">
       <ul className="categories">
         {categories.map((category: any, index: number) => (

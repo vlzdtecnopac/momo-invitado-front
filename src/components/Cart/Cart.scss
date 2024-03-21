@@ -1,6 +1,39 @@
 @import "../../index.scss";
+.cart-momo{
+    position: absolute;
+    top: 110px;
+    right: 20px;
+    z-index: 9999;
+    background-color: $orange;
+    color: $white;
+    padding:  10px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 176px;
+    border: 1px solid $orange;
+    font-size: 18px;
+    border-radius: 20px;
+    span{
+        margin: 0px 5px;
+    }
+    .icon-cart{
+        background-image: url(./../../assets/icons/carrito-icon.svg);
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
 
 .cart {
+    position: fixed;
+    z-index: 9999999;
+    right: 0px;
+    top:0px;
+    bottom: 0px;
     padding: 10px;
     width: 460px;
     background: #FFFFFF;
@@ -8,7 +41,7 @@
     padding-left: 15px;
     overflow-y: auto;
 
-
+   
     .left {
         .resume {
             display: flex;
