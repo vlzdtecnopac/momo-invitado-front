@@ -1,12 +1,13 @@
 @import "../../index.scss";
-.cart-momo{
+
+.cart-momo {
     position: absolute;
     top: 94px;
     right: 20px;
     z-index: 9999;
     background-color: $orange;
     color: $white;
-    padding:  10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,16 +15,19 @@
     border: 1px solid $orange;
     font-size: 18px;
     border-radius: 20px;
-    span{
+
+    span {
         margin: 0px 5px;
     }
-    .icon-cart{
+
+    .icon-cart {
         background-image: url(./../../assets/icons/carrito-icon.svg);
         background-size: cover;
         width: 30px;
         height: 30px;
     }
-    &:hover{
+
+    &:hover {
         cursor: pointer;
     }
 }
@@ -32,17 +36,18 @@
     position: fixed;
     z-index: 9999999;
     right: 0px;
-    top:0px;
+    top: 0px;
     bottom: 0px;
     background: #FFFFFF;
     padding: 0px 15px 0px 10px;
 
     .left {
-        .container-list-product{
+        .container-list-product {
             overflow-y: auto;
             height: 72vh;
             width: 340px;
         }
+
         .resume {
             display: flex;
             justify-content: space-between;
@@ -70,7 +75,7 @@
         }
     }
 
-    
+
     .product-quantity {
         font-family: "Red Hat Display";
         font-size: 16px;
@@ -81,14 +86,34 @@
 
     }
 
-    .right{
+    .right {
         position: fixed;
         width: 390px;
         padding: 10px;
-        .subtotal{
+
+        .subtotal {
             display: flex;
+            justify-content: space-around;
+            margin-right: 50px;
+
+            .subtotal-tex {
+                font-family: "Red Hat Display", "serif";
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 26.46px;
+                text-align: left;
+
+            }
+
+            .subtotal-price {
+                font-family: "Red Hat Display", serif;
+                font-size: 24px;
+                font-weight: 700;
+
+            }
         }
-        .pay{
+
+        .pay {
             background: $orange;
             color: $white;
             font-size: 18px;
@@ -97,7 +122,9 @@
             height: 40px;
             display: block;
             text-align: center;
-            &:hover{
+            border-radius: 12px;
+
+            &:hover {
                 cursor: pointer;
                 background: #fb4b05;
             }
