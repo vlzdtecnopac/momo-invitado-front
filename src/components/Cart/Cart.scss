@@ -44,6 +44,7 @@
     .left {
         .container-list-product {
             overflow-y: auto;
+            overflow-x: hidden;
             height: 72vh;
             width: 340px;
         }
@@ -88,28 +89,20 @@
 
     .right {
         position: fixed;
-        width: 390px;
         padding: 10px;
 
         .subtotal {
             display: flex;
-            justify-content: space-around;
-            margin-right: 50px;
+            justify-content: space-between;
+            align-items: center;
+            height: 30px;
 
             .subtotal-tex {
-                font-family: "Red Hat Display", "serif";
-                font-size: 20px;
-                font-weight: 700;
-                line-height: 26.46px;
-                text-align: left;
-
+                font-size: 16px;
             }
 
             .subtotal-price {
-                font-family: "Red Hat Display", serif;
-                font-size: 24px;
-                font-weight: 700;
-
+                font-size: 16px;
             }
         }
 

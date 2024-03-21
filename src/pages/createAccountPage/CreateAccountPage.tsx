@@ -1,21 +1,20 @@
-import axios from "axios";
 import { motion } from "framer-motion";
 import { Formik } from "formik";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as Yup from "yup";
-
+import axiosInstance from "../../helpers/axios.helper";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import logoMomo from "../../assets/icons/logo.svg";
-import { useLanguage } from "../../context/Langi18nContext";
 
+import Terms from "../../components/Modal/terms/Terms";
+import ClientWelcomeComponent from "../../components/clientWelcome/ClientWelcome";
+
+import { useLanguage } from "../../context/Langi18nContext";
 import { LoaderPage } from "../../loader/Loader";
-import { tokenHeader } from "../../helpers/token-header.helper";
+
 
 import "./CreateAccountPage.scss";
-
-import ClientWelcomeComponent from "../../components/clientWelcome/ClientWelcome";
-import axiosInstance from "../../helpers/axios.helper";
 
 const CreateAccountSchema = Yup.object().shape({
   firstName: Yup.string().required("El nombre es requerido."),
@@ -24,11 +23,13 @@ const CreateAccountSchema = Yup.object().shape({
   email: Yup.string()
     .email("El correo es invalido.")
     .required("El correo es requerido."),
+    check: Yup.boolean().oneOf([true], 'Debes aceptar los términos y condiciones.')
 });
 
 function CreateAccountPage() {
   const [loader, isLoader] = useState<Boolean>();
   const navigate = useNavigate();
+  const [isTerm, setTerm] = useState(false);
   const { translate } = useLanguage();
   const [countries, setCountries] = useState([]);
   const [success, setSuccess] = useState(null);
@@ -98,6 +99,7 @@ function CreateAccountPage() {
               numberCode: selectedCountryCode,
               phone: "",
               email: "",
+              check: false,
             }}
             validationSchema={CreateAccountSchema}
             onSubmit={async (values) => {
@@ -245,13 +247,24 @@ function CreateAccountPage() {
                   })()}
                   <div className="term-condition">
                     <label>
-                      <input type="checkbox" name="check" />
+                      <input 
+                       type="checkbox"
+                       name="check"
+                       onChange={handleChange}
+                       onBlur={handleBlur}
+                        />
                       <span className="custom-checkbox"></span>
                     </label>
-                    <Link className="link_term" to={`/`}>
+                    <button type="button" onClick={()=>setTerm(true)} className="link_term">
                       {translate("acceptTerms")}
-                    </Link>
+                    </button>
+                    {isTerm? <Terms/> :  "" }
                   </div>
+                  {(() => {
+                    if (errors.check && touched.check) {
+                      return <div className="alert-error">{errors.check}</div>;
+                    }
+                  })()}
                 </div>
                 <div className="grid-3_xs-1">
                   <div className="col-6">

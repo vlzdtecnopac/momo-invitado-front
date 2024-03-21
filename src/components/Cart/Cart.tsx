@@ -1,9 +1,20 @@
 import OrderResumeCard from "../OrderResumeCard/OrderResumeCard";
 import { motion } from "framer-motion";
-import "./Cart.scss";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../context/Langi18nContext";
+
+import "./Cart.scss";
+
 function Cart() {
+  const [ejeX, setEjeX] = useState<number>(600);
+  const closeHandlerCart = () => {
+    setEjeX(600);
+  };
+  const navigate = useNavigate();
+  const { translate } = useLanguage();
+
   const [ejeX, setEjeX] = useState<number>(600);
   const closeHandlerCart = () => {
     setEjeX(600);
@@ -20,6 +31,8 @@ function Cart() {
         className="cart-momo"
       >
         <span>Ver Carrito</span> <i className="icon-cart"></i>
+      <button onClick={()=>openHandlerCart()} className="cart-momo">
+        <span>{translate("showCart")}</span> <i className="icon-cart"></i>
       </button>
       <motion.div
         className="cart"
@@ -34,6 +47,8 @@ function Cart() {
               onClick={() => closeHandlerCart()}
               className="x"
             ></button>
+            <h2 className="order-resume">{translate("summaryOrder")}</h2>
+            <button onClick={()=>closeHandlerCart()} className="x"></button>
           </div>
           <div className="product-quantity">2 productos</div>
           <div className="container-list-product">
@@ -49,12 +64,9 @@ function Cart() {
         <div className="right">
           <div className="subtotal">
             <h3 className="subtotal-tex">Subtotal (2 productos)</h3>
-            <div className="subtotal-price">$107.00</div>
+            <p className="subtotal-price">$107.00</p>
           </div>
-          <Link to="../checkout">
-            {" "}
-            <button className="pay">Continuar al pago</button>
-          </Link>
+          <button onClick={()=> navigate("/checkout")} className="pay">Continuar al pago</button>
         </div>
       </motion.div>
     </>
