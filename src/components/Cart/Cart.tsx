@@ -36,7 +36,7 @@ function Cart() {
             <h2 className="order-resume">{translate("summaryOrder")}</h2>
             <button onClick={()=>closeHandlerCart()} className="x"></button>
           </div>
-          <div className="product-quantity">2 productos</div>
+          <div className="product-quantity">{translate('numberProducts', { count: 2 })}</div>
           <div className="container-list-product">
             <OrderResumeCard />
             <hr className="separator" />

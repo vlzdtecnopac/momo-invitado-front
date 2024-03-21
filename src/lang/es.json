@@ -75,5 +75,7 @@
     "Otras Bebidas": "Otras Bebidas",
     "Nuestra Tienda": "Nuestra Tienda",
     "showCart": "Ver Carrito",
-    "summaryOrder": "Resument Pedido"
+    "summaryOrder": "Resument Pedido",
+    "numberProducts": "{{count}} productos",
+    "Combos": "Combos"
 }
