@@ -8,6 +8,7 @@ import { useEmployeeStore } from "../../store/employee.store";
 
 import "./Layout.scss";
 import axios from "axios";
+import { LoaderPage } from "../loader/Loader";
 
 interface DynamicLayoutProps {
   children: ReactNode;
@@ -20,16 +21,16 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
   const { fetchEmployeeData } = useEmployeeStore();
   const [loading, setIsLoading] = useState<Boolean>(true);
   const employeeId = localStorage.getItem("employee-id");
+  const start_session = localStorage.getItem("start_session");
+
   useEffect(() => {
-    let start_session = localStorage.getItem("start_session");
+  
     if(start_session){
       let currentTime =  moment();
       if (currentTime.diff(start_session, 'hours') >= 1) {
         renewToken(currentTime);
       }
-    }
-
-    if (loading) {
+    }else if (loading) {
       const fetchDataOnMount = async () => {
         if (employeeId) {
           fetchEmployeeData(employeeId).then(
@@ -71,6 +72,7 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
 
   return (
     <>
+      {loading? <LoaderPage/> : ""}
       <Header />
       <div className="col-12_sm-12_md-12_lg-12 p-0">{props.children}</div>
     </>
