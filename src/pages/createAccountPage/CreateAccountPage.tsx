@@ -23,6 +23,7 @@ const CreateAccountSchema = Yup.object().shape({
   email: Yup.string()
     .email("El correo es invalido.")
     .required("El correo es requerido."),
+    check: Yup.boolean().oneOf([true], 'Debes aceptar los términos y condiciones para continuar.')
 });
 
 function CreateAccountPage() {
@@ -98,6 +99,7 @@ function CreateAccountPage() {
               numberCode: selectedCountryCode,
               phone: "",
               email: "",
+              check: false,
             }}
             validationSchema={CreateAccountSchema}
             onSubmit={async (values) => {
@@ -245,7 +247,12 @@ function CreateAccountPage() {
                   })()}
                   <div className="term-condition">
                     <label>
-                      <input type="checkbox" name="check" />
+                      <input 
+                       type="checkbox"
+                       name="check"
+                       onChange={handleChange}
+                       onBlur={handleBlur}
+                        />
                       <span className="custom-checkbox"></span>
                     </label>
                     <button type="button" onClick={()=>setTerm(true)} className="link_term">
@@ -253,6 +260,11 @@ function CreateAccountPage() {
                     </button>
                     {isTerm? <Terms/> :  "" }
                   </div>
+                  {(() => {
+                    if (errors.check && touched.check) {
+                      return <div className="alert-error">{errors.check}</div>;
+                    }
+                  })()}
                 </div>
                 <div className="grid-3_xs-1">
                   <div className="col-6">
