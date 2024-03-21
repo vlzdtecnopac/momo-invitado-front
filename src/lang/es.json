@@ -76,5 +76,9 @@
     "Otras Bebidas": "Otras Bebidas",
     "Nuestra Tienda": "Nuestra Tienda",
     "showCart": "Ver Carrito",
-    "summaryOrder": "Resument Pedido"
+    "summaryOrder": "Resument Pedido",
+    "termOne": "Tus Datos: Recolectamos tu nombre, correo y teléfono para brindarte nuestros servicios y enviarte promociones increíbles.",
+    "termTwo": "Seguridad: Tus datos están seguros con nosotros. Usamos medidas de seguridad para protegerlos.",
+    "termThree": "Tu Privacidad: No compartimos tu información con nadie más. Tu confianza es importante para nosotros.",
+    "termFour": "Tus Derechos: Tú tienes control. Puedes acceder, corregir o eliminar tus datos cuando quieras."
 }

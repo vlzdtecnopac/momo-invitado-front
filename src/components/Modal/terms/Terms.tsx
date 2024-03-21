@@ -3,7 +3,6 @@ import coffee from "../../../assets/coffee-momo.png";
 import { useLanguage } from "../../../context/Langi18nContext";
 import "./Terms.scss";
 
-
 const Terms = () => {
   const { translate } = useLanguage();
 
@@ -31,22 +30,10 @@ const Terms = () => {
             {translate("momoPrivacy")} <br /> {translate("momoPrivacyData")}
           </p>
           <ol className="ol">
-            <li>
-              Tus Datos: Recolectamos tu nombre, correo y teléfono para
-              brindarte nuestros servicios y enviarte promociones increíbles.
-            </li>
-            <li>
-              Seguridad: Tus datos están seguros con nosotros. Usamos medidas de
-              seguridad para protegerlos.
-            </li>
-            <li>
-              Tu Privacidad: No compartimos tu información con nadie más. Tu
-              confianza es importante para nosotros.
-            </li>
-            <li>
-              Tus Derechos: Tú tienes control. Puedes acceder, corregir o
-              eliminar tus datos cuando quieras.
-            </li>
+            <li>{translate("termOne")}</li>
+            <li> {translate("termTwo")}</li>
+            <li> {translate("termThree")}</li>
+            <li> {translate("termFour")}</li>
           </ol>
           <p className="sub-text">
             Gracias por confiar en MOMO. <br /> Si tienes preguntas, ¡estamos

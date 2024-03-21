@@ -2,7 +2,7 @@ import OrderResumeCard from "../OrderResumeCard/OrderResumeCard";
 import { motion } from "framer-motion";
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./Cart.scss";
@@ -58,7 +58,9 @@ function Cart() {
             <h3 className="subtotal-tex">Subtotal (2 productos)</h3>
             <p className="subtotal-price">$107.00</p>
           </div>
-          <button className="pay">Continuar al pago</button>
+          <Link to="../checkout">
+            <button className="pay">Continuar al pago</button>
+          </Link>
         </div>
       </motion.div>
     </>
