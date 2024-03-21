@@ -6,6 +6,9 @@
     position: fixed;
     top: 82px;
     display: flex;
+    border-top: 2px solid $cream;
+    padding-top: 12px;
+
 
     .categories {
         list-style: none;
@@ -15,8 +18,13 @@
         gap: 10px;
         padding-bottom: 10px;
         margin-left: -20px;
+
         .category {
             border: 0;
+
+            .cart-momo {
+                margin-top: 12px;
+            }
 
             button {
                 width: 100px;

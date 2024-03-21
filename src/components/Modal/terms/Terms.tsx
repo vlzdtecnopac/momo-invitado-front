@@ -3,7 +3,6 @@ import coffee from "../../../assets/coffee-momo.png";
 import { useLanguage } from "../../../context/Langi18nContext";
 import "./Terms.scss";
 
-
 const Terms = () => {
   const { translate } = useLanguage();
 
@@ -26,33 +25,20 @@ const Terms = () => {
             src={coffee}
             alt="momo-coffee"
           />
-          <h2 className={`text`}>Hola, MOMO Lovers</h2>
+          <h2 className={`text`}>¡{translate("hi")}, MOMO Lovers!</h2>
           <p className={`sub-text`}>
             {translate("momoPrivacy")} <br /> {translate("momoPrivacyData")}
           </p>
           <ol className="ol">
-            <li>
-              Tus Datos: Recolectamos tu nombre, correo y teléfono para
-              brindarte nuestros servicios y enviarte promociones increíbles.
-            </li>
-            <li>
-              Seguridad: Tus datos están seguros con nosotros. Usamos medidas de
-              seguridad para protegerlos.
-            </li>
-            <li>
-              Tu Privacidad: No compartimos tu información con nadie más. Tu
-              confianza es importante para nosotros.
-            </li>
-            <li>
-              Tus Derechos: Tú tienes control. Puedes acceder, corregir o
-              eliminar tus datos cuando quieras.
-            </li>
+            <li>{translate("termOne")}</li>
+            <li> {translate("termTwo")}</li>
+            <li> {translate("termThree")}</li>
+            <li> {translate("termFour")}</li>
           </ol>
           <p className="sub-text">
-            Gracias por confiar en MOMO. <br /> Si tienes preguntas, ¡estamos
-            aquí para ayudarte!
+            {translate("trust")} <br /> {translate("questions")}
           </p>
-          <button className="continue">Continuar</button>
+          <button className="continue">{translate("continue")}</button>
         </div>
       </motion.div>
     </div>

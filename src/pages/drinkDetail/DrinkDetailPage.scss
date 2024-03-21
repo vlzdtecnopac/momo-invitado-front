@@ -1,21 +1,23 @@
 @import "../../index.scss";
-.products_category{
+
+.products_category {
     position: fixed;
     width: 100%;
     z-index: 99;
 }
+
 .page-container {
     padding-top: 160px;
     overflow: hidden;
 
-    .container-options-product{
+    .container-options-product {
         height: 500px;
         overflow-y: auto;
     }
 
     .drink_detail {
         width: 100%;
-        height: 683px;
+        height: 100vh;
         background-color: $light-blue;
         display: flex;
         justify-content: space-around;
@@ -91,7 +93,8 @@
                     font-weight: 700;
                     font-size: 20px;
                     margin: 10px auto;
-                    &:hover{
+
+                    &:hover {
                         cursor: pointer;
                     }
                 }

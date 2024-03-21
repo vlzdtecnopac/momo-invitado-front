@@ -49,6 +49,7 @@
     "lastName": "Apellidos",
     "email": "Correo Electrónico",
     "continueProcess": "Continua el proceso",
+    "continue": "Continuar",
     "followInstructions": "siguiendo las instrucciones de la terminal de pago.",
     "wentWrong": "Al parecer algo salió mal",
     "tryAgain": "Intentémoslo de nuevo.",
@@ -65,8 +66,11 @@
     "finishOrder": "Finalizar orden",
     "thanks": "Gracias por tu compra",
     "thanksText": "¡Gracias por tu compra! En pocos minutos tendrás lo mejor de MOMO en tus manos Ayúdanos con tu nombre para llamarte cuando tu pedido esté listo, o regístrate para aprovechar beneficios exclusivos!",
+    "trust": "Gracias por confiar en MOMO.",
+    "questions": "Si tienes preguntas, ¡estamos aquí para ayudarte!",
     "momoPrivacy": "En MoMo, cuidamos tu privacidad.",
     "momoPrivacyData": "Aquí te explicamos cómo manejamos tus datos:",
+    "hi": "Hola",
     "Especiales MOMO": "Especiales MOMO",
     "Té": "Té",
     "Café": "Café",
@@ -78,5 +82,9 @@
     "summaryOrder": "Resument Pedido",
     "numberProducts": "{{count}} productos",
     "subTotal": "Subtotal ({{count}} productos)",
-    "Combos": "Combos"
+    "Combos": "Combos",
+    "termOne": "Tus Datos: Recolectamos tu nombre, correo y teléfono para brindarte nuestros servicios y enviarte promociones increíbles.",
+    "termTwo": "Seguridad: Tus datos están seguros con nosotros. Usamos medidas de seguridad para protegerlos.",
+    "termThree": "Tu Privacidad: No compartimos tu información con nadie más. Tu confianza es importante para nosotros.",
+    "termFour": "Tus Derechos: Tú tienes control. Puedes acceder, corregir o eliminar tus datos cuando quieras."
 }
