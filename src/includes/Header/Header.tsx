@@ -29,7 +29,7 @@ function Header() {
   };
 
   const handleBackHeader = () => {
-    navigate(-1);
+    navigate("/");
   };
 
   return (
