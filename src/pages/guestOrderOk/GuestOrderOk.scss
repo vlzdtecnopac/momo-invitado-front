@@ -13,7 +13,7 @@
 
 
         .center {
-            width: 430px;
+            width: 678px;
 
             .logo {
                 width: 250px;
@@ -26,14 +26,12 @@
             .name {
                 font-weight: 700;
                 text-align: center;
-                width: 317px;
+                width: 100%;
                 height: 40px;
                 font-size: 32px;
                 display: block;
-                margin: 30px auto;
+                margin: 15px auto;
                 color: $white ;
-
-
             }
 
             .clock {
@@ -43,17 +41,19 @@
             }
 
             .text {
-                width: 430px;
+                width: 488px;
                 color: $white ;
                 font-weight: 300;
-                font-size: 26px;
+                font-size: 22px;
                 font-family: "Stacion", sans-serif;
                 text-align: center;
+                margin: 0 auto;
+
+
             }
 
             .btns {
                 display: flex;
-                flex-direction: column;
                 align-items: center;
                 margin: 15px;
                 gap: 25px;
@@ -87,23 +87,66 @@
                     border: 2px solid $light-blue;
                 }
             }
-        }
 
-        @media only screen and (max-width: 600px) {
-            .center {
-                width: 100%;
+            .client {
+                width: 488px;
+                margin: 0 auto;
 
+                .form-group {
+                    padding-top: 20px;
+
+                    .name {
+                        background: transparent;
+                        border: $white 1px solid;
+                        margin: 8px 0px;
+                        height: 40px;
+                        padding: 10px;
+                        color: $white;
+                        padding: 22px 10px;
+                        margin: 0 auto;
+                        font-size: 26px;
+                        text-align: left;
+                        border-radius: 4px;
+                        padding-left: 40px;
+
+
+                        &::placeholder {
+                            color: $white;
+                            text-align: left;
+                        }
+                    }
+
+                    .icon-user {
+                        background-image: url(./../../assets/icons/user.svg);
+                        background-size: cover;
+                        width: 25px;
+                        height: 25px;
+                        display: block;
+                        position: relative;
+                        bottom: 38px;
+                        left: 10px;
+                    }
+                }
             }
-
         }
+    }
 
-        @media only screen and (max-width: 430px) {
-            .center {
-                width: calc(100vw - 20px);
-                overflow-x: hidden;
-                overflow-y: auto;
-            }
+
+
+    @media only screen and (max-width: 600px) {
+        .center {
+            width: 100%;
+
         }
 
     }
+
+    @media only screen and (max-width: 430px) {
+        .center {
+            width: calc(100vw - 20px);
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    }
+
 }

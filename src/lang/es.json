@@ -26,7 +26,7 @@
     "signIn": "Iniciar sesión",
     "selectSignInOption": "Selecciona una opción de ingreso",
     "acceptTerms": "Acepta nuestros Términos y Condiciones de Privacidad",
-    "register": "Registrarse",
+    "register": "Registrarme",
     "cancelRegister": "Cancelar registro",
     "cancel": "Cancelar",
     "baristaTipText": "Los baristas son las estrellas de nuestro trabajo",
@@ -44,6 +44,7 @@
     "cash": "Efectivo",
     "add": "Agregar",
     "enterDataPerson": "Digita tus datos personales.",
+    "name": "Nombre",
     "firstName": "Nombres",
     "lastName": "Apellidos",
     "email": "Correo Electrónico",
@@ -61,5 +62,9 @@
     "receiptSent": "Tu recibo ha sido enviado correctamente.",
     "orderClientOk": "Tu pedido está en preparación y en pocos minutos tendrás lo mejor de MOMO en tus manos.",
     "continueShopping": "Seguir comprando",
-    "exit": "Salir"
+    "finishOrder": "Finalizar orden",
+    "thanks": "Gracias por tu compra",
+    "thanksText": "¡Gracias por tu compra! En pocos minutos tendrás lo mejor de MOMO en tus manos Ayúdanos con tu nombre para llamarte cuando tu pedido esté listo, o regístrate para aprovechar beneficios exclusivos!",
+    "momoPrivacy": "En MoMo, cuidamos tu privacidad.",
+    "momoPrivacyData": "Aquí te explicamos cómo manejamos tus datos:"
 }

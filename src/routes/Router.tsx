@@ -60,6 +60,9 @@ const LazyNotFound = lazy(() => import("../pages/404/404"));
 const LazyClientOrderOk = lazy(
   () => import("../pages/clientOrderOk/ClientOrderOk")
 );
+const LazyGuestOrderOk = lazy(
+  () => import("../pages/guestOrderOk/GuestOrderOk")
+);
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -236,6 +239,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyClientOrderOk />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/guest-order-ok",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyGuestOrderOk />
       </Suspense>
     ),
   },
