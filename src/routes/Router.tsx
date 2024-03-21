@@ -227,14 +227,6 @@ const BrowserRoutes = createBrowserRouter([
     ),
   },
   {
-    path: "/cart",
-    element: (
-      <Suspense fallback={<LoaderPage />}>
-        <Cart />
-      </Suspense>
-    ),
-  },
-  {
     path: "/client-order-ok",
     element: (
       <Suspense fallback={<LoaderPage />}>

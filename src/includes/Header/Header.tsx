@@ -43,7 +43,7 @@ function Header() {
             src={back}
             alt="back"
           />
-          <span className="text "> {translate("backText")}</span>
+          <span className="text ">{translate("backText")}</span>
         </button>
       </div>
       <div className="column_center">
