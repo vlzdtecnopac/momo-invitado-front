@@ -198,7 +198,7 @@ function CheckoutPage() {
             {/* <FailedPayment actionKey={""} /> */}
             {/* <SuccessPayment actionKey={""} /> */}
             {/* <ReceiptSent actionKey={""} /> */}
-            <Terms actionKey={""} />
+            <Terms/>
           </div>
         </div>
       </Layout>
