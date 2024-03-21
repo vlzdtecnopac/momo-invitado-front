@@ -1,7 +1,6 @@
-import axios from "axios";
 import { motion } from "framer-motion";
 import { Formik } from "formik";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as Yup from "yup";
 
@@ -10,12 +9,12 @@ import logoMomo from "../../assets/icons/logo.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import { LoaderPage } from "../../loader/Loader";
-import { tokenHeader } from "../../helpers/token-header.helper";
 
 import "./CreateAccountPage.scss";
 
 import ClientWelcomeComponent from "../../components/clientWelcome/ClientWelcome";
 import axiosInstance from "../../helpers/axios.helper";
+import Terms from "../../components/Modal/terms/Terms";
 
 const CreateAccountSchema = Yup.object().shape({
   firstName: Yup.string().required("El nombre es requerido."),
@@ -29,6 +28,7 @@ const CreateAccountSchema = Yup.object().shape({
 function CreateAccountPage() {
   const [loader, isLoader] = useState<Boolean>();
   const navigate = useNavigate();
+  const [isTerm, setTerm] = useState(false);
   const { translate } = useLanguage();
   const [countries, setCountries] = useState([]);
   const [success, setSuccess] = useState(null);
@@ -248,9 +248,10 @@ function CreateAccountPage() {
                       <input type="checkbox" name="check" />
                       <span className="custom-checkbox"></span>
                     </label>
-                    <Link className="link_term" to={`/`}>
+                    <button type="button" onClick={()=>setTerm(true)} className="link_term">
                       {translate("acceptTerms")}
-                    </Link>
+                    </button>
+                    {isTerm? <Terms/> :  "" }
                   </div>
                 </div>
                 <div className="grid-3_xs-1">
