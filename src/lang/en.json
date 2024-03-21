@@ -88,5 +88,7 @@
     "termOne": "Your Data: We collect your name, email and phone number to provide you with our services and send you amazing promotions.",
     "termTwo": "Security: Your data is safe with us. We use security measures to protect it.",
     "termThree": "Your Privacy: We do not share your information with anyone else. Your trust is important to us.",
-    "termFour": "Your Rights: You are in control. You can access, correct or delete your data whenever you want."
+    "termFour": "Your Rights: You are in control. You can access, correct or delete your data whenever you want.",
+    "countinuePayment": "Payment"
+ 
 }

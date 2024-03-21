@@ -59,7 +59,7 @@ function Cart() {
             <p className="subtotal-price">$107.00</p>
           </div>
           <Link to="../checkout">
-            <button className="pay">Continuar al pago</button>
+            <button className="pay">{translate('countinuePayment')}</button>
           </Link>
         </div>
       </motion.div>
