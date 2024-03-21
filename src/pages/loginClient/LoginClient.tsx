@@ -11,6 +11,7 @@ import { useLanguage } from "../../context/Langi18nContext";
 import { LoaderPage } from "../../loader/Loader";
 import { tokenHeader } from "../../helpers/token-header.helper";
 import "./LoginClient.scss";
+import axiosInstance from "../../helpers/axios.helper";
 
 export function EnterByEmail() {
   const { translate } = useLanguage();
@@ -21,11 +22,7 @@ export function EnterByEmail() {
   const handlerLoginSession = async (data: any) => {
     try {
       isLoader(true);
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/users/client/login`,
-        data,
-        { headers: tokenHeader }
-      );
+      const response = await axiosInstance.post(`/users/client/login`,data);
       console.log(response.data[0]);
       setError("");
       isLoader(false);
@@ -104,11 +101,7 @@ export function EnterByPhone() {
   const handlerLoginSession = async (data: any) => {
     try {
       isLoader(true);
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/users/client/login`,
-        data,
-        { headers: tokenHeader }
-      );
+      const response = await axiosInstance.post(`/users/client/login`,data);
       console.log(response.data[0]);
       setError("");
       isLoader(false);

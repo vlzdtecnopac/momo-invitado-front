@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { tokenHeader } from "../../helpers/token-header.helper";
 import { LoaderPage } from "../../includes/loader/Loader";
 import "./CategoryNav.scss";
+import axiosInstance from "../../helpers/axios.helper";
 
 function CategoryNav() {
 
@@ -18,7 +17,7 @@ function CategoryNav() {
 
   const consultCategory = async() =>{
     try{
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/category/`, {headers: tokenHeader});
+    const response = await axiosInstance.get(`/category/`);
     setCategories(response.data);
     setLoader(false);
     }catch(e){

@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import axios from 'axios';
 import { tokenHeader } from '../helpers/token-header.helper';
+import axiosInstance from '../helpers/axios.helper';
 
 interface EmployeeInterface{
   id: number,
@@ -24,7 +25,7 @@ interface EmployeeStoreInterface{
 export const useEmployeeStore = create<EmployeeStoreInterface>((set) => ({
   dataEmployee: [],
   fetchEmployeeData: async (employee_id) =>  new Promise((resolve, reject) => {
-      axios.get(`${import.meta.env.VITE_API_URL}/users/employee/?employee_id=${employee_id}`, {headers: tokenHeader})
+    axiosInstance.get(`/users/employee/?employee_id=${employee_id}`)
         .then((response) => {
           set({ dataEmployee: response.data });
           resolve(response.data); 

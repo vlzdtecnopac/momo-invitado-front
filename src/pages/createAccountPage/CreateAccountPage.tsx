@@ -15,6 +15,7 @@ import { tokenHeader } from "../../helpers/token-header.helper";
 import "./CreateAccountPage.scss";
 
 import ClientWelcomeComponent from "../../components/clientWelcome/ClientWelcome";
+import axiosInstance from "../../helpers/axios.helper";
 
 const CreateAccountSchema = Yup.object().shape({
   firstName: Yup.string().required("El nombre es requerido."),
@@ -118,11 +119,7 @@ function CreateAccountPage() {
                   country: selectCountry,
                 };
             
-                const response = await axios.post(
-                  `${import.meta.env.VITE_API_URL}/users/client/register`,
-                  data,
-                  { headers: tokenHeader }
-                );
+                const response = await axiosInstance.post(`/users/client/register`, data);
                 setSuccess(response.data);
                 isLoader(false);
               } catch (e) {

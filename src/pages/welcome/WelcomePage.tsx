@@ -12,6 +12,7 @@ import { tokenHeader } from "../../helpers/token-header.helper";
 import { LoaderPage } from "../../includes/loader/Loader";
 import "./WelcomePage.scss";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
+import axiosInstance from "../../helpers/axios.helper";
 
 interface KioskoDataActive {
   name_shopping: string;
@@ -60,12 +61,7 @@ function WelcomePage() {
   }, [loader]);
 
   const searchKiosko = async (shopping_id: string) => {
-    return await axios.get(
-      `${
-        import.meta.env.VITE_API_URL
-      }/kioskos/activate/?shopping_id=${shopping_id}&state=false`,
-      { headers: tokenHeader }
-    );
+    return await axiosInstance.get(`/kioskos/activate/?shopping_id=${shopping_id}&state=false`);
   };
 
   return (

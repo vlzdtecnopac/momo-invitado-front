@@ -11,6 +11,7 @@ import { tokenHeader } from "../../helpers/token-header.helper";
 import { LoaderPage } from "../../loader/Loader";
 import { useNavigate } from "react-router-dom";
 import "./ProductCategoryPage.scss";
+import axiosInstance from "../../helpers/axios.helper";
 
 function ProductsPage() {
   const navigate = useNavigate();
@@ -25,10 +26,7 @@ function ProductsPage() {
 
   const consultCategory = async () => {
     try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/category/`,
-        { headers: tokenHeader }
-      );
+      const response = await axiosInstance.get(`/category/`);
       setCategories(response.data);
       setLoader(false);
     } catch (e) {

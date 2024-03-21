@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import moment from "moment";
-import axios from "axios";
 import { Formik } from "formik";
 
-
+import axiosInstance from "../../helpers/axios.helper";
 import { SocketContext } from "../../context/SocketContext";
 import { LoaderPage } from "../../includes/loader/Loader";
 import "./LoginForm.scss";
+
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -39,10 +39,7 @@ function LoginForm() {
           onSubmit={async (values) => {
             setLoader(true);
             try {
-              let resp = await axios.post(
-                `${import.meta.env.VITE_API_URL}/users/employee/login`,
-                values
-              );
+              let resp = await axiosInstance.post(`/users/employee/login`, values);
               if (resp) {
                 if (!resp.data.state) {
                   setError("Usuario Inactivo");
