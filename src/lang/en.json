@@ -32,11 +32,11 @@
     "baristaTipText": "Baristas are the stars of our work",
     "addTip": "Add your tip",
     "noTip": "I don't want to tip today",
-    "excellentChoice": "¡Excellent choice!",
+    "excellentChoice": "Excellent choice",
     "bonus": "A bonus for our heroes",
     "gesture": "An incredible gesture",
     "other": "Other",
-    "youDecide": "¡You decide!",
+    "youDecide": "You decide",
     "selectPayMethod": "Select your payment method",
     "card": "Card",
     "debit": "Debit",
@@ -89,6 +89,7 @@
     "termTwo": "Security: Your data is safe with us. We use security measures to protect it.",
     "termThree": "Your Privacy: We do not share your information with anyone else. Your trust is important to us.",
     "termFour": "Your Rights: You are in control. You can access, correct or delete your data whenever you want.",
-    "countinuePayment": "Payment"
- 
+    "countinuePayment": "Payment",
+    "addCoupon": "Add coupon",
+    "pay": "Pay"
 }

@@ -157,7 +157,7 @@ function CheckoutPage() {
                 <div className="cupon">
                   <div className="form-group">
                     <input
-                      placeholder="Invitado"
+                      placeholder={translate("addCoupon")}
                       type="text"
                       id="cupon"
                       name="cupon"
@@ -190,7 +190,7 @@ function CheckoutPage() {
                       <td>$ 50</td>
                     </tr>
                   </table>
-                  <button className="btn-payment">Pagar</button>
+                  <button className="btn-payment">{translate("pay")}</button>
                 </div>
               </section>
             </div>
