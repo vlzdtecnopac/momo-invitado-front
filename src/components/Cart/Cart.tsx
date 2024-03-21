@@ -36,7 +36,7 @@ function Cart() {
             <h2 className="order-resume">{translate("summaryOrder")}</h2>
             <button onClick={()=>closeHandlerCart()} className="x"></button>
           </div>
-          <div className="product-quantity">{translate('numberProducts', { count: 2 })}</div>
+          <div className="product-quantity">{translate('numberProducts', { count: 4 })}</div>
           <div className="container-list-product">
             <OrderResumeCard />
             <hr className="separator" />
@@ -49,7 +49,7 @@ function Cart() {
         </div>
         <div className="right">
           <div className="subtotal">
-            <h3 className="subtotal-tex">Subtotal (2 productos)</h3>
+            <h3 className="subtotal-tex">{translate('subTotal', { count: 4 })}</h3>
             <p className="subtotal-price">$107.00</p>
           </div>
           <button onClick={()=> navigate("/checkout")} className="pay">Continuar al pago</button>
