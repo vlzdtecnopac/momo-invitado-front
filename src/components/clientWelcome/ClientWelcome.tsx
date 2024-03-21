@@ -60,7 +60,7 @@ const ClientWelcomeComponent: React.FC<ClientWelcomeProps> = ({data}) => {
               alt="check-icon"
             />
           </motion.div>
-          <h2 className={`text`}>
+          <h2 className="text">
             <span className="space">{data.first_name +  " " + data.last_name}</span> <br />
             <span className="light-text">{translate("welcomeText")}</span>
             <br />

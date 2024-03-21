@@ -32,12 +32,13 @@
         height: 145px;
         margin: 0 auto;
 
-        .text {
+        .text-kiosko {
             max-width: 100%;
             min-width: 544px;
             max-height: 100%;
             min-height: 171px;
             text-align: center;
+            color: $dark-blue;
 
             .big-text {
                 font-family: "Red Hat Display", "serif";

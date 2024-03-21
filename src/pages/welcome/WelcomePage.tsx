@@ -72,7 +72,7 @@ function WelcomePage() {
           <img className="logo" src={logo} alt="momo-logo" />
         </div>
         <div className="text-container">
-          <div className="text">
+          <div className="text-kiosko">
             <h2 className="big-text">¡Bienvenid@!</h2>
             <p className="sub-text">
               Antes de comenzar, <br />

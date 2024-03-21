@@ -18,7 +18,6 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
   const employeeId = localStorage.getItem("employee-id");
 
   useEffect(() => {
-   if (loading) {
       const fetchDataOnMount = async () => {
         if (employeeId) {
           fetchEmployeeData(employeeId).then(async (resp: any) => {
@@ -28,7 +27,6 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
         }
       };
       fetchDataOnMount();
-    }
   }, []);
 
 
