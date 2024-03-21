@@ -1,22 +1,32 @@
 import OrderResumeCard from "../OrderResumeCard/OrderResumeCard";
 import { motion } from "framer-motion";
 import "./Cart.scss";
+import { useState } from "react";
 function Cart() {
+  const  [ejeX, setEjeX] = useState<number>(600);
+  const closeHandlerCart = () =>{
+      setEjeX(600);
+  }
+
+  const openHandlerCart = ( ) => {
+    setEjeX(0);
+  }
+
   return (
     <>
-      <button className="cart-momo">
+      <button onClick={()=>openHandlerCart()} className="cart-momo">
         <span>Ver Carrito</span> <i className="icon-cart"></i>
       </button>
       <motion.div
         className="cart"
         initial={{ x: 600 }} 
-        animate={{ x: 0 }} 
+        animate={{ x: ejeX }} 
         transition={{ duration: 1 }}
       >
         <div className="left">
           <div className="resume">
             <h2 className="order-resume">Resumen de tu pedido</h2>
-            <button className="x"></button>
+            <button onClick={()=>closeHandlerCart()} className="x"></button>
           </div>
           <div className="product-quantity">2 productos</div>
           <div className="container-list-product">
