@@ -31,7 +31,7 @@ const Terms: React.FC<ModalProps> = ({ actionKey }) => {
             src={coffee}
             alt="momo-coffee"
           />
-          <h2 className={`text`}>Hola, MOMO Lovers</h2>
+          <h2 className={`text`}>¡{translate("hi")}, MOMO Lovers!</h2>
           <p className={`sub-text`}>
             {translate("momoPrivacy")} <br /> {translate("momoPrivacyData")}
           </p>
