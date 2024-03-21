@@ -39,7 +39,7 @@
     .left {
         .container-list-product{
             overflow-y: auto;
-            height: 70vh;
+            height: 72vh;
         }
         .resume {
             display: flex;
@@ -81,6 +81,21 @@
 
     .right{
         position: fixed;
+        width: 390px;
+        padding: 10px;
+        .subtotal{
+            display: flex;
+        }
+        .pay{
+            background: $orange;
+            color: $white;
+            font-size: 18px;
+            border: 1px solid $orange;
+            width: 100%;
+            height: 40px;
+            display: block;
+            text-align: center;
+        }
     }
 
 }

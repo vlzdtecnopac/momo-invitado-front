@@ -21,7 +21,7 @@ function Cart() {
         </div>
       </div>
       <div className="right">
-        <div className="grid-2 subtotal">
+        <div className="subtotal">
           <h3 className="subtotal-tex">Subtotal (2 productos)</h3>
           <div className="subtotal-price">$107.00</div>
         </div>
