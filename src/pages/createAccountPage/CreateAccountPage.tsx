@@ -121,6 +121,8 @@ function CreateAccountPage() {
             
                 const response = await axiosInstance.post(`/users/client/register`, data);
                 setSuccess(response.data);
+                localStorage.setItem('client-id', response.data.client_id);
+                navigate("/categories");
                 isLoader(false);
               } catch (e) {
                 isLoader(false);
