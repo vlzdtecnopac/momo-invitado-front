@@ -5,7 +5,7 @@ import "./OrderResumeCard.scss";
 function OrderResumeCard() {
   const [quantity, setQuantity] = useState(1); // Initial quantity state
 
-  const handleQuantityChange = (change) => {
+  const handleQuantityChange = (change: any) => {
     const newQuantity = Math.max(quantity + change, 1); // Ensure minimum quantity is 1
     setQuantity(newQuantity);
   };

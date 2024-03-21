@@ -10,9 +10,15 @@ function Cart() {
           <button className="x"></button>
         </div>
         <div className="product-quantity">2 productos</div>
+        <div className="container-list-product">
         <OrderResumeCard />
         <hr className="separator" />
         <OrderResumeCard />
+        <hr className="separator" />
+        <OrderResumeCard />
+        <hr className="separator" />
+        <OrderResumeCard />
+        </div>
       </div>
       <div className="right">
         <div className="grid-2 subtotal">
