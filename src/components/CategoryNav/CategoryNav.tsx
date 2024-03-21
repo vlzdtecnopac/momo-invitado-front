@@ -29,8 +29,7 @@ function CategoryNav() {
   };
   return (
     <>
-      {loader ? <LoaderPage /> : ""}
-      <Cart />
+      {loader ? <LoaderPage /> : <Cart />}
       <nav className="cat_nav">
         <ul className="categories">
           {categories.map((category: any, index: number) => (
