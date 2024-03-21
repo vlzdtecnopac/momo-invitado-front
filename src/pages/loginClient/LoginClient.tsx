@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
@@ -22,7 +22,7 @@ export function EnterByEmail() {
   const handlerLoginSession = async (data: any) => {
     try {
       isLoader(true);
-      const response = await axiosInstance.post(`/users/client/login`,data);
+      const response = await axiosInstance.post(`/users/client/login`, data);
       console.log(response.data[0]);
       setError("");
       isLoader(false);
@@ -68,6 +68,7 @@ export function EnterByEmail() {
 }
 
 export function EnterByPhone() {
+  const navigate = useNavigate();
   const [countries, setCountries] = useState([]);
   const [loader, isLoader] = useState<Boolean>(false);
   const [selectCountryCode, selectedCountryCode] = useState("+57");
@@ -101,10 +102,11 @@ export function EnterByPhone() {
   const handlerLoginSession = async (data: any) => {
     try {
       isLoader(true);
-      const response = await axiosInstance.post(`/users/client/login`,data);
-      console.log(response.data[0]);
+      const response = await axiosInstance.post(`/users/client/login`, data);
+      localStorage.setItem('client-id', response.data[0].client_id);
       setError("");
       isLoader(false);
+      navigate("/categories");
     } catch (e: any) {
       isLoader(false);
       setError(e.response.data.msg);
