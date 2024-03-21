@@ -58,9 +58,7 @@ function Cart() {
             <h3 className="subtotal-tex">{translate('subTotal', { count: 4 })}</h3>
             <p className="subtotal-price">$107.00</p>
           </div>
-          <Link to="../checkout">
-            <button className="pay">{translate('countinuePayment')}</button>
-          </Link>
+            <button onClick={()=>navigate("/checkout")} className="pay">{translate('countinuePayment')}</button>
         </div>
       </motion.div>
     </>
