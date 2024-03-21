@@ -36,7 +36,7 @@ function Cart() {
       >
         <div className="left">
           <div className="resume">
-            <h2 className="order-resume">Resumen de tu pedido</h2>
+            <h2 className="order-resume">{translate('summaryOrder')}</h2>
             <button
               onClick={() => closeHandlerCart()}
               className="x"
