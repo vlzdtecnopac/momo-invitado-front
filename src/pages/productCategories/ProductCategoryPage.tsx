@@ -1,19 +1,21 @@
 import Layout from "../../includes/layout/Layout";
 import banner from "../../assets/Banner.jpg";
 
+import axiosInstance from "../../helpers/axios.helper";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import axios from "axios";
 import "swiper/css";
 import { useEffect, useState } from "react";
-import { tokenHeader } from "../../helpers/token-header.helper";
 import { LoaderPage } from "../../loader/Loader";
 import { useNavigate } from "react-router-dom";
+
 import "./ProductCategoryPage.scss";
-import axiosInstance from "../../helpers/axios.helper";
+import { useLanguage } from "../../context/Langi18nContext";
 
 function ProductsPage() {
+  const { translate } = useLanguage();
+
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [loader, setLoader] = useState<boolean>(true);
@@ -47,7 +49,7 @@ function ProductsPage() {
               >
                 <CustomButton
                   icon={category.class}
-                  text={category.name_category}
+                  text={translate(`${category.name_category}`)}
                   onClick={function (): void {
                     navigate(category.sub_category);
                   }}
