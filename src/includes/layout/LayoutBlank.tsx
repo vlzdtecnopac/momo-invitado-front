@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useEmployeeStore } from "../../store/employee.store";
 import { useShoppingStore } from "../../store/shopping.store";
 import axios from "axios";
+import { LoaderPage } from "../loader/Loader";
 
 interface DynamicLayoutProps {
   children: ReactNode;
@@ -17,15 +18,14 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
   const { dataStore, fetchStoreData } = useShoppingStore();
   const [loading, setIsLoading] = useState<Boolean>(true);
   const employeeId = localStorage.getItem("employee-id");
+  const start_session = localStorage.getItem("start_session");
   useEffect(() => {
-    let start_session = localStorage.getItem("start_session");
     if(start_session){
       let currentTime =  moment();
       if (currentTime.diff(start_session, 'hours') >= 1) {
         renewToken(currentTime);
       }
-    }
-    if (loading) {
+    }else if (loading) {
       const fetchDataOnMount = async () => {
         if (employeeId) {
           fetchEmployeeData(employeeId).then(async (resp: any) => {
@@ -45,6 +45,7 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
   });
    localStorage.setItem("start_session", currentTime.format('YYYY/MM/DD, h:mm:ss a'));
    localStorage.setItem('token-momo', response.data.token);
+   window.location.reload();
   }
 
   useEffect(() => {
@@ -60,7 +61,9 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
     });
   }, [loading, socket]);
 
-  return <>{props.children}</>;
+  return <>
+  {loading? <LoaderPage/> : ""}
+  {props.children}</>;
 };
 
 export default LayoutBlank;
