@@ -23,7 +23,7 @@ const CreateAccountSchema = Yup.object().shape({
   email: Yup.string()
     .email("El correo es invalido.")
     .required("El correo es requerido."),
-    check: Yup.boolean().oneOf([true], 'Debes aceptar los términos y condiciones para continuar.')
+    check: Yup.boolean().oneOf([true], 'Debes aceptar los términos y condiciones.')
 });
 
 function CreateAccountPage() {
