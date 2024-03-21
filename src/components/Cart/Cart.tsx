@@ -8,10 +8,6 @@ import { useLanguage } from "../../context/Langi18nContext";
 import "./Cart.scss";
 
 function Cart() {
-  const [ejeX, setEjeX] = useState<number>(600);
-  const closeHandlerCart = () => {
-    setEjeX(600);
-  };
   const navigate = useNavigate();
   const { translate } = useLanguage();
 
@@ -30,8 +26,6 @@ function Cart() {
         onClick={() => openHandlerCart()}
         className="cart-momo"
       >
-        <span>Ver Carrito</span> <i className="icon-cart"></i>
-      <button onClick={()=>openHandlerCart()} className="cart-momo">
         <span>{translate("showCart")}</span> <i className="icon-cart"></i>
       </button>
       <motion.div
@@ -47,8 +41,6 @@ function Cart() {
               onClick={() => closeHandlerCart()}
               className="x"
             ></button>
-            <h2 className="order-resume">{translate("summaryOrder")}</h2>
-            <button onClick={()=>closeHandlerCart()} className="x"></button>
           </div>
           <div className="product-quantity">2 productos</div>
           <div className="container-list-product">
@@ -66,7 +58,7 @@ function Cart() {
             <h3 className="subtotal-tex">Subtotal (2 productos)</h3>
             <p className="subtotal-price">$107.00</p>
           </div>
-          <button onClick={()=> navigate("/checkout")} className="pay">Continuar al pago</button>
+          <button className="pay">Continuar al pago</button>
         </div>
       </motion.div>
     </>
