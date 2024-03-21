@@ -35,11 +35,13 @@
     top:0px;
     bottom: 0px;
     background: #FFFFFF;
+    padding: 0px 15px 0px 10px;
 
     .left {
         .container-list-product{
             overflow-y: auto;
             height: 72vh;
+            width: 340px;
         }
         .resume {
             display: flex;
@@ -51,7 +53,7 @@
                 height: 44px;
                 background-image: url("../../assets/icons/close.svg");
                 mask-size: 100%;
-                margin-right: 30px;
+                margin-right: 10px;
                 margin-top: 10px;
 
                 &:hover {
@@ -91,10 +93,14 @@
             color: $white;
             font-size: 18px;
             border: 1px solid $orange;
-            width: 100%;
+            width: 320px;
             height: 40px;
             display: block;
             text-align: center;
+            &:hover{
+                cursor: pointer;
+                background: #fb4b05;
+            }
         }
     }
 
