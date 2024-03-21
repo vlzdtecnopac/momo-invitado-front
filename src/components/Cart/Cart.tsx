@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import "./Cart.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../context/Langi18nContext";
 function Cart() {
   const navigate =  useNavigate();
+  const { translate } = useLanguage();
+
   const  [ejeX, setEjeX] = useState<number>(600);
   const closeHandlerCart = () =>{
       setEjeX(600);
@@ -17,7 +20,7 @@ function Cart() {
   return (
     <>
       <button onClick={()=>openHandlerCart()} className="cart-momo">
-        <span>Ver Carrito</span> <i className="icon-cart"></i>
+        <span>{translate("showCart")}</span> <i className="icon-cart"></i>
       </button>
       <motion.div
         className="cart"

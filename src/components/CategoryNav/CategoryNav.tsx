@@ -4,8 +4,10 @@ import { LoaderPage } from "../../includes/loader/Loader";
 import axiosInstance from "../../helpers/axios.helper";
 import Cart from "../Cart/Cart";
 import "./CategoryNav.scss";
+import { useLanguage } from "../../context/Langi18nContext";
 
 function CategoryNav() {
+  const { translate } = useLanguage();
 
   const [categories, setCategories] = useState([]);
   const [loader, setLoader] =  useState<Boolean>(true);
@@ -36,7 +38,7 @@ function CategoryNav() {
             className="category"
             key={index}
           >
-            <button>{category.name_category}</button>
+            <button>{translate(category.name_category)}</button>
           </li>
         ))}
       </ul>
