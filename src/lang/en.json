@@ -76,5 +76,6 @@
     "Alimentos": "Food",
     "Otras Bebidas": "Others Drinks",
     "Nuestra Tienda": "Store",
-    "showCart": "Show Cart"
+    "showCart": "Show Cart",
+    "summaryOrder": "Order Summary"
 }

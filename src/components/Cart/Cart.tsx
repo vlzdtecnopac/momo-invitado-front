@@ -1,9 +1,12 @@
 import OrderResumeCard from "../OrderResumeCard/OrderResumeCard";
 import { motion } from "framer-motion";
-import "./Cart.scss";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
+
+import "./Cart.scss";
+
 function Cart() {
   const navigate =  useNavigate();
   const { translate } = useLanguage();
@@ -30,7 +33,7 @@ function Cart() {
       >
         <div className="left">
           <div className="resume">
-            <h2 className="order-resume">Resumen de tu pedido</h2>
+            <h2 className="order-resume">{translate("summaryOrder")}</h2>
             <button onClick={()=>closeHandlerCart()} className="x"></button>
           </div>
           <div className="product-quantity">2 productos</div>
