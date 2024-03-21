@@ -11,7 +11,7 @@ function OrderResumeCard() {
   };
 
   return (
-    <div className="grid-2 resume_card">
+    <div className="resume_card">
       <div className="left-column">
         <img
           className="product-image"
@@ -45,7 +45,7 @@ function OrderResumeCard() {
           </p>
           {/* ... other details */}
         </div>
-        <div className="grid-2 end">
+        <div className="end">
           <div className="subtotal">
             ${(quantity * 67).toFixed(2)}{" "}
             {/* Update subtotal based on quantity */}

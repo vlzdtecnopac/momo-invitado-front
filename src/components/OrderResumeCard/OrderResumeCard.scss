@@ -1,14 +1,13 @@
 @import "../../index.scss";
 
 .resume_card {
+    display: flex;
     margin: 0px;
     .left-column {
-        margin-right: 10px;
-
+      
         .product-image {
             width: 89px;
             border-radius: 11px;
-            margin-bottom: 15px;
         }
 
         .product-quantity {
@@ -44,14 +43,13 @@
     }
 
     .right-column {
-
+        
         title {
-            width: 246px;
-            height: 24px;
+            width: 90%
         }
 
         .details {
-            width: 246px;
+            width:  90%;
             color: $dark-blue;
 
             .detail {
@@ -67,6 +65,7 @@
         }
 
         .end {
+            display: flex;
             justify-content: end;
 
             .subtotal {

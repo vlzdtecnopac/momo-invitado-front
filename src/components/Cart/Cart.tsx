@@ -5,7 +5,7 @@ function Cart() {
     <button className="cart-momo"><span>Ver Carrito</span> <i className="icon-cart"></i></button>
     <div className="cart">
       <div className="left">
-        <div className="grid-2 resume">
+        <div className="resume">
           <h2 className="order-resume">Resumen de tu pedido</h2>
           <button className="x"></button>
         </div>
