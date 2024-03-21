@@ -36,10 +36,9 @@ const Terms = () => {
             <li> {translate("termFour")}</li>
           </ol>
           <p className="sub-text">
-            Gracias por confiar en MOMO. <br /> Si tienes preguntas, ¡estamos
-            aquí para ayudarte!
+            {translate("trust")} <br /> {translate("questions")}
           </p>
-          <button className="continue">Continuar</button>
+          <button className="continue">{translate("continue")}</button>
         </div>
       </motion.div>
     </div>
