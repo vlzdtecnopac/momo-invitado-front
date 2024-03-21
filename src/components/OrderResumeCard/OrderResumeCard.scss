@@ -11,6 +11,10 @@
         }
 
         .product-quantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             .plus {
                 width: 24px;
                 height: 24px;
@@ -43,7 +47,7 @@
     }
 
     .right-column {
-        
+        width: 270px;
         title {
             width: 90%
         }
