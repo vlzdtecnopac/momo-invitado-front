@@ -79,6 +79,6 @@
     "showCart": "Show Cart",
     "summaryOrder": "Order Summary",
     "numberProducts": "{{count}} products",
-    "subTotal": "Subtotal ({{count}} productos)",
+    "subTotal": "Subtotal ({{count}} products)",
     "Combos": "Combos"
 }
