@@ -2,7 +2,9 @@ import OrderResumeCard from "../OrderResumeCard/OrderResumeCard";
 import { motion } from "framer-motion";
 import "./Cart.scss";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function Cart() {
+  const navigate =  useNavigate();
   const  [ejeX, setEjeX] = useState<number>(600);
   const closeHandlerCart = () =>{
       setEjeX(600);
@@ -42,9 +44,9 @@ function Cart() {
         <div className="right">
           <div className="subtotal">
             <h3 className="subtotal-tex">Subtotal (2 productos)</h3>
-            <div className="subtotal-price">$107.00</div>
+            <p className="subtotal-price">$107.00</p>
           </div>
-          <button className="pay">Continuar al pago</button>
+          <button onClick={()=> navigate("/checkout")} className="pay">Continuar al pago</button>
         </div>
       </motion.div>
     </>

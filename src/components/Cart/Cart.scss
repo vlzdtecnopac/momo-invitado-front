@@ -40,6 +40,7 @@
     .left {
         .container-list-product{
             overflow-y: auto;
+            overflow-x: hidden;
             height: 72vh;
             width: 340px;
         }
@@ -83,10 +84,19 @@
 
     .right{
         position: fixed;
-        width: 390px;
         padding: 10px;
         .subtotal{
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 30px;
+
+            .subtotal-tex{
+                font-size: 16px;
+            }
+            .subtotal-price{
+                font-size: 16px;
+            }
         }
         .pay{
             background: $orange;
