@@ -5,9 +5,12 @@ import Layout from "../../includes/layout/Layout";
 import beans from "../../assets/icons/coffee_beans.svg";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Slider from "../../components/Slider/Slider";
+import { useLanguage } from "../../context/Langi18nContext";
+
 import "./CoffeeDetailPage.scss";
 
 function CoffeeDetailPage() {
+  const { translate } = useLanguage();
   return (
     <Layout>
       <div className="products_category">
@@ -28,31 +31,40 @@ function CoffeeDetailPage() {
                 <div className="container-options">
                   <div className="type">
                     <div className=" type-container container">
-                      <img className="icon" src={beans} alt="type" />
-                      <h3 className="text">Tipo de café</h3>
+                      <img
+                        className="icon"
+                        src={beans}
+                        alt="type"
+                      />
+                      <h3 className="text">{translate("coffeeType")}</h3>
                     </div>
 
                     <div className="options">
-                      <button className="option">Molido</button>
-                      <button className="option">En grano</button>
+                      <button className="option">{translate("ground")}</button>
+                      <button className="option">{translate("beans")}</button>
                     </div>
                   </div>
                   <hr className="separator" />
                   <div className="size">
                     <div className=" size-container container">
-                      <img className="icon" src={coffeeBag} alt="size" />
-                      <h3 className="text">Tamaño</h3>
+                      <img
+                        className="icon"
+                        src={coffeeBag}
+                        alt="size"
+                      />
+                      <h3 className="text">{translate("size")}</h3>
                     </div>
                     <div className="options">
                       <button className="option">
-                        Chico <br /> <span className="extra-price">250gr</span>
+                        {translate("small")} <br />{" "}
+                        <span className="extra-price">250gr</span>
                       </button>
                       <button className="option">
-                        Mediano <br />{" "}
+                        {translate("medium")} <br />{" "}
                         <span className="extra-price">500gr</span>
                       </button>
                       <button className="option">
-                        Grande <br />
+                        {translate("large")} <br />
                         <span className="extra-price">1Kg</span>
                       </button>
                     </div>
@@ -60,7 +72,7 @@ function CoffeeDetailPage() {
                   <hr className="separator" />
                   <div className="complement">
                     <h3 className="text complement_title">
-                      Acompaña tu compra
+                      {translate("accompanyPurchase")}
                     </h3>
                     <div className="cards">
                       <Slider />
@@ -71,7 +83,7 @@ function CoffeeDetailPage() {
                   <hr className="separator" />
                   <div className="btn-container">
                     <button className="add-cart-btn">
-                      Agregar al carrito $47
+                      {translate("addcart")} $47
                     </button>
                   </div>
                 </div>

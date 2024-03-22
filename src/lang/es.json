@@ -118,5 +118,10 @@
     "darkBlue": "Azul oscuro",
     "orange": "Naranja",
     "lightBlue": "Azul claro",
-    "cream": "Crema"
+    "cream": "Crema",
+    "drinkStepOne": "Paso 1: Configura tu bebida",
+    "drinkStepTwo": "Paso 2: Configura tus alimentos",
+    "coffeeType": "Tipo de café",
+    "ground": "Molido",
+    "beans": "En grano"
 }

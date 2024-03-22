@@ -94,6 +94,7 @@
     "pay": "Pay",
     "size": "Size",
     "small": "Small",
+    "medium": "Medium",
     "large": "Large",
     "milk": "Milk",
     "whole": "Whole",
@@ -110,7 +111,7 @@
     "accompanyDrink": "Accompany your drink",
     "accompanyFood": "Accompany your food",
     "accompanyPurchase": "Accompany your purchase",
-    "addcart": "Add to cart",
+    "addCart": "Add to cart",
     "temperature": "Temperature",
     "roomTemp": "Room temperature",
     "machaSauce": "Macha sauce",
@@ -119,5 +120,10 @@
     "darkBlue": "Dark blue",
     "orange": "Orange",
     "lightBlue": "Light blue",
-    "cream": "Cream"
+    "cream": "Cream",
+    "drinkStepOne": "Step 1: Configure your drink",
+    "drinkStepTwo": "Step 2: Configure your food",
+    "coffeeType": "Coffee type",
+    "ground": "Ground",
+    "beans": "Beans"
 }
