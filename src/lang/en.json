@@ -130,5 +130,6 @@
     "noFound": "Page not found",
     "pecentageAmount": "¡Write a percentage!!",
     "cashAmount": "¡Write an amount in pesos!",
-    "writeHere": "Write here"
+    "writeHere": "Write here",
+    "registerText": " Your registration was successfully completed. Welcome to the experience at"
 }

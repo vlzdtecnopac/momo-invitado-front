@@ -63,6 +63,9 @@ const LazyClientOrderOk = lazy(
 const LazyGuestOrderOk = lazy(
   () => import("../pages/guestOrderOk/GuestOrderOk")
 );
+const LazyRegisterSuccess = lazy(
+  () => import("../pages/registersuccess/RegisterSuccess")
+);
 
 const BrowserRoutes = createBrowserRouter([
   {
@@ -239,6 +242,14 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyGuestOrderOk />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/register-success",
+    element: (
+      <Suspense fallback={<LoaderPage />}>
+        <LazyRegisterSuccess />
       </Suspense>
     ),
   },
