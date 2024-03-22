@@ -89,5 +89,22 @@
     "termFour": "Tus Derechos: Tú tienes control. Puedes acceder, corregir o eliminar tus datos cuando quieras.",
     "countinuePayment": "Continuar al pago",
     "addCoupon": "Agregar cupón",
-    "pay": "Pagar"
+    "pay": "Pagar",
+    "size": "Tamaño",
+    "small": "Chico",
+    "large": "Grande",
+    "milk": "Leche",
+    "whole": "Entera",
+    "lactoseFree": "Deslactosada",
+    "oatMilk": "Avena",
+    "sugar": "Azúcar",
+    "less": "Menos",
+    "more": "Más",
+    "extraCoffee": "Extra shot de café",
+    "extraCream": "Extra de crema",
+    "lid": "Con tapa",
+    "noLid": "Sin tapa",
+    "helpPlanet": " Ayúdanos a cuidar el planeta",
+    "accompanyDrink": "Acompaña tu bebida",
+    "addCart": "Agregar al carrito"
 }

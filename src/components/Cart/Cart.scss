@@ -27,11 +27,11 @@
         height: 30px;
     }
 
-    &:hover{
+    &:hover {
         background: #e34317;
         cursor: pointer;
-      }
- 
+    }
+
 }
 
 .cart {
@@ -100,10 +100,14 @@
             height: 30px;
 
             .subtotal-tex {
+                font-family: "Red Hat Display", "serif";
                 font-size: 16px;
             }
 
             .subtotal-price {
+                font-family: "Red Hat Display", "serif";
+                font-weight: 700;
+                font-size: 24px;
                 font-size: 16px;
             }
         }

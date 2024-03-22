@@ -55,7 +55,7 @@ function RegisterPage() {
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
               >
-                <h2 className="h2">{`¡${translate("welcome")}!`}</h2>
+                <h2 className="h2">{`${translate("welcome")}`}</h2>
                 <p className="parrafo-subtitulo">{translate("registerSub")}</p>
               </motion.div>
               <div className="register-options">

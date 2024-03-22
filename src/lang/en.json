@@ -91,5 +91,22 @@
     "termFour": "Your Rights: You are in control. You can access, correct or delete your data whenever you want.",
     "countinuePayment": "Payment",
     "addCoupon": "Add coupon",
-    "pay": "Pay"
+    "pay": "Pay",
+    "size": "Size",
+    "small": "Small",
+    "large": "Large",
+    "milk": "Milk",
+    "whole": "Whole",
+    "lactoseFree": "Lactose free",
+    "oatMilk": "Oat milk",
+    "sugar": "Sugar",
+    "less": "Less",
+    "more": "More",
+    "extraCoffee": "Extra coffee shot",
+    "extraCream": "Extra cream",
+    "lid": "Lid",
+    "nolid": "No lid",
+    "helpPlanet": "Help us take care of the planet",
+    "accompanyDrink": "Accompany your drink",
+    "addcart": "Add to cart"
 }
