@@ -12,6 +12,8 @@ import ReceiptSent from "../../components/Modal/ReceiptSend/ReceiptSent";
 import FailedPayment from "../../components/Modal/FailedPayment/FailedPayment";
 import ContinuePayment from "../../components/Modal/ContinuePayment/ContinuePayment";
 import Terms from "../../components/Modal/terms/Terms";
+import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
+import AmountTip from "../../components/Modal/AmountTip/AmountTip";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -215,6 +217,8 @@ function CheckoutPage() {
             {/* <SuccessPayment actionKey={""} /> */}
             {/* <ReceiptSent actionKey={""} /> */}
             {/* <Terms /> */}
+            {/* <PercentageTip actionKey={""} /> */}
+            {/* <AmountTip actionKey={""} /> */}
           </div>
         </div>
       </Layout>

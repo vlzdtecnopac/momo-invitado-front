@@ -1,0 +1,102 @@
+@import "../../../index.scss";
+
+.modal-container {
+    .shadow-effect {
+        position: fixed;
+        background: #4d4d4d6b;
+        height: 100vh;
+        width: 100%;
+        z-index: 999;
+        left: 0px;
+        top: 0px;
+    }
+
+    .modal {
+        position: fixed;
+        width: 720px;
+        height: 511px;
+        background: #D5EAFB;
+        border-radius: 16px;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        z-index: 1000;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 65px;
+
+            .img {
+                width: 168px;
+                margin: 0 auto;
+                padding-bottom: 21px;
+
+            }
+
+            .text {
+                color: #000;
+                margin: 0 auto;
+                font-family: "Red Hat Display";
+                font-size: 24px;
+                font-weight: 700;
+                padding-bottom: 20px;
+            }
+
+
+
+            .write {
+                font-weight: 700;
+                font-size: 20px;
+                width: 50%;
+                margin: 0 auto;
+                text-align: center;
+                border: 2px solid $dark-blue;
+                border-radius: 10px;
+                background-color: transparent;
+                color: $dark-blue;
+
+                &::placeholder {
+                    color: $dark-blue;
+
+                }
+            }
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            gap: 21px;
+            padding-top: 21px;
+
+            .cancel,
+            .add-tip {
+                width: 200px;
+                height: 46px;
+                font-family: "Red Hat Display", serif;
+                font-size: 20px;
+                font-weight: 700;
+                text-align: center;
+                border: none;
+                border-radius: 32px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .cancel {
+                background: $light-blue;
+                color: $dark-blue;
+                border: 1px solid $dark-blue;
+            }
+
+            .add-tip {
+                background: $orange;
+                color: $cream;
+            }
+        }
+    }
+}

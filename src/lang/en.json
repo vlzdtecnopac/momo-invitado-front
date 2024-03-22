@@ -127,5 +127,8 @@
     "ground": "Ground",
     "beans": "Beans",
     "sorry": "¡We are sorry!",
-    "noFound": "Page not found"
+    "noFound": "Page not found",
+    "pecentageAmount": "¡Write a percentage!!",
+    "cashAmount": "¡Write an amount in pesos!",
+    "writeHere": "Write here"
 }

@@ -63,6 +63,8 @@
     "receiptSent": "Tu recibo ha sido enviado correctamente.",
     "orderClientOk": "Tu pedido está en preparación y en pocos minutos tendrás lo mejor de MOMO en tus manos.",
     "continueShopping": "Seguir comprando",
+    "exit": "Salir",
+    "great": "Genial",
     "finishOrder": "Finalizar orden",
     "thanks": "Gracias por tu compra",
     "thanksText": "¡Gracias por tu compra! En pocos minutos tendrás lo mejor de MOMO en tus manos Ayúdanos con tu nombre para llamarte cuando tu pedido esté listo, o regístrate para aprovechar beneficios exclusivos!",
@@ -125,5 +127,8 @@
     "ground": "Molido",
     "beans": "En grano",
     "sorry": "¡Lo sentimos!",
-    "noFound": "Página no encontrada"
+    "noFound": "Página no encontrada",
+    "pecentageAmount": "¡Escribe un porcentaje!",
+    "cashAmount": "¡Escribe un monto en pesos!",
+    "writeHere": "Escribe aquí"
 }

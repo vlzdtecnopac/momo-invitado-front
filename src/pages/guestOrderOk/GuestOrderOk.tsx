@@ -18,7 +18,7 @@ function GuestOrderOk() {
             src={logo}
             alt="logo"
           />
-          <h2 className={`name`}>¡Genial!</h2>
+          <h2 className={`name`}>¡{translate("great")}!</h2>
 
           <motion.div
             className="box"
