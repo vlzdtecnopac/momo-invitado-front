@@ -1,18 +1,18 @@
-import axios from "axios";
-import logo from "../../assets/icons/logo.svg";
-import kdsOnIcon from "../../assets/icons/kds-on.svg";
-import kioskIcon from "../../assets/icons/kiosko.svg";
-import Card from "../../components/Card/Card";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useShoppingStore } from "../../store/shopping.store";
 import { useEmployeeStore } from "../../store/employee.store";
-import { tokenHeader } from "../../helpers/token-header.helper";
 import { LoaderPage } from "../../includes/loader/Loader";
-import "./WelcomePage.scss";
+
+import logo from "../../assets/icons/logo.svg";
+import kdsOnIcon from "../../assets/icons/kds-on.svg";
+import kioskIcon from "../../assets/icons/kiosko.svg";
+import Card from "../../components/Card/Card";
+
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import axiosInstance from "../../helpers/axios.helper";
+import "./WelcomePage.scss";
 
 interface KioskoDataActive {
   name_shopping: string;
