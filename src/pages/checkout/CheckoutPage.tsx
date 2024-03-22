@@ -103,6 +103,22 @@ function CheckoutPage() {
                       </div>
                     </button>
                   </div>
+                  <div className="col-12 decide">
+                    <div className="col-6">
+                      {" "}
+                      <button className="tip-button">
+                        <div className="percentange">{translate("other")}</div>
+                        <div className="middle">¡{translate("youDecide")}!</div>
+                        <div>
+                          <i className="dolar-icon"></i>
+                        </div>
+                      </button>
+                    </div>
+                    <div className="col-6 decide-tip">
+                      <button className="tip-button">%</button>
+                      <button className="tip-button">$</button>
+                    </div>
+                  </div>
                 </div>
                 <hr />
                 <div className="pay-info">

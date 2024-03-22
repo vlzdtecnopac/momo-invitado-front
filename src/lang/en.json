@@ -125,5 +125,7 @@
     "drinkStepTwo": "Step 2: Configure your food",
     "coffeeType": "Coffee type",
     "ground": "Ground",
-    "beans": "Beans"
+    "beans": "Beans",
+    "sorry": "¡We are sorry!",
+    "noFound": "Page not found"
 }
