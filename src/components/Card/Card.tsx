@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({
             src={icon}
             alt="icon"
           />
-          <div className="text_active">
+          <div className="text_active_card">
             <p className={`text `}>{text}</p>
             <p className={`subtext `}>{subText}</p>
             <p className={"state "}>{state}</p>

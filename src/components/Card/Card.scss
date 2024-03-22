@@ -33,7 +33,7 @@
     }
 
 
-    .text_active {
+    .text_active_card {
         color: $dark-blue;
         text-align: center;
         margin: 10px 0px 15px 0px;
@@ -43,8 +43,7 @@
             text-align: center;
             margin: 0px;
             font-size: 26px;
-
-
+            color: $dark-blue;
         }
 
         .subtext {
@@ -52,7 +51,7 @@
             text-align: center;
             margin: 0px;
             font-size: 26px;
-
+            color: $dark-blue;
         }
 
         .state {
