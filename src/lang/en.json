@@ -109,9 +109,15 @@
     "helpPlanet": "Help us take care of the planet",
     "accompanyDrink": "Accompany your drink",
     "accompanyFood": "Accompany your food",
+    "accompanyPurchase": "Accompany your purchase",
     "addcart": "Add to cart",
     "temperature": "Temperature",
     "roomTemp": "Room temperature",
     "machaSauce": "Macha sauce",
-    "chipotleSauce": "Chipotle sauce"
+    "chipotleSauce": "Chipotle sauce",
+    "green": "Green",
+    "darkBlue": "Dark blue",
+    "orange": "Orange",
+    "lightBlue": "Light blue",
+    "cream": "Cream"
 }

@@ -92,6 +92,7 @@
     "pay": "Pagar",
     "size": "Tamaño",
     "small": "Chico",
+    "medium": "Mediano",
     "large": "Grande",
     "milk": "Leche",
     "whole": "Entera",
@@ -107,9 +108,15 @@
     "helpPlanet": " Ayúdanos a cuidar el planeta",
     "accompanyDrink": "Acompaña tu bebida",
     "accompanyFood": "Acompaña tu comida",
+    "accompanyPurchase": "Acompaña tu compra",
     "addCart": "Agregar al carrito",
     "temperature": "Temperatura",
     "roomTemp": "Al tiempo",
     "machaSauce": "Salsa macha",
-    "chipotleSauce": "Salsa chipotle"
+    "chipotleSauce": "Salsa chipotle",
+    "green": "Verde",
+    "darkBlue": "Azul oscuro",
+    "orange": "Naranja",
+    "lightBlue": "Azul claro",
+    "cream": "Crema"
 }
