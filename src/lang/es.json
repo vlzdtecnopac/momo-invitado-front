@@ -106,5 +106,10 @@
     "noLid": "Sin tapa",
     "helpPlanet": " Ayúdanos a cuidar el planeta",
     "accompanyDrink": "Acompaña tu bebida",
-    "addCart": "Agregar al carrito"
+    "accompanyFood": "Acompaña tu comida",
+    "addCart": "Agregar al carrito",
+    "temperature": "Temperatura",
+    "roomTemp": "Al tiempo",
+    "machaSauce": "Salsa macha",
+    "chipotleSauce": "Salsa chipotle"
 }
