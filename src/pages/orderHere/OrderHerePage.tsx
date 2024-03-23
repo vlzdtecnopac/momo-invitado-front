@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -92,6 +92,16 @@ function OrderHerePage() {
   const HandleNotCash = () => {
     navigate("/no-cash");
   };
+
+  useEffect(() => {
+    const handlePopstate = (event: Event) => {
+      event.preventDefault();
+    };
+    window.addEventListener('popstate', handlePopstate);
+    return () => {
+      window.removeEventListener('popstate', handlePopstate);
+    };
+  }, []);
 
   return (
     <LayoutBlank>

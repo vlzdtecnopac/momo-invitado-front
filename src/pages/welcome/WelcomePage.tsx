@@ -47,6 +47,8 @@ function WelcomePage() {
     }
   }, []);
 
+  
+
   useEffect(() => {
     if (!loader) {
       const consult = async () => {
