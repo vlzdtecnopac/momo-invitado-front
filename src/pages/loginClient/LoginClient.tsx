@@ -15,6 +15,7 @@ import ClientWelcomeComponent from "../../components/clientWelcome/ClientWelcome
 
 export function EnterByEmail() {
   const { translate } = useLanguage();
+  const [success, setSuccess] = useState(null);
   const [loader, isLoader] = useState<Boolean>(false);
   const [inputEmail, setInputEmail] = useState<String>("");
   const [error, setError] = useState("");
@@ -23,8 +24,8 @@ export function EnterByEmail() {
     try {
       isLoader(true);
       const response = await axiosInstance.post(`/users/client/login`, data);
-      console.log(response.data[0]);
       setError("");
+      setSuccess(response.data[0]);
       isLoader(false);
     } catch (e: any) {
       console.log(`Error login client:  ${e}`);
@@ -63,6 +64,7 @@ export function EnterByEmail() {
           {translate("signInBtn")}
         </button>
       </div>
+      {success !== null  && <ClientWelcomeComponent data={success}/>}
     </>
   );
 }

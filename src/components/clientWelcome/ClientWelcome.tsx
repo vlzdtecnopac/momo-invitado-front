@@ -26,7 +26,7 @@ const ClientWelcomeComponent: React.FC<ClientWelcomeProps> = ({data}) => {
   const { translate } = useLanguage();
 
   useEffect(()=> {
-    setTimeout(()=>navigate("/categories"), 3000)
+    setTimeout(()=>navigate("/categories"), 4000)
   },[])
 
   return (
