@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import axios from "axios";
 
 import imgRegister from "../../assets/register-img.jpg";
 import logoMomo from "../../assets/icons/logo.svg";
@@ -9,9 +8,10 @@ import LayoutBlank from "../../includes/layout/LayoutBlank";
 import back from "../../assets/icons/arrow_left.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 import { LoaderPage } from "../../loader/Loader";
-import { tokenHeader } from "../../helpers/token-header.helper";
+
 import "./LoginClient.scss";
 import axiosInstance from "../../helpers/axios.helper";
+import ClientWelcomeComponent from "../../components/clientWelcome/ClientWelcome";
 
 export function EnterByEmail() {
   const { translate } = useLanguage();
@@ -68,7 +68,7 @@ export function EnterByEmail() {
 }
 
 export function EnterByPhone() {
-  const navigate = useNavigate();
+  const [success, setSuccess] = useState(null);
   const [countries, setCountries] = useState([]);
   const [loader, isLoader] = useState<Boolean>(false);
   const [selectCountryCode, selectedCountryCode] = useState("+57");
@@ -106,13 +106,15 @@ export function EnterByPhone() {
       localStorage.setItem('client-id', response.data[0].client_id);
       setError("");
       isLoader(false);
-      navigate("/categories");
+      setSuccess(response.data[0]);
     } catch (e: any) {
-      isLoader(false);
+      isLoader(true);
       setError(e.response.data.msg);
       console.log(`Error Login client: ${e}`);
     }
   };
+
+
 
   return (
     <>
@@ -152,6 +154,7 @@ export function EnterByPhone() {
           {translate("signInBtn")}
         </button>
       </div>
+      {success !== null  && <ClientWelcomeComponent data={success}/>}
     </>
   );
 }
