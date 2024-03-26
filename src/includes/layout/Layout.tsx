@@ -6,8 +6,8 @@ import { useShoppingStore } from "../../store/shopping.store";
 import { useEmployeeStore } from "../../store/employee.store";
 import { LoaderPage } from "../loader/Loader";
 import "./Layout.scss";
-import Card from "../../components/Card/Card";
-import Cart from "../../components/Cart/Cart";
+import axiosInstance from "../../helpers/axios.helper";
+
 
 interface DynamicLayoutProps {
   children: ReactNode;
@@ -20,6 +20,24 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
   const { fetchEmployeeData } = useEmployeeStore();
   const [loading, setIsLoading] = useState<Boolean>(true);
   const employeeId = localStorage.getItem("employee-id");
+
+  useEffect(() => {
+    const fetchDataOnMount = async () => {
+      const kiosko = await axiosInstance.post("/kioskos/verify", {
+        kiosko_id: localStorage.getItem("kiosko-momo"),
+      });
+      if (!kiosko.data[0].state) {
+        localStorage.clear();
+      }
+      if (employeeId) {
+        fetchEmployeeData(employeeId).then(async (resp: any) => {
+          await fetchStoreData(resp[0].shopping_id);
+          setIsLoading(false);
+        });
+      }
+    };
+    fetchDataOnMount();
+  }, []);
 
   useEffect(() => {
    if (loading) {
