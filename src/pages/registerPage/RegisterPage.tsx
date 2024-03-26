@@ -4,27 +4,33 @@ import logoMomo from "../../assets/icons/logo.svg";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import { useLanguage } from "../../context/Langi18nContext";
 import "./RegisterPage.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function RegisterPage() {
+  const navigate = useNavigate();
   const { translate } = useLanguage();
+
+  const handlerOrtherAccount = () => {
+    localStorage.removeItem("client-id");
+    navigate("/categories");
+  }
 
   return (
     <LayoutBlank>
       <div className="register_page_momo">
         <div className="left">
-        <motion.img
-          className="image"
-          src={imgRegister}
-          alt="img"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-        />
+          <motion.img
+            className="image"
+            src={imgRegister}
+            alt="img"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.5,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
+          />
           <img
             className="image"
             alt="img"
@@ -55,7 +61,7 @@ function RegisterPage() {
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
               >
-                <h2 className="h2">{`!${translate("welcome")}¡`}</h2>
+                <h2 className="h2">{`${translate("welcome")}`}</h2>
                 <p className="parrafo-subtitulo">{translate("registerSub")}</p>
               </motion.div>
               <div className="register-options">
@@ -74,10 +80,13 @@ function RegisterPage() {
                   <span className="icon"></span>
                   <p className="text">{translate("createAccount")}</p>
                 </Link>
-                <Link to="/categories" className="custom-btn-register no-register">
+                <button
+                  onClick={()=>handlerOrtherAccount()}
+                  className="custom-btn-register no-register"
+                >
                   <span className="icon"></span>
                   <p className="text">{translate("oderAccount")}</p>
-                </Link>
+                </button>
               </div>
             </div>
           </div>

@@ -11,7 +11,8 @@ import SuccessPayment from "../../components/Modal/SuccessPayment/SuccessPayment
 import ReceiptSent from "../../components/Modal/ReceiptSend/ReceiptSent";
 import FailedPayment from "../../components/Modal/FailedPayment/FailedPayment";
 import ContinuePayment from "../../components/Modal/ContinuePayment/ContinuePayment";
-
+import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
+import AmountTip from "../../components/Modal/AmountTip/AmountTip";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -103,6 +104,22 @@ function CheckoutPage() {
                       </div>
                     </button>
                   </div>
+                  <div className="col-12 decide">
+                    <div className="col-6">
+                      {" "}
+                      <button className="tip-button">
+                        <div className="percentange">{translate("other")}</div>
+                        <div className="middle">¡{translate("youDecide")}!</div>
+                        <div>
+                          <i className="dolar-icon"></i>
+                        </div>
+                      </button>
+                    </div>
+                    <div className="col-6 decide-tip">
+                      <button className="tip-button">%</button>
+                      <button className="tip-button">$</button>
+                    </div>
+                  </div>
                 </div>
                 <hr />
                 <div className="pay-info">
@@ -179,7 +196,7 @@ function CheckoutPage() {
                       <td>$ 50</td>
                     </tr>
                     <tr>
-                      <td>Cupón (MOMO Coffee) <button className="btn-delete-cupon">Eliminar</button></td>
+                      <td>Cupón (MOMO Coffee)</td>
                       <td>$ 50</td>
                     </tr>
                   </table>
@@ -198,6 +215,8 @@ function CheckoutPage() {
             {/* <FailedPayment actionKey={""} /> */}
             {/* <SuccessPayment actionKey={""} /> */}
             {/* <ReceiptSent actionKey={""} /> */}
+            {/* <PercentageTip actionKey={""} /> */}
+            {/* <AmountTip actionKey={""} /> */}
           </div>
         </div>
       </Layout>

@@ -29,7 +29,7 @@ const CreateAccountSchema = Yup.object().shape({
 function CreateAccountPage() {
   const [loader, isLoader] = useState<Boolean>();
   const navigate = useNavigate();
-  const [isTerm, setTerm] = useState(false);
+  const [isTerm, setTerm] = useState<boolean>(false);
   const { translate } = useLanguage();
   const [countries, setCountries] = useState([]);
   const [success, setSuccess] = useState(null);
@@ -124,7 +124,7 @@ function CreateAccountPage() {
                 const response = await axiosInstance.post(`/users/client/register`, data);
                 setSuccess(response.data);
                 localStorage.setItem('client-id', response.data.client_id);
-                navigate("/categories");
+                navigate("/register-success");
                 isLoader(false);
               } catch (e) {
                 isLoader(false);
@@ -143,7 +143,7 @@ function CreateAccountPage() {
             }) => (
               <form
                 onSubmit={handleSubmit}
-                autoComplete="false"
+                autoComplete="off"
                 noValidate
                 className="form"
               >
@@ -258,7 +258,7 @@ function CreateAccountPage() {
                     <button type="button" onClick={()=>setTerm(true)} className="link_term">
                       {translate("acceptTerms")}
                     </button>
-                    {isTerm? <Terms/> :  "" }
+                    {isTerm? <Terms onClick={(event: boolean)=>setTerm(event)}/> :  "" }
                   </div>
                   {(() => {
                     if (errors.check && touched.check) {

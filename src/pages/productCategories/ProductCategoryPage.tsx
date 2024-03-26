@@ -4,6 +4,7 @@ import banner from "../../assets/Banner.jpg";
 import axiosInstance from "../../helpers/axios.helper";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/pagination";
 
 import "swiper/css";
 import { useEffect, useState } from "react";
@@ -12,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./ProductCategoryPage.scss";
 import { useLanguage } from "../../context/Langi18nContext";
+import { Pagination } from "swiper/modules";
 
 function ProductsPage() {
   const { translate } = useLanguage();
@@ -39,7 +41,7 @@ function ProductsPage() {
   return (
     <>
       <Layout>
-      {loader ? <LoaderPage /> : ""}
+        {loader ? <LoaderPage /> : ""}
         <div className="products_page_category">
           <ul className="categories grid-4_xs-1">
             {categories.map((category: any, index) => (
@@ -57,13 +59,12 @@ function ProductsPage() {
               </li>
             ))}
           </ul>
-          <div className="content-slider">
+          {!loader ? (<div className="content-slider">
             <Swiper
               slidesPerView={1}
               spaceBetween={5}
-              pagination={{
-                clickable: true,
-              }}
+              pagination={true}
+              modules={[Pagination]}
               breakpoints={{
                 790: {
                   slidesPerView: 1,
@@ -95,7 +96,7 @@ function ProductsPage() {
                 />
               </SwiperSlide>
             </Swiper>
-          </div>
+          </div>):""}
         </div>
       </Layout>
     </>

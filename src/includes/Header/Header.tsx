@@ -28,7 +28,7 @@ function Header() {
   };
 
   const handleBackHeader = () => {
-    navigate("/");
+    navigate(-1);
   };
 
   return (

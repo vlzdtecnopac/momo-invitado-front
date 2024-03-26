@@ -2,11 +2,6 @@
 
 .success_fully {
     height: 100vh;
-    position: fixed;
-    width: 100vw;
-    top: 0px;
-    left: 0px;
-    z-index: 99;
 
     .container {
         background: $dark-blue;
@@ -53,6 +48,9 @@
                 margin: 30px auto;
                 color: $white ;
 
+
+
+
                 .space {
                     margin-bottom: 30px;
                     color: $cream;
@@ -60,8 +58,6 @@
 
                 .light-text {
                     font-weight: 300;
-                    font-size: 26px;
-                    font-family: "Stacion", "serif";
                 }
             }
         }
