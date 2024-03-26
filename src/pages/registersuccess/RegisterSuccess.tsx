@@ -1,12 +1,21 @@
 import { motion } from "framer-motion";
-
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import checkIcon from "../../assets/icons/check.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./RegisterSuccess.scss";
+
 function RegisterSuccess() {
+  const navigate = useNavigate();
   const { translate } = useLanguage();
+
+  useEffect(() => {
+    setTimeout(()=>{
+      navigate("/categories");
+    }, 4000)
+  },[])
 
   return (
     <>

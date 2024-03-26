@@ -124,7 +124,7 @@ function CreateAccountPage() {
                 const response = await axiosInstance.post(`/users/client/register`, data);
                 setSuccess(response.data);
                 localStorage.setItem('client-id', response.data.client_id);
-                navigate("/categories");
+                navigate("/register-success");
                 isLoader(false);
               } catch (e) {
                 isLoader(false);
@@ -143,7 +143,7 @@ function CreateAccountPage() {
             }) => (
               <form
                 onSubmit={handleSubmit}
-                autoComplete="false"
+                autoComplete="off"
                 noValidate
                 className="form"
               >
