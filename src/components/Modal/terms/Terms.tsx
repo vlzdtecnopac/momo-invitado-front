@@ -3,7 +3,9 @@ import coffee from "../../../assets/coffee-momo.png";
 import { useLanguage } from "../../../context/Langi18nContext";
 import "./Terms.scss";
 
-const Terms = () => {
+type EventCallback = (value: boolean) => void;
+
+const Terms = ({onClick}:  { onClick: EventCallback }) => {
   const { translate } = useLanguage();
   
   return (
@@ -38,7 +40,7 @@ const Terms = () => {
           <p className="sub-text">
             {translate("trust")} <br /> {translate("questions")}
           </p>
-          <button type="button" className="continue">{translate("continue")}</button>
+          <button type="button" onClick={()=>onClick(false)} className="continue">{translate("continue")}</button>
         </div>
       </motion.div>
     </div>
