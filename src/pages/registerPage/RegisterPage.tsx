@@ -4,10 +4,16 @@ import logoMomo from "../../assets/icons/logo.svg";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import { useLanguage } from "../../context/Langi18nContext";
 import "./RegisterPage.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function RegisterPage() {
+  const navigate = useNavigate();
   const { translate } = useLanguage();
+
+  const handlerOrtherAccount = () => {
+    localStorage.removeItem("client-id");
+    navigate("/categories");
+  }
 
   return (
     <LayoutBlank>
@@ -74,13 +80,13 @@ function RegisterPage() {
                   <span className="icon"></span>
                   <p className="text">{translate("createAccount")}</p>
                 </Link>
-                <Link
-                  to="/categories"
+                <button
+                  onClick={()=>handlerOrtherAccount()}
                   className="custom-btn-register no-register"
                 >
                   <span className="icon"></span>
                   <p className="text">{translate("oderAccount")}</p>
-                </Link>
+                </button>
               </div>
             </div>
           </div>
