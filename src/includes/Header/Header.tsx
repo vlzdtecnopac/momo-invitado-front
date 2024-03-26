@@ -9,6 +9,7 @@ import "./Header.scss";
 
 function Header() {
   const { translate } = useLanguage();
+  const [logout, setLogout]  = useState<Boolean>(false);
   const navigate = useNavigate();
   const [client, setClient] = useState<any>({});
 
@@ -55,15 +56,17 @@ function Header() {
       </div>
       <div className="column_end">
         <div className="welcome-text">
+          <div className="container-info" onClick={()=>setLogout(!logout)}>
           <h3 className="welcome">{translate("welcome")}</h3>
           <h4 className="user-name">
             {localStorage.getItem("client-id")
               ? `${client?.first_name} ${client?.last_name}`
               : "Invitado"}
           </h4>
-          <div className="modal-snippet-user">
-            <button className="btn">Cerrar Session</button>
           </div>
+          {logout ? (<div className="modal-snippet-user">
+            <button className="btn">Cerrar Session</button>
+          </div>): ""}
         </div>
         <img
           className="profile-pic"

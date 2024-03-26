@@ -23,7 +23,7 @@
         .btn{
             background: $orange;
             color: $white;
-            padding: 5px;
+            padding: 8px 5px;
             width: 180px;
             border-radius: 20px;
             border: 1px solid $orange;
@@ -83,6 +83,10 @@
         .welcome-text {
             width: 146px;
             color: $cream;
+
+            .container-info{
+                cursor: pointer;
+            }
 
             .welcome {
                 font-weight: 700;
