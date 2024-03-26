@@ -1,17 +1,27 @@
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
 import product from "../../assets/product2.jpg";
 import sauce from "../../assets/icons/sauce.svg";
+import glass from "../../assets/icons/glass.svg";
+import milk from "../../assets/icons/bottle.svg";
+import sugar from "../../assets/icons/sugar.svg";
+import extra from "../../assets/icons/extra.svg";
+import lid from "../../assets/icons/lid.svg";
+import recicle from "../../assets/icons/recicle.svg";
 import Layout from "../../includes/layout/Layout";
 import temperature from "../../assets/icons/temperature.svg";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Slider from "../../components/Slider/Slider";
+import { useLanguage } from "../../context/Langi18nContext";
+
 import "./FoodDetailPage.scss";
 
 function FoodDetailPage() {
+  const { translate } = useLanguage();
+
   return (
     <Layout>
       <div className="products_category">
-         <CategoryNav />
+        <CategoryNav />
       </div>
       <div className="page-container">
         <div className="food_detail">
@@ -34,12 +44,12 @@ function FoodDetailPage() {
                       src={temperature}
                       alt="size"
                     />
-                    <h3 className="text">Temperatura</h3>
+                    <h3 className="text">{translate("temperature")}</h3>
                   </div>
 
                   <div className="options">
-                    <button className="option">Al tiempo</button>
-                    <button className="option">Caliente</button>
+                    <button className="option">{translate("roomTemp")}</button>
+                    <button className="option">{translate("hot")}</button>
                   </div>
                 </div>
                 <hr className="separator" />
@@ -51,8 +61,8 @@ function FoodDetailPage() {
                   />
                   <div className="container">
                     <div className="block">
-                      <h3 className="text">Salsa macha</h3>
-                      <h3 className="text">Salsa chipotle</h3>
+                      <h3 className="text">{translate("machaSauce")}</h3>
+                      <h3 className="text">{translate("chipotleSauce")}</h3>
                     </div>
                   </div>
 
@@ -60,37 +70,197 @@ function FoodDetailPage() {
                     <span className="extra">
                       10$
                       <label>
-                      <input
-                        className="checkbox"
-                        name="10"
-                        type="checkbox"
-                      />
-                       <span className="custom-checkbox"></span>
+                        <input
+                          className="checkbox"
+                          name="10"
+                          type="checkbox"
+                        />
+                        <span className="custom-checkbox"></span>
                       </label>
                     </span>
                     <span className="extra">
                       20$
                       <label>
-                      <input
-                        name="20"
-                        className="checkbox"
-                        type="checkbox"
-                      />
-                       <span className="custom-checkbox"></span>
+                        <input
+                          name="20"
+                          className="checkbox"
+                          type="checkbox"
+                        />
+                        <span className="custom-checkbox"></span>
                       </label>
                     </span>
                   </div>
                 </div>
                 <hr className="separator" />
                 <div className="complement">
-                  <h3 className="text complement_title">Acompaña tu comida</h3>
+                  <h3 className="text complement_title">
+                    {translate("accompanyFood")}
+                  </h3>
                   <div className="cards">
                     <Slider />
                   </div>
                 </div>
+                <div className="drink_detail">
+                  <div>
+                    <div className="col-9 details-col">
+                      <div>
+                        <div className="container-options-product">
+                          <div className="size">
+                            <div className=" size-container container">
+                              <img
+                                className="icon"
+                                src={glass}
+                                alt="size"
+                              />
+                              <h3 className="text">{translate("size")}</h3>
+                            </div>
+                            <div className="options">
+                              <button className="option">
+                                {translate("small")} 12 Oz
+                              </button>
+                              <button className="option">
+                                {translate("large")} 16 Oz{" "}
+                                <span className="extra-price">$10</span>
+                              </button>
+                            </div>
+                          </div>
+                          <hr className="separator" />
+                          <div className="milk">
+                            <div className="container">
+                              <img
+                                className="icon"
+                                src={milk}
+                                alt="milk"
+                              />
+                              <h3 className="text">{translate("milk")}</h3>
+                            </div>
+                            <div className="options">
+                              <button className="option">
+                                {translate("whole")}
+                              </button>
+                              <button className="option">
+                                {translate("lactoseFree")}{" "}
+                                <span className="extra-price">$5</span>
+                              </button>
+                              <button className="option">
+                                {translate("oatMilk")} <br />{" "}
+                                <span className="extra-price">$9</span>
+                              </button>
+                            </div>
+                          </div>
+                          <hr className="separator" />
+                          <div className="milk">
+                            <div className="container">
+                              <img
+                                className="icon"
+                                src={sugar}
+                                alt="sugar"
+                              />
+                              <h3 className="text">{translate("sugar")}</h3>
+                            </div>
+                            <div className="options">
+                              <button className="option">
+                                {translate("less")}
+                              </button>
+                              <button className="option">Original</button>
+                              <button className="option">
+                                {translate("more")}
+                              </button>
+                            </div>
+                          </div>
+                          <hr className="separator" />
+                          <div className="extra">
+                            <img
+                              className="icon"
+                              src={extra}
+                              alt="extra"
+                            />
+                            <div className="container">
+                              <div className="block">
+                                <h3 className="text">
+                                  {translate("extraCoffee")}
+                                </h3>
+                                <h3 className="text">
+                                  {translate("extraCream")}
+                                </h3>
+                              </div>
+                            </div>
+                            <div className="extra-options">
+                              <span className="extra">
+                                10$
+                                <label>
+                                  <input
+                                    name="10"
+                                    type="checkbox"
+                                  />
+                                  <span className="custom-checkbox"></span>
+                                </label>
+                              </span>
+                              <span className="extra">
+                                20$
+                                <label>
+                                  <input
+                                    name="20"
+                                    type="checkbox"
+                                  />
+                                  <span className="custom-checkbox"></span>
+                                </label>
+                              </span>
+                            </div>
+                          </div>
+                          <hr className="separator" />
+                          <div className="extra">
+                            <img
+                              className="icon"
+                              src={lid}
+                              alt="lid"
+                            />
+                            <div className="container">
+                              <div className="block">
+                                <h3 className="text">{translate("lid")}</h3>
+                                <h3 className="text">
+                                  {translate("noLid")}{" "}
+                                  <span className="recicle">
+                                    <img
+                                      className="recicle-icon"
+                                      src={recicle}
+                                      alt="recicle-icon"
+                                    />
+                                  </span>
+                                  <span className="recicle-text">
+                                    {translate("helpPlanet")}
+                                  </span>
+                                </h3>{" "}
+                              </div>
+                            </div>
+                            <div className="lid-options">
+                              <span className="extra">
+                                <label>
+                                  <input
+                                    name="lid"
+                                    type="checkbox"
+                                  />
+                                </label>
+                              </span>
+                              <span className="extra">
+                                <label>
+                                  <input
+                                    name="no-lid"
+                                    type="checkbox"
+                                  />
+                                  <span className="custom-checkbox"></span>
+                                </label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div className="btn-container">
                   <button className="add-cart-btn">
-                    Agregar al carrito $47
+                    {translate("addCart")} $47
                   </button>
                 </div>
               </div>

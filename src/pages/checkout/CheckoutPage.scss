@@ -346,14 +346,16 @@
       table {
         font-family: "Red Hat Display", serif;
         font-size: 14px;
-        .btn-delete-cupon{
+
+        .btn-delete-cupon {
           background-color: $orange;
           color: $white;
           padding: 5px 10px;
           border-radius: 10px;
           border: 0px;
           margin: 0px 10px;
-          &:hover{
+
+          &:hover {
             background: #e34317;
             cursor: pointer;
           }
@@ -373,11 +375,17 @@
         border-radius: 10px;
         font-size: 18px;
         border: 0px;
-        &:hover{
+
+        &:hover {
           background: #e34317;
           cursor: pointer;
         }
       }
     }
   }
+}
+
+.decide-tip {
+  display: flex;
+  width: 50%;
 }

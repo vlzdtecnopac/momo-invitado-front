@@ -5,13 +5,17 @@ import Layout from "../../includes/layout/Layout";
 import tshirt from "../../assets/icons/t-shirt.svg";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Slider from "../../components/Slider/Slider";
+import { useLanguage } from "../../context/Langi18nContext";
+
 import "./MerchDetailPage.scss";
 
 function MerchDetailPage() {
+  const { translate } = useLanguage();
+
   return (
     <Layout>
       <div className="category-product-merch">
-      <CategoryNav />
+        <CategoryNav />
       </div>
       <div className="page-container">
         <div className="merch_detail">
@@ -34,12 +38,19 @@ function MerchDetailPage() {
                       src={tshirt}
                       alt="size"
                     />
-                    <h3 className="text">Temperatura</h3>
+                    <h3 className="text">{translate("size")}</h3>
                   </div>
 
                   <div className="options">
-                    <button className="option">Al tiempo</button>
-                    <button className="option">Caliente</button>
+                    <button className="option">
+                      {translate("small")} <br /> <span>S</span>
+                    </button>
+                    <button className="option">
+                      {translate("medium")} <br /> <span>M</span>
+                    </button>
+                    <button className="option">
+                      {translate("large")} <br /> <span>L</span>
+                    </button>
                   </div>
                 </div>
                 <hr className="separator" />
@@ -51,40 +62,67 @@ function MerchDetailPage() {
                   />
                   <div className="container">
                     <div className="block">
-                      <h3 className="text">Verde</h3>
-                      <h3 className="text">Azul oscuro</h3>
-                      <h3 className="text">Naranja</h3>
-                      <h3 className="text">Azul claro</h3>
-                      <h3 className="text">Crema</h3>
+                      <h3 className="text">{translate("green")}</h3>
+                      <h3 className="text">{translate("darkBlue")}</h3>
+                      <h3 className="text">{translate("orange")}</h3>
+                      <h3 className="text">{translate("lightBlue")}</h3>
+                      <h3 className="text">{translate("cream")}</h3>
                     </div>
                   </div>
 
                   <div className="extra-options">
                     <span className="extra">
-                      10$
                       <label>
-                      <input
-                        name="10"
-                        type="checkbox"
-                      />
+                        <input
+                          name="green"
+                          type="checkbox"
+                        />
                         <span className="custom-checkbox"></span>
                       </label>
                     </span>
                     <span className="extra">
-                      20$
                       <label>
-                      <input
-                        name="20"
-                        type="checkbox"
-                      />
-                       <span className="custom-checkbox"></span>
+                        <input
+                          name="darkBlue"
+                          type="checkbox"
+                        />
+                        <span className="custom-checkbox"></span>
+                      </label>
+                    </span>
+                    <span className="extra">
+                      <label>
+                        <input
+                          name="orange"
+                          type="checkbox"
+                        />
+                        <span className="custom-checkbox"></span>
+                      </label>
+                    </span>
+                    <span className="extra">
+                      <label>
+                        <input
+                          name="lightBlue"
+                          type="checkbox"
+                        />
+                        <span className="custom-checkbox"></span>
+                      </label>
+                    </span>
+                    <span className="extra">
+                      <label>
+                        <input
+                          name="cream"
+                          type="checkbox"
+                        />
+                        <span className="custom-checkbox"></span>
                       </label>
                     </span>
                   </div>
                 </div>
                 <hr className="separator" />
                 <div className="complement">
-                  <h3 className="text complement_title">Acompaña tu comida</h3>
+                  <h3 className="text complement_title">
+                    {translate("accompanyPurchase")}
+                  </h3>
                   <div className="cards">
                     <Slider />
                   </div>
@@ -94,7 +132,7 @@ function MerchDetailPage() {
 
                 <div className="btn-container">
                   <button className="add-cart-btn">
-                    Agregar al carrito $47
+                    {translate("addCart")} $47
                   </button>
                 </div>
               </div>

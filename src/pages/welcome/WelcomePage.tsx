@@ -54,7 +54,7 @@ function WelcomePage() {
       const consult = async () => {
         await fetchStoreData(dataEmployee[0]?.shopping_id);
         const resp = await searchKiosko(dataEmployee[0]?.shopping_id);
-        localStorage.setItem('kiosko-momo', resp.data.data.kiosko_id);
+        localStorage.setItem("kiosko-momo", resp.data.data.kiosko_id);
         setKioskoActive(resp.data);
         setTimeout(() => navigate("/order-here"), 4000);
       };
@@ -63,7 +63,9 @@ function WelcomePage() {
   }, [loader]);
 
   const searchKiosko = async (shopping_id: string) => {
-    return await axiosInstance.get(`/kioskos/activate/?shopping_id=${shopping_id}&state=false`);
+    return await axiosInstance.get(
+      `/kioskos/activate/?shopping_id=${shopping_id}&state=false`
+    );
   };
 
   return (
@@ -71,7 +73,11 @@ function WelcomePage() {
       {loader ? <LoaderPage /> : ""}
       <div className="component-welcome">
         <div className="logo-container">
-          <img className="logo" src={logo} alt="momo-logo" />
+          <img
+            className="logo"
+            src={logo}
+            alt="momo-logo"
+          />
         </div>
         <div className="text-container">
           <div className="text-kiosko">
@@ -144,7 +150,7 @@ function WelcomePage() {
           </div>
         </div>
       </div>
-      </LayoutBlank>
+    </LayoutBlank>
   );
 }
 

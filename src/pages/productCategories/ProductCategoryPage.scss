@@ -7,9 +7,9 @@
     align-items: flex-end;
     height: 100vh;
 
-    .swiper-slide img{
+    .swiper-slide img {
         width: 100%;
-        height: 220px;
+        height: 200px;
         object-fit: cover;
     }
 
@@ -17,7 +17,7 @@
         width: 880px;
         display: flex;
         flex-wrap: wrap;
-        margin: 100px auto 0px auto;
+        margin: 120px auto 0px auto;
         padding: 0px;
         overflow-y: auto;
 
@@ -28,10 +28,9 @@
     }
 
     .content-slider {
-        bottom: 0px;
-        margin: auto;
+        position: fixed;
+        bottom: -4px;
         max-width: 1500px;
-    
     }
 
 }
