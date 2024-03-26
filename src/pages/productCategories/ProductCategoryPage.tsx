@@ -57,7 +57,7 @@ function ProductsPage() {
               </li>
             ))}
           </ul>
-          <div className="content-slider">
+          {!loader ? (<div className="content-slider">
             <Swiper
               slidesPerView={1}
               spaceBetween={5}
@@ -95,7 +95,7 @@ function ProductsPage() {
                 />
               </SwiperSlide>
             </Swiper>
-          </div>
+          </div>):""}
         </div>
       </Layout>
     </>
