@@ -61,6 +61,9 @@ function Header() {
               ? `${client?.first_name} ${client?.last_name}`
               : "Invitado"}
           </h4>
+          <div className="modal-snippet-user">
+            <button className="btn">Cerrar Session</button>
+          </div>
         </div>
         <img
           className="profile-pic"

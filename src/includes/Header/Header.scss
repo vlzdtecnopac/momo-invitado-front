@@ -10,6 +10,31 @@
     height: 85px;
     z-index: 88;
 
+    .modal-snippet-user{
+        position: absolute;
+        bottom: -30px;
+        background: $dark-blue;
+        width: 200px;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 4px;
+
+        .btn{
+            background: $orange;
+            color: $white;
+            padding: 5px;
+            width: 180px;
+            border-radius: 20px;
+            border: 1px solid $orange;
+            margin: auto;
+            display: block;
+            font-size: 18px;
+            &:hover{
+                background: #e34317;
+                cursor: pointer;
+            }
+        }
+    }
 
     .column_start {
         width: 250px;
