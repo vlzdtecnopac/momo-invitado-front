@@ -19,6 +19,10 @@ import "./DrinkDetailPage.scss";
 function DrinkDetailPage() {
   const { translate } = useLanguage();
 
+  const optionHandler = () => {
+    
+  }
+
   return (
     <Layout>
       <div className="products_category">
@@ -47,7 +51,7 @@ function DrinkDetailPage() {
                       <h3 className="text">{translate("size")}</h3>
                     </div>
                     <div className="options">
-                      <button className="option">
+                      <button onClick={()=>optionHandler()} className="option">
                         {translate("small")} 12 Oz
                       </button>
                       <button className="option">
