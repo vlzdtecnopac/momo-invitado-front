@@ -9,13 +9,18 @@ import "./Header.scss";
 
 function Header() {
   const { translate } = useLanguage();
-  const [logout, setLogout]  = useState<Boolean>(false);
   const navigate = useNavigate();
+  const [logout, setLogout]  = useState<Boolean>(false);
   const [client, setClient] = useState<any>({});
 
   useEffect(() => {
     consultClient();
   }, []);
+
+  const logoutUserClient = ( ) => {
+    localStorage.clear();
+    navigate("/")
+  }
 
   const consultClient = async () => {
     try {
@@ -32,7 +37,7 @@ function Header() {
     navigate(-1);
   };
 
-  return (
+  return (<>
     <header className="head">
       <div className="column_start">
         <button
@@ -64,9 +69,6 @@ function Header() {
               : "Invitado"}
           </h4>
           </div>
-          {logout ? (<div className="modal-snippet-user">
-            <button className="btn">Cerrar Session</button>
-          </div>): ""}
         </div>
         <img
           className="profile-pic"
@@ -75,6 +77,10 @@ function Header() {
         />
       </div>
     </header>
+      {logout ? (<div className="modal-snippet-user">
+      <button onClick={()=>logoutUserClient()} className="btn">Cerrar Session</button>
+    </div>): ""}
+    </>
   );
 }
 export default Header;

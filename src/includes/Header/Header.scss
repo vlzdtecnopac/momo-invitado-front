@@ -1,4 +1,31 @@
 @import "../../index.scss";
+.modal-snippet-user{
+    position: absolute;
+    background: $dark-blue;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+    z-index: 999;
+    top: 70px;
+    right: 40px;
+
+    .btn{
+        background: $orange;
+        color: $white;
+        padding: 8px 5px;
+        width: 180px;
+        border-radius: 20px;
+        border: 1px solid $orange;
+        margin: auto;
+        display: block;
+        font-size: 18px;
+        &:hover{
+            background: #e34317;
+            cursor: pointer;
+        }
+    }
+}
 
 .head {
     position: fixed;
@@ -8,34 +35,7 @@
     border-bottom: 2px solid $cream;
     width: 100%;
     height: 85px;
-    z-index: 88;
-
-    .modal-snippet-user{
-        position: absolute;
-        bottom: -50px;
-        background: $dark-blue;
-        width: 200px;
-        padding: 10px;
-        border: 1px solid white;
-        border-radius: 4px;
-        z-index: 999;
-
-        .btn{
-            background: $orange;
-            color: $white;
-            padding: 8px 5px;
-            width: 180px;
-            border-radius: 20px;
-            border: 1px solid $orange;
-            margin: auto;
-            display: block;
-            font-size: 18px;
-            &:hover{
-                background: #e34317;
-                cursor: pointer;
-            }
-        }
-    }
+    z-index: 66;
 
     .column_start {
         width: 250px;
