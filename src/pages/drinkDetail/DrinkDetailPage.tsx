@@ -15,13 +15,21 @@ import Slider from "../../components/Slider/Slider";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./DrinkDetailPage.scss";
+import { useRef, useState } from "react";
 
 function DrinkDetailPage() {
+  const myRef = useRef<any>(null);
   const { translate } = useLanguage();
 
-  const optionHandler = () => {
-    
-  }
+  const optionHandler = (position: number) => {
+
+    if (myRef.current) {
+      myRef.current.scrollTo({
+        top: position,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <Layout>
@@ -40,21 +48,23 @@ function DrinkDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
-                <div className="container-options-product">
+                <div ref={myRef} className="container-options-product">
                   <div className="size">
                     <div className=" size-container container">
-                      <img
-                        className="icon"
-                        src={glass}
-                        alt="size"
-                      />
+                      <img className="icon" src={glass} alt="size" />
                       <h3 className="text">{translate("size")}</h3>
                     </div>
                     <div className="options">
-                      <button onClick={()=>optionHandler()} className="option">
+                      <button
+                        onClick={() => optionHandler(120)}
+                        className="option"
+                      >
                         {translate("small")} 12 Oz
                       </button>
-                      <button className="option">
+                      <button
+                        onClick={() => optionHandler(120)}
+                        className="option"
+                      >
                         {translate("large")} 16 Oz{" "}
                         <span className="extra-price">$10</span>
                       </button>
@@ -63,20 +73,27 @@ function DrinkDetailPage() {
                   <hr className="separator" />
                   <div className="milk">
                     <div className="container">
-                      <img
-                        className="icon"
-                        src={milk}
-                        alt="milk"
-                      />
+                      <img className="icon" src={milk} alt="milk" />
                       <h3 className="text">{translate("milk")}</h3>
                     </div>
                     <div className="options">
-                      <button className="option">{translate("whole")}</button>
-                      <button className="option">
+                      <button
+                        onClick={() => optionHandler(220)}
+                        className="option"
+                      >
+                        {translate("whole")}
+                      </button>
+                      <button
+                        onClick={() => optionHandler(220)}
+                        className="option"
+                      >
                         {translate("lactoseFree")}{" "}
                         <span className="extra-price">$5</span>
                       </button>
-                      <button className="option">
+                      <button
+                        onClick={() => optionHandler(220)}
+                        className="option"
+                      >
                         {translate("oatMilk")} <br />{" "}
                         <span className="extra-price">$9</span>
                       </button>
@@ -85,26 +102,33 @@ function DrinkDetailPage() {
                   <hr className="separator" />
                   <div className="milk">
                     <div className="container">
-                      <img
-                        className="icon"
-                        src={sugar}
-                        alt="sugar"
-                      />
+                      <img className="icon" src={sugar} alt="sugar" />
                       <h3 className="text">{translate("sugar")}</h3>
                     </div>
                     <div className="options">
-                      <button className="option">{translate("less")}</button>
-                      <button className="option">Original</button>
-                      <button className="option">{translate("more")}</button>
+                      <button
+                        onClick={() => optionHandler(320)}
+                        className="option"
+                      >
+                        {translate("less")}
+                      </button>
+                      <button
+                        onClick={() => optionHandler(320)}
+                        className="option"
+                      >
+                        Original
+                      </button>
+                      <button
+                        onClick={() => optionHandler(320)}
+                        className="option"
+                      >
+                        {translate("more")}
+                      </button>
                     </div>
                   </div>
                   <hr className="separator" />
                   <div className="extra">
-                    <img
-                      className="icon"
-                      src={extra}
-                      alt="extra"
-                    />
+                    <img className="icon" src={extra} alt="extra" />
                     <div className="container">
                       <div className="block">
                         <h3 className="text">{translate("extraCoffee")}</h3>
@@ -115,20 +139,14 @@ function DrinkDetailPage() {
                       <span className="extra">
                         10$
                         <label>
-                          <input
-                            name="10"
-                            type="checkbox"
-                          />
+                          <input name="10" type="checkbox" />
                           <span className="custom-checkbox"></span>
                         </label>
                       </span>
                       <span className="extra">
                         20$
                         <label>
-                          <input
-                            name="20"
-                            type="checkbox"
-                          />
+                          <input name="20" type="checkbox" />
                           <span className="custom-checkbox"></span>
                         </label>
                       </span>
@@ -136,11 +154,7 @@ function DrinkDetailPage() {
                   </div>
                   <hr className="separator" />
                   <div className="extra">
-                    <img
-                      className="icon"
-                      src={lid}
-                      alt="lid"
-                    />
+                    <img className="icon" src={lid} alt="lid" />
                     <div className="container">
                       <div className="block">
                         <h3 className="text">{translate("lid")}</h3>
@@ -163,16 +177,23 @@ function DrinkDetailPage() {
                       <span className="extra">
                         <label>
                           <input
-                            name="lid"
+                            name="tapa"
+                            onChange={(e) => {
+                              e.stopPropagation();
+                              optionHandler(450)}}
                             type="checkbox"
                           />
+                          <span className="custom-checkbox"></span>
                         </label>
                       </span>
                       <span className="extra">
                         <label>
                           <input
-                            name="no-lid"
+                            name="tapa"
                             type="checkbox"
+                            onChange={(e) =>{
+                              e.stopPropagation();
+                              optionHandler(450)}}
                           />
                           <span className="custom-checkbox"></span>
                         </label>
@@ -187,77 +208,7 @@ function DrinkDetailPage() {
                     <div className="cards">
                       <Slider />
                     </div>
-                  </div>
-                  <div className="food_detail">
-                    <div>
-                      <div className="col-9 details-col">
-                        <div className="details">
-                          <div className="size">
-                            <div className=" size-container container">
-                              <img
-                                className="icon"
-                                src={temperature}
-                                alt="size"
-                              />
-                              <h3 className="text">
-                                {translate("temperature")}
-                              </h3>
-                            </div>
-
-                            <div className="options">
-                              <button className="option">
-                                {translate("roomTemp")}
-                              </button>
-                              <button className="option">
-                                {translate("hot")}
-                              </button>
-                            </div>
-                          </div>
-                          <hr className="separator" />
-                          <div className="extra">
-                            <img
-                              className="icon"
-                              src={sauce}
-                              alt="extra"
-                            />
-                            <div className="container">
-                              <div className="block">
-                                <h3 className="text">
-                                  {translate("machaSauce")}
-                                </h3>
-                                <h3 className="text">
-                                  {translate("chipotleSauce")}
-                                </h3>
-                              </div>
-                            </div>
-                            <div className="extra-options">
-                              <span className="extra">
-                                10$
-                                <label>
-                                  <input
-                                    className="checkbox"
-                                    name="10"
-                                    type="checkbox"
-                                  />
-                                  <span className="custom-checkbox"></span>
-                                </label>
-                              </span>
-                              <span className="extra">
-                                20$
-                                <label>
-                                  <input
-                                    name="20"
-                                    className="checkbox"
-                                    type="checkbox"
-                                  />
-                                  <span className="custom-checkbox"></span>
-                                </label>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <DetailsProductOptionsRelations />
                   </div>
                 </div>
                 <div className="container-btn-payment">
@@ -276,3 +227,67 @@ function DrinkDetailPage() {
   );
 }
 export default DrinkDetailPage;
+
+function DetailsProductOptionsRelations() {
+  const { translate } = useLanguage();
+
+  return (
+    <div className="food_detail">
+      <div>
+        <div className="col-9 details-col">
+          <div className="details">
+            <div className="size">
+              <div className=" size-container container">
+                <img className="icon" src={temperature} alt="size" />
+                <h3 className="text">{translate("temperature")}</h3>
+              </div>
+
+              <div className="options">
+                <button className="option">{translate("roomTemp")}</button>
+                <button className="option">{translate("hot")}</button>
+              </div>
+            </div>
+            <hr className="separator" />
+            <div className="extra">
+              <img className="icon" src={sauce} alt="extra" />
+              <div className="container">
+                <div className="block">
+                  <h3 className="text">{translate("machaSauce")}</h3>
+                  <h3 className="text">{translate("chipotleSauce")}</h3>
+                </div>
+              </div>
+              <div className="extra-options">
+                <span className="extra">
+                  10$
+                  <label>
+                    <input
+                      name="tapa"
+                      onChange={(e) =>{
+                        e.stopPropagation();
+                      }}
+                      type="checkbox"
+                    />
+                    <span className="custom-checkbox"></span>
+                  </label>
+                </span>
+                <span className="extra">
+                  20$
+                  <label>
+                    <input
+                      name="tapa"
+                      onChange={(e) =>{
+                        e.stopPropagation();
+                      }}
+                      type="checkbox"
+                    />
+                    <span className="custom-checkbox"></span>
+                  </label>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
