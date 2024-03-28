@@ -26,6 +26,7 @@
             .content-detail-page{
                 height: 480px;
                 overflow-y: auto;
+                position: relative;
             }
 
 
@@ -83,47 +84,6 @@
 }
 
 
-.extra {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    justify-content: center;
-    font-family: "Red Hat Display";
-    font-weight: 700;
-    color: $cream;
-
-    .checkbox {
-        width: 21px;
-        height: 21px;
-    }
-
-
-    .sauce-options {
-        padding-left: 290px;
-        display: flex;
-        text-align: center;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .extra-options {
-        padding-left: 235px;
-
-        .extra {
-            margin: 24px;
-        }
-
-
-    }
-
-    .lid-options {
-        padding-left: 75px;
-
-        .extra {
-            margin: 24px;
-        }
-    }
-}
 
 .detail-card {
     padding-left: 45px;
@@ -151,8 +111,6 @@
 .recicle {
     margin: 0 5px;
 }
-
-
 
 .step {
     color: $cream;

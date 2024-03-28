@@ -47,7 +47,7 @@ function CombosDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
-                <div ref={myRef}  className="content-detail-page">
+                <div ref={myRef} className="content-detail-page">
                   <h2 className="step">{translate("drinkStepOne")}</h2>
                   <hr className="separator" />
                   <Options
@@ -67,30 +67,43 @@ function CombosDetailPage() {
                   />
                   <hr className="separator" />
                   <Options
-                    distanceScrolling={360}
+                    distanceScrolling={280}
                     titleOptions={translate("sugar")}
                     iconOptions={sugar}
                     listOptions={["Menos", "Original", "Más"]}
                     optionHandler={(e: any) => optionHandler(e)}
                   />
                   <hr className="separator" />
-                  <OptionsList optionHandler={(e: any) => optionHandler(e)} listOptions={["Extra shot de café", "Extra de crema"]} iconOptions={extra} />
+                  <OptionsList
+                    optionHandler={(e: any) => optionHandler(e)}
+                    listOptions={["Extra shot de café", "Extra de crema"]}
+                    iconOptions={extra}
+                  />
                   <hr className="separator" />
-                  <OptionsList optionHandler={(e: any) => optionHandler(e)} listOptions={["Con tapa", 'Sin tapa <span class="recicle"><img class="recicle-icon" src="/src/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta']} iconOptions={lid} />
+                  <OptionsList
+                    optionHandler={(e: any) => optionHandler(e)}
+                    listOptions={[
+                      "Con tapa",
+                      'Sin tapa <span class="recicle"><img class="recicle-icon" src="/src/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
+                    ]}
+                    iconOptions={lid}
+                  />
                   <hr className="separator" />
                   <h2 className="step">{translate("drinkStepTwo")}</h2>
                   <hr className="separator" />
                   <Options
-                    distanceScrolling={320}
+                    distanceScrolling={360}
                     titleOptions={translate("temperature")}
                     iconOptions={temperature}
                     listOptions={["Al Tiempo", "Caliente"]}
-                  
+                    optionHandler={(e: any) => optionHandler(e)}
                   />
-          <hr className="separator" />
-          <OptionsList listOptions={["Salsa Macha", "Salsa chipotle"]} iconOptions={sauce} distanceScrolling={310}/>
-    
-              
+                  <hr className="separator" />
+                  <OptionsList
+                    listOptions={["Salsa Macha", "Salsa chipotle"]}
+                    iconOptions={sauce}
+                    distanceScrolling={310}
+                  />
                 </div>
                 <div className="btn-container">
                   <button className="add-cart-btn">
