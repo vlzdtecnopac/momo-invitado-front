@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { LoaderPage } from "../includes/loader/Loader";
-import Cart from "../components/Cart/Cart";
+
 
 const LazyLoginPage = lazy(() => import("../pages/login/LoginPage"));
 const LazyWelcomePage = lazy(() => import("../pages/welcome/WelcomePage"));

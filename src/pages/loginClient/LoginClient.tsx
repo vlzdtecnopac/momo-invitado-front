@@ -87,6 +87,7 @@ export function EnterByPhone() {
         setCountries(data);
         isLoader(false);
       } catch (e) {
+        isLoader(false);
         console.error("Error fetching countries data:", e);
       }
     };
