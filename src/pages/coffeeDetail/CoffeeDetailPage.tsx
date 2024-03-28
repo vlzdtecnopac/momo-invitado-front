@@ -8,6 +8,7 @@ import Slider from "../../components/Slider/Slider";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./CoffeeDetailPage.scss";
+import Options from "../../components/Options/Options";
 
 function CoffeeDetailPage() {
   const { translate } = useLanguage();
@@ -29,46 +30,17 @@ function CoffeeDetailPage() {
             <div className="col-9 details-col detail-card">
               <div className="details">
                 <div className="container-options">
-                  <div className="type">
-                    <div className=" type-container container">
-                      <img
-                        className="icon"
-                        src={beans}
-                        alt="type"
-                      />
-                      <h3 className="text">{translate("coffeeType")}</h3>
-                    </div>
-
-                    <div className="options">
-                      <button className="option">{translate("ground")}</button>
-                      <button className="option">{translate("beans")}</button>
-                    </div>
-                  </div>
+                <Options
+                    titleOptions={translate("coffeeType")}
+                    iconOptions={beans}
+                    listOptions={["Chico 12 oz", "Grande 16 Oz"]}
+                  />
                   <hr className="separator" />
-                  <div className="size">
-                    <div className=" size-container container">
-                      <img
-                        className="icon"
-                        src={coffeeBag}
-                        alt="size"
-                      />
-                      <h3 className="text">{translate("size")}</h3>
-                    </div>
-                    <div className="options">
-                      <button className="option">
-                        {translate("small")} <br />{" "}
-                        <span className="extra-price">250gr</span>
-                      </button>
-                      <button className="option">
-                        {translate("medium")} <br />{" "}
-                        <span className="extra-price">500gr</span>
-                      </button>
-                      <button className="option">
-                        {translate("large")} <br />
-                        <span className="extra-price">1Kg</span>
-                      </button>
-                    </div>
-                  </div>
+                  <Options
+                    titleOptions={translate("size")}
+                    iconOptions={coffeeBag}
+                    listOptions={["Chico 250gr", "Mediano 500gr", "Grande 1kg"]}
+                  />
                   <hr className="separator" />
                   <div className="complement">
                     <h3 className="text complement_title">
@@ -83,7 +55,7 @@ function CoffeeDetailPage() {
                   <hr className="separator" />
                   <div className="btn-container">
                     <button className="add-cart-btn">
-                      {translate("addcart")} $47
+                       {translate("addCart")} $47
                     </button>
                   </div>
                 </div>

@@ -20,61 +20,14 @@
             width: 731px;
             background: $dark-blue;
             border-radius: 16px;
-
-            .size,
-            .milk {
-                display: flex;
-                justify-content: space-evenly;
-                padding-top: 40px;
-                margin-bottom: 16px;
-
-                .size-container {
-                    padding-right: 120px;
-
-                }
-
-                .container {
-                    display: flex;
-                    align-items: center;
-                    gap: 16px;
-                }
-
-                .options {
-                    display: flex;
-                    gap: 18px;
-                    justify-content: end;
-
-                    .option {
-                        width: 120px;
-                        height: 44px;
-                        background: transparent;
-                        border: 1px solid $cream;
-                        border-radius: 5px;
-                        color: $cream;
-                        font-size: 16px;
-                        font-weight: 700;
-
-                        .extra-price {
-                            font-weight: 400;
-                        }
-
-                        &:hover {
-                            cursor: pointer;
-                            border: none;
-                            background-color: $orange;
-                        }
-                    }
-                }
-            }
-
+            padding: 10px 0px;
+        
             .btn-container {
                 width: 100%;
                 display: flex;
                 justify-content: center;
-                align-items: center;
                 padding: 10px 0px;
-         
-
+                text-align: center;
                 .add-cart-btn {
                     background-color: $orange;
                     color: $cream;
@@ -86,9 +39,10 @@
                     font-weight: 700;
                     font-size: 20px;
                     margin: 10px auto;
-                    &:hover{
+                    &:hover {
                         cursor: pointer;
-                    }
+                        background: #e34317;
+                      }
                 }
             }
         }
@@ -173,7 +127,7 @@
 }
 
 .complement_title {
-    padding-left: 130px;
+    padding-left: 60px;
 }
 
 .cards {

@@ -19,54 +19,8 @@
             background: $dark-blue;
             border-radius: 16px;
 
-            .type,
-            .size {
-                display: flex;
-                justify-content: space-evenly;
-                padding-top: 40px;
-                margin-bottom: 16px;
-
-                .size-container {
-                    padding-right: 20px;
-                }
-
-                .type-container {
-                    padding-right: 120px;
-
-                }
-
-                .container {
-                    display: flex;
-                    align-items: center;
-                    gap: 16px;
-                }
-
-                .options {
-                    display: flex;
-                    gap: 18px;
-                    justify-content: end;
-
-                    .option {
-                        width: 120px;
-                        height: 44px;
-                        background: transparent;
-                        border: 1px solid $cream;
-                        border-radius: 5px;
-                        color: $cream;
-                        font-size: 16px;
-                        font-weight: 700;
-
-                        .extra-price {
-                            font-weight: 400;
-                        }
-
-                        &:hover {
-                            cursor: pointer;
-                            border: none;
-                            background-color: $orange;
-                        }
-                    }
-                }
+            .container-options{
+                padding: 10px 0px;
             }
 
             .btn-container {
@@ -87,9 +41,10 @@
                     font-weight: 700;
                     font-size: 20px;
                     margin: 10px auto;
-                    &:hover{
+                    &:hover {
                         cursor: pointer;
-                    }
+                        background: #e34317;
+                      }
                 }
             }
         }
@@ -101,7 +56,6 @@
     width: 85%;
     margin: 0 auto;
 }
-
 
 
 .text {
@@ -125,41 +79,6 @@
     }
 }
 
-
-.extra {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    justify-content: center;
-    font-family: "Red Hat Display";
-    font-weight: 700;
-    color: $cream;
-
-    .checkbox {
-        width: 21px;
-        height: 21px;
-    }
-
-    .extra-options {
-        padding-left: 240px;
-
-        .extra {
-            margin: 24px;
-
-        }
-
-
-    }
-
-    .lid-options {
-        padding-left: 90px;
-
-        .extra {
-            margin: 24px;
-        }
-    }
-}
-
 .detail-card {
     padding-left: 45px;
 }
@@ -174,7 +93,7 @@
 }
 
 .complement_title {
-    padding-left: 130px;
+    padding-left: 60px;
 }
 
 .cards {

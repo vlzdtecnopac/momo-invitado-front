@@ -1,118 +1,112 @@
 @import "../../index.scss";
-.page-category{
-    position: fixed;
-    width: 100%;
-    z-index: 99;
+.page-category {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
 }
 
 .page-container {
+  position: relative;
+  width: 100vw;
+  height: 160vh;
+  background-color: $light-blue;
+
+  .combos_detail {
     position: relative;
-    width: 100vw;
-    height: 160vh;
-    background-color: $light-blue;
+    top: 210px;
+    display: flex;
+    justify-content: center;
 
-    .combos_detail {
+    .details {
+      width: 731px;
+      background: $dark-blue;
+      border-radius: 16px;
+      overflow-y: auto;
+
+      .content-detail-page {
+        height: 480px;
+        overflow-y: auto;
         position: relative;
-        top: 210px;
-        display: flex;
-        justify-content: center;
+      }
 
-        .details {
-            width: 731px;
-            background: $dark-blue;
-            border-radius: 16px;
-            overflow-y: auto;
+      .btn-container {
+        width: 100%;
+        display: block;
+        text-align: center;
 
-            .content-detail-page{
-                height: 480px;
-                overflow-y: auto;
-                position: relative;
-            }
-
-
-            .btn-container {
-                width: 100%;
-                display: block;
-
-                .add-cart-btn {
-                    background-color: $orange;
-                    color: $cream;
-                    border: none;
-                    border-radius: 16px;
-                    width: 300px;
-                    height: 46px;
-                    font-family: "Red Hat Display";
-                    font-weight: 700;
-                    font-size: 20px;
-                    display: block;
-                    margin: 10px auto;
-                    &:hover{
-                        cursor: pointer;
-                    }
-                    
-                }
-            }
+        .add-cart-btn {
+          background-color: $orange;
+          color: $cream;
+          border: none;
+          border-radius: 16px;
+          width: 300px;
+          height: 46px;
+          font-family: "Red Hat Display";
+          font-weight: 700;
+          font-size: 20px;
+          margin: 10px auto;
+          &:hover {
+            cursor: pointer;
+            background: #e34317;
+          }
         }
+      }
     }
-
+  }
 }
 
 .separator {
-    width: 85%;
-    margin: 0 auto;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .text {
-    color: $cream;
-    padding: 10px;
+  color: $cream;
+  padding: 10px;
 
-    .text {
-
-        .recicle-icon {
-            padding-left: 12px;
-        }
-
-        .recicle-text {
-            font-family: Stacion;
-            font-size: 14px;
-            font-weight: 400;
-            text-align: center;
-            align-items: center;
-            width: 230px;
-        }
+  .text {
+    .recicle-icon {
+      padding-left: 12px;
     }
+
+    .recicle-text {
+      font-family: Stacion;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      align-items: center;
+      width: 230px;
+    }
+  }
 }
 
-
-
 .detail-card {
-    padding-left: 45px;
+  padding-left: 45px;
 }
 
 .icon {
-    width: 48px;
-    height: 48px;
+  width: 48px;
+  height: 48px;
 }
 
 .complement {
-    height: 255px;
+  height: 255px;
 }
 
 .complement_title {
-    padding-left: 130px;
+  padding-left: 60px;
 }
 
 .cards {
-    display: flex;
-    margin: 10px 10px 10px 20px;
-
+  display: flex;
+  margin: 10px 10px 10px 20px;
 }
 
 .recicle {
-    margin: 0 5px;
+  margin: 0 5px;
 }
 
 .step {
-    color: $cream;
-    padding: 20px 0px 10px 55px;
+  color: $cream;
+  padding: 20px 0px 10px 55px;
 }

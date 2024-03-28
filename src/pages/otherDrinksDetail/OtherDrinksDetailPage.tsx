@@ -7,6 +7,7 @@ import Slider from "../../components/Slider/Slider";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./OtherDrinksDetailPage.scss";
+import Options from "../../components/Options/Options";
 
 function OtherDrinksDetailPage() {
   const { translate } = useLanguage();
@@ -27,21 +28,13 @@ function OtherDrinksDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
-                <div className="size">
-                  <div className=" size-container container">
-                    <img
-                      className="icon"
-                      src={temperature}
-                      alt="size"
-                    />
-                    <h3 className="text">{translate("temperature")}</h3>
-                  </div>
-
-                  <div className="options">
-                    <button className="option">{translate("roomTemp")}</button>
-                    <button className="option">{translate("hot")}</button>
-                  </div>
-                </div>
+              <Options
+                    distanceScrolling={320}
+                    titleOptions={translate("temperature")}
+                    iconOptions={temperature}
+                    listOptions={["Al Tiempo", "Caliente"]}
+                  
+                  />
 
                 <hr className="separator" />
                 <div className="complement">
