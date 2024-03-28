@@ -1,113 +1,162 @@
 @import "../../index.scss";
-.modal-snippet-user{
-    position: absolute;
-    background: $dark-blue;
-    width: 200px;
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 4px;
-    z-index: 999;
-    top: 70px;
-    right: 40px;
-
-    .btn{
-        background: $orange;
-        color: $white;
-        padding: 8px 5px;
-        width: 180px;
-        border-radius: 20px;
-        border: 1px solid $orange;
-        margin: auto;
-        display: block;
-        font-size: 18px;
-        &:hover{
-            background: #e34317;
-            cursor: pointer;
-        }
+.shadow-sidebar {
+  background: #0000008a;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 99;
+  cursor: pointer;
+}
+.modal-snippet-user {
+  display: grid;
+  position: fixed;
+  background: $dark-blue-hover;
+  width: 270px;
+  border: 1px solid $dark-blue-hover;
+  border-radius: 4px;
+  z-index: 999;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  img {
+    margin: 0px 10px 0px 0px;
+  }
+  .col-info {
+    padding: 0px;
+    p {
+      font-weight: 300;
+      width: 200px;
     }
+  }
+
+  .info-profile {
+    display: block;
+    width: 100%;
+    color: white;
+    .info-header {
+      padding: 10px 0px;
+      display: flex;
+    }
+    .list-submenu {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      li {
+        background:$dark-blue;
+        padding: 10px;
+        font-family: "Red Hat Display";
+        &:hover{
+            cursor: pointer;
+            background: $orange;
+        }
+      }
+    }
+  }
+
+  .close-btn {
+    display: flex;
+    align-items: flex-end;
+    margin: 0px 30px 10px auto;
+    .btn {
+      background: $orange;
+      color: $white;
+      padding: 8px 5px;
+      width: 180px;
+      border-radius: 20px;
+      border: 1px solid $orange;
+      margin: 0px auto;
+      display: block;
+      font-size: 18px;
+      &:hover {
+        cursor: pointer;
+        background: #e34317;
+      }
+    }
+  }
 }
 
 .head {
-    position: fixed;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  background-color: $dark-blue;
+  border-bottom: 2px solid $cream;
+  width: 100%;
+  height: 85px;
+  z-index: 66;
+
+  .column_start {
+    width: 250px;
+
+    .back {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border: 0px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .back-icon {
+        width: 27px;
+      }
+
+      .text {
+        font-family: "Red Hat Display", sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        color: $cream;
+      }
+    }
+  }
+
+  .column_center {
+    width: auto;
     display: flex;
-    justify-content: space-between;
-    background-color: $dark-blue;
-    border-bottom: 2px solid $cream;
-    width: 100%;
-    height: 85px;
-    z-index: 66;
+    justify-content: center;
 
-    .column_start {
-        width: 250px;
+    .logo {
+      width: 130px;
+    }
+  }
 
-        .back {
-            display: flex;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            background: transparent;
-            border: 0px;
+  .column_end {
+    width: 250px;
+    display: flex;
+    padding: 10px;
 
-            &:hover {
-                cursor: pointer;
-            }
+    .welcome-text {
+      width: 146px;
+      color: $cream;
 
-            .back-icon {
-                width: 27px;
-            }
+      .container-info {
+        cursor: pointer;
+      }
 
-            .text {
-                font-family: "Red Hat Display", sans-serif;
-                font-weight: 700;
-                font-size: 28px;
-                color: $cream;
-            }
-        }
+      .welcome {
+        font-weight: 700;
+      }
+
+      .user-name {
+        font-family: "Stacion", sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+      }
     }
 
-    .column_center {
-        width: auto;
-        display: flex;
-        justify-content: center;
-
-        .logo {
-            width: 130px;
-        }
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 33px;
+      -webkit-border-radius: 33px;
+      -moz-border-radius: 33px;
+      -ms-border-radius: 33px;
+      -o-border-radius: 33px;
     }
-
-    .column_end {
-        width: 250px;
-        display: flex;
-        padding: 10px;
-
-        .welcome-text {
-            width: 146px;
-            color: $cream;
-
-            .container-info{
-                cursor: pointer;
-            }
-
-            .welcome {
-                font-weight: 700;
-
-            }
-
-            .user-name {
-                font-family: "Stacion", sans-serif;
-                font-size: 18px;
-                font-weight: 300;
-            }
-        }
-
-        .profile-pic {
-            width: 50px;
-            height: 50px;
-            border-radius: 33px;
-            -webkit-border-radius: 33px;
-            -moz-border-radius: 33px;
-            -ms-border-radius: 33px;
-            -o-border-radius: 33px;
-        }
-    }
+  }
 }

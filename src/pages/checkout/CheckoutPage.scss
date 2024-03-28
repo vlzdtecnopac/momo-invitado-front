@@ -343,6 +343,20 @@
       display: flex;
       flex-direction: column;
 
+      .btn_delete_cupon{
+        background: $orange;
+        color: $white;
+        width: 80px;
+        height: 30px;
+        margin: 10px;
+        border-radius: 30px;
+        border: 1px solid $orange;
+        &:hover {
+          background: #e34317;
+          cursor: pointer;
+        }
+      }
+
       table {
         font-family: "Red Hat Display", serif;
         font-size: 14px;

@@ -105,6 +105,7 @@ export function EnterByPhone() {
     try {
       isLoader(true);
       const response = await axiosInstance.post(`/users/client/login`, data);
+      console.log(response.data[0]);
       localStorage.setItem('client-id', response.data[0].client_id);
       setError("");
       isLoader(false);

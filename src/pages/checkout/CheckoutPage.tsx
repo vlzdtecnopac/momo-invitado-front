@@ -1,12 +1,11 @@
+import { useState } from "react";
 import barista from "../../assets/barista.png";
+import { useLanguage } from "../../context/Langi18nContext";
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";
-
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
-import { useLanguage } from "../../context/Langi18nContext";
-
 import "./CheckoutPage.scss";
-import { useState } from "react";
+
 import SuccessPayment from "../../components/Modal/SuccessPayment/SuccessPayment";
 import ReceiptSent from "../../components/Modal/ReceiptSend/ReceiptSent";
 import FailedPayment from "../../components/Modal/FailedPayment/FailedPayment";
@@ -196,7 +195,9 @@ function CheckoutPage() {
                       <td>$ 50</td>
                     </tr>
                     <tr>
-                      <td>Cupón (MOMO Coffee)</td>
+                      <td>Cupón (MOMO Coffee)
+                        <button className="btn_delete_cupon">Eliminar</button>
+                      </td>
                       <td>$ 50</td>
                     </tr>
                   </table>

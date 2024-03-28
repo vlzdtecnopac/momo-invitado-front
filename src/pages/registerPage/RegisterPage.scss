@@ -94,13 +94,10 @@
             }
 
             .text {
-                width: 100%;
-                margin-left: 5px;
                 font-family: "Red Hat Display",
                     "serif";
                 font-weight: 700;
-                font-size: 28px;
-    
+                font-size: 22px;
                 &:hover {
                     color: $dark-blue;
                 }
