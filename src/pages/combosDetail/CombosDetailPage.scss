@@ -28,51 +28,6 @@
                 overflow-y: auto;
             }
 
-            .size,
-            .milk {
-                display: flex;
-                justify-content: space-evenly;
-                padding-top: 40px;
-                margin-bottom: 16px;
-
-                .size-container {
-                    padding-right: 120px;
-
-                }
-
-                .container {
-                    display: flex;
-                    align-items: center;
-                    gap: 16px;
-                }
-
-                .options {
-                    display: flex;
-                    gap: 18px;
-                    justify-content: end;
-
-                    .option {
-                        width: 120px;
-                        height: 44px;
-                        background: transparent;
-                        border: 1px solid $cream;
-                        border-radius: 5px;
-                        color: $cream;
-                        font-size: 16px;
-                        font-weight: 700;
-
-                        .extra-price {
-                            font-weight: 400;
-                        }
-
-                        &:hover {
-                            cursor: pointer;
-                            border: none;
-                            background-color: $orange;
-                        }
-                    }
-                }
-            }
 
             .btn-container {
                 width: 100%;
