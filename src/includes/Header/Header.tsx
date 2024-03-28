@@ -46,10 +46,17 @@ function Header() {
     <>
       <header className="head">
         <div className="column_start">
-          <button onClick={() => handleBackHeader()} className="back">
-            <img className="back-icon" src={back} alt="back" />
-            <span className="text ">{translate("backText")}</span>
-          </button>
+          {localStorage.getItem("client-id") ? (
+            <button onClick={() => logoutUserClient()} className="back">
+              <img className="back-icon" src={back} alt="back" />
+              <span className="text ">Cerrar Session</span>
+            </button>
+          ) : (
+            <button onClick={() => handleBackHeader()} className="back">
+              <img className="back-icon" src={back} alt="back" />
+              <span className="text ">{translate("backText")}</span>
+            </button>
+          )}
         </div>
         <div className="column_center">
           <img className="logo" src={logoMomo} alt="" />
@@ -103,10 +110,10 @@ function Header() {
                 </div>
               </div>
               <div className="info-content">
-                  <ul className="list-submenu">
-                    <li>Perfil</li>
-                  </ul>
-                </div>
+                <ul className="list-submenu">
+                  <li>Perfil</li>
+                </ul>
+              </div>
             </div>
             <div className="close-btn">
               <button onClick={() => logoutUserClient()} className="btn">
