@@ -21,6 +21,7 @@
             width: 731px;
             background: $dark-blue;
             border-radius: 16px;
+            padding: 2px 0px;
 
             .size {
                 display: flex;
@@ -114,33 +115,6 @@
     .text {}
 }
 
-.extra {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    justify-content: center;
-    font-family: "Red Hat Display";
-    font-weight: 700;
-    color: $cream;
-
-    .checkbox {
-        width: 21px;
-        height: 21px;
-    }
-
-    .extra-options {
-        padding-left: 240px;
-
-        .extra {
-            margin: 24px;
-
-        }
-
-
-    }
-
-
-}
 
 .detail-card {
     padding-left: 45px;

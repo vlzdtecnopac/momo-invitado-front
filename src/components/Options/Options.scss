@@ -67,9 +67,20 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-
     p{
       width: 50px;
     }
   }
 }
+
+.extra-list-options{
+  max-width: 600px;
+  margin: 20px auto;
+  .list-content-options{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+}
+
+
