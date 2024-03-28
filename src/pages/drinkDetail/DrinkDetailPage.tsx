@@ -1,23 +1,25 @@
+import { useRef } from "react";
+import { useLanguage } from "../../context/Langi18nContext";
+
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
+
+import Layout from "../../includes/layout/Layout";
+import CategoryNav from "../../components/CategoryNav/CategoryNav";
+import Slider from "../../components/Slider/Slider";
+
+import Options from "../../components/Options/Options";
+import OptionsList from "../../components/Options/OptionsList";
+
 import product from "../../assets/product1.jpg";
 import glass from "../../assets/icons/glass.svg";
 import milk from "../../assets/icons/bottle.svg";
 import sugar from "../../assets/icons/sugar.svg";
 import extra from "../../assets/icons/extra.svg";
 import lid from "../../assets/icons/lid.svg";
-import recicle from "../../assets/icons/recicle.svg";
 import temperature from "../../assets/icons/temperature.svg";
 import sauce from "../../assets/icons/sauce.svg";
 
-import Layout from "../../includes/layout/Layout";
-import CategoryNav from "../../components/CategoryNav/CategoryNav";
-import Slider from "../../components/Slider/Slider";
-import { useLanguage } from "../../context/Langi18nContext";
-
 import "./DrinkDetailPage.scss";
-import { useRef } from "react";
-import Options from "../../components/Options/Options";
-import OptionsList from "../../components/Options/OptionsList";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
