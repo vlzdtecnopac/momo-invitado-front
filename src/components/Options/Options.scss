@@ -1,0 +1,75 @@
+@import "../../index.scss";
+
+.options-component {
+  width: 650px;
+  margin: 20px auto;
+
+  .size {
+    display: flex;
+    margin: auto;
+  }
+
+  .options {
+    display: flex;
+
+    .option {
+      width: 120px;
+      height: 44px;
+      margin: 10px;
+      background: transparent;
+      border: 1px solid $cream;
+      border-radius: 5px;
+      color: $cream;
+      font-size: 16px;
+      font-weight: 700;
+
+      .extra-price {
+        font-weight: 400;
+      }
+
+      &:hover {
+        cursor: pointer;
+        border: none;
+        background-color: $orange;
+      }
+    }
+  }
+}
+
+.extra-options-list {
+  width: 650px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: "Red Hat Display";
+  font-weight: 700;
+  color: $cream;
+
+  img {
+    margin: auto;
+  }
+
+  .options-container-list {
+    width: 100%;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .checkbox {
+    width: 21px;
+    height: 21px;
+  }
+
+  .extra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    p{
+      width: 50px;
+    }
+  }
+}

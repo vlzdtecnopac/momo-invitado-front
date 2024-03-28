@@ -15,14 +15,15 @@ import Slider from "../../components/Slider/Slider";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./DrinkDetailPage.scss";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import Options from "../../components/Options/Options";
+import OptionsList from "../../components/Options/OptionsList";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
   const { translate } = useLanguage();
 
   const optionHandler = (position: number) => {
-
     if (myRef.current) {
       myRef.current.scrollTo({
         top: position,
@@ -49,157 +50,33 @@ function DrinkDetailPage() {
             <div className="col-9 details-col detail-card">
               <div className="details">
                 <div ref={myRef} className="container-options-product">
-                  <div className="size">
-                    <div className=" size-container container">
-                      <img className="icon" src={glass} alt="size" />
-                      <h3 className="text">{translate("size")}</h3>
-                    </div>
-                    <div className="options">
-                      <button
-                        onClick={() => optionHandler(120)}
-                        className="option"
-                      >
-                        {translate("small")} 12 Oz
-                      </button>
-                      <button
-                        onClick={() => optionHandler(120)}
-                        className="option"
-                      >
-                        {translate("large")} 16 Oz{" "}
-                        <span className="extra-price">$10</span>
-                      </button>
-                    </div>
-                  </div>
+                  <Options
+                    distanceScrolling={120}
+                    titleOptions="Tamaño"
+                    iconOptions={glass}
+                    listOptions={["Chico 12 oz", "Grande 16 Oz"]}
+                    optionHandler={(e: any) => optionHandler(e)}
+                  />
                   <hr className="separator" />
-                  <div className="milk">
-                    <div className="container">
-                      <img className="icon" src={milk} alt="milk" />
-                      <h3 className="text">{translate("milk")}</h3>
-                    </div>
-                    <div className="options">
-                      <button
-                        onClick={() => optionHandler(220)}
-                        className="option"
-                      >
-                        {translate("whole")}
-                      </button>
-                      <button
-                        onClick={() => optionHandler(220)}
-                        className="option"
-                      >
-                        {translate("lactoseFree")}{" "}
-                        <span className="extra-price">$5</span>
-                      </button>
-                      <button
-                        onClick={() => optionHandler(220)}
-                        className="option"
-                      >
-                        {translate("oatMilk")} <br />{" "}
-                        <span className="extra-price">$9</span>
-                      </button>
-                    </div>
-                  </div>
+                  <Options
+                    distanceScrolling={220}
+                    titleOptions="Leche"
+                    iconOptions={milk}
+                    listOptions={["Entrada", "Deslactosada", "Avena"]}
+                    optionHandler={(e: any) => optionHandler(e)}
+                  />
                   <hr className="separator" />
-                  <div className="milk">
-                    <div className="container">
-                      <img className="icon" src={sugar} alt="sugar" />
-                      <h3 className="text">{translate("sugar")}</h3>
-                    </div>
-                    <div className="options">
-                      <button
-                        onClick={() => optionHandler(320)}
-                        className="option"
-                      >
-                        {translate("less")}
-                      </button>
-                      <button
-                        onClick={() => optionHandler(320)}
-                        className="option"
-                      >
-                        Original
-                      </button>
-                      <button
-                        onClick={() => optionHandler(320)}
-                        className="option"
-                      >
-                        {translate("more")}
-                      </button>
-                    </div>
-                  </div>
+                  <Options
+                    distanceScrolling={320}
+                    titleOptions={translate("sugar")}
+                    iconOptions={sugar}
+                    listOptions={["Menos", "Original", "Más"]}
+                    optionHandler={(e: any) => optionHandler(e)}
+                  />
                   <hr className="separator" />
-                  <div className="extra">
-                    <img className="icon" src={extra} alt="extra" />
-                    <div className="container">
-                      <div className="block">
-                        <h3 className="text">{translate("extraCoffee")}</h3>
-                        <h3 className="text">{translate("extraCream")}</h3>
-                      </div>
-                    </div>
-                    <div className="extra-options">
-                      <span className="extra">
-                        10$
-                        <label>
-                          <input name="10" type="checkbox" />
-                          <span className="custom-checkbox"></span>
-                        </label>
-                      </span>
-                      <span className="extra">
-                        20$
-                        <label>
-                          <input name="20" type="checkbox" />
-                          <span className="custom-checkbox"></span>
-                        </label>
-                      </span>
-                    </div>
-                  </div>
+                  <OptionsList optionHandler={(e: any) => optionHandler(e)} listOptions={["Extra shot de café", "Extra de crema"]} iconOptions={extra} />
                   <hr className="separator" />
-                  <div className="extra">
-                    <img className="icon" src={lid} alt="lid" />
-                    <div className="container">
-                      <div className="block">
-                        <h3 className="text">{translate("lid")}</h3>
-                        <h3 className="text">
-                          {translate("noLid")}{" "}
-                          <span className="recicle">
-                            <img
-                              className="recicle-icon"
-                              src={recicle}
-                              alt="recicle-icon"
-                            />
-                          </span>
-                          <span className="recicle-text">
-                            {translate("helpPlanet")}
-                          </span>
-                        </h3>{" "}
-                      </div>
-                    </div>
-                    <div className="lid-options">
-                      <span className="extra">
-                        <label>
-                          <input
-                            name="tapa"
-                            onChange={(e) => {
-                              e.stopPropagation();
-                              optionHandler(450)}}
-                            type="checkbox"
-                          />
-                          <span className="custom-checkbox"></span>
-                        </label>
-                      </span>
-                      <span className="extra">
-                        <label>
-                          <input
-                            name="tapa"
-                            type="checkbox"
-                            onChange={(e) =>{
-                              e.stopPropagation();
-                              optionHandler(450)}}
-                          />
-                          <span className="custom-checkbox"></span>
-                        </label>
-                      </span>
-                    </div>
-                  </div>
+                  <OptionsList optionHandler={(e: any) => optionHandler(e)} listOptions={["Con tapa", 'Sin tapa <span class="recicle"><img class="recicle-icon" src="/src/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta']} iconOptions={lid} />
                   <hr className="separator" />
                   <div className="complement">
                     <h3 className="text complement_title">
@@ -234,60 +111,16 @@ function DetailsProductOptionsRelations() {
   return (
     <div className="food_detail">
       <div>
-        <div className="col-9 details-col">
-          <div className="details">
-            <div className="size">
-              <div className=" size-container container">
-                <img className="icon" src={temperature} alt="size" />
-                <h3 className="text">{translate("temperature")}</h3>
-              </div>
-
-              <div className="options">
-                <button className="option">{translate("roomTemp")}</button>
-                <button className="option">{translate("hot")}</button>
-              </div>
-            </div>
-            <hr className="separator" />
-            <div className="extra">
-              <img className="icon" src={sauce} alt="extra" />
-              <div className="container">
-                <div className="block">
-                  <h3 className="text">{translate("machaSauce")}</h3>
-                  <h3 className="text">{translate("chipotleSauce")}</h3>
-                </div>
-              </div>
-              <div className="extra-options">
-                <span className="extra">
-                  10$
-                  <label>
-                    <input
-                      name="tapa"
-                      onChange={(e) =>{
-                        e.stopPropagation();
-                      }}
-                      type="checkbox"
-                    />
-                    <span className="custom-checkbox"></span>
-                  </label>
-                </span>
-                <span className="extra">
-                  20$
-                  <label>
-                    <input
-                      name="tapa"
-                      onChange={(e) =>{
-                        e.stopPropagation();
-                      }}
-                      type="checkbox"
-                    />
-                    <span className="custom-checkbox"></span>
-                  </label>
-                </span>
-              </div>
-            </div>
-          </div>
+        <Options
+                    distanceScrolling={320}
+                    titleOptions={translate("temperature")}
+                    iconOptions={temperature}
+                    listOptions={["Al Tiempo", "Caliente"]}
+                  
+                  />
+          <hr className="separator" />
+          <OptionsList listOptions={["Salsa Macha", "Salsa chipotle"]} iconOptions={sauce} distanceScrolling={310}/>
         </div>
-      </div>
     </div>
   );
 }

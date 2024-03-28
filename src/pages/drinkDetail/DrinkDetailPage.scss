@@ -20,96 +20,22 @@
     }
 
     .drink_detail {
+        display: flex;
+        justify-content: space-around;
         position: relative;
         overflow-y: auto;
         overflow-x: hidden;
         width: 100%;
         height: 100vh;
         background-color: $light-blue;
-        display: flex;
-        justify-content: space-around;
         padding-top: 30px;
-
-        .details {
-            position: relative;
-            width: 731px;
-            background: $dark-blue;
-            border-radius: 16px;
-            overflow-y: auto;
-
-            .size,
-            .milk {
-                display: flex;
-                justify-content: space-evenly;
-                padding-top: 40px;
-                margin-bottom: 16px;
-
-                .size-container {
-                    padding-right: 120px;
-
-                }
-
-                .container {
-                    display: flex;
-                    align-items: center;
-                    gap: 16px;
-                }
-
-                .options {
-                    display: flex;
-                    gap: 18px;
-                    justify-content: end;
-
-                    .option {
-                        width: 120px;
-                        height: 44px;
-                        background: transparent;
-                        border: 1px solid $cream;
-                        border-radius: 5px;
-                        color: $cream;
-                        font-size: 16px;
-                        font-weight: 700;
-
-                        .extra-price {
-                            font-weight: 400;
-                        }
-
-                        &:hover {
-                            cursor: pointer;
-                            border: none;
-                            background-color: $orange;
-                        }
-                    }
-                }
-            }
-
-            .btn-container {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 10px 0px;
-
-                .add-cart-btn {
-                    background-color: $orange;
-                    color: $cream;
-                    border: none;
-                    border-radius: 16px;
-                    width: 300px;
-                    height: 46px;
-                    font-family: "Red Hat Display";
-                    font-weight: 700;
-                    font-size: 20px;
-                    margin: 10px auto;
-
-                    &:hover {
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
     }
-
+    .details {
+        position: relative;
+        width: 731px;
+        background: $dark-blue;
+        border-radius: 16px;
+    }
 }
 
 .separator {
@@ -140,41 +66,6 @@
     }
 }
 
-
-.extra {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    justify-content: center;
-    font-family: "Red Hat Display";
-    font-weight: 700;
-    color: $cream;
-
-    .checkbox {
-        width: 21px;
-        height: 21px;
-    }
-
-    .extra-options {
-        padding-left: 240px;
-
-        .extra {
-            margin: 24px;
-
-        }
-
-
-    }
-
-    .lid-options {
-        padding-left: 90px;
-
-        .extra {
-            margin: 24px;
-        }
-    }
-}
-
 .detail-card {
     padding-left: 45px;
 }
@@ -189,7 +80,7 @@
 }
 
 .complement_title {
-    padding-left: 130px;
+    padding-left: 30px;
 }
 
 .cards {
@@ -200,4 +91,26 @@
 
 .recicle {
     margin: 0 5px;
+}
+
+.food_detail{
+    position: relative;
+}
+
+.container-btn-payment{
+    text-align: center;
+    .add-cart-btn{
+        background-color: $orange;
+        color: #FFFFFF;
+        padding: 15px 0px;
+        width: 276px;
+        border: 1px solid $orange;
+        font-size: 18px;
+        border-radius: 50px;
+        margin: 20px 0px;
+        &:hover {
+            cursor: pointer;
+            background: #e34317;
+          }
+    }
 }
