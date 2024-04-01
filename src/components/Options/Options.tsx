@@ -1,3 +1,4 @@
+import React from "react";
 import { useLanguage } from "../../context/Langi18nContext";
 import "./Options.scss";
 
@@ -33,7 +34,10 @@ const Options: React.FC<OptionsProps> = ({
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  distanceScrolling && optionHandler(distanceScrolling)}}
+                  if(optionHandler !== undefined){
+                    distanceScrolling && optionHandler(distanceScrolling)
+                  }
+                 }}
                 className="option"
               >
                 {item} <span className="extra-price">$10</span>

@@ -1,10 +1,11 @@
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import ComplementCard from "../ComplementCard/ComplementCard";
 import "swiper/css";
-
 import "./Slider.scss";
 
-import ComplementCard from "../ComplementCard/ComplementCard";
+
+
 
 export default function Slider() {
   return (

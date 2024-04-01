@@ -1,3 +1,4 @@
+import React from "react";
 import { useLanguage } from "../../context/Langi18nContext";
 
 interface OptionsExtraProps {

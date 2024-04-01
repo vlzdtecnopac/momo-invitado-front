@@ -1,17 +1,13 @@
-import { useState } from "react";
-import barista from "../../assets/barista.png";
+import React ,{ useState } from "react";
+
 import { useLanguage } from "../../context/Langi18nContext";
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
+import barista from "../../assets/barista.png";
 import "./CheckoutPage.scss";
 
-import SuccessPayment from "../../components/Modal/SuccessPayment/SuccessPayment";
-import ReceiptSent from "../../components/Modal/ReceiptSend/ReceiptSent";
-import FailedPayment from "../../components/Modal/FailedPayment/FailedPayment";
-import ContinuePayment from "../../components/Modal/ContinuePayment/ContinuePayment";
-import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
-import AmountTip from "../../components/Modal/AmountTip/AmountTip";
+
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -212,12 +208,6 @@ function CheckoutPage() {
                 </div>
               </section>
             </div>
-            {/* <ContinuePayment actionKey={""} /> */}
-            {/* <FailedPayment actionKey={""} /> */}
-            {/* <SuccessPayment actionKey={""} /> */}
-            {/* <ReceiptSent actionKey={""} /> */}
-            {/* <PercentageTip actionKey={""} /> */}
-            {/* <AmountTip actionKey={""} /> */}
           </div>
         </div>
       </Layout>

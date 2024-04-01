@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
@@ -15,6 +15,7 @@ import temperature from "../../assets/icons/temperature.svg";
 import sauce from "../../assets/icons/sauce.svg";
 
 import "./FoodDetailPage.scss";
+
 
 function FoodDetailPage() {
   const myRef = useRef<any>(null);

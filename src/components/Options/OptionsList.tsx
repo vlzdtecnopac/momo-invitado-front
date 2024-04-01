@@ -1,3 +1,4 @@
+import React from "react";
 import { useLanguage } from "../../context/Langi18nContext";
 import "./Options.scss";
 
@@ -32,7 +33,9 @@ const OptionsList: React.FC<OptionsListProps> = ({
                       <input 
                        onChange={(e) => {
                         e.stopPropagation();
-                        distanceScrolling && optionHandler(distanceScrolling);
+                        if(optionHandler !== undefined){
+                          distanceScrolling && optionHandler(distanceScrolling)
+                        }
                       }}
                       name="10" type="checkbox" />
                       <span className="custom-checkbox"></span>
