@@ -1,12 +1,14 @@
-import { useLanguage } from "../../context/Langi18nContext";
+import { useProductOptionStore } from "../../store/productOption.store";
 import "./Options.scss";
 
 interface OptionsProps {
-  titleOptions: String;
+  titleOptions: string;
   optionHandler?: Function;
-  listOptions: String[];
+  listOptions: string[];
   iconOptions: string;
   distanceScrolling?: number;
+  price?: string;
+  attr: string;
 }
 
 const Options: React.FC<OptionsProps> = ({
@@ -15,8 +17,14 @@ const Options: React.FC<OptionsProps> = ({
   listOptions,
   iconOptions,
   distanceScrolling,
+  attr,
+  price,
 }) => {
-  const { translate } = useLanguage();
+  const { dataProductOption } = useProductOptionStore();
+  const setDataProductOption = useProductOptionStore(
+    (state) => state.setDataProductOption
+  );
+
   return (
     <div className="options-component">
       <div className="grid-middle grid-noGutter-noBottom">
@@ -32,16 +40,28 @@ const Options: React.FC<OptionsProps> = ({
         </div>
         <div className="col-8">
           <div className="options">
-            {listOptions.map((item: String, i: number) => {
+            {listOptions.map((item: string, i: number) => {
               return (
                 <button
-                  onClick={(e) => {
+                  key={i}
+                  onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                     e.stopPropagation();
+                    console.log(attr);
+                    if (attr !== undefined) {
+                      const updatedData = {
+                        ...dataProductOption,
+                        [attr]: `${item} $10`,
+                      };
+                      console.log(updatedData);
+                      setDataProductOption(updatedData);
+                    }
+
                     distanceScrolling && optionHandler(distanceScrolling);
                   }}
                   className="option"
                 >
-                  {item} <span className="extra-price">$10</span>
+                  {item}
+                  {price && <h4 className="extra-price">${price}</h4>}
                 </button>
               );
             })}

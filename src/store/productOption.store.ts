@@ -11,31 +11,36 @@ interface ProductOptioInterface {
   extra_cream: string;
   lid: string;
   no_lid: string;
-  temperature: number;
+  temperature: string;
   macha_sauce: string;
   chipotle_sauce: string;
-  create_at: Date;
-  update_at: Date;
+  color: string;
 }
 
 interface ProductOptionStoreInterface {
-  dataEmployee: ProductOptioInterface[];
-  fetchEmployeeData: (shopping_id: string) => Promise<Boolean>;
+  dataProductOption: ProductOptioInterface;
+  setDataProductOption: (value: ProductOptioInterface) => void;
 }
 
-export const useEmployeeStore = create<ProductOptionStoreInterface>((set) => ({
-  dataEmployee: [],
-  fetchEmployeeData: async (employee_id) =>
-    new Promise((resolve, reject) => {
-      axiosInstance
-        .get(`/users/employee/?employee_id=${employee_id}`)
-        .then((response) => {
-          set({ dataEmployee: response.data });
-          resolve(response.data);
-        })
-        .catch((error) => {
-          console.error(`Error fetching data: ${error}`);
-          reject(false);
-        });
-    }),
-}));
+export const useProductOptionStore = create<ProductOptionStoreInterface>(
+  (set) => ({
+    dataProductOption: {
+      size: "",
+      milk: "",
+      sugar: "",
+      extra_coffee: "",
+      extra_cream: "",
+      lid: "",
+      no_lid: "",
+      temperature: "",
+      macha_sauce: "",
+      chipotle_sauce: "",
+      color: "",
+    },
+    setDataProductOption: (value) =>
+      set((state) => ({
+        ...state,
+        dataProductOption: { ...state.dataProductOption, ...value },
+      })),
+  })
+);

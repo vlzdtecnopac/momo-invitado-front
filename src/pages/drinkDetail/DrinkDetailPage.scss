@@ -4,7 +4,7 @@
     position: fixed;
     width: 100%;
     z-index: 66;
-   
+
 }
 
 .page-container {
@@ -30,6 +30,7 @@
         background-color: $light-blue;
         padding-top: 30px;
     }
+
     .details {
         position: relative;
         width: 731px;
@@ -93,13 +94,14 @@
     margin: 0 5px;
 }
 
-.food_detail{
+.food_detail {
     position: relative;
 }
 
-.container-btn-payment{
+.container-btn-payment {
     text-align: center;
-    .add-cart-btn{
+
+    .add-cart-btn {
         background-color: $orange;
         color: $cream;
         border: none;
@@ -110,9 +112,10 @@
         font-weight: 700;
         font-size: 20px;
         margin: 10px auto;
+
         &:hover {
             cursor: pointer;
             background: #e34317;
-          }
+        }
     }
 }

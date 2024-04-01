@@ -1,29 +1,26 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useLanguage } from "../../context/Langi18nContext";
+import { useProductOptionStore } from "../../store/productOption.store"; // Importa el store
 
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
-
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Slider from "../../components/Slider/Slider";
-
 import Options from "../../components/Options/Options";
 import OptionsList from "../../components/Options/OptionsList";
-
 import product from "../../assets/product1.jpg";
 import glass from "../../assets/icons/glass.svg";
 import milk from "../../assets/icons/bottle.svg";
 import sugar from "../../assets/icons/sugar.svg";
 import extra from "../../assets/icons/extra.svg";
 import lid from "../../assets/icons/lid.svg";
-import temperature from "../../assets/icons/temperature.svg";
-import sauce from "../../assets/icons/sauce.svg";
-
 import "./DrinkDetailPage.scss";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
+
   const { translate } = useLanguage();
+  // Obtén la función del store
 
   const optionHandler = (position: number) => {
     if (myRef.current) {
@@ -51,34 +48,66 @@ function DrinkDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
-                <div ref={myRef} className="container-options-product">
+                <div
+                  ref={myRef}
+                  className="container-options-product"
+                >
                   <Options
                     distanceScrolling={120}
-                    titleOptions="Tamaño"
+                    titleOptions={translate("size")}
                     iconOptions={glass}
                     listOptions={["Chico 12 oz", "Grande 16 Oz"]}
-                    optionHandler={(e: any) => optionHandler(e)}
+                    optionHandler={(e: any) => {
+                      optionHandler(e);
+                    }}
+                    attr="size"
+                    price="10"
                   />
                   <hr className="separator" />
                   <Options
                     distanceScrolling={220}
                     titleOptions="Leche"
                     iconOptions={milk}
-                    listOptions={["Entrada", "Deslactosada", "Avena"]}
+                    listOptions={[
+                      translate("whole"),
+                      translate("lactoseFree"),
+                      translate("oatMilk"),
+                    ]}
                     optionHandler={(e: any) => optionHandler(e)}
+                    attr="milk"
+                    price="10"
                   />
                   <hr className="separator" />
                   <Options
                     distanceScrolling={320}
                     titleOptions={translate("sugar")}
                     iconOptions={sugar}
-                    listOptions={["Menos", "Original", "Más"]}
+                    listOptions={[
+                      translate("less"),
+                      "Original",
+                      translate("more"),
+                    ]}
                     optionHandler={(e: any) => optionHandler(e)}
+                    attr="sugar"
                   />
                   <hr className="separator" />
-                  <OptionsList optionHandler={(e: any) => optionHandler(e)} listOptions={["Extra shot de café", "Extra de crema"]} iconOptions={extra} />
+                  <OptionsList
+                    optionHandler={(e: any) => optionHandler(e)}
+                    listOptions={[
+                      translate("extraCoffee"),
+                      translate("extraCream"),
+                    ]}
+                    iconOptions={extra}
+                  />
                   <hr className="separator" />
-                  <OptionsList optionHandler={(e: any) => optionHandler(e)} listOptions={["Con tapa", 'Sin tapa <span class="recicle"><img class="recicle-icon" src="/src/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta']} iconOptions={lid} />
+                  <OptionsList
+                    optionHandler={(e: any) => optionHandler(e)}
+                    listOptions={[
+                      translate("lid"),
+                      'Sin tapa <span class="recicle"><img class="recicle-icon" src="/src/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
+                    ]}
+                    iconOptions={lid}
+                  />
                   <hr className="separator" />
                   <div className="complement">
                     <h3 className="text complement_title">
@@ -87,7 +116,6 @@ function DrinkDetailPage() {
                     <div className="cards">
                       <Slider />
                     </div>
-                    <DetailsProductOptionsRelations />
                   </div>
                 </div>
                 <div className="container-btn-payment">
@@ -105,24 +133,5 @@ function DrinkDetailPage() {
     </Layout>
   );
 }
+
 export default DrinkDetailPage;
-
-function DetailsProductOptionsRelations() {
-  const { translate } = useLanguage();
-
-  return (
-    <div className="food_detail">
-      <div>
-        <Options
-                    distanceScrolling={320}
-                    titleOptions={translate("temperature")}
-                    iconOptions={temperature}
-                    listOptions={["Al Tiempo", "Caliente"]}
-                  
-                  />
-          <hr className="separator" />
-          <OptionsList listOptions={["Salsa Macha", "Salsa chipotle"]} iconOptions={sauce} distanceScrolling={310}/>
-        </div>
-    </div>
-  );
-}
