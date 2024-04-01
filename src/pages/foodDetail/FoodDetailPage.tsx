@@ -11,11 +11,6 @@ import Options from "../../components/Options/Options";
 import OptionsList from "../../components/Options/OptionsList";
 
 import product from "../../assets/product2.jpg";
-import glass from "../../assets/icons/glass.svg";
-import milk from "../../assets/icons/bottle.svg";
-import sugar from "../../assets/icons/sugar.svg";
-import extra from "../../assets/icons/extra.svg";
-import lid from "../../assets/icons/lid.svg";
 import temperature from "../../assets/icons/temperature.svg";
 import sauce from "../../assets/icons/sauce.svg";
 
@@ -25,14 +20,6 @@ function FoodDetailPage() {
   const myRef = useRef<any>(null);
   const { translate } = useLanguage();
 
-  const optionHandler = (position: number) => {
-    if (myRef.current) {
-      myRef.current.scrollTo({
-        top: position,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <Layout>
