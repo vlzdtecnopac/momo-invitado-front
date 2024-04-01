@@ -1,5 +1,6 @@
 @import "../../index.scss";
-.alert-error{
+
+.alert-error {
     font-family: 'Stacion';
     font-weight: normal;
     background: $orange;
@@ -12,7 +13,8 @@
     font-size: 14px;
     margin: auto auto 5px auto;
 }
-.create-account-page{
+
+.create-account-page {
     height: 120vh;
     display: flex;
     justify-content: center;
@@ -41,7 +43,7 @@
         position: relative;
     }
 
-    .icon-user{
+    .icon-user {
         background-image: url(./../../assets/icons/user.svg);
         background-size: cover;
         width: 25px;
@@ -52,7 +54,7 @@
         left: 10px;
     }
 
-    .icon-phone{
+    .icon-phone {
         background-image: url(./../../assets/icons/call_white.svg);
         background-size: cover;
         width: 25px;
@@ -63,7 +65,7 @@
         left: 10px;
     }
 
-    .icon-email{
+    .icon-email {
         background-image: url(./../../assets/icons/mail.svg);
         background-size: cover;
         width: 25px;
@@ -73,7 +75,8 @@
         top: 20px;
         left: 10px;
     }
-    .select{
+
+    .select {
         width: 95px;
         padding: 8px 15px;
         background: transparent;
@@ -83,7 +86,8 @@
         font-weight: 300;
         color: $white;
         margin: 8px 0px;
-        font-size: 24px;     
+        font-size: 24px;
+
         option {
             background: $dark-blue;
         }
@@ -105,6 +109,16 @@
             font-size: 18px;
             font-weight: 500;
         }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
     }
 
     .input {
@@ -119,6 +133,7 @@
         font-size: 18px;
         border-radius: 4px;
         padding-left: 45px;
+
         &::placeholder {
             color: $white
         }
@@ -145,7 +160,7 @@
             padding-left: 10px;
             text-decoration: underline;
 
-            &:hover{
+            &:hover {
                 cursor: pointer;
             }
 
