@@ -1,13 +1,15 @@
 import React from "react";
-import { useLanguage } from "../../context/Langi18nContext";
+import { useProductOptionStore } from "../../store/productOption.store";
 import "./Options.scss";
 
 interface OptionsProps {
-  titleOptions: String;
+  titleOptions: string;
   optionHandler?: Function;
-  listOptions: String[];
+  listOptions: string[];
   iconOptions: string;
   distanceScrolling?: number;
+  price?: string;
+  attr: string;
 }
 
 const Options: React.FC<OptionsProps> = ({
@@ -16,37 +18,58 @@ const Options: React.FC<OptionsProps> = ({
   listOptions,
   iconOptions,
   distanceScrolling,
+  attr,
+  price,
 }) => {
-  const { translate } = useLanguage();
+  const { dataProductOption } = useProductOptionStore();
+  const setDataProductOption = useProductOptionStore(
+    (state) => state.setDataProductOption
+  );
+
   return (
     <div className="options-component">
       <div className="grid-middle grid-noGutter-noBottom">
         <div className="col-4">
           <div className="size">
-            <img className="icon" src={iconOptions} alt="size" />
+            <img
+              className="icon"
+              src={iconOptions}
+              alt="size"
+            />
             <h3 className="text">{titleOptions}</h3>
           </div>
         </div>
         <div className="col-8">
-        <div className="options">
-          {listOptions.map((item: String, i: number) => {
-            return (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if(optionHandler !== undefined){
-                    distanceScrolling && optionHandler(distanceScrolling)
-                  }
-                 }}
-                className="option"
-              >
-                {item} <span className="extra-price">$10</span>
-              </button>
-            );
-          })}
+          <div className="options">
+            {listOptions.map((item: string, i: number) => {
+              return (
+                <button
+                  key={i}
+                  onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                    e.stopPropagation();
+                    console.log(attr);
+                    if (attr !== undefined) {
+                      const updatedData = {
+                        ...dataProductOption,
+                        [attr]: `${item} $10`,
+                      };
+                      console.log(updatedData);
+                      setDataProductOption(updatedData);
+                    }
+                    if(optionHandler !== undefined){
+                      distanceScrolling && optionHandler(distanceScrolling)
+                    }
+                  }}
+                  className="option"
+                >
+                  {item}
+                  {price && <h4 className="extra-price">${price}</h4>}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
