@@ -52,16 +52,19 @@ function FoodDetailPage() {
             <div className="col-9 details-col detail-card">
               <div className="details">
                 <div ref={myRef} className="container-options-product">
-                <Options
+                  <Options
                     distanceScrolling={320}
                     titleOptions={translate("temperature")}
                     iconOptions={temperature}
                     listOptions={["Al Tiempo", "Caliente"]}
-                  
                   />
-          <hr className="separator" />
-          <OptionsList listOptions={["Salsa Macha", "Salsa chipotle"]} iconOptions={sauce} distanceScrolling={310}/>
-   
+                  <hr className="separator" />
+                  <OptionsList
+                    listOptions={["Salsa Macha", "Salsa chipotle"]}
+                    iconOptions={sauce}
+                    distanceScrolling={310}
+                  />
+
                   <div className="complement">
                     <h3 className="text complement_title">
                       {translate("accompanyDrink")}
@@ -87,8 +90,3 @@ function FoodDetailPage() {
   );
 }
 export default FoodDetailPage;
-
-
-
-
-
