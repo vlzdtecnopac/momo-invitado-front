@@ -29,8 +29,22 @@
 
       &:hover {
         cursor: pointer;
-        border: none;
-        background-color: $orange;
+        background: #fb4b05;
+      }
+    }
+    .option-active{
+      background: $orange;
+      color: $white;
+      margin: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      width: 120px;
+      height: 44px;
+      border: 1px solid $orange;
+      border-radius: 4px;
+      &:hover {
+        cursor: pointer;
+        background: #fb4b05;
       }
     }
   }

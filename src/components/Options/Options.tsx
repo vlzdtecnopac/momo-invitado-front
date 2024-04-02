@@ -31,23 +31,24 @@ const Options: React.FC<OptionsProps> = ({
       <div className="grid-middle grid-noGutter-noBottom">
         <div className="col-4">
           <div className="size">
-            <img
-              className="icon"
-              src={iconOptions}
-              alt="size"
-            />
+            <img className="icon" src={iconOptions} alt="size" />
             <h3 className="text">{titleOptions}</h3>
           </div>
         </div>
         <div className="col-8">
           <div className="options">
             {listOptions.map((item: string, i: number) => {
+              let postion = Object.keys(dataProductOption).indexOf(attr);
               return (
                 <button
+                  className={
+                    Object.values(dataProductOption)[postion] == item
+                      ? `option-active`
+                      : `option`
+                  }
                   key={i}
                   onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                     e.stopPropagation();
-                    console.log(attr);
                     if (attr !== undefined) {
                       const updatedData = {
                         ...dataProductOption,
@@ -60,7 +61,6 @@ const Options: React.FC<OptionsProps> = ({
                       distanceScrolling && optionHandler(distanceScrolling);
                     }
                   }}
-                  className="option"
                 >
                   {item}
                   {price && <h4 className="extra-price">${price}</h4>}
