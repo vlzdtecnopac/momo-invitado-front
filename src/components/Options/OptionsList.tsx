@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Options.scss";
+import { useProductOptionStore } from "../../store/productOption.store";
 
 interface OptionsListProps {
   optionHandler?: Function;
   listOptions: string[];
   iconOptions: string;
   distanceScrolling?: number;
-  attr: string
+  attr: string;
 }
 
 const OptionsList: React.FC<OptionsListProps> = ({
@@ -14,19 +15,35 @@ const OptionsList: React.FC<OptionsListProps> = ({
   listOptions,
   iconOptions,
   distanceScrolling,
-  attr
+  attr,
 }) => {
+  const { dataProductOption } = useProductOptionStore();
+  const setDataProductOption = useProductOptionStore(
+    (state) => state.setDataProductOption
+  );
+  const [valueSelect, setValueSelect] = useState<string[]>([]);
+ 
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let newArray;
+    if (!event.target.checked) {
+      newArray = valueSelect.filter(item => item !== event.target.value);
+    }else{
+      newArray = [...valueSelect, event.target.value];
+    }
+    setValueSelect(newArray);
+  };
 
-  const disableCheck = () => {
+  useEffect(()=>{
+      const updatedData = {
+        ...dataProductOption,
+        [attr]: valueSelect,
+      };
+      setDataProductOption(updatedData); 
+  }, [valueSelect])
 
-  }
   return (
     <div className="extra-options-list">
-      <img
-        className="icon"
-        src={iconOptions}
-        alt="extra"
-      />
+      <img className="icon" src={iconOptions} alt="extra" />
       <ul className="options-container-list">
         {listOptions.map((option: any, i: number) => {
           return (
@@ -38,17 +55,19 @@ const OptionsList: React.FC<OptionsListProps> = ({
                 ></div>
                 <div className="col-3">
                   <span className="extra">
-                    <p>10$</p>
+                    <p>$10</p>
                     <label>
                       <input
+                        value={`${option} $10`}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                           e.stopPropagation();
-                          const checkboxes = document.querySelectorAll(`input[name="${attr}"]'`);
-                          if(optionHandler !== undefined){
-                            distanceScrolling && optionHandler(distanceScrolling)
+                          handleCheckboxChange(e);
+                          if (optionHandler !== undefined) {
+                            distanceScrolling &&
+                              optionHandler(distanceScrolling);
                           }
                         }}
-                        name="10"
+                        name={attr}
                         type="checkbox"
                       />
                       <span className="custom-checkbox"></span>

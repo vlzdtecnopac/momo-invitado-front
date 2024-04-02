@@ -54,7 +54,6 @@ const Options: React.FC<OptionsProps> = ({
                         ...dataProductOption,
                         [attr]: `${item}`,
                       };
-                      console.log(updatedData);
                       setDataProductOption(updatedData);
                     }
                     if (optionHandler !== undefined) {
