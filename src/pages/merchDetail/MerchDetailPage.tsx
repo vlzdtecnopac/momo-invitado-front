@@ -54,6 +54,8 @@ function MerchDetailPage() {
                     `${translate("cream")}`,
                   ]}
                   icon={color}
+                  attr="color"
+                  multiple={false}
                 />
                 <hr className="separator" />
                 <div className="complement">
