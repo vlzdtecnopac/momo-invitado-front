@@ -28,13 +28,13 @@ function OtherDrinksDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
-              <Options
-                    distanceScrolling={320}
-                    titleOptions={translate("temperature")}
-                    iconOptions={temperature}
-                    listOptions={["Al Tiempo", "Caliente"]}
-                  
-                  />
+                <Options
+                  distanceScrolling={320}
+                  titleOptions={translate("temperature")}
+                  iconOptions={temperature}
+                  listOptions={[translate("roomTemp"), translate("hot")]}
+                  attr={"temperature"}
+                />
 
                 <hr className="separator" />
                 <div className="complement">

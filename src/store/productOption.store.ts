@@ -1,7 +1,4 @@
 import { create } from "zustand";
-import axios from "axios";
-import { tokenHeader } from "../helpers/token-header.helper";
-import axiosInstance from "../helpers/axios.helper";
 
 interface ProductOptioInterface {
   size: string;
@@ -15,6 +12,7 @@ interface ProductOptioInterface {
   macha_sauce: string;
   chipotle_sauce: string;
   color: string;
+  coffee_type: string;
 }
 
 interface ProductOptionStoreInterface {
@@ -36,6 +34,7 @@ export const useProductOptionStore = create<ProductOptionStoreInterface>(
       macha_sauce: "",
       chipotle_sauce: "",
       color: "",
+      coffee_type: "",
     },
     setDataProductOption: (value) =>
       set((state) => ({

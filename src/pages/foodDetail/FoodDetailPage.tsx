@@ -16,11 +16,9 @@ import sauce from "../../assets/icons/sauce.svg";
 
 import "./FoodDetailPage.scss";
 
-
 function FoodDetailPage() {
   const myRef = useRef<any>(null);
   const { translate } = useLanguage();
-
 
   return (
     <Layout>
@@ -39,16 +37,23 @@ function FoodDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
-                <div ref={myRef} className="container-options-product">
+                <div
+                  ref={myRef}
+                  className="container-options-product"
+                >
                   <Options
                     distanceScrolling={320}
                     titleOptions={translate("temperature")}
                     iconOptions={temperature}
-                    listOptions={["Al Tiempo", "Caliente"]}
+                    listOptions={[translate("roomTemp"), translate("hot")]}
+                    attr={"temperature"}
                   />
                   <hr className="separator" />
                   <OptionsList
-                    listOptions={["Salsa Macha", "Salsa chipotle"]}
+                    listOptions={[
+                      translate("machaSauce"),
+                      translate("chipotleSauce"),
+                    ]}
                     iconOptions={sauce}
                     distanceScrolling={310}
                   />
