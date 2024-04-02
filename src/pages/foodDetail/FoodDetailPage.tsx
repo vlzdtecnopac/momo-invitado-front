@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
@@ -45,6 +45,7 @@ function FoodDetailPage() {
                     titleOptions={translate("temperature")}
                     iconOptions={temperature}
                     listOptions={["Al Tiempo", "Caliente"]}
+                    attr="temperature"
                   />
                   <hr className="separator" />
                   <OptionsList

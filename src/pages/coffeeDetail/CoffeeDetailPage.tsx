@@ -34,12 +34,14 @@ function CoffeeDetailPage() {
                     titleOptions={translate("coffeeType")}
                     iconOptions={beans}
                     listOptions={["Chico 12 oz", "Grande 16 Oz"]}
+                    attr="beans"
                   />
                   <hr className="separator" />
                   <Options
                     titleOptions={translate("size")}
                     iconOptions={coffeeBag}
                     listOptions={["Chico 250gr", "Mediano 500gr", "Grande 1kg"]}
+                    attr="size"
                   />
                   <hr className="separator" />
                   <div className="complement">

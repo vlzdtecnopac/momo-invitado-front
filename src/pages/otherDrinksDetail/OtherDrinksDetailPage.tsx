@@ -33,7 +33,7 @@ function OtherDrinksDetailPage() {
                     titleOptions={translate("temperature")}
                     iconOptions={temperature}
                     listOptions={["Al Tiempo", "Caliente"]}
-                  
+                    attr="temperature"
                   />
 
                 <hr className="separator" />

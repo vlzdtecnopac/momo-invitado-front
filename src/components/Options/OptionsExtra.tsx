@@ -1,5 +1,4 @@
 import React from "react";
-import { useLanguage } from "../../context/Langi18nContext";
 
 interface OptionsExtraProps {
   icon: string;
@@ -7,8 +6,7 @@ interface OptionsExtraProps {
 }
 
 const OptionsExtra: React.FC<OptionsExtraProps> = ({ icon, listOptions }) => {
-  const { translate } = useLanguage();
-
+ 
   return (
     <div className="extra-list-options">
       <div className="grid grid-noGutter-noBottom">

@@ -5,7 +5,6 @@ import milk from "../../assets/icons/bottle.svg";
 import sugar from "../../assets/icons/sugar.svg";
 import extra from "../../assets/icons/extra.svg";
 import lid from "../../assets/icons/lid.svg";
-import recicle from "../../assets/icons/recicle.svg";
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import sauce from "../../assets/icons/sauce.svg";
@@ -56,6 +55,7 @@ function CombosDetailPage() {
                     iconOptions={glass}
                     listOptions={["Chico 12 oz", "Grande 16 Oz"]}
                     optionHandler={(e: any) => optionHandler(e)}
+                    attr="size"
                   />
                   <hr className="separator" />
                   <Options
@@ -64,6 +64,7 @@ function CombosDetailPage() {
                     iconOptions={milk}
                     listOptions={["Entera", "Deslactosada", "Avena"]}
                     optionHandler={(e: any) => optionHandler(e)}
+                    attr="milk"
                   />
                   <hr className="separator" />
                   <Options
@@ -72,6 +73,7 @@ function CombosDetailPage() {
                     iconOptions={sugar}
                     listOptions={["Menos", "Original", "Más"]}
                     optionHandler={(e: any) => optionHandler(e)}
+                    attr="sugar"
                   />
                   <hr className="separator" />
                   <OptionsList
@@ -97,6 +99,7 @@ function CombosDetailPage() {
                     iconOptions={temperature}
                     listOptions={["Al Tiempo", "Caliente"]}
                     optionHandler={(e: any) => optionHandler(e)}
+                    attr="temperature"
                   />
                   <hr className="separator" />
                   <OptionsList

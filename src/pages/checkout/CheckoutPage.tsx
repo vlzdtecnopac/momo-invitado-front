@@ -1,4 +1,4 @@
-import React ,{ useState } from "react";
+import { useState } from "react";
 
 import { useLanguage } from "../../context/Langi18nContext";
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";

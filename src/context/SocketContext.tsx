@@ -9,7 +9,7 @@ interface DynamicLayoutProps {
 export const SocketContext = createContext<any | null>(null);
 
 export const SocketProvider: React.FC<DynamicLayoutProps> = ({ children }: DynamicLayoutProps) => {
-  const { socket, online, conectarSocket, desconectarSocket } = useSocket(import.meta.env.VITE_API_URL);
+  const { socket, online, conectarSocket} = useSocket(import.meta.env.VITE_API_URL);
   useEffect(() => {
     conectarSocket();
   }, [conectarSocket]);

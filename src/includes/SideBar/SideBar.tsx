@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./SideBar.scss";
 import { Link, useLocation } from "react-router-dom";
 
 function SideBar() {
-  const [selectedOption, setSelectedOption] = useState("");
+  const [, setSelectedOption] = useState("");
   const location = useLocation();
 
-  console.log(location);
+
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
   };
@@ -39,15 +39,14 @@ function SideBar() {
           </li>
         ))}
       </ul>
-      <Link
-        to="#"
+      <button
         className="logout"
-        onClick={() => handleOptionClick("logout")}
+        onClick={() => {
+          handleOptionClick("logout")
+        }}
       >
-        <Link to="../login">
           <i className="logout-icon"></i>
-        </Link>
-      </Link>
+      </button>
     </>
   );
 }

@@ -38,7 +38,7 @@ function MerchDetailPage() {
                     titleOptions={translate("size")}
                     iconOptions={tshirt}
                     listOptions={[`${translate("small")}`, `${translate("medium")}`, `${translate("large")}`]}
-                  
+                    attr="size"
                   />
                 <hr className="separator" />
                 <OptionsExtra listOptions={[`${translate("green")}`, `${translate("darkBlue")}`, `${translate("orange")}`, `${translate("lightBlue")}`, `${translate("cream")}`]} icon={color}/>

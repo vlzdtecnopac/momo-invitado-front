@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
 import checkIcon from "../../assets/icons/check.svg";

@@ -1,6 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useLanguage } from "../../context/Langi18nContext";
-import { useProductOptionStore } from "../../store/productOption.store"; // Importa el store
 
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
 import Layout from "../../includes/layout/Layout";
