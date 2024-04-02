@@ -4,13 +4,10 @@ interface ProductOptioInterface {
   size: string;
   milk: string;
   sugar: string;
-  extra_coffee: string;
-  extra_cream: string;
+  extra_coffee: any;
   lid: string;
-  no_lid: string;
   temperature: string;
-  macha_sauce: string;
-  chipotle_sauce: string;
+  sauce: string;
   color: string;
   coffee_type: string;
 }
@@ -27,12 +24,9 @@ export const useProductOptionStore = create<ProductOptionStoreInterface>(
       milk: "",
       sugar: "",
       extra_coffee: "",
-      extra_cream: "",
       lid: "",
-      no_lid: "",
       temperature: "",
-      macha_sauce: "",
-      chipotle_sauce: "",
+      sauce: "",
       color: "",
       coffee_type: "",
     },

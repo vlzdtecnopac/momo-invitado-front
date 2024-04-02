@@ -6,6 +6,7 @@ interface OptionsListProps {
   listOptions: string[];
   iconOptions: string;
   distanceScrolling?: number;
+  attr: string
 }
 
 const OptionsList: React.FC<OptionsListProps> = ({
@@ -13,7 +14,12 @@ const OptionsList: React.FC<OptionsListProps> = ({
   listOptions,
   iconOptions,
   distanceScrolling,
+  attr
 }) => {
+
+  const disableCheck = () => {
+
+  }
   return (
     <div className="extra-options-list">
       <img
@@ -35,8 +41,9 @@ const OptionsList: React.FC<OptionsListProps> = ({
                     <p>10$</p>
                     <label>
                       <input
-                        onChange={(e) => {
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                           e.stopPropagation();
+                          const checkboxes = document.querySelectorAll(`input[name="${attr}"]'`);
                           if(optionHandler !== undefined){
                             distanceScrolling && optionHandler(distanceScrolling)
                           }

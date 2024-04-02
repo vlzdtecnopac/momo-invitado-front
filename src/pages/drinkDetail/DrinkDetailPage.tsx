@@ -96,6 +96,7 @@ function DrinkDetailPage() {
                       translate("extraCream"),
                     ]}
                     iconOptions={extra}
+                    attr="extra_coffee"
                   />
                   <hr className="separator" />
                   <OptionsList
@@ -105,6 +106,7 @@ function DrinkDetailPage() {
                       'Sin tapa <span class="recicle"><img class="recicle-icon" src="/src/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
                     ]}
                     iconOptions={lid}
+                    attr="lid"
                   />
                   <hr className="separator" />
                   <div className="complement">
