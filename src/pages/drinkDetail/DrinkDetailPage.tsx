@@ -97,6 +97,7 @@ function DrinkDetailPage() {
                     ]}
                     iconOptions={extra}
                     attr="extra_coffee"
+                    multiple={true}
                   />
                   <hr className="separator" />
                   <OptionsList
@@ -107,6 +108,7 @@ function DrinkDetailPage() {
                     ]}
                     iconOptions={lid}
                     attr="lid"
+                    multiple={false}
                   />
                   <hr className="separator" />
                   <div className="complement">

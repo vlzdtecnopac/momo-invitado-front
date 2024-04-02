@@ -8,6 +8,7 @@ interface OptionsListProps {
   iconOptions: string;
   distanceScrolling?: number;
   attr: string;
+  multiple: boolean;
 }
 
 const OptionsList: React.FC<OptionsListProps> = ({
@@ -16,6 +17,7 @@ const OptionsList: React.FC<OptionsListProps> = ({
   iconOptions,
   distanceScrolling,
   attr,
+  multiple = false
 }) => {
   const { dataProductOption } = useProductOptionStore();
   const setDataProductOption = useProductOptionStore(
@@ -25,12 +27,16 @@ const OptionsList: React.FC<OptionsListProps> = ({
  
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let newArray;
-    if (!event.target.checked) {
-      newArray = valueSelect.filter(item => item !== event.target.value);
+    if(!multiple){
+      setValueSelect([event.target.value]);
     }else{
-      newArray = [...valueSelect, event.target.value];
+      if (!event.target.checked) {
+        newArray = valueSelect.filter(item => item !== event.target.value);
+      }else{
+        newArray = [...valueSelect, event.target.value];
+      }
+      setValueSelect(newArray);
     }
-    setValueSelect(newArray);
   };
 
   useEffect(()=>{

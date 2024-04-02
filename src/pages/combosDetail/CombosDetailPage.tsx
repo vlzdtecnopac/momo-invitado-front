@@ -95,7 +95,7 @@ function CombosDetailPage() {
                     ]}
                     iconOptions={extra}
                     attr="extra_coffee"
-                  
+                    multiple={true}
                   />
                   <hr className="separator" />
                   <OptionsList
@@ -105,7 +105,8 @@ function CombosDetailPage() {
                       'Sin tapa <span class="recicle"><img class="recicle-icon" src="/src/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
                     ]}
                     iconOptions={lid}
-                    attr="extra_coffee"
+                    attr="lid"
+                    multiple={false}
                   />
                   <hr className="separator" />
                   <h2 className="step">{translate("drinkStepTwo")}</h2>
@@ -127,6 +128,7 @@ function CombosDetailPage() {
                     iconOptions={sauce}
                     distanceScrolling={310}
                     attr="sauce"
+                    multiple={true}
                   />
                 </div>
                 <div className="btn-container">

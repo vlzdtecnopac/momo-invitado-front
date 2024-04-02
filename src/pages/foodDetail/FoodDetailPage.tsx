@@ -56,6 +56,8 @@ function FoodDetailPage() {
                     ]}
                     iconOptions={sauce}
                     distanceScrolling={310}
+                    attr="sauce"
+                    multiple={true}
                   />
 
                   <div className="complement">
