@@ -1,6 +1,5 @@
 import { create } from "zustand";
 
-
 interface ProductOptioInterface {
   size: string;
   milk: string;
@@ -13,6 +12,7 @@ interface ProductOptioInterface {
   macha_sauce: string;
   chipotle_sauce: string;
   color: string;
+  coffee_type: string;
 }
 
 interface ProductOptionStoreInterface {
@@ -34,6 +34,7 @@ export const useProductOptionStore = create<ProductOptionStoreInterface>(
       macha_sauce: "",
       chipotle_sauce: "",
       color: "",
+      coffee_type: "",
     },
     setDataProductOption: (value) =>
       set((state) => ({

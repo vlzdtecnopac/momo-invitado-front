@@ -46,12 +46,15 @@ function CombosDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
-                <div ref={myRef} className="content-detail-page">
+                <div
+                  ref={myRef}
+                  className="content-detail-page"
+                >
                   <h2 className="step">{translate("drinkStepOne")}</h2>
                   <hr className="separator" />
                   <Options
                     distanceScrolling={160}
-                    titleOptions="Tamaño"
+                    titleOptions={translate("size")}
                     iconOptions={glass}
                     listOptions={["Chico 12 oz", "Grande 16 Oz"]}
                     optionHandler={(e: any) => optionHandler(e)}
@@ -60,9 +63,13 @@ function CombosDetailPage() {
                   <hr className="separator" />
                   <Options
                     distanceScrolling={260}
-                    titleOptions="Leche"
+                    titleOptions={translate("milk")}
                     iconOptions={milk}
-                    listOptions={["Entera", "Deslactosada", "Avena"]}
+                    listOptions={[
+                      translate("whole"),
+                      translate("lactoseFree"),
+                      translate("oatMilk"),
+                    ]}
                     optionHandler={(e: any) => optionHandler(e)}
                     attr="milk"
                   />
@@ -71,14 +78,21 @@ function CombosDetailPage() {
                     distanceScrolling={280}
                     titleOptions={translate("sugar")}
                     iconOptions={sugar}
-                    listOptions={["Menos", "Original", "Más"]}
+                    listOptions={[
+                      translate("less"),
+                      "Original",
+                      translate("more"),
+                    ]}
                     optionHandler={(e: any) => optionHandler(e)}
                     attr="sugar"
                   />
                   <hr className="separator" />
                   <OptionsList
                     optionHandler={(e: any) => optionHandler(e)}
-                    listOptions={["Extra shot de café", "Extra de crema"]}
+                    listOptions={[
+                      translate("extraCoffee"),
+                      translate("extraCream"),
+                    ]}
                     iconOptions={extra}
                   />
                   <hr className="separator" />
@@ -97,13 +111,16 @@ function CombosDetailPage() {
                     distanceScrolling={360}
                     titleOptions={translate("temperature")}
                     iconOptions={temperature}
-                    listOptions={["Al Tiempo", "Caliente"]}
+                    listOptions={[translate("roomTemp"), translate("hot")]}
                     optionHandler={(e: any) => optionHandler(e)}
                     attr="temperature"
                   />
                   <hr className="separator" />
                   <OptionsList
-                    listOptions={["Salsa Macha", "Salsa chipotle"]}
+                    listOptions={[
+                      translate("machaSauce"),
+                      translate("chipotleSauce"),
+                    ]}
                     iconOptions={sauce}
                     distanceScrolling={310}
                   />

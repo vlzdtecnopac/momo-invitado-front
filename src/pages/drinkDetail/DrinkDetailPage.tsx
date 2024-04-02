@@ -19,7 +19,6 @@ function DrinkDetailPage() {
   const myRef = useRef<any>(null);
 
   const { translate } = useLanguage();
-  // Obtén la función del store
 
   const optionHandler = (position: number) => {
     if (myRef.current) {
@@ -65,7 +64,7 @@ function DrinkDetailPage() {
                   <hr className="separator" />
                   <Options
                     distanceScrolling={220}
-                    titleOptions="Leche"
+                    titleOptions={translate("milk")}
                     iconOptions={milk}
                     listOptions={[
                       translate("whole"),

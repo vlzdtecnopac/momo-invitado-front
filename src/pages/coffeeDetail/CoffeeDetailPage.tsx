@@ -30,11 +30,11 @@ function CoffeeDetailPage() {
             <div className="col-9 details-col detail-card">
               <div className="details">
                 <div className="container-options">
-                <Options
+                  <Options
                     titleOptions={translate("coffeeType")}
                     iconOptions={beans}
-                    listOptions={["Chico 12 oz", "Grande 16 Oz"]}
-                    attr="beans"
+                    listOptions={[translate("ground"), translate("beans")]}
+                    attr="coffee_type"
                   />
                   <hr className="separator" />
                   <Options
@@ -57,7 +57,7 @@ function CoffeeDetailPage() {
                   <hr className="separator" />
                   <div className="btn-container">
                     <button className="add-cart-btn">
-                       {translate("addCart")} $47
+                      {translate("addCart")} $47
                     </button>
                   </div>
                 </div>

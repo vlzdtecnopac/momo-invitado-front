@@ -33,15 +33,28 @@ function MerchDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
-              <Options
-                    distanceScrolling={320}
-                    titleOptions={translate("size")}
-                    iconOptions={tshirt}
-                    listOptions={[`${translate("small")}`, `${translate("medium")}`, `${translate("large")}`]}
-                    attr="size"
-                  />
+                <Options
+                  distanceScrolling={320}
+                  titleOptions={translate("size")}
+                  iconOptions={tshirt}
+                  listOptions={[
+                    `${translate("small")}`,
+                    `${translate("medium")}`,
+                    `${translate("large")}`,
+                  ]}
+                  attr="size"
+                />
                 <hr className="separator" />
-                <OptionsExtra listOptions={[`${translate("green")}`, `${translate("darkBlue")}`, `${translate("orange")}`, `${translate("lightBlue")}`, `${translate("cream")}`]} icon={color}/>
+                <OptionsExtra
+                  listOptions={[
+                    `${translate("green")}`,
+                    `${translate("darkBlue")}`,
+                    `${translate("orange")}`,
+                    `${translate("lightBlue")}`,
+                    `${translate("cream")}`,
+                  ]}
+                  icon={color}
+                />
                 <hr className="separator" />
                 <div className="complement">
                   <h3 className="text complement_title">

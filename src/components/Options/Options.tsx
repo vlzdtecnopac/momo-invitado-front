@@ -51,13 +51,13 @@ const Options: React.FC<OptionsProps> = ({
                     if (attr !== undefined) {
                       const updatedData = {
                         ...dataProductOption,
-                        [attr]: `${item} $10`,
+                        [attr]: `${item}`,
                       };
                       console.log(updatedData);
                       setDataProductOption(updatedData);
                     }
-                    if(optionHandler !== undefined){
-                      distanceScrolling && optionHandler(distanceScrolling)
+                    if (optionHandler !== undefined) {
+                      distanceScrolling && optionHandler(distanceScrolling);
                     }
                   }}
                   className="option"
