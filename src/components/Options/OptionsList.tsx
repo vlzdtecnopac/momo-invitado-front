@@ -52,6 +52,8 @@ const OptionsList: React.FC<OptionsListProps> = ({
       <img className="icon" src={iconOptions} alt="extra" />
       <ul className="options-container-list">
         {listOptions.map((option: any, i: number) => {
+           const isChecked = valueSelect.includes(`${option} $10`);
+
           return (
             <li key={i}>
               <div className="grid-middle grid-noGutter-equalHeight">
@@ -64,6 +66,7 @@ const OptionsList: React.FC<OptionsListProps> = ({
                     <p>$10</p>
                     <label>
                       <input
+                        checked={isChecked}
                         value={`${option} $10`}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                           e.stopPropagation();
