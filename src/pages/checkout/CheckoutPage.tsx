@@ -7,8 +7,6 @@ import Layout from "../../includes/layout/Layout";
 import barista from "../../assets/barista.png";
 import "./CheckoutPage.scss";
 
-
-
 function MethodsCard() {
   const { translate } = useLanguage();
   return (
@@ -184,24 +182,25 @@ function CheckoutPage() {
                   <table>
                     <tr>
                       <td>Subtotal (4 productos)</td>
-                      <td>$ 50</td>
+                      <td className="amount">$ 50</td>
                     </tr>
                     <tr>
                       <td>Propina</td>
-                      <td>$ 50</td>
+                      <td className="amount">$ 50</td>
                     </tr>
                     <tr>
-                      <td>Cupón (MOMO Coffee)
+                      <td>
+                        Cupón (MOMO Coffee)
                         <button className="btn_delete_cupon">Eliminar</button>
                       </td>
-                      <td>$ 50</td>
+                      <td className="amount">$ 50</td>
                     </tr>
                   </table>
                   <hr className="border-dashed" />
                   <table>
                     <tr>
                       <td className="sub-total">Total</td>
-                      <td>$ 50</td>
+                      <td className="amount">$ 50</td>
                     </tr>
                   </table>
                   <button className="btn-payment">{translate("pay")}</button>
