@@ -1,11 +1,13 @@
 @import "../../index.scss";
 
 .custom-btn {
-    display: block;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
     margin: auto;
     color: $cream;
-    cursor: pointer;
-    position: relative;
     border: 3px solid $cream;
     background: transparent;
     border-radius: 10px;
@@ -15,6 +17,7 @@
 
     &:hover {
         background-color: $cream;
+        cursor: pointer;
  
         .text {
             color: $dark-blue;
@@ -56,6 +59,7 @@
     .icon {
         width: 50px;
         height: 50px;
+        margin: auto;
     }
 
     .text {

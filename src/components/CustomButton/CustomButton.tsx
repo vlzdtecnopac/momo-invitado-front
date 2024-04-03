@@ -13,7 +13,7 @@ const CustomButton: React.FC<CustomButtomProps> = ({ icon, text, onClick }) => {
         onClick={onClick}
       >
         <i className={`icon ${icon}`}></i>
-        <span className="text">{text}</span>
+        <p className="text">{text}</p>
       </button>
     </>
   );
