@@ -11,8 +11,10 @@
     height: 145vh;
    
     .container-product{
-        width: 950px;
-        margin: auto;
+        width: 850px;
         padding-top: 220px;
+        margin: auto;
+        left: -15px;
+        position: relative;
     }
 }

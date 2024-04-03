@@ -17,13 +17,13 @@
         justify-content: center;
         gap: 10px;
         padding-bottom: 10px;
-        margin-left: -20px;
+        margin: auto;
 
         .category {
             border: 0;
 
             button {
-                width: 100px;
+                width: 120px;
                 border: 2px solid $cream;
                 border-radius: 10px;
                 height: 75px;

@@ -28,8 +28,8 @@
     }
 
     .content-slider {
-        position: fixed;
-        bottom: -4px;
+        position: relative;
+        display: block;
         max-width: 1500px;
         left: 0px;
         right: 0px;
