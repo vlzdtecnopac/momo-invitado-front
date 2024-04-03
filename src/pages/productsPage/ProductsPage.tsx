@@ -13,63 +13,63 @@ function ProductsPage() {
       </div>
       <div className="products_page">
         <div className="container-product">
-        <div className="grid-4">
-          <div className="col">
-            <ProductCard
-              img={product}
-              price="30"
-              name="Macadamia Black Tea Soda"
-            />
-          </div>
-          <div className="col">
-            <ProductCard
-              img={product}
-              price="30"
-              name="Macadamia Black Tea Soda"
-            />
-          </div>
-          <div className="col">
-            <ProductCard
-              img={product}
-              price="30"
-              name="Macadamia Black Tea Soda"
-            />
-          </div>
-          <div className="col">
-            <ProductCard
-              img={product}
-              price="30"
-              name="Macadamia Black Tea Soda"
-            />
-          </div>
-          <div className="col">
-            <ProductCard
-              img={product}
-              price="30"
-              name="Macadamia Black Tea Soda"
-            />
-          </div>
-          <div className="col">
-            <ProductCard
-              img={product}
-              price="30"
-              name="Macadamia Black Tea Soda"
-            />
-          </div>
-          <div className="col">
-            <ProductCard
-              img={product}
-              price="30"
-              name="Macadamia Black Tea Soda"
-            />
-          </div>
-          <div className="col">
-            <ProductCard
-              img={product}
-              price="30"
-              name="Macadamia Black Tea Soda"
-            />
-          </div>
+          <div className="grid-4 ">
+            <div className="col">
+              <ProductCard
+                img={product}
+                price="30"
+                name="Macadamia Black Tea Soda"
+              />
+            </div>
+            <div className="col">
+              <ProductCard
+                img={product}
+                price="30"
+                name="Macadamia Black Tea Soda"
+              />
+            </div>
+            <div className="col">
+              <ProductCard
+                img={product}
+                price="30"
+                name="Macadamia Black Tea Soda"
+              />
+            </div>
+            <div className="col">
+              <ProductCard
+                img={product}
+                price="30"
+                name="Macadamia Black Tea Soda"
+              />
+            </div>
+            <div className="col">
+              <ProductCard
+                img={product}
+                price="30"
+                name="Macadamia Black Tea Soda"
+              />
+            </div>
+            <div className="col">
+              <ProductCard
+                img={product}
+                price="30"
+                name="Macadamia Black Tea Soda"
+              />
+            </div>
+            <div className="col">
+              <ProductCard
+                img={product}
+                price="30"
+                name="Macadamia Black Tea Soda"
+              />
+            </div>
+            <div className="col">
+              <ProductCard
+                img={product}
+                price="30"
+                name="Macadamia Black Tea Soda"
+              />
+            </div>
           </div>
         </div>
       </div>
