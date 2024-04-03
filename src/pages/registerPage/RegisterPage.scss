@@ -79,7 +79,8 @@
         .custom-btn-register {
             display: flex;
             flex-direction: column;
-            min-width: 630px;
+            width: 430px;
+            margin: auto;
             align-items: center;
             padding: 10px 15px;
             border: 2px solid $cream;
