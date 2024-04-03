@@ -129,8 +129,7 @@
         gap: 25px;
 
         .custom-btn {
-            display: flex;
-            flex-direction: column;
+            display: block;
             width: 430px;
             height: 130px;
             align-items: center;
@@ -140,6 +139,8 @@
             background-color: transparent;
             color: $cream;
             text-align: center;
+            margin: auto;
+            align-content: center;
 
 
             &:hover {
@@ -189,6 +190,8 @@
         .custom-btn .icon {
             width: 45px;
             height: 45px;
+            margin: auto;
+            display: block;
         }
 
         .custom-btn .text {

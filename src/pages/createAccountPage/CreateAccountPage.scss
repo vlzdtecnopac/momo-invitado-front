@@ -16,15 +16,12 @@
 
 .create-account-page {
     height: 120vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: $dark-blue;
 
     .logo-business {
         width: 220px;
         margin: 10px 0px;
-        margin-top: -70px;
+        margin-top: 50px;
     }
 
     .title {

@@ -1,15 +1,14 @@
 @import "../../index.scss";
 
 .custom-btn {
+    display: block;
+    margin: auto;
     color: $cream;
     cursor: pointer;
     position: relative;
     border: 3px solid $cream;
     background: transparent;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 200px;
     height: 150px;
