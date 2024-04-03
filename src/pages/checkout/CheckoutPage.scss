@@ -25,7 +25,7 @@
       background-color: $dark-blue;
       border-radius: 12px;
       color: $cream;
-      padding: 20px;
+      padding: 10px;
       max-height: 500px;
       overflow-y: auto;
 
@@ -65,7 +65,7 @@
         }
 
         .tip-button {
-          width: 255px;
+          width: 185px;
           min-height: 60px;
           background: $light-blue;
           border: none;
@@ -95,6 +95,7 @@
 
           .middle {
             width: 140px;
+            line-height: 14px;
           }
 
           .percentange {
@@ -261,6 +262,7 @@
       padding: 10px 20px;
       max-height: 500px;
       overflow-y: auto;
+      padding: 10px 5px 0px 10px;
 
       .product {
         background: $white;
@@ -301,7 +303,7 @@
         }
 
         .cupon-code {
-          width: 197px;
+          width: 100%;
           height: 37px;
           border-radius: 5px;
           background: transparent;
@@ -317,7 +319,7 @@
       }
 
       .add-cupon-btn {
-        width: 111px;
+        width: 100px;
         height: 32px;
         border-radius: 8px;
         border: none;
@@ -326,6 +328,7 @@
         font-weight: 700;
         color: $dark-blue;
         background: $light-blue;
+        margin-left: 5px;
 
         &:hover {
           cursor: pointer;
@@ -360,6 +363,10 @@
       table {
         font-family: "Red Hat Display", serif;
         font-size: 14px;
+
+        td::nth-child(1){
+          width: 100px;
+        }
 
         .btn-delete-cupon {
           background-color: $orange;
