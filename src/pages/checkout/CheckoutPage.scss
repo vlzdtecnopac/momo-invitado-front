@@ -145,6 +145,10 @@
           font-size: 18px;
           border-radius: 4px;
           border: 0px;
+
+          &::placeholder {
+            color: $black;
+          }
         }
 
         .icon-user {
@@ -177,6 +181,7 @@
         .card-type {
           display: flex;
           gap: 25px;
+          width: 110%;
 
           .type {
             width: 152px;
@@ -187,7 +192,7 @@
             font-family: "Stacion", serif;
             font-size: 14px;
             font-weight: 400;
-            color: $dark-blue;
+            color: $black;
             align-items: center;
 
             &:hover {
@@ -352,6 +357,7 @@
     }
 
     .border-dashed {
+      border: dashed 2px;
       border-style: dashed;
       border: 0.5;
       margin: 20px 0px;
@@ -362,6 +368,8 @@
       flex-direction: column;
 
       .amount {
+        text-align: right;
+
         @media screen and (max-width: 1024px) {
           width: 33px;
 
