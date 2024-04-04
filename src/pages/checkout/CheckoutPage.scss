@@ -3,6 +3,7 @@
 .category-fixed {
   position: fixed;
   width: 100%;
+  max-width: 1295px;
   z-index: 66;
 }
 
@@ -13,7 +14,6 @@
 
   .checkout_container {
     padding: 10px;
-    max-width: 1390px;
     margin: auto;
 
     img {
@@ -27,6 +27,7 @@
       padding: 10px;
       max-height: 500px;
       overflow-y: auto;
+      overflow-x: hidden;
 
       h2 {
         font-size: 22px;
@@ -79,7 +80,17 @@
           justify-content: space-around;
           align-items: center;
 
-  
+
+          @media screen and (max-width: 1024px) {
+            width: 180px;
+
+          }
+
+          @media screen and (max-width: 1340px) {
+            width: 220px;
+
+          }
+
           &:hover {
             cursor: pointer;
           }
@@ -342,9 +353,9 @@
     }
 
     .border-dashed {
-      border: dashed 2px;
+      border: dashed 1px;
       border-style: dashed;
-      margin: 20px 0px;
+      border-bottom: 30px;
     }
 
     .total {

@@ -3,9 +3,6 @@ import ComplementCard from "../ComplementCard/ComplementCard";
 import "swiper/css";
 import "./Slider.scss";
 
-
-
-
 export default function Slider() {
   return (
     <>
