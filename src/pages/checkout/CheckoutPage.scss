@@ -16,7 +16,6 @@
     max-width: 1390px;
     margin: auto;
 
-
     img {
       width: 100%;
     }
@@ -65,7 +64,7 @@
         }
 
         .tip-button {
-          width: 255px;
+          width: 95%;
           min-height: 60px;
           background: $light-blue;
           border: none;
@@ -80,21 +79,7 @@
           justify-content: space-around;
           align-items: center;
 
-
-          @media screen and (max-width: 1024px) {
-            width: 180px;
-
-          }
-
-          @media screen and (max-width: 1340px) {
-            width: 220px;
-
-          }
-
-
-
-
-
+  
           &:hover {
             cursor: pointer;
           }
@@ -206,7 +191,7 @@
         .card,
         .cash {
           height: 70px;
-          width: 240px;
+          width: 95%;
           border: none;
           background: $light-blue;
           border-radius: 8px;
