@@ -17,42 +17,46 @@ const OptionsList: React.FC<OptionsListProps> = ({
   iconOptions,
   distanceScrolling,
   attr,
-  multiple = false
+  multiple = false,
 }) => {
   const { dataProductOption } = useProductOptionStore();
   const setDataProductOption = useProductOptionStore(
     (state) => state.setDataProductOption
   );
   const [valueSelect, setValueSelect] = useState<string[]>([]);
- 
+
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let newArray;
-    if(!multiple){
+    if (!multiple) {
       setValueSelect([event.target.value]);
-    }else{
+    } else {
       if (!event.target.checked) {
-        newArray = valueSelect.filter(item => item !== event.target.value);
-      }else{
+        newArray = valueSelect.filter((item) => item !== event.target.value);
+      } else {
         newArray = [...valueSelect, event.target.value];
       }
       setValueSelect(newArray);
     }
   };
 
-  useEffect(()=>{
-      const updatedData = {
-        ...dataProductOption,
-        [attr]: valueSelect,
-      };
-      setDataProductOption(updatedData); 
-  }, [valueSelect])
+  useEffect(() => {
+    const updatedData = {
+      ...dataProductOption,
+      [attr]: valueSelect,
+    };
+    setDataProductOption(updatedData);
+  }, [valueSelect]);
 
   return (
     <div className="extra-options-list">
-      <img className="icon" src={iconOptions} alt="extra" />
+      <img
+        className="icon"
+        src={iconOptions}
+        alt="extra"
+      />
       <ul className="options-container-list">
         {listOptions.map((option: any, i: number) => {
-           const isChecked = valueSelect.includes(`${option} $10`);
+          const isChecked = valueSelect.includes(`${option} $10`);
 
           return (
             <li key={i}>
@@ -63,7 +67,7 @@ const OptionsList: React.FC<OptionsListProps> = ({
                 ></div>
                 <div className="col-3">
                   <span className="extra">
-                    <p>$10</p>
+                    <p>$ 10</p>
                     <label>
                       <input
                         checked={isChecked}
