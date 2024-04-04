@@ -10,14 +10,9 @@
     background-color: $light-blue;
 
     .container-product {
-        .grid-4 {
-            gap: 20px;
-        }
-
-        width: 1221px;
+        max-width: 1050px;
         padding-top: 220px;
         margin: auto;
-        left: -15px;
         position: relative;
 
     }
