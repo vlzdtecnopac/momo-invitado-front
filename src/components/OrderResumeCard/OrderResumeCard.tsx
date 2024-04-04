@@ -26,9 +26,9 @@ function OrderResumeCard() {
           <h3 className="title">Macadamia Black Tea Soda</h3>
           <div className="details">
             <p>Chico | Regular | Menos azúcar | Sin tapa</p>
-            <p className="detail">
-              Extra de café <span className="extra-price">$10</span>
-            </p>
+            <ul className="detail">
+              <li>Extra de café <span className="extra-price">$10</span></li>
+            </ul>
             {/* ... other details */}
           </div>
         </div>

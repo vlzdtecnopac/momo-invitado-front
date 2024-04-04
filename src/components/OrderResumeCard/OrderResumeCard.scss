@@ -1,99 +1,97 @@
 @import "../../index.scss";
 
 .trash-cart {
-    width: 28px;
-    height: 28px;
-    background-image: url("/src/assets/icons/trash.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    mask-size: 100%;
-    border: none;
-    color: $orange;
-    position: relative;
+  width: 28px;
+  height: 28px;
+  background-image: url("/src/assets/icons/trash.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  mask-size: 100%;
+  border: none;
+  color: $orange;
+  position: relative;
 
-    &:hover {
-        cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .subtotal-cart {
-    font-family: "Red Hat Display";
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 32px;
-    letter-spacing: 0em;
-    text-align: left;
+  font-family: "Red Hat Display";
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .product-quantity {
-   
+  .plus {
+    width: 24px;
+    height: 24px;
+    border: none;
+    color: $white;
+    background: $orange;
+    border-radius: 6px;
+    cursor: pointer;
+  }
 
-    .plus {
-        width: 24px;
-        height: 24px;
-        border: none;
-        color: $white ;
-        background: $orange;
-        border-radius: 6px;
-        cursor: pointer;
+  .quantity {
+    color: $black;
+    margin: 1px 12px;
+  }
 
-    }
-
-    .quantity {
-        color: $black;
-        margin: 1px 12px;
-    }
-
-    .minus {
-        width: 24px;
-        height: 24px;
-        border: none;
-        font-size: 18px;
-        color: $orange;
-        background: $white;
-        border: 1px solid $orange;
-        border-radius: 6px;
-        cursor: pointer;
-    }
+  .minus {
+    width: 24px;
+    height: 24px;
+    border: none;
+    font-size: 18px;
+    color: $orange;
+    background: $white;
+    border: 1px solid $orange;
+    border-radius: 6px;
+    cursor: pointer;
+  }
 }
 
 .resume_card {
-    display: flex;
-    margin: 0px;
+  display: flex;
+  margin: 0px;
 
-   
+  .left-column {
+    .product-image {
+      width: 89px;
+      border-radius: 11px;
+    }
+  }
 
-    .left-column {
-  
-        .product-image {
-            width: 89px;
-            border-radius: 11px;
-        }
-    
+  .right-column {
+    width: 240px;
+    padding: 0px 5px;
+    title {
+      width: 90%;
     }
 
-    .right-column {
-        width: 240px;
-        padding: 0px 5px;
-        title {
-            width: 90%
-        }
+    .details {
+      width: 90%;
+      color: $dark-blue;
+     
 
-        .details {
-            width:  90%;
-            color: $dark-blue;
-        
-            .detail {
-                display: flex;
-                color: $black;
-            }
+      p {
+        font-size: 12px;
+      }
 
-            .extra-price {
-                padding-left: 80px;
-                color: $black;
+      .detail {
+        display: flex;
+        color: $black;
+        font-family: 'Stacion';
+        font-size: 14px;
+      }
 
-            }
-        }
-
+      .extra-price {
+        padding-left: 80px;
+        color: $black;
+      }
     }
+  }
 }
