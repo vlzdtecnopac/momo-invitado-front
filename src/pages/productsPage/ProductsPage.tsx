@@ -14,56 +14,56 @@ function ProductsPage() {
       <div className="products_page">
         <div className="container-product">
           <div className="grid-4_lg-4_md-3_sm-3_xs-2">
-            <div className="col-3_lg-3_md-3_sm-6_xs-6">
+            <div className="col-3_lg-3_md-3_sm-4_xs-6">
               <ProductCard
                 img={product}
                 price="30"
                 name="Macadamia Black Tea Soda"
               />
             </div>
-            <div className="col-3_lg-3_md-3_sm-6_xs-6">
+            <div className="col-3_lg-3_md-3_sm-4_xs-6">
               <ProductCard
                 img={product}
                 price="30"
                 name="Macadamia Black Tea Soda"
               />
             </div>
-            <div className="col-3_lg-3_md-3_sm-6_xs-6">
+            <div className="col-3_lg-3_md-3_sm-4_xs-6">
               <ProductCard
                 img={product}
                 price="30"
                 name="Macadamia Black Tea Soda"
               />
             </div>
-            <div className="col-3_lg-3_md-3_sm-6_xs-6">
+            <div className="col-3_lg-3_md-3_sm-4_xs-6">
               <ProductCard
                 img={product}
                 price="30"
                 name="Macadamia Black Tea Soda"
               />
             </div>
-            <div className="col-3_lg-3_md-3_sm-6_xs-6">
+            <div className="col-3_lg-3_md-3_sm-4_xs-6">
               <ProductCard
                 img={product}
                 price="30"
                 name="Macadamia Black Tea Soda"
               />
             </div>
-            <div className="col-3_lg-3_md-3_sm-6_xs-6">
+            <div className="col-3_lg-3_md-3_sm-4_xs-6">
               <ProductCard
                 img={product}
                 price="30"
                 name="Macadamia Black Tea Soda"
               />
             </div>
-            <div className="col-3_lg-3_md-3_sm-6_xs-6">
+            <div className="col-3_lg-3_md-3_sm-4_xs-6">
               <ProductCard
                 img={product}
                 price="30"
                 name="Macadamia Black Tea Soda"
               />
             </div>
-            <div className="col-3_lg-3_md-3_sm-6_xs-6">
+            <div className="col-3_lg-3_md-3_sm-4_xs-6">
               <ProductCard
                 img={product}
                 price="30"
