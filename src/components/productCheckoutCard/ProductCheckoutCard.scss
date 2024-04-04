@@ -2,8 +2,10 @@
 
 .checkout_card {
     padding: 5px;
+
     .left-column {
         text-align: center;
+
         .product-image {
             padding-top: 10px;
             width: 89px;
@@ -11,7 +13,7 @@
             object-fit: contain;
         }
 
-      
+
 
         .product-quantity {
             width: 52px;
@@ -34,31 +36,36 @@
             width: 218px;
             height: 48px;
             color: $black !important;
-            margin: 0px 0px 20px 0px;
+            font-size: 18px;
+            margin: 0px 0px 15px 0px;
         }
 
-        .sub-parrafo{
-            color: $dark-blue
+        .sub-parrafo {
+            color: $dark-blue;
+            font-size: 14px;
         }
 
         .details {
             width: 100%;
             display: block;
             padding-top: 10px;
-            color: $gray-text;
-            font-family: "Red Hat Display", serif;
-            font-size: 14px;
+            color: $black;
+            font-family: "Stacion", sans-serif;
+            font-size: 15px;
             padding: 20px 0px;
             list-style: none;
             padding: 0px 0px 10px 0px;
             font-weight: 500;
-            .extra-price{
+
+            .extra-price {
                 width: 40px;
+                font-family: "Stacion", sans-serif;
             }
-            td{
+
+            td {
                 width: 220px;
             }
-    
+
         }
 
         .end {

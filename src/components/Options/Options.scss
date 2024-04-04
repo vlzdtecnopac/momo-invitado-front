@@ -32,7 +32,8 @@
         background: #fb4b05;
       }
     }
-    .option-active{
+
+    .option-active {
       background: $orange;
       color: $white;
       margin: 10px;
@@ -42,6 +43,7 @@
       height: 44px;
       border: 1px solid $orange;
       border-radius: 4px;
+
       &:hover {
         cursor: pointer;
         background: #fb4b05;
@@ -58,6 +60,7 @@
   gap: 14px;
   font-family: "Red Hat Display";
   font-weight: 700;
+  font-size: 18px;
   color: $cream;
 
   img {
@@ -81,20 +84,21 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    p{
+
+    p {
       width: 50px;
+      font-family: "Red Hat Display", "serif";
     }
   }
 }
 
-.extra-list-options{
+.extra-list-options {
   max-width: 600px;
   margin: 20px auto;
-  .list-content-options{
+
+  .list-content-options {
     padding: 0px;
     margin: 0px;
     list-style: none;
   }
 }
-
-
