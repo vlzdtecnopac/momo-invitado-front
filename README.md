@@ -1,4 +1,4 @@
-<img style="float: right" src="./src/assets/logo.svg">
+<img style="float: right" src="./src/assets/icons/logo.svg">
 
 # Momo Coffee KDS Fronted
 
