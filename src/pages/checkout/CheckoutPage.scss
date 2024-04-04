@@ -3,6 +3,7 @@
 .category-fixed {
   position: fixed;
   width: 100%;
+  max-width: 1295px;
   z-index: 66;
 }
 
@@ -13,7 +14,6 @@
 
   .checkout_container {
     padding: 10px;
-    max-width: 1390px;
     margin: auto;
 
 
@@ -28,6 +28,7 @@
       padding: 10px;
       max-height: 500px;
       overflow-y: auto;
+      overflow-x: hidden;
 
       h2 {
         font-size: 22px;
@@ -90,10 +91,6 @@
             width: 220px;
 
           }
-
-
-
-
 
           &:hover {
             cursor: pointer;
@@ -357,10 +354,10 @@
     }
 
     .border-dashed {
-      border: dashed 2px;
+      border: dashed 1px;
       border-style: dashed;
       border: 0.5;
-      margin: 20px 0px;
+      border-bottom: 30px;
     }
 
     .total {
