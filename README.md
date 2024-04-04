@@ -1,6 +1,6 @@
 <img style="float: right" src="./src/assets/icons/logo.svg">
 
-# Momo Coffee KDS Fronted
+# Momo Coffee Invitado Fronted
 
 Momo Coffee Invitado Fronted
 
