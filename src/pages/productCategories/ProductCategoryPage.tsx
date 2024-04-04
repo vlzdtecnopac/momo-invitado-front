@@ -47,7 +47,7 @@ function ProductsPage() {
             {categories.map((category: any, index) => (
               <li
                 key={index}
-                className="col options-container"
+                className="col-3 options-container"
               >
                 <CustomButton
                   icon={category.class}

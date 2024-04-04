@@ -22,10 +22,7 @@ function Cart() {
 
   return (
     <>
-      <button
-        onClick={() => openHandlerCart()}
-        className="cart-momo"
-      >
+      <button onClick={() => openHandlerCart()} className="cart-momo">
         <span>{translate("showCart")}</span> <i className="icon-cart"></i>
       </button>
       <motion.div
@@ -36,13 +33,15 @@ function Cart() {
       >
         <div className="left">
           <div className="resume">
-            <h2 className="order-resume">{translate('summaryOrder')}</h2>
-            <button
-              onClick={() => closeHandlerCart()}
-              className="x"
-            ></button>
+            <div>
+              <h2 className="order-resume">{translate("summaryOrder")}</h2>
+              <p className="product-quantity">
+                {translate("numberProducts", { count: 4 })}
+              </p>
+            </div>
+            <button onClick={() => closeHandlerCart()} className="x"></button>
           </div>
-          <div className="product-quantity">{translate('numberProducts', { count: 4 })}</div>
+
           <div className="container-list-product">
             <OrderResumeCard />
             <hr className="separator" />
@@ -55,10 +54,14 @@ function Cart() {
         </div>
         <div className="right">
           <div className="subtotal">
-            <h3 className="subtotal-tex">{translate('subTotal', { count: 4 })}</h3>
+            <h3 className="subtotal-tex">
+              {translate("subTotal", { count: 4 })}
+            </h3>
             <p className="subtotal-price">$107.00</p>
           </div>
-            <button onClick={()=>navigate("/checkout")} className="pay">{translate('countinuePayment')}</button>
+          <button onClick={() => navigate("/checkout")} className="pay">
+            {translate("countinuePayment")}
+          </button>
         </div>
       </motion.div>
     </>

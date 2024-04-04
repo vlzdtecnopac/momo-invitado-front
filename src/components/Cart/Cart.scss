@@ -16,6 +16,24 @@
     font-size: 18px;
     border-radius: 20px;
 
+    @media(min-width: 570px) {
+        font-size: 12px;
+        width: 110px;
+        right: 12px;
+    }
+    
+    @media(min-width: 970px){
+        font-size: 14px;
+        width: 135px;
+        right: 20px;
+    }
+
+    @media(min-width: 1170px) {
+        font-size: 16px;
+        width: 145px;
+        right: 12px;
+    }
+
     span {
         margin: 0px 5px;
     }
@@ -25,6 +43,16 @@
         background-size: cover;
         width: 30px;
         height: 30px;
+
+        @media(min-width: 570px) {
+            width: 20px;
+            height: 20px;
+        }
+        
+        @media(min-width: 970px){
+            width: 25px;
+            height: 25px;
+        }
     }
 
     &:hover {
@@ -47,13 +75,14 @@
         .container-list-product {
             overflow-y: auto;
             overflow-x: hidden;
-            height: 72vh;
+            height: 65vh;
             width: 340px;
         }
 
         .resume {
             display: flex;
             justify-content: space-between;
+            margin: 0px 0px 30px 0px;
 
             .x {
                 border: none;
@@ -74,8 +103,6 @@
 
         .order-resume {
             margin-top: 10px;
-            padding: 10px;
-
         }
     }
 
@@ -86,8 +113,7 @@
         font-weight: 700;
         text-align: left;
         color: $gray-text;
-        padding: 5px;
-
+        display: flex;
     }
 
     .right {
@@ -99,6 +125,9 @@
             justify-content: space-between;
             align-items: center;
             height: 30px;
+            background: $grey;
+            padding: 24px;
+            margin: 20px 0px 0px 0px;
 
             .subtotal-tex {
                 font-family: "Red Hat Display", "serif";
