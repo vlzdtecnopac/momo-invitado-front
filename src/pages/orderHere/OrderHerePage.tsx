@@ -98,12 +98,11 @@ function OrderHerePage() {
       event.preventDefault();
       history.go(1);
     };
-    window.addEventListener('popstate', handlePopstate);
+    window.addEventListener("popstate", handlePopstate);
     return () => {
-      window.removeEventListener('popstate', handlePopstate);
+      window.removeEventListener("popstate", handlePopstate);
     };
   }, [history]);
-
 
   return (
     <LayoutBlank>

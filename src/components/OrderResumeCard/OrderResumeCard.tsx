@@ -27,20 +27,27 @@ function OrderResumeCard() {
           <div className="details">
             <p>Chico | Regular | Menos azúcar | Sin tapa</p>
             <ul className="detail">
-              <li>Extra de café <span className="extra-price">$10</span></li>
+              <li>
+                Extra de café <span className="extra-price">$10</span>
+              </li>
             </ul>
-            {/* ... other details */}
           </div>
         </div>
       </div>
-      <div className="grid-noGutter-noBottom">
+      <div className="grid-noGutter-noBottom gray-line">
         <div className="col-4">
           <div className="product-quantity">
-            <button className="minus" onClick={() => handleQuantityChange(-1)}>
+            <button
+              className="minus"
+              onClick={() => handleQuantityChange(-1)}
+            >
               -
             </button>
             <span className="quantity">{quantity}</span>
-            <button className="plus" onClick={() => handleQuantityChange(1)}>
+            <button
+              className="plus"
+              onClick={() => handleQuantityChange(1)}
+            >
               +
             </button>
           </div>
@@ -51,7 +58,10 @@ function OrderResumeCard() {
             <div className="col-9">
               <p className="subtotal-cart">${(quantity * 67).toFixed(2)} </p>
             </div>
-            <div className="col-3"> <button className="trash-cart"></button></div>
+            <div className="col-3">
+              {" "}
+              <button className="trash-cart"></button>
+            </div>
           </div>
         </div>
       </div>

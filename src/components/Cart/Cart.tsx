@@ -22,7 +22,10 @@ function Cart() {
 
   return (
     <>
-      <button onClick={() => openHandlerCart()} className="cart-momo">
+      <button
+        onClick={() => openHandlerCart()}
+        className="cart-momo"
+      >
         <span>{translate("showCart")}</span> <i className="icon-cart"></i>
       </button>
       <motion.div
@@ -39,16 +42,19 @@ function Cart() {
                 {translate("numberProducts", { count: 4 })}
               </p>
             </div>
-            <button onClick={() => closeHandlerCart()} className="x"></button>
+            <button
+              onClick={() => closeHandlerCart()}
+              className="x"
+            ></button>
           </div>
 
           <div className="container-list-product">
             <OrderResumeCard />
-            <hr className="separator" />
+            {/* <hr className="separator" /> */}
             <OrderResumeCard />
-            <hr className="separator" />
+            {/* <hr className="separator" /> */}
             <OrderResumeCard />
-            <hr className="separator" />
+            {/* <hr className="separator" /> */}
             <OrderResumeCard />
           </div>
         </div>
@@ -59,7 +65,10 @@ function Cart() {
             </h3>
             <p className="subtotal-price">$107.00</p>
           </div>
-          <button onClick={() => navigate("/checkout")} className="pay">
+          <button
+            onClick={() => navigate("/checkout")}
+            className="pay"
+          >
             {translate("countinuePayment")}
           </button>
         </div>
