@@ -110,15 +110,15 @@ function DrinkDetailPage() {
                     attr="lid"
                     multiple={false}
                   />
-                  <hr className="separator" />
-                  <div className="complement">
+                  {/* <hr className="separator" /> */}
+                  {/* <div className="complement">
                     <h3 className="text complement_title">
                       {translate("accompanyDrink")}
                     </h3>
                     <div className="cards">
                       <Slider />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="container-btn-payment">
                   <div className="btn-container">

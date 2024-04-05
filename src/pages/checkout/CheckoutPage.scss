@@ -418,10 +418,17 @@
         color: white;
         text-align: center;
         padding: 10px 0px;
-        margin: 10px 0px;
+        margin: 10px auto;
         border-radius: 10px;
         font-size: 18px;
         border: 0px;
+        width: 80%;
+        height: 47px;
+        justify-content: center;
+
+        &:window-inactive {
+          background: $grey;
+        }
 
         &:hover {
           background: #e34317;

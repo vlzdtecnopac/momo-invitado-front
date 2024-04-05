@@ -3,6 +3,7 @@
 .options-component {
   width: 650px;
   margin: 20px auto;
+  padding-top: 20px;
 
   .size {
     display: flex;
@@ -11,6 +12,8 @@
 
   .options {
     display: flex;
+    justify-content: flex-end;
+
 
     .option {
       width: 120px;
