@@ -54,7 +54,10 @@ function DrinkDetailPage() {
                     distanceScrolling={120}
                     titleOptions={translate("size")}
                     iconOptions={glass}
-                    listOptions={["Chico 12 oz", "Grande 16 Oz"]}
+                    listOptions={[
+                      translate("smallDrink"),
+                      translate("largeDrink"),
+                    ]}
                     optionHandler={(e: any) => {
                       optionHandler(e);
                     }}
@@ -102,10 +105,7 @@ function DrinkDetailPage() {
                   <hr className="separator" />
                   <OptionsList
                     optionHandler={(e: any) => optionHandler(e)}
-                    listOptions={[
-                      translate("lid"),
-                      'Sin tapa <span class="recicle"><img class="recicle-icon" src="/src/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
-                    ]}
+                    listOptions={[translate("lid"), translate("noLid")]}
                     iconOptions={lid}
                     attr="lid"
                     multiple={false}
