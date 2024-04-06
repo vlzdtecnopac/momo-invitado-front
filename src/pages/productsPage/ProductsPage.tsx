@@ -49,6 +49,7 @@ function ProductsPage() {
                 }}
                 className="col-3_lg-3_md-3_sm-4_xs-6">
                   <ProductCard
+                    id={product.id}
                     img={image}
                     price="30"
                     name={product.name_product}

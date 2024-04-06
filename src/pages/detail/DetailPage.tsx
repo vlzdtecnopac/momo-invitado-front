@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useLanguage } from "../../context/Langi18nContext";
-
+import { useParams } from "react-router-dom";
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
@@ -12,12 +12,16 @@ import milk from "../../assets/icons/bottle.svg";
 import sugar from "../../assets/icons/sugar.svg";
 import extra from "../../assets/icons/extra.svg";
 import lid from "../../assets/icons/lid.svg";
-import "./DrinkDetailPage.scss";
+import "./DetailPage.scss";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
-
+  const { product_id } = useParams();
   const { translate } = useLanguage();
+
+  useEffect(()=> {
+    console.log(product_id);
+  }, [])
 
   const optionHandler = (position: number) => {
     if (myRef.current) {

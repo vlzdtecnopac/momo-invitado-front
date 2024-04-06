@@ -33,7 +33,7 @@ const LazyProductsPage = lazy(
   () => import("../pages/productsPage/ProductsPage")
 );
 const LazyDrinkDetailPage = lazy(
-  () => import("../pages/drinkDetail/DrinkDetailPage")
+  () => import("../pages/detail/DetailPage")
 );
 const LazyFoodDetailPage = lazy(
   () => import("../pages/foodDetail/FoodDetailPage")
@@ -173,7 +173,7 @@ const BrowserRoutes = createBrowserRouter([
     ),
   },
   {
-    path: "/drink-detail",
+    path: "/detail/:product_id",
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyDrinkDetailPage />
