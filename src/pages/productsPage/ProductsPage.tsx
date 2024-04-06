@@ -1,5 +1,4 @@
 import ProductCard from "../../components/ProductCard/ProductCard";
-import product_image from "../../assets/product1.jpg";
 
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
@@ -34,15 +33,14 @@ function ProductsPage() {
               } else {
                 image = product.image
                   .replace(/\{"/g, "")
-                  .replace(/\"}/g, "")
-                  .replace(/&quot;/g, "");
+                  .replace(/\"}/g, "");
               }
               return (
                 <div key={product.id} className="col-3_lg-3_md-3_sm-4_xs-6">
                   <ProductCard
                     img={image}
                     price="30"
-                    name="Macadamia Black Tea Soda"
+                    name={product.name_product}
                   />
                 </div>
               );
