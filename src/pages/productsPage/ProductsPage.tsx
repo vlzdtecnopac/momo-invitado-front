@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
-import no_found from "../../assets/no-found.png"
+import no_found from "../../assets/no-found.png";
 import "./ProductsPage.scss";
 
 import axiosInstance from "../../helpers/axios.helper";
@@ -49,7 +49,7 @@ function ProductsPage() {
                 }}
                 className="col-3_lg-3_md-3_sm-4_xs-6">
                   <ProductCard
-                    id={product.id}
+                    id={product.product_id}
                     img={image}
                     price="30"
                     name={product.name_product}

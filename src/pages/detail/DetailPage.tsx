@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../../context/Langi18nContext";
 import { useParams } from "react-router-dom";
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
@@ -6,22 +6,35 @@ import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Options from "../../components/Options/Options";
 import OptionsList from "../../components/Options/OptionsList";
-import product from "../../assets/product1.jpg";
+import no_found from "../../assets/no-found.png";
 import glass from "../../assets/icons/glass.svg";
 import milk from "../../assets/icons/bottle.svg";
 import sugar from "../../assets/icons/sugar.svg";
 import extra from "../../assets/icons/extra.svg";
 import lid from "../../assets/icons/lid.svg";
 import "./DetailPage.scss";
+import axiosInstance from "../../helpers/axios.helper";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
   const { product_id } = useParams();
   const { translate } = useLanguage();
+  const [product, setProduct] = useState<any>({});
 
   useEffect(()=> {
-    console.log(product_id);
+    getDetailProduct();
   }, [])
+
+  const getDetailProduct = async() => { 
+    let response = await axiosInstance(`/product/?product_id=${product_id}`);
+    console.log(response.data);
+    if (response.data[0].image == "{}") {
+      response.data[0].image = no_found;
+    } else {
+      response.data[0].image = response.data[0].image.replace(/\{"/g, "").replace(/\"}/g, "");
+    }
+    setProduct(response.data[0]);
+  }
 
   const optionHandler = (position: number) => {
     if (myRef.current) {
@@ -42,9 +55,9 @@ function DrinkDetailPage() {
           <div className="grid-2">
             <div className="col-3">
               <ProductCardDetail
-                img={product}
-                name="Macadamia Black Tea Soda"
-                description="Bebida de chocolate con macadamia"
+                img={product.image}
+                name={product.name_product}
+                description={product.description}
               />
             </div>
             <div className="col-9 details-col detail-card">
