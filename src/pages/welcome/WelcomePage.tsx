@@ -36,19 +36,20 @@ function WelcomePage() {
 
   useEffect(() => {
     if (loader) {
-      const fetchDataOnMount = async () => {
-        const employeeId = localStorage.getItem("employee-id");
-        if (employeeId) {
-          await fetchEmployeeData(employeeId);
-          setIsLoading(false);
-        }
-      };
-      fetchDataOnMount();
+      setTimeout(()=>{
+        const fetchDataOnMount = async () => {
+          const employeeId = localStorage.getItem("employee-id");
+          if (employeeId) {
+            await fetchEmployeeData(employeeId);
+            setIsLoading(false);
+          }
+        };
+        fetchDataOnMount();
+      }, 2000)
     }
   }, []);
 
   
-
   useEffect(() => {
     if (!loader) {
       const consult = async () => {
