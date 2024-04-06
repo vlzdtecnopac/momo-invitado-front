@@ -40,10 +40,7 @@ function CheckoutPage() {
               <section className="tip">
                 <div className="grid-2">
                   <div className="col-5">
-                    <img
-                      alt="Barista"
-                      src={barista}
-                    />
+                    <img alt="Barista" src={barista} />
                   </div>
                   <div className="col-7 tip-text">
                     <h2>{translate("baristaTipText")}</h2>
@@ -98,19 +95,24 @@ function CheckoutPage() {
                     </button>
                   </div>
                   <div className="col-12 decide">
-                    <div className="col-6">
-                      {" "}
-                      <button className="tip-button">
-                        <div className="percentange">{translate("other")}</div>
-                        <div className="middle">¡{translate("youDecide")}!</div>
-                        <div>
-                          <i className="dolar-icon"></i>
-                        </div>
-                      </button>
-                    </div>
-                    <div className="col-6 decide-tip">
-                      <button className="tip-button">%</button>
-                      <button className="tip-button">$</button>
+                    <div className="grid-2 grid-noGutter-noBottom">
+                      <div className="col-6">
+                        <button className="tip-button">
+                          <div className="percentange">
+                            {translate("other")}
+                          </div>
+                          <div className="middle">
+                            ¡{translate("youDecide")}!
+                          </div>
+                          <div>
+                            <i className="dolar-icon"></i>
+                          </div>
+                        </button>
+                      </div>
+                      <div className="col-6 decide-tip">
+                        <button className="tip-button">%</button>
+                        <button className="tip-button">$</button>
+                      </div>
                     </div>
                   </div>
                 </div>
