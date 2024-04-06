@@ -4,7 +4,6 @@ import { useLanguage } from "../../context/Langi18nContext";
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
-import Slider from "../../components/Slider/Slider";
 import Options from "../../components/Options/Options";
 import OptionsList from "../../components/Options/OptionsList";
 import product from "../../assets/product1.jpg";
