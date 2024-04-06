@@ -19,6 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ img, price, name }) => {
           className="img"
           src={img}
           alt="product"
+          loading="lazy"
         />
         <div className="price">
           <span>${price}</span>
