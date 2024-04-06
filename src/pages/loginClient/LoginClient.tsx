@@ -64,7 +64,7 @@ export function EnterByEmail() {
           {translate("signInBtn")}
         </button>
       </div>
-      {success !== null  && <ClientWelcomeComponent data={success}/>}
+      {success !== null && <ClientWelcomeComponent data={success} />}
     </>
   );
 }
@@ -107,18 +107,16 @@ export function EnterByPhone() {
       isLoader(true);
       const response = await axiosInstance.post(`/users/client/login`, data);
       console.log(response.data[0]);
-      localStorage.setItem('client-id', response.data[0].client_id);
+      localStorage.setItem("client-id", response.data[0].client_id);
       setError("");
       isLoader(false);
       setSuccess(response.data[0]);
     } catch (e: any) {
-      isLoader(true);
+      isLoader(false);
       setError(e.response.data.msg);
       console.log(`Error Login client: ${e}`);
     }
   };
-
-
 
   return (
     <>
@@ -158,7 +156,7 @@ export function EnterByPhone() {
           {translate("signInBtn")}
         </button>
       </div>
-      {success !== null  && <ClientWelcomeComponent data={success}/>}
+      {success !== null && <ClientWelcomeComponent data={success} />}
     </>
   );
 }
