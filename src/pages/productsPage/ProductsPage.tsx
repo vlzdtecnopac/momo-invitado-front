@@ -1,11 +1,24 @@
 import ProductCard from "../../components/ProductCard/ProductCard";
-import product from "../../assets/product1.jpg";
+import product_image from "../../assets/product1.jpg";
 
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import "./ProductsPage.scss";
+import { useEffect, useState } from "react";
+import axiosInstance from "../../helpers/axios.helper";
 
 function ProductsPage() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    getProductsToteat();
+  }, []);
+
+  const getProductsToteat = async () => {
+    let response = await axiosInstance.get("/product");
+    setProducts(response.data);
+    console.log(response.data);
+  };
+
   return (
     <Layout>
       <div className="products_category">
@@ -14,62 +27,26 @@ function ProductsPage() {
       <div className="products_page">
         <div className="container-product">
           <div className="grid-4_lg-4_md-3_sm-3_xs-2">
-            <div className="col-3_lg-3_md-3_sm-4_xs-6">
-              <ProductCard
-                img={product}
-                price="30"
-                name="Macadamia Black Tea Soda"
-              />
-            </div>
-            <div className="col-3_lg-3_md-3_sm-4_xs-6">
-              <ProductCard
-                img={product}
-                price="30"
-                name="Macadamia Black Tea Soda"
-              />
-            </div>
-            <div className="col-3_lg-3_md-3_sm-4_xs-6">
-              <ProductCard
-                img={product}
-                price="30"
-                name="Macadamia Black Tea Soda"
-              />
-            </div>
-            <div className="col-3_lg-3_md-3_sm-4_xs-6">
-              <ProductCard
-                img={product}
-                price="30"
-                name="Macadamia Black Tea Soda"
-              />
-            </div>
-            <div className="col-3_lg-3_md-3_sm-4_xs-6">
-              <ProductCard
-                img={product}
-                price="30"
-                name="Macadamia Black Tea Soda"
-              />
-            </div>
-            <div className="col-3_lg-3_md-3_sm-4_xs-6">
-              <ProductCard
-                img={product}
-                price="30"
-                name="Macadamia Black Tea Soda"
-              />
-            </div>
-            <div className="col-3_lg-3_md-3_sm-4_xs-6">
-              <ProductCard
-                img={product}
-                price="30"
-                name="Macadamia Black Tea Soda"
-              />
-            </div>
-            <div className="col-3_lg-3_md-3_sm-4_xs-6">
-              <ProductCard
-                img={product}
-                price="30"
-                name="Macadamia Black Tea Soda"
-              />
-            </div>
+            {products.map((product: any) => {
+              let image;
+              if (product.image == "{}") {
+                image = "http://via.placeholder.com/250x250";
+              } else {
+                image = product.image
+                  .replace(/\{"/g, "")
+                  .replace(/\"}/g, "")
+                  .replace(/&quot;/g, "");
+              }
+              return (
+                <div key={product.id} className="col-3_lg-3_md-3_sm-4_xs-6">
+                  <ProductCard
+                    img={image}
+                    price="30"
+                    name="Macadamia Black Tea Soda"
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

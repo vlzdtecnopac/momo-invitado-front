@@ -8,6 +8,10 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ img, price, name }) => {
+  img.replace(/(^"|"$|&quot;)/g, '');
+  if(img.includes('","')){
+    img = img.split('","')[0];
+  }
   return (
     <Link to="../drink-detail">
       <div className="product_card">
