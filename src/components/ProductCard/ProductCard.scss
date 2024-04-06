@@ -2,8 +2,11 @@
 
 .product_card {
     width: 100%;
+    padding: 0 10px 10px 10px;
 
-    padding: 0 20px 20px 20px;
+    @media(min-width:1050px){
+        padding: 0 20px 20px 20px;
+    }
 
     .img {
         border-radius: 12px 12px 0 0;
@@ -16,7 +19,7 @@
         background: $dark-blue;
         border-radius: 4px 4px 12px 12px;
         box-shadow: 0px 3.9870967864990234px 15.948387145996094px 0px #00000033;
-        margin: 0px;
+        margin-top: -6px;
 
         span {
             font-family: "Stacion", serif;
