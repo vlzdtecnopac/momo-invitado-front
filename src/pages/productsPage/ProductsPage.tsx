@@ -1,21 +1,24 @@
-import ProductCard from "../../components/ProductCard/ProductCard";
-
-import Layout from "../../includes/layout/Layout";
-import CategoryNav from "../../components/CategoryNav/CategoryNav";
-import "./ProductsPage.scss";
 import { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
+import ProductCard from "../../components/ProductCard/ProductCard";
+import CategoryNav from "../../components/CategoryNav/CategoryNav";
+import Layout from "../../includes/layout/Layout";
+import "./ProductsPage.scss";
+
+
 import axiosInstance from "../../helpers/axios.helper";
 
 function ProductsPage() {
+  const { category } = useParams();
+  console.log(category);
   const [products, setProducts] = useState([]);
   useEffect(() => {
     getProductsToteat();
   }, []);
 
   const getProductsToteat = async () => {
-    let response = await axiosInstance.get("/product");
+    let response = await axiosInstance.get(`/product/?categorys=${category}`);
     setProducts(response.data);
-    console.log(response.data);
   };
 
   return (

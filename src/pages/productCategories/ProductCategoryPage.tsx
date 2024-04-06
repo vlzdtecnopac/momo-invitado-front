@@ -53,7 +53,7 @@ function ProductsPage() {
                   icon={category.class}
                   text={translate(`${category.name_category}`)}
                   onClick={function (): void {
-                    navigate(category.sub_category);
+                    navigate(`../products/${category.sub_category}`);
                   }}
                 />
               </li>

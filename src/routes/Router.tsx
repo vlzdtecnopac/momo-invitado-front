@@ -165,7 +165,7 @@ const BrowserRoutes = createBrowserRouter([
     ),
   },
   {
-    path: "/products",
+    path: "/products/:category",
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyProductsPage />
