@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../context/Langi18nContext";
 import { LoaderPage } from "../../includes/loader/Loader";
-
 import axiosInstance from "../../helpers/axios.helper";
 import Cart from "../Cart/Cart";
 import "./CategoryNav.scss";
-import { useLanguage } from "../../context/Langi18nContext";
+
 
 function CategoryNav() {
   const { translate } = useLanguage();
-
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [loader, setLoader] = useState<Boolean>(true);
 
@@ -37,7 +38,7 @@ function CategoryNav() {
               className="category"
               key={index}
             >
-              <button>{translate(category.name_category)}</button>
+              <button onClick={()=> navigate(`../products/${category.sub_category}`)}>{translate(category.name_category)}</button>
             </li>
           ))}
         </ul>

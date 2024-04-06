@@ -1,19 +1,18 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useLanguage } from "../../context/Langi18nContext";
 import Layout from "../../includes/layout/Layout";
-import banner from "../../assets/Banner.jpg";
-
+import { LoaderPage } from "../../loader/Loader";
 import axiosInstance from "../../helpers/axios.helper";
 import CustomButton from "../../components/CustomButton/CustomButton";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css/pagination";
-
 import "swiper/css";
-import { useEffect, useState } from "react";
-import { LoaderPage } from "../../loader/Loader";
-import { useNavigate } from "react-router-dom";
-
+import banner from "../../assets/Banner.jpg";
 import "./ProductCategoryPage.scss";
-import { useLanguage } from "../../context/Langi18nContext";
-import { Pagination } from "swiper/modules";
+
 
 function ProductsPage() {
   const { translate } = useLanguage();
