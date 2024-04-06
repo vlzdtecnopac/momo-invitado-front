@@ -8,7 +8,13 @@
 
 .products_page {
     background-color: $light-blue;
-    height: 100vh;
+    position: relative;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: auto;
+    padding: 0px 0px 80px 0px;
+
     .container-product {
         max-width: 1215px;
         padding: 220px 5px 5px 5px;
