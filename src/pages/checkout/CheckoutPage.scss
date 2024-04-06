@@ -80,17 +80,6 @@
           justify-content: space-around;
           align-items: center;
 
-
-          @media screen and (max-width: 1024px) {
-            width: 180px;
-
-          }
-
-          @media screen and (max-width: 1340px) {
-            width: 220px;
-
-          }
-
           &:hover {
             cursor: pointer;
           }
