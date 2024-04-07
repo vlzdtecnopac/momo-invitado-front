@@ -8,7 +8,7 @@ import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Options from "../../components/Options/Options";
 import OptionsList from "../../components/Options/OptionsList";
 import OptionsExtra from "../../components/Options/OptionsExtra";
-
+import temperature from "../../assets/icons/temperature.svg";
 import coffeeBag from "../../assets/icons/coffee_bag.svg";
 import beans from "../../assets/icons/coffee_beans.svg";
 import tshirt from "../../assets/icons/t-shirt.svg";
@@ -79,6 +79,15 @@ function DrinkDetailPage() {
                   ref={myRef}
                   className="container-options-product"
                 >
+                     <Options
+                  distanceScrolling={320}
+                  titleOptions={translate("temperature")}
+                  iconOptions={temperature}
+                  listOptions={[translate("roomTemp"), translate("hot")]}
+                  attr="temperature"
+                />
+
+                <hr className="separator" />
                   <Options
                     distanceScrolling={120}
                     titleOptions={translate("size")}
