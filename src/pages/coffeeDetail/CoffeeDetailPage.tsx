@@ -1,14 +1,16 @@
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
+import Layout from "../../includes/layout/Layout";
+import CategoryNav from "../../components/CategoryNav/CategoryNav";
+
 import product from "../../assets/product4.jpg";
 import coffeeBag from "../../assets/icons/coffee_bag.svg";
-import Layout from "../../includes/layout/Layout";
 import beans from "../../assets/icons/coffee_beans.svg";
-import CategoryNav from "../../components/CategoryNav/CategoryNav";
+import Options from "../../components/Options/Options";
 import Slider from "../../components/Slider/Slider";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./CoffeeDetailPage.scss";
-import Options from "../../components/Options/Options";
+
 
 function CoffeeDetailPage() {
   const { translate } = useLanguage();

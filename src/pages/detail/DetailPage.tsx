@@ -1,19 +1,28 @@
 import { useEffect, useRef, useState } from "react";
-import { useLanguage } from "../../context/Langi18nContext";
 import { useParams } from "react-router-dom";
+import { useLanguage } from "../../context/Langi18nContext";
+
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Options from "../../components/Options/Options";
 import OptionsList from "../../components/Options/OptionsList";
+import OptionsExtra from "../../components/Options/OptionsExtra";
+
+import coffeeBag from "../../assets/icons/coffee_bag.svg";
+import beans from "../../assets/icons/coffee_beans.svg";
+import tshirt from "../../assets/icons/t-shirt.svg";
 import no_found from "../../assets/no-found.png";
 import glass from "../../assets/icons/glass.svg";
 import milk from "../../assets/icons/bottle.svg";
 import sugar from "../../assets/icons/sugar.svg";
 import extra from "../../assets/icons/extra.svg";
+import color from "../../assets/icons/color.svg";
 import lid from "../../assets/icons/lid.svg";
+
 import "./DetailPage.scss";
 import axiosInstance from "../../helpers/axios.helper";
+
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
@@ -130,15 +139,46 @@ function DrinkDetailPage() {
                     attr="lid"
                     multiple={false}
                   />
-                  {/* <hr className="separator" /> */}
-                  {/* <div className="complement">
-                    <h3 className="text complement_title">
-                      {translate("accompanyDrink")}
-                    </h3>
-                    <div className="cards">
-                      <Slider />
-                    </div>
-                  </div> */}
+                  <hr className="separator" />
+                  <Options
+                    distanceScrolling={320}
+                    titleOptions={translate("size")}
+                    iconOptions={tshirt}
+                    listOptions={[
+                      `${translate("small")}`,
+                      `${translate("medium")}`,
+                      `${translate("large")}`,
+                    ]}
+                    attr="size"
+                  />
+                  <hr className="separator" />
+                  <OptionsExtra
+                    listOptions={[
+                      `${translate("green")}`,
+                      `${translate("darkBlue")}`,
+                      `${translate("orange")}`,
+                      `${translate("lightBlue")}`,
+                      `${translate("cream")}`,
+                    ]}
+                    icon={color}
+                    attr="color"
+                    multiple={false}
+                  />
+                   <hr className="separator" />
+                   <Options
+                    titleOptions={translate("coffeeType")}
+                    iconOptions={beans}
+                    listOptions={[translate("ground"), translate("beans")]}
+                    attr="coffee_type"
+                  />
+                  <hr className="separator" />
+                  <Options
+                    titleOptions={translate("size")}
+                    iconOptions={coffeeBag}
+                    listOptions={["Chico 250gr", "Mediano 500gr", "Grande 1kg"]}
+                    attr="size"
+                  />
+                 
                 </div>
                 <div className="container-btn-payment">
                   <div className="btn-container">
