@@ -27,7 +27,7 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
           <div className="details">
             <div ref={myRef} className="content-detail-page">
               <Options
-                distanceScrolling={360}
+                distanceScrolling={80}
                 titleOptions={translate("temperature")}
                 iconOptions={temperature}
                 listOptions={[translate("roomTemp"), translate("hot")]}
