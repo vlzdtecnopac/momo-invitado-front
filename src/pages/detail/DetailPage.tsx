@@ -27,7 +27,7 @@ function DrinkDetailPage() {
 
   const getDetailProduct = async() => { 
     let response = await axiosInstance(`/product/?product_id=${product_id}`);
-    console.log(response.data);
+    console.log(JSON.parse(response.data[0].modifiers));
     if (response.data[0].image == "{}") {
       response.data[0].image = no_found;
     } else {
@@ -82,7 +82,7 @@ function DrinkDetailPage() {
                       optionHandler(e);
                     }}
                     attr="size"
-                    price="10"
+                    price={["","10"]}
                   />
                   <hr className="separator" />
                   <Options
@@ -96,7 +96,7 @@ function DrinkDetailPage() {
                     ]}
                     optionHandler={(e: any) => optionHandler(e)}
                     attr="milk"
-                    price="10"
+                    price={["", "10", "10"]}
                   />
                   <hr className="separator" />
                   <Options

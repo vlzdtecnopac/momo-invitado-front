@@ -5,10 +5,10 @@ import "./Options.scss";
 interface OptionsProps {
   titleOptions: string;
   optionHandler?: Function;
+  price?: string[];
   listOptions: string[];
   iconOptions: string;
   distanceScrolling?: number;
-  price?: string;
   attr: string;
 }
 
@@ -19,7 +19,7 @@ const Options: React.FC<OptionsProps> = ({
   iconOptions,
   distanceScrolling,
   attr,
-  price,
+  price = [],
 }) => {
   const { dataProductOption } = useProductOptionStore();
   const setDataProductOption = useProductOptionStore(
@@ -62,7 +62,7 @@ const Options: React.FC<OptionsProps> = ({
                   }}
                 >
                   {item}
-                  {price && <h4 className="extra-price">${price}</h4>}
+                  {price[i] && <h4 className="extra-price">${price[i]}</h4>}
                 </button>
               );
             })}
