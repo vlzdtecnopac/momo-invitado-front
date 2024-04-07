@@ -8,20 +8,15 @@ import Options from "../Options";
 import OptionsList from "../OptionsList";
 import "../Options.scss";
 
-const Te: React.FC = () => {
+interface TeProps{
+  optionHandler: (e:any) => any
+}
+
+const Te: React.FC<TeProps> = ({optionHandler}) => {
 
     const myRef = useRef<any>(null);
     const { translate } = useLanguage();
   
-    const optionHandler = (position: number) => {
-      if (myRef.current) {
-        myRef.current.scrollTo({
-          top: position,
-          behavior: "smooth",
-        });
-      }
-    };
-
     return(  <>
         <div className="combos_detail">
           <div className="col-9 details-col detail-card">

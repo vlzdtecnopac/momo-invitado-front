@@ -74,11 +74,11 @@ function DrinkDetailPage() {
               <div className="details">
                 <div ref={myRef} className="container-options-product">
                   {(product.categorys == "Combos" ) && (<Combos optionHandler={(e)=>optionHandler(e)} />)}
-                  {(product.categorys == "Cafe" ) && (<Coffe />)}
+                  {(product.categorys == "Cafe" ) && (<Coffe optionHandler={(e)=>optionHandler(e)} />)}
                   {(product.categorys == "Alimentos" ) && (<Alimentos optionHandler={(e)=>optionHandler(e)} />)}
-                  {(product.categorys == "Te" ) && (<Te />)}
-                  {(product.categorys == "Café con Té") && (<CoffeWithTe/>)}
-                  {(product.categorys == "MOMO Specials") && (<SpecialsMomo/>)}
+                  {(product.categorys == "Te" ) && (<Te optionHandler={(e)=>optionHandler(e)} />)}
+                  {(product.categorys == "Café con Té") && (<CoffeWithTe optionHandler={(e)=>optionHandler(e)}/>)}
+                  {(product.categorys == "MOMO Specials") && (<SpecialsMomo optionHandler={(e)=>optionHandler(e)} />)}
                   {(product.categorys == "Otras Bebidas") && (<OtherDrinks/>)}
                   {(product.categorys == "Tienda") && (<StoreShopping/>)}
                 </div> 

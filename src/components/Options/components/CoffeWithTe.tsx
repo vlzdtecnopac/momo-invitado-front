@@ -10,18 +10,15 @@ import Options from "../Options";
 import OptionsList from "../OptionsList";
 import "../Options.scss";
 
-const CoffeWithTe: React.FC = () => {
+interface CoffeWithTeProps{
+  optionHandler: (e:any) => any
+}
+
+
+const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
   const myRef = useRef<any>(null);
   const { translate } = useLanguage();
 
-  const optionHandler = (position: number) => {
-    if (myRef.current) {
-      myRef.current.scrollTo({
-        top: position,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <>
