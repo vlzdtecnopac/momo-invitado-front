@@ -15,7 +15,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, img, price, name, type })
     (state) => state.setDataProductOption
   );
   const navigate = useNavigate();
-  
+
   img.replace(/(^"|"$|&quot;)/g, '');
   if(img.includes('","')){
     img = img.split('","')[0];
@@ -33,7 +33,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, img, price, name, type })
       color: "",
       coffee_type: "",
     })
-    navigate(`../detail/${id}/${type}`);
+    if(type != undefined){
+      navigate(`../detail/${id}/${type}`);
+    }else{
+      navigate(`../detail/${id}`);
+    }
+   
   }
   return (
       <div className="product_card">

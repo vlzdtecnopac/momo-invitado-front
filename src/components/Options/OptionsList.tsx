@@ -59,7 +59,7 @@ const OptionsList: React.FC<OptionsListProps> = ({
           const isChecked = valueSelect.includes(`${option} $10`);
 
           return (
-            <li key={i}>
+            <li style={{margin: "10px 0px"}} key={i}>
               <div className="grid-middle grid-noGutter-equalHeight">
                 <div
                   className="col-9"
