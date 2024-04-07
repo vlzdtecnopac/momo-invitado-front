@@ -7,7 +7,7 @@ import OptionsList from "../OptionsList";
 import "../Options.scss";
 
 interface AlimentosProps {
-  optionHandler?: (e: any) => any;
+  optionHandler: (e: any) => any;
 }
 
 const Alimentos: React.FC<AlimentosProps> = ({optionHandler}) => {
