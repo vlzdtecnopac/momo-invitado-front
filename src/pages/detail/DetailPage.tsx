@@ -5,21 +5,8 @@ import { useLanguage } from "../../context/Langi18nContext";
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
-import Options from "../../components/Options/Options";
-import OptionsList from "../../components/Options/OptionsList";
-import OptionsExtra from "../../components/Options/OptionsExtra";
-import temperature from "../../assets/icons/temperature.svg";
-import coffeeBag from "../../assets/icons/coffee_bag.svg";
-import beans from "../../assets/icons/coffee_beans.svg";
-import tshirt from "../../assets/icons/t-shirt.svg";
-import sauce from "../../assets/icons/sauce.svg";
 import no_found from "../../assets/no-found.png";
-import glass from "../../assets/icons/glass.svg";
-import milk from "../../assets/icons/bottle.svg";
-import sugar from "../../assets/icons/sugar.svg";
-import extra from "../../assets/icons/extra.svg";
-import color from "../../assets/icons/color.svg";
-import lid from "../../assets/icons/lid.svg";
+
 
 import "./DetailPage.scss";
 import axiosInstance from "../../helpers/axios.helper";
@@ -27,6 +14,7 @@ import Combos from "../../components/Options/components/Combos";
 import Alimentos from "../../components/Options/components/Alimentos";
 import Coffe from "../../components/Options/components/Coffe";
 import Te from "../../components/Options/components/Te";
+import CoffeWithTe from "../../components/Options/components/CoffeWithTe";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
@@ -55,14 +43,7 @@ function DrinkDetailPage() {
     setProduct(response.data[0]);
   };
 
-  const optionHandler = (position: number) => {
-    if (myRef.current) {
-      myRef.current.scrollTo({
-        top: position,
-        behavior: "smooth",
-      });
-    }
-  };
+
 
   return (
     <Layout>
@@ -86,6 +67,7 @@ function DrinkDetailPage() {
                   {(product.categorys == "Cafe" ) && (<Coffe />)}
                   {(product.categorys == "Alimentos" ) && (<Alimentos />)}
                   {(product.categorys == "Te" ) && (<Te />)}
+                  {(product.categorys == "Café con Té") && (<CoffeWithTe/>)}
                 </div> 
                 <div className="container-btn-payment">
                   <div className="btn-container">
