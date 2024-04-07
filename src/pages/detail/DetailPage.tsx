@@ -23,6 +23,10 @@ import lid from "../../assets/icons/lid.svg";
 
 import "./DetailPage.scss";
 import axiosInstance from "../../helpers/axios.helper";
+import Combos from "../../components/Options/components/Combos";
+import Alimentos from "../../components/Options/components/Alimentos";
+import Coffe from "../../components/Options/components/Coffe";
+import Te from "../../components/Options/components/Te";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
@@ -78,171 +82,11 @@ function DrinkDetailPage() {
             <div className="col-9 details-col detail-card">
               <div className="details">
                 <div ref={myRef} className="container-options-product">
-                  {(product.categorys == "Cafe"  || product.categorys == "Otras Bebidas"  ||  product.categorys == "Alimentos" ||  product.categorys == "Te") && (
-                    <>
-                      <Options
-                        distanceScrolling={320}
-                        titleOptions={translate("temperature")}
-                        iconOptions={temperature}
-                        listOptions={[translate("roomTemp"), translate("hot")]}
-                        attr="temperature"
-                      />
-                      <hr className="separator" />
-                    </>
-                  )}
-                  {product.categorys == "Alimentos" &&( <OptionsList
-                    listOptions={[
-                      translate("machaSauce"),
-                      translate("chipotleSauce"),
-                    ]}
-                    iconOptions={sauce}
-                    distanceScrolling={310}
-                    attr="sauce"
-                    multiple={true}
-                  />)}
-
-                  {(product.categorys == "MOMO Specials"  || product.categorys == "Te" || product.categorys == "Cafe" )&& (
-                    <>
-                      <Options
-                        distanceScrolling={120}
-                        titleOptions={translate("size")}
-                        iconOptions={glass}
-                        listOptions={[
-                          translate("smallDrink"),
-                          translate("largeDrink"),
-                        ]}
-                        optionHandler={(e: any) => {
-                          optionHandler(e);
-                        }}
-                        attr="size"
-                        price={["", "10"]}
-                      />
-                      <hr className="separator" />
-                    </>
-                  )}
-                  {product.categorys == "MOMO Specials" && (
-                    <>
-                      <Options
-                        distanceScrolling={220}
-                        titleOptions={translate("milk")}
-                        iconOptions={milk}
-                        listOptions={[
-                          translate("whole"),
-                          translate("lactoseFree"),
-                          translate("oatMilk"),
-                        ]}
-                        optionHandler={(e: any) => optionHandler(e)}
-                        attr="milk"
-                        price={["", "10", "10"]}
-                      />
-                      <hr className="separator" />
-                    </>
-                  )}
-                  {product.categorys == "MOMO Specials" && (
-                    <>
-                      <Options
-                        distanceScrolling={320}
-                        titleOptions={translate("sugar")}
-                        iconOptions={sugar}
-                        listOptions={[
-                          translate("less"),
-                          "Original",
-                          translate("more"),
-                        ]}
-                        optionHandler={(e: any) => optionHandler(e)}
-                        attr="sugar"
-                      />
-                      <hr className="separator" />
-                    </>
-                  )}
-                  {product.categorys == "MOMO Specials" && (
-                    <>
-                      <OptionsList
-                        optionHandler={(e: any) => optionHandler(e)}
-                        listOptions={[
-                          translate("extraCoffee"),
-                          translate("extraCream"),
-                        ]}
-                        iconOptions={extra}
-                        attr="extra_coffee"
-                        multiple={true}
-                      />
-                      <hr className="separator" />
-                    </>
-                  )}
-                  {product.categorys == "MOMO Specials" && (
-                    <>
-                      <OptionsList
-                        optionHandler={(e: any) => optionHandler(e)}
-                        listOptions={[translate("lid"), translate("noLid")]}
-                        iconOptions={lid}
-                        attr="lid"
-                        multiple={false}
-                      />
-                      <hr className="separator" />
-                    </>
-                  )}
-                  {product.categorys == "Tienda" && (
-                    <>
-                      <Options
-                        distanceScrolling={320}
-                        titleOptions={translate("size")}
-                        iconOptions={tshirt}
-                        listOptions={[
-                          `${translate("small")}`,
-                          `${translate("medium")}`,
-                          `${translate("large")}`,
-                        ]}
-                        attr="size"
-                      />
-                      <hr className="separator" />
-                    </>
-                  )}
-
-                  {product.categorys == "Tienda" && (
-                    <>
-                      <OptionsExtra
-                        listOptions={[
-                          `${translate("green")}`,
-                          `${translate("darkBlue")}`,
-                          `${translate("orange")}`,
-                          `${translate("lightBlue")}`,
-                          `${translate("cream")}`,
-                        ]}
-                        icon={color}
-                        attr="color"
-                        multiple={false}
-                      />
-                      <hr className="separator" />
-                    </>
-                  )}
-                  {product.categorys == "Tienda" && (
-                    <>
-                      <Options
-                        titleOptions={translate("coffeeType")}
-                        iconOptions={beans}
-                        listOptions={[translate("ground"), translate("beans")]}
-                        attr="coffee_type"
-                      />
-                      <hr className="separator" />
-                    </>
-                  )}
-                  {(product.categorys == "Tienda" ) && (
-                    <>
-                      <Options
-                        titleOptions={translate("size")}
-                        iconOptions={coffeeBag}
-                        listOptions={[
-                          "Chico 250gr",
-                          "Mediano 500gr",
-                          "Grande 1kg",
-                        ]}
-                        attr="size"
-                      />
-                      <hr className="separator" />
-                    </>
-                  )}
-                </div>
+                  {(product.categorys == "Combos" ) && (<Combos />)}
+                  {(product.categorys == "Cafe" ) && (<Coffe />)}
+                  {(product.categorys == "Alimentos" ) && (<Alimentos />)}
+                  {(product.categorys == "Te" ) && (<Te />)}
+                </div> 
                 <div className="container-btn-payment">
                   <div className="btn-container">
                     <button className="add-cart-btn">

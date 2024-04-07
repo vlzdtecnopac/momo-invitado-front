@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
 import product from "../../assets/product1.jpg";
 import glass from "../../assets/icons/glass.svg";
@@ -5,16 +6,14 @@ import milk from "../../assets/icons/bottle.svg";
 import sugar from "../../assets/icons/sugar.svg";
 import extra from "../../assets/icons/extra.svg";
 import lid from "../../assets/icons/lid.svg";
-import Layout from "../../includes/layout/Layout";
-import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import sauce from "../../assets/icons/sauce.svg";
 import temperature from "../../assets/icons/temperature.svg";
+import Layout from "../../includes/layout/Layout";
+import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import { useLanguage } from "../../context/Langi18nContext";
-
-import "./CombosDetailPage.scss";
 import Options from "../../components/Options/Options";
-import { useRef } from "react";
 import OptionsList from "../../components/Options/OptionsList";
+import "./CombosDetailPage.scss";
 
 function CombosDetailPage() {
   const myRef = useRef<any>(null);
