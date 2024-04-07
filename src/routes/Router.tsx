@@ -38,9 +38,6 @@ const LazyDrinkDetailPage = lazy(
 const LazyFoodDetailPage = lazy(
   () => import("../pages/foodDetail/FoodDetailPage")
 );
-const LazyMerchDetailPage = lazy(
-  () => import("../pages/merchDetail/MerchDetailPage")
-);
 const LazyCoffeeDetailPage = lazy(
   () => import("../pages/coffeeDetail/CoffeeDetailPage")
 );
@@ -178,14 +175,6 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyFoodDetailPage />
-      </Suspense>
-    ),
-  },
-  {
-    path: "/merch-detail",
-    element: (
-      <Suspense fallback={<LoaderPage />}>
-        <LazyMerchDetailPage />
       </Suspense>
     ),
   },
