@@ -41,11 +41,14 @@ function CategoryNav() {
               <button onClick={()=> {
                     if (category.name_category == "Nuestra Tienda") {
                       navigate(`../merch-or-coffee/`);
+                      return;
                     }
                     if (category.name_category == "Alimentos") {
                       navigate(`../sweet-salty-snacks/`);
+                      return;
                     } else {
                       navigate(`../products/${category.sub_category}`);
+                      return;
                     }
               }}>{translate(category.name_category)}</button>
             </li>
