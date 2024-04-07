@@ -59,6 +59,7 @@ const StoreShopping: React.FC = () => {
                     iconOptions={beans}
                     listOptions={[translate("ground"), translate("beans")]}
                     attr="coffee_type"
+                    optionHandler={(e: any) => optionHandler(e)}
                   />
                   <hr className="separator" />
                   <Options
@@ -66,6 +67,7 @@ const StoreShopping: React.FC = () => {
                     iconOptions={coffeeBag}
                     listOptions={["Chico 250gr", "Mediano 500gr", "Grande 1kg"]}
                     attr="size"
+                    optionHandler={(e: any) => optionHandler(e)}
                   />
               </div>
             </div>
