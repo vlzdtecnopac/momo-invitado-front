@@ -12,6 +12,7 @@ import temperature from "../../assets/icons/temperature.svg";
 import coffeeBag from "../../assets/icons/coffee_bag.svg";
 import beans from "../../assets/icons/coffee_beans.svg";
 import tshirt from "../../assets/icons/t-shirt.svg";
+import sauce from "../../assets/icons/sauce.svg";
 import no_found from "../../assets/no-found.png";
 import glass from "../../assets/icons/glass.svg";
 import milk from "../../assets/icons/bottle.svg";
@@ -77,7 +78,7 @@ function DrinkDetailPage() {
             <div className="col-9 details-col detail-card">
               <div className="details">
                 <div ref={myRef} className="container-options-product">
-                  {product.categorys == "Otras Bebidas" && (
+                  {product.categorys == "Otras Bebidas"  ||  product.categorys == "Alimentos" && (
                     <>
                       <Options
                         distanceScrolling={320}
@@ -89,6 +90,16 @@ function DrinkDetailPage() {
                       <hr className="separator" />
                     </>
                   )}
+                  {product.categorys == "Alimentos" &&( <OptionsList
+                    listOptions={[
+                      translate("machaSauce"),
+                      translate("chipotleSauce"),
+                    ]}
+                    iconOptions={sauce}
+                    distanceScrolling={310}
+                    attr="sauce"
+                    multiple={true}
+                  />)}
 
                   {product.categorys == "MOMO Specials" && (
                     <>
