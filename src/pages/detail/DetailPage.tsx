@@ -78,7 +78,7 @@ function DrinkDetailPage() {
             <div className="col-9 details-col detail-card">
               <div className="details">
                 <div ref={myRef} className="container-options-product">
-                  {product.categorys == "Otras Bebidas"  ||  product.categorys == "Alimentos" && (
+                  {(product.categorys == "Cafe"  || product.categorys == "Otras Bebidas"  ||  product.categorys == "Alimentos" ||  product.categorys == "Te") && (
                     <>
                       <Options
                         distanceScrolling={320}
@@ -101,7 +101,7 @@ function DrinkDetailPage() {
                     multiple={true}
                   />)}
 
-                  {product.categorys == "MOMO Specials" && (
+                  {(product.categorys == "MOMO Specials"  || product.categorys == "Te" || product.categorys == "Cafe" )&& (
                     <>
                       <Options
                         distanceScrolling={120}
@@ -216,7 +216,7 @@ function DrinkDetailPage() {
                       <hr className="separator" />
                     </>
                   )}
-                  {product.categorys == "Cafe" && (
+                  {product.categorys == "Tienda" && (
                     <>
                       <Options
                         titleOptions={translate("coffeeType")}
@@ -227,7 +227,7 @@ function DrinkDetailPage() {
                       <hr className="separator" />
                     </>
                   )}
-                  {product.categorys == "Cafe" && (
+                  {(product.categorys == "Tienda" ) && (
                     <>
                       <Options
                         titleOptions={translate("size")}
