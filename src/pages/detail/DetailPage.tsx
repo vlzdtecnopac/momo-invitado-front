@@ -42,7 +42,6 @@ function DrinkDetailPage() {
         response.data[0].image = response.data[0].image.split('","')[0];
       }
     }
-    console.log(response.data[0]);
     setProduct(response.data[0]);
   };
 

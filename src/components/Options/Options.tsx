@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useProductOptionStore } from "../../store/productOption.store";
 import "./Options.scss";
 

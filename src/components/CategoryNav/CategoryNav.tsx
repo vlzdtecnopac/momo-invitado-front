@@ -3,11 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
 import { LoaderPage } from "../../includes/loader/Loader";
 import axiosInstance from "../../helpers/axios.helper";
+import { useProductOptionStore } from "../../store/productOption.store";
 import Cart from "../Cart/Cart";
 import "./CategoryNav.scss";
 
-
 function CategoryNav() {
+  const setDataProductOption = useProductOptionStore(
+    (state) => state.setDataProductOption
+  );
   const { translate } = useLanguage();
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
@@ -34,23 +37,35 @@ function CategoryNav() {
       <nav className="cat_nav">
         <ul className="categories">
           {categories.map((category: any, index: number) => (
-            <li
-              className="category"
-              key={index}
-            >
-              <button onClick={()=> {
-                    if (category.name_category == "Nuestra Tienda") {
-                      navigate(`../merch-or-coffee/`);
-                      return;
-                    }
-                    if (category.name_category == "Alimentos") {
-                      navigate(`../sweet-salty-snacks/`);
-                      return;
-                    } else {
-                      navigate(`../products/${category.sub_category}`);
-                      return;
-                    }
-              }}>{translate(category.name_category)}</button>
+            <li className="category" key={index}>
+              <button
+                onClick={() => {
+                  setDataProductOption({
+                    size: "",
+                    milk: "",
+                    sugar: "",
+                    extra_coffee: [],
+                    lid: [],
+                    sauce: [],
+                    temperature: "",
+                    color: "",
+                    coffee_type: "",
+                  });
+                  if (category.name_category == "Nuestra Tienda") {
+                    navigate(`../merch-or-coffee/`);
+                    return;
+                  }
+                  if (category.name_category == "Alimentos") {
+                    navigate(`../sweet-salty-snacks/`);
+                    return;
+                  } else {
+                    navigate(`../products/${category.sub_category}`);
+                    return;
+                  }
+                }}
+              >
+                {translate(category.name_category)}
+              </button>
             </li>
           ))}
         </ul>
