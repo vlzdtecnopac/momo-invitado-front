@@ -11,7 +11,7 @@ import "./ProductsPage.scss";
 import axiosInstance from "../../helpers/axios.helper";
 
 function ProductsPage() {
-  const { category } = useParams();
+  const { category, type } = useParams();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -53,6 +53,7 @@ function ProductsPage() {
                     img={image}
                     price="30"
                     name={product.name_product}
+                    type={type}
                   />
                 </motion.div>
               );

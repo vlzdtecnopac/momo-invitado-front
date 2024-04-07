@@ -8,29 +8,27 @@ import Options from "../Options";
 import "../Options.scss";
 import OptionsExtra from "../OptionsExtra";
 
-const StoreShopping: React.FC = () => {
+interface StoreShoppingProps {
+  optionHandler: (e: any) => any;
+  type?: string | undefined;
+}
 
-    const myRef = useRef<any>(null);
-    const { translate } = useLanguage();
-  
-    const optionHandler = (position: number) => {
-      if (myRef.current) {
-        myRef.current.scrollTo({
-          top: position,
-          behavior: "smooth",
-        });
-      }
-    };
+const StoreShopping: React.FC<StoreShoppingProps> = ({
+  optionHandler,
+  type,
+}) => {
+  const myRef = useRef<any>(null);
+  const { translate } = useLanguage();
 
-    return(<>
-        <div className="combos_detail">
-          <div className="col-9 details-col detail-card">
-            <div className="details">
-              <div
-                ref={myRef}
-                className="content-detail-page"
-              >
-                <Options
+  return (
+    <>
+      <div className="combos_detail">
+        <div className="col-9 details-col detail-card">
+          <div className="details">
+            <div ref={myRef} className="content-detail-page">
+              {type == "Merch" && (
+                <>
+                  <Options
                     distanceScrolling={320}
                     titleOptions={translate("size")}
                     iconOptions={tshirt}
@@ -54,7 +52,12 @@ const StoreShopping: React.FC = () => {
                     attr="color"
                     multiple={false}
                   />
-                   <Options
+                  <hr className="separator" />
+                </>
+              )}
+              {type == "Coffe" && (
+                <>
+                  <Options
                     titleOptions={translate("coffeeType")}
                     iconOptions={beans}
                     listOptions={[translate("ground"), translate("beans")]}
@@ -69,11 +72,15 @@ const StoreShopping: React.FC = () => {
                     attr="size"
                     optionHandler={(e: any) => optionHandler(e)}
                   />
-              </div>
+                  <hr className="separator" />
+                </>
+              )}
             </div>
           </div>
+        </div>
       </div>
-        </>);
-}
+    </>
+  );
+};
 
 export default StoreShopping;

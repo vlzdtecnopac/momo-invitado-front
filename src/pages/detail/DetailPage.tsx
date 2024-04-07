@@ -21,7 +21,7 @@ import "./DetailPage.scss";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
-  const { product_id } = useParams();
+  const { product_id, type } = useParams();
   const { translate } = useLanguage();
   const [product, setProduct] = useState<any>({});
 
@@ -54,7 +54,6 @@ function DrinkDetailPage() {
       });
     }
   };
-
   return (
     <Layout>
       <div className="products_category">
@@ -80,7 +79,7 @@ function DrinkDetailPage() {
                   {(product.categorys == "Café con Té") && (<CoffeWithTe optionHandler={(e)=>optionHandler(e)}/>)}
                   {(product.categorys == "MOMO Specials") && (<SpecialsMomo optionHandler={(e)=>optionHandler(e)} />)}
                   {(product.categorys == "Otras Bebidas") && (<OtherDrinks/>)}
-                  {(product.categorys == "Tienda") && (<StoreShopping/>)}
+                  {(product.categorys == "Tienda") && (<StoreShopping optionHandler={(e)=>optionHandler(e)} type={type}/>)}
                 </div> 
                 <div className="container-btn-payment">
                   <div className="btn-container">

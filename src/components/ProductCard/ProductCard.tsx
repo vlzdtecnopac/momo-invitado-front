@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./ProductCard.scss";
 
 interface ProductCardProps {
@@ -6,17 +6,23 @@ interface ProductCardProps {
   img: string;
   price: string;
   name: string;
+  type?: string
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ id, img, price, name }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ id, img, price, name, type }) => {
+  const navigate = useNavigate();
   img.replace(/(^"|"$|&quot;)/g, '');
   if(img.includes('","')){
     img = img.split('","')[0];
   }
+
+  const handleProductDetail = () => {
+    navigate(`../detail/${id}/${type}`);
+  }
   return (
-    <Link to={`../detail/${id}`}>
       <div className="product_card">
         <img
+          onClick={()=>handleProductDetail()}
           className="img"
           src={img}
           alt="product"
@@ -27,7 +33,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, img, price, name }) => {
         </div>
         <h3 className="name">{name}</h3>
       </div>
-    </Link>
   );
 };
 export default ProductCard;
