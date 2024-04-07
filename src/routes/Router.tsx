@@ -28,15 +28,11 @@ const LazySweetSaltySnacksPage = lazy(
 const LazyProductCategoryPage = lazy(
   () => import("../pages/productCategories/ProductCategoryPage")
 );
-
 const LazyProductsPage = lazy(
   () => import("../pages/productsPage/ProductsPage")
 );
 const LazyDrinkDetailPage = lazy(
   () => import("../pages/detail/DetailPage")
-);
-const LazyFoodDetailPage = lazy(
-  () => import("../pages/foodDetail/FoodDetailPage")
 );
 const LazyCoffeeDetailPage = lazy(
   () => import("../pages/coffeeDetail/CoffeeDetailPage")
@@ -167,14 +163,6 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyDrinkDetailPage />
-      </Suspense>
-    ),
-  },
-  {
-    path: "/food-detail",
-    element: (
-      <Suspense fallback={<LoaderPage />}>
-        <LazyFoodDetailPage />
       </Suspense>
     ),
   },

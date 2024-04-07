@@ -6,19 +6,13 @@ import Options from "../Options";
 import OptionsList from "../OptionsList";
 import "../Options.scss";
 
+interface AlimentosProps {
+  optionHandler?: (e: any) => any;
+}
 
-const Alimentos: React.FC = () => {
+const Alimentos: React.FC<AlimentosProps> = ({optionHandler}) => {
   const myRef = useRef<any>(null);
   const { translate } = useLanguage();
-
-  const optionHandler = (position: number) => {
-    if (myRef.current) {
-      myRef.current.scrollTo({
-        top: position,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <>

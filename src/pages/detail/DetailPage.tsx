@@ -46,7 +46,14 @@ function DrinkDetailPage() {
     setProduct(response.data[0]);
   };
 
-
+  const optionHandler = (position: number) => {
+    if (myRef.current) {
+      myRef.current.scrollTo({
+        top: position,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <Layout>
@@ -66,7 +73,7 @@ function DrinkDetailPage() {
             <div className="col-9 details-col detail-card">
               <div className="details">
                 <div ref={myRef} className="container-options-product">
-                  {(product.categorys == "Combos" ) && (<Combos />)}
+                  {(product.categorys == "Combos" ) && (<Combos optionHandler={(e)=>optionHandler(e)} />)}
                   {(product.categorys == "Cafe" ) && (<Coffe />)}
                   {(product.categorys == "Alimentos" ) && (<Alimentos />)}
                   {(product.categorys == "Te" ) && (<Te />)}
