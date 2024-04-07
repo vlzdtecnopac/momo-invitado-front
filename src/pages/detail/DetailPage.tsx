@@ -78,7 +78,7 @@ function DrinkDetailPage() {
                   {(product.categorys == "Te" ) && (<Te optionHandler={(e)=>optionHandler(e)} />)}
                   {(product.categorys == "Café con Té") && (<CoffeWithTe optionHandler={(e)=>optionHandler(e)}/>)}
                   {(product.categorys == "MOMO Specials") && (<SpecialsMomo optionHandler={(e)=>optionHandler(e)} />)}
-                  {(product.categorys == "Otras Bebidas") && (<OtherDrinks/>)}
+                  {(product.categorys == "Otras Bebidas") && (<OtherDrinks optionHandler={(e)=>optionHandler(e)} />)}
                   {(product.categorys == "Tienda") && (<StoreShopping optionHandler={(e)=>optionHandler(e)} type={type}/>)}
                 </div> 
                 <div className="container-btn-payment">
