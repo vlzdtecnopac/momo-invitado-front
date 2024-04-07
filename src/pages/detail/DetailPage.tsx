@@ -23,31 +23,32 @@ import lid from "../../assets/icons/lid.svg";
 import "./DetailPage.scss";
 import axiosInstance from "../../helpers/axios.helper";
 
-
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
   const { product_id } = useParams();
   const { translate } = useLanguage();
   const [product, setProduct] = useState<any>({});
 
-  useEffect(()=> {
+  useEffect(() => {
     getDetailProduct();
-  }, [])
+  }, []);
 
-  const getDetailProduct = async() => { 
+  const getDetailProduct = async () => {
     let response = await axiosInstance(`/product/?product_id=${product_id}`);
-    console.log(JSON.parse(response.data[0].modifiers));
     if (response.data[0].image == "{}") {
       response.data[0].image = no_found;
     } else {
-      response.data[0].image.replace(/(^"|"$|&quot;)/g, '');
-      response.data[0].image = response.data[0].image.replace(/\{"/g, "").replace(/\"}/g, "");
-      if(response.data[0].image.includes('","')){
+      response.data[0].image.replace(/(^"|"$|&quot;)/g, "");
+      response.data[0].image = response.data[0].image
+        .replace(/\{"/g, "")
+        .replace(/\"}/g, "");
+      if (response.data[0].image.includes('","')) {
         response.data[0].image = response.data[0].image.split('","')[0];
       }
     }
+    console.log(response.data[0]);
     setProduct(response.data[0]);
-  }
+  };
 
   const optionHandler = (position: number) => {
     if (myRef.current) {
@@ -75,119 +76,161 @@ function DrinkDetailPage() {
             </div>
             <div className="col-9 details-col detail-card">
               <div className="details">
-                <div
-                  ref={myRef}
-                  className="container-options-product"
-                >
-                     <Options
-                  distanceScrolling={320}
-                  titleOptions={translate("temperature")}
-                  iconOptions={temperature}
-                  listOptions={[translate("roomTemp"), translate("hot")]}
-                  attr="temperature"
-                />
+                <div ref={myRef} className="container-options-product">
+                  {product.categorys == "Otras Bebidas" && (
+                    <>
+                      <Options
+                        distanceScrolling={320}
+                        titleOptions={translate("temperature")}
+                        iconOptions={temperature}
+                        listOptions={[translate("roomTemp"), translate("hot")]}
+                        attr="temperature"
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
 
-                <hr className="separator" />
-                  <Options
-                    distanceScrolling={120}
-                    titleOptions={translate("size")}
-                    iconOptions={glass}
-                    listOptions={[
-                      translate("smallDrink"),
-                      translate("largeDrink"),
-                    ]}
-                    optionHandler={(e: any) => {
-                      optionHandler(e);
-                    }}
-                    attr="size"
-                    price={["","10"]}
-                  />
-                  <hr className="separator" />
-                  <Options
-                    distanceScrolling={220}
-                    titleOptions={translate("milk")}
-                    iconOptions={milk}
-                    listOptions={[
-                      translate("whole"),
-                      translate("lactoseFree"),
-                      translate("oatMilk"),
-                    ]}
-                    optionHandler={(e: any) => optionHandler(e)}
-                    attr="milk"
-                    price={["", "10", "10"]}
-                  />
-                  <hr className="separator" />
-                  <Options
-                    distanceScrolling={320}
-                    titleOptions={translate("sugar")}
-                    iconOptions={sugar}
-                    listOptions={[
-                      translate("less"),
-                      "Original",
-                      translate("more"),
-                    ]}
-                    optionHandler={(e: any) => optionHandler(e)}
-                    attr="sugar"
-                  />
-                  <hr className="separator" />
-                  <OptionsList
-                    optionHandler={(e: any) => optionHandler(e)}
-                    listOptions={[
-                      translate("extraCoffee"),
-                      translate("extraCream"),
-                    ]}
-                    iconOptions={extra}
-                    attr="extra_coffee"
-                    multiple={true}
-                  />
-                  <hr className="separator" />
-                  <OptionsList
-                    optionHandler={(e: any) => optionHandler(e)}
-                    listOptions={[translate("lid"), translate("noLid")]}
-                    iconOptions={lid}
-                    attr="lid"
-                    multiple={false}
-                  />
-                  <hr className="separator" />
-                  <Options
-                    distanceScrolling={320}
-                    titleOptions={translate("size")}
-                    iconOptions={tshirt}
-                    listOptions={[
-                      `${translate("small")}`,
-                      `${translate("medium")}`,
-                      `${translate("large")}`,
-                    ]}
-                    attr="size"
-                  />
-                  <hr className="separator" />
-                  <OptionsExtra
-                    listOptions={[
-                      `${translate("green")}`,
-                      `${translate("darkBlue")}`,
-                      `${translate("orange")}`,
-                      `${translate("lightBlue")}`,
-                      `${translate("cream")}`,
-                    ]}
-                    icon={color}
-                    attr="color"
-                    multiple={false}
-                  />
-                   <hr className="separator" />
-                   <Options
-                    titleOptions={translate("coffeeType")}
-                    iconOptions={beans}
-                    listOptions={[translate("ground"), translate("beans")]}
-                    attr="coffee_type"
-                  />
-                  <hr className="separator" />
-                  <Options
-                    titleOptions={translate("size")}
-                    iconOptions={coffeeBag}
-                    listOptions={["Chico 250gr", "Mediano 500gr", "Grande 1kg"]}
-                    attr="size"
-                  />
-                 
+                  {product.categorys == "MOMO Specials" && (
+                    <>
+                      <Options
+                        distanceScrolling={120}
+                        titleOptions={translate("size")}
+                        iconOptions={glass}
+                        listOptions={[
+                          translate("smallDrink"),
+                          translate("largeDrink"),
+                        ]}
+                        optionHandler={(e: any) => {
+                          optionHandler(e);
+                        }}
+                        attr="size"
+                        price={["", "10"]}
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
+                  {product.categorys == "MOMO Specials" && (
+                    <>
+                      <Options
+                        distanceScrolling={220}
+                        titleOptions={translate("milk")}
+                        iconOptions={milk}
+                        listOptions={[
+                          translate("whole"),
+                          translate("lactoseFree"),
+                          translate("oatMilk"),
+                        ]}
+                        optionHandler={(e: any) => optionHandler(e)}
+                        attr="milk"
+                        price={["", "10", "10"]}
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
+                  {product.categorys == "MOMO Specials" && (
+                    <>
+                      <Options
+                        distanceScrolling={320}
+                        titleOptions={translate("sugar")}
+                        iconOptions={sugar}
+                        listOptions={[
+                          translate("less"),
+                          "Original",
+                          translate("more"),
+                        ]}
+                        optionHandler={(e: any) => optionHandler(e)}
+                        attr="sugar"
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
+                  {product.categorys == "MOMO Specials" && (
+                    <>
+                      <OptionsList
+                        optionHandler={(e: any) => optionHandler(e)}
+                        listOptions={[
+                          translate("extraCoffee"),
+                          translate("extraCream"),
+                        ]}
+                        iconOptions={extra}
+                        attr="extra_coffee"
+                        multiple={true}
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
+                  {product.categorys == "MOMO Specials" && (
+                    <>
+                      <OptionsList
+                        optionHandler={(e: any) => optionHandler(e)}
+                        listOptions={[translate("lid"), translate("noLid")]}
+                        iconOptions={lid}
+                        attr="lid"
+                        multiple={false}
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
+                  {product.categorys == "Tienda" && (
+                    <>
+                      <Options
+                        distanceScrolling={320}
+                        titleOptions={translate("size")}
+                        iconOptions={tshirt}
+                        listOptions={[
+                          `${translate("small")}`,
+                          `${translate("medium")}`,
+                          `${translate("large")}`,
+                        ]}
+                        attr="size"
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
+
+                  {product.categorys == "Tienda" && (
+                    <>
+                      <OptionsExtra
+                        listOptions={[
+                          `${translate("green")}`,
+                          `${translate("darkBlue")}`,
+                          `${translate("orange")}`,
+                          `${translate("lightBlue")}`,
+                          `${translate("cream")}`,
+                        ]}
+                        icon={color}
+                        attr="color"
+                        multiple={false}
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
+                  {product.categorys == "Cafe" && (
+                    <>
+                      <Options
+                        titleOptions={translate("coffeeType")}
+                        iconOptions={beans}
+                        listOptions={[translate("ground"), translate("beans")]}
+                        attr="coffee_type"
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
+                  {product.categorys == "Cafe" && (
+                    <>
+                      <Options
+                        titleOptions={translate("size")}
+                        iconOptions={coffeeBag}
+                        listOptions={[
+                          "Chico 250gr",
+                          "Mediano 500gr",
+                          "Grande 1kg",
+                        ]}
+                        attr="size"
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
                 </div>
                 <div className="container-btn-payment">
                   <div className="btn-container">
