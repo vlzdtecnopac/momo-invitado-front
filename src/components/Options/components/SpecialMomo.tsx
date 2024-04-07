@@ -1,14 +1,17 @@
 import { useRef } from "react";
 import glass from "../../../assets/icons/glass.svg";
+import milk from "../../../assets/icons/bottle.svg";
 import sugar from "../../../assets/icons/sugar.svg";
+import extra from "../../../assets/icons/extra.svg";
 import lid from "../../../assets/icons/lid.svg";
+import sauce from "../../../assets/icons/sauce.svg";
 import temperature from "../../../assets/icons/temperature.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
 import Options from "../Options";
 import OptionsList from "../OptionsList";
 import "../Options.scss";
 
-const Te: React.FC = () => {
+const SpecialsMomo: React.FC = () => {
 
     const myRef = useRef<any>(null);
     const { translate } = useLanguage();
@@ -22,12 +25,15 @@ const Te: React.FC = () => {
       }
     };
 
-    return(  <>
+    return(<>
         <div className="combos_detail">
           <div className="col-9 details-col detail-card">
             <div className="details">
-              <div ref={myRef} className="content-detail-page">
-                <Options
+              <div
+                ref={myRef}
+                className="content-detail-page"
+              >
+                 <Options
                   distanceScrolling={360}
                   titleOptions={translate("temperature")}
                   iconOptions={temperature}
@@ -46,12 +52,40 @@ const Te: React.FC = () => {
                 />
                 <hr className="separator" />
                 <Options
+                  distanceScrolling={260}
+                  titleOptions={translate("milk")}
+                  iconOptions={milk}
+                  listOptions={[
+                    translate("whole"),
+                    translate("lactoseFree"),
+                    translate("oatMilk"),
+                  ]}
+                  optionHandler={(e: any) => optionHandler(e)}
+                  attr="milk"
+                />
+                <hr className="separator" />
+                <Options
                   distanceScrolling={280}
                   titleOptions={translate("sugar")}
                   iconOptions={sugar}
-                  listOptions={[translate("less"), "Original", translate("more")]}
+                  listOptions={[
+                    translate("less"),
+                    "Original",
+                    translate("more"),
+                  ]}
                   optionHandler={(e: any) => optionHandler(e)}
                   attr="sugar"
+                />
+                <hr className="separator" />
+                <OptionsList
+                  optionHandler={(e: any) => optionHandler(e)}
+                  listOptions={[
+                    translate("extraCoffee"),
+                    translate("extraCream"),
+                  ]}
+                  iconOptions={extra}
+                  attr="extra_coffee"
+                  multiple={true}
                 />
                 <hr className="separator" />
                 <OptionsList
@@ -68,8 +102,8 @@ const Te: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-      </>);
+      </div>
+        </>);
 }
 
-export default Te;
+export default SpecialsMomo;

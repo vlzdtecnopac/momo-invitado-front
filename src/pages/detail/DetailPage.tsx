@@ -15,6 +15,9 @@ import Alimentos from "../../components/Options/components/Alimentos";
 import Coffe from "../../components/Options/components/Coffe";
 import Te from "../../components/Options/components/Te";
 import CoffeWithTe from "../../components/Options/components/CoffeWithTe";
+import OtherDrinks from "../../components/Options/components/OtherDrinks";
+import StoreShopping from "../../components/Options/components/StoreShopping";
+import SpecialsMomo from "../../components/Options/components/SpecialMomo";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
@@ -68,6 +71,9 @@ function DrinkDetailPage() {
                   {(product.categorys == "Alimentos" ) && (<Alimentos />)}
                   {(product.categorys == "Te" ) && (<Te />)}
                   {(product.categorys == "Café con Té") && (<CoffeWithTe/>)}
+                  {(product.categorys == "MOMO Specials") && (<SpecialsMomo/>)}
+                  {(product.categorys == "Otras Bebidas") && (<OtherDrinks/>)}
+                  {(product.categorys == "Tienda") && (<StoreShopping/>)}
                 </div> 
                 <div className="container-btn-payment">
                   <div className="btn-container">
