@@ -75,7 +75,7 @@ function DrinkDetailPage() {
                 <div ref={myRef} className="container-options-product">
                   {(product.categorys == "Combos" ) && (<Combos optionHandler={(e)=>optionHandler(e)} />)}
                   {(product.categorys == "Cafe" ) && (<Coffe />)}
-                  {(product.categorys == "Alimentos" ) && (<Alimentos />)}
+                  {(product.categorys == "Alimentos" ) && (<Alimentos optionHandler={(e)=>optionHandler(e)} />)}
                   {(product.categorys == "Te" ) && (<Te />)}
                   {(product.categorys == "Café con Té") && (<CoffeWithTe/>)}
                   {(product.categorys == "MOMO Specials") && (<SpecialsMomo/>)}
