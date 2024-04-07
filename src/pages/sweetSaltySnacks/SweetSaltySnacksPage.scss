@@ -1,112 +1,105 @@
 @import "../../index.scss";
 
 .hot_or_cold {
-    background: $dark-blue;
+  background: $dark-blue;
+  display: flex;
+  height: 100vh;
+  padding: 0px !important;
+
+  @media screen and (max-width: 790px) {
+  }
+
+  .center-container {
     display: flex;
-    height: 100vh;
-    padding: 0px !important;
+    justify-content: center;
+  }
 
-    @media screen and (max-width: 790px) {}
+  .options {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 
-    .center-container {
-        display: flex;
-        justify-content: center;
+    .custom-btn {
+      display: flex;
+      flex-direction: column;
+      min-width: 250px;
+      min-height: 200px;
+      align-items: center;
+      padding: 30px 10px 5px 10px;
+      border: 5px solid $cream;
+      border-radius: 15px;
+      background-color: transparent;
+      color: $cream;
+      cursor: pointer;
+
+      &:hover {
+        /* Move hover to the top level */
+        background-color: $dark-blue;
+        .text {
+          color: $dark-blue;
+        }
+
+        .icon {
+          /* Target icon directly */
+          background-color: $dark-blue;
+          /* Change icon background on hover */
+        }
+      }
+
+      &:hover {
+        color: $dark-blue;
+        background: $dark-blue;
+        background-color: $cream;
+      }
     }
 
-    .options {
-        display: flex;
-        gap: 35px;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-
-
-        .custom-btn {
-            display: flex;
-            flex-direction: column;
-            min-width: 250px;
-            min-height: 200px;
-            align-items: center;
-            padding: 30px 10px 5px 10px;
-            border: 5px solid $cream;
-            border-radius: 15px;
-            background-color: transparent;
-            color: $cream;
-            cursor: pointer;
-
-            &:hover {
-                /* Move hover to the top level */
-                background-color: $dark-blue;
-
-                .icon {
-                    /* Target icon directly */
-                    background-color: $dark-blue;
-                    /* Change icon background on hover */
-                }
-            }
-
-            &:hover {
-                color: $dark-blue;
-                background: $dark-blue;
-                background-color: $cream;
-            }
-        }
-
-        .sweet .icon {
-            background-color: $cream;
-            -webkit-mask-image: url("/src/assets/icons/croissant.svg");
-            mask-image: url("/src/assets/icons/croissant.svg");
-            mask-size: 100%;
-            background-repeat: no-repeat;
-            margin-bottom: 8px;
-        }
-
-        .salty .icon {
-            background-color: $cream;
-            -webkit-mask-image: url("/src/assets/icons/salty.svg");
-            mask-image: url("/src/assets/icons/salty.svg");
-            mask-size: 100%;
-            background-repeat: no-repeat;
-            margin-bottom: 8px;
-
-        }
-
-        .snacks .icon {
-            background-color: $cream;
-            -webkit-mask-image: url("/src/assets/icons/snacks.svg");
-            mask-image: url("/src/assets/icons/snacks.svg");
-            mask-size: 100%;
-            background-repeat: no-repeat;
-            margin-bottom: 8px;
-
-        }
-
-
-
-
-        &:hover {
-            background-color: $dark-blue;
-        }
-
-
+    .sweet .icon {
+      background-color: $cream;
+      -webkit-mask-image: url("/src/assets/icons/croissant.svg");
+      mask-image: url("/src/assets/icons/croissant.svg");
+      mask-size: 100%;
+      background-repeat: no-repeat;
+      margin-bottom: 8px;
     }
 
-    .custom-btn .icon {
-        width: 80px;
-        height: 80px;
+    .salty .icon {
+      background-color: $cream;
+      -webkit-mask-image: url("/src/assets/icons/salty.svg");
+      mask-image: url("/src/assets/icons/salty.svg");
+      mask-size: 100%;
+      background-repeat: no-repeat;
+      margin-bottom: 8px;
     }
 
-
-
-    .custom-btn .text {
-        margin-left: 5px;
-        font-family: "Red Hat Display",
-            "serif";
-        font-weight: 700;
-        font-size: 40px;
-
-        &:hover {
-            color: $dark-blue;
-        }
+    .snacks .icon {
+      background-color: $cream;
+      -webkit-mask-image: url("/src/assets/icons/snacks.svg");
+      mask-image: url("/src/assets/icons/snacks.svg");
+      mask-size: 100%;
+      background-repeat: no-repeat;
+      margin-bottom: 8px;
     }
+
+    &:hover {
+      background-color: $dark-blue;
+    }
+  }
+
+  .custom-btn .icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .custom-btn .text {
+    margin-left: 5px;
+    font-family: "Red Hat Display", "serif";
+    font-weight: 700;
+    font-size: 40px;
+
+    &:hover {
+      color: $dark-blue;
+    }
+  }
 }
