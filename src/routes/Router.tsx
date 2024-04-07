@@ -44,13 +44,6 @@ const LazyMerchDetailPage = lazy(
 const LazyCoffeeDetailPage = lazy(
   () => import("../pages/coffeeDetail/CoffeeDetailPage")
 );
-const LazyOtherDrinksDetailPage = lazy(
-  () => import("../pages/otherDrinksDetail/OtherDrinksDetailPage")
-);
-const LazyCombosDetailPage = lazy(
-  () => import("../pages/combosDetail/CombosDetailPage")
-);
-
 const CreateAccountPage = lazy(
   () => import("../pages/createAccountPage/CreateAccountPage")
 );
@@ -201,22 +194,6 @@ const BrowserRoutes = createBrowserRouter([
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyCoffeeDetailPage />
-      </Suspense>
-    ),
-  },
-  {
-    path: "/other-drinks-detail",
-    element: (
-      <Suspense fallback={<LoaderPage />}>
-        <LazyOtherDrinksDetailPage />
-      </Suspense>
-    ),
-  },
-  {
-    path: "/combos-detail",
-    element: (
-      <Suspense fallback={<LoaderPage />}>
-        <LazyCombosDetailPage />
       </Suspense>
     ),
   },
