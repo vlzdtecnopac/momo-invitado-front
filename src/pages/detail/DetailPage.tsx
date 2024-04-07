@@ -7,8 +7,6 @@ import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import no_found from "../../assets/no-found.png";
 
-
-import "./DetailPage.scss";
 import axiosInstance from "../../helpers/axios.helper";
 import Combos from "../../components/Options/components/Combos";
 import Alimentos from "../../components/Options/components/Alimentos";
@@ -18,6 +16,8 @@ import CoffeWithTe from "../../components/Options/components/CoffeWithTe";
 import OtherDrinks from "../../components/Options/components/OtherDrinks";
 import StoreShopping from "../../components/Options/components/StoreShopping";
 import SpecialsMomo from "../../components/Options/components/SpecialMomo";
+
+import "./DetailPage.scss";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
