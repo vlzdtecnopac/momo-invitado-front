@@ -38,7 +38,16 @@ function CategoryNav() {
               className="category"
               key={index}
             >
-              <button onClick={()=> navigate(`../products/${category.sub_category}`)}>{translate(category.name_category)}</button>
+              <button onClick={()=> {
+                    if (category.name_category == "Nuestra Tienda") {
+                      navigate(`../merch-or-coffee/`);
+                    }
+                    if (category.name_category == "Alimentos") {
+                      navigate(`../sweet-salty-snacks/`);
+                    } else {
+                      navigate(`../products/${category.sub_category}`);
+                    }
+              }}>{translate(category.name_category)}</button>
             </li>
           ))}
         </ul>

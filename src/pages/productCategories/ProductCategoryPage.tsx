@@ -13,7 +13,6 @@ import "swiper/css";
 import banner from "../../assets/Banner.jpg";
 import "./ProductCategoryPage.scss";
 
-
 function ProductsPage() {
   const { translate } = useLanguage();
 
@@ -44,58 +43,58 @@ function ProductsPage() {
         <div className="products_page_category">
           <ul className="categories grid-4_xs-1">
             {categories.map((category: any, index) => (
-              <li
-                key={index}
-                className="col-3 options-container"
-              >
+              <li key={index} className="col-3 options-container">
                 <CustomButton
                   icon={category.class}
                   text={translate(`${category.name_category}`)}
                   onClick={function (): void {
-                    navigate(`../products/${category.sub_category}`);
+                    if (category.name_category == "Nuestra Tienda") {
+                      navigate(`../merch-or-coffee/`);
+                    }
+                    if (category.name_category == "Alimentos") {
+                      navigate(`../sweet-salty-snacks/`);
+                    } else {
+                      navigate(`../products/${category.sub_category}`);
+                    }
                   }}
                 />
               </li>
             ))}
           </ul>
-          {!loader ? (<div className="content-slider">
-            <Swiper
-              slidesPerView={1}
-              spaceBetween={5}
-              pagination={true}
-              modules={[Pagination]}
-              breakpoints={{
-                790: {
-                  slidesPerView: 1,
-                  spaceBetween: 5,
-                },
-                950: {
-                  slidesPerView: 1,
-                  spaceBetween: 5,
-                },
-                1990: {
-                  slidesPerView: 1,
-                  spaceBetween: 15,
-                },
-              }}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <img
-                  className="banner"
-                  src={banner}
-                  alt="banner"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className="banner"
-                  src={banner}
-                  alt="banner"
-                />
-              </SwiperSlide>
-            </Swiper>
-          </div>):""}
+          {!loader ? (
+            <div className="content-slider">
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={5}
+                pagination={true}
+                modules={[Pagination]}
+                breakpoints={{
+                  790: {
+                    slidesPerView: 1,
+                    spaceBetween: 5,
+                  },
+                  950: {
+                    slidesPerView: 1,
+                    spaceBetween: 5,
+                  },
+                  1990: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                  },
+                }}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <img className="banner" src={banner} alt="banner" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img className="banner" src={banner} alt="banner" />
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </Layout>
     </>
