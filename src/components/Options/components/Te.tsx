@@ -2,7 +2,6 @@ import { useRef } from "react";
 import glass from "../../../assets/icons/glass.svg";
 import sugar from "../../../assets/icons/sugar.svg";
 import lid from "../../../assets/icons/lid.svg";
-import temperature from "../../../assets/icons/temperature.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
 import Options from "../Options";
 import OptionsList from "../OptionsList";
