@@ -83,7 +83,7 @@ function DrinkDetailPage() {
                 <div className="container-btn-payment">
                   <div className="btn-container">
                     <button className="add-cart-btn">
-                      {translate("addCart")} {product.price}
+                      {translate("addCart")} ${product.price}
                     </button>
                   </div>
                 </div>

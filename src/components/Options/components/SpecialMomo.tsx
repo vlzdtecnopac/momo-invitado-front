@@ -29,7 +29,7 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({optionHandler}) => {
                 className="content-detail-page"
               >
                  <Options
-                  distanceScrolling={360}
+                  distanceScrolling={80}
                   titleOptions={translate("temperature")}
                   iconOptions={temperature}
                   listOptions={[translate("roomTemp"), translate("hot")]}
