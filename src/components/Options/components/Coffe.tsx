@@ -25,16 +25,6 @@ const Coffe: React.FC<CoffeProps> = ({optionHandler}) => {
           <div className="details">
             <div ref={myRef} className="content-detail-page">
               <Options
-                distanceScrolling={80}
-                titleOptions={translate("temperature")}
-                iconOptions={temperature}
-                listOptions={[translate("roomTemp"), translate("hot")]}
-                optionHandler={(e: any) => optionHandler(e)}
-                attr="temperature"
-                defaultValue={translate("roomTemp")}
-              />
-              <hr className="separator" />
-              <Options
                 distanceScrolling={160}
                 titleOptions={translate("size")}
                 iconOptions={glass}
@@ -55,6 +45,7 @@ const Coffe: React.FC<CoffeProps> = ({optionHandler}) => {
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="milk"
+                defaultValue={translate("lactoseFree")}
               />
               <hr className="separator" />
               <Options
@@ -64,6 +55,7 @@ const Coffe: React.FC<CoffeProps> = ({optionHandler}) => {
                 listOptions={[translate("less"), "Original", translate("more")]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="sugar"
+                defaultValue={"Original"}
               />
               <hr className="separator" />
               <OptionsList

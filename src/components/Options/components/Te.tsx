@@ -23,21 +23,13 @@ const Te: React.FC<TeProps> = ({optionHandler}) => {
             <div className="details">
               <div ref={myRef} className="content-detail-page">
                 <Options
-                  distanceScrolling={80}
-                  titleOptions={translate("temperature")}
-                  iconOptions={temperature}
-                  listOptions={[translate("roomTemp"), translate("hot")]}
-                  optionHandler={(e: any) => optionHandler(e)}
-                  attr="temperature"
-                />
-                <hr className="separator" />
-                <Options
                   distanceScrolling={160}
                   titleOptions={translate("size")}
                   iconOptions={glass}
                   listOptions={["Chico 12 oz", "Grande 16 Oz"]}
                   optionHandler={(e: any) => optionHandler(e)}
                   attr="size"
+                  defaultValue="Chico 12 oz"
                 />
                 <hr className="separator" />
                 <Options
@@ -47,6 +39,7 @@ const Te: React.FC<TeProps> = ({optionHandler}) => {
                   listOptions={[translate("less"), "Original", translate("more")]}
                   optionHandler={(e: any) => optionHandler(e)}
                   attr="sugar"
+                  defaultValue="Original"
                 />
                 <hr className="separator" />
                 <OptionsList

@@ -44,6 +44,7 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({optionHandler}) => {
                   listOptions={["Chico 12 oz", "Grande 16 Oz"]}
                   optionHandler={(e: any) => optionHandler(e)}
                   attr="size"
+                  defaultValue="Chico 12 oz"
                 />
                 <hr className="separator" />
                 <Options
@@ -57,6 +58,7 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({optionHandler}) => {
                   ]}
                   optionHandler={(e: any) => optionHandler(e)}
                   attr="milk"
+                  defaultValue={translate("lactoseFree")}
                 />
                 <hr className="separator" />
                 <Options
@@ -70,6 +72,7 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({optionHandler}) => {
                   ]}
                   optionHandler={(e: any) => optionHandler(e)}
                   attr="sugar"
+                  defaultValue={"Original"}
                 />
                 <hr className="separator" />
                 <OptionsList

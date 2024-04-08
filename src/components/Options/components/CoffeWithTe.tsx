@@ -56,6 +56,7 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="milk"
+                defaultValue={translate("lactoseFree")}
               />
               <hr className="separator" />
               <Options
@@ -65,6 +66,7 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
                 listOptions={[translate("less"), "Original", translate("more")]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="sugar"
+                defaultValue={"Original"}
               />
               <hr className="separator" />
               <OptionsList

@@ -34,6 +34,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 listOptions={["Chico 12 oz", "Grande 16 Oz"]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="size"
+                defaultValue="Chico 12 oz"
               />
               <hr className="separator" />
               <Options
@@ -46,6 +47,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                   translate("oatMilk"),
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
+                defaultValue={translate("lactoseFree")}
                 attr="milk"
               />
               <hr className="separator" />
@@ -55,6 +57,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 iconOptions={sugar}
                 listOptions={[translate("less"), "Original", translate("more")]}
                 optionHandler={(e: any) => optionHandler(e)}
+                defaultValue={"Original"}
                 attr="sugar"
               />
               <hr className="separator" />
