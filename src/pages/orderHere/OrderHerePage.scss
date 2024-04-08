@@ -3,7 +3,7 @@
 .order_here_page {
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 165px;
 
     .imagotipo {
         display: flex;
@@ -27,6 +27,7 @@
     .btn-container {
         margin: 0 auto;
         text-align: center;
+
         .btn {
             width: 350px;
             height: 70px;
@@ -49,10 +50,11 @@
     .btns {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         height: 100%;
         width: 90%;
         margin: 0px auto;
+        margin-bottom: 70px;
 
         .right {
             display: flex;
