@@ -1,14 +1,23 @@
 import { useState } from "react";
 import product from "../../assets/product1.jpg";
 import "./OrderResumeCard.scss";
+import { db } from "../../helpers/dexie_db.helper";
 
-function OrderResumeCard() {
-  const [quantity, setQuantity] = useState(1); // Initial quantity state
+interface OrderResumeCardProp {
+    data: any;
+}
+
+const OrderResumeCard: React.FC<OrderResumeCardProp> = ({data}) => {
+  const [quantity, setQuantity] = useState(0); 
 
   const handleQuantityChange = (change: any) => {
-    const newQuantity = Math.max(quantity + change, 1); // Ensure minimum quantity is 1
+    const newQuantity = Math.max(quantity + change, 1); 
     setQuantity(newQuantity);
   };
+
+  const handleDeleteProduct = (id: string) => {
+    db.product.delete(id)
+  }
 
   return (
     <>
@@ -59,8 +68,7 @@ function OrderResumeCard() {
               <p className="subtotal-cart">${(quantity * 67).toFixed(2)} </p>
             </div>
             <div className="col-3">
-              {" "}
-              <button className="trash-cart"></button>
+              <button onClick={()=>handleDeleteProduct(data.id)} className="trash-cart"></button>
             </div>
           </div>
         </div>

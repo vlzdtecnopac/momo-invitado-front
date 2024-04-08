@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import { useParams } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
 
@@ -18,6 +19,7 @@ import StoreShopping from "../../components/Options/components/StoreShopping";
 import SpecialsMomo from "../../components/Options/components/SpecialMomo";
 
 import "./DetailPage.scss";
+import { db } from "../../helpers/dexie_db.helper";
 
 function DrinkDetailPage() {
   const myRef = useRef<any>(null);
@@ -28,6 +30,20 @@ function DrinkDetailPage() {
   useEffect(() => {
     getDetailProduct();
   }, []);
+
+  async function addCart() {
+    try{
+      const id =  await db.product.add({
+        id: uuidv4(),
+        name_product: product.name_product,
+        price: product.price,
+        image: product.image
+      })
+      console.log(id);
+    }catch(e){
+      console.log(e)
+    }
+  }
 
   const getDetailProduct = async () => {
     let response = await axiosInstance(`/product/?product_id=${product_id}`);
@@ -71,18 +87,37 @@ function DrinkDetailPage() {
             <div className="col-9 details-col detail-card">
               <div className="details">
                 <div ref={myRef} className="container-options-product">
-                  {(product.categorys == "Combos" ) && (<Combos optionHandler={(e)=>optionHandler(e)} />)}
-                  {(product.categorys == "Cafe" ) && (<Coffe optionHandler={(e)=>optionHandler(e)} />)}
-                  {(product.categorys == "Alimentos" ) && (<Alimentos optionHandler={(e)=>optionHandler(e)} />)}
-                  {(product.categorys == "Te" ) && (<Te optionHandler={(e)=>optionHandler(e)} />)}
-                  {(product.categorys == "Café con Té") && (<CoffeWithTe optionHandler={(e)=>optionHandler(e)}/>)}
-                  {(product.categorys == "MOMO Specials") && (<SpecialsMomo optionHandler={(e)=>optionHandler(e)} />)}
-                  {(product.categorys == "Otras Bebidas") && (<OtherDrinks optionHandler={(e)=>optionHandler(e)} />)}
-                  {(product.categorys == "Tienda") && (<StoreShopping optionHandler={(e)=>optionHandler(e)} type={type}/>)}
-                </div> 
+                  {product.categorys == "Combos" && (
+                    <Combos optionHandler={(e) => optionHandler(e)} />
+                  )}
+                  {product.categorys == "Cafe" && (
+                    <Coffe optionHandler={(e) => optionHandler(e)} />
+                  )}
+                  {product.categorys == "Alimentos" && (
+                    <Alimentos optionHandler={(e) => optionHandler(e)} />
+                  )}
+                  {product.categorys == "Te" && (
+                    <Te optionHandler={(e) => optionHandler(e)} />
+                  )}
+                  {product.categorys == "Café con Té" && (
+                    <CoffeWithTe optionHandler={(e) => optionHandler(e)} />
+                  )}
+                  {product.categorys == "MOMO Specials" && (
+                    <SpecialsMomo optionHandler={(e) => optionHandler(e)} />
+                  )}
+                  {product.categorys == "Otras Bebidas" && (
+                    <OtherDrinks optionHandler={(e) => optionHandler(e)} />
+                  )}
+                  {product.categorys == "Tienda" && (
+                    <StoreShopping
+                      optionHandler={(e) => optionHandler(e)}
+                      type={type}
+                    />
+                  )}
+                </div>
                 <div className="container-btn-payment">
                   <div className="btn-container">
-                    <button className="add-cart-btn">
+                    <button onClick={() => addCart()} className="add-cart-btn">
                       {translate("addCart")} ${product.price}
                     </button>
                   </div>
