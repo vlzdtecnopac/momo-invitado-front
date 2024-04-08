@@ -1,5 +1,4 @@
 import { useState } from "react";
-import product from "../../assets/product1.jpg";
 import "./OrderResumeCard.scss";
 import { db } from "../../helpers/dexie_db.helper";
 
