@@ -72,8 +72,8 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
               <OptionsList
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  translate("extraCoffee"),
-                  translate("extraCream"),
+                  {name: translate("extraCoffee"), price: 0},
+                  {name: translate("extraCream"), price: 0},
                 ]}
                 iconOptions={extra}
                 attr="extra_coffee"
@@ -83,8 +83,8 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
               <OptionsList
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  "Con tapa",
-                  'Sin tapa <span class="recicle"><img class="recicle-icon" src="/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
+                  {name: "Con tapa", price: 10},
+                  {name: 'Sin tapa <span class="recicle"><img class="recicle-icon" src="/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta', price: 0},
                 ]}
                 iconOptions={lid}
                 attr="lid"

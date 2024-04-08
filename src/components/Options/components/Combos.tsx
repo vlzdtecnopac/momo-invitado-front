@@ -42,12 +42,12 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 titleOptions={translate("milk")}
                 iconOptions={milk}
                 listOptions={[
-                  translate("whole"),
-                  translate("lactoseFree"),
-                  translate("oatMilk"),
+                  {name: translate("whole"), price: 0},
+                  {name: translate("lactoseFree"), price: 0},
+                  {name: translate("oatMilk"), price: 0},
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
-                defaultValue={{name: translate("lactoseFree"), price:0}}
+                defaultValue={{name: translate("lactoseFree")}}
                 attr="milk"
               />
               <hr className="separator" />
@@ -55,17 +55,17 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 distanceScrolling={280}
                 titleOptions={translate("sugar")}
                 iconOptions={sugar}
-                listOptions={[translate("less"), "Original", translate("more")]}
+                listOptions={[{name: translate("less"), price: 0},{name: "Original", price: 0}, {name: translate("more"), price: 0}]}
                 optionHandler={(e: any) => optionHandler(e)}
-                defaultValue={{name: "Original", price: 0 }}
+                defaultValue={{name: "Original"}}
                 attr="sugar"
               />
               <hr className="separator" />
               <OptionsList
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  translate("extraCoffee"),
-                  translate("extraCream"),
+                  {name: translate("extraCoffee"), price: 10},
+                  {name: translate("extraCream"), price: 10},
                 ]}
                 iconOptions={extra}
                 attr="extra_coffee"
@@ -76,8 +76,8 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 distanceScrolling={380}
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  "Con tapa",
-                  'Sin tapa <span class="recicle"><img class="recicle-icon" src="/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
+                  {name: "Con tapa", price: 10},
+                  {name: 'Sin tapa <span class="recicle"><img class="recicle-icon" src="/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta', price: 0},
                 ]}
                 iconOptions={lid}
                 attr="lid"
@@ -90,15 +90,15 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 distanceScrolling={580}
                 titleOptions={translate("temperature")}
                 iconOptions={temperature}
-                listOptions={[translate("roomTemp"), translate("hot")]}
+                listOptions={[{name: translate("roomTemp"), price: 0}, {name: translate("hot"), price: 0}]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="temperature"
               />
               <hr className="separator" />
               <OptionsList
                 listOptions={[
-                  translate("machaSauce"),
-                  translate("chipotleSauce"),
+                  {name: translate("machaSauce"), price: 10},
+                  {name: translate("chipotleSauce"), price: 10},
                 ]}
                 iconOptions={sauce}
                 distanceScrolling={310}

@@ -31,8 +31,8 @@ const Alimentos: React.FC<AlimentosProps> = ({optionHandler}) => {
               <hr className="separator" />
                   <OptionsList
                     listOptions={[
-                      translate("machaSauce"),
-                      translate("chipotleSauce"),
+                      {name: translate("machaSauce"), price: 10 },
+                      {name: translate("chipotleSauce"), price: 10},
                     ]}
                     iconOptions={sauce}
                     distanceScrolling={310}

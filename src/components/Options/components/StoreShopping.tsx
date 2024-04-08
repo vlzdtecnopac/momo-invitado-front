@@ -60,10 +60,10 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
                   <Options
                     titleOptions={translate("coffeeType")}
                     iconOptions={beans}
-                    listOptions={[translate("ground"), translate("beans")]}
+                    listOptions={[{name: translate("ground"), price: 0}, {name: translate("beans"), price: 0}]}
                     attr="coffee_type"
                     optionHandler={(e: any) => optionHandler(e)}
-                    defaultValue={translate("ground")}
+                    defaultValue={{name: translate("ground")}}
                   />
                   <hr className="separator" />
                   <Options

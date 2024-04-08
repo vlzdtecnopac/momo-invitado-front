@@ -44,8 +44,8 @@ const Te: React.FC<TeProps> = ({optionHandler}) => {
                 <OptionsList
                   optionHandler={(e: any) => optionHandler(e)}
                   listOptions={[
-                    "Con tapa",
-                    'Sin tapa <span class="recicle"><img class="recicle-icon" src="/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
+                    {name: "Con tapa", price:10},
+                    {name: 'Sin tapa <span class="recicle"><img class="recicle-icon" src="/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta', price: 0}
                   ]}
                   iconOptions={lid}
                   attr="lid"
