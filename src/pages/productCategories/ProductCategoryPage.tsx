@@ -10,7 +10,7 @@ import CustomButton from "../../components/CustomButton/CustomButton";
 
 import "swiper/css/pagination";
 import "swiper/css";
-import banner from "../../assets/Banner.jpg";
+import banner from "/assets/Banner.jpg";
 import "./ProductCategoryPage.scss";
 
 function ProductsPage() {

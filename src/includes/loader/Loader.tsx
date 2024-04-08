@@ -1,4 +1,4 @@
-import logoMomo from "../../assets/loading_logo.svg";
+import logoMomo from "/assets/loading_logo.svg";
 import "./Loader.scss";
 
 export const LoaderPage = () =>{

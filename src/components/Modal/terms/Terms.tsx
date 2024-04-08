@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import coffee from "../../../assets/coffee-momo.png";
+import coffee from "/assets/coffee-momo.png";
 import { useLanguage } from "../../../context/Langi18nContext";
 import "./Terms.scss";
 

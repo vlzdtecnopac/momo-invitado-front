@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
-import no_found from "../../assets/no-found.png";
+import no_found from "/assets/no-found.png";
 import "./ProductsPage.scss";
 
 import axiosInstance from "../../helpers/axios.helper";

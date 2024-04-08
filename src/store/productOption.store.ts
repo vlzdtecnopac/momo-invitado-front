@@ -1,5 +1,10 @@
 import { create } from "zustand";
 
+interface OptionData{
+  name: string,
+  price: number
+}
+
 interface ProductOptioInterface {
   size: string;
   milk: string;

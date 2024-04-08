@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import imgRegister from "../../assets/register-img.jpg";
-import logoMomo from "../../assets/icons/logo.svg";
+import imgRegister from "/assets/register-img.jpg";
+import logoMomo from "/assets/icons/logo.svg";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
-import back from "../../assets/icons/arrow_left.svg";
+import back from "/assets/icons/arrow_left.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 import { LoaderPage } from "../../loader/Loader";
 

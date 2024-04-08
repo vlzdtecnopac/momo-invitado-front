@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import isotipo from "/src/assets/icons/isotipo.svg";
-import mxIcon from "/src/assets/icons/mexico_flag.svg";
-import usaIcon from "/src/assets/icons/usa_flag.svg";
+import isotipo from "/assets/icons/isotipo.svg";
+import mxIcon from "/assets/icons/mexico_flag.svg";
+import usaIcon from "/assets/icons/usa_flag.svg";
 import LogoMomo from "../../components/Logo/LogoMomo";
 import NoCash from "../../components/NoCash/NoCash";
 

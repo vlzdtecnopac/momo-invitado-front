@@ -41,8 +41,8 @@
           width: 26px;
           height: 26px;
           background-color: $cream;
-          -webkit-mask-image: url(/src/assets/icons/dollar-circle.svg);
-          mask-image: url(/src/assets/icons/dollar-circle.svg);
+          -webkit-mask-image: url(/assets/icons/dollar-circle.svg);
+          mask-image: url(/assets/icons/dollar-circle.svg);
           mask-size: 100%;
         }
       }
@@ -80,7 +80,7 @@
           }
 
           .dolar-icon {
-            background-image: url("../../assets/icons/dollar-circle-blue.svg");
+            background-image: url("/assets/icons/dollar-circle-blue.svg");
             width: 20px;
             height: 20px;
             display: block;
@@ -138,8 +138,8 @@
           top: 30px;
           left: 5px;
           mask-size: contain;
-          -webkit-mask-image: url(/src/assets/icons/user.svg);
-          mask-image: url(/src/assets/icons/user.svg);
+          -webkit-mask-image: url(/assets/icons/user.svg);
+          mask-image: url(/assets/icons/user.svg);
           background-color: $black;
           position: absolute;
         }
@@ -215,8 +215,8 @@
           .card-icon {
             width: 24px;
             height: 24px;
-            -webkit-mask-image: url(/src/assets/icons/card.svg);
-            mask-image: url(/src/assets/icons/card.svg);
+            -webkit-mask-image: url(/assets/icons/card.svg);
+            mask-image: url(/assets/icons/card.svg);
             background-color: $dark-blue;
             mask-size: 100%;
             margin-top: 10px;
@@ -227,8 +227,8 @@
           .cash-icon {
             width: 24px;
             height: 24px;
-            -webkit-mask-image: url(/src/assets/icons/wallet.svg);
-            mask-image: url(/src/assets/icons/wallet.svg);
+            -webkit-mask-image: url(/assets/icons/wallet.svg);
+            mask-image: url(/assets/icons/wallet.svg);
             background-color: $dark-blue;
             mask-size: 100%;
             margin-top: 10px;
@@ -293,7 +293,7 @@
           position: relative;
 
           .cupon-icon {
-            background-image: url(../../assets/icons/cupon_icon.svg);
+            background-image: url(/assets/icons/cupon_icon.svg);
             width: 30px;
             height: 30px;
             display: block;

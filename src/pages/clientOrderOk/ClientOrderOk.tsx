@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-import logo from "../../assets/icons/logo.svg";
-import clock from "../../assets/icons/clock.svg";
+import logo from "/assets/icons/logo.svg";
+import clock from "/assets/icons/clock.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./ClientOrderOk.scss";

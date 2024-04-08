@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import * as Yup from "yup";
 import axiosInstance from "../../helpers/axios.helper";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
-import logoMomo from "../../assets/icons/logo.svg";
+import logoMomo from "/assets/icons/logo.svg";
 
 import Terms from "../../components/Modal/terms/Terms";
 import ClientWelcomeComponent from "../../components/clientWelcome/ClientWelcome";

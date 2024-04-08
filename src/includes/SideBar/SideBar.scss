@@ -50,8 +50,8 @@
 
             .inventory-icon {
                 background-color: $dark-blue;
-                -webkit-mask-image: url(/src/assets/icons/inventory.svg);
-                mask-image: url(/src/assets/icons/inventory.svg);
+                -webkit-mask-image: url(/assets/icons/inventory.svg);
+                mask-image: url(/assets/icons/inventory.svg);
                 mask-size: 100%;
 
                 &.active {
@@ -69,8 +69,8 @@
             .orders-icon {
                 background-color: $dark-blue;
 
-                -webkit-mask-image: url(/src/assets/icons/orders.svg);
-                mask-image: url(/src/assets/icons/orders.svg);
+                -webkit-mask-image: url(/assets/icons/orders.svg);
+                mask-image: url(/assets/icons/orders.svg);
                 mask-size: 100%;
 
                 &.active {
@@ -86,8 +86,8 @@
 
             .alert-icon {
                 background-color: $dark-blue;
-                -webkit-mask-image: url(/src/assets/icons/alert.svg);
-                mask-image: url(/src/assets/icons/alert.svg);
+                -webkit-mask-image: url(/assets/icons/alert.svg);
+                mask-image: url(/assets/icons/alert.svg);
                 mask-size: 100%;
 
                 &.active {
@@ -102,8 +102,8 @@
 
             .config-icon {
                 background-color: $dark-blue;
-                -webkit-mask-image: url(/src/assets/icons/alert.svg);
-                mask-image: url(/src/assets/icons/config.svg);
+                -webkit-mask-image: url(/assets/icons/alert.svg);
+                mask-image: url(/assets/icons/config.svg);
                 mask-size: 100%;
 
                 &.active {
@@ -179,8 +179,8 @@
             height: 30px;
             display: block;
             background-color: #2E418E;
-            -webkit-mask-image: url(/src/assets/icons/logout.svg);
-            mask-image: url(/src/assets/icons/logout.svg);
+            -webkit-mask-image: url(/assets/icons/logout.svg);
+            mask-image: url(/assets/icons/logout.svg);
             mask-size: 100%;
             text-align: center;
             margin: auto;

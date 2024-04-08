@@ -6,7 +6,7 @@ import { useLanguage } from "../../context/Langi18nContext";
 import ProductCardDetail from "../../components/ProductCardDetail/ProductCardDetail";
 import Layout from "../../includes/layout/Layout";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
-import no_found from "../../assets/no-found.png";
+import no_found from "/assets/no-found.png";
 
 import axiosInstance from "../../helpers/axios.helper";
 import Combos from "../../components/Options/components/Combos";

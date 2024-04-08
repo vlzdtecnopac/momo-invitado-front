@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/icons/logo.svg";
-import checkIcon from "../../assets/icons/check.svg";
+import logo from "/assets/icons/logo.svg";
+import checkIcon from "/assets/icons/check.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./RegisterSuccess.scss";

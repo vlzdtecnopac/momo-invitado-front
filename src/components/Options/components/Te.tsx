@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import glass from "../../../assets/icons/glass.svg";
-import sugar from "../../../assets/icons/sugar.svg";
-import lid from "../../../assets/icons/lid.svg";
+import glass from "/assets/icons/glass.svg";
+import sugar from "/assets/icons/sugar.svg";
+import lid from "/assets/icons/lid.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
 import Options from "../Options";
 import OptionsList from "../OptionsList";
@@ -45,7 +45,7 @@ const Te: React.FC<TeProps> = ({optionHandler}) => {
                   optionHandler={(e: any) => optionHandler(e)}
                   listOptions={[
                     "Con tapa",
-                    'Sin tapa <span class="recicle"><img class="recicle-icon" src="/src/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
+                    'Sin tapa <span class="recicle"><img class="recicle-icon" src="/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
                   ]}
                   iconOptions={lid}
                   attr="lid"

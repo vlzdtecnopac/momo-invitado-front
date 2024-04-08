@@ -108,7 +108,7 @@
     "extraCoffee": "Extra shot de café",
     "extraCream": "Extra de crema",
     "lid": "Con tapa",
-    "noLid": "Sin tapa <span class='recicle'><img class='recicle-icon' src='/src/assets/icons/recicle.svg' alt='recicle-icon'></span> Ayúdanos a cuidar el planeta",
+    "noLid": "Sin tapa <span class='recicle'><img class='recicle-icon' src='/assets/icons/recicle.svg' alt='recicle-icon'></span> Ayúdanos a cuidar el planeta",
     "helpPlanet": " Ayúdanos a cuidar el planeta",
     "accompanyDrink": "Acompaña tu bebida",
     "accompanyFood": "Acompaña tu comida",

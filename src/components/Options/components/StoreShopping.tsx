@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import color from "../../../assets/icons/color.svg";
-import tshirt from "../../../assets/icons/t-shirt.svg";
-import coffeeBag from "../../../assets/icons/coffee_bag.svg";
-import beans from "../../../assets/icons/coffee_beans.svg";
+import color from "/assets/icons/color.svg";
+import tshirt from "/assets/icons/t-shirt.svg";
+import coffeeBag from "/assets/icons/coffee_bag.svg";
+import beans from "/assets/icons/coffee_beans.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
 import Options from "../Options";
 import "../Options.scss";
@@ -63,6 +63,7 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
                     listOptions={[translate("ground"), translate("beans")]}
                     attr="coffee_type"
                     optionHandler={(e: any) => optionHandler(e)}
+                    defaultValue={translate("ground")}
                   />
                   <hr className="separator" />
                   <Options
@@ -71,6 +72,7 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
                     listOptions={["Chico 250gr", "Mediano 500gr", "Grande 1kg"]}
                     attr="size"
                     optionHandler={(e: any) => optionHandler(e)}
+                    defaultValue="Mediano 500gr"
                   />
                   <hr className="separator" />
                 </>

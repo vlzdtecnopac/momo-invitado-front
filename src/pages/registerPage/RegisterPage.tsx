@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import imgRegister from "../../assets/register-img.jpg";
-import logoMomo from "../../assets/icons/logo.svg";
+import imgRegister from "/assets/register-img.jpg";
+import logoMomo from "/assets/icons/logo.svg";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import { useLanguage } from "../../context/Langi18nContext";
 import "./RegisterPage.scss";

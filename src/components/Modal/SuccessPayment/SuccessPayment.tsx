@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import clock from "../../../assets/icons/clock.svg";
+import clock from "/assets/icons/clock.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
 
 import "./SuccessPayment.scss";

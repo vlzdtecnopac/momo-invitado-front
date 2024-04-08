@@ -1,7 +1,7 @@
 import "./Login.scss";
 import LoginForm from "../LoginForm/LoginForm";
-import imgLogin from "../../assets/login-img.jpg";
-import logoMomo from "../../assets/icons/logo.svg";
+import imgLogin from "/assets/login-img.jpg";
+import logoMomo from "/assets/icons/logo.svg";
 import { motion } from "framer-motion";
 
 const Login = () => {

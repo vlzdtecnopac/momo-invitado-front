@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import sauce from "../../../assets/icons/sauce.svg";
-import temperature from "../../../assets/icons/temperature.svg";
+import sauce from "/assets/icons/sauce.svg";
+import temperature from "/assets/icons/temperature.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
 import Options from "../Options";
 import OptionsList from "../OptionsList";
