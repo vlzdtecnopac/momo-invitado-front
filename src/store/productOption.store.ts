@@ -17,19 +17,21 @@ interface ProductOptionStoreInterface {
   setDataProductOption: (value: ProductOptioInterface) => void;
 }
 
+export const initialProductOptionState = {
+  size: "",
+  milk: "",
+  sugar: "",
+  extra_coffee: [],
+  lid: [],
+  sauce: [],
+  temperature: "",
+  color: "",
+  coffee_type: "",
+}
+
 export const useProductOptionStore = create<ProductOptionStoreInterface>(
   (set) => ({
-    dataProductOption: {
-      size: "",
-      milk: "",
-      sugar: "",
-      extra_coffee: [],
-      lid: [],
-      sauce: [],
-      temperature: "",
-      color: "",
-      coffee_type: "",
-    },
+    dataProductOption: initialProductOptionState,
     setDataProductOption: (value) =>
       set((state) => ({
         ...state,

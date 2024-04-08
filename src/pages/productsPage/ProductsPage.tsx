@@ -51,7 +51,7 @@ function ProductsPage() {
                   <ProductCard
                     id={product.product_id}
                     img={image}
-                    price="30"
+                    price={product.price}
                     name={product.name_product}
                     type={type}
                   />

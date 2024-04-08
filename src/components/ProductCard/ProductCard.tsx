@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useProductOptionStore } from "../../store/productOption.store";
+import { initialProductOptionState, useProductOptionStore } from "../../store/productOption.store";
 import "./ProductCard.scss";
 
 interface ProductCardProps {
@@ -22,17 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, img, price, name, type })
   }
 
   const handleProductDetail = () => {
-    setDataProductOption( {
-      size: "",
-      milk: "",
-      sugar: "",
-      extra_coffee: [],
-      lid: [],
-      sauce: [],
-      temperature: "",
-      color: "",
-      coffee_type: "",
-    })
+    setDataProductOption(initialProductOptionState)
     if(type != undefined){
       navigate(`../detail/${id}/${type}`);
     }else{

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
 import { LoaderPage } from "../../includes/loader/Loader";
 import axiosInstance from "../../helpers/axios.helper";
-import { useProductOptionStore } from "../../store/productOption.store";
+import { initialProductOptionState, useProductOptionStore } from "../../store/productOption.store";
 import Cart from "../Cart/Cart";
 import "./CategoryNav.scss";
 
@@ -40,17 +40,7 @@ function CategoryNav() {
             <li className="category" key={index}>
               <button
                 onClick={() => {
-                  setDataProductOption({
-                    size: "",
-                    milk: "",
-                    sugar: "",
-                    extra_coffee: [],
-                    lid: [],
-                    sauce: [],
-                    temperature: "",
-                    color: "",
-                    coffee_type: "",
-                  });
+                  setDataProductOption(initialProductOptionState);
                   if (category.name_category == "Nuestra Tienda") {
                     navigate(`../merch-or-coffee/`);
                     return;
