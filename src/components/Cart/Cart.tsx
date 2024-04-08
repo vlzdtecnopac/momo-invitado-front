@@ -20,22 +20,24 @@ function Cart() {
     setEjeX(600);
   };
 
-  useEffect(()=> {
+  useEffect(() => {
     countCart();
-  },[productCart])
+  }, [productCart]);
 
   const openHandlerCart = () => {
     setEjeX(0);
   };
 
-  const countCart = async() =>
-    db.product.count().then(function(count) {
-      setCount(count);
-  }).catch(function(error) {
-      setCount(0);
-      console.error('Error:', error);
-  });
-  
+  const countCart = async () =>
+    db.product
+      .count()
+      .then(function (count) {
+        setCount(count);
+      })
+      .catch(function (error) {
+        setCount(0);
+        console.error("Error:", error);
+      });
 
   return (
     <>
@@ -61,7 +63,9 @@ function Cart() {
 
           <div className="container-list-product">
             {productCart?.map((item) => (
-              <OrderResumeCard data={item}/>
+              <div key={item.id}>
+                <OrderResumeCard data={item} />
+              </div>
             ))}
           </div>
         </div>

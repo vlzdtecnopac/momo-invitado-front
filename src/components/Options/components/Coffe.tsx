@@ -31,6 +31,7 @@ const Coffe: React.FC<CoffeProps> = ({optionHandler}) => {
                 listOptions={[translate("roomTemp"), translate("hot")]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="temperature"
+                defaultValue={translate("roomTemp")}
               />
               <hr className="separator" />
               <Options
@@ -40,6 +41,7 @@ const Coffe: React.FC<CoffeProps> = ({optionHandler}) => {
                 listOptions={["Chico 12 oz", "Grande 16 Oz"]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="size"
+                defaultValue="Chico 12 oz"
               />
               <hr className="separator" />
               <Options

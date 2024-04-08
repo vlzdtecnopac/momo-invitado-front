@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useProductOptionStore } from "../../store/productOption.store";
 import "./Options.scss";
 
 interface OptionsProps {
   titleOptions: string;
   optionHandler?: Function;
+  defaultValue?: string;
   price?: string[];
   listOptions: string[];
   iconOptions: string;
@@ -20,12 +21,33 @@ const Options: React.FC<OptionsProps> = ({
   distanceScrolling,
   attr,
   price = [],
+  defaultValue = "",
 }) => {
   const { dataProductOption } = useProductOptionStore();
+  const [getDefault, setDetault] = useState(defaultValue);
   const setDataProductOption = useProductOptionStore(
     (state) => state.setDataProductOption
   );
 
+  useEffect(() => {
+    if (defaultValue) {
+      const updatedData = {
+        ...dataProductOption,
+        [attr]: defaultValue,
+      };
+      setDataProductOption(updatedData);
+    }
+  }, []);
+
+  const selectHandleValueOption = (item: string, attr: string) => {
+    const updatedData = {
+      ...dataProductOption,
+      [attr]: `${item}`,
+    };
+    console.log(updatedData);
+    setDetault(item);
+    setDataProductOption(updatedData);
+  };
   return (
     <div className="options-component">
       <div className="grid-middle grid-noGutter-noBottom">
@@ -42,7 +64,8 @@ const Options: React.FC<OptionsProps> = ({
               return (
                 <button
                   className={
-                    Object.values(dataProductOption)[postion] == item
+                    Object.values(dataProductOption)[postion] == item ||
+                    getDefault == item
                       ? `option-active`
                       : `option`
                   }
@@ -50,11 +73,7 @@ const Options: React.FC<OptionsProps> = ({
                   onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                     e.stopPropagation();
                     if (attr !== undefined) {
-                      const updatedData = {
-                        ...dataProductOption,
-                        [attr]: `${item}`,
-                      };
-                      setDataProductOption(updatedData);
+                      selectHandleValueOption(item, attr);
                     }
                     if (optionHandler !== undefined) {
                       distanceScrolling && optionHandler(distanceScrolling);
