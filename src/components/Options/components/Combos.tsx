@@ -70,6 +70,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
               />
               <hr className="separator" />
               <OptionsList
+                distanceScrolling={380}
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
                   "Con tapa",
@@ -83,7 +84,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
               <h2 className="step">{translate("drinkStepTwo")}</h2>
               <hr className="separator" />
               <Options
-                distanceScrolling={360}
+                distanceScrolling={580}
                 titleOptions={translate("temperature")}
                 iconOptions={temperature}
                 listOptions={[translate("roomTemp"), translate("hot")]}

@@ -3,7 +3,7 @@ import "./Options.scss";
 import { useProductOptionStore } from "../../store/productOption.store";
 
 interface OptionsListProps {
-  optionHandler?: Function;
+  optionHandler?: (e:any) => any;
   listOptions: string[];
   iconOptions: string;
   distanceScrolling?: number;
