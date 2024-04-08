@@ -24,7 +24,7 @@ const Alimentos: React.FC<AlimentosProps> = ({optionHandler}) => {
                 distanceScrolling={360}
                 titleOptions={translate("temperature")}
                 iconOptions={temperature}
-                listOptions={[translate("roomTemp"), translate("hot")]}
+                listOptions={[{name: translate("roomTemp"), price: 0}, {name: translate("hot"), price: 0}]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="temperature"
               />

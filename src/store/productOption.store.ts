@@ -1,20 +1,20 @@
 import { create } from "zustand";
 
-interface OptionData{
-  name: string,
-  price: number
+export interface OptionData{
+  name?: string,
+  price?: number
 }
 
 interface ProductOptioInterface {
-  size: string;
-  milk: string;
-  sugar: string;
-  extra_coffee: string[];
-  lid: string[];
-  sauce: string[];
-  temperature: string;
-  color: string;
-  coffee_type: string;
+  size: OptionData;
+  milk: OptionData;
+  sugar: OptionData;
+  extra_coffee: OptionData[];
+  lid: OptionData[];
+  sauce: OptionData[];
+  temperature: OptionData;
+  color: OptionData;
+  coffee_type: OptionData;
 }
 
 interface ProductOptionStoreInterface {
@@ -23,15 +23,15 @@ interface ProductOptionStoreInterface {
 }
 
 export const initialProductOptionState = {
-  size: "",
-  milk: "",
-  sugar: "",
+  size: {},
+  milk: {},
+  sugar: {},
   extra_coffee: [],
   lid: [],
   sauce: [],
-  temperature: "",
-  color: "",
-  coffee_type: "",
+  temperature: {},
+  color: {},
+  coffee_type: {},
 }
 
 export const useProductOptionStore = create<ProductOptionStoreInterface>(

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useProductOptionStore } from "../../store/productOption.store";
+import { OptionData, useProductOptionStore } from "../../store/productOption.store";
 import "./Options.scss";
 
 interface OptionsProps {
   titleOptions: string;
   optionHandler?: Function;
-  defaultValue?: string;
-  price?: string[];
-  listOptions: string[];
+  price?: string;
+  defaultValue?: OptionData;
+  listOptions: OptionData[];
   iconOptions: string;
   distanceScrolling?: number;
   attr: string;
@@ -20,11 +20,14 @@ const Options: React.FC<OptionsProps> = ({
   iconOptions,
   distanceScrolling,
   attr,
-  price = [],
-  defaultValue = "",
+  price,
+  defaultValue = {
+    name: "",
+    price: 0
+  },
 }) => {
   const { dataProductOption } = useProductOptionStore();
-  const [getDefault, setDetault] = useState(defaultValue);
+  const [getDefault, setDetault] = useState<OptionData>(defaultValue);
   const setDataProductOption = useProductOptionStore(
     (state) => state.setDataProductOption
   );
@@ -35,17 +38,17 @@ const Options: React.FC<OptionsProps> = ({
         ...dataProductOption,
         [attr]: defaultValue,
       };
+      console.log(defaultValue);
       setDataProductOption(updatedData);
     }
   }, []);
 
-  const selectHandleValueOption = (item: string, attr: string) => {
+  const selectHandleValueOption = (item: OptionData, attr: string) => {
     const updatedData = {
       ...dataProductOption,
-      [attr]: `${item}`,
+      [attr]: item,
     };
-    console.log(updatedData);
-    setDetault(item);
+    setDetault({name: item.name, price: item.price});
     setDataProductOption(updatedData);
   };
   return (
@@ -59,13 +62,13 @@ const Options: React.FC<OptionsProps> = ({
         </div>
         <div className="col-8">
           <div className="options">
-            {listOptions.map((item: string, i: number) => {
+            {listOptions.map((item: OptionData, i: number) => {
               let postion = Object.keys(dataProductOption).indexOf(attr);
               return (
                 <button
                   className={
-                    Object.values(dataProductOption)[postion] == item ||
-                    getDefault == item
+                    Object.values(dataProductOption)[postion].name == item.name ||
+                    getDefault.name == item.name
                       ? `option-active`
                       : `option`
                   }
@@ -80,8 +83,8 @@ const Options: React.FC<OptionsProps> = ({
                     }
                   }}
                 >
-                  {item}
-                  {price[i] && <h4 className="extra-price">${price[i]}</h4>}
+                  {item.name}
+                  {price && <h4 className="extra-price">${price}</h4>}
                 </button>
               );
             })}

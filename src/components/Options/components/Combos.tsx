@@ -31,10 +31,10 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 distanceScrolling={160}
                 titleOptions={translate("size")}
                 iconOptions={glass}
-                listOptions={["Chico 12 oz", "Grande 16 Oz"]}
+                listOptions={[{name: "Chico 12 oz", price: 0}, {name: "Grande 16 Oz", price: 0}]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="size"
-                defaultValue="Chico 12 oz"
+                defaultValue={{name: "Chico 12 oz", price: 0}}
               />
               <hr className="separator" />
               <Options
@@ -47,7 +47,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                   translate("oatMilk"),
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
-                defaultValue={translate("lactoseFree")}
+                defaultValue={{name: translate("lactoseFree"), price:0}}
                 attr="milk"
               />
               <hr className="separator" />
@@ -57,7 +57,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 iconOptions={sugar}
                 listOptions={[translate("less"), "Original", translate("more")]}
                 optionHandler={(e: any) => optionHandler(e)}
-                defaultValue={"Original"}
+                defaultValue={{name: "Original", price: 0 }}
                 attr="sugar"
               />
               <hr className="separator" />

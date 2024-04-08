@@ -30,7 +30,7 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
                 distanceScrolling={80}
                 titleOptions={translate("temperature")}
                 iconOptions={temperature}
-                listOptions={[translate("roomTemp"), translate("hot")]}
+                listOptions={[{name:translate("roomTemp"), price:0}, {name: translate("hot"), price: 0}]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="temperature"
               />
@@ -39,10 +39,10 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
                 distanceScrolling={160}
                 titleOptions={translate("size")}
                 iconOptions={glass}
-                listOptions={["Chico 12 oz", "Grande 16 Oz"]}
+                listOptions={[{name: "Chico 12 oz", price: 0}, {name: "Grande 16 Oz", price: 0}]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="size"
-                defaultValue="Chico 12 oz"
+                defaultValue={{name: "Chico 12 oz"}}
               />
               <hr className="separator" />
               <Options
@@ -50,23 +50,23 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
                 titleOptions={translate("milk")}
                 iconOptions={milk}
                 listOptions={[
-                  translate("whole"),
-                  translate("lactoseFree"),
-                  translate("oatMilk"),
+                  {name: translate("whole"), price: 0},
+                  {name: translate("lactoseFree"), price: 0},
+                  {name: translate("oatMilk"), price: 0}
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="milk"
-                defaultValue={translate("lactoseFree")}
+                defaultValue={{name: translate("lactoseFree")}}
               />
               <hr className="separator" />
               <Options
                 distanceScrolling={280}
                 titleOptions={translate("sugar")}
                 iconOptions={sugar}
-                listOptions={[translate("less"), "Original", translate("more")]}
+                listOptions={[{name: translate("less"), price: 0}, {name: "Original", price: 0}, { name:translate("more"), price: 0}]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="sugar"
-                defaultValue={"Original"}
+                defaultValue={{name: "Original"}}
               />
               <hr className="separator" />
               <OptionsList

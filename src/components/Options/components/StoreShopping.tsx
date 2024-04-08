@@ -33,9 +33,9 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
                     titleOptions={translate("size")}
                     iconOptions={tshirt}
                     listOptions={[
-                      `${translate("small")}`,
-                      `${translate("medium")}`,
-                      `${translate("large")}`,
+                      {name:`${translate("small")}`, price:0},
+                      {name:`${translate("medium")}`, price:0},
+                      {name:`${translate("large")}`, price: 0}
                     ]}
                     attr="size"
                   />
@@ -69,10 +69,10 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
                   <Options
                     titleOptions={translate("size")}
                     iconOptions={coffeeBag}
-                    listOptions={["Chico 250gr", "Mediano 500gr", "Grande 1kg"]}
+                    listOptions={[{name: "Chico 250gr", price: 0}, {name: "Mediano 500gr", price:0}, {name: "Grande 1kg", price:0}]}
                     attr="size"
                     optionHandler={(e: any) => optionHandler(e)}
-                    defaultValue="Mediano 500gr"
+                    defaultValue={{name: "Mediano 500gr"}}
                   />
                   <hr className="separator" />
                 </>
