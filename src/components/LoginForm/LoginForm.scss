@@ -1,5 +1,6 @@
 @import "../../index.scss";
-.alert-error{
+
+.alert-error {
     font-family: 'Stacion';
     font-weight: normal;
     background: $orange;
@@ -9,11 +10,11 @@
     position: relative;
     text-align: center;
     width: 280px;
-    margin: auto auto 10px auto;
+    margin: auto 0px 10px auto;
 }
 
 .component-login-form {
-  
+
     .form-group {
         position: relative;
         margin: 10px 0px;
@@ -39,7 +40,7 @@
             width: 400px;
             height: 60px;
 
-      
+
 
             &:focus-visible {
                 outline: none;
@@ -100,7 +101,7 @@
                     cursor: pointer;
                 }
 
-            
+
 
                 @media screen and (min-width: 2560px) {
                     font-size: 44px;
