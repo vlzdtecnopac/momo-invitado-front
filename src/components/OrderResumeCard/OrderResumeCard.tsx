@@ -8,7 +8,7 @@ interface OrderResumeCardProp {
 }
 
 const OrderResumeCard: React.FC<OrderResumeCardProp> = ({data}) => {
-  const [quantity, setQuantity] = useState(0); 
+  const [quantity, setQuantity] = useState(1); 
 
   const handleQuantityChange = (change: any) => {
     const newQuantity = Math.max(quantity + change, 1); 
@@ -25,14 +25,14 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({data}) => {
         <div className="left-column">
           <img
             className="product-image"
-            src={product}
-            alt="Macadamia Black Tea Soda"
+            src={data.image}
+            alt={data.name_product}
             width="89"
             height="93"
           />
         </div>
         <div className="right-column">
-          <h3 className="title">Macadamia Black Tea Soda</h3>
+          <h3 className="title">{data.name_product}</h3>
           <div className="details">
             <p>Chico | Regular | Menos azúcar | Sin tapa</p>
             <ul className="detail">
@@ -65,7 +65,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({data}) => {
         <div className="col-5">
           <div className="grid-noGutter-noBottom">
             <div className="col-9">
-              <p className="subtotal-cart">${(quantity * 67).toFixed(2)} </p>
+              <p className="subtotal-cart">${(quantity * data.price).toFixed(2)} </p>
             </div>
             <div className="col-3">
               <button onClick={()=>handleDeleteProduct(data.id)} className="trash-cart"></button>
