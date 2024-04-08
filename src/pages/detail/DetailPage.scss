@@ -13,7 +13,7 @@
     width: 100%;
 
     .container-options-product {
-        max-height: 400px;
+        max-height: 450px;
         overflow-y: auto;
         overflow-x: hidden;
     }
@@ -35,6 +35,7 @@
     .details {
         position: relative;
         width: 731px;
+        height: 621px;
         background: $dark-blue;
         border-radius: 16px;
         overflow: hidden;
@@ -111,7 +112,7 @@
         font-family: "Red Hat Display";
         font-weight: 700;
         font-size: 20px;
-        margin: 10px auto;
+        margin: 30px auto;
 
         &:hover {
             cursor: pointer;
