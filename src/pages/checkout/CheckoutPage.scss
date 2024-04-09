@@ -311,9 +311,7 @@
       border-radius: 12px;
       color: $cream;
       padding: 10px 10px;
-      max-height: 500px;
       overflow-y: auto;
-   
 
       .product {
         background: $white;
@@ -475,6 +473,7 @@
 }
 
 .decide-tip {
+  display: flex;
   margin: auto;
 }
 
