@@ -7,12 +7,13 @@ interface OrderResumeCardProp {
 }
 
 const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(data.quanty | 1);
 
   const handleQuantityChange = async (id: string, change: number) => {
-    const newQuantity = Math.max(quantity + change, 1);
+    let quantyProduct = quantity + change;
+    const newQuantity = Math.max(quantyProduct, 1);
     try {
-      await db.product.update("462ec6bf-9318-48be-97c1-c037292ac0d9", {quanty: change}); 
+      await db.product.update(id, {quanty: quantyProduct}); 
       setQuantity(newQuantity);
     } catch (error) {
       console.error('Error al actualizar el registro:', error);
