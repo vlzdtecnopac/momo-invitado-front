@@ -14,7 +14,7 @@ export interface ProductOptionInterface {
   sauce: OptionData[];
   temperature: OptionData;
   color: string;
-  coffee_type: OptionData;
+  coffee_type: OptionData
 }
 
 export interface ProductOptionStoreInterface {
@@ -31,7 +31,7 @@ export const initialProductOptionState: ProductOptionInterface = {
   sauce: [],
   temperature: {},
   color: "",
-  coffee_type: {},
+  coffee_type: {}
 };
 
 export const useProductOptionStore = create<ProductOptionStoreInterface>(

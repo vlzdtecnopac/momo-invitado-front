@@ -65,7 +65,6 @@ function Cart() {
             </div>
             <button onClick={() => closeHandlerCart()} className="x"></button>
           </div>
-
           <div className="container-list-product">
             {productCart?.map((item) => (
               <div key={item.id}>

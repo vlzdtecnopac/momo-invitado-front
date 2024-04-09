@@ -9,9 +9,14 @@ interface OrderResumeCardProp {
 const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
   const [quantity, setQuantity] = useState(1);
 
-  const handleQuantityChange = (change: any) => {
+  const handleQuantityChange = async (id: string, change: number) => {
     const newQuantity = Math.max(quantity + change, 1);
-    setQuantity(newQuantity);
+    try {
+      await db.product.update("462ec6bf-9318-48be-97c1-c037292ac0d9", {quanty: change}); 
+      setQuantity(newQuantity);
+    } catch (error) {
+      console.error('Error al actualizar el registro:', error);
+    }
   };
 
   const handleDeleteProduct = (id: string) => {
@@ -54,7 +59,8 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
       try {
         const extraOptions = JSON.parse(data.extra);
         return (
-          <>
+          <table className="detail">
+            <tbody>
             {Object.keys(extraOptions.lid).length > 0 && (
               <tr>
                 <td style={{ width: "190px"}}>
@@ -103,7 +109,8 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
                 </td>
               </tr>
             )}
-          </>
+            </tbody>
+          </table>
         );
       } catch (error) {
         console.error("Error al analizar la cadena JSON:", error);
@@ -129,18 +136,18 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
           <h3 className="title">{data.name_product}</h3>
           <div className="details">
             {getExtraOptions()}
-            <table className="detail">{getListExtraOptions()}</table>
+            {getListExtraOptions()}
           </div>
         </div>
       </div>
       <div className="grid-noGutter-noBottom grid-middle gray-line">
         <div className="col-4">
           <div className="product-quantity">
-            <button className="minus" onClick={() => handleQuantityChange(-1)}>
+            <button className="minus" onClick={() => handleQuantityChange(data.id, -1)}>
               -
             </button>
             <span className="quantity">{quantity}</span>
-            <button className="plus" onClick={() => handleQuantityChange(1)}>
+            <button className="plus" onClick={() => handleQuantityChange(data.id, 1)}>
               +
             </button>
           </div>
