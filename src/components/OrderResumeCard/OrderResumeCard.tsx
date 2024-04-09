@@ -54,7 +54,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
           <>
             {Object.keys(extraOptions.lid).length > 0 && (
               <tr>
-                <td>
+                <td style={{ width: "190px" }}>
                   <span
                     dangerouslySetInnerHTML={{
                       __html: extraOptions.lid[0].name,
@@ -64,6 +64,22 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
                 <td style={{ width: "35px" }}>
                   <span className="extra-price">
                     $ {extraOptions.lid[0].price}
+                  </span>
+                </td>
+              </tr>
+            )}
+              {Object.keys(extraOptions.extra_coffee).length > 0 && (
+              <tr>
+                <td style={{ width: "190px" }}>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: extraOptions.extra_coffee[0].name,
+                    }}
+                  />
+                </td>
+                <td style={{ width: "35px" }}>
+                  <span className="extra-price">
+                    $ {extraOptions.extra_coffee[0].price}
                   </span>
                 </td>
               </tr>
