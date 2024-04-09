@@ -1,11 +1,12 @@
 import { useState } from "react";
-
+import { useLiveQuery } from "dexie-react-hooks";
 import { useLanguage } from "../../context/Langi18nContext";
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
 import barista from "/assets/barista.png";
 import "./CheckoutPage.scss";
+import { db } from "../../helpers/dexie_db.helper";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -21,6 +22,7 @@ function MethodsCard() {
 }
 
 function CheckoutPage() {
+  const productCart = useLiveQuery(() => db.product.toArray());
   const [stateCard, setStateCard] = useState<boolean>(false);
   const { translate } = useLanguage();
 
@@ -150,18 +152,10 @@ function CheckoutPage() {
             </div>
             <div className="col-4">
               <section className="products">
-                <div className="product">
-                  <ProductCheckoutCard />
-                </div>
-                <div className="product">
-                  <ProductCheckoutCard />
-                </div>
-                <div className="product">
-                  <ProductCheckoutCard />
-                </div>
-                <div className="product">
-                  <ProductCheckoutCard />
-                </div>
+              {productCart?.map((item) => (
+                <div className="product" key={item.id} >
+                  <ProductCheckoutCard data={item} />
+                </div>))}
               </section>
             </div>
             <div className="col-3 ">

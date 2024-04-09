@@ -49,7 +49,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
     return null;
   };
 
-  const listExtraOptions = () => {
+  const getListExtraOptions = () => {
     if (data.extra) {
       try {
         const extraOptions = JSON.parse(data.extra);
@@ -57,7 +57,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
           <>
             {Object.keys(extraOptions.lid).length > 0 && (
               <tr>
-                <td style={{ width: "190px" }}>
+                <td style={{ width: "190px"}}>
                   <span
                     dangerouslySetInnerHTML={{
                       __html: extraOptions.lid[0].name,
@@ -129,7 +129,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
           <h3 className="title">{data.name_product}</h3>
           <div className="details">
             {getExtraOptions()}
-            <table className="detail">{listExtraOptions()}</table>
+            <table className="detail">{getListExtraOptions()}</table>
           </div>
         </div>
       </div>

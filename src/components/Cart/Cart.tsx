@@ -13,7 +13,7 @@ import "./Cart.scss";
 
 function Cart() {
   const navigate = useNavigate();
-
+  const location = useLocation();
   const [getCount, setCount] = useState(0);
   const productCart = useLiveQuery(() => db.product.toArray());
   const { translate } = useLanguage();
@@ -25,7 +25,6 @@ function Cart() {
 
   useEffect(() => {
     countCart();
-    console.log(location.pathname);
   }, [productCart]);
 
   const openHandlerCart = () => {
