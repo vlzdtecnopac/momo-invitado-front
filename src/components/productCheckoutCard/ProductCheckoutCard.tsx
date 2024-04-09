@@ -43,58 +43,59 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
         return (
           <table className="details">
             <tbody>
-              {Object.keys(extraOptions.lid).length > 0 && (
-                <tr>
-                  <td
-                    style={{
-                      width: "190px",
-                      margin: "4px 0px",
-                      display: "block",
-                    }}
-                  >
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: extraOptions.lid[0].name,
-                      }}
-                    />
-                  </td>
-                  <td style={{ width: "35px" }}>
-                    <span className="extra-price">
-                      $ {extraOptions.lid[0].price}
-                    </span>
-                  </td>
-                </tr>
-              )}
-              {Object.keys(extraOptions.extra_coffee).length > 0 && (
-                <tr>
-                  <td style={{ width: "190px" }}>
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: extraOptions.extra_coffee[0].name,
-                      }}
-                    />
-                  </td>
-                  <td style={{ width: "35px" }}>
-                    <span className="extra-price">
-                      $ {extraOptions.extra_coffee[0].price}
-                    </span>
-                  </td>
-                </tr>
-              )}
-              {Object.keys(extraOptions.sauce).length > 0 && (
-                <tr>
-                  <td style={{ width: "190px" }}>
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: extraOptions.sauce[0].name,
-                      }}
-                    />
-                  </td>
-                  <td className="extra-price">
-                    $ {extraOptions.sauce[0].price}
-                  </td>
-                </tr>
-              )}
+              {Object.keys(extraOptions.lid).length > 0 &&
+                extraOptions.lid.map((item: any, i: number) => {
+                  return (
+                    <tr key={i}>
+                      <td
+                        style={{
+                          width: "190px",
+                          margin: "4px 0px",
+                          display: "block",
+                        }}
+                      >
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: item.name,
+                          }}
+                        />
+                      </td>
+                      <td style={{ width: "35px" }}>
+                        <span className="extra-price">$ {item.price}</span>
+                      </td>
+                    </tr>
+                  );
+                })}
+
+              {Object.keys(extraOptions.extra_coffee).length > 0 &&
+                extraOptions.extra_coffee.map((item: any, i: number) => (
+                  <tr key={i}>
+                    <td style={{ width: "190px" }}>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: item.name,
+                        }}
+                      />
+                    </td>
+                    <td style={{ width: "35px" }}>
+                      <span className="extra-price">$ {item.price}</span>
+                    </td>
+                  </tr>
+                ))}
+
+              {Object.keys(extraOptions.sauce).length > 0 &&
+                extraOptions.sauce.map((item: any, i: number) => (
+                  <tr key={i}>
+                    <td style={{ width: "190px" }}>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: item.name,
+                        }}
+                      />
+                    </td>
+                    <td className="extra-price">$ {item.price}</td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         );
