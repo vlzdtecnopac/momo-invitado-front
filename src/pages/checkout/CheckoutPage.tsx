@@ -1,11 +1,12 @@
 import { useState } from "react";
-
+import { useLiveQuery } from "dexie-react-hooks";
 import { useLanguage } from "../../context/Langi18nContext";
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
 import barista from "/assets/barista.png";
 import "./CheckoutPage.scss";
+import { db } from "../../helpers/dexie_db.helper";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -20,26 +21,14 @@ function MethodsCard() {
   );
 }
 
-function TipsCard() {
-  return (
-    <>
-      <div className="tip-options tip-width">
-        <button className="tip-button">%</button>
-        <button className="tip-button">$</button>
-      </div>
-    </>
-  );
-}
 function CheckoutPage() {
+  const productCart = useLiveQuery(() => db.product.toArray());
   const [stateCard, setStateCard] = useState<boolean>(false);
-  const [stateCardTip, setStateCardTip] = useState<boolean>(false);
+  const [getOtherTipSatisfaction, setOtherTipSatisfaction] = useState<boolean>(false);
   const { translate } = useLanguage();
 
   const optionHandlerCard = (state: boolean) => {
     setStateCard(!state);
-  };
-  const optionHandlerCardTip = (state: boolean) => {
-    setStateCardTip(!state);
   };
 
   return (
@@ -49,15 +38,12 @@ function CheckoutPage() {
           <CategoryNav />
         </div>
         <div className="checkout_background">
-          <div className="checkout_container grid-3">
+          <div className="checkout_container grid-3 grid-equalHeight">
             <div className="col-5">
               <section className="tip">
                 <div className="grid-2">
                   <div className="col-5">
-                    <img
-                      alt="Barista"
-                      src={barista}
-                    />
+                    <img alt="Barista" src={barista} />
                   </div>
                   <div className="col-7 tip-text">
                     <h2>{translate("baristaTipText")}</h2>
@@ -102,14 +88,19 @@ function CheckoutPage() {
                       </div>
                     </button>
                   </div>
-
-                  <div className="col-12 decide-tip">
+                  {!getOtherTipSatisfaction && <div className="col-12 decide">
+                    <button onClick={()=> setOtherTipSatisfaction(true)} className="tip-button_two">
+                      <div className="percentange">{translate("other")}</div>
+                      <div className="middle">¡{translate("youDecide")}!</div>
+                      <div>
+                        <i className="dolar-icon"></i>
+                      </div>
+                    </button>
+                  </div>}
+                  {getOtherTipSatisfaction && (<div className="col-12 decide">
                     <div className="grid-2 grid-noGutter-noBottom">
                       <div className="col-6">
-                        <button
-                          className="tip-button"
-                          onClick={() => optionHandlerCardTip(stateCardTip)}
-                        >
+                        <button className="tip-button">
                           <div className="percentange">
                             {translate("other")}
                           </div>
@@ -121,9 +112,12 @@ function CheckoutPage() {
                           </div>
                         </button>
                       </div>
-                      {stateCardTip && <TipsCard />}
+                      <div className="col-6 decide-tip">
+                        <button className="tip-button">%</button>
+                        <button className="tip-button">$</button>
+                      </div>
                     </div>
-                  </div>
+                  </div>)}
                 </div>
                 <hr />
                 <div className="pay-info">
@@ -159,18 +153,10 @@ function CheckoutPage() {
             </div>
             <div className="col-4">
               <section className="products">
-                <div className="product">
-                  <ProductCheckoutCard />
-                </div>
-                <div className="product">
-                  <ProductCheckoutCard />
-                </div>
-                <div className="product">
-                  <ProductCheckoutCard />
-                </div>
-                <div className="product">
-                  <ProductCheckoutCard />
-                </div>
+              {productCart?.map((item) => (
+                <div className="product" key={item.id} >
+                  <ProductCheckoutCard data={item} />
+                </div>))}
               </section>
             </div>
             <div className="col-3 ">

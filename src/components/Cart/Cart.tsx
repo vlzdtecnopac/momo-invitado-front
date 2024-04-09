@@ -1,4 +1,6 @@
 import OrderResumeCard from "../OrderResumeCard/OrderResumeCard";
+import { useLocation } from "react-router-dom";
+
 import { motion } from "framer-motion";
 import { useLiveQuery } from "dexie-react-hooks";
 import { db } from "../../helpers/dexie_db.helper";
@@ -11,6 +13,7 @@ import "./Cart.scss";
 
 function Cart() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [getCount, setCount] = useState(0);
   const productCart = useLiveQuery(() => db.product.toArray());
   const { translate } = useLanguage();
@@ -41,9 +44,11 @@ function Cart() {
 
   return (
     <>
-      <button onClick={() => openHandlerCart()} className="cart-momo">
-        <span>{translate("showCart")}</span> <i className="icon-cart"></i>
-      </button>
+      {location.pathname != "/checkout" ? (
+        <button onClick={() => openHandlerCart()} className="cart-momo">
+          <span>{translate("showCart")}</span> <i className="icon-cart"></i>
+        </button>
+      ) : null}
       <motion.div
         className="cart"
         initial={{ x: 600 }}

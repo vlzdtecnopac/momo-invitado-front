@@ -64,13 +64,14 @@
       border-radius: 11px;
     }
   }
-
   .right-column {
     width: 240px;
     padding: 0px 5px;
 
-    title {
+    .title {
       width: 90%;
+      line-height: 20px;
+      margin: 0px 0px 10px 0px;
     }
 
     .details {

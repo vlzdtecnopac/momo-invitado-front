@@ -1,21 +1,18 @@
 @import "../../index.scss";
 
 .checkout_card {
-    padding: 5px;
+    padding: 10px 0px 20px 0px;
 
     .left-column {
         text-align: center;
         padding: 0;
 
         .product-image {
-            padding-top: 10px;
+            margin-top: 10px;
             width: 89px;
             border-radius: 11px;
-            object-fit: contain;
+            object-fit: cover;
         }
-
-
-
         .product-quantity {
             width: 52px;
             color: $dark-blue ;
@@ -39,7 +36,8 @@
             height: 48px;
             color: $black !important;
             font-size: 18px;
-            margin: 0px 0px 15px 0px;
+            line-height: 20px;
+            margin: 0px 0px 10px 0px;
         }
 
         .sub-parrafo {
@@ -58,6 +56,10 @@
             list-style: none;
             padding: 0px 0px 10px 0px;
             font-weight: 500;
+
+            .recicle-icon {
+                width: 15px;
+              }
 
             .extra-price {
                 width: 40px;
