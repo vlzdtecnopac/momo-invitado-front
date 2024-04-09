@@ -56,7 +56,7 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
                           }}
                         />
                       </td>
-                      <td style={{ width: "35px" }}>
+                      <td className="list-price">
                         <span className="extra-price">$ {item.price}</span>
                       </td>
                     </tr>
@@ -73,7 +73,7 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
                         }}
                       />
                     </td>
-                    <td style={{ width: "35px" }}>
+                    <td className="list-price">
                       <span className="extra-price">$ {item.price}</span>
                     </td>
                   </tr>
@@ -89,7 +89,7 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
                         }}
                       />
                     </td>
-                    <td className="extra-price">$ {item.price}</td>
+                    <td className="list-price">$ {item.price}</td>
                   </tr>
                 ))}
             </tbody>
@@ -113,7 +113,7 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
           width="89"
           height="93"
         />
-        <div className="product-quantity">{`X${data.quanty}`}</div>
+        <div className="product-quantity">{`x${data.quanty}`}</div>
       </div>
       <div className="right-column col-8_lg-7_md-7_sm-7_xs-7">
         <h3 className="title">{data.name_product}</h3>

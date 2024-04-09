@@ -69,6 +69,7 @@
                 width: 190px;
                 margin: 4px 0px;
                 display: block;
+                font-size: 14px;
                 @media(max-width: 1290px){
                     width: 160px;
                 }
@@ -79,10 +80,19 @@
 
                 @media(max-width: 1045px){
                     width: 120px;
+                    font-size: 12px;
                 }
 
                 @media(max-width: 945px){
                     width: 100px;
+                }
+            }
+
+            .list-price{
+                width: 35px;
+                font-size: 14px;
+                @media(max-width: 1045px){
+                    font-size: 12px;
                 }
             }
 

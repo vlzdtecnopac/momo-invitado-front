@@ -21,16 +21,49 @@ function MethodsCard() {
   );
 }
 
-function CheckoutPage() {
-  const productCart = useLiveQuery(() => db.product.toArray());
-  const [stateCard, setStateCard] = useState<boolean>(false);
-  const [getOtherTipSatisfaction, setOtherTipSatisfaction] =
-    useState<boolean>(false);
+function MethodPayment() {
   const { translate } = useLanguage();
+
+  const [stateCard, setStateCard] = useState<boolean>(false);
 
   const optionHandlerCard = (state: boolean) => {
     setStateCard(!state);
   };
+  return (
+    <div className="pay-info">
+      <div className="form-group">
+        <input
+          placeholder="Invitado"
+          type="text"
+          id="name"
+          name="name"
+          className="client-name"
+        />
+        <i className="icon-user"></i>
+      </div>
+      <h2 className="text">{translate("selectPayMethod")}</h2>
+      <div className="pay-method">
+        <button onClick={() => optionHandlerCard(stateCard)} className="card">
+          <i className="card-icon"></i>
+          {translate("card")}
+        </button>
+        {stateCard && <MethodsCard />}
+        <hr />
+        <button className="cash">
+          <i className="cash-icon"></i>
+          {translate("cash")}
+        </button>
+      </div>
+      <button className="cancel">{translate("cancel")}</button>
+    </div>
+  );
+}
+
+function CheckoutPage() {
+  const productCart = useLiveQuery(() => db.product.toArray());
+  const [getOtherTipSatisfaction, setOtherTipSatisfaction] =
+    useState<boolean>(false);
+  const { translate } = useLanguage();
 
   return (
     <>
@@ -128,35 +161,7 @@ function CheckoutPage() {
                   )}
                 </div>
                 <hr />
-                <div className="pay-info">
-                  <div className="form-group">
-                    <input
-                      placeholder="Invitado"
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="client-name"
-                    />
-                    <i className="icon-user"></i>
-                  </div>
-                  <h2 className="text">{translate("selectPayMethod")}</h2>
-                  <div className="pay-method">
-                    <button
-                      onClick={() => optionHandlerCard(stateCard)}
-                      className="card"
-                    >
-                      <i className="card-icon"></i>
-                      {translate("card")}
-                    </button>
-                    {stateCard && <MethodsCard />}
-                    <hr />
-                    <button className="cash">
-                      <i className="cash-icon"></i>
-                      {translate("cash")}
-                    </button>
-                  </div>
-                  <button className="cancel">{translate("cancel")}</button>
-                </div>
+                <MethodPayment />
               </section>
             </div>
             <div className="col-4">
