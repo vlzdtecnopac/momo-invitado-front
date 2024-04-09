@@ -58,7 +58,6 @@
   display: flex;
   margin-top: 12px;
 
-
   .left-column {
     .product-image {
       width: 89px;
@@ -78,13 +77,17 @@
       width: 95%;
       color: $dark-blue;
 
+      .recicle-icon {
+        width: 15px;
+      }
+
       p {
         font-size: 12px;
       }
 
       .detail {
         color: $black;
-        font-family: 'Stacion';
+        font-family: "Stacion";
         font-size: 14px;
       }
 
@@ -99,6 +102,4 @@
   border-bottom: 1px solid $gray-text;
   padding-bottom: 12px;
   margin-bottom: 12px;
-  ;
-
 }
