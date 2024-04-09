@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import pay from "../../../assets/icons/payment-icon.svg";
+import pay from "/assets/icons/payment-icon.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
 import "./ContinuePayment.scss";
 

@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
-import logoMomo from "../../assets/icons/logo.svg";
-import back from "/src/assets/icons/arrow_left.svg";
-import momoPic from "../../assets/icons/momo-pic.svg";
+import logoMomo from "/assets/icons/logo.svg";
+import back from "/assets/icons/arrow_left.svg";
+import momoPic from "/assets/icons/momo-pic.svg";
 import axiosInstance from "../../helpers/axios.helper";
 import { useLanguage } from "../../context/Langi18nContext";
 import { useEffect, useState } from "react";

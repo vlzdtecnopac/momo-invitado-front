@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import color from "../../../assets/icons/color.svg";
-import tshirt from "../../../assets/icons/t-shirt.svg";
-import coffeeBag from "../../../assets/icons/coffee_bag.svg";
-import beans from "../../../assets/icons/coffee_beans.svg";
+import color from "/assets/icons/color.svg";
+import tshirt from "/assets/icons/t-shirt.svg";
+import coffeeBag from "/assets/icons/coffee_bag.svg";
+import beans from "/assets/icons/coffee_beans.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
 import Options from "../Options";
 import "../Options.scss";
@@ -33,20 +33,20 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
                     titleOptions={translate("size")}
                     iconOptions={tshirt}
                     listOptions={[
-                      `${translate("small")}`,
-                      `${translate("medium")}`,
-                      `${translate("large")}`,
+                      { name: `${translate("small")}`, price: 0 },
+                      { name: `${translate("medium")}`, price: 0 },
+                      { name: `${translate("large")}`, price: 0 },
                     ]}
                     attr="size"
                   />
                   <hr className="separator" />
                   <OptionsExtra
                     listOptions={[
-                      `${translate("green")}`,
-                      `${translate("darkBlue")}`,
-                      `${translate("orange")}`,
-                      `${translate("lightBlue")}`,
-                      `${translate("cream")}`,
+                      { name: `${translate("green")}` },
+                      { name: `${translate("darkBlue")}` },
+                      { name: `${translate("orange")}` },
+                      { name: `${translate("lightBlue")}` },
+                      { name: `${translate("cream")}` },
                     ]}
                     icon={color}
                     attr="color"
@@ -60,17 +60,26 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
                   <Options
                     titleOptions={translate("coffeeType")}
                     iconOptions={beans}
-                    listOptions={[translate("ground"), translate("beans")]}
+                    listOptions={[
+                      { name: translate("ground"), price: 0 },
+                      { name: translate("beans"), price: 0 },
+                    ]}
                     attr="coffee_type"
                     optionHandler={(e: any) => optionHandler(e)}
+                    defaultValue={{ name: translate("ground") }}
                   />
                   <hr className="separator" />
                   <Options
                     titleOptions={translate("size")}
                     iconOptions={coffeeBag}
-                    listOptions={["Chico 250gr", "Mediano 500gr", "Grande 1kg"]}
+                    listOptions={[
+                      { name: "Chico 250gr", price: 0 },
+                      { name: "Mediano 500gr", price: 0 },
+                      { name: "Grande 1kg", price: 0 },
+                    ]}
                     attr="size"
                     optionHandler={(e: any) => optionHandler(e)}
+                    defaultValue={{ name: "Mediano 500gr" }}
                   />
                   <hr className="separator" />
                 </>

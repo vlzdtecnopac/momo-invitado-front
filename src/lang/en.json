@@ -106,7 +106,7 @@
     "extraCoffee": "Extra coffee shot",
     "extraCream": "Extra cream",
     "lid": "Lid",
-    "noLid": "No lid <span class='recicle'><img class='recicle-icon' src='/src/assets/icons/recicle.svg' alt='recicle-icon'></span> Help us take care of the planet ",
+    "noLid": "No lid <span class='recicle'><img class='recicle-icon' src='/assets/icons/recicle.svg' alt='recicle-icon'></span> Help us take care of the planet ",
     "helpPlanet": "Help us take care of the planet",
     "accompanyDrink": "Accompany your drink",
     "accompanyFood": "Accompany your food",

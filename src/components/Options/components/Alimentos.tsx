@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import sauce from "../../../assets/icons/sauce.svg";
-import temperature from "../../../assets/icons/temperature.svg";
+import sauce from "/assets/icons/sauce.svg";
+import temperature from "/assets/icons/temperature.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
 import Options from "../Options";
 import OptionsList from "../OptionsList";
@@ -24,15 +24,15 @@ const Alimentos: React.FC<AlimentosProps> = ({optionHandler}) => {
                 distanceScrolling={360}
                 titleOptions={translate("temperature")}
                 iconOptions={temperature}
-                listOptions={[translate("roomTemp"), translate("hot")]}
+                listOptions={[{name: translate("roomTemp"), price: 0}, {name: translate("hot"), price: 0}]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="temperature"
               />
               <hr className="separator" />
                   <OptionsList
                     listOptions={[
-                      translate("machaSauce"),
-                      translate("chipotleSauce"),
+                      {name: translate("machaSauce"), price: 10 },
+                      {name: translate("chipotleSauce"), price: 10},
                     ]}
                     iconOptions={sauce}
                     distanceScrolling={310}

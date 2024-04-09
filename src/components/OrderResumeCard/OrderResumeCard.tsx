@@ -1,13 +1,113 @@
 import { useState } from "react";
-import product from "../../assets/product1.jpg";
 import "./OrderResumeCard.scss";
+import { db } from "../../helpers/dexie_db.helper";
 
-function OrderResumeCard() {
-  const [quantity, setQuantity] = useState(1); // Initial quantity state
+interface OrderResumeCardProp {
+  data: any;
+}
+
+const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
+  const [quantity, setQuantity] = useState(1);
 
   const handleQuantityChange = (change: any) => {
-    const newQuantity = Math.max(quantity + change, 1); // Ensure minimum quantity is 1
+    const newQuantity = Math.max(quantity + change, 1);
     setQuantity(newQuantity);
+  };
+
+  const handleDeleteProduct = (id: string) => {
+    db.product.delete(id);
+  };
+
+  const getExtraOptions = () => {
+    if (data.extra) {
+      try {
+        const extraOptions = JSON.parse(data.extra);
+        return (
+          <p>
+            {Object.keys(extraOptions.temperature).length > 0
+              ? `${extraOptions.temperature.name} | `
+              : ""}
+            {Object.keys(extraOptions.size).length > 0
+              ? `${extraOptions.size.name} | `
+              : ""}
+            {Object.keys(extraOptions.sugar).length > 0
+              ? `${extraOptions.sugar.name} | `
+              : ""}
+            {Object.keys(extraOptions.milk).length > 0
+              ? `${extraOptions.milk.name} | `
+              : ""}
+          </p>
+        );
+      } catch (error) {
+        console.error("Error al analizar la cadena JSON:", error);
+        return null;
+      }
+    }
+    return null;
+  };
+
+  const listExtraOptions = () => {
+    if (data.extra) {
+      try {
+        const extraOptions = JSON.parse(data.extra);
+        return (
+          <>
+            {Object.keys(extraOptions.lid).length > 0 && (
+              <tr>
+                <td style={{ width: "190px" }}>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: extraOptions.lid[0].name,
+                    }}
+                  />
+                </td>
+                <td style={{ width: "35px" }}>
+                  <span className="extra-price">
+                    $ {extraOptions.lid[0].price}
+                  </span>
+                </td>
+              </tr>
+            )}
+              {Object.keys(extraOptions.extra_coffee).length > 0 && (
+              <tr>
+                <td style={{ width: "190px" }}>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: extraOptions.extra_coffee[0].name,
+                    }}
+                  />
+                </td>
+                <td style={{ width: "35px" }}>
+                  <span className="extra-price">
+                    $ {extraOptions.extra_coffee[0].price}
+                  </span>
+                </td>
+              </tr>
+            )}
+            {Object.keys(extraOptions.sauce).length > 0 && (
+              <tr>
+                <td style={{ width: "190px" }}>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: extraOptions.sauce[0].name,
+                    }}
+                  />
+                </td>
+                <td style={{ width: "35px" }}>
+                  <span className="extra-price">
+                    $ {extraOptions.sauce[0].price}
+                  </span>
+                </td>
+              </tr>
+            )}
+          </>
+        );
+      } catch (error) {
+        console.error("Error al analizar la cadena JSON:", error);
+        return null;
+      }
+    }
+    return null;
   };
 
   return (
@@ -16,38 +116,28 @@ function OrderResumeCard() {
         <div className="left-column">
           <img
             className="product-image"
-            src={product}
-            alt="Macadamia Black Tea Soda"
+            src={data.image}
+            alt={data.name_product}
             width="89"
             height="93"
           />
         </div>
         <div className="right-column">
-          <h3 className="title">Macadamia Black Tea Soda</h3>
+          <h3 className="title">{data.name_product}</h3>
           <div className="details">
-            <p>Chico | Regular | Menos azúcar | Sin tapa</p>
-            <ul className="detail">
-              <li>
-                Extra de café <span className="extra-price">$10</span>
-              </li>
-            </ul>
+            {getExtraOptions()}
+            <table className="detail">{listExtraOptions()}</table>
           </div>
         </div>
       </div>
-      <div className="grid-noGutter-noBottom gray-line">
+      <div className="grid-noGutter-noBottom grid-middle gray-line">
         <div className="col-4">
           <div className="product-quantity">
-            <button
-              className="minus"
-              onClick={() => handleQuantityChange(-1)}
-            >
+            <button className="minus" onClick={() => handleQuantityChange(-1)}>
               -
             </button>
             <span className="quantity">{quantity}</span>
-            <button
-              className="plus"
-              onClick={() => handleQuantityChange(1)}
-            >
+            <button className="plus" onClick={() => handleQuantityChange(1)}>
               +
             </button>
           </div>
@@ -56,17 +146,21 @@ function OrderResumeCard() {
         <div className="col-5">
           <div className="grid-noGutter-noBottom">
             <div className="col-9">
-              <p className="subtotal-cart">${(quantity * 67).toFixed(2)} </p>
+              <p className="subtotal-cart">
+                ${(quantity * data.price).toFixed(2)}{" "}
+              </p>
             </div>
             <div className="col-3">
-              {" "}
-              <button className="trash-cart"></button>
+              <button
+                onClick={() => handleDeleteProduct(data.id)}
+                className="trash-cart"
+              ></button>
             </div>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default OrderResumeCard;

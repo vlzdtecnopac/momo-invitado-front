@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import temperature from "../../../assets/icons/temperature.svg";
+import temperature from "/assets/icons/temperature.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
 import Options from "../Options";
 import "../Options.scss";
@@ -25,7 +25,7 @@ const OtherDrinks: React.FC<OtherDrinks> = ({optionHandler}) => {
                   distanceScrolling={360}
                   titleOptions={translate("temperature")}
                   iconOptions={temperature}
-                  listOptions={[translate("roomTemp"), translate("hot")]}
+                  listOptions={[{name: translate("roomTemp"), price: 0}, {name: translate("hot"), price: 0}]}
                   optionHandler={(e: any) => optionHandler(e)}
                   attr="temperature"
                 />

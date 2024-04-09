@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import mxIcon from "/src/assets/icons/mexico_flag.svg";
-import back from "/src/assets/icons/arrow_left.svg";
-import usaIcon from "/src/assets/icons/usa_flag.svg";
-import coffee from "../../assets/coffee-momo.png";
+import mxIcon from "/assets/icons/mexico_flag.svg";
+import back from "/assets/icons/arrow_left.svg";
+import usaIcon from "/assets/icons/usa_flag.svg";
+import coffee from "/assets/coffee-momo.png";
 import LayoutBlank from "../../includes/layout/LayoutBlank";
 import "./NoCashPage.scss";
 import { useLanguage } from "../../context/Langi18nContext";

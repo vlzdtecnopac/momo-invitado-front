@@ -4,7 +4,7 @@ import { useLanguage } from "../../context/Langi18nContext";
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
-import barista from "../../assets/barista.png";
+import barista from "/assets/barista.png";
 import "./CheckoutPage.scss";
 
 function MethodsCard() {

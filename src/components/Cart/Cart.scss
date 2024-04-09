@@ -31,7 +31,7 @@
     @media(min-width: 1170px) {
         font-size: 16px;
         width: 145px;
-        right: 12px;
+        right: 20px;
     }
 
     span {
@@ -39,7 +39,7 @@
     }
 
     .icon-cart {
-        background-image: url(./../../assets/icons/carrito-icon.svg);
+        background-image: url(/assets/icons/carrito-icon.svg);
         background-size: cover;
         width: 30px;
         height: 30px;
@@ -79,6 +79,9 @@
             width: 340px;
             scrollbar-width: none;
 
+            @media(max-width: 790px){
+                height: 55vh;
+            }
         }
 
         .resume {
@@ -90,7 +93,7 @@
                 border: none;
                 width: 44px;
                 height: 44px;
-                background-image: url("../../assets/icons/close.svg");
+                background-image: url("/assets/icons/close.svg");
                 mask-size: 100%;
                 margin-right: 10px;
                 margin-top: 10px;
@@ -116,6 +119,8 @@
         text-align: left;
         color: $gray-text;
         display: flex;
+        align-items: center;
+        padding: 0px 5px;
     }
 
     .right {

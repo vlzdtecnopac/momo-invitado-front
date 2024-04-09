@@ -1,5 +1,5 @@
-import logo from "../../assets/icons/logo.svg";
-import momo from "../../assets/loading_logo.svg";
+import logo from "/assets/icons/logo.svg";
+import momo from "/assets/loading_logo.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./404.scss";

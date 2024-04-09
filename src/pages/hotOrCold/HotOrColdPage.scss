@@ -59,8 +59,8 @@
 
         .hot .icon {
             background-color: $cream;
-            -webkit-mask-image: url("/src/assets/icons/flame.svg");
-            mask-image: url("/src/assets/icons/flame.svg");
+            -webkit-mask-image: url("/assets/icons/flame.svg");
+            mask-image: url("/assets/icons/flame.svg");
             mask-size: 100%;
             background-repeat: no-repeat;
             margin-bottom: 8px;
@@ -68,8 +68,8 @@
 
         .cold .icon {
             background-color: $cream;
-            -webkit-mask-image: url("/src/assets/icons/ice.svg");
-            mask-image: url("/src/assets/icons/ice.svg");
+            -webkit-mask-image: url("/assets/icons/ice.svg");
+            mask-image: url("/assets/icons/ice.svg");
             mask-size: 100%;
             background-repeat: no-repeat;
             margin-bottom: 8px;

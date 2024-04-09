@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useProductOptionStore } from "../../store/productOption.store";
+import { OptionData, useProductOptionStore } from "../../store/productOption.store";
 
 interface OptionsExtraProps {
   icon: string;
-  listOptions: string[];
+  listOptions: OptionData[];
   attr: string;
   multiple: boolean;
 }
@@ -18,30 +18,38 @@ const OptionsExtra: React.FC<OptionsExtraProps> = ({
   const setDataProductOption = useProductOptionStore(
     (state) => state.setDataProductOption
   );
-  const [valueSelect, setValueSelect] = useState<string[]>([]);
+  const [valueSelect, setValueSelect] = useState<OptionData[]>([]);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let newArray;
+    let result = JSON.parse(event.target.value);
     if (!multiple) {
-      setValueSelect([event.target.value]);
+      setValueSelect([result]);
+      return;
     } else {
-      if (!event.target.checked) {
-        newArray = valueSelect.filter((item) => item !== event.target.value);
-      } else {
-        newArray = [...valueSelect, event.target.value];
+      if (event.target.checked) {
+        setValueSelect([...valueSelect, result]);
       }
-      setValueSelect(newArray);
+      if (!event.target.checked) {
+        if (valueSelect.length > 0) {
+          const positionActual = valueSelect.findIndex(
+            (item:any) => item.name == result.name
+          );
+
+          const multipleArray = valueSelect.splice(positionActual, 0);
+          setValueSelect([...multipleArray]);
+        }
+      }
     }
   };
 
 
-  useEffect(()=>{
+  useEffect(() => {
     const updatedData = {
       ...dataProductOption,
       [attr]: valueSelect,
     };
-    setDataProductOption(updatedData); 
-}, [valueSelect])
+    setDataProductOption(updatedData);
+  }, [valueSelect]);
 
   return (
     <div className="extra-list-options">
@@ -51,20 +59,24 @@ const OptionsExtra: React.FC<OptionsExtraProps> = ({
         </div>
         <div className="col-10">
           <ul className="list-content-options">
-            {listOptions.map((option: string, i) => {
-              const isChecked = valueSelect.includes(option);
+            {listOptions.map((option: OptionData, i) => {
+              const isChecked = valueSelect.filter(
+                (item: any) => item.name == option.name
+              ).length;
               return (
                 <li key={i}>
                   <div className="grid grid-noGutter-noBottom">
                     <div className="col-9">
-                      <p className="text">{option}</p>
+                      <p className="text">{option.name}</p>
                     </div>
                     <div className="col-3">
                       <span className="extra">
                         <label>
                           <input
-                            checked={isChecked}
-                            value={option}
+                            checked={isChecked > 0}
+                            value={JSON.stringify({
+                              name: `${option.name}`
+                            })}
                             type="checkbox"
                             onChange={(e) => {
                               handleCheckboxChange(e);

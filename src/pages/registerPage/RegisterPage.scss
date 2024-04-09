@@ -127,16 +127,16 @@
         .registered .icon {
             mask-size: cover;
             background-color: $cream;
-            -webkit-mask-image: url("/src/assets/icons/user.svg");
-            mask-image: url("/src/assets/icons/user.svg");
+            -webkit-mask-image: url("/assets/icons/user.svg");
+            mask-image: url("/assets/icons/user.svg");
             background-repeat: no-repeat;
         
         }
 
         .create .icon {
             background-color: $cream;
-            -webkit-mask-image: url("/src/assets/icons/user-square.svg");
-            mask-image: url("/src/assets/icons/user-square.svg");
+            -webkit-mask-image: url("/assets/icons/user-square.svg");
+            mask-image: url("/assets/icons/user-square.svg");
             mask-size: cover;
             background-repeat: no-repeat;
           
@@ -145,8 +145,8 @@
 
         .no-register .icon {
             background-color: $cream;
-            -webkit-mask-image: url("/src/assets/icons/user-octagon.svg");
-            mask-image: url("/src/assets/icons/user-octagon.svg");
+            -webkit-mask-image: url("/assets/icons/user-octagon.svg");
+            mask-image: url("/assets/icons/user-octagon.svg");
             mask-size: cover;
             background-repeat: no-repeat;
        

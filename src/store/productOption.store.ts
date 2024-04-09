@@ -1,42 +1,45 @@
 import { create } from "zustand";
 
-interface ProductOptioInterface {
-  size: string;
-  milk: string;
-  sugar: string;
-  extra_coffee: string[];
-  lid: string[];
-  sauce: string[];
-  temperature: string;
+export interface OptionData {
+  name?: string;
+  price?: number;
+}
+
+export interface ProductOptionInterface {
+  size: OptionData;
+  milk: OptionData;
+  sugar: OptionData;
+  extra_coffee: OptionData[];
+  lid: OptionData[];
+  sauce: OptionData[];
+  temperature: OptionData;
   color: string;
-  coffee_type: string;
+  coffee_type: OptionData;
 }
 
-interface ProductOptionStoreInterface {
-  dataProductOption: ProductOptioInterface;
-  setDataProductOption: (value: ProductOptioInterface) => void;
+export interface ProductOptionStoreInterface {
+  dataProductOption: ProductOptionInterface;
+  setDataProductOption: (value: Partial<ProductOptionInterface>) => void;
 }
 
-export const initialProductOptionState = {
-  size: "",
-  milk: "",
-  sugar: "",
+export const initialProductOptionState: ProductOptionInterface = {
+  size: {},
+  milk: {},
+  sugar: {},
   extra_coffee: [],
   lid: [],
   sauce: [],
-  temperature: "",
+  temperature: {},
   color: "",
-  coffee_type: "",
-}
+  coffee_type: {},
+};
 
 export const useProductOptionStore = create<ProductOptionStoreInterface>(
   (set) => ({
     dataProductOption: initialProductOptionState,
     setDataProductOption: (value) =>
       set((state) => ({
-        ...state,
         dataProductOption: { ...state.dataProductOption, ...value },
       })),
-   
   })
 );

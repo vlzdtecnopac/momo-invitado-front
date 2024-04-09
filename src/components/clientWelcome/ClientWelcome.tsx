@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-import logo from "../../assets/icons/logo.svg";
-import checkIcon from "../../assets/icons/check.svg";
+import logo from "/assets/icons/logo.svg";
+import checkIcon from "/assets/icons/check.svg";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./ClientWelcome.scss";

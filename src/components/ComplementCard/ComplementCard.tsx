@@ -1,6 +1,6 @@
 import "./ComplementCard.scss";
 import { v4 as uuidv4 } from 'uuid';
-import coldTea from "../../assets/cold-tea.png";
+import coldTea from "/assets/cold-tea.png";
 
 function ComplementCard() {
   let Id =  uuidv4();

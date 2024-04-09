@@ -3,7 +3,7 @@
 .trash-cart {
   width: 28px;
   height: 28px;
-  background-image: url("/src/assets/icons/trash.png");
+  background-image: url("/assets/icons/trash.png");
   background-repeat: no-repeat;
   background-size: contain;
   mask-size: 100%;
@@ -58,7 +58,6 @@
   display: flex;
   margin-top: 12px;
 
-
   .left-column {
     .product-image {
       width: 89px;
@@ -75,23 +74,24 @@
     }
 
     .details {
-      width: 90%;
+      width: 95%;
       color: $dark-blue;
 
+      .recicle-icon {
+        width: 15px;
+      }
 
       p {
         font-size: 12px;
       }
 
       .detail {
-        display: flex;
         color: $black;
-        font-family: 'Stacion';
+        font-family: "Stacion";
         font-size: 14px;
       }
 
       .extra-price {
-        padding-left: 80px;
         color: $black;
       }
     }
@@ -102,6 +102,4 @@
   border-bottom: 1px solid $gray-text;
   padding-bottom: 12px;
   margin-bottom: 12px;
-  ;
-
 }

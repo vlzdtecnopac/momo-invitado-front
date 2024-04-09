@@ -5,9 +5,9 @@ import { useShoppingStore } from "../../store/shopping.store";
 import { useEmployeeStore } from "../../store/employee.store";
 import { LoaderPage } from "../../includes/loader/Loader";
 
-import logo from "../../assets/icons/logo.svg";
-import kdsOnIcon from "../../assets/icons/kds-on.svg";
-import kioskIcon from "../../assets/icons/kiosko.svg";
+import logo from "/assets/icons/logo.svg";
+import kdsOnIcon from "/assets/icons/kds-on.svg";
+import kioskIcon from "/assets/icons/kiosko.svg";
 import Card from "../../components/Card/Card";
 
 import LayoutBlank from "../../includes/layout/LayoutBlank";

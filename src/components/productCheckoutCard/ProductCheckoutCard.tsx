@@ -1,4 +1,4 @@
-import product from "../../assets/product1.jpg";
+import product from "/assets/product1.jpg";
 import "./ProductCheckoutCard.scss";
 function ProductCheckoutCard() {
   return (
