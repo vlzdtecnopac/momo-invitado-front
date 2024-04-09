@@ -36,7 +36,7 @@ function DrinkDetailPage() {
   async function addCart() {
     try {
       isLoader(true);
-      const id = await db.product.add({
+      await db.product.add({
         id: uuidv4(),
         name_product: product.name_product,
         price: product.price,
