@@ -24,17 +24,17 @@ const Coffe: React.FC<CoffeProps> = ({optionHandler}) => {
           <div className="details">
             <div ref={myRef} className="content-detail-page">
               <Options
-                distanceScrolling={160}
+                distanceScrolling={80}
                 titleOptions={translate("size")}
                 iconOptions={glass}
                 listOptions={[{name: "Chico 12 oz", price: 0}, {name:"Grande 16 Oz", price: 0}]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="size"
-                defaultValue={{name: "Chico 12 oz"}}
+                defaultValue={{name: "Chico 12 oz", price: 0}}
               />
               <hr className="separator" />
               <Options
-                distanceScrolling={260}
+                distanceScrolling={160}
                 titleOptions={translate("milk")}
                 iconOptions={milk}
                 listOptions={[
@@ -44,17 +44,17 @@ const Coffe: React.FC<CoffeProps> = ({optionHandler}) => {
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="milk"
-                defaultValue={{name: translate("lactoseFree")}}
+                defaultValue={{name: translate("lactoseFree"), price: 0}}
               />
               <hr className="separator" />
               <Options
-                distanceScrolling={280}
+                distanceScrolling={230}
                 titleOptions={translate("sugar")}
                 iconOptions={sugar}
                 listOptions={[{name: translate("less"), price: 0 }, {name: "Original", price: 0}, {name: translate("more"), price: 0}]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="sugar"
-                defaultValue={{name: "Original"}}
+                defaultValue={{name: "Original", price: 0}}
               />
               <hr className="separator" />
               <OptionsList

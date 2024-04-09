@@ -21,8 +21,10 @@ import SpecialsMomo from "../../components/Options/components/SpecialMomo";
 import "./DetailPage.scss";
 import { db } from "../../helpers/dexie_db.helper";
 import { LoaderPage } from "../../loader/Loader";
+import { useProductOptionStore } from "../../store/productOption.store";
 
 function DrinkDetailPage() {
+  const { dataProductOption } = useProductOptionStore();
   const [loader, isLoader] = useState<Boolean>(false);
   const myRef = useRef<any>(null);
   const { product_id, type } = useParams();
@@ -34,6 +36,7 @@ function DrinkDetailPage() {
   }, []);
 
   async function addCart() {
+    console.log(dataProductOption)
     try {
       isLoader(true);
       await db.product.add({

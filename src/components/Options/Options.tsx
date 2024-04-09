@@ -34,11 +34,9 @@ const Options: React.FC<OptionsProps> = ({
 
   useEffect(() => {
     if (defaultValue) {
-      const updatedData = {
-        ...dataProductOption,
+      setDataProductOption({
         [attr]: defaultValue,
-      };
-      setDataProductOption(updatedData);
+      });
     }
   }, []);
 
@@ -50,6 +48,7 @@ const Options: React.FC<OptionsProps> = ({
     setDetault({name: item.name, price: item.price});
     setDataProductOption(updatedData);
   };
+
   return (
     <div className="options-component">
       <div className="grid-middle grid-noGutter-noBottom">
