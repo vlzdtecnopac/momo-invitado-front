@@ -25,7 +25,7 @@
       border-radius: 12px;
       color: $cream;
       padding: 10px;
-      max-height: 610px;
+      max-height: 500px;
       overflow-y: auto;
       overflow-x: hidden;
 
@@ -54,10 +54,6 @@
         font-family: "Red Hat Display";
         gap: 10px;
         margin: 80px 0px 0px 0px;
-      }
-
-      .tip-width {
-        width: 49%;
       }
 
       .tip-options {
@@ -311,6 +307,7 @@
       border-radius: 12px;
       color: $cream;
       padding: 10px 10px;
+      max-height: 500px;
       overflow-y: auto;
 
       .product {
@@ -332,7 +329,7 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 10px 10px;
-      max-height: 610px;
+      max-height: 500px;
 
       .cupon {
         display: inline-flex;
@@ -459,10 +456,6 @@
         height: 47px;
         justify-content: center;
 
-        &:window-inactive {
-          background: $grey;
-        }
-
         &:hover {
           background: #e34317;
           cursor: pointer;
@@ -474,10 +467,5 @@
 
 .decide-tip {
   display: flex;
-  margin: auto;
-}
-
-.grid-2 .grid-noGutter-noBottom {
-  display: flex;
-  justify-content: center;
+  width: 50%;
 }

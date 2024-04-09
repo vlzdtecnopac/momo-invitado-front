@@ -34,7 +34,7 @@ const Te: React.FC<TeProps> = ({ optionHandler }) => {
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="size"
-                defaultValue={{ name: "Chico 12 oz" }}
+                defaultValue={{ name: `${translate("small")} 12 Oz` }}
               />
               <hr className="separator" />
               <Options
