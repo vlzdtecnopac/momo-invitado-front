@@ -48,11 +48,7 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
                   return (
                     <tr key={i}>
                       <td
-                        style={{
-                          width: "190px",
-                          margin: "4px 0px",
-                          display: "block",
-                        }}
+                        className="list-description"
                       >
                         <span
                           dangerouslySetInnerHTML={{
@@ -70,7 +66,7 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
               {Object.keys(extraOptions.extra_coffee).length > 0 &&
                 extraOptions.extra_coffee.map((item: any, i: number) => (
                   <tr key={i}>
-                    <td style={{ width: "190px" }}>
+                    <td className="list-description">
                       <span
                         dangerouslySetInnerHTML={{
                           __html: item.name,
@@ -86,7 +82,7 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
               {Object.keys(extraOptions.sauce).length > 0 &&
                 extraOptions.sauce.map((item: any, i: number) => (
                   <tr key={i}>
-                    <td style={{ width: "190px" }}>
+                    <td className="list-description">
                       <span
                         dangerouslySetInnerHTML={{
                           __html: item.name,
@@ -109,7 +105,7 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
 
   return (
     <div className="grid-2 checkout_card">
-      <div className="left-column col-4">
+      <div className="left-column col-4_lg-5_md-5_sm-5_xs-5">
         <img
           className="product-image"
           src={data.image}
@@ -119,7 +115,7 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
         />
         <div className="product-quantity">{`X${data.quanty}`}</div>
       </div>
-      <div className="right-column col-8">
+      <div className="right-column col-8_lg-7_md-7_sm-7_xs-7">
         <h3 className="title">{data.name_product}</h3>
         {getExtraOptions()}
         {getListExtraOptions()}

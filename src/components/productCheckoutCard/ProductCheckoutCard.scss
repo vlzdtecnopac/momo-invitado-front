@@ -12,6 +12,10 @@
             width: 89px;
             border-radius: 11px;
             object-fit: cover;
+            @media(max-width: 1045px){
+                width: 80px;
+                height: 80px;
+            }
         }
         .product-quantity {
             width: 52px;
@@ -56,6 +60,27 @@
             list-style: none;
             padding: 0px 0px 10px 0px;
             font-weight: 500;
+
+            .list-description{
+                width: 190px;
+                margin: 4px 0px;
+                display: block;
+                @media(max-width: 1290px){
+                    width: 160px;
+                }
+
+                @media(max-width: 1160px){
+                    width: 140px;
+                }
+
+                @media(max-width: 1045px){
+                    width: 120px;
+                }
+
+                @media(max-width: 945px){
+                    width: 100px;
+                }
+            }
 
             .recicle-icon {
                 width: 15px;
