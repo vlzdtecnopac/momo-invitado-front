@@ -23,20 +23,23 @@ const OptionsList: React.FC<OptionsListProps> = ({
   const setDataProductOption = useProductOptionStore(
     (state) => state.setDataProductOption
   );
-  const [valueSelect, setValueSelect] = useState<string[]>([]);
+  const [valueSelect, setValueSelect] = useState<OptionData[]>([]);
+
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let newArray;
-    let valueHandler = JSON.parse(event.target.value);
+    let result = JSON.parse(event.target.value)
     if (!multiple) {
-      setValueSelect([valueHandler]);
+      setValueSelect([result]);
+      return;
     } else {
-      if (!event.target.checked) {
-        newArray = valueSelect.filter((item) => item !== valueHandler);
-      } else {
-        newArray = [...valueSelect, valueHandler];
+      if (event.target.checked) {
+        setValueSelect([...valueSelect, result]);
       }
-      setValueSelect(newArray);
+      if (!event.target.checked) {
+        const positionActual = valueSelect.findIndex(item => item.name == result.name);
+        const multipleArray =  valueSelect.splice(positionActual, 0);
+        setValueSelect([...multipleArray]);
+      }
     }
   };
 
@@ -46,6 +49,7 @@ const OptionsList: React.FC<OptionsListProps> = ({
       [attr]: valueSelect,
     };
     setDataProductOption(updatedData);
+    console.log(valueSelect);
   }, [valueSelect]);
 
   return (
@@ -57,7 +61,7 @@ const OptionsList: React.FC<OptionsListProps> = ({
       />
       <ul className="options-container-list">
         {listOptions.map((option: OptionData, i: number) => {
-          const isChecked = valueSelect.includes(option.name!);
+             const isChecked = valueSelect.filter(item => item.name == option.name).length;
           return (
             <li style={{margin: "10px 0px"}} key={i}>
               <div className="grid-middle grid-noGutter-equalHeight">
@@ -70,7 +74,7 @@ const OptionsList: React.FC<OptionsListProps> = ({
                     <p>$ {option.price}</p>
                     <label>
                       <input
-                        checked={isChecked}
+                        checked={isChecked > 0}
                         value={JSON.stringify({name: `${option.name}`, price:`${option.price}` })}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                           e.stopPropagation();

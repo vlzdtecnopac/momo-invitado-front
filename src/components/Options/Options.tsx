@@ -38,7 +38,6 @@ const Options: React.FC<OptionsProps> = ({
         ...dataProductOption,
         [attr]: defaultValue,
       };
-      console.log(defaultValue);
       setDataProductOption(updatedData);
     }
   }, []);

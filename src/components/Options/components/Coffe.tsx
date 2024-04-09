@@ -65,7 +65,7 @@ const Coffe: React.FC<CoffeProps> = ({optionHandler}) => {
                 ]}
                 iconOptions={extra}
                 attr="extra_coffee"
-                multiple={true}
+                multiple={false}
               />
               <hr className="separator" />
               <OptionsList
@@ -76,7 +76,7 @@ const Coffe: React.FC<CoffeProps> = ({optionHandler}) => {
                 ]}
                 iconOptions={lid}
                 attr="lid"
-                multiple={false}
+                multiple={true}
               />
               <hr className="separator" />
             </div>

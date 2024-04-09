@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import { useParams } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
 
@@ -20,8 +20,10 @@ import SpecialsMomo from "../../components/Options/components/SpecialMomo";
 
 import "./DetailPage.scss";
 import { db } from "../../helpers/dexie_db.helper";
+import { LoaderPage } from "../../loader/Loader";
 
 function DrinkDetailPage() {
+  const [loader, isLoader] = useState<Boolean>(false);
   const myRef = useRef<any>(null);
   const { product_id, type } = useParams();
   const { translate } = useLanguage();
@@ -32,16 +34,19 @@ function DrinkDetailPage() {
   }, []);
 
   async function addCart() {
-    try{
-      const id =  await db.product.add({
+    try {
+      isLoader(true);
+      const id = await db.product.add({
         id: uuidv4(),
         name_product: product.name_product,
         price: product.price,
-        image: product.image
-      })
-      console.log(id);
-    }catch(e){
-      console.log(e)
+        image: product.image,
+      });
+      setTimeout(() => {
+        isLoader(false);
+      }, 1000);
+    } catch (e) {
+      console.log(e);
     }
   }
 
@@ -71,6 +76,7 @@ function DrinkDetailPage() {
   };
   return (
     <Layout>
+      {loader ? <LoaderPage /> : ""}
       <div className="products_category">
         <CategoryNav />
       </div>
