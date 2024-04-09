@@ -36,7 +36,6 @@ function DrinkDetailPage() {
   }, []);
 
   async function addCart() {
-    console.log(dataProductOption)
     try {
       isLoader(true);
       await db.product.add({
@@ -44,6 +43,7 @@ function DrinkDetailPage() {
         name_product: product.name_product,
         price: product.price,
         image: product.image,
+        extra: JSON.stringify(dataProductOption)
       });
       setTimeout(() => {
         isLoader(false);

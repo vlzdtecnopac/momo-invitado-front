@@ -42,7 +42,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({data}) => {
           </div>
         </div>
       </div>
-      <div className="grid-noGutter-noBottom gray-line">
+      <div className="grid-noGutter-noBottom grid-middle gray-line">
         <div className="col-4">
           <div className="product-quantity">
             <button

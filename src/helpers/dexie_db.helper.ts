@@ -5,6 +5,7 @@ export interface Friend {
     name_product: string;
     image: string;
     price: number;
+    extra: string,
 }
 
 
@@ -13,7 +14,7 @@ export class  DexieDatabaseLocal extends Dexie {
     constructor(){
         super('myDbMomo')
         this.version(1).stores({
-            product: "id, name_product, price, image",
+            product: "id, name_product, price, image, extra",
         });
     }
 
