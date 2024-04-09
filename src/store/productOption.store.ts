@@ -13,7 +13,7 @@ export interface ProductOptionInterface {
   lid: OptionData[];
   sauce: OptionData[];
   temperature: OptionData;
-  color: OptionData;
+  color: string;
   coffee_type: OptionData;
 }
 
@@ -30,7 +30,7 @@ export const initialProductOptionState: ProductOptionInterface = {
   lid: [],
   sauce: [],
   temperature: {},
-  color: {},
+  color: "",
   coffee_type: {},
 };
 

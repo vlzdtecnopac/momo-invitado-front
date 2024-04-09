@@ -75,23 +75,20 @@
     }
 
     .details {
-      width: 90%;
+      width: 95%;
       color: $dark-blue;
-
 
       p {
         font-size: 12px;
       }
 
       .detail {
-        display: flex;
         color: $black;
         font-family: 'Stacion';
         font-size: 14px;
       }
 
       .extra-price {
-        padding-left: 80px;
         color: $black;
       }
     }
