@@ -20,12 +20,26 @@ function MethodsCard() {
   );
 }
 
+function TipsCard() {
+  return (
+    <>
+      <div className="tip-options tip-width">
+        <button className="tip-button">%</button>
+        <button className="tip-button">$</button>
+      </div>
+    </>
+  );
+}
 function CheckoutPage() {
   const [stateCard, setStateCard] = useState<boolean>(false);
+  const [stateCardTip, setStateCardTip] = useState<boolean>(false);
   const { translate } = useLanguage();
 
   const optionHandlerCard = (state: boolean) => {
     setStateCard(!state);
+  };
+  const optionHandlerCardTip = (state: boolean) => {
+    setStateCardTip(!state);
   };
 
   return (
@@ -40,7 +54,10 @@ function CheckoutPage() {
               <section className="tip">
                 <div className="grid-2">
                   <div className="col-5">
-                    <img alt="Barista" src={barista} />
+                    <img
+                      alt="Barista"
+                      src={barista}
+                    />
                   </div>
                   <div className="col-7 tip-text">
                     <h2>{translate("baristaTipText")}</h2>
@@ -85,19 +102,14 @@ function CheckoutPage() {
                       </div>
                     </button>
                   </div>
-                  <div className="col-12 decide">
-                    <button className="tip-button">
-                      <div className="percentange">{translate("other")}</div>
-                      <div className="middle">¡{translate("youDecide")}!</div>
-                      <div>
-                        <i className="dolar-icon"></i>
-                      </div>
-                    </button>
-                  </div>
-                  <div className="col-12 decide">
+
+                  <div className="col-12 decide-tip">
                     <div className="grid-2 grid-noGutter-noBottom">
                       <div className="col-6">
-                        <button className="tip-button">
+                        <button
+                          className="tip-button"
+                          onClick={() => optionHandlerCardTip(stateCardTip)}
+                        >
                           <div className="percentange">
                             {translate("other")}
                           </div>
@@ -109,10 +121,7 @@ function CheckoutPage() {
                           </div>
                         </button>
                       </div>
-                      <div className="col-6 decide-tip">
-                        <button className="tip-button">%</button>
-                        <button className="tip-button">$</button>
-                      </div>
+                      {stateCardTip && <TipsCard />}
                     </div>
                   </div>
                 </div>

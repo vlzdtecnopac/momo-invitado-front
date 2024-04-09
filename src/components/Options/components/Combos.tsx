@@ -86,9 +86,9 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 distanceScrolling={380}
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  { name: "Con tapa", price: 10 },
+                  { name: translate("lid"), price: 10 },
                   {
-                    name: 'Sin tapa <span class="recicle"><img class="recicle-icon" src="/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta',
+                    name: translate("noLid"),
                     price: 0,
                   },
                 ]}

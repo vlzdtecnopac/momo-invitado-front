@@ -25,7 +25,10 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
       <div className="combos_detail">
         <div className="col-9 details-col detail-card">
           <div className="details">
-            <div ref={myRef} className="content-detail-page">
+            <div
+              ref={myRef}
+              className="content-detail-page"
+            >
               {type == "Merch" && (
                 <>
                   <Options
