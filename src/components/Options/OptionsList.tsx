@@ -22,7 +22,6 @@ const OptionsList: React.FC<OptionsListProps> = ({
   attr,
   multiple = false,
 }) => {
-  const { dataProductOption } = useProductOptionStore();
   const setDataProductOption = useProductOptionStore(
     (state) => state.setDataProductOption
   );
@@ -52,7 +51,6 @@ const OptionsList: React.FC<OptionsListProps> = ({
 
   useEffect(() => {
     const updatedData = {
-      ...dataProductOption,
       [attr]: valueSelect,
     };
     setDataProductOption(updatedData);

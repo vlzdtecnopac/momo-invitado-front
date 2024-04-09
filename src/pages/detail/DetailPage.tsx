@@ -36,6 +36,7 @@ function DrinkDetailPage() {
   }, []);
 
   async function addCart() {
+    console.log(dataProductOption );
     try {
       isLoader(true);
       await db.product.add({
