@@ -1,10 +1,10 @@
 import "./ProductCheckoutCard.scss";
 
-interface OrderResumeCardProp{
+interface OrderResumeCardProp {
   data: any;
 }
 
-const ProductCheckoutCard:React.FC<OrderResumeCardProp>  = ({ data }) => {
+const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
   const getExtraOptions = () => {
     if (data.extra) {
       try {
@@ -41,54 +41,62 @@ const ProductCheckoutCard:React.FC<OrderResumeCardProp>  = ({ data }) => {
       try {
         const extraOptions = JSON.parse(data.extra);
         return (
-          <>
-            {Object.keys(extraOptions.lid).length > 0 && (
-              <tr>
-                <td style={{ width: "190px", margin: "4px 0px", display: "block" }}>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: extraOptions.lid[0].name,
+          <table className="details">
+            <tbody>
+              {Object.keys(extraOptions.lid).length > 0 && (
+                <tr>
+                  <td
+                    style={{
+                      width: "190px",
+                      margin: "4px 0px",
+                      display: "block",
                     }}
-                  />
-                </td>
-                <td style={{ width: "35px" }}>
-                  <span className="extra-price">
-                    $ {extraOptions.lid[0].price}
-                  </span>
-                </td>
-              </tr>
-            )}
+                  >
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: extraOptions.lid[0].name,
+                      }}
+                    />
+                  </td>
+                  <td style={{ width: "35px" }}>
+                    <span className="extra-price">
+                      $ {extraOptions.lid[0].price}
+                    </span>
+                  </td>
+                </tr>
+              )}
               {Object.keys(extraOptions.extra_coffee).length > 0 && (
-              <tr>
-                <td style={{ width: "190px" }}>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: extraOptions.extra_coffee[0].name,
-                    }}
-                  />
-                </td>
-                <td style={{ width: "35px" }}>
-                  <span className="extra-price">
-                    $ {extraOptions.extra_coffee[0].price}
-                  </span>
-                </td>
-              </tr>
-            )}
-            {Object.keys(extraOptions.sauce).length > 0 && (
-              <tr>
-                <td style={{ width: "190px" }}>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: extraOptions.sauce[0].name,
-                    }}
-                  />
-                </td>
-                <td className="extra-price">
+                <tr>
+                  <td style={{ width: "190px" }}>
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: extraOptions.extra_coffee[0].name,
+                      }}
+                    />
+                  </td>
+                  <td style={{ width: "35px" }}>
+                    <span className="extra-price">
+                      $ {extraOptions.extra_coffee[0].price}
+                    </span>
+                  </td>
+                </tr>
+              )}
+              {Object.keys(extraOptions.sauce).length > 0 && (
+                <tr>
+                  <td style={{ width: "190px" }}>
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: extraOptions.sauce[0].name,
+                      }}
+                    />
+                  </td>
+                  <td className="extra-price">
                     $ {extraOptions.sauce[0].price}
-                </td>
-              </tr>
-            )}
-          </>
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         );
       } catch (error) {
         console.error("Error al analizar la cadena JSON:", error);
@@ -112,15 +120,13 @@ const ProductCheckoutCard:React.FC<OrderResumeCardProp>  = ({ data }) => {
       </div>
       <div className="right-column col-8">
         <h3 className="title">{data.name_product}</h3>
-          {getExtraOptions()}
-          <table className="details">
-            {getListExtraOptions()}
-          </table>
+        {getExtraOptions()}
+        {getListExtraOptions()}
         <div className="end">
-          <div className="subtotal"> ${(data.price).toFixed(2)}{" "}</div>
+          <div className="subtotal"> ${data.price.toFixed(2)} </div>
         </div>
       </div>
     </div>
   );
-}
+};
 export default ProductCheckoutCard;

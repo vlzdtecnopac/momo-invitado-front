@@ -24,7 +24,8 @@ function MethodsCard() {
 function CheckoutPage() {
   const productCart = useLiveQuery(() => db.product.toArray());
   const [stateCard, setStateCard] = useState<boolean>(false);
-  const [getOtherTipSatisfaction, setOtherTipSatisfaction] = useState<boolean>(false);
+  const [getOtherTipSatisfaction, setOtherTipSatisfaction] =
+    useState<boolean>(false);
   const { translate } = useLanguage();
 
   const optionHandlerCard = (state: boolean) => {
@@ -88,36 +89,43 @@ function CheckoutPage() {
                       </div>
                     </button>
                   </div>
-                  {!getOtherTipSatisfaction && <div className="col-12 decide">
-                    <button onClick={()=> setOtherTipSatisfaction(true)} className="tip-button_two">
-                      <div className="percentange">{translate("other")}</div>
-                      <div className="middle">¡{translate("youDecide")}!</div>
-                      <div>
-                        <i className="dolar-icon"></i>
-                      </div>
-                    </button>
-                  </div>}
-                  {getOtherTipSatisfaction && (<div className="col-12 decide">
-                    <div className="grid-2 grid-noGutter-noBottom">
-                      <div className="col-6">
-                        <button className="tip-button">
-                          <div className="percentange">
-                            {translate("other")}
-                          </div>
-                          <div className="middle">
-                            ¡{translate("youDecide")}!
-                          </div>
-                          <div>
-                            <i className="dolar-icon"></i>
-                          </div>
-                        </button>
-                      </div>
-                      <div className="col-6 decide-tip">
-                        <button className="tip-button">%</button>
-                        <button className="tip-button">$</button>
+                  {!getOtherTipSatisfaction && (
+                    <div className="col-12 decide">
+                      <button
+                        onClick={() => setOtherTipSatisfaction(true)}
+                        className="tip-button_two"
+                      >
+                        <div className="percentange">{translate("other")}</div>
+                        <div className="middle">¡{translate("youDecide")}!</div>
+                        <div>
+                          <i className="dolar-icon"></i>
+                        </div>
+                      </button>
+                    </div>
+                  )}
+                  {getOtherTipSatisfaction && (
+                    <div className="col-12 decide">
+                      <div className="grid-2 grid-noGutter-noBottom">
+                        <div className="col-6">
+                          <button className="tip-button">
+                            <div className="percentange">
+                              {translate("other")}
+                            </div>
+                            <div className="middle">
+                              ¡{translate("youDecide")}!
+                            </div>
+                            <div>
+                              <i className="dolar-icon"></i>
+                            </div>
+                          </button>
+                        </div>
+                        <div className="col-6 decide-tip">
+                          <button className="tip-button">%</button>
+                          <button className="tip-button">$</button>
+                        </div>
                       </div>
                     </div>
-                  </div>)}
+                  )}
                 </div>
                 <hr />
                 <div className="pay-info">
@@ -153,10 +161,11 @@ function CheckoutPage() {
             </div>
             <div className="col-4">
               <section className="products">
-              {productCart?.map((item) => (
-                <div className="product" key={item.id} >
-                  <ProductCheckoutCard data={item} />
-                </div>))}
+                {productCart?.map((item) => (
+                  <div className="product" key={item.id}>
+                    <ProductCheckoutCard data={item} />
+                  </div>
+                ))}
               </section>
             </div>
             <div className="col-3 ">
@@ -177,28 +186,32 @@ function CheckoutPage() {
                 <div></div>
                 <div className="total">
                   <table>
-                    <tr>
-                      <td>Subtotal (4 productos)</td>
-                      <td className="amount">$ 50</td>
-                    </tr>
-                    <tr>
-                      <td>Propina</td>
-                      <td className="amount">$ 50</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Cupón (MOMO Coffee)
-                        <button className="btn_delete_cupon">Eliminar</button>
-                      </td>
-                      <td className="amount">$ 50</td>
-                    </tr>
+                    <tbody>
+                      <tr>
+                        <td>Subtotal (4 productos)</td>
+                        <td className="amount">$ 50</td>
+                      </tr>
+                      <tr>
+                        <td>Propina</td>
+                        <td className="amount">$ 50</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Cupón (MOMO Coffee)
+                          <button className="btn_delete_cupon">Eliminar</button>
+                        </td>
+                        <td className="amount">$ 50</td>
+                      </tr>
+                    </tbody>
                   </table>
                   <hr className="border-dashed" />
                   <table>
-                    <tr>
-                      <td className="sub-total">Total</td>
-                      <td className="amount">$ 50</td>
-                    </tr>
+                    <tbody>
+                      <tr>
+                        <td className="sub-total">Total</td>
+                        <td className="amount">$ 50</td>
+                      </tr>
+                    </tbody>
                   </table>
                   <button className="btn-payment">{translate("pay")}</button>
                 </div>
