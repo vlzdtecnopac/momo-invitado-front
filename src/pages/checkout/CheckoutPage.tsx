@@ -38,7 +38,7 @@ function CheckoutPage() {
           <CategoryNav />
         </div>
         <div className="checkout_background">
-          <div className="checkout_container grid-3">
+          <div className="checkout_container grid-3 grid-equalHeight">
             <div className="col-5">
               <section className="tip">
                 <div className="grid-2">
