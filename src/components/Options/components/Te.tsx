@@ -29,8 +29,8 @@ const Te: React.FC<TeProps> = ({ optionHandler }) => {
                 titleOptions={translate("size")}
                 iconOptions={glass}
                 listOptions={[
-                  { name: "Chico 12 oz", price: 0 },
-                  { name: "Grande 16 Oz", price: 0 },
+                  { name: `${translate("small")} 12 Oz`, price: 0 },
+                  { name: `${translate("large")} 16 Oz`, price: 10 },
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="size"
@@ -54,7 +54,7 @@ const Te: React.FC<TeProps> = ({ optionHandler }) => {
               <OptionsList
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  { name: translate("lid"), price: 10 },
+                  { name: translate("lid"), price: 0 },
                   { name: translate("noLid"), price: 0 },
                 ]}
                 iconOptions={lid}

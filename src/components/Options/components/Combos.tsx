@@ -35,12 +35,12 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 titleOptions={translate("size")}
                 iconOptions={glass}
                 listOptions={[
-                  { name: "Chico 12 oz", price: 0 },
-                  { name: "Grande 16 Oz", price: 0 },
+                  { name: `${translate("small")} 12 Oz`, price: 0 },
+                  { name: `${translate("large")} 16 Oz`, price: 10 },
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="size"
-                defaultValue={{ name: "Chico 12 oz", price: 0 }}
+                defaultValue={{ name: `${translate("small")} 12 Oz`, price: 0 }}
               />
               <hr className="separator" />
               <Options
@@ -49,8 +49,8 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 iconOptions={milk}
                 listOptions={[
                   { name: translate("whole"), price: 0 },
-                  { name: translate("lactoseFree"), price: 0 },
-                  { name: translate("oatMilk"), price: 0 },
+                  { name: translate("lactoseFree"), price: 5 },
+                  { name: translate("oatMilk"), price: 9 },
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 defaultValue={{ name: translate("whole") }}
@@ -86,7 +86,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 distanceScrolling={380}
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  { name: translate("lid"), price: 10 },
+                  { name: translate("lid"), price: 0 },
                   {
                     name: translate("noLid"),
                     price: 0,
@@ -109,6 +109,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="temperature"
+                defaultValue={{ name: translate("roomTemp") }}
               />
               <hr className="separator" />
               <OptionsList

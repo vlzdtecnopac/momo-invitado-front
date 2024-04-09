@@ -46,11 +46,11 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({ optionHandler }) => {
                 iconOptions={glass}
                 listOptions={[
                   { name: "Chico 12 oz", price: 0 },
-                  { name: "Grande 16 Oz", price: 0 },
+                  { name: "Grande 16 Oz", price: 10 },
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="size"
-                defaultValue={{ name: "Chico 12 oz" }}
+                defaultValue={{ name: `${translate("small")} 12 oz` }}
               />
               <hr className="separator" />
               <Options
@@ -59,8 +59,8 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({ optionHandler }) => {
                 iconOptions={milk}
                 listOptions={[
                   { name: translate("whole"), price: 0 },
-                  { name: translate("lactoseFree"), price: 0 },
-                  { name: translate("oatMilk"), price: 0 },
+                  { name: translate("lactoseFree"), price: 5 },
+                  { name: translate("oatMilk"), price: 9 },
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="milk"
@@ -84,8 +84,8 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({ optionHandler }) => {
               <OptionsList
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  { name: translate("extraCoffee"), price: 0 },
-                  { name: translate("extraCream"), price: 0 },
+                  { name: translate("extraCoffee"), price: 10 },
+                  { name: translate("extraCream"), price: 10 },
                 ]}
                 iconOptions={extra}
                 attr="extra_coffee"
@@ -95,7 +95,7 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({ optionHandler }) => {
               <OptionsList
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  { name: translate("lid"), price: 10 },
+                  { name: translate("lid"), price: 0 },
                   {
                     name: translate("noLid"),
                     price: 0,

@@ -58,14 +58,21 @@ const OptionsList: React.FC<OptionsListProps> = ({
 
   return (
     <div className="extra-options-list">
-      <img className="icon" src={iconOptions} alt="extra" />
+      <img
+        className="icon"
+        src={iconOptions}
+        alt="extra"
+      />
       <ul className="options-container-list">
         {listOptions.map((option: OptionData, i: number) => {
           const isChecked = valueSelect.filter(
             (item) => item.name == option.name
           ).length;
           return (
-            <li style={{ margin: "10px 0px" }} key={i}>
+            <li
+              style={{ margin: "10px 0px" }}
+              key={i}
+            >
               <div className="grid-middle grid-noGutter-equalHeight">
                 <div
                   className="col-9"
@@ -73,7 +80,7 @@ const OptionsList: React.FC<OptionsListProps> = ({
                 ></div>
                 <div className="col-3">
                   <span className="extra">
-                    <p>$ {option.price}</p>
+                    <p>{option.price! > 0 ? `$ ${option.price}` : ""}</p>{" "}
                     <label>
                       <input
                         checked={isChecked > 0}
