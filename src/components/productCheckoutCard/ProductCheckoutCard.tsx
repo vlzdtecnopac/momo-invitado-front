@@ -117,7 +117,7 @@ const ProductCheckoutCard:React.FC<OrderResumeCardProp>  = ({ data }) => {
             {getListExtraOptions()}
           </table>
         <div className="end">
-          <div className="subtotal">$134.00</div>
+          <div className="subtotal"> ${(data.price).toFixed(2)}{" "}</div>
         </div>
       </div>
     </div>

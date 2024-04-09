@@ -24,6 +24,7 @@ function MethodsCard() {
 function CheckoutPage() {
   const productCart = useLiveQuery(() => db.product.toArray());
   const [stateCard, setStateCard] = useState<boolean>(false);
+  const [getOtherTipSatisfaction, setOtherTipSatisfaction] = useState<boolean>(false);
   const { translate } = useLanguage();
 
   const optionHandlerCard = (state: boolean) => {
@@ -87,16 +88,16 @@ function CheckoutPage() {
                       </div>
                     </button>
                   </div>
-                  <div className="col-12 decide">
-                    <button className="tip-button_two">
+                  {!getOtherTipSatisfaction && <div className="col-12 decide">
+                    <button onClick={()=> setOtherTipSatisfaction(true)} className="tip-button_two">
                       <div className="percentange">{translate("other")}</div>
                       <div className="middle">¡{translate("youDecide")}!</div>
                       <div>
                         <i className="dolar-icon"></i>
                       </div>
                     </button>
-                  </div>
-                  <div className="col-12 decide">
+                  </div>}
+                  {getOtherTipSatisfaction && (<div className="col-12 decide">
                     <div className="grid-2 grid-noGutter-noBottom">
                       <div className="col-6">
                         <button className="tip-button">
@@ -116,7 +117,7 @@ function CheckoutPage() {
                         <button className="tip-button">$</button>
                       </div>
                     </div>
-                  </div>
+                  </div>)}
                 </div>
                 <hr />
                 <div className="pay-info">

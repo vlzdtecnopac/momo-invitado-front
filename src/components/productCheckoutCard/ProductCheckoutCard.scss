@@ -8,14 +8,11 @@
         padding: 0;
 
         .product-image {
-            padding-top: 10px;
+            margin-top: 10px;
             width: 89px;
             border-radius: 11px;
-            object-fit: contain;
+            object-fit: cover;
         }
-
-
-
         .product-quantity {
             width: 52px;
             color: $dark-blue ;
