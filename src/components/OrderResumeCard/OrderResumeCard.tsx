@@ -13,10 +13,10 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
     let quantyProduct = quantity + change;
     const newQuantity = Math.max(quantyProduct, 1);
     try {
-      await db.product.update(id, {quanty: quantyProduct}); 
+      await db.product.update(id, { quanty: quantyProduct });
       setQuantity(newQuantity);
     } catch (error) {
-      console.error('Error al actualizar el registro:', error);
+      console.error("Error al actualizar el registro:", error);
     }
   };
 
@@ -62,54 +62,55 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
         return (
           <table className="detail">
             <tbody>
-            {Object.keys(extraOptions.lid).length > 0 && (
-              <tr>
-                <td style={{ width: "190px"}}>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: extraOptions.lid[0].name,
-                    }}
-                  />
-                </td>
-                <td style={{ width: "35px" }}>
-                  <span className="extra-price">
-                    $ {extraOptions.lid[0].price}
-                  </span>
-                </td>
-              </tr>
-            )}
-              {Object.keys(extraOptions.extra_coffee).length > 0 && (
-              <tr>
-                <td style={{ width: "190px" }}>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: extraOptions.extra_coffee[0].name,
-                    }}
-                  />
-                </td>
-                <td style={{ width: "35px" }}>
-                  <span className="extra-price">
-                    $ {extraOptions.extra_coffee[0].price}
-                  </span>
-                </td>
-              </tr>
-            )}
-            {Object.keys(extraOptions.sauce).length > 0 && (
-              <tr>
-                <td style={{ width: "190px" }}>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: extraOptions.sauce[0].name,
-                    }}
-                  />
-                </td>
-                <td style={{ width: "35px" }}>
-                  <span className="extra-price">
-                    $ {extraOptions.sauce[0].price}
-                  </span>
-                </td>
-              </tr>
-            )}
+              {Object.keys(extraOptions.lid).length > 0 &&
+                extraOptions.lid.map((item: any, i: number) => {
+                  return (
+                    <tr key={i}>
+                      <td style={{ width: "190px" }}>
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: item.name,
+                          }}
+                        />
+                      </td>
+                      <td style={{ width: "35px" }}>
+                        <span className="extra-price">$ {item.price}</span>
+                      </td>
+                    </tr>
+                  );
+                })}
+
+              {Object.keys(extraOptions.extra_coffee).length > 0 &&
+                extraOptions.extra_coffee.map((item: any, i: number) => (
+                  <tr key={i}>
+                    <td style={{ width: "190px" }}>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: item.name,
+                        }}
+                      />
+                    </td>
+                    <td style={{ width: "35px" }}>
+                      <span className="extra-price">$ {item.price}</span>
+                    </td>
+                  </tr>
+                ))}
+
+              {Object.keys(extraOptions.sauce).length > 0 &&
+                extraOptions.sauce.map((item: any, i: number) => (
+                  <tr key={i}>
+                    <td style={{ width: "190px" }}>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: item.name,
+                        }}
+                      />
+                    </td>
+                    <td style={{ width: "35px" }}>
+                      <span className="extra-price">$ {item.price}</span>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         );
@@ -144,11 +145,17 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
       <div className="grid-noGutter-noBottom grid-middle gray-line">
         <div className="col-4">
           <div className="product-quantity">
-            <button className="minus" onClick={() => handleQuantityChange(data.id, -1)}>
+            <button
+              className="minus"
+              onClick={() => handleQuantityChange(data.id, -1)}
+            >
               -
             </button>
             <span className="quantity">{quantity}</span>
-            <button className="plus" onClick={() => handleQuantityChange(data.id, 1)}>
+            <button
+              className="plus"
+              onClick={() => handleQuantityChange(data.id, 1)}
+            >
               +
             </button>
           </div>
