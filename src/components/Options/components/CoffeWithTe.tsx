@@ -10,39 +10,47 @@ import Options from "../Options";
 import OptionsList from "../OptionsList";
 import "../Options.scss";
 
-interface CoffeWithTeProps{
-  optionHandler: (e:any) => any
+interface CoffeWithTeProps {
+  optionHandler: (e: any) => any;
 }
 
-
-const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
+const CoffeWithTe: React.FC<CoffeWithTeProps> = ({ optionHandler }) => {
   const myRef = useRef<any>(null);
   const { translate } = useLanguage();
-
 
   return (
     <>
       <div className="combos_detail">
         <div className="col-9 details-col detail-card">
           <div className="details">
-            <div ref={myRef} className="content-detail-page">
+            <div
+              ref={myRef}
+              className="content-detail-page"
+            >
               <Options
                 distanceScrolling={80}
                 titleOptions={translate("temperature")}
                 iconOptions={temperature}
-                listOptions={[{name:translate("roomTemp"), price:0}, {name: translate("hot"), price: 0}]}
+                listOptions={[
+                  { name: translate("roomTemp"), price: 0 },
+                  { name: translate("hot"), price: 0 },
+                ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="temperature"
+                defaultValue={{ name: translate("roomTemp") }}
               />
               <hr className="separator" />
               <Options
                 distanceScrolling={160}
                 titleOptions={translate("size")}
                 iconOptions={glass}
-                listOptions={[{name: "Chico 12 oz", price: 0}, {name: "Grande 16 Oz", price: 0}]}
+                listOptions={[
+                  { name: "Chico 12 oz", price: 0 },
+                  { name: "Grande 16 Oz", price: 0 },
+                ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="size"
-                defaultValue={{name: "Chico 12 oz"}}
+                defaultValue={{ name: "Chico 12 oz" }}
               />
               <hr className="separator" />
               <Options
@@ -50,30 +58,34 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
                 titleOptions={translate("milk")}
                 iconOptions={milk}
                 listOptions={[
-                  {name: translate("whole"), price: 0},
-                  {name: translate("lactoseFree"), price: 0},
-                  {name: translate("oatMilk"), price: 0}
+                  { name: translate("whole"), price: 0 },
+                  { name: translate("lactoseFree"), price: 0 },
+                  { name: translate("oatMilk"), price: 0 },
                 ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="milk"
-                defaultValue={{name: translate("lactoseFree")}}
+                defaultValue={{ name: translate("whole") }}
               />
               <hr className="separator" />
               <Options
                 distanceScrolling={280}
                 titleOptions={translate("sugar")}
                 iconOptions={sugar}
-                listOptions={[{name: translate("less"), price: 0}, {name: "Original", price: 0}, { name:translate("more"), price: 0}]}
+                listOptions={[
+                  { name: translate("less"), price: 0 },
+                  { name: "Original", price: 0 },
+                  { name: translate("more"), price: 0 },
+                ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="sugar"
-                defaultValue={{name: "Original"}}
+                defaultValue={{ name: "Original" }}
               />
               <hr className="separator" />
               <OptionsList
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  {name: translate("extraCoffee"), price: 0},
-                  {name: translate("extraCream"), price: 0},
+                  { name: translate("extraCoffee"), price: 0 },
+                  { name: translate("extraCream"), price: 0 },
                 ]}
                 iconOptions={extra}
                 attr="extra_coffee"
@@ -83,8 +95,11 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({optionHandler}) => {
               <OptionsList
                 optionHandler={(e: any) => optionHandler(e)}
                 listOptions={[
-                  {name: "Con tapa", price: 10},
-                  {name: 'Sin tapa <span class="recicle"><img class="recicle-icon" src="/assets/icons/recicle.svg" alt="recicle-icon"></span> Ayúdanos a cuidar el planeta', price: 0},
+                  { name: translate("lid"), price: 10 },
+                  {
+                    name: translate("noLid"),
+                    price: 0,
+                  },
                 ]}
                 iconOptions={lid}
                 attr="lid"

@@ -9,7 +9,6 @@ import { SocketContext } from "../../context/SocketContext";
 import { LoaderPage } from "../../includes/loader/Loader";
 import "./LoginForm.scss";
 
-
 function LoginForm() {
   const navigate = useNavigate();
 
@@ -20,12 +19,12 @@ function LoginForm() {
 
   const SignupSchema = Yup.object().shape({
     email: Yup.string()
-      .email("El correo no es valido.")
-      .required("El correo es requerido."),
+      .email("* El correo no es valido.")
+      .required("* El correo es requerido."),
     password: Yup.string()
-      .min(4, "La contreseña se encuentra corta")
-      .max(10, "Lacontraseña se encuentra larga")
-      .required("Ingresa la contraseña"),
+      .min(4, "* La contreseña se encuentra corta")
+      .max(10, "* La contraseña se encuentra larga")
+      .required("* Ingresa la contraseña"),
   });
 
   return (
@@ -39,13 +38,19 @@ function LoginForm() {
           onSubmit={async (values) => {
             setLoader(true);
             try {
-              let resp = await axiosInstance.post(`/users/employee/login`, values);
+              let resp = await axiosInstance.post(
+                `/users/employee/login`,
+                values
+              );
               if (resp) {
                 if (!resp.data.state) {
                   setError("Usuario Inactivo");
                   return;
                 }
-                localStorage.setItem("start_session", moment().format('YYYY/MM/DD, h:mm:ss a'))
+                localStorage.setItem(
+                  "start_session",
+                  moment().format("YYYY/MM/DD, h:mm:ss a")
+                );
                 localStorage.setItem("token-momo", resp.data.token);
                 localStorage.setItem("employee-id", resp.data.employee_id);
                 socket.emit("kiosko-socket", {
@@ -111,7 +116,10 @@ function LoginForm() {
                 }
               })()}
               <div className="button-container">
-                <button type="submit" className="login-buttom">
+                <button
+                  type="submit"
+                  className="login-buttom"
+                >
                   Ingresar
                 </button>
               </div>

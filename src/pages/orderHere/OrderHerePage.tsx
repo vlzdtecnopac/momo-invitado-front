@@ -86,7 +86,7 @@ function OrderHerePage() {
   };
 
   const HandlePageInit = () => {
-    navigate("/categories");
+    navigate("/register");
   };
 
   const HandleNotCash = () => {
