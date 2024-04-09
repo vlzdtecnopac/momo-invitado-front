@@ -7,8 +7,8 @@ interface OrderResumeCardProp {
 }
 
 const OrderResumeCard: React.FC<OrderResumeCardProp> = ({data}) => {
-  const [quantity, setQuantity] = useState(1); 
-
+  const [quantity, setQuantity] = useState(1);
+  
   const handleQuantityChange = (change: any) => {
     const newQuantity = Math.max(quantity + change, 1); 
     setQuantity(newQuantity);
@@ -17,6 +17,22 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({data}) => {
   const handleDeleteProduct = (id: string) => {
     db.product.delete(id)
   }
+
+  const getExtraOptions = () => {
+    if (data.extra) {
+      try {
+        const extraOptions = JSON.parse(data.extra);
+        return <p>{Object.keys(extraOptions.temperature).length > 0 ? `${extraOptions.temperature.name} | ` : ""}
+        {Object.keys(extraOptions.size).length > 0 ? `${extraOptions.size.name} | ` : ""}
+        {Object.keys(extraOptions.sugar).length > 0 ? `${extraOptions.sugar.name} | ` : ""}
+        {Object.keys(extraOptions.milk).length > 0 ? `${extraOptions.milk.name} ` : ""}</p>     
+      } catch (error) {
+        console.error("Error al analizar la cadena JSON:", error);
+        return null;
+      }
+    }
+    return null;
+  };
 
   return (
     <>
@@ -33,7 +49,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({data}) => {
         <div className="right-column">
           <h3 className="title">{data.name_product}</h3>
           <div className="details">
-            <p>Chico | Regular | Menos azúcar | Sin tapa</p>
+            {getExtraOptions()}
             <ul className="detail">
               <li>
                 Extra de café <span className="extra-price">$10</span>
