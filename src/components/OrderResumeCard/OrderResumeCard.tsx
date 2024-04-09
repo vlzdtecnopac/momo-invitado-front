@@ -36,6 +36,9 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
             {Object.keys(extraOptions.milk).length > 0
               ? `${extraOptions.milk.name} | `
               : ""}
+            {Object.keys(extraOptions.color).length > 0
+              ? `${extraOptions.color[0].name} | `
+              : ""}
           </p>
         );
       } catch (error) {
