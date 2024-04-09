@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { OptionData, useProductOptionStore } from "../../store/productOption.store";
+import {
+  OptionData,
+  useProductOptionStore,
+} from "../../store/productOption.store";
 import "./Options.scss";
 
 interface OptionsProps {
@@ -20,10 +23,9 @@ const Options: React.FC<OptionsProps> = ({
   iconOptions,
   distanceScrolling,
   attr,
-  price,
   defaultValue = {
     name: "",
-    price: 0
+    price: 0,
   },
 }) => {
   const { dataProductOption } = useProductOptionStore();
@@ -45,7 +47,7 @@ const Options: React.FC<OptionsProps> = ({
       ...dataProductOption,
       [attr]: item,
     };
-    setDetault({name: item.name, price: item.price});
+    setDetault({ name: item.name, price: item.price });
     setDataProductOption(updatedData);
   };
 
@@ -54,7 +56,11 @@ const Options: React.FC<OptionsProps> = ({
       <div className="grid-middle grid-noGutter-noBottom">
         <div className="col-4">
           <div className="size">
-            <img className="icon" src={iconOptions} alt="size" />
+            <img
+              className="icon"
+              src={iconOptions}
+              alt="size"
+            />
             <h3 className="text">{titleOptions}</h3>
           </div>
         </div>
@@ -65,8 +71,8 @@ const Options: React.FC<OptionsProps> = ({
               return (
                 <button
                   className={
-                    Object.values(dataProductOption)[postion].name == item.name ||
-                    getDefault.name == item.name
+                    Object.values(dataProductOption)[postion].name ==
+                      item.name || getDefault.name == item.name
                       ? `option-active`
                       : `option`
                   }
@@ -82,7 +88,9 @@ const Options: React.FC<OptionsProps> = ({
                   }}
                 >
                   {item.name}
-                  {price && <h4 className="extra-price">${price}</h4>}
+                  {item.price! > 0 && (
+                    <h4 className="extra-price">${item.price}</h4>
+                  )}
                 </button>
               );
             })}
