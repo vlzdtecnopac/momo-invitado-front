@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Options.scss";
-import { OptionData, useProductOptionStore } from "../../store/productOption.store";
+import {
+  OptionData,
+  useProductOptionStore,
+} from "../../store/productOption.store";
 
 interface OptionsListProps {
-  optionHandler?: (e:any) => any;
+  optionHandler?: (e: any) => any;
   listOptions: OptionData[];
   iconOptions: string;
   distanceScrolling?: number;
@@ -25,9 +28,8 @@ const OptionsList: React.FC<OptionsListProps> = ({
   );
   const [valueSelect, setValueSelect] = useState<OptionData[]>([]);
 
-
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let result = JSON.parse(event.target.value)
+    let result = JSON.parse(event.target.value);
     if (!multiple) {
       setValueSelect([result]);
       return;
@@ -36,10 +38,13 @@ const OptionsList: React.FC<OptionsListProps> = ({
         setValueSelect([...valueSelect, result]);
       }
       if (!event.target.checked) {
-        if(valueSelect.length > 0){
-        const positionActual = valueSelect.findIndex(item => item.name == result.name);
-        const multipleArray =  valueSelect.splice(positionActual, 0);
-        setValueSelect([...multipleArray]);
+        if (valueSelect.length > 0) {
+          const positionActual = valueSelect.findIndex(
+            (item) => item.name == result.name
+          );
+
+          const multipleArray = valueSelect.splice(positionActual, 0);
+          setValueSelect([...multipleArray]);
         }
       }
     }
@@ -51,21 +56,18 @@ const OptionsList: React.FC<OptionsListProps> = ({
       [attr]: valueSelect,
     };
     setDataProductOption(updatedData);
-    console.log(valueSelect);
   }, [valueSelect]);
 
   return (
     <div className="extra-options-list">
-      <img
-        className="icon"
-        src={iconOptions}
-        alt="extra"
-      />
+      <img className="icon" src={iconOptions} alt="extra" />
       <ul className="options-container-list">
         {listOptions.map((option: OptionData, i: number) => {
-             const isChecked = valueSelect.filter(item => item.name == option.name).length;
+          const isChecked = valueSelect.filter(
+            (item) => item.name == option.name
+          ).length;
           return (
-            <li style={{margin: "10px 0px"}} key={i}>
+            <li style={{ margin: "10px 0px" }} key={i}>
               <div className="grid-middle grid-noGutter-equalHeight">
                 <div
                   className="col-9"
@@ -77,7 +79,10 @@ const OptionsList: React.FC<OptionsListProps> = ({
                     <label>
                       <input
                         checked={isChecked > 0}
-                        value={JSON.stringify({name: `${option.name}`, price:`${option.price}` })}
+                        value={JSON.stringify({
+                          name: `${option.name}`,
+                          price: `${option.price}`,
+                        })}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                           e.stopPropagation();
                           handleCheckboxChange(e);
