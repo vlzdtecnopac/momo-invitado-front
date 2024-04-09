@@ -36,9 +36,11 @@ const OptionsList: React.FC<OptionsListProps> = ({
         setValueSelect([...valueSelect, result]);
       }
       if (!event.target.checked) {
+        if(valueSelect.length > 0){
         const positionActual = valueSelect.findIndex(item => item.name == result.name);
         const multipleArray =  valueSelect.splice(positionActual, 0);
         setValueSelect([...multipleArray]);
+        }
       }
     }
   };
