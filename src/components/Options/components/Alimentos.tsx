@@ -10,7 +10,7 @@ interface AlimentosProps {
   optionHandler: (e: any) => any;
 }
 
-const Alimentos: React.FC<AlimentosProps> = ({optionHandler}) => {
+const Alimentos: React.FC<AlimentosProps> = ({ optionHandler }) => {
   const myRef = useRef<any>(null);
   const { translate } = useLanguage();
 
@@ -19,26 +19,33 @@ const Alimentos: React.FC<AlimentosProps> = ({optionHandler}) => {
       <div className="combos_detail">
         <div className="col-9 details-col detail-card">
           <div className="details">
-            <div ref={myRef} className="content-detail-page">
+            <div
+              ref={myRef}
+              className="content-detail-page"
+            >
               <Options
                 distanceScrolling={360}
                 titleOptions={translate("temperature")}
                 iconOptions={temperature}
-                listOptions={[{name: translate("roomTemp"), price: 0}, {name: translate("hot"), price: 0}]}
+                listOptions={[
+                  { name: translate("roomTemp"), price: 0 },
+                  { name: translate("hot"), price: 0 },
+                ]}
                 optionHandler={(e: any) => optionHandler(e)}
                 attr="temperature"
+                defaultValue={{ name: translate("roomTemp") }}
               />
               <hr className="separator" />
-                  <OptionsList
-                    listOptions={[
-                      {name: translate("machaSauce"), price: 10 },
-                      {name: translate("chipotleSauce"), price: 10},
-                    ]}
-                    iconOptions={sauce}
-                    distanceScrolling={310}
-                    attr="sauce"
-                    multiple={true}
-                  />
+              <OptionsList
+                listOptions={[
+                  { name: translate("machaSauce"), price: 10 },
+                  { name: translate("chipotleSauce"), price: 10 },
+                ]}
+                iconOptions={sauce}
+                distanceScrolling={310}
+                attr="sauce"
+                multiple={true}
+              />
             </div>
           </div>
         </div>
