@@ -108,7 +108,7 @@ const ProductCheckoutCard:React.FC<OrderResumeCardProp>  = ({ data }) => {
           width="89"
           height="93"
         />
-        <div className="product-quantity">x2</div>
+        <div className="product-quantity">{`X${data.quanty}`}</div>
       </div>
       <div className="right-column col-8">
         <h3 className="title">{data.name_product}</h3>

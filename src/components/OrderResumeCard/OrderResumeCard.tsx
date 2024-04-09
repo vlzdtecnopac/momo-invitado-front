@@ -7,7 +7,7 @@ interface OrderResumeCardProp {
 }
 
 const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
-  const [quantity, setQuantity] = useState(data.quanty | 1);
+  const [quantity, setQuantity] = useState(data.quanty);
 
   const handleQuantityChange = async (id: string, change: number) => {
     let quantyProduct = quantity + change;
