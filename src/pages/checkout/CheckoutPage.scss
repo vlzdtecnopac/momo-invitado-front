@@ -104,6 +104,51 @@
       }
     }
 
+
+    .tip-button_two {
+      width: 60%;
+      min-height: 60px;
+      background: $light-blue;
+      border: none;
+      margin: 5px;
+      border-radius: 10px;
+      font-family: "Red Hat Display";
+      font-size: 16px;
+      font-weight: 700;
+      text-align: left;
+      color: $dark-blue;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .dolar-icon {
+        background-image: url("/assets/icons/dollar-circle-blue.svg");
+        width: 20px;
+        height: 20px;
+        display: block;
+        background-size: contain;
+        margin-top: 28px;
+      }
+
+      .middle {
+        width: 140px;
+        line-height: 14px;
+      }
+
+      .percentange {
+        font-family: "Red Hat Display";
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+        padding: 0 10px 0px 10px;
+      }
+    }
+
+
     .pay-info {
       display: flex;
       flex-direction: column;

@@ -86,7 +86,7 @@ function CheckoutPage() {
                     </button>
                   </div>
                   <div className="col-12 decide">
-                    <button className="tip-button">
+                    <button className="tip-button_two">
                       <div className="percentange">{translate("other")}</div>
                       <div className="middle">¡{translate("youDecide")}!</div>
                       <div>
