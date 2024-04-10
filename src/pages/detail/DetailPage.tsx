@@ -49,7 +49,7 @@ function DrinkDetailPage() {
       await db.product.add({
         id: uuidv4(),
         name_product: product.name_product,
-        price: product.price,
+        price: getSubtotal,
         image: product.image,
         extra: JSON.stringify(dataProductOption),
         quanty: 1,
