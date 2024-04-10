@@ -26,7 +26,7 @@
       border-radius: 12px;
       color: $cream;
       padding: 10px;
-      max-height: 500px;
+      max-height: 420px;
       overflow-y: auto;
       overflow-x: hidden;
 
@@ -316,7 +316,7 @@
       border-radius: 12px;
       color: $cream;
       padding: 10px 10px;
-      max-height: 500px;
+      max-height: 420px;
       overflow-y: auto;
       overflow-x: hidden;
 
@@ -333,13 +333,12 @@
       background-color: $dark-blue;
       border-radius: 12px;
       color: $cream;
-      padding-top: 20px;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 10px 10px;
-      max-height: 500px;
+      max-height: 420px;
 
       .cupon {
         display: inline-flex;
