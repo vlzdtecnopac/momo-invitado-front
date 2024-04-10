@@ -94,6 +94,7 @@ function Cart() {
           <button
             onClick={() => navigate("/checkout")}
             className="pay"
+            disabled={countCart() === 0}
           >
             {translate("countinuePayment")}
           </button>
