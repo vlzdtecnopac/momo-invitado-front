@@ -7,6 +7,7 @@ import Layout from "../../includes/layout/Layout";
 import barista from "/assets/barista.png";
 import "./CheckoutPage.scss";
 import { db } from "../../helpers/dexie_db.helper";
+import { useShoppingStore } from "../../store/shopping.store";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -175,6 +176,7 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
 };
 
 function CheckoutPage() {
+
   const productCart = useLiveQuery(() => db.product.orderBy('name_product').toArray());
   const [tipMount, setTipMount] = useState<String>();
   const { translate } = useLanguage();
@@ -182,12 +184,11 @@ function CheckoutPage() {
   function  countProducts(){
     return productCart?.reduce((total, item) => total + item.quanty, 0);
   }
-
   return (
     <>
       <Layout>
         <div className="category-fixed">
-          <CategoryNav />
+          <CategoryNav cart={false} />
         </div>
         <div className="checkout_background">
           <div className="checkout_container grid-3 grid-equalHeight">

@@ -22,8 +22,10 @@ import "./DetailPage.scss";
 import { db } from "../../helpers/dexie_db.helper";
 import { LoaderPage } from "../../loader/Loader";
 import { useProductOptionStore } from "../../store/productOption.store";
+import { useShoppingStore } from "../../store/shopping.store";
 
 function DrinkDetailPage() {
+  const {cart, setStoreCart} = useShoppingStore();
   const { dataProductOption } = useProductOptionStore();
   const [loader, isLoader] = useState<Boolean>(false);
   const myRef = useRef<any>(null);
@@ -48,6 +50,7 @@ function DrinkDetailPage() {
       });
       setTimeout(() => {
         isLoader(false);
+        setStoreCart(true);
       }, 1000);
     } catch (e) {
       console.log(e);
@@ -82,7 +85,7 @@ function DrinkDetailPage() {
     <Layout>
       {loader ? <LoaderPage /> : ""}
       <div className="products_category">
-        <CategoryNav />
+        <CategoryNav cart={cart} />
       </div>
       <div className="page-container">
         <div className="drink_detail">

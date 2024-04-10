@@ -6,11 +6,14 @@ import axiosInstance from "../../helpers/axios.helper";
 import { initialProductOptionState, useProductOptionStore } from "../../store/productOption.store";
 import Cart from "../Cart/Cart";
 import "./CategoryNav.scss";
+import { db } from "../../helpers/dexie_db.helper";
+import { useShoppingStore } from "../../store/shopping.store";
 
-function CategoryNav() {
+const CategoryNav:React.FC<{cart: boolean}> = ({cart}) =>  {
   const setDataProductOption = useProductOptionStore(
     (state) => state.setDataProductOption
   );
+  const {setStoreCart} = useShoppingStore();
   const { translate } = useLanguage();
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
@@ -19,6 +22,7 @@ function CategoryNav() {
   useEffect(() => {
     if (loader) {
       consultCategory();
+      consultCount();
     }
   }, [loader]);
 
@@ -31,11 +35,26 @@ function CategoryNav() {
       console.log(e);
     }
   };
+
+  const consultCount =  async () => {
+    db.product.count().then(
+        (ct)=>{
+          if(ct == 0){
+            setStoreCart(false);
+          }
+        }
+      ).catch((e)=>{
+        console.log(e)
+      })
+  
+  }
+
+
   return (
     <>
       {loader ? <LoaderPage /> : <Cart />}
       <nav className="cat_nav">
-        <ul className="categories">
+        <ul style={cart? {marginLeft: "-55px"}:{}} className="categories">
           {categories.map((category: any, index: number) => (
             <li className="category" key={index}>
               <button

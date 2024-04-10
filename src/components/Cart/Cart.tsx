@@ -5,13 +5,15 @@ import { motion } from "framer-motion";
 import { useLiveQuery } from "dexie-react-hooks";
 import { db } from "../../helpers/dexie_db.helper";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./Cart.scss";
+import { useShoppingStore } from "../../store/shopping.store";
 
 function Cart() {
+  const { cart } = useShoppingStore();
   const navigate = useNavigate();
   const location = useLocation();
   const productCart = useLiveQuery(() =>
@@ -24,18 +26,18 @@ function Cart() {
     setEjeX(600);
   };
 
-
   const openHandlerCart = () => {
     setEjeX(0);
   };
 
   function countCart() {
+    console.log(cart);
     return productCart?.reduce((total, item) => total + item.quanty, 0);
   }
 
   return (
     <>
-      {location.pathname != "/checkout" ? (
+      {location.pathname != "/checkout" && cart ? (
         <button onClick={() => openHandlerCart()} className="cart-momo">
           <span>{translate("showCart")}</span> <i className="icon-cart"></i>
         </button>
