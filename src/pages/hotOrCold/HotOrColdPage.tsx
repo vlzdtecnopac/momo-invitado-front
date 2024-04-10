@@ -14,14 +14,14 @@ function HotOrColdPage() {
             <div className="center-container">
               <div className="container">
                 <div className="options">
-                  <Link to="../products">
+                  <Link to="../products/:category/:type">
                     <button className="custom-btn hot">
                       <span className="icon"></span>
                       <span className="text"> {translate("hot")}</span>
                     </button>
                   </Link>
 
-                  <Link to="../products">
+                  <Link to="../products/Cafe/cold">
                     <button className="custom-btn cold">
                       <span className="icon"></span>
                       <span className="text"> {translate("cold")}</span>

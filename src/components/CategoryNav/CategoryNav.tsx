@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
 import { LoaderPage } from "../../includes/loader/Loader";
 import axiosInstance from "../../helpers/axios.helper";
-import { initialProductOptionState, useProductOptionStore } from "../../store/productOption.store";
+import {
+  initialProductOptionState,
+  useProductOptionStore,
+} from "../../store/productOption.store";
 import Cart from "../Cart/Cart";
 import "./CategoryNav.scss";
 
@@ -37,12 +40,23 @@ function CategoryNav() {
       <nav className="cat_nav">
         <ul className="categories">
           {categories.map((category: any, index: number) => (
-            <li className="category" key={index}>
+            <li
+              className="category"
+              key={index}
+            >
               <button
                 onClick={() => {
                   setDataProductOption(initialProductOptionState);
                   if (category.name_category == "Nuestra Tienda") {
                     navigate(`../merch-or-coffee/`);
+                    return;
+                  }
+                  if (category.name_category == "Café") {
+                    navigate(`../hot-or-cold/`);
+                    return;
+                  }
+                  if (category.name_category == "Té") {
+                    navigate(`../hot-or-cold/`);
                     return;
                   }
                   if (category.name_category == "Alimentos") {

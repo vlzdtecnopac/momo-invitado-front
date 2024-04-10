@@ -43,13 +43,24 @@ function ProductsPage() {
         <div className="products_page_category">
           <ul className="categories grid-4_xs-1">
             {categories.map((category: any, index) => (
-              <li key={index} className="col-3 options-container">
+              <li
+                key={index}
+                className="col-3 options-container"
+              >
                 <CustomButton
                   icon={category.class}
                   text={translate(`${category.name_category}`)}
                   onClick={function (): void {
                     if (category.name_category == "Nuestra Tienda") {
                       navigate(`../merch-or-coffee/`);
+                      return;
+                    }
+                    if (category.name_category == "Café") {
+                      navigate(`../hot-or-cold/`);
+                      return;
+                    }
+                    if (category.name_category == "Té") {
+                      navigate(`../hot-or-cold/`);
                       return;
                     }
                     if (category.name_category == "Alimentos") {
@@ -88,10 +99,18 @@ function ProductsPage() {
                 className="mySwiper"
               >
                 <SwiperSlide>
-                  <img className="banner" src={banner} alt="banner" />
+                  <img
+                    className="banner"
+                    src={banner}
+                    alt="banner"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img className="banner" src={banner} alt="banner" />
+                  <img
+                    className="banner"
+                    src={banner}
+                    alt="banner"
+                  />
                 </SwiperSlide>
               </Swiper>
             </div>
