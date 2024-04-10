@@ -7,6 +7,7 @@ import Layout from "../../includes/layout/Layout";
 import barista from "/assets/barista.png";
 import { db } from "../../helpers/dexie_db.helper";
 import "./CheckoutPage.scss";
+import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -33,6 +34,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
 
   return (
     <>
+    <PercentageTip/>
       <div className="grid-2">
         <div className="col-5">
           <img alt="Barista" src={barista} />

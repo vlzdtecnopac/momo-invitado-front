@@ -4,18 +4,15 @@ import coffee from "/assets/coffee-momo.png";
 import { useLanguage } from "../../../context/Langi18nContext";
 import "./PercentageTip.scss";
 
-interface ModalProps {
-  actionKey: React.Key;
-}
 
-const PercentageTip: React.FC<ModalProps> = ({ actionKey }) => {
+
+const PercentageTip = () => {
   const { translate } = useLanguage();
 
   return (
     <div className="modal-container">
       <div className="shadow-effect"></div>
       <motion.div
-        key={actionKey}
         className="modal"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
