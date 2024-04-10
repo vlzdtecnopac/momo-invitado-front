@@ -13,7 +13,7 @@ import "./Cart.scss";
 import { useShoppingStore } from "../../store/shopping.store";
 
 function Cart() {
-  const { cart } = useShoppingStore();
+  const { cart, setStoreCart } = useShoppingStore();
   const navigate = useNavigate();
   const location = useLocation();
   const productCart = useLiveQuery(() =>
@@ -22,8 +22,14 @@ function Cart() {
   const { translate } = useLanguage();
 
   const [ejeX, setEjeX] = useState<number>(600);
+
   const closeHandlerCart = () => {
     setEjeX(600);
+    db.product.count().then(item=>{
+      if(item <= 0){
+        setStoreCart(false);
+      }
+    })
   };
 
   const openHandlerCart = () => {
@@ -31,7 +37,6 @@ function Cart() {
   };
 
   function countCart() {
-    console.log(cart);
     return productCart?.reduce((total, item) => total + item.quanty, 0);
   }
 

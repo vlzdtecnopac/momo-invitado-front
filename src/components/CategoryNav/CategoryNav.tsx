@@ -39,8 +39,10 @@ const CategoryNav:React.FC<{cart: boolean}> = ({cart}) =>  {
   const consultCount =  async () => {
     db.product.count().then(
         (ct)=>{
-          if(ct == 0){
+          if(ct <= 0){
             setStoreCart(false);
+          }else{
+            setStoreCart(true);
           }
         }
       ).catch((e)=>{
