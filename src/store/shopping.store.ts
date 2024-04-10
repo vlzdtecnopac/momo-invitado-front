@@ -18,13 +18,16 @@ interface ShoppingInterface {
 interface DesignStoreInterface {
   dataStore: ShoppingInterface[];
   cart: boolean;
+  tip: number;
   fetchStoreData: (shopping_id: string) => Promise<Boolean>;
   setStoreCart: (cart: boolean) => void;
+  setStoreTip: (tip: number) => void;
 }
 
 export const useShoppingStore = create<DesignStoreInterface>((set) => ({
   dataStore: [],
   cart: false,
+  tip: 0,
   fetchStoreData: async (shopping_id) =>
     new Promise((resolve, reject) => {
       axiosInstance
@@ -38,6 +41,6 @@ export const useShoppingStore = create<DesignStoreInterface>((set) => ({
           reject(false);
         });
     }),
-  setStoreCart: (value) =>
-  set((state) => ({ ...state, cart: value }))
+  setStoreCart: (value) => set((state) => ({ ...state, cart: value })),
+  setStoreTip: (value) => set((state) => ({ ...state, tip: value }))
 }));

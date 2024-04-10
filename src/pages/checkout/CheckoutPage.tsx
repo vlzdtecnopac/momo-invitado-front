@@ -9,6 +9,7 @@ import { db } from "../../helpers/dexie_db.helper";
 import "./CheckoutPage.scss";
 import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
 import AmountTip from "../../components/Modal/AmountTip/AmountTip";
+import { useShoppingStore } from "../../store/shopping.store";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -24,6 +25,7 @@ function MethodsCard() {
 }
 
 const TipMomoClient: React.FC<any> = ({ onChange }) => {
+  const { setStoreTip } = useShoppingStore();
   const { translate } = useLanguage();
   const [getTipPorcent, setTipPorcent] = useState<boolean>();
   const [getTipAmount, setTipAmount] = useState<boolean>();
@@ -33,12 +35,17 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
   const onHandlerTip = (event: React.MouseEvent<HTMLButtonElement>) => {
     const attrValue = event.currentTarget.getAttribute("value");
     onChange(attrValue);
+    setStoreTip(Number(attrValue));
   };
 
   return (
     <>
-      {getTipPorcent ? <PercentageTip onHandleCancel={()=>setTipPorcent(false)} /> : null}
-      {getTipAmount ? <AmountTip onHandleCancel={()=>setTipAmount(false)} /> : null}
+      {getTipPorcent ? (
+        <PercentageTip onHandleCancel={() => setTipPorcent(false)} />
+      ) : null}
+      {getTipAmount ? (
+        <AmountTip onHandleCancel={() => setTipAmount(false)} />
+      ) : null}
       <div className="grid-2">
         <div className="col-5">
           <img alt="Barista" src={barista} />
@@ -191,6 +198,7 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
 };
 
 function CheckoutPage() {
+  const { tip } = useShoppingStore();
   const productCart = useLiveQuery(() =>
     db.product.orderBy("name_product").toArray()
   );
@@ -201,9 +209,14 @@ function CheckoutPage() {
     return productCart?.reduce((total, item) => total + item.quanty, 0);
   }
 
-  function subTotal(){
-    return productCart?.reduce((total, item) => total + item.price, 0 );
+  function subTotal() {
+    return productCart?.reduce((total, item) => total + item.subtotal, 0);
   }
+
+  function totalPayment(){
+    return Number(subTotal()) + tip;
+  }
+
 
   return (
     <>
@@ -256,14 +269,14 @@ function CheckoutPage() {
                       </tr>
                       <tr>
                         <td>Propina</td>
-                        <td className="amount">$ 50</td>
+                        <td className="amount">$ {tip}</td>
                       </tr>
                       <tr>
                         <td>
                           Cupón (MOMO Coffee)
                           <button className="btn_delete_cupon">Eliminar</button>
                         </td>
-                        <td className="amount">$ 50</td>
+                        <td className="amount">$ 0</td>
                       </tr>
                     </tbody>
                   </table>
@@ -272,7 +285,7 @@ function CheckoutPage() {
                     <tbody>
                       <tr>
                         <td className="sub-total">Total</td>
-                        <td className="amount">$ 50</td>
+                        <td className="amount">$ {totalPayment()}</td>
                       </tr>
                     </tbody>
                   </table>

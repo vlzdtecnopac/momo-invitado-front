@@ -18,11 +18,12 @@ import OtherDrinks from "../../components/Options/components/OtherDrinks";
 import StoreShopping from "../../components/Options/components/StoreShopping";
 import SpecialsMomo from "../../components/Options/components/SpecialMomo";
 
-import "./DetailPage.scss";
 import { db } from "../../helpers/dexie_db.helper";
 import { LoaderPage } from "../../loader/Loader";
 import { useProductOptionStore } from "../../store/productOption.store";
 import { useShoppingStore } from "../../store/shopping.store";
+
+import "./DetailPage.scss";
 
 function DrinkDetailPage() {
   const { cart, setStoreCart } = useShoppingStore();
@@ -33,7 +34,6 @@ function DrinkDetailPage() {
   const myRef = useRef<any>(null);
   const { product_id, type } = useParams();
   const { translate } = useLanguage();
-
 
   useEffect(() => {
     getDetailProduct();
@@ -53,7 +53,7 @@ function DrinkDetailPage() {
         image: product.image,
         extra: JSON.stringify(dataProductOption),
         quanty: 1,
-        subtotal: product.price
+        subtotal: getSubtotal
       });
       setTimeout(() => {
         isLoader(false);
