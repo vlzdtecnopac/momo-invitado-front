@@ -56,11 +56,19 @@ function ProductsPage() {
                       return;
                     }
                     if (category.name_category == "Café") {
-                      navigate(`../hot-or-cold/`);
+                      navigate(`../hot-or-cold/cafe`);
                       return;
                     }
                     if (category.name_category == "Té") {
-                      navigate(`../hot-or-cold/`);
+                      navigate(`../hot-or-cold/te`);
+                      return;
+                    }
+                    if (category.name_category == "Café con Té") {
+                      navigate(`../hot-or-cold/cafe con te`);
+                      return;
+                    }
+                    if (category.name_category == "Especiales MOMO") {
+                      navigate(`../hot-or-cold/especiales MOMO`);
                       return;
                     }
                     if (category.name_category == "Alimentos") {

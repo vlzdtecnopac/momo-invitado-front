@@ -16,6 +16,20 @@
     font-size: 18px;
     border-radius: 20px;
 
+    .cart-items {
+        width: 18px;
+        position: relative;
+        display: block;
+        left: 8px;
+        bottom: 8px;
+        background: white;
+        color: $orange ;
+        border-radius: 50%;
+        font-family: "Red Hat Display", "serif";
+        font-weight: 700;
+        font-size: 14px;
+    }
+
     @media(min-width: 570px) {
         font-size: 12px;
         width: 110px;
@@ -79,7 +93,7 @@
             width: 340px;
             scrollbar-width: none;
 
-            @media(max-width: 790px){
+            @media(max-width: 790px) {
                 height: 55vh;
             }
         }

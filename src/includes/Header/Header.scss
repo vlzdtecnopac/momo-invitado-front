@@ -1,4 +1,5 @@
 @import "../../index.scss";
+
 .shadow-sidebar {
   background: #0000008a;
   width: 100vw;
@@ -9,6 +10,7 @@
   z-index: 99;
   cursor: pointer;
 }
+
 .modal-snippet-user {
   display: grid;
   position: fixed;
@@ -20,11 +22,14 @@
   top: 0px;
   right: 0px;
   height: 100vh;
+
   img {
     margin: 0px 10px 0px 0px;
   }
+
   .col-info {
     padding: 0px;
+
     p {
       font-weight: 300;
       width: 200px;
@@ -35,21 +40,25 @@
     display: block;
     width: 100%;
     color: white;
+
     .info-header {
       padding: 10px 0px;
       display: flex;
     }
+
     .list-submenu {
       margin: 0px;
       padding: 0px;
       list-style: none;
+
       li {
-        background:$dark-blue;
+        background: $dark-blue;
         padding: 10px;
         font-family: "Red Hat Display";
-        &:hover{
-            cursor: pointer;
-            background: $orange;
+
+        &:hover {
+          cursor: pointer;
+          background: $orange;
         }
       }
     }
@@ -59,6 +68,7 @@
     display: flex;
     align-items: flex-end;
     margin: 0px 30px 10px auto;
+
     .btn {
       background: $orange;
       color: $white;
@@ -69,6 +79,7 @@
       margin: 0px auto;
       display: block;
       font-size: 18px;
+
       &:hover {
         cursor: pointer;
         background: #e34317;
@@ -119,6 +130,7 @@
     width: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     .logo {
       width: 130px;
