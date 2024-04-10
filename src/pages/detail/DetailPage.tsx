@@ -52,6 +52,7 @@ function DrinkDetailPage() {
         image: product.image,
         extra: JSON.stringify(dataProductOption),
         quanty: 1,
+        subtotal: product.price
       });
       setTimeout(() => {
         isLoader(false);
