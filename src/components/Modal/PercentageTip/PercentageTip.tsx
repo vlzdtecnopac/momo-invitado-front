@@ -4,7 +4,7 @@ import coffee from "/assets/coffee-momo.png";
 import { useLanguage } from "../../../context/Langi18nContext";
 import "./PercentageTip.scss";
 
-const PercentageTip: React.FC = () => {
+const PercentageTip: React.FC<{onHandleCancel: Function}> = ({onHandleCancel}) => {
   const { translate } = useLanguage();
 
   return (
@@ -26,14 +26,14 @@ const PercentageTip: React.FC = () => {
             src={coffee}
             alt="momo-coffee"
           />
-          <h2 className={`text`}>{translate("percentageAmount")}</h2>
+          <h2 className="text">{translate("percentageAmount")}</h2>
           <input
             className="write"
             type="number"
             placeholder={translate("writeHere")}
           />
           <div className="btns">
-            <button className="cancel">{translate("cancel")}</button>
+            <button onClick={()=>onHandleCancel()} className="cancel">{translate("cancel")}</button>
             <button className="add-tip">{translate("addTip")}</button>
           </div>
         </div>

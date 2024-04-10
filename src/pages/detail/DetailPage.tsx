@@ -29,6 +29,7 @@ function DrinkDetailPage() {
   const { dataProductOption } = useProductOptionStore();
   const [product, setProduct] = useState<any>({});
   const [loader, isLoader] = useState<Boolean>(false);
+  const [getSubtotal, setSubtotal] = useState<number>(0);
   const myRef = useRef<any>(null);
   const { product_id, type } = useParams();
   const { translate } = useLanguage();
@@ -48,7 +49,7 @@ function DrinkDetailPage() {
       await db.product.add({
         id: uuidv4(),
         name_product: product.name_product,
-        price: product.price,
+        price: getSubtotal,
         image: product.image,
         extra: JSON.stringify(dataProductOption),
         quanty: 1,
@@ -89,8 +90,7 @@ function DrinkDetailPage() {
   };
 
   const priceTotal = (product: any) => {
-
-    console.clear();
+    
     let total: number = product.price;
 
     if ("price" in dataProductOption.size) {
@@ -166,7 +166,7 @@ function DrinkDetailPage() {
         dataProductOption.sauce
       );
     }
-    setProduct({...product, price: total});
+    setSubtotal(total);
   };
 
   return (
@@ -219,7 +219,7 @@ function DrinkDetailPage() {
                 <div className="container-btn-payment">
                   <div className="btn-container">
                     <button onClick={() => addCart()} className="add-cart-btn">
-                      {translate("addCart")} ${product.price}
+                      {translate("addCart")} ${getSubtotal}
                     </button>
                   </div>
                 </div>
