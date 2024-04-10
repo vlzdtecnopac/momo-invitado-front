@@ -5,9 +5,8 @@ import ProductCheckoutCard from "../../components/productCheckoutCard/ProductChe
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
 import barista from "/assets/barista.png";
-import "./CheckoutPage.scss";
 import { db } from "../../helpers/dexie_db.helper";
-import { useShoppingStore } from "../../store/shopping.store";
+import "./CheckoutPage.scss";
 
 function MethodsCard() {
   const { translate } = useLanguage();
