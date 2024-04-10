@@ -60,7 +60,9 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
         <div className="col">
           <button
             onClick={() => onHandlerTip("0")}
-            className={`tip-button  ${ (tip == 0 && !getOtherTipSatisfaction )&& 'active'}`}
+            className={`tip-button  ${
+              tip == 0 && !getOtherTipSatisfaction && "active"
+            }`}
           >
             <div className="percentange">0%</div>
             <div className="middle">{translate("noTip")}</div>
@@ -70,7 +72,9 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           </button>
           <button
             onClick={() => onHandlerTip("5")}
-            className={`tip-button  ${ tip == 5 && 'active'}`}
+            className={`tip-button  ${
+              tip == 5 && !getOtherTipSatisfaction && "active"
+            }`}
           >
             <div className="percentange">5%</div>
             <div className="middle">¡{translate("bonus")}!</div>
@@ -82,7 +86,9 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
         <div className="col-6">
           <button
             onClick={() => onHandlerTip("10")}
-            className={`tip-button  ${ tip == 10 && 'active'}`}
+            className={`tip-button  ${
+              tip == 10 && !getOtherTipSatisfaction && "active"
+            }`}
           >
             <div className="percentange">10%</div>
             <div className="middle">¡{translate("excellentChoice")}!</div>
@@ -92,7 +98,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           </button>
           <button
             onClick={() => onHandlerTip("15")}
-            className={`tip-button  ${ tip == 15 && 'active'}`}
+            className={`tip-button  ${tip == 15 && !getOtherTipSatisfaction  && "active"}`}
           >
             <div className="percentange">15%</div>
             <div className="middle">¡{translate("gesture")}!</div>
@@ -105,9 +111,11 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <div className="col-12 decide">
             <button
               onClick={() => {
-                setOtherTipSatisfaction(true)
+                setOtherTipSatisfaction(true);
               }}
-              className={`tip-button_two  ${getOtherTipSatisfaction && 'active'}`}
+              className={`tip-button_two  ${
+                getOtherTipSatisfaction && "active"
+              }`}
             >
               <div className="percentange">{translate("other")}</div>
               <div className="middle">¡{translate("youDecide")}!</div>
@@ -121,7 +129,11 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <div className="col-12 decide">
             <div className="grid-2 grid-noGutter-noBottom">
               <div className="col-6">
-                <button className= {` tip-button ${getOtherTipSatisfaction && 'active'}`}>
+                <button
+                  className={` tip-button ${
+                    getOtherTipSatisfaction && "active"
+                  }`}
+                >
                   <div className="percentange">{translate("other")}</div>
                   <div className="middle">¡{translate("youDecide")}!</div>
                   <div>
@@ -210,10 +222,9 @@ function CheckoutPage() {
     return productCart?.reduce((total, item) => total + item.subtotal, 0);
   }
 
-  function totalPayment(){
+  function totalPayment() {
     return Number(subTotal()) + tip;
   }
-
 
   return (
     <>

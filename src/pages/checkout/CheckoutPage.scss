@@ -95,6 +95,8 @@
             background-color: $orange;
             .dolar-icon{
               background-image: url("/assets/icons/dollar-circle.svg");
+              right: 1px;
+              position: relative;
             }
           }
 
@@ -112,7 +114,7 @@
           }
 
           .middle {
-            width: 140px;
+            width: 120px;
             line-height: 14px;
           }
 
@@ -150,6 +152,8 @@
         background-color: $orange;
         .dolar-icon{
           background-image: url("/assets/icons/dollar-circle.svg");
+          right: 1px;
+          position: relative;
         }
       }
 
@@ -167,7 +171,7 @@
       }
 
       .middle {
-        width: 140px;
+        width: 120px;
         line-height: 14px;
       }
 
