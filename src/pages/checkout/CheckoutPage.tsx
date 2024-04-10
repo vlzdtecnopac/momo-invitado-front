@@ -32,10 +32,9 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
   const [getOtherTipSatisfaction, setOtherTipSatisfaction] =
     useState<boolean>(false);
 
-  const onHandlerTip = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const attrValue = event.currentTarget.getAttribute("value");
-    onChange(attrValue);
-    setStoreTip(Number(attrValue));
+  const onHandlerTip = (number: string) => {
+    onChange(number);
+    setStoreTip(Number(number));
   };
 
   return (
@@ -60,9 +59,8 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
       <div className="grid-2 grid-noGutter-noBottom tip-options">
         <div className="col">
           <button
-            value="0"
-            onClick={(e) => onHandlerTip(e)}
-            className={`tip-button  ${ tip == 0 && 'active'}`}
+            onClick={() => onHandlerTip("0")}
+            className={`tip-button  ${ (tip == 0 && !getOtherTipSatisfaction )&& 'active'}`}
           >
             <div className="percentange">0%</div>
             <div className="middle">{translate("noTip")}</div>
@@ -71,8 +69,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
             </div>
           </button>
           <button
-            value="5"
-            onClick={(e) => onHandlerTip(e)}
+            onClick={() => onHandlerTip("5")}
             className={`tip-button  ${ tip == 5 && 'active'}`}
           >
             <div className="percentange">5%</div>
@@ -84,8 +81,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
         </div>
         <div className="col-6">
           <button
-            value="10"
-            onClick={(e) => onHandlerTip(e)}
+            onClick={() => onHandlerTip("10")}
             className={`tip-button  ${ tip == 10 && 'active'}`}
           >
             <div className="percentange">10%</div>
@@ -95,8 +91,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
             </div>
           </button>
           <button
-            value="15"
-            onClick={(e) => onHandlerTip(e)}
+            onClick={() => onHandlerTip("15")}
             className={`tip-button  ${ tip == 15 && 'active'}`}
           >
             <div className="percentange">15%</div>
@@ -109,8 +104,10 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
         {!getOtherTipSatisfaction && (
           <div className="col-12 decide">
             <button
-              onClick={() => setOtherTipSatisfaction(true)}
-              className={`tip-button_two  ${!getOtherTipSatisfaction && 'active'}`}
+              onClick={() => {
+                setOtherTipSatisfaction(true)
+              }}
+              className={`tip-button_two  ${getOtherTipSatisfaction && 'active'}`}
             >
               <div className="percentange">{translate("other")}</div>
               <div className="middle">¡{translate("youDecide")}!</div>
@@ -124,7 +121,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <div className="col-12 decide">
             <div className="grid-2 grid-noGutter-noBottom">
               <div className="col-6">
-                <button className="tip-button">
+                <button className= {` tip-button ${getOtherTipSatisfaction && 'active'}`}>
                   <div className="percentange">{translate("other")}</div>
                   <div className="middle">¡{translate("youDecide")}!</div>
                   <div>

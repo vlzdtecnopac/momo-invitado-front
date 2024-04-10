@@ -85,6 +85,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
               <OptionsList
                 distanceScrolling={380}
                 optionHandler={(e: any) => optionHandler(e)}
+                defaultValue= {{name: translate("noLid"), price: 0 }}
                 listOptions={[
                   { name: translate("lid"), price: 0 },
                   {

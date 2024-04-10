@@ -94,6 +94,7 @@ const CoffeWithTe: React.FC<CoffeWithTeProps> = ({ optionHandler }) => {
               <hr className="separator" />
               <OptionsList
                 optionHandler={(e: any) => optionHandler(e)}
+                defaultValue= {{name: translate("noLid"), price: 0 }}
                 listOptions={[
                   { name: translate("lid"), price: 0 },
                   {
