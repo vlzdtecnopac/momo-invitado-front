@@ -32,6 +32,14 @@ const OptionsList: React.FC<OptionsListProps> = ({
   );
   const [valueSelect, setValueSelect] = useState<OptionData[]>([]);
 
+  useEffect(()=> {
+    if(defaultValue.name){
+      setValueSelect([{
+        name: defaultValue.name,
+        price: defaultValue.price}])
+    }
+  },[])
+
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let result = JSON.parse(event.target.value);
     if (!multiple) {
