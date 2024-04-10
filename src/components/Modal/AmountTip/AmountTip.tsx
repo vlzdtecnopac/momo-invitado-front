@@ -4,7 +4,7 @@ import coffee from "/assets/coffee-momo.png";
 import { useLanguage } from "../../../context/Langi18nContext";
 import "./AmountTip.scss";
 
-const AmountTip: React.FC = () => {
+const AmountTip: React.FC<{onHandleCancel: Function}> = ({onHandleCancel}) => {
   const { translate } = useLanguage();
 
   return (
@@ -33,7 +33,7 @@ const AmountTip: React.FC = () => {
             placeholder={translate("writeHere")}
           />
           <div className="btns">
-            <button className="cancel">{translate("cancel")}</button>
+            <button onClick={()=>onHandleCancel()} className="cancel">{translate("cancel")}</button>
             <button className="try">{translate("addTip")}</button>
           </div>
         </div>
