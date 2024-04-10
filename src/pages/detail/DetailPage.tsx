@@ -25,7 +25,7 @@ import { useProductOptionStore } from "../../store/productOption.store";
 import { useShoppingStore } from "../../store/shopping.store";
 
 function DrinkDetailPage() {
-  const {cart, setStoreCart} = useShoppingStore();
+  const { cart, setStoreCart } = useShoppingStore();
   const { dataProductOption } = useProductOptionStore();
   const [loader, isLoader] = useState<Boolean>(false);
   const myRef = useRef<any>(null);
@@ -36,6 +36,10 @@ function DrinkDetailPage() {
   useEffect(() => {
     getDetailProduct();
   }, []);
+
+  useEffect(() => {
+    priceTotal();
+  }, [dataProductOption]);
 
   async function addCart() {
     try {
@@ -81,6 +85,79 @@ function DrinkDetailPage() {
       });
     }
   };
+
+  const priceTotal = () => {
+
+    console.clear();
+
+    if ("price" in dataProductOption.size) {
+      console.log(
+        "Price attribute Size exists. Price value:",
+        dataProductOption.size
+      );
+    }
+    if ("price" in dataProductOption.milk) {
+      console.log(
+        "Price attribute Milk exists. Price value:",
+        dataProductOption.milk
+      );
+    }
+
+    if ("price" in dataProductOption.coffee_type) {
+      console.log(
+        "Price attribute Coffe Type exists. Price value:",
+        dataProductOption.coffee_type
+      );
+    }
+
+    if ("price" in dataProductOption.sugar) {
+      console.log(
+        "Price attribute Sugar exists. Price value:",
+        dataProductOption.sugar
+      );
+    }
+
+    if ("price" in dataProductOption.temperature) {
+      console.log(
+        "Price attribute Temperature exists. Price value:",
+        dataProductOption.temperature
+      );
+    }
+
+    let extra_coffe = dataProductOption.extra_coffee.filter(
+      (item) => "price" in item
+    );
+
+    if (extra_coffe.length > 0) {
+      console.log(
+        "Price attribute Extra Coffe exists. Price value:",
+        extra_coffe
+      );
+    }
+ 
+    let lid = dataProductOption.lid.filter(
+      (item) => "price" in item
+    );
+
+    if (lid.length > 0) {
+      console.log(
+        "Price attribute Lid exists. Price value:",
+        dataProductOption.lid
+      );
+    }
+
+    let sauce = dataProductOption.sauce.filter(
+      (item) => "price" in item
+    );
+
+    if (sauce.length > 0) {
+      console.log(
+        "Price attribute Sauce exists. Price value:",
+        dataProductOption.sauce
+      );
+    }
+  };
+
   return (
     <Layout>
       {loader ? <LoaderPage /> : ""}
