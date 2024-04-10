@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./OrderResumeCard.scss";
 import { db } from "../../helpers/dexie_db.helper";
-import { useShoppingStore } from "../../store/shopping.store";
 
 interface OrderResumeCardProp {
   data: any;
