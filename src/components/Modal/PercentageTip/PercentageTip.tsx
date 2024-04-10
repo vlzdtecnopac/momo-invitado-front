@@ -26,7 +26,7 @@ const PercentageTip: React.FC<{onHandleCancel: Function}> = ({onHandleCancel}) =
             src={coffee}
             alt="momo-coffee"
           />
-          <h2 className={`text`}>{translate("percentageAmount")}</h2>
+          <h2 className="text">{translate("percentageAmount")}</h2>
           <input
             className="write"
             type="number"

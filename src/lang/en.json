@@ -131,5 +131,6 @@
     "pecentageAmount": "¡Write a percentage!!",
     "cashAmount": "¡Write an amount in pesos!",
     "writeHere": "Write here",
-    "registerText": " Your registration was successfully completed. Welcome to the experience at"
+    "registerText": " Your registration was successfully completed. Welcome to the experience at",
+    "percentageAmount": "¡Write a percentage!"
 }

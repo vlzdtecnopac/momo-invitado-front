@@ -133,5 +133,6 @@
     "pecentageAmount": "¡Escribe un porcentaje!",
     "cashAmount": "¡Escribe un monto en pesos!",
     "writeHere": "Escribe aquí",
-    "registerText": "Tu registro se completó con éxito. Bienvenido a la experiencia"
+    "registerText": "Tu registro se completó con éxito. Bienvenido a la experiencia",
+    "percentageAmount": "¡Escribe un porcentaje!"
 }
