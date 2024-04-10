@@ -51,6 +51,7 @@
         .sub-parrafo {
             color: $dark-blue;
             font-size: 14px;
+            max-width: 220px;
         }
 
         .details {
@@ -114,6 +115,7 @@
         .end {
             justify-content: end;
             display: flex;
+            max-width: 220px;
 
             .subtotal {
                 font-family: "Red Hat Display";
