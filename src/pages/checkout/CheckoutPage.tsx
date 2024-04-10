@@ -8,6 +8,7 @@ import barista from "/assets/barista.png";
 import { db } from "../../helpers/dexie_db.helper";
 import "./CheckoutPage.scss";
 import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
+import AmountTip from "../../components/Modal/AmountTip/AmountTip";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -25,6 +26,7 @@ function MethodsCard() {
 const TipMomoClient: React.FC<any> = ({ onChange }) => {
   const { translate } = useLanguage();
   const [getTipPorcent, setTipPorcent] = useState<boolean>();
+  const [getTipAmount, setTipAmount] = useState<boolean>();
   const [getOtherTipSatisfaction, setOtherTipSatisfaction] =
     useState<boolean>(false);
 
@@ -35,7 +37,8 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
 
   return (
     <>
-    {getTipPorcent? <PercentageTip/> : null}
+      {getTipPorcent ? <PercentageTip /> : null}
+      {getTipAmount ? <AmountTip /> : null}
       <div className="grid-2">
         <div className="col-5">
           <img alt="Barista" src={barista} />
@@ -123,8 +126,18 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
                 </button>
               </div>
               <div className="col-6 decide-tip">
-                <button onClick={()=>setTipPorcent(true)} className="tip-button">%</button>
-                <button className="tip-button">$</button>
+                <button
+                  onClick={() => setTipPorcent(true)}
+                  className="tip-button"
+                >
+                  %
+                </button>
+                <button
+                  onClick={() => setTipAmount(true)}
+                  className="tip-button"
+                >
+                  $
+                </button>
               </div>
             </div>
           </div>
@@ -178,12 +191,13 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
 };
 
 function CheckoutPage() {
-
-  const productCart = useLiveQuery(() => db.product.orderBy('name_product').toArray());
+  const productCart = useLiveQuery(() =>
+    db.product.orderBy("name_product").toArray()
+  );
   const [tipMount, setTipMount] = useState<String>();
   const { translate } = useLanguage();
 
-  function  countProducts(){
+  function countProducts() {
     return productCart?.reduce((total, item) => total + item.quanty, 0);
   }
   return (

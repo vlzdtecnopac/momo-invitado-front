@@ -4,9 +4,7 @@ import coffee from "/assets/coffee-momo.png";
 import { useLanguage } from "../../../context/Langi18nContext";
 import "./PercentageTip.scss";
 
-
-
-const PercentageTip = () => {
+const PercentageTip: React.FC = () => {
   const { translate } = useLanguage();
 
   return (
