@@ -11,6 +11,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
 
   const handleQuantityChange = async (id: string, change: number) => {
     let quantyProduct = quantity + change;
+    if (quantyProduct == 0) return;
     const newQuantity = Math.max(quantyProduct, 1);
     try {
       await db.product.update(id, { quanty: quantyProduct });
@@ -22,6 +23,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
 
   const handleDeleteProduct = (id: string) => {
     db.product.delete(id);
+    setQuantity(0);
   };
 
   const getExtraOptions = () => {

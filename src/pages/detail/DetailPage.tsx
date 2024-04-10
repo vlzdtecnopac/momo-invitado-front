@@ -22,18 +22,25 @@ import "./DetailPage.scss";
 import { db } from "../../helpers/dexie_db.helper";
 import { LoaderPage } from "../../loader/Loader";
 import { useProductOptionStore } from "../../store/productOption.store";
+import { useShoppingStore } from "../../store/shopping.store";
 
 function DrinkDetailPage() {
+  const { cart, setStoreCart } = useShoppingStore();
   const { dataProductOption } = useProductOptionStore();
+  const [product, setProduct] = useState<any>({});
   const [loader, isLoader] = useState<Boolean>(false);
   const myRef = useRef<any>(null);
   const { product_id, type } = useParams();
   const { translate } = useLanguage();
-  const [product, setProduct] = useState<any>({});
+
 
   useEffect(() => {
     getDetailProduct();
   }, []);
+
+  useEffect(() => {
+    priceTotal(product);
+  }, [dataProductOption]);
 
   async function addCart() {
     try {
@@ -48,6 +55,7 @@ function DrinkDetailPage() {
       });
       setTimeout(() => {
         isLoader(false);
+        setStoreCart(true);
       }, 1000);
     } catch (e) {
       console.log(e);
@@ -78,11 +86,94 @@ function DrinkDetailPage() {
       });
     }
   };
+
+  const priceTotal = (product: any) => {
+
+    console.clear();
+    let total: number = product.price;
+
+    if ("price" in dataProductOption.size) {
+      console.log(
+        "Price attribute Size exists. Price value:",
+        dataProductOption.size.price
+      );
+
+      total += dataProductOption.size.price!;
+    }
+    if ("price" in dataProductOption.milk) {
+      console.log(
+        "Price attribute Milk exists. Price value:",
+        dataProductOption.milk
+      );
+      total += dataProductOption.milk.price!;
+    }
+
+    if ("price" in dataProductOption.coffee_type) {
+      console.log(
+        "Price attribute Coffe Type exists. Price value:",
+        dataProductOption.coffee_type
+      );
+
+      total += dataProductOption.coffee_type.price!;
+    }
+
+    if ("price" in dataProductOption.sugar) {
+      console.log(
+        "Price attribute Sugar exists. Price value:",
+        dataProductOption.sugar
+      );
+      total += dataProductOption.sugar.price!;
+    }
+
+    if ("price" in dataProductOption.temperature) {
+      console.log(
+        "Price attribute Temperature exists. Price value:",
+        dataProductOption.temperature
+      );
+      total += dataProductOption.temperature.price!;
+    }
+
+    let extra_coffe = dataProductOption.extra_coffee.filter(
+      (item) => "price" in item
+    );
+
+    if (extra_coffe.length > 0) {
+      console.log(
+        "Price attribute Extra Coffe exists. Price value:",
+        extra_coffe
+      );
+    }
+ 
+    let lid = dataProductOption.lid.filter(
+      (item) => "price" in item
+    );
+
+    if (lid.length > 0) {
+      console.log(
+        "Price attribute Lid exists. Price value:",
+        dataProductOption.lid
+      );
+    }
+
+    let sauce = dataProductOption.sauce.filter(
+      (item) => "price" in item
+    );
+
+    if (sauce.length > 0) {
+      console.log(
+        "Price attribute Sauce exists. Price value:",
+        dataProductOption.sauce
+      );
+    }
+    setProduct({...product, price: total});
+    console.log(total);
+  };
+
   return (
     <Layout>
       {loader ? <LoaderPage /> : ""}
       <div className="products_category">
-        <CategoryNav />
+        <CategoryNav cart={cart} />
       </div>
       <div className="page-container">
         <div className="drink_detail">

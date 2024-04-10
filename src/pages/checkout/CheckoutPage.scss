@@ -26,9 +26,13 @@
       border-radius: 12px;
       color: $cream;
       padding: 10px;
-      max-height: 500px;
+      max-height: 450px;
       overflow-y: auto;
       overflow-x: hidden;
+      @media(min-width: 1050px){
+        max-height: 520px;
+      }
+
 
       h2 {
         font-size: 22px;
@@ -316,9 +320,14 @@
       border-radius: 12px;
       color: $cream;
       padding: 10px 10px;
-      max-height: 500px;
+      max-height: 450px;
       overflow-y: auto;
       overflow-x: hidden;
+
+      @media(min-width: 1050px){
+        max-height: 520px;
+      }
+
 
       .product {
         background: $white;
@@ -333,13 +342,16 @@
       background-color: $dark-blue;
       border-radius: 12px;
       color: $cream;
-      padding-top: 20px;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 10px 10px;
-      max-height: 500px;
+      max-height: 450px;
+
+      @media(min-width: 1050px){
+        max-height: 520px;
+      }
 
       .cupon {
         display: inline-flex;
@@ -347,6 +359,7 @@
 
         .form-group {
           position: relative;
+          width: 100%;
 
           .cupon-icon {
             background-image: url(/assets/icons/cupon_icon.svg);
@@ -404,6 +417,7 @@
 
       .amount {
         text-align: right;
+        width: 40px;
 
         @media screen and (max-width: 1024px) {
           width: 33px;

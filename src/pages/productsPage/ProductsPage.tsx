@@ -9,8 +9,10 @@ import no_found from "/assets/no-found.png";
 import "./ProductsPage.scss";
 
 import axiosInstance from "../../helpers/axios.helper";
+import { useShoppingStore } from "../../store/shopping.store";
 
 function ProductsPage() {
+  const {cart} = useShoppingStore();
   const { category, type } = useParams();
   const [products, setProducts] = useState([]);
 
@@ -26,7 +28,7 @@ function ProductsPage() {
   return (
     <Layout>
       <div className="products_category">
-        <CategoryNav />
+        <CategoryNav cart={cart} />
       </div>
       <div className="products_page">
         <div className="container-product">

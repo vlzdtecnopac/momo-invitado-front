@@ -24,6 +24,10 @@
         bottom: 0px;
         z-index: 1000;
 
+        @media(max-width: 1050px){
+            width: 90%;
+        }
+
         .container {
             display: flex;
             flex-direction: column;
@@ -45,13 +49,12 @@
                 padding-bottom: 20px;
             }
 
-
-
             .write {
                 font-weight: 700;
                 font-size: 20px;
                 width: 50%;
                 margin: 0 auto;
+                padding: 10px;
                 text-align: center;
                 border: 2px solid $dark-blue;
                 border-radius: 10px;

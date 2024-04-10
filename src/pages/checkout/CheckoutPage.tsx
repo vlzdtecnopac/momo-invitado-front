@@ -5,8 +5,10 @@ import ProductCheckoutCard from "../../components/productCheckoutCard/ProductChe
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
 import barista from "/assets/barista.png";
-import "./CheckoutPage.scss";
 import { db } from "../../helpers/dexie_db.helper";
+import "./CheckoutPage.scss";
+import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
+import AmountTip from "../../components/Modal/AmountTip/AmountTip";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -23,6 +25,8 @@ function MethodsCard() {
 
 const TipMomoClient: React.FC<any> = ({ onChange }) => {
   const { translate } = useLanguage();
+  const [getTipPorcent, setTipPorcent] = useState<boolean>();
+  const [getTipAmount, setTipAmount] = useState<boolean>();
   const [getOtherTipSatisfaction, setOtherTipSatisfaction] =
     useState<boolean>(false);
 
@@ -33,6 +37,8 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
 
   return (
     <>
+      {getTipPorcent ? <PercentageTip /> : null}
+      {getTipAmount ? <AmountTip /> : null}
       <div className="grid-2">
         <div className="col-5">
           <img alt="Barista" src={barista} />
@@ -120,8 +126,18 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
                 </button>
               </div>
               <div className="col-6 decide-tip">
-                <button className="tip-button">%</button>
-                <button className="tip-button">$</button>
+                <button
+                  onClick={() => setTipPorcent(true)}
+                  className="tip-button"
+                >
+                  %
+                </button>
+                <button
+                  onClick={() => setTipAmount(true)}
+                  className="tip-button"
+                >
+                  $
+                </button>
               </div>
             </div>
           </div>
@@ -175,15 +191,20 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
 };
 
 function CheckoutPage() {
-  const productCart = useLiveQuery(() => db.product.toArray());
+  const productCart = useLiveQuery(() =>
+    db.product.orderBy("name_product").toArray()
+  );
   const [tipMount, setTipMount] = useState<String>();
   const { translate } = useLanguage();
 
+  function countProducts() {
+    return productCart?.reduce((total, item) => total + item.quanty, 0);
+  }
   return (
     <>
       <Layout>
         <div className="category-fixed">
-          <CategoryNav />
+          <CategoryNav cart={false} />
         </div>
         <div className="checkout_background">
           <div className="checkout_container grid-3 grid-equalHeight">
@@ -225,7 +246,7 @@ function CheckoutPage() {
                   <table>
                     <tbody>
                       <tr>
-                        <td>Subtotal (4 productos)</td>
+                        <td>Subtotal ({countProducts()} productos)</td>
                         <td className="amount">$ 50</td>
                       </tr>
                       <tr>

@@ -5,46 +5,44 @@ import { motion } from "framer-motion";
 import { useLiveQuery } from "dexie-react-hooks";
 import { db } from "../../helpers/dexie_db.helper";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
 
 import "./Cart.scss";
+import { useShoppingStore } from "../../store/shopping.store";
 
 function Cart() {
+  const { cart, setStoreCart } = useShoppingStore();
   const navigate = useNavigate();
   const location = useLocation();
-  const [getCount, setCount] = useState(0);
-  const productCart = useLiveQuery(() => db.product.toArray());
+  const productCart = useLiveQuery(() =>
+    db.product.orderBy("name_product").toArray()
+  );
   const { translate } = useLanguage();
 
   const [ejeX, setEjeX] = useState<number>(600);
+
   const closeHandlerCart = () => {
     setEjeX(600);
+    db.product.count().then(item=>{
+      if(item <= 0){
+        setStoreCart(false);
+      }
+    })
   };
-
-  useEffect(() => {
-    countCart();
-  }, [productCart]);
 
   const openHandlerCart = () => {
     setEjeX(0);
   };
 
-  const countCart = async () =>
-    db.product
-      .count()
-      .then(function (count) {
-        setCount(count);
-      })
-      .catch(function (error) {
-        setCount(0);
-        console.error("Error:", error);
-      });
+  function countCart() {
+    return productCart?.reduce((total, item) => total + item.quanty, 0);
+  }
 
   return (
     <>
-      {location.pathname != "/checkout" ? (
+      {location.pathname != "/checkout" && cart ? (
         <button onClick={() => openHandlerCart()} className="cart-momo">
           <span>{translate("showCart")}</span> <i className="icon-cart"></i>
         </button>
@@ -60,7 +58,7 @@ function Cart() {
             <div>
               <h2 className="order-resume">{translate("summaryOrder")}</h2>
               <p className="product-quantity">
-                {translate("numberProducts", { count: getCount })}
+                {translate("numberProducts", { count: countCart() })}
               </p>
             </div>
             <button onClick={() => closeHandlerCart()} className="x"></button>
@@ -76,7 +74,7 @@ function Cart() {
         <div className="right">
           <div className="subtotal">
             <h3 className="subtotal-tex">
-              {translate("subTotal", { count: getCount })}
+              {translate("subTotal", { count: countCart() })}
             </h3>
             <p className="subtotal-price">$107.00</p>
           </div>
