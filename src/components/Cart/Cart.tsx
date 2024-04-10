@@ -14,8 +14,9 @@ import "./Cart.scss";
 function Cart() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [getCount, setCount] = useState(0);
-  const productCart = useLiveQuery(() => db.product.orderBy('name_product').toArray());
+  const productCart = useLiveQuery(() =>
+    db.product.orderBy("name_product").toArray()
+  );
   const { translate } = useLanguage();
 
   const [ejeX, setEjeX] = useState<number>(600);
@@ -23,24 +24,14 @@ function Cart() {
     setEjeX(600);
   };
 
-  useEffect(() => {
-    countCart();
-  }, [productCart]);
 
   const openHandlerCart = () => {
     setEjeX(0);
   };
 
-  const countCart = async () =>
-    db.product
-      .count()
-      .then(function (count) {
-        setCount(count);
-      })
-      .catch(function (error) {
-        setCount(0);
-        console.error("Error:", error);
-      });
+  function countCart() {
+    return productCart?.reduce((total, item) => total + item.quanty, 0);
+  }
 
   return (
     <>
@@ -60,7 +51,7 @@ function Cart() {
             <div>
               <h2 className="order-resume">{translate("summaryOrder")}</h2>
               <p className="product-quantity">
-                {translate("numberProducts", { count: getCount })}
+                {translate("numberProducts", { count: countCart() })}
               </p>
             </div>
             <button onClick={() => closeHandlerCart()} className="x"></button>
@@ -76,7 +67,7 @@ function Cart() {
         <div className="right">
           <div className="subtotal">
             <h3 className="subtotal-tex">
-              {translate("subTotal", { count: getCount })}
+              {translate("subTotal", { count: countCart() })}
             </h3>
             <p className="subtotal-price">$107.00</p>
           </div>

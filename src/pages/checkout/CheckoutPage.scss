@@ -29,6 +29,10 @@
       max-height: 420px;
       overflow-y: auto;
       overflow-x: hidden;
+      @media(min-width: 1050px){
+        max-height: 520px;
+      }
+
 
       h2 {
         font-size: 22px;
@@ -320,6 +324,11 @@
       overflow-y: auto;
       overflow-x: hidden;
 
+      @media(min-width: 1050px){
+        max-height: 520px;
+      }
+
+
       .product {
         background: $white;
         margin: 10px auto;
@@ -339,6 +348,10 @@
       justify-content: space-between;
       padding: 10px 10px;
       max-height: 420px;
+
+      @media(min-width: 1050px){
+        max-height: 520px;
+      }
 
       .cupon {
         display: inline-flex;

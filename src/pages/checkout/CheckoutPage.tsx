@@ -179,6 +179,10 @@ function CheckoutPage() {
   const [tipMount, setTipMount] = useState<String>();
   const { translate } = useLanguage();
 
+  function  countProducts(){
+    return productCart?.reduce((total, item) => total + item.quanty, 0);
+  }
+
   return (
     <>
       <Layout>
@@ -225,7 +229,7 @@ function CheckoutPage() {
                   <table>
                     <tbody>
                       <tr>
-                        <td>Subtotal (4 productos)</td>
+                        <td>Subtotal ({countProducts()} productos)</td>
                         <td className="amount">$ 50</td>
                       </tr>
                       <tr>
