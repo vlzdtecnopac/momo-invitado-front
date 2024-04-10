@@ -51,13 +51,13 @@
         .sub-parrafo {
             color: $dark-blue;
             font-size: 14px;
-            max-width: 220px;
+            max-width: 200px;
         }
 
         .details {
             width: 100%;
+            max-width: 240px;
             display: block;
-            padding-top: 10px;
             color: $black;
             font-family: "Stacion", sans-serif;
             font-size: 15px;
