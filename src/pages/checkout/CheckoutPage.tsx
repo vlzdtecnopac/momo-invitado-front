@@ -24,6 +24,7 @@ function MethodsCard() {
 
 const TipMomoClient: React.FC<any> = ({ onChange }) => {
   const { translate } = useLanguage();
+  const [getTipPorcent, setTipPorcent] = useState<boolean>();
   const [getOtherTipSatisfaction, setOtherTipSatisfaction] =
     useState<boolean>(false);
 
@@ -34,7 +35,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
 
   return (
     <>
-    <PercentageTip/>
+    {getTipPorcent? <PercentageTip/> : null}
       <div className="grid-2">
         <div className="col-5">
           <img alt="Barista" src={barista} />
@@ -122,7 +123,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
                 </button>
               </div>
               <div className="col-6 decide-tip">
-                <button className="tip-button">%</button>
+                <button onClick={()=>setTipPorcent(true)} className="tip-button">%</button>
                 <button className="tip-button">$</button>
               </div>
             </div>
