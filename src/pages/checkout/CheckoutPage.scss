@@ -29,10 +29,9 @@
       max-height: 450px;
       overflow-y: auto;
       overflow-x: hidden;
-      @media(min-width: 1050px){
+      @media (min-width: 1050px) {
         max-height: 520px;
       }
-
 
       h2 {
         font-size: 22px;
@@ -60,11 +59,11 @@
         font-family: "Red Hat Display";
         gap: 10px;
         margin: 80px 0px 0px 0px;
-        @media(max-width: 1375px){
+        @media (max-width: 1375px) {
           margin: 40px 0px 0px 0px;
         }
 
-        @media(max-width: 1250px){
+        @media (max-width: 1250px) {
           margin: 30px 0px 0px 0px;
         }
       }
@@ -90,10 +89,10 @@
           justify-content: space-around;
           align-items: center;
 
-          &.active{
+          &.active {
             color: $white;
             background-color: $orange;
-            .dolar-icon{
+            .dolar-icon {
               background-image: url("/assets/icons/dollar-circle.svg");
               right: 1px;
               position: relative;
@@ -125,11 +124,9 @@
             text-align: center;
             padding: 0 10px 0px 10px;
           }
-
         }
       }
     }
-
 
     .tip-button_two {
       width: 60%;
@@ -147,10 +144,10 @@
       justify-content: space-around;
       align-items: center;
 
-      &.active{
+      &.active {
         color: $white;
         background-color: $orange;
-        .dolar-icon{
+        .dolar-icon {
           background-image: url("/assets/icons/dollar-circle.svg");
           right: 1px;
           position: relative;
@@ -183,7 +180,6 @@
         padding: 0 10px 0px 10px;
       }
     }
-
 
     .pay-info {
       display: flex;
@@ -345,10 +341,9 @@
       overflow-y: auto;
       overflow-x: hidden;
 
-      @media(min-width: 1050px){
+      @media (min-width: 1050px) {
         max-height: 520px;
       }
-
 
       .product {
         background: $white;
@@ -370,7 +365,7 @@
       padding: 10px 10px;
       max-height: 450px;
 
-      @media(min-width: 1050px){
+      @media (min-width: 1050px) {
         max-height: 520px;
       }
 
@@ -442,7 +437,6 @@
 
         @media screen and (max-width: 1024px) {
           width: 33px;
-
         }
       }
 
@@ -500,6 +494,10 @@
         width: 80%;
         height: 47px;
         justify-content: center;
+
+        &:disabled {
+          opacity: 0.7;
+        }
 
         &:hover {
           background: #e34317;

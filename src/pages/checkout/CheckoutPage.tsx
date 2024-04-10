@@ -297,7 +297,7 @@ function CheckoutPage() {
                       </tr>
                     </tbody>
                   </table>
-                  <button className="btn-payment">{translate("pay")}</button>
+                  <button disabled={true} className="btn-payment">{translate("pay")}</button>
                 </div>
               </section>
             </div>
