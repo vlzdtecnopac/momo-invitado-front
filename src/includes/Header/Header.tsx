@@ -74,7 +74,7 @@ function Header() {
           )}
         </div>
         <div className="column_center">
-          <Link to="../categories">
+          <Link to="/">
             <img
               className="logo"
               src={logoMomo}
