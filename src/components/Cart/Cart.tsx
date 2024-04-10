@@ -40,6 +40,10 @@ function Cart() {
     return productCart?.reduce((total, item) => total + item.quanty, 0);
   }
 
+  function totalCart(){
+    return productCart?.reduce((total, item) => total + item.subtotal, 0 )
+  }
+
   return (
     <>
       {location.pathname != "/checkout" && cart ? (
@@ -76,7 +80,7 @@ function Cart() {
             <h3 className="subtotal-tex">
               {translate("subTotal", { count: countCart() })}
             </h3>
-            <p className="subtotal-price">$107.00</p>
+            <p className="subtotal-price">${totalCart()}</p>
           </div>
           <button onClick={() => navigate("/checkout")} className="pay">
             {translate("countinuePayment")}

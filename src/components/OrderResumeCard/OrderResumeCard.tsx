@@ -14,7 +14,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
     if (quantyProduct == 0) return;
     const newQuantity = Math.max(quantyProduct, 1);
     try {
-      await db.product.update(id, { quanty: quantyProduct });
+      await db.product.update(id, { quanty: quantyProduct, subtotal: newQuantity * data.price });
       setQuantity(newQuantity);
     } catch (error) {
       console.error("Error al actualizar el registro:", error);

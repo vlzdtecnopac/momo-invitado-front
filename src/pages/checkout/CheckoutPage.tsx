@@ -200,6 +200,11 @@ function CheckoutPage() {
   function countProducts() {
     return productCart?.reduce((total, item) => total + item.quanty, 0);
   }
+
+  function subTotal(){
+    return productCart?.reduce((total, item) => total + item.price, 0 );
+  }
+
   return (
     <>
       <Layout>
@@ -247,7 +252,7 @@ function CheckoutPage() {
                     <tbody>
                       <tr>
                         <td>Subtotal ({countProducts()} productos)</td>
-                        <td className="amount">$ 50</td>
+                        <td className="amount">$ {subTotal()}</td>
                       </tr>
                       <tr>
                         <td>Propina</td>
