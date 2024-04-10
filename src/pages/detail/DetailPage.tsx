@@ -166,7 +166,6 @@ function DrinkDetailPage() {
       );
     }
     setProduct({...product, price: total});
-    console.log(total);
   };
 
   return (
