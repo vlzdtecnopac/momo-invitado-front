@@ -175,7 +175,7 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
 };
 
 function CheckoutPage() {
-  const productCart = useLiveQuery(() => db.product.toArray());
+  const productCart = useLiveQuery(() => db.product.orderBy('name_product').toArray());
   const [tipMount, setTipMount] = useState<String>();
   const { translate } = useLanguage();
 

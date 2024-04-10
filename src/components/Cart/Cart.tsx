@@ -15,7 +15,7 @@ function Cart() {
   const navigate = useNavigate();
   const location = useLocation();
   const [getCount, setCount] = useState(0);
-  const productCart = useLiveQuery(() => db.product.toArray());
+  const productCart = useLiveQuery(() => db.product.orderBy('name_product').toArray());
   const { translate } = useLanguage();
 
   const [ejeX, setEjeX] = useState<number>(600);
