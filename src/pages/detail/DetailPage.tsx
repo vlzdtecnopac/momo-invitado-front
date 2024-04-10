@@ -27,18 +27,19 @@ import { useShoppingStore } from "../../store/shopping.store";
 function DrinkDetailPage() {
   const { cart, setStoreCart } = useShoppingStore();
   const { dataProductOption } = useProductOptionStore();
+  const [product, setProduct] = useState<any>({});
   const [loader, isLoader] = useState<Boolean>(false);
   const myRef = useRef<any>(null);
   const { product_id, type } = useParams();
   const { translate } = useLanguage();
-  const [product, setProduct] = useState<any>({});
+
 
   useEffect(() => {
     getDetailProduct();
   }, []);
 
   useEffect(() => {
-    priceTotal();
+    priceTotal(product);
   }, [dataProductOption]);
 
   async function addCart() {
@@ -86,21 +87,25 @@ function DrinkDetailPage() {
     }
   };
 
-  const priceTotal = () => {
+  const priceTotal = (product: any) => {
 
     console.clear();
+    let total: number = product.price;
 
     if ("price" in dataProductOption.size) {
       console.log(
         "Price attribute Size exists. Price value:",
-        dataProductOption.size
+        dataProductOption.size.price
       );
+
+      total += dataProductOption.size.price!;
     }
     if ("price" in dataProductOption.milk) {
       console.log(
         "Price attribute Milk exists. Price value:",
         dataProductOption.milk
       );
+      total += dataProductOption.milk.price!;
     }
 
     if ("price" in dataProductOption.coffee_type) {
@@ -108,6 +113,8 @@ function DrinkDetailPage() {
         "Price attribute Coffe Type exists. Price value:",
         dataProductOption.coffee_type
       );
+
+      total += dataProductOption.coffee_type.price!;
     }
 
     if ("price" in dataProductOption.sugar) {
@@ -115,6 +122,7 @@ function DrinkDetailPage() {
         "Price attribute Sugar exists. Price value:",
         dataProductOption.sugar
       );
+      total += dataProductOption.sugar.price!;
     }
 
     if ("price" in dataProductOption.temperature) {
@@ -122,6 +130,7 @@ function DrinkDetailPage() {
         "Price attribute Temperature exists. Price value:",
         dataProductOption.temperature
       );
+      total += dataProductOption.temperature.price!;
     }
 
     let extra_coffe = dataProductOption.extra_coffee.filter(
@@ -156,6 +165,8 @@ function DrinkDetailPage() {
         dataProductOption.sauce
       );
     }
+    setProduct({...product, price: total});
+    console.log(total);
   };
 
   return (
