@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useLanguage } from "../../context/Langi18nContext";
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";
@@ -131,7 +131,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
   );
 };
 
-function MethodPayment() {
+const MethodPayment: React.FC<any> = ({ onCancel }) => {
   const { translate } = useLanguage();
 
   const [stateCard, setStateCard] = useState<boolean>(false);
@@ -139,18 +139,21 @@ function MethodPayment() {
   const optionHandlerCard = (state: boolean) => {
     setStateCard(!state);
   };
+
   return (
     <div className="pay-info">
-      <div className="form-group">
-        <input
-          placeholder="Invitado"
-          type="text"
-          id="name"
-          name="name"
-          className="client-name"
-        />
-        <i className="icon-user"></i>
-      </div>
+      {!localStorage.getItem("client-id") && (
+        <div className="form-group">
+          <input
+            placeholder="Invitado"
+            type="text"
+            id="name"
+            name="name"
+            className="client-name"
+          />
+          <i className="icon-user"></i>
+        </div>
+      )}
       <h2 className="text">{translate("selectPayMethod")}</h2>
       <div className="pay-method">
         <button onClick={() => optionHandlerCard(stateCard)} className="card">
@@ -164,10 +167,12 @@ function MethodPayment() {
           {translate("cash")}
         </button>
       </div>
-      <button className="cancel">{translate("cancel")}</button>
+      <button onClick={() => onCancel()} className="cancel">
+        {translate("cancel")}
+      </button>
     </div>
   );
-}
+};
 
 function CheckoutPage() {
   const productCart = useLiveQuery(() => db.product.toArray());
@@ -184,7 +189,11 @@ function CheckoutPage() {
           <div className="checkout_container grid-3 grid-equalHeight">
             <div className="col-5">
               <section className="tip">
-                {tipMount ? (<MethodPayment />) : (<TipMomoClient onChange={(e: string) => setTipMount(e)} />)}
+                {tipMount ? (
+                  <MethodPayment onCancel={() => setTipMount("")} />
+                ) : (
+                  <TipMomoClient onChange={(e: string) => setTipMount(e)} />
+                )}
               </section>
             </div>
             <div className="col-4">
