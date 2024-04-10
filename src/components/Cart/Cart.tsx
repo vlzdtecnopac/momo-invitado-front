@@ -53,7 +53,6 @@ function Cart() {
         >
           <span>{translate("showCart")}</span>{" "}
           <i className="icon-cart">
-            {" "}
             <span className="cart-items">{countCart()}</span>
           </i>
         </button>

@@ -8,6 +8,7 @@ import {
 interface OptionsListProps {
   optionHandler?: (e: any) => any;
   listOptions: OptionData[];
+  defaultValue?: OptionData;
   iconOptions: string;
   distanceScrolling?: number;
   attr: string;
@@ -21,6 +22,10 @@ const OptionsList: React.FC<OptionsListProps> = ({
   distanceScrolling,
   attr,
   multiple = false,
+  defaultValue = {
+    name: "",
+    price: 0,
+  },
 }) => {
   const setDataProductOption = useProductOptionStore(
     (state) => state.setDataProductOption
