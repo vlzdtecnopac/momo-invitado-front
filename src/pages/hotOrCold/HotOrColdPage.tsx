@@ -1,10 +1,28 @@
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Layout from "../../includes/layout/Layout";
 import { useLanguage } from "../../context/Langi18nContext";
 import "./HotOrColdPage.scss";
 
 function HotOrColdPage() {
   const { translate } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleClick = (option: string) => {
+    console.log(location.pathname);
+    if (location.pathname === "/hot-or-cold/cafe") {
+      navigate(`/products/Cafe/${option}`);
+    }
+    if (location.pathname === "/hot-or-cold/te") {
+      navigate(`/products/Te/${option}`);
+    }
+    if (location.pathname === "/hot-or-cold/cafe%20con%20te") {
+      navigate(`/products/Café con Té/${option}`);
+    }
+    if (location.pathname === "/hot-or-cold/especiales%20MOMO") {
+      navigate(`/products/MOMO%20Specials/${option}`);
+    }
+  };
 
   return (
     <>
@@ -14,19 +32,21 @@ function HotOrColdPage() {
             <div className="center-container">
               <div className="container">
                 <div className="options">
-                  <Link to="../products">
-                    <button className="custom-btn hot">
-                      <span className="icon"></span>
-                      <span className="text"> {translate("hot")}</span>
-                    </button>
-                  </Link>
+                  <button
+                    onClick={() => handleClick("hot")}
+                    className="custom-btn hot"
+                  >
+                    <span className="icon"></span>
+                    <span className="text"> {translate("hot")}</span>
+                  </button>
 
-                  <Link to="../products">
-                    <button className="custom-btn cold">
-                      <span className="icon"></span>
-                      <span className="text"> {translate("cold")}</span>
-                    </button>
-                  </Link>
+                  <button
+                    className="custom-btn cold"
+                    onClick={() => handleClick("cold")}
+                  >
+                    <span className="icon"></span>
+                    <span className="text"> {translate("cold")}</span>
+                  </button>
                 </div>
               </div>
             </div>

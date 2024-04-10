@@ -25,11 +25,11 @@ function Cart() {
 
   const closeHandlerCart = () => {
     setEjeX(600);
-    db.product.count().then(item=>{
-      if(item <= 0){
+    db.product.count().then((item) => {
+      if (item <= 0) {
         setStoreCart(false);
       }
-    })
+    });
   };
 
   const openHandlerCart = () => {
@@ -40,15 +40,22 @@ function Cart() {
     return productCart?.reduce((total, item) => total + item.quanty, 0);
   }
 
-  function totalCart(){
-    return productCart?.reduce((total, item) => total + item.subtotal, 0 )
+  function totalCart() {
+    return productCart?.reduce((total, item) => total + item.subtotal, 0);
   }
 
   return (
     <>
       {location.pathname != "/checkout" && cart ? (
-        <button onClick={() => openHandlerCart()} className="cart-momo">
-          <span>{translate("showCart")}</span> <i className="icon-cart"></i>
+        <button
+          onClick={() => openHandlerCart()}
+          className="cart-momo"
+        >
+          <span>{translate("showCart")}</span>{" "}
+          <i className="icon-cart">
+            {" "}
+            <span className="cart-items">{countCart()}</span>
+          </i>
         </button>
       ) : null}
       <motion.div
@@ -65,7 +72,10 @@ function Cart() {
                 {translate("numberProducts", { count: countCart() })}
               </p>
             </div>
-            <button onClick={() => closeHandlerCart()} className="x"></button>
+            <button
+              onClick={() => closeHandlerCart()}
+              className="x"
+            ></button>
           </div>
           <div className="container-list-product">
             {productCart?.map((item) => (
@@ -82,7 +92,10 @@ function Cart() {
             </h3>
             <p className="subtotal-price">${totalCart()}</p>
           </div>
-          <button onClick={() => navigate("/checkout")} className="pay">
+          <button
+            onClick={() => navigate("/checkout")}
+            className="pay"
+          >
             {translate("countinuePayment")}
           </button>
         </div>

@@ -7,6 +7,7 @@ import axiosInstance from "../../helpers/axios.helper";
 import { useLanguage } from "../../context/Langi18nContext";
 import { useEffect, useState } from "react";
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 function Header() {
   const { translate } = useLanguage();
@@ -47,19 +48,39 @@ function Header() {
       <header className="head">
         <div className="column_start">
           {localStorage.getItem("client-id") ? (
-            <button onClick={() => logoutUserClient()} className="back">
-              <img className="back-icon" src={back} alt="back" />
+            <button
+              onClick={() => logoutUserClient()}
+              className="back"
+            >
+              <img
+                className="back-icon"
+                src={back}
+                alt="back"
+              />
               <span className="text ">Cerrar Session</span>
             </button>
           ) : (
-            <button onClick={() => handleBackHeader()} className="back">
-              <img className="back-icon" src={back} alt="back" />
+            <button
+              onClick={() => handleBackHeader()}
+              className="back"
+            >
+              <img
+                className="back-icon"
+                src={back}
+                alt="back"
+              />
               <span className="text ">{translate("backText")}</span>
             </button>
           )}
         </div>
         <div className="column_center">
-          <img className="logo" src={logoMomo} alt="" />
+          <Link to="../categories">
+            <img
+              className="logo"
+              src={logoMomo}
+              alt=""
+            />
+          </Link>
         </div>
         <div className="column_end">
           <div className="welcome-text">
@@ -82,7 +103,11 @@ function Header() {
               </div>
             )}
           </div>
-          <img className="profile-pic" src={momoPic} alt="photo" />
+          <img
+            className="profile-pic"
+            src={momoPic}
+            alt="photo"
+          />
         </div>
       </header>
       {logout ? (
@@ -99,7 +124,11 @@ function Header() {
           >
             <div className="info-profile">
               <div className="info-header">
-                <img className="profile-pic" src={momoPic} alt="photo" />
+                <img
+                  className="profile-pic"
+                  src={momoPic}
+                  alt="photo"
+                />
                 <div className="col-info">
                   <h3>Mi Cuenta</h3>
                   <p>
@@ -116,7 +145,10 @@ function Header() {
               </div>
             </div>
             <div className="close-btn">
-              <button onClick={() => logoutUserClient()} className="btn">
+              <button
+                onClick={() => logoutUserClient()}
+                className="btn"
+              >
                 Cerrar Session
               </button>
             </div>

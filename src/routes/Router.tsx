@@ -31,9 +31,7 @@ const LazyProductCategoryPage = lazy(
 const LazyProductsPage = lazy(
   () => import("../pages/productsPage/ProductsPage")
 );
-const LazyDetailPage = lazy(
-  () => import("../pages/detail/DetailPage")
-);
+const LazyDetailPage = lazy(() => import("../pages/detail/DetailPage"));
 const CreateAccountPage = lazy(
   () => import("../pages/createAccountPage/CreateAccountPage")
 );
@@ -116,7 +114,7 @@ const BrowserRoutes = createBrowserRouter([
     ),
   },
   {
-    path: "/hot-or-cold",
+    path: "/hot-or-cold/:category",
     element: (
       <Suspense fallback={<LoaderPage />}>
         <LazyHotOrColdPage />

@@ -3,17 +3,20 @@ import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../context/Langi18nContext";
 import { LoaderPage } from "../../includes/loader/Loader";
 import axiosInstance from "../../helpers/axios.helper";
-import { initialProductOptionState, useProductOptionStore } from "../../store/productOption.store";
+import {
+  initialProductOptionState,
+  useProductOptionStore,
+} from "../../store/productOption.store";
 import Cart from "../Cart/Cart";
 import "./CategoryNav.scss";
 import { db } from "../../helpers/dexie_db.helper";
 import { useShoppingStore } from "../../store/shopping.store";
 
-const CategoryNav:React.FC<{cart: boolean}> = ({cart}) =>  {
+const CategoryNav: React.FC<{ cart: boolean }> = ({ cart }) => {
   const setDataProductOption = useProductOptionStore(
     (state) => state.setDataProductOption
   );
-  const {setStoreCart} = useShoppingStore();
+  const { setStoreCart } = useShoppingStore();
   const { translate } = useLanguage();
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
@@ -36,34 +39,55 @@ const CategoryNav:React.FC<{cart: boolean}> = ({cart}) =>  {
     }
   };
 
-  const consultCount =  async () => {
-    db.product.count().then(
-        (ct)=>{
-          if(ct <= 0){
-            setStoreCart(false);
-          }else{
-            setStoreCart(true);
-          }
+  const consultCount = async () => {
+    db.product
+      .count()
+      .then((ct) => {
+        if (ct <= 0) {
+          setStoreCart(false);
+        } else {
+          setStoreCart(true);
         }
-      ).catch((e)=>{
-        console.log(e)
       })
-  
-  }
-
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   return (
     <>
       {loader ? <LoaderPage /> : <Cart />}
       <nav className="cat_nav">
-        <ul style={cart? {marginLeft: "-55px"}:{}} className="categories">
+        <ul
+          style={cart ? { marginLeft: "-55px" } : {}}
+          className="categories"
+        >
           {categories.map((category: any, index: number) => (
-            <li className="category" key={index}>
+            <li
+              className="category"
+              key={index}
+            >
               <button
                 onClick={() => {
                   setDataProductOption(initialProductOptionState);
                   if (category.name_category == "Nuestra Tienda") {
                     navigate(`../merch-or-coffee/`);
+                    return;
+                  }
+                  if (category.name_category == "Café") {
+                    navigate(`../hot-or-cold/cafe`);
+                    return;
+                  }
+                  if (category.name_category == "Té") {
+                    navigate(`../hot-or-cold/te`);
+                    return;
+                  }
+                  if (category.name_category == "Café con Té") {
+                    navigate(`../hot-or-cold/cafe con te`);
+                    return;
+                  }
+                  if (category.name_category == "Especiales MOMO") {
+                    navigate(`../hot-or-cold/especiales MOMO`);
                     return;
                   }
                   if (category.name_category == "Alimentos") {
@@ -83,6 +107,6 @@ const CategoryNav:React.FC<{cart: boolean}> = ({cart}) =>  {
       </nav>
     </>
   );
-}
+};
 
 export default CategoryNav;
