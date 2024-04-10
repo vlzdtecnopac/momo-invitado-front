@@ -90,6 +90,14 @@
           justify-content: space-around;
           align-items: center;
 
+          &.active{
+            color: $white;
+            background-color: $orange;
+            .dolar-icon{
+              background-image: url("/assets/icons/dollar-circle.svg");
+            }
+          }
+
           &:hover {
             cursor: pointer;
           }
@@ -115,6 +123,7 @@
             text-align: center;
             padding: 0 10px 0px 10px;
           }
+
         }
       }
     }
@@ -135,6 +144,14 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
+
+      &.active{
+        color: $white;
+        background-color: $orange;
+        .dolar-icon{
+          background-image: url("/assets/icons/dollar-circle.svg");
+        }
+      }
 
       &:hover {
         cursor: pointer;

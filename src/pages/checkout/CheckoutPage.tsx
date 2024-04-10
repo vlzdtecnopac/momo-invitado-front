@@ -25,7 +25,7 @@ function MethodsCard() {
 }
 
 const TipMomoClient: React.FC<any> = ({ onChange }) => {
-  const { setStoreTip } = useShoppingStore();
+  const { tip, setStoreTip } = useShoppingStore();
   const { translate } = useLanguage();
   const [getTipPorcent, setTipPorcent] = useState<boolean>();
   const [getTipAmount, setTipAmount] = useState<boolean>();
@@ -62,7 +62,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <button
             value="0"
             onClick={(e) => onHandlerTip(e)}
-            className="tip-button"
+            className={`tip-button  ${ tip == 0 && 'active'}`}
           >
             <div className="percentange">0%</div>
             <div className="middle">{translate("noTip")}</div>
@@ -73,7 +73,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <button
             value="5"
             onClick={(e) => onHandlerTip(e)}
-            className="tip-button"
+            className={`tip-button  ${ tip == 5 && 'active'}`}
           >
             <div className="percentange">5%</div>
             <div className="middle">¡{translate("bonus")}!</div>
@@ -86,7 +86,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <button
             value="10"
             onClick={(e) => onHandlerTip(e)}
-            className="tip-button"
+            className={`tip-button  ${ tip == 10 && 'active'}`}
           >
             <div className="percentange">10%</div>
             <div className="middle">¡{translate("excellentChoice")}!</div>
@@ -97,7 +97,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <button
             value="15"
             onClick={(e) => onHandlerTip(e)}
-            className="tip-button"
+            className={`tip-button  ${ tip == 15 && 'active'}`}
           >
             <div className="percentange">15%</div>
             <div className="middle">¡{translate("gesture")}!</div>
@@ -110,7 +110,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <div className="col-12 decide">
             <button
               onClick={() => setOtherTipSatisfaction(true)}
-              className="tip-button_two"
+              className={`tip-button_two  ${!getOtherTipSatisfaction && 'active'}`}
             >
               <div className="percentange">{translate("other")}</div>
               <div className="middle">¡{translate("youDecide")}!</div>
