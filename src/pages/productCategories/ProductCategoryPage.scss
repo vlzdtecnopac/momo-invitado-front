@@ -17,9 +17,14 @@
         width: 880px;
         display: flex;
         flex-wrap: wrap;
-        margin: 100px auto auto auto;
+        margin: 10% auto auto;
         padding: 0px;
         overflow-y: auto;
+
+        @media screen and (min-height: 875px) {
+            margin: 15% auto auto;
+
+        }
 
         .options-container {
             display: flex;
@@ -30,7 +35,7 @@
     .content-slider {
         position: relative;
         display: block;
-        max-width: 1500px;
+        max-width: 1800px;
         left: 0px;
         right: 0px;
         margin: auto;
