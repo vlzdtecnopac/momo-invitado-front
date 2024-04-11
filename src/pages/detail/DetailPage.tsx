@@ -143,6 +143,9 @@ function DrinkDetailPage() {
         "Price attribute Extra Coffe exists. Price value:",
         extra_coffe
       );
+
+      let resp = extra_coffe.reduce((total, item: any) => total + parseFloat(item.price), 0);
+      total += resp;
     }
  
     let lid = dataProductOption.lid.filter(
@@ -154,6 +157,8 @@ function DrinkDetailPage() {
         "Price attribute Lid exists. Price value:",
         dataProductOption.lid
       );
+      let resp = lid.reduce((total, item: any) => total + parseFloat(item.price), 0);
+      total += resp;
     }
 
     let sauce = dataProductOption.sauce.filter(
@@ -165,6 +170,9 @@ function DrinkDetailPage() {
         "Price attribute Sauce exists. Price value:",
         dataProductOption.sauce
       );
+
+      let resp = sauce.reduce((total, item: any) => total + parseFloat(item.price), 0);
+      total += resp;
     }
     setSubtotal(total);
   };

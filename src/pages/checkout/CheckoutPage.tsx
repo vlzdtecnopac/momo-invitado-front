@@ -26,24 +26,35 @@ function MethodsCard() {
 
 const TipMomoClient: React.FC<any> = ({ onChange }) => {
   const { tip, setStoreTip } = useShoppingStore();
+  const productCart = useLiveQuery(() =>
+    db.product.orderBy("name_product").toArray()
+  );
   const { translate } = useLanguage();
   const [getTipPorcent, setTipPorcent] = useState<boolean>();
   const [getTipAmount, setTipAmount] = useState<boolean>();
   const [getOtherTipSatisfaction, setOtherTipSatisfaction] =
     useState<boolean>(false);
 
-  const onHandlerTip = (number: string) => {
-    onChange(number);
-    setStoreTip(Number(number));
+  const onHandlerTip = (number: number) => {
+    const subtotalCart = productCart?.reduce(
+      (total, item) => item.subtotal + total,
+      0
+    );
+    const propinaActual = (number * subtotalCart!) / 100;
+    onChange(true);
+    setStoreTip({
+      tip: propinaActual,
+      selectTip: number
+    });
   };
 
   return (
     <>
       {getTipPorcent ? (
-        <PercentageTip onHandleCancel={() => setTipPorcent(false)} />
+        <PercentageTip onHandleCancel={() => { onChange(true); setTipPorcent(false);}} />
       ) : null}
       {getTipAmount ? (
-        <AmountTip onHandleCancel={() => setTipAmount(false)} />
+        <AmountTip onHandleCancel={() => {  onChange(true); setTipAmount(false)}} />
       ) : null}
       <div className="grid-2">
         <div className="col-5">
@@ -59,9 +70,9 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
       <div className="grid-2 grid-noGutter-noBottom tip-options">
         <div className="col">
           <button
-            onClick={() => onHandlerTip("0")}
+            onClick={() => onHandlerTip(0)}
             className={`tip-button  ${
-              tip == 0 && !getOtherTipSatisfaction && "active"
+              tip.selectTip == 0 && !getOtherTipSatisfaction && "active"
             }`}
           >
             <div className="percentange">0%</div>
@@ -71,9 +82,9 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
             </div>
           </button>
           <button
-            onClick={() => onHandlerTip("5")}
+            onClick={() => onHandlerTip(5)}
             className={`tip-button  ${
-              tip == 5 && !getOtherTipSatisfaction && "active"
+              tip.selectTip  == 5 && getOtherTipSatisfaction && "active"
             }`}
           >
             <div className="percentange">5%</div>
@@ -85,9 +96,9 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
         </div>
         <div className="col-6">
           <button
-            onClick={() => onHandlerTip("10")}
+            onClick={() => onHandlerTip(10)}
             className={`tip-button  ${
-              tip == 10 && !getOtherTipSatisfaction && "active"
+              tip.selectTip  == 10 && !getOtherTipSatisfaction && "active"
             }`}
           >
             <div className="percentange">10%</div>
@@ -97,8 +108,10 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
             </div>
           </button>
           <button
-            onClick={() => onHandlerTip("15")}
-            className={`tip-button  ${tip == 15 && !getOtherTipSatisfaction  && "active"}`}
+            onClick={() => onHandlerTip(15)}
+            className={`tip-button  ${
+              tip.selectTip  == 15 && !getOtherTipSatisfaction && "active"
+            }`}
           >
             <div className="percentange">15%</div>
             <div className="middle">¡{translate("gesture")}!</div>
@@ -211,7 +224,7 @@ function CheckoutPage() {
   const productCart = useLiveQuery(() =>
     db.product.orderBy("name_product").toArray()
   );
-  const [tipMount, setTipMount] = useState<String>();
+  const [tipMount, setTipMount] = useState<boolean>(false);
   const { translate } = useLanguage();
 
   function countProducts() {
@@ -223,7 +236,7 @@ function CheckoutPage() {
   }
 
   function totalPayment() {
-    return Number(subTotal()) + tip;
+    return Number(subTotal()) + tip.tip;
   }
 
   return (
@@ -237,9 +250,9 @@ function CheckoutPage() {
             <div className="col-5">
               <section className="tip">
                 {tipMount ? (
-                  <MethodPayment onCancel={() => setTipMount("")} />
+                  <MethodPayment onCancel={() => setTipMount(false)} />
                 ) : (
-                  <TipMomoClient onChange={(e: string) => setTipMount(e)} />
+                  <TipMomoClient onChange={(e: boolean) => setTipMount(e)} />
                 )}
               </section>
             </div>
@@ -277,7 +290,7 @@ function CheckoutPage() {
                       </tr>
                       <tr>
                         <td>Propina</td>
-                        <td className="amount">$ {tip}</td>
+                        <td className="amount">$ {tip.tip}</td>
                       </tr>
                       <tr>
                         <td>
@@ -297,7 +310,9 @@ function CheckoutPage() {
                       </tr>
                     </tbody>
                   </table>
-                  <button disabled={true} className="btn-payment">{translate("pay")}</button>
+                  <button disabled={true} className="btn-payment">
+                    {translate("pay")}
+                  </button>
                 </div>
               </section>
             </div>
