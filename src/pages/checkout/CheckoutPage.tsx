@@ -51,10 +51,10 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
   return (
     <>
       {getTipPorcent ? (
-        <PercentageTip onHandleCancel={() => setTipPorcent(false)} />
+        <PercentageTip onHandleCancel={() => { onChange(true); setTipPorcent(false);}} />
       ) : null}
       {getTipAmount ? (
-        <AmountTip onHandleCancel={() => setTipAmount(false)} />
+        <AmountTip onHandleCancel={() => {  onChange(true); setTipAmount(false)}} />
       ) : null}
       <div className="grid-2">
         <div className="col-5">
