@@ -15,19 +15,24 @@ interface ShoppingInterface {
   create_at: string;
 }
 
+interface TipInterface {
+  tip: number;
+  selectTip: number;
+}
+
 interface DesignStoreInterface {
   dataStore: ShoppingInterface[];
   cart: boolean;
-  tip: number;
+  tip: TipInterface;
   fetchStoreData: (shopping_id: string) => Promise<Boolean>;
   setStoreCart: (cart: boolean) => void;
-  setStoreTip: (tip: number) => void;
+  setStoreTip: (tip: TipInterface) => void;
 }
 
 export const useShoppingStore = create<DesignStoreInterface>((set) => ({
   dataStore: [],
   cart: false,
-  tip: 0,
+  tip: { tip: 0, selectTip: 0},
   fetchStoreData: async (shopping_id) =>
     new Promise((resolve, reject) => {
       axiosInstance
