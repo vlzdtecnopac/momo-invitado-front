@@ -82,7 +82,7 @@ export function EnterByPhone() {
     const fetchCountries = async () => {
       isLoader(true);
       try {
-        const response = await fetch("./src/dummy/listCountry.json");
+        const response = await fetch("/assets/dummy/listCountry.json");
         const data = await response.json();
         setCountries(data);
         isLoader(false);
