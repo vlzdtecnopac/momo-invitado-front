@@ -38,7 +38,7 @@ function CreateAccountPage() {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch("./src/dummy/listCountry.json");
+        const response = await fetch("/assets/dummy/listCountry.json");
         const data = await response.json();
         setCountries(data);
       } catch (error) {
