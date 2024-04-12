@@ -19,6 +19,11 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
   const employeeId = localStorage.getItem("employee-id");
 
   useEffect(() => {
+    
+    window.addEventListener('vite:preloadError', () => {
+      window.location.reload()
+    })
+
     const fetchDataOnMount = async () => {
       const kiosko = await axiosInstance.post("/kioskos/verify", {
         kiosko_id: localStorage.getItem("kiosko-momo"),
