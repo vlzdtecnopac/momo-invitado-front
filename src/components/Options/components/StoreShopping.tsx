@@ -19,7 +19,6 @@ interface StoreShoppingProps {
 
 const StoreShopping: React.FC<StoreShoppingProps> = ({
   optionHandler,
-  type,
 }) => {
   const myRef = useRef<any>(null);
   const { product_id } = useParams();
