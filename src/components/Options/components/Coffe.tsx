@@ -41,7 +41,7 @@ const Coffe: React.FC<CoffeProps> = ({ optionHandler }) => {
         <div className="col-9 details-col detail-card">
           <div className="details">
             <div ref={myRef} className="content-detail-page">
-              {Object.keys(options).map((key: string) => (
+              {Object.keys(options).map((key: string, i: number) => (
                 <div id={key} key={key}>
                   {key == "Extra  Shot" || key == "Tapa" || key == "Salsas" ? (
                     <>
@@ -98,7 +98,7 @@ const Coffe: React.FC<CoffeProps> = ({ optionHandler }) => {
                   ) : (
                     <>
                       <Options
-                        distanceScrolling={230}
+                        distanceScrolling={150 * i}
                         titleOptions={key}
                         iconOptions={(() => {
                           switch (key) {
