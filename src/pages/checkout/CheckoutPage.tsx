@@ -44,21 +44,34 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
     onChange(true);
     setStoreTip({
       tip: propinaActual,
-      selectTip: number
+      selectTip: number,
     });
   };
 
   return (
     <>
       {getTipPorcent ? (
-        <PercentageTip onHandleCancel={() => { onChange(true); setTipPorcent(false);}} />
+        <PercentageTip
+          onHandleCancel={() => {
+            onChange(true);
+            setTipPorcent(false);
+          }}
+        />
       ) : null}
       {getTipAmount ? (
-        <AmountTip onHandleCancel={() => {  onChange(true); setTipAmount(false)}} />
+        <AmountTip
+          onHandleCancel={() => {
+            onChange(true);
+            setTipAmount(false);
+          }}
+        />
       ) : null}
       <div className="grid-2">
         <div className="col-5">
-          <img alt="Barista" src={barista} />
+          <img
+            alt="Barista"
+            src={barista}
+          />
         </div>
         <div className="col-7 tip-text">
           <h2>{translate("baristaTipText")}</h2>
@@ -84,7 +97,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <button
             onClick={() => onHandlerTip(5)}
             className={`tip-button  ${
-              tip.selectTip  == 5 && getOtherTipSatisfaction && "active"
+              tip.selectTip == 5 && getOtherTipSatisfaction && "active"
             }`}
           >
             <div className="percentange">5%</div>
@@ -98,7 +111,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <button
             onClick={() => onHandlerTip(10)}
             className={`tip-button  ${
-              tip.selectTip  == 10 && !getOtherTipSatisfaction && "active"
+              tip.selectTip == 10 && !getOtherTipSatisfaction && "active"
             }`}
           >
             <div className="percentange">10%</div>
@@ -110,7 +123,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           <button
             onClick={() => onHandlerTip(15)}
             className={`tip-button  ${
-              tip.selectTip  == 15 && !getOtherTipSatisfaction && "active"
+              tip.selectTip == 15 && !getOtherTipSatisfaction && "active"
             }`}
           >
             <div className="percentange">15%</div>
@@ -201,7 +214,10 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
       )}
       <h2 className="text">{translate("selectPayMethod")}</h2>
       <div className="pay-method">
-        <button onClick={() => optionHandlerCard(stateCard)} className="card">
+        <button
+          onClick={() => optionHandlerCard(stateCard)}
+          className="card"
+        >
           <i className="card-icon"></i>
           {translate("card")}
         </button>
@@ -212,7 +228,10 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
           {translate("cash")}
         </button>
       </div>
-      <button onClick={() => onCancel()} className="cancel">
+      <button
+        onClick={() => onCancel()}
+        className="cancel"
+      >
         {translate("cancel")}
       </button>
     </div>
@@ -259,7 +278,10 @@ function CheckoutPage() {
             <div className="col-4">
               <section className="products">
                 {productCart?.map((item) => (
-                  <div className="product" key={item.id}>
+                  <div
+                    className="product"
+                    key={item.id}
+                  >
                     <ProductCheckoutCard data={item} />
                   </div>
                 ))}
@@ -267,7 +289,7 @@ function CheckoutPage() {
             </div>
             <div className="col-3 ">
               <section className="checkout">
-                <div className="cupon">
+                {/* <div className="cupon">
                   <div className="form-group">
                     <input
                       placeholder={translate("addCoupon")}
@@ -279,7 +301,7 @@ function CheckoutPage() {
                     <i className="cupon-icon"></i>
                   </div>
                   <button className="add-cupon-btn">{translate("add")}</button>
-                </div>
+                </div> */}
                 <div></div>
                 <div className="total">
                   <table>
@@ -292,13 +314,13 @@ function CheckoutPage() {
                         <td>Propina</td>
                         <td className="amount">$ {tip.tip}</td>
                       </tr>
-                      <tr>
+                      {/* <tr>
                         <td>
                           Cupón (MOMO Coffee)
                           <button className="btn_delete_cupon">Eliminar</button>
                         </td>
                         <td className="amount">$ 0</td>
-                      </tr>
+                      </tr> */}
                     </tbody>
                   </table>
                   <hr className="border-dashed" />
@@ -310,7 +332,10 @@ function CheckoutPage() {
                       </tr>
                     </tbody>
                   </table>
-                  <button disabled={true} className="btn-payment">
+                  <button
+                    disabled={true}
+                    className="btn-payment"
+                  >
                     {translate("pay")}
                   </button>
                 </div>

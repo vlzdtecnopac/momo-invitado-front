@@ -8,15 +8,17 @@
         padding: 0;
 
         .product-image {
-            margin-top: 10px;
+            margin: 10px 0 4px;
             width: 89px;
             border-radius: 11px;
             object-fit: cover;
-            @media(max-width: 1045px){
+
+            @media(max-width: 1045px) {
                 width: 80px;
                 height: 80px;
             }
         }
+
         .product-quantity {
             width: 52px;
             color: $dark-blue ;
@@ -26,6 +28,7 @@
             font-weight: 800;
             text-align: center;
             margin: auto;
+            border-radius: 41px;
 
         }
     }
@@ -42,6 +45,7 @@
             font-size: 18px;
             line-height: 20px;
             margin: 0px 0px 10px 0px;
+
             @media(max-width: 1045px) {
                 font-size: 16px;
                 width: 130px;
@@ -66,40 +70,42 @@
             padding: 0px 0px 10px 0px;
             font-weight: 500;
 
-            .list-description{
+            .list-description {
                 width: 190px;
                 margin: 4px 0px;
                 display: block;
                 font-size: 14px;
-                @media(max-width: 1290px){
+
+                @media(max-width: 1290px) {
                     width: 160px;
                 }
 
-                @media(max-width: 1160px){
+                @media(max-width: 1160px) {
                     width: 140px;
                 }
 
-                @media(max-width: 1045px){
+                @media(max-width: 1045px) {
                     width: 120px;
                     font-size: 12px;
                 }
 
-                @media(max-width: 945px){
+                @media(max-width: 945px) {
                     width: 100px;
                 }
             }
 
-            .list-price{
+            .list-price {
                 width: 35px;
                 font-size: 14px;
-                @media(max-width: 1045px){
+
+                @media(max-width: 1045px) {
                     font-size: 12px;
                 }
             }
 
             .recicle-icon {
                 width: 15px;
-              }
+            }
 
             .extra-price {
                 width: 40px;
