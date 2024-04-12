@@ -216,15 +216,15 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
       <div className="pay-method">
         <button
           onClick={() => optionHandlerCard(stateCard)}
-          className="card"
+          className={`card ${stateCard && "active"}`}
         >
-          <i className="card-icon"></i>
+          <i className={`card-icon ${stateCard && "active"}`}></i>
           {translate("card")}
         </button>
         {stateCard && <MethodsCard />}
         <hr />
-        <button className="cash">
-          <i className="cash-icon"></i>
+        <button className={`cash`}>
+          <i className={`cash-icon`}></i>
           {translate("cash")}
         </button>
       </div>

@@ -29,6 +29,7 @@
       max-height: 450px;
       overflow-y: auto;
       overflow-x: hidden;
+
       @media (min-width: 1050px) {
         max-height: 520px;
       }
@@ -59,6 +60,7 @@
         font-family: "Red Hat Display";
         gap: 10px;
         margin: 80px 0px 0px 0px;
+
         @media (max-width: 1375px) {
           margin: 40px 0px 0px 0px;
         }
@@ -92,6 +94,7 @@
           &.active {
             color: $white;
             background-color: $orange;
+
             .dolar-icon {
               background-image: url("/assets/icons/dollar-circle.svg");
               right: 1px;
@@ -147,6 +150,7 @@
       &.active {
         color: $white;
         background-color: $orange;
+
         .dolar-icon {
           background-image: url("/assets/icons/dollar-circle.svg");
           right: 1px;
@@ -255,8 +259,15 @@
             &:hover {
               cursor: pointer;
               background: $orange;
-              color: $cream;
+              color: $white;
             }
+          }
+        }
+
+        .card {
+          &.active {
+            background: $orange;
+            color: $white;
           }
         }
 
@@ -276,7 +287,8 @@
           flex-direction: column;
           margin: auto;
 
-          &:hover {
+          &:hover,
+          &.active {
             cursor: pointer;
             background: $orange;
             color: $cream;
@@ -284,6 +296,10 @@
             .card-icon,
             .cash-icon {
               background: $cream;
+
+              &.active {
+                background: $cream;
+              }
             }
           }
         }
