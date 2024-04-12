@@ -1,12 +1,18 @@
-import { useRef } from "react";
-import color from "/assets/icons/color.svg";
-import tshirt from "/assets/icons/t-shirt.svg";
+import { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
+import axiosInstance from "../../../helpers/axios.helper";
+
+import glass from "/assets/icons/glass.svg";
+import extra from "/assets/icons/extra.svg";
 import coffeeBag from "/assets/icons/coffee_bag.svg";
 import beans from "/assets/icons/coffee_beans.svg";
-import { useLanguage } from "../../../context/Langi18nContext";
+import tshirt from "/assets/icons/t-shirt.svg";
+import color from "/assets/icons/color.svg";
+
 import Options from "../Options";
+import OptionsList from "../OptionsList";
 import "../Options.scss";
-import OptionsExtra from "../OptionsExtra";
+
 
 interface StoreShoppingProps {
   optionHandler: (e: any) => any;
@@ -18,7 +24,19 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
   type,
 }) => {
   const myRef = useRef<any>(null);
-  const { translate } = useLanguage();
+  const { product_id } = useParams();
+  const [options, setOptions] = useState<any>({});
+
+  useEffect(() => {
+    consultOptionsPorduct();
+  }, []);
+
+  const consultOptionsPorduct = async () => {
+    let response: any = await axiosInstance.get(
+      `/product/options/${product_id}`
+    );
+    setOptions(response.data);
+  };
 
   return (
     <>
@@ -29,64 +47,93 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
               ref={myRef}
               className="content-detail-page"
             >
-              {type == "Merch" && (
-                <>
-                  <Options
-                    distanceScrolling={320}
-                    titleOptions={translate("size")}
-                    iconOptions={tshirt}
-                    listOptions={[
-                      { name: `${translate("small")}`, price: 0 },
-                      { name: `${translate("medium")}`, price: 0 },
-                      { name: `${translate("large")}`, price: 0 },
-                    ]}
-                    attr="size"
-                  />
-                  <hr className="separator" />
-                  <OptionsExtra
-                    listOptions={[
-                      { name: `${translate("green")}` },
-                      { name: `${translate("darkBlue")}` },
-                      { name: `${translate("orange")}` },
-                      { name: `${translate("lightBlue")}` },
-                      { name: `${translate("cream")}` },
-                    ]}
-                    icon={color}
-                    attr="color"
-                    multiple={false}
-                  />
-                  <hr className="separator" />
-                </>
-              )}
-              {type == "Coffe" && (
-                <>
-                  <Options
-                    titleOptions={translate("coffeeType")}
-                    iconOptions={beans}
-                    listOptions={[
-                      { name: translate("ground"), price: 0 },
-                      { name: translate("beans"), price: 0 },
-                    ]}
-                    attr="coffee_type"
-                    optionHandler={(e: any) => optionHandler(e)}
-                    defaultValue={{ name: translate("ground") }}
-                  />
-                  <hr className="separator" />
-                  <Options
-                    titleOptions={translate("size")}
-                    iconOptions={coffeeBag}
-                    listOptions={[
-                      { name: "Chico 250gr", price: 0 },
-                      { name: "Mediano 500gr", price: 0 },
-                      { name: "Grande 1kg", price: 0 },
-                    ]}
-                    attr="size"
-                    optionHandler={(e: any) => optionHandler(e)}
-                    defaultValue={{ name: "Mediano 500gr" }}
-                  />
-                  <hr className="separator" />
-                </>
-              )}
+                {Object.keys(options).map((key: string, i: number) => (
+                <div id={key} key={key}>
+                  {key == "Color" ? (
+                    <>
+                      <OptionsList
+                        optionHandler={(e: any) => optionHandler(e)}
+                        listOptions={options[key]}
+                        iconOptions={(() => {
+                          switch (key) {
+                            case "Color":
+                              return color;
+                            default:
+                              return "";
+                          }
+                        })()}
+                        attr={(() => {
+                          switch (key) {
+                            case "Color":
+                              return "color";
+                            default:
+                              return "";
+                          }
+                        })()}
+                        multiple={(() => {
+                          switch (key) {
+                            case "Color":
+                              return true;
+                            default:
+                              return false;
+                          }
+                        })()}
+                        defaultValue={(() => {
+                          switch (key) {
+                            default:
+                              return {name: "", price: 0};
+                          }
+                        })()}
+                      />
+                      <hr className="separator" />
+                    </>
+                  ) : (
+                    <>
+                      <Options
+                        distanceScrolling={150 * i}
+                        titleOptions={key}
+                        iconOptions={(() => {
+                          switch (key) {
+                            case "Tamaño Merch":
+                              return tshirt;
+                            case "Tamaño Granel":
+                                return coffeeBag;
+                            case "Tipo de Café":
+                                return beans;
+                            default:
+                              return "";
+                          }
+                        })()}
+                        listOptions={options[key]}
+                        optionHandler={(e: any) => optionHandler(e)}
+                        attr={(() => {
+                          switch (key) {
+                            case "Tamaño Merch":
+                              return "size";
+                            case "Tamaño Granel":
+                              return "size";
+                            case "Tipo de Café":
+                                return "coffee_type";
+                            default:
+                              return "";
+                          }
+                        })()}
+                        defaultValue={(() => {
+                          switch (key) {
+                            case "Tamaño Merch":
+                              return {name: "M", price: 0};
+                            case "Tamaño Granel":
+                                return {name: "250 gr", price: 0};
+                            default:
+                              return {name: "", price: 0};
+                          }
+                        })()}
+                      />
+                      <hr className="separator" />
+                    </>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
