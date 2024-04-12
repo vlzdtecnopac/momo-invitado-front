@@ -17,13 +17,28 @@
         width: 880px;
         display: flex;
         flex-wrap: wrap;
-        margin: 10% auto auto;
+        margin: 8% auto auto;
         padding: 0px;
         overflow-y: auto;
 
-        @media screen and (min-height: 875px) {
-            margin: 15% auto auto;
+        @media(min-width: 240px) {
+            margin: 20% auto auto;
+        }
 
+        @media(min-width: 550px) {
+            margin: 18% auto auto;
+        }
+
+        @media(min-width: 790px) {
+            margin: 12% auto auto;
+        }
+
+        @media(min-width: 990px) {
+            margin: 10% auto auto;
+        }
+
+        @media(min-width: 1350px) {
+            margin: 8% auto auto;
         }
 
         .options-container {
