@@ -36,7 +36,7 @@ const OptionsList: React.FC<OptionsListProps> = ({
     if(defaultValue.name){
       setValueSelect([{
         name: defaultValue.name,
-        price: defaultValue.price}])
+        price: Number(defaultValue.price)}])
     }
   },[])
 
@@ -93,13 +93,13 @@ const OptionsList: React.FC<OptionsListProps> = ({
                 ></div>
                 <div className="col-3">
                   <span className="extra">
-                    <p>{option.price! > 0 ? `$ ${option.price}` : ""}</p>{" "}
+                    <p>{Number(option.price!) > 0 ? `$ ${option.price}` : ""}</p>{" "}
                     <label>
                       <input
                         checked={isChecked > 0}
                         value={JSON.stringify({
                           name: `${option.name}`,
-                          price: `${option.price}`,
+                          price: `${Number(option.price)}`,
                         })}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                           e.stopPropagation();

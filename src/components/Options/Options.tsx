@@ -37,7 +37,10 @@ const Options: React.FC<OptionsProps> = ({
   useEffect(() => {
     if (defaultValue) {
       setDataProductOption({
-        [attr]: defaultValue,
+        [attr]: {
+          name: defaultValue.name,
+          price: Number(defaultValue.price)
+        },
       });
     }
   }, []);
@@ -45,9 +48,9 @@ const Options: React.FC<OptionsProps> = ({
   const selectHandleValueOption = (item: OptionData, attr: string) => {
     const updatedData = {
       ...dataProductOption,
-      [attr]: item,
+      [attr]: { name: item.name, price: Number(item.price) },
     };
-    setDetault({ name: item.name, price: item.price });
+    setDetault({ name: item.name, price: Number(item.price) });
     setDataProductOption(updatedData);
   };
 
@@ -88,7 +91,7 @@ const Options: React.FC<OptionsProps> = ({
                   }}
                 >
                   {item.name}
-                  {item.price! > 0 && (
+                  {Number(item.price!) > 0 && (
                     <h4 className="extra-price">${item.price}</h4>
                   )}
                 </button>

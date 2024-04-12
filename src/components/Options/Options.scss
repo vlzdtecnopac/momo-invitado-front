@@ -92,6 +92,7 @@
       font-family: "Red Hat Display", "serif";
     }
   }
+
 }
 
 
@@ -111,4 +112,10 @@
     margin: 0px;
     list-style: none;
   }
+}
+
+.not-options{
+  color: $white;
+  text-align: center;
+  padding-top: 40px;
 }
