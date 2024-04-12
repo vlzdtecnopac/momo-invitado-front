@@ -91,22 +91,23 @@ function DrinkDetailPage() {
 
   const priceTotal = (product: any) => {
     
-    let total: number = product.price;
-
+    let total: number = Number(product.price);
+  
     if ("price" in dataProductOption.size) {
       console.log(
         "Price attribute Size exists. Price value:",
-        dataProductOption.size.price
+        dataProductOption.size
       );
 
-      total += dataProductOption.size.price!;
+      total += isNaN(dataProductOption.size.price!) ? 0 : Number(dataProductOption.size.price);
     }
     if ("price" in dataProductOption.milk) {
       console.log(
         "Price attribute Milk exists. Price value:",
+
         dataProductOption.milk
       );
-      total += dataProductOption.milk.price!;
+      total += isNaN(dataProductOption.milk.price!) ? 0 :  Number(dataProductOption.milk.price!);
     }
 
     if ("price" in dataProductOption.coffee_type) {
@@ -115,7 +116,7 @@ function DrinkDetailPage() {
         dataProductOption.coffee_type
       );
 
-      total += dataProductOption.coffee_type.price!;
+      total += isNaN(dataProductOption.coffee_type.price!)? 0 : Number(dataProductOption.coffee_type.price!);
     }
 
     if ("price" in dataProductOption.sugar) {
@@ -123,7 +124,7 @@ function DrinkDetailPage() {
         "Price attribute Sugar exists. Price value:",
         dataProductOption.sugar
       );
-      total += dataProductOption.sugar.price!;
+      total += isNaN(dataProductOption.sugar.price!) ? 0 : Number(dataProductOption.sugar.price!);
     }
 
     if ("price" in dataProductOption.temperature) {
@@ -131,7 +132,7 @@ function DrinkDetailPage() {
         "Price attribute Temperature exists. Price value:",
         dataProductOption.temperature
       );
-      total += dataProductOption.temperature.price!;
+      total += isNaN(dataProductOption.temperature.price!) ? 0 : Number(dataProductOption.temperature.price!);
     }
 
     let extra_coffe = dataProductOption.extra_coffee.filter(
