@@ -44,7 +44,7 @@ const Alimentos: React.FC<AlimentosProps> = ({ optionHandler }) => {
               ref={myRef}
               className="content-detail-page"
             >
-              {options && (Object.keys(options).map((key: string, i: number) => (
+              {Object.keys(options).length > 0 ? (Object.keys(options).map((key: string, i: number) => (
                 <div id={key} key={key}>
                   {key == "Extra  Shot" || key == "Tapa" || key == "Salsas" ? (
                     <>
@@ -154,7 +154,7 @@ const Alimentos: React.FC<AlimentosProps> = ({ optionHandler }) => {
                     </>
                   )}
                 </div>
-              )))}
+              ))):(<p className="not-options">No hay opciones</p>)}
             </div>
           </div>
         </div>

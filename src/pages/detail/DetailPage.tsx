@@ -227,9 +227,9 @@ function DrinkDetailPage() {
                 </div>
                 <div className="container-btn-payment">
                   <div className="btn-container">
-                    <button onClick={() => addCart()} className="add-cart-btn">
+                    {!isNaN(getSubtotal) && (<button onClick={() => addCart()} className="add-cart-btn">
                       {translate("addCart")} ${getSubtotal}
-                    </button>
+                    </button>)}
                   </div>
                 </div>
               </div>
