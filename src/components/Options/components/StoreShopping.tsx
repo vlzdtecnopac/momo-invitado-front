@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../../helpers/axios.helper";
 
-import glass from "/assets/icons/glass.svg";
-import extra from "/assets/icons/extra.svg";
 import coffeeBag from "/assets/icons/coffee_bag.svg";
 import beans from "/assets/icons/coffee_beans.svg";
 import tshirt from "/assets/icons/t-shirt.svg";
