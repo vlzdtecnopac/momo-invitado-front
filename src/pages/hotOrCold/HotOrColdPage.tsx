@@ -9,7 +9,7 @@ function HotOrColdPage() {
   const navigate = useNavigate();
 
   const handleClick = (option: string) => {
-    console.log(location.pathname);
+  
     if (location.pathname === "/hot-or-cold/cafe") {
       navigate(`/products/Cafe/${option}`);
     }
