@@ -231,6 +231,7 @@
         font-size: 22px;
         font-weight: 700;
         margin-bottom: 20px;
+        width: 100%;
       }
 
       .pay-method {
@@ -258,6 +259,11 @@
 
             &:hover {
               cursor: pointer;
+              background: $orange;
+              color: $white;
+            }
+
+            &.active {
               background: $orange;
               color: $white;
             }
@@ -340,7 +346,7 @@
         font-weight: 700;
         text-align: center;
         color: $cream;
-        margin-top: 52px;
+        margin-top: 30px;
 
         &:hover {
           cursor: pointer;
@@ -449,7 +455,7 @@
 
       .amount {
         text-align: right;
-        width: 40px;
+        width: 43px;
 
         @media screen and (max-width: 1024px) {
           width: 33px;

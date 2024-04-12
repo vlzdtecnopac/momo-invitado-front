@@ -13,13 +13,36 @@ import { useShoppingStore } from "../../store/shopping.store";
 
 function MethodsCard() {
   const { translate } = useLanguage();
+  const [isActiveCredit, setIsActiveCredit] = useState<boolean>(false);
+  const [isActiveDebit, setIsActiveDebit] = useState<boolean>(false);
+
+  const handleCreditClick = () => {
+    setIsActiveCredit(true);
+    setIsActiveDebit(false);
+  };
+  const handleDebitClick = () => {
+    setIsActiveCredit(false);
+    setIsActiveDebit(true);
+  };
+
   return (
     <>
       <hr />
       <div className="card-type">
-        <button className="type">{translate("credit")}</button>
-        <button className="type">{translate("debit")}</button>
+        <button
+          onClick={handleCreditClick}
+          className={`type ${isActiveCredit ? "active" : ""}`}
+        >
+          {translate("credit")}
+        </button>
+        <button
+          onClick={handleDebitClick}
+          className={`type ${isActiveDebit ? "active" : ""}`}
+        >
+          {translate("debit")}
+        </button>
       </div>
+      <hr />
     </>
   );
 }
@@ -193,9 +216,14 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
   const { translate } = useLanguage();
 
   const [stateCard, setStateCard] = useState<boolean>(false);
-
-  const optionHandlerCard = (state: boolean) => {
+  const [stateCash, setStateCash] = useState<boolean>(false);
+  const HandlerCardClick = (state: boolean) => {
     setStateCard(!state);
+    setStateCash(false);
+  };
+  const HandlerCashClick = (state: boolean) => {
+    setStateCash(!state);
+    setStateCard(false);
   };
 
   return (
@@ -215,16 +243,18 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
       <h2 className="text">{translate("selectPayMethod")}</h2>
       <div className="pay-method">
         <button
-          onClick={() => optionHandlerCard(stateCard)}
+          onClick={() => HandlerCardClick(stateCard)}
           className={`card ${stateCard && "active"}`}
         >
           <i className={`card-icon ${stateCard && "active"}`}></i>
           {translate("card")}
         </button>
         {stateCard && <MethodsCard />}
-        <hr />
-        <button className={`cash`}>
-          <i className={`cash-icon`}></i>
+        <button
+          onClick={() => HandlerCashClick(stateCash)}
+          className={`cash ${stateCash && "active"}`}
+        >
+          <i className={`cash-icon ${stateCash && "active"}`}></i>
           {translate("cash")}
         </button>
       </div>
