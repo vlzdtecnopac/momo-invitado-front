@@ -30,6 +30,7 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
     if (data.extra) {
       try {
         const extraOptions = JSON.parse(data.extra);
+        console.log(extraOptions);
         return (
           <p>
             {Object.keys(extraOptions.temperature).length > 0
@@ -40,6 +41,9 @@ const OrderResumeCard: React.FC<OrderResumeCardProp> = ({ data }) => {
               : ""}
             {Object.keys(extraOptions.sugar).length > 0
               ? `${extraOptions.sugar.name} | `
+              : ""}
+            {Object.keys(extraOptions.coffee_type).length > 0
+              ? `${extraOptions.coffee_type.name} | `
               : ""}
             {Object.keys(extraOptions.milk).length > 0
               ? `${extraOptions.milk.name} | `
