@@ -29,6 +29,7 @@
       max-height: 450px;
       overflow-y: auto;
       overflow-x: hidden;
+
       @media (min-width: 1050px) {
         max-height: 520px;
       }
@@ -59,6 +60,7 @@
         font-family: "Red Hat Display";
         gap: 10px;
         margin: 80px 0px 0px 0px;
+
         @media (max-width: 1375px) {
           margin: 40px 0px 0px 0px;
         }
@@ -92,6 +94,7 @@
           &.active {
             color: $white;
             background-color: $orange;
+
             .dolar-icon {
               background-image: url("/assets/icons/dollar-circle.svg");
               right: 1px;
@@ -147,6 +150,7 @@
       &.active {
         color: $white;
         background-color: $orange;
+
         .dolar-icon {
           background-image: url("/assets/icons/dollar-circle.svg");
           right: 1px;
@@ -227,6 +231,7 @@
         font-size: 22px;
         font-weight: 700;
         margin-bottom: 20px;
+        width: 100%;
       }
 
       .pay-method {
@@ -255,8 +260,20 @@
             &:hover {
               cursor: pointer;
               background: $orange;
-              color: $cream;
+              color: $white;
             }
+
+            &.active {
+              background: $orange;
+              color: $white;
+            }
+          }
+        }
+
+        .card {
+          &.active {
+            background: $orange;
+            color: $white;
           }
         }
 
@@ -276,7 +293,8 @@
           flex-direction: column;
           margin: auto;
 
-          &:hover {
+          &:hover,
+          &.active {
             cursor: pointer;
             background: $orange;
             color: $cream;
@@ -284,6 +302,10 @@
             .card-icon,
             .cash-icon {
               background: $cream;
+
+              &.active {
+                background: $cream;
+              }
             }
           }
         }
@@ -324,7 +346,7 @@
         font-weight: 700;
         text-align: center;
         color: $cream;
-        margin-top: 52px;
+        margin-top: 30px;
 
         &:hover {
           cursor: pointer;
@@ -433,7 +455,7 @@
 
       .amount {
         text-align: right;
-        width: 40px;
+        width: 43px;
 
         @media screen and (max-width: 1024px) {
           width: 33px;
