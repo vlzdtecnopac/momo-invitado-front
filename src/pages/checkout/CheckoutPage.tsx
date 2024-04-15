@@ -11,7 +11,10 @@ import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
 import AmountTip from "../../components/Modal/AmountTip/AmountTip";
 import { useShoppingStore } from "../../store/shopping.store";
 
-function MethodsCard() {
+
+const MethodsCard: React.FC<{
+  onClick: (e: boolean) => boolean
+}> = ({onClick}) => {
   const { translate } = useLanguage();
   const [isActiveCredit, setIsActiveCredit] = useState<boolean>(false);
   const [isActiveDebit, setIsActiveDebit] = useState<boolean>(false);
@@ -19,10 +22,12 @@ function MethodsCard() {
   const handleCreditClick = () => {
     setIsActiveCredit(true);
     setIsActiveDebit(false);
+    onClick(false);
   };
   const handleDebitClick = () => {
     setIsActiveCredit(false);
     setIsActiveDebit(true);
+    onClick(false);
   };
 
   return (
@@ -212,7 +217,10 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
   );
 };
 
-const MethodPayment: React.FC<any> = ({ onCancel }) => {
+const MethodPayment: React.FC<{
+  onCancel: Function,
+  onClick: (e: boolean) => any
+}> = ({ onCancel, onClick }) => {
   const { translate } = useLanguage();
 
   const [stateCard, setStateCard] = useState<boolean>(false);
@@ -220,10 +228,13 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
   const HandlerCardClick = (state: boolean) => {
     setStateCard(!state);
     setStateCash(false);
+    onClick(true);
   };
+
   const HandlerCashClick = (state: boolean) => {
     setStateCash(!state);
     setStateCard(false);
+    onClick(false);
   };
 
   return (
@@ -249,7 +260,7 @@ const MethodPayment: React.FC<any> = ({ onCancel }) => {
           <i className={`card-icon ${stateCard && "active"}`}></i>
           {translate("card")}
         </button>
-        {stateCard && <MethodsCard />}
+        {stateCard && <MethodsCard onClick={(e)=>onClick(e)} />}
         <button
           onClick={() => HandlerCashClick(stateCash)}
           className={`cash ${stateCash && "active"}`}
@@ -274,6 +285,7 @@ function CheckoutPage() {
     db.product.orderBy("name_product").toArray()
   );
   const [tipMount, setTipMount] = useState<boolean>(false);
+  const [getEnable, setEnable] = useState<boolean>(true);
   const { translate } = useLanguage();
 
   function countProducts() {
@@ -299,7 +311,7 @@ function CheckoutPage() {
             <div className="col-5">
               <section className="tip">
                 {tipMount ? (
-                  <MethodPayment onCancel={() => setTipMount(false)} />
+                  <MethodPayment onCancel={() => setTipMount(false)} onClick={(e)=>setEnable(e)} />
                 ) : (
                   <TipMomoClient onChange={(e: boolean) => setTipMount(e)} />
                 )}
@@ -363,7 +375,7 @@ function CheckoutPage() {
                     </tbody>
                   </table>
                   <button
-                    disabled={true}
+                    disabled={getEnable}
                     className="btn-payment"
                   >
                     {translate("pay")}
