@@ -300,6 +300,10 @@ function CheckoutPage() {
     return Number(subTotal()) + tip.tip;
   }
 
+  const onHandlerPayment = () => {
+    alert("Realizar Nuevo pedido")
+  }
+
   return (
     <>
       <Layout>
@@ -375,6 +379,7 @@ function CheckoutPage() {
                     </tbody>
                   </table>
                   <button
+                    onClick={()=>onHandlerPayment()}
                     disabled={getEnable}
                     className="btn-payment"
                   >
