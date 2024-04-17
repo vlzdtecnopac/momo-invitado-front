@@ -6,10 +6,10 @@ import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Layout from "../../includes/layout/Layout";
 import barista from "/assets/barista.png";
 import { db } from "../../helpers/dexie_db.helper";
-import "./CheckoutPage.scss";
 import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
 import AmountTip from "../../components/Modal/AmountTip/AmountTip";
 import { useShoppingStore } from "../../store/shopping.store";
+import "./CheckoutPage.scss";
 
 function MethodsCard() {
   const { translate } = useLanguage();
@@ -334,14 +334,16 @@ function CheckoutPage() {
                 </div> */}
                 <div></div>
                 <div className="total">
-                  <table>
+                  <table className="total-table">
                     <tbody>
                       <tr>
-                        <td>Subtotal ({countProducts()} productos)</td>
+                        <td className="sub">
+                          Subtotal ({countProducts()} productos)
+                        </td>
                         <td className="amount">$ {subTotal()}</td>
                       </tr>
                       <tr>
-                        <td>Propina</td>
+                        <td className="tips">Propina</td>
                         <td className="amount">$ {tip.tip}</td>
                       </tr>
                       {/* <tr>

@@ -46,7 +46,7 @@
         width: 30px;
         height: 30px;
 
-        .cart-items{
+        .cart-items {
             font-size: 14px;
             position: relative;
             background-color: $orange_dark;
@@ -85,6 +85,7 @@
     bottom: 0px;
     background: #FFFFFF;
     padding: 0px 15px 0px 10px;
+    border-radius: 8px;
 
     .left {
         .container-list-product {
@@ -94,7 +95,7 @@
             width: 340px;
             scrollbar-width: none;
 
-            @media(max-width: 1090px){
+            @media(max-width: 1090px) {
                 height: 55vh;
             }
         }

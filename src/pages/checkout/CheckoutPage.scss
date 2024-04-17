@@ -452,10 +452,28 @@
     .total {
       display: flex;
       flex-direction: column;
+      font-weight: 500;
+
+      .total-table {
+        tr {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 15px;
+        }
+      }
+
+      .sub,
+      .tips {
+        font-size: 16px;
+        font-weight: 500;
+      }
 
       .amount {
         text-align: right;
         width: 43px;
+        font-size: 16px;
+
+        font-weight: 700;
 
         @media screen and (max-width: 1024px) {
           width: 33px;
@@ -502,6 +520,9 @@
 
       .sub-total {
         width: 240px;
+        font-weight: 700;
+        font-size: 16px;
+        padding-top: 20px;
       }
 
       .btn-payment {
@@ -512,19 +533,17 @@
         margin: 10px auto;
         border-radius: 10px;
         font-size: 18px;
+        font-weight: 700;
+        font-family: " Red Hat Display", sans-serif;
         border: 0px;
         width: 80%;
         height: 47px;
-        justify-content: center;
+        cursor: pointer;
 
         &:disabled {
-          opacity: 0.7;
+          background: #C4C4C5;
         }
 
-        &:hover {
-          background: #e34317;
-          cursor: pointer;
-        }
       }
     }
   }
