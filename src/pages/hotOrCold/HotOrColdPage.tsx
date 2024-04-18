@@ -17,7 +17,7 @@ function HotOrColdPage() {
       navigate(`/products/Te/${option}`);
     }
     if (location.pathname === "/hot-or-cold/cafe%20con%20te") {
-      navigate(`/products/Café con Té/${option}`);
+      navigate(`/products/Cafe con Te/${option}`);
     }
     if (location.pathname === "/hot-or-cold/especiales%20MOMO") {
       navigate(`/products/MOMO%20Specials/${option}`);

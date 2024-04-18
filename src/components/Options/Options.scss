@@ -11,8 +11,8 @@
 
   .options {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
-
 
     .option {
       width: 120px;

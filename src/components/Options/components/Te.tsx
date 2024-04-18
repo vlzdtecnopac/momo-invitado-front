@@ -43,14 +43,14 @@ const Te: React.FC<TeProps> = ({ optionHandler }) => {
             <div ref={myRef} className="content-detail-page">
               {Object.keys(options).map((key: string, i:number) => (
                 <div id={key} key={key}>
-                  {key == "Extra  Shot" || key == "Tapa" || key == "Salsas" ? (
+                  {key == "Extra  Shot de Café" || key == "Tapa" || key == "Salsas" ? (
                     <>
                       <OptionsList
                         optionHandler={(e: any) => optionHandler(e)}
                         listOptions={options[key]}
                         iconOptions={(() => {
                           switch (key) {
-                            case "Extra  Shot":
+                            case "Extra  Shot de Café":
                               return extra;
                             case "Tapa":
                               return lid;
@@ -62,7 +62,7 @@ const Te: React.FC<TeProps> = ({ optionHandler }) => {
                         })()}
                         attr={(() => {
                           switch (key) {
-                            case "Extra  Shot":
+                            case "Extra  Shot de Café":
                               return "extra_coffee";
                             case "Tapa":
                               return "lid";
@@ -74,7 +74,7 @@ const Te: React.FC<TeProps> = ({ optionHandler }) => {
                         })()}
                         multiple={(() => {
                           switch (key) {
-                            case "Extra  Shot":
+                            case "Extra  Shot de Café":
                               return true;
                             case "Tapa":
                               return false;

@@ -8,10 +8,10 @@ import { LoaderPage } from "../../loader/Loader";
 import axiosInstance from "../../helpers/axios.helper";
 import CustomButton from "../../components/CustomButton/CustomButton";
 
-import "swiper/css/pagination";
-import "swiper/css";
 import banner from "/assets/Banner.jpg";
+import "swiper/css";
 import "./ProductCategoryPage.scss";
+import "swiper/css/pagination";
 
 function ProductsPage() {
   const { translate } = useLanguage();
