@@ -45,14 +45,14 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({ optionHandler }) => {
             >
             {Object.keys(options).map((key: string, i: number) => (
                 <div id={key} key={key}>
-                  {key == "Extra  Shot" || key == "Tapa" || key == "Salsas" ? (
+                  {key == "Extra  Shot de Café" || key == "Tapa" || key == "Salsas" ? (
                     <>
                       <OptionsList
                         optionHandler={(e: any) => optionHandler(e)}
                         listOptions={options[key]}
                         iconOptions={(() => {
                           switch (key) {
-                            case "Extra  Shot":
+                            case "Extra  Shot de Café":
                               return extra;
                             case "Tapa":
                               return lid;
@@ -64,7 +64,7 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({ optionHandler }) => {
                         })()}
                         attr={(() => {
                           switch (key) {
-                            case "Extra  Shot":
+                            case "Extra  Shot de Café":
                               return "extra_coffee";
                             case "Tapa":
                               return "lid";
@@ -76,7 +76,7 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({ optionHandler }) => {
                         })()}
                         multiple={(() => {
                           switch (key) {
-                            case "Extra  Shot":
+                            case "Extra  Shot de Café":
                               return true;
                             case "Tapa":
                               return false;

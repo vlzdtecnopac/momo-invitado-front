@@ -46,14 +46,14 @@ const Alimentos: React.FC<AlimentosProps> = ({ optionHandler }) => {
             >
               {Object.keys(options).length > 0 ? (Object.keys(options).map((key: string, i: number) => (
                 <div id={key} key={key}>
-                  {key == "Extra  Shot" || key == "Tapa" || key == "Salsas" ? (
+                  {key == "Extra  Shot de Café" || key == "Tapa" || key == "Salsas" ? (
                     <>
                       <OptionsList
                         optionHandler={(e: any) => optionHandler(e)}
                         listOptions={options[key]}
                         iconOptions={(() => {
                           switch (key) {
-                            case "Extra  Shot":
+                            case "Extra  Shot de Café":
                               return extra;
                             case "Tapa":
                               return lid;
@@ -65,7 +65,7 @@ const Alimentos: React.FC<AlimentosProps> = ({ optionHandler }) => {
                         })()}
                         attr={(() => {
                           switch (key) {
-                            case "Extra  Shot":
+                            case "Extra  Shot de Café":
                               return "extra_coffee";
                             case "Tapa":
                               return "lid";
@@ -77,7 +77,7 @@ const Alimentos: React.FC<AlimentosProps> = ({ optionHandler }) => {
                         })()}
                         multiple={(() => {
                           switch (key) {
-                            case "Extra  Shot":
+                            case "Extra  Shot de Café":
                               return true;
                             case "Tapa":
                               return false;
