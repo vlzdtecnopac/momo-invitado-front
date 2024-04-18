@@ -110,7 +110,7 @@ const OtherDrinks: React.FC<OtherDrinks> = ({ optionHandler }) => {
                               return glass;
                             case "Tipo de Leche":
                               return milk;
-                            case "Temperatura":
+                            case "Temperatura de bebidas":
                               return temp;
                             case "Tipo de Café":
                               return beans;
@@ -128,7 +128,7 @@ const OtherDrinks: React.FC<OtherDrinks> = ({ optionHandler }) => {
                               return "size";
                             case "Tipo de Leche":
                               return "milk";
-                            case "Temperatura":
+                            case "Temperatura de bebidas":
                               return "temperature";
                             case "Tipo de Café":
                               return "coffee_type";
