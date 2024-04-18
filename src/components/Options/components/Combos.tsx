@@ -88,7 +88,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                         defaultValue={(() => {
                           switch (key) {
                             case "Tapa":
-                              return {name: "Sin Tapa", price: 0};
+                              return {name: "Sin tapa", price: 0};
                             default:
                               return {name: "", price: 0};
                           }
@@ -134,7 +134,7 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                         defaultValue={(() => {
                           switch (key) {
                             case "Azucar":
-                              return {name: "Original", price: 0};
+                              return {name: "Blanca", price: 0};
                             case "Tamaño":
                               return {name: "Chico", price: 0};
                             case "Tipo de Leche":

@@ -90,7 +90,7 @@ const Alimentos: React.FC<AlimentosProps> = ({ optionHandler }) => {
                         defaultValue={(() => {
                           switch (key) {
                             case "Tapa":
-                              return {name: "Sin Tapa", price: 0};
+                              return {name: "Sin tapa", price: 0};
                             default:
                               return {name: "", price: 0};
                           }
