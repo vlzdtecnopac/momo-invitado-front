@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useLanguage } from "../../context/Langi18nContext";
+import { useShoppingStore } from "../../store/shopping.store";
+import axiosInstance from "../../helpers/axios.helper";
+import Layout from "../../includes/layout/Layout";
+import { db } from "../../helpers/dexie_db.helper";
+
 import ProductCheckoutCard from "../../components/productCheckoutCard/ProductCheckoutCard";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
-import Layout from "../../includes/layout/Layout";
-import barista from "/assets/barista.png";
-import { db } from "../../helpers/dexie_db.helper";
-import "./CheckoutPage.scss";
 import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
 import AmountTip from "../../components/Modal/AmountTip/AmountTip";
-import { useShoppingStore } from "../../store/shopping.store";
 
+import barista from "/assets/barista.png";
+
+import "./CheckoutPage.scss";
 
 const MethodsCard: React.FC<{
   onClick: (e: boolean) => boolean
@@ -280,6 +284,7 @@ const MethodPayment: React.FC<{
 };
 
 function CheckoutPage() {
+  const navigate = useNavigate();
   const { tip } = useShoppingStore();
   const productCart = useLiveQuery(() =>
     db.product.orderBy("name_product").toArray()
@@ -300,8 +305,24 @@ function CheckoutPage() {
     return Number(subTotal()) + tip.tip;
   }
 
-  const onHandlerPayment = () => {
-    alert("Realizar Nuevo pedido")
+  const onHandlerPayment = async () => {
+    let products: any = [];
+
+    productCart?.map((item)=> {
+      item.extra = JSON.parse(item.extra);
+      products.push(item);
+    })
+
+    if(products.length > 0){
+      let data = {
+        "kiosko_id": localStorage.getItem("kiosko-momo") ,
+        "state": "initial",
+        "product": JSON.stringify(products),
+      };
+      await axiosInstance.post(`/pedido/create`, data);
+      db.product.clear();
+      navigate("../order-here")
+    }
   }
 
   return (
