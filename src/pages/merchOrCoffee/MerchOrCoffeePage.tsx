@@ -20,7 +20,7 @@ function HotOrColdPage() {
                       <span className="text">Merch</span>
                     </button>
                   </Link>
-                  <Link to="../products/Tienda/Coffe">
+                  <Link to="../products/Tienda/Cafe">
                     <button className="custom-bt coffee-bean">
                       <span className="icon"></span>
                       <span className="text">{translate("bulkCoffee")}</span>
