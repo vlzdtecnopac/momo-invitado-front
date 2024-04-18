@@ -63,7 +63,7 @@ function ProductsPage() {
                       navigate(`../hot-or-cold/te`);
                       return;
                     }
-                    if (category.name_category == "Café con Té") {
+                    if (category.name_category == "Cafe con Te") {
                       navigate(`../hot-or-cold/cafe con te`);
                       return;
                     }

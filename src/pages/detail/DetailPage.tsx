@@ -209,7 +209,7 @@ function DrinkDetailPage() {
                   {product.categorys == "Te" && (
                     <Te optionHandler={(e) => optionHandler(e)} />
                   )}
-                  {product.categorys == "Café con Té" && (
+                  {product.categorys == "Cafe con Te" && (
                     <CoffeWithTe optionHandler={(e) => optionHandler(e)} />
                   )}
                   {product.categorys == "MOMO Specials" && (
