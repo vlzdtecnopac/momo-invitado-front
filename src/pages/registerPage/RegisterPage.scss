@@ -1,6 +1,6 @@
 @import "../../index.scss";
 
-.register_page_momo {
+.register_page_momo_client {
     background: $dark-blue;
     display: flex;
     height: 100vh;
@@ -71,16 +71,13 @@
         }
     }
 
-    .register-options {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    .register-options-client {
+        display: block;
 
         .custom-btn-register {
-            display: flex;
-            flex-direction: column;
+            display: block;
+            margin: 10px auto;
             width: 430px;
-            margin: auto;
             align-items: center;
             padding: 10px 15px;
             border: 2px solid $cream;
@@ -90,8 +87,11 @@
             text-align: center;
 
             .icon {
+                position: relative;
                 width: 40px;
                 height: 40px;
+                display: block;
+                margin: auto;
             }
 
             .text {

@@ -141,7 +141,7 @@ const Te: React.FC<TeProps> = ({ optionHandler }) => {
                             case "Tamaño":
                               return { name: "Chico", price: 0 };
                             case "Tipo de Leche":
-                              return { name: "Deslactosada", price: 0 };
+                              return { name: "Entera", price: 0 };
                             default:
                               return { name: "", price: 0 };
                           }

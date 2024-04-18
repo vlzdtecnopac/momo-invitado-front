@@ -144,7 +144,7 @@ const Alimentos: React.FC<AlimentosProps> = ({ optionHandler }) => {
                             case "Tamaño":
                               return {name: "Chico", price: 0};
                             case "Tipo de Leche":
-                              return {name: "Deslactosada", price: 5};
+                              return {name: "Entera", price: 0};
                             default:
                               return {name: "", price: 0};
                           }

@@ -17,7 +17,7 @@ function RegisterPage() {
 
   return (
     <LayoutBlank>
-      <div className="register_page_momo">
+      <div className="register_page_momo_client">
         <div className="left">
           <motion.img
             className="image"
@@ -64,7 +64,7 @@ function RegisterPage() {
                 <h2 className="h2">{`${translate("welcome")}`}</h2>
                 <p className="parrafo-subtitulo">{translate("registerSub")}</p>
               </motion.div>
-              <div className="register-options">
+              <div className="register-options-client">
                 <Link to="../login-client">
                   <button className="custom-btn-register registered">
                     <span className="icon"></span>
