@@ -103,7 +103,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
           </div>
         </div>
       </div>
-      <div className="grid-2 grid-noGutter-noBottom tip-options">
+      <div className="grid-2 tip-options">
         <div className="col">
           <button
             onClick={() => onHandlerTip(0)}
