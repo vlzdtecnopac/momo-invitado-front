@@ -75,11 +75,11 @@ const Coffe: React.FC<CoffeProps> = ({ optionHandler }) => {
                         multiple={(() => {
                           switch (key) {
                             case "Extra  Shot de Café":
-                              return true;
+                              return false;
                             case "Tapa":
                               return false;
                             case "Salsas":
-                              return true;
+                              return false;
                             default:
                               return false;
                           }

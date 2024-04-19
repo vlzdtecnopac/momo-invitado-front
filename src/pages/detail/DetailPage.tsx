@@ -144,14 +144,10 @@ function DrinkDetailPage() {
     );
 
     if (sauce.length > 0) {
-      console.log(
-        "Price attribute Sauce exists. Price value:",
-        dataProductOption.sauce
-      );
-
-      let resp = sauce.reduce((total) => total, 0);
+      let resp = sauce.reduce((total, item:any) =>  total + parseFloat(item.price), 0)
       total += resp;
     }
+
     setSubtotal(total);
   };
 
