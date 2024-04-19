@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useShoppingStore } from "../../store/shopping.store";
 import { useLanguage } from "../../context/Langi18nContext";
 import { LoaderPage } from "../../includes/loader/Loader";
 import axiosInstance from "../../helpers/axios.helper";
@@ -8,9 +9,8 @@ import {
   useProductOptionStore,
 } from "../../store/productOption.store";
 import Cart from "../Cart/Cart";
-import "./CategoryNav.scss";
 import { db } from "../../helpers/dexie_db.helper";
-import { useShoppingStore } from "../../store/shopping.store";
+import "./CategoryNav.scss";
 
 const CategoryNav: React.FC<{ cart: boolean }> = ({ cart }) => {
   const setDataProductOption = useProductOptionStore(

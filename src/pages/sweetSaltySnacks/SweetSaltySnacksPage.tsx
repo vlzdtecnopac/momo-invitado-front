@@ -14,19 +14,19 @@ function HotOrColdPage() {
             <div className="center-container">
               <div className="container">
                 <div className="options">
-                  <Link to="../products/Alimentos">
+                  <Link to="../products/Alimentos/Dulce">
                     <button className="custom-btn sweet">
                       <span className="icon"></span>
                       <span className="text">{translate("sweet")}</span>
                     </button>
                   </Link>
-                  <Link to="../products/Alimentos">
+                  <Link to="../products/Alimentos/Salado">
                     <button className="custom-btn salty">
                       <span className="icon"></span>
                       <span className="text">{translate("salty")}</span>
                     </button>
                   </Link>
-                  <Link to="../products/Alimentos">
+                  <Link to="../products/Alimentos/Snacks">
                     <button className="custom-btn snacks">
                       <span className="icon"></span>
                       <span className="text">Snacks</span>

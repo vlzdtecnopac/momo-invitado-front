@@ -93,7 +93,7 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
                           switch (key) {
                             case "Tamaño Merch":
                               return tshirt;
-                            case "Tamaño Granel":
+                            case "Tamaño bolsa de cafe":
                                 return coffeeBag;
                             case "Tipo de Café":
                                 return beans;
@@ -107,7 +107,7 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
                           switch (key) {
                             case "Tamaño Merch":
                               return "size";
-                            case "Tamaño Granel":
+                            case "Tamaño bolsa de cafe":
                               return "size";
                             case "Tipo de Café":
                                 return "coffee_type";
@@ -119,7 +119,7 @@ const StoreShopping: React.FC<StoreShoppingProps> = ({
                           switch (key) {
                             case "Tamaño Merch":
                               return {name: "M", price: 0};
-                            case "Tamaño Granel":
+                            case "Tamaño bolsa de cafe":
                                 return {name: "250 gr", price: 0};
                             default:
                               return {name: "", price: 0};

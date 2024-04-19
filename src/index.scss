@@ -62,6 +62,10 @@ $green: #79BF80;
 $yellow: #F2B45D;
 $grey: #F4F4F4;
 
+body{
+    background: $light-blue;
+}
+
 .loader {
     margin: 0px 40px 0px 40px;
     width: 15px;

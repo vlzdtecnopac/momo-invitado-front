@@ -21,7 +21,12 @@ function ProductsPage() {
   }, [category]);
 
   const getProductsToteat = async () => {
-    let response = await axiosInstance.get(`/product/?categorys=${category}`);
+    let response;
+    if(type){
+      response = await axiosInstance.get(`/product/?categorys=${category}&subcategory=${type}`);
+    }else{
+      response = await axiosInstance.get(`/product/?categorys=${category}`);
+    }
     setProducts(response.data);
   };
 

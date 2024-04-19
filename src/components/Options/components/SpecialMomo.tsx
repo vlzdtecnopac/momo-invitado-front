@@ -89,7 +89,7 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({ optionHandler }) => {
                         defaultValue={(() => {
                           switch (key) {
                             case "Tapa":
-                              return {name: "Sin Tapa", price: 0};
+                              return {name: "Sin tapa", price: 0};
                             default:
                               return {name: "", price: 0};
                           }
@@ -143,7 +143,7 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({ optionHandler }) => {
                             case "Tamaño":
                               return {name: "Chico", price: 0};
                             case "Tipo de Leche":
-                              return {name: "Deslactosada", price: 5};
+                              return {name: "Entera", price: 0};
                             default:
                               return {name: "", price: 0};
                           }
