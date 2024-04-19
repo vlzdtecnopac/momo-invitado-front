@@ -81,6 +81,7 @@ function LoginForm() {
             >
               <div className="form-group">
                 <input
+                  autoComplete="off"
                   placeholder="Correo Electronico"
                   type="email"
                   id="email"
@@ -99,6 +100,7 @@ function LoginForm() {
               })()}
               <div className="form-group">
                 <input
+                  autoComplete="off"
                   placeholder="Contraseña"
                   type="password"
                   id="password"
