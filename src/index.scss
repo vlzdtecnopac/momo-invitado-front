@@ -62,7 +62,7 @@ $green: #79BF80;
 $yellow: #F2B45D;
 $grey: #F4F4F4;
 
-body{
+body {
     background: $light-blue;
 }
 
@@ -248,8 +248,8 @@ input[type="checkbox"]:checked+.custom-checkbox::after {
 
 .swiper-pagination-bullet-active {
     background: $orange !important;
-    width: 40px;
-    border-radius: 20%;
+    width: 40px !important;
+    border-radius: 20% !important;
 }
 
 .swiper-pagination-bullet {

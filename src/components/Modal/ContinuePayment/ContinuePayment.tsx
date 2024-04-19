@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import pay from "/assets/icons/payment-icon.svg";
 import { useLanguage } from "../../../context/Langi18nContext";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./ContinuePayment.scss";
 
 interface ModalProps {
   actionKey: React.Key;
+  targetPath: string; // Prop to specify the redirection path
 }
 
-const ContinuePayment: React.FC<ModalProps> = ({ actionKey }) => {
+const ContinuePayment: React.FC<ModalProps> = ({ actionKey, targetPath }) => {
   const { translate } = useLanguage();
+  const navigate = useNavigate(); // Utilize useNavigate hook
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      navigate(targetPath); // Redirect using navigate
+    }, 3000); // Set delay to 3 seconds
+
+    return () => clearTimeout(timeoutId); // Cleanup on unmount
+  }, [targetPath, navigate]); // Add dependencies for clarity
 
   return (
     <div className="modal-container">
@@ -38,4 +49,5 @@ const ContinuePayment: React.FC<ModalProps> = ({ actionKey }) => {
     </div>
   );
 };
+
 export default ContinuePayment;

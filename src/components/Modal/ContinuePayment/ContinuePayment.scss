@@ -1,3 +1,5 @@
+@import "../../../index.scss";
+
 .modal-container {
     .shadow-effect {
         position: fixed;
@@ -22,7 +24,7 @@
         bottom: 0px;
         z-index: 999;
 
-        @media(max-width: 1050px){
+        @media(max-width: 1050px) {
             width: 90%;
         }
 
@@ -52,7 +54,8 @@
                 margin: 0 auto;
                 width: 194px;
                 text-align: center;
-                // height: 42px;
+                padding-bottom: 0;
+                color: $black;
                 font-weight: 600;
                 font-size: 16px;
                 font-family: "Red Hat Display", "serif";
