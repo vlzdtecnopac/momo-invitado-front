@@ -1,4 +1,4 @@
-<img style="float: right; width: 200" src="/public/assets/coffee-momo.png?raw=true)">
+<img style="float: right;" width="200" src="/public/assets/coffee-momo.png?raw=true)">
 # Momo Coffee KDS Fronted
 
 Momo Coffee Invitado Fronted
