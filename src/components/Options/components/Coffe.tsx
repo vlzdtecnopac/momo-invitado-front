@@ -140,6 +140,8 @@ const Coffe: React.FC<CoffeProps> = ({ optionHandler }) => {
                               return {name: "Blanca", price: 0};
                             case "Tamaño":
                               return {name: "Chico", price: 0};
+                            case "Tipo de Leche":
+                              return { name: "Entera", price: 0 };
                             default:
                               return {name: "", price: 0};
                           }

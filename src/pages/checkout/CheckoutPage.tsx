@@ -17,8 +17,8 @@ import barista from "/assets/barista.png";
 import "./CheckoutPage.scss";
 
 const MethodsCard: React.FC<{
-  onClick: (e: boolean) => boolean
-}> = ({onClick}) => {
+  onClick: (e: boolean) => boolean;
+}> = ({ onClick }) => {
   const { translate } = useLanguage();
   const [isActiveCredit, setIsActiveCredit] = useState<boolean>(false);
   const [isActiveDebit, setIsActiveDebit] = useState<boolean>(false);
@@ -54,7 +54,7 @@ const MethodsCard: React.FC<{
       <hr />
     </>
   );
-}
+};
 
 const TipMomoClient: React.FC<any> = ({ onChange }) => {
   const { tip, setStoreTip } = useShoppingStore();
@@ -100,10 +100,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
       ) : null}
       <div className="grid-2">
         <div className="col-5">
-          <img
-            alt="Barista"
-            src={barista}
-          />
+          <img alt="Barista" src={barista} />
         </div>
         <div className="col-7 tip-text">
           <h2>{translate("baristaTipText")}</h2>
@@ -222,13 +219,15 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
 };
 
 const MethodPayment: React.FC<{
-  onCancel: Function,
-  onClick: (e: boolean) => any
-}> = ({ onCancel, onClick }) => {
+  onCancel: Function;
+  onClick: (e: boolean) => any;
+  setInvitado: (e: string) => any;
+}> = ({ onCancel, onClick, setInvitado }) => {
   const { translate } = useLanguage();
 
   const [stateCard, setStateCard] = useState<boolean>(false);
   const [stateCash, setStateCash] = useState<boolean>(false);
+
   const HandlerCardClick = (state: boolean) => {
     setStateCard(!state);
     setStateCash(false);
@@ -251,6 +250,7 @@ const MethodPayment: React.FC<{
             id="name"
             name="name"
             className="client-name"
+            onChange={(e) => setInvitado(e.target.value)}
           />
           <i className="icon-user"></i>
         </div>
@@ -264,7 +264,7 @@ const MethodPayment: React.FC<{
           <i className={`card-icon ${stateCard && "active"}`}></i>
           {translate("card")}
         </button>
-        {stateCard && <MethodsCard onClick={(e)=>onClick(e)} />}
+        {stateCard && <MethodsCard onClick={(e) => onClick(e)} />}
         <button
           onClick={() => HandlerCashClick(stateCash)}
           className={`cash ${stateCash && "active"}`}
@@ -273,10 +273,7 @@ const MethodPayment: React.FC<{
           {translate("cash")}
         </button>
       </div>
-      <button
-        onClick={() => onCancel()}
-        className="cancel"
-      >
+      <button onClick={() => onCancel()} className="cancel">
         {translate("cancel")}
       </button>
     </div>
@@ -291,6 +288,7 @@ function CheckoutPage() {
   );
   const [tipMount, setTipMount] = useState<boolean>(false);
   const [getEnable, setEnable] = useState<boolean>(true);
+  const [getInvitado, setInvitado] = useState<string>("");
   const { translate } = useLanguage();
 
   function countProducts() {
@@ -308,22 +306,27 @@ function CheckoutPage() {
   const onHandlerPayment = async () => {
     let products: any = [];
 
-    productCart?.map((item)=> {
+    productCart?.map((item) => {
       item.extra = JSON.parse(item.extra);
       products.push(item);
-    })
+    });
 
-    if(products.length > 0){
-      let data = {
-        "kiosko_id": localStorage.getItem("kiosko-momo") ,
-        "state": "initial",
-        "product": JSON.stringify(products),
-      };
-      await axiosInstance.post(`/pedido/create`, data);
-      db.product.clear();
-      navigate("../order-here")
+    if (products.length > 0) {
+      try {
+        let data = {
+          kiosko_id: localStorage.getItem("kiosko-momo"),
+          name_client: getInvitado,
+          state: "initial",
+          product: JSON.stringify(products),
+        };
+        await axiosInstance.post(`/pedido/create`, data);
+        db.product.clear();
+        navigate("../order-here");
+      } catch (e) {
+        console.log(e);
+      }
     }
-  }
+  };
 
   return (
     <>
@@ -336,7 +339,11 @@ function CheckoutPage() {
             <div className="col-5">
               <section className="tip">
                 {tipMount ? (
-                  <MethodPayment onCancel={() => setTipMount(false)} onClick={(e)=>setEnable(e)} />
+                  <MethodPayment
+                    setInvitado={(event: string) => setInvitado(event)}
+                    onCancel={() => setTipMount(false)}
+                    onClick={(e) => setEnable(e)}
+                  />
                 ) : (
                   <TipMomoClient onChange={(e: boolean) => setTipMount(e)} />
                 )}
@@ -345,10 +352,7 @@ function CheckoutPage() {
             <div className="col-4">
               <section className="products">
                 {productCart?.map((item) => (
-                  <div
-                    className="product"
-                    key={item.id}
-                  >
+                  <div className="product" key={item.id}>
                     <ProductCheckoutCard data={item} />
                   </div>
                 ))}
@@ -400,7 +404,7 @@ function CheckoutPage() {
                     </tbody>
                   </table>
                   <button
-                    onClick={()=>onHandlerPayment()}
+                    onClick={() => onHandlerPayment()}
                     disabled={getEnable}
                     className="btn-payment"
                   >
