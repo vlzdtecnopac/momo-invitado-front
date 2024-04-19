@@ -307,7 +307,13 @@ function CheckoutPage() {
     let products: any = [];
 
     productCart?.map((item) => {
-      item.extra = JSON.parse(item.extra);
+      if (typeof item.extra === "string") {
+        try {
+          item.extra = JSON.parse(item.extra);
+        } catch (error) {
+          console.error("Error parsing JSON:", error);
+        }
+      }
       products.push(item);
     });
 
