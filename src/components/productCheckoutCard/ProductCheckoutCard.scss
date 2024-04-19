@@ -40,7 +40,6 @@
             position: relative;
             padding-top: 10px;
             width: 178px;
-            height: 48px;
             color: $black !important;
             font-size: 18px;
             line-height: 20px;
@@ -74,7 +73,7 @@
                 width: 190px;
                 margin: 4px 0px;
                 display: block;
-                font-size: 14px;
+                font-size: 16px;
 
                 @media(max-width: 1290px) {
                     width: 160px;
@@ -97,6 +96,7 @@
             .list-price {
                 width: 35px;
                 font-size: 14px;
+                padding-left: 40px;
 
                 @media(max-width: 1045px) {
                     font-size: 12px;
@@ -108,7 +108,8 @@
             }
 
             .extra-price {
-                width: 40px;
+                display: flex;
+                width: 50px;
                 font-family: "Stacion", sans-serif;
             }
 
@@ -122,6 +123,7 @@
             justify-content: end;
             display: flex;
             max-width: 220px;
+            margin-left: 55px;
 
             .subtotal {
                 font-family: "Red Hat Display";
