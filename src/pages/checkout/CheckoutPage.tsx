@@ -288,6 +288,7 @@ function CheckoutPage() {
   );
   const [tipMount, setTipMount] = useState<boolean>(false);
   const [getEnable, setEnable] = useState<boolean>(true);
+  const [getError, setError] = useState<string>("");
   const [getInvitado, setInvitado] = useState<string>("");
   const { translate } = useLanguage();
 
@@ -317,7 +318,9 @@ function CheckoutPage() {
       products.push(item);
     });
 
-    if (products.length > 0 && getInvitado != null) {
+    console.log(getInvitado.length);
+
+    if (products.length > 0 && getInvitado.length > 0) {
       try {
         let data = {
           kiosko_id: localStorage.getItem("kiosko-momo"),
@@ -331,6 +334,8 @@ function CheckoutPage() {
       } catch (e) {
         console.log(e);
       }
+    }else{
+      setError("Ingresa el nombre del cliente o invitado")
     }
   };
 
@@ -409,6 +414,7 @@ function CheckoutPage() {
                       </tr>
                     </tbody>
                   </table>
+                  <p className="text-error">{getError}</p>
                   <button
                     onClick={() => onHandlerPayment()}
                     disabled={getEnable}
