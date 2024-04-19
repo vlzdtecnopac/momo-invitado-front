@@ -104,11 +104,11 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({ optionHandler }) => {
                         titleOptions={key}
                         iconOptions={(() => {
                           switch (key) {
-                            case "Azucar":
+                            case "Azúcar":
                               return sugar;
                             case "Tamaño":
                               return glass;
-                            case "Tipo de Leche":
+                            case "Leche":
                               return milk;
                             case "Temperatura":
                               return temp;
@@ -122,11 +122,11 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({ optionHandler }) => {
                         optionHandler={(e: any) => optionHandler(e)}
                         attr={(() => {
                           switch (key) {
-                            case "Azucar":
+                            case "Azúcar":
                               return "sugar";
                             case "Tamaño":
                               return "size";
-                            case "Tipo de Leche":
+                            case "Leche":
                               return "milk";
                             case "Temperatura":
                               return "temperature";
@@ -138,11 +138,11 @@ const SpecialsMomo: React.FC<SpecialMomoProps> = ({ optionHandler }) => {
                         })()}
                         defaultValue={(() => {
                           switch (key) {
-                            case "Azucar":
+                            case "Azúcar":
                               return {name: "Original", price: 0};
                             case "Tamaño":
                               return {name: "Chico", price: 0};
-                            case "Tipo de Leche":
+                            case "Leche":
                               return {name: "Entera", price: 0};
                             default:
                               return {name: "", price: 0};

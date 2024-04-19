@@ -103,11 +103,11 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                         titleOptions={key}
                         iconOptions={(() => {
                           switch (key) {
-                            case "Azucar":
+                            case "Azúcar":
                               return sugar;
                             case "Tamaño Bebida Combo":
                               return glass;
-                            case "Tipo de Leche":
+                            case "Leche":
                               return milk;
                             case "Temperatura de Alimento":
                               return temp;
@@ -119,11 +119,11 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                         optionHandler={(e: any) => optionHandler(e)}
                         attr={(() => {
                           switch (key) {
-                            case "Azucar":
+                            case "Azúcar":
                               return "sugar";
                             case "Tamaño Bebida Combo":
                               return "size";
-                            case "Tipo de Leche":
+                            case "Leche":
                               return "milk";
                             case "Temperatura de Alimento":
                               return "temperature";
@@ -133,11 +133,11 @@ const Combos: React.FC<CombosProps> = ({ optionHandler }) => {
                         })()}
                         defaultValue={(() => {
                           switch (key) {
-                            case "Azucar":
+                            case "Azúcar":
                               return {name: "Blanca", price: 0};
                             case "Tamaño":
                               return {name: "Chico", price: 0};
-                            case "Tipo de Leche":
+                            case "Leche":
                               return {name: "Entera", price: 0};
                             default:
                               return {name: "", price: 0};
