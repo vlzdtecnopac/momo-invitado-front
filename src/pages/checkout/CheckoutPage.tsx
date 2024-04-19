@@ -331,6 +331,7 @@ function CheckoutPage() {
           name_client: getInvitado,
           kiosko_id: localStorage.getItem("kiosko-momo"),
           product: JSON.stringify(products),
+          columns_pending: 4
         };
         await axiosInstance.post(`/pedido/create`, data).finally(() => {
           setIsModalOpen(true);
