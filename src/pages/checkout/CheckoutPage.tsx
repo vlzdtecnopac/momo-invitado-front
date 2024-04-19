@@ -311,7 +311,7 @@ function CheckoutPage() {
       products.push(item);
     });
 
-    if (products.length > 0) {
+    if (products.length > 0 && getInvitado != null) {
       try {
         let data = {
           kiosko_id: localStorage.getItem("kiosko-momo"),
