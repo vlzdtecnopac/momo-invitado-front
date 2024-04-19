@@ -251,6 +251,7 @@ const MethodPayment: React.FC<{
             name="name"
             className="client-name"
             onChange={(e) => setInvitado(e.target.value)}
+            autoComplete="off"
           />
           <i className="icon-user"></i>
         </div>
@@ -318,14 +319,11 @@ function CheckoutPage() {
       products.push(item);
     });
 
-    console.log(getInvitado.length);
-
     if (products.length > 0 && getInvitado.length > 0) {
       try {
         let data = {
-          kiosko_id: localStorage.getItem("kiosko-momo"),
           name_client: getInvitado,
-          state: "initial",
+          kiosko_id: localStorage.getItem("kiosko-momo"),
           product: JSON.stringify(products),
         };
         await axiosInstance.post(`/pedido/create`, data);
