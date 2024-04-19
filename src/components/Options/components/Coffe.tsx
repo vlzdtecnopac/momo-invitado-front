@@ -75,11 +75,11 @@ const Coffe: React.FC<CoffeProps> = ({ optionHandler }) => {
                         multiple={(() => {
                           switch (key) {
                             case "Extra  Shot de Café":
-                              return true;
+                              return false;
                             case "Tapa":
                               return false;
                             case "Salsas":
-                              return true;
+                              return false;
                             default:
                               return false;
                           }
@@ -102,11 +102,11 @@ const Coffe: React.FC<CoffeProps> = ({ optionHandler }) => {
                         titleOptions={key}
                         iconOptions={(() => {
                           switch (key) {
-                            case "Azucar":
+                            case "Azúcar":
                               return sugar;
                             case "Tamaño":
                               return glass;
-                            case "Tipo de Leche":
+                            case "Leche":
                               return milk;
                             case "Temperatura":
                               return temp;
@@ -120,11 +120,11 @@ const Coffe: React.FC<CoffeProps> = ({ optionHandler }) => {
                         optionHandler={(e: any) => optionHandler(e)}
                         attr={(() => {
                           switch (key) {
-                            case "Azucar":
+                            case "Azúcar":
                               return "sugar";
                             case "Tamaño":
                               return "size";
-                            case "Tipo de Leche":
+                            case "Leche":
                               return "milk";
                             case "Temperatura":
                               return "temperature";
@@ -136,11 +136,11 @@ const Coffe: React.FC<CoffeProps> = ({ optionHandler }) => {
                         })()}
                         defaultValue={(() => {
                           switch (key) {
-                            case "Azucar":
+                            case "Azúcar":
                               return {name: "Blanca", price: 0};
                             case "Tamaño":
                               return {name: "Chico", price: 0};
-                            case "Tipo de Leche":
+                            case "Leche":
                               return { name: "Entera", price: 0 };
                             default:
                               return {name: "", price: 0};
