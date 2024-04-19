@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useLanguage } from "../../context/Langi18nContext";
 import { useShoppingStore } from "../../store/shopping.store";
@@ -12,6 +11,7 @@ import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import PercentageTip from "../../components/Modal/PercentageTip/PercentageTip";
 import AmountTip from "../../components/Modal/AmountTip/AmountTip";
 
+import ContinuePayment from "../../components/Modal/ContinuePayment/ContinuePayment";
 import barista from "/assets/barista.png";
 
 import "./CheckoutPage.scss";
@@ -100,7 +100,10 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
       ) : null}
       <div className="grid-2">
         <div className="col-5">
-          <img alt="Barista" src={barista} />
+          <img
+            alt="Barista"
+            src={barista}
+          />
         </div>
         <div className="col-7 tip-text">
           <h2>{translate("baristaTipText")}</h2>
@@ -274,7 +277,10 @@ const MethodPayment: React.FC<{
           {translate("cash")}
         </button>
       </div>
-      <button onClick={() => onCancel()} className="cancel">
+      <button
+        onClick={() => onCancel()}
+        className="cancel"
+      >
         {translate("cancel")}
       </button>
     </div>
@@ -282,7 +288,6 @@ const MethodPayment: React.FC<{
 };
 
 function CheckoutPage() {
-  const navigate = useNavigate();
   const { tip } = useShoppingStore();
   const productCart = useLiveQuery(() =>
     db.product.orderBy("name_product").toArray()
@@ -292,6 +297,7 @@ function CheckoutPage() {
   const [getError, setError] = useState<string>("");
   const [getInvitado, setInvitado] = useState<string>("");
   const { translate } = useLanguage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function countProducts() {
     return productCart?.reduce((total, item) => total + item.quanty, 0);
@@ -326,14 +332,15 @@ function CheckoutPage() {
           kiosko_id: localStorage.getItem("kiosko-momo"),
           product: JSON.stringify(products),
         };
-        await axiosInstance.post(`/pedido/create`, data);
-        db.product.clear();
-        navigate("../order-here");
+        await axiosInstance.post(`/pedido/create`, data).finally(() => {
+          setIsModalOpen(true);
+          db.product.clear();
+        });
       } catch (e) {
         console.log(e);
       }
-    }else{
-      setError("Ingresa el nombre del cliente o invitado")
+    } else {
+      setError("Ingresa el nombre del cliente o invitado");
     }
   };
 
@@ -361,7 +368,10 @@ function CheckoutPage() {
             <div className="col-4">
               <section className="products">
                 {productCart?.map((item) => (
-                  <div className="product" key={item.id}>
+                  <div
+                    className="product"
+                    key={item.id}
+                  >
                     <ProductCheckoutCard data={item} />
                   </div>
                 ))}
@@ -420,6 +430,12 @@ function CheckoutPage() {
                   >
                     {translate("pay")}
                   </button>
+                  {isModalOpen && (
+                    <ContinuePayment
+                      actionKey={""}
+                      targetPath={"../order-here"}
+                    />
+                  )}
                 </div>
               </section>
             </div>
