@@ -64,7 +64,7 @@ axiosInstance.interceptors.response.use(
 
 // Función para renovar el token
 const renewToken = async () => {
-    const employeeId = localStorage.getItem("employee-id");
+    const employeeId = localStorage.getItem("employee_id");
     const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/update_token`, {
         "id": employeeId
     });

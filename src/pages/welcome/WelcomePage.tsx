@@ -38,7 +38,7 @@ function WelcomePage() {
     if (loader) {
       setTimeout(()=>{
         const fetchDataOnMount = async () => {
-          const employeeId = localStorage.getItem("employee-id");
+          const employeeId = localStorage.getItem("employee_id");
           if (employeeId) {
             await fetchEmployeeData(employeeId);
             setIsLoading(false);

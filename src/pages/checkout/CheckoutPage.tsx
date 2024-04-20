@@ -328,6 +328,7 @@ function CheckoutPage() {
     if (products.length > 0 && getInvitado.length > 0) {
       try {
         let data = {
+          shopping_id: localStorage.getItem('shopping_id'),
           name_client: getInvitado,
           kiosko_id: localStorage.getItem("kiosko-momo"),
           product: JSON.stringify(products),

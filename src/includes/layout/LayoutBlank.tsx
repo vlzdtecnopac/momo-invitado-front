@@ -16,7 +16,7 @@ const LayoutBlank: React.FC<DynamicLayoutProps> = (props) => {
   const { fetchEmployeeData } = useEmployeeStore();
   const { dataStore, fetchStoreData } = useShoppingStore();
   const [loading, setIsLoading] = useState<Boolean>(true);
-  const employeeId = localStorage.getItem("employee-id");
+  const employeeId = localStorage.getItem("employee_id");
 
   useEffect(() => {
     

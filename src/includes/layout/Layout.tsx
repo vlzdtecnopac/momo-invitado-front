@@ -67,7 +67,7 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
           if(localStorage.getItem('kiosko-momo') == resp.kiosko_id){
               localStorage.removeItem('kiosko-momo');
               localStorage.removeItem('token-momo');
-              localStorage.removeItem('employee-id');
+              localStorage.removeItem('employee_id');
               navigate("/");
           }
         }

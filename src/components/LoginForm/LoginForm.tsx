@@ -51,8 +51,9 @@ function LoginForm() {
                   "start_session",
                   moment().format("YYYY/MM/DD, h:mm:ss a")
                 );
+                localStorage.setItem("shopping_id", resp.data.shopping_id);
                 localStorage.setItem("token-momo", resp.data.token);
-                localStorage.setItem("employee-id", resp.data.employee_id);
+                localStorage.setItem("employee_id", resp.data.employee_id);
                 socket.emit("kiosko-socket", {
                   shopping_id: resp.data.shopping_id,
                 });
