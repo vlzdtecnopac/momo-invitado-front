@@ -36,7 +36,7 @@ const Layout: React.FC<DynamicLayoutProps> = (props) => {
       }
       if (employeeId) {
         fetchEmployeeData(employeeId).then(async (resp: any) => {
-          await fetchStoreData(resp[0].shopping_id);
+          await fetchStoreData(resp.items[0].shopping_id);
           setIsLoading(false);
         });
       }
