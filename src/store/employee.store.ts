@@ -25,7 +25,7 @@ export const useEmployeeStore = create<EmployeeStoreInterface>((set) => ({
   fetchEmployeeData: async (employee_id) =>  new Promise((resolve, reject) => {
     axiosInstance.get(`/users/employee/?employee_id=${employee_id}`)
         .then((response) => {
-          set({ dataEmployee: response.data });
+          set({ dataEmployee: response.data.items });
           resolve(response.data); 
         })
         .catch((error) => {
