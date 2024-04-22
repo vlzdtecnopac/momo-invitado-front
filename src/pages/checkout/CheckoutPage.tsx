@@ -100,10 +100,7 @@ const TipMomoClient: React.FC<any> = ({ onChange }) => {
       ) : null}
       <div className="grid-2">
         <div className="col-5">
-          <img
-            alt="Barista"
-            src={barista}
-          />
+          <img alt="Barista" src={barista} />
         </div>
         <div className="col-7 tip-text">
           <h2>{translate("baristaTipText")}</h2>
@@ -277,10 +274,7 @@ const MethodPayment: React.FC<{
           {translate("cash")}
         </button>
       </div>
-      <button
-        onClick={() => onCancel()}
-        className="cancel"
-      >
+      <button onClick={() => onCancel()} className="cancel">
         {translate("cancel")}
       </button>
     </div>
@@ -327,16 +321,17 @@ function CheckoutPage() {
 
     if (products.length > 0 && getInvitado.length > 0) {
       try {
-        let data = {
-          shopping_id: localStorage.getItem('shopping_id'),
+        let dataJson = {
+          shopping_id: localStorage.getItem("shopping_id"),
           name_client: getInvitado,
           kiosko_id: localStorage.getItem("kiosko-momo"),
           product: JSON.stringify(products),
-          columns_pending: 4
+          columns_pending: 4,
         };
-        await axiosInstance.post(`/pedido/create`, data).finally(() => {
-          setIsModalOpen(true);
-          db.product.clear();
+        console.log(dataJson);
+        await axiosInstance.post(`/pedido/create`, dataJson).finally(() => {
+         db.product.clear();
+         setIsModalOpen(true);
         });
       } catch (e) {
         console.log(e);
@@ -349,6 +344,9 @@ function CheckoutPage() {
   return (
     <>
       <Layout>
+        {isModalOpen && (
+          <ContinuePayment actionKey={""} targetPath={"../order-here"} />
+        )}
         <div className="category-fixed">
           <CategoryNav cart={false} />
         </div>
@@ -370,10 +368,7 @@ function CheckoutPage() {
             <div className="col-4">
               <section className="products">
                 {productCart?.map((item) => (
-                  <div
-                    className="product"
-                    key={item.id}
-                  >
+                  <div className="product" key={item.id}>
                     <ProductCheckoutCard data={item} />
                   </div>
                 ))}
@@ -432,12 +427,6 @@ function CheckoutPage() {
                   >
                     {translate("pay")}
                   </button>
-                  {isModalOpen && (
-                    <ContinuePayment
-                      actionKey={""}
-                      targetPath={"../order-here"}
-                    />
-                  )}
                 </div>
               </section>
             </div>
