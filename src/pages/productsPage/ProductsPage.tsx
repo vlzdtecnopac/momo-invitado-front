@@ -14,7 +14,7 @@ import { useShoppingStore } from "../../store/shopping.store";
 function ProductsPage() {
   const {cart} = useShoppingStore();
   const { category, type } = useParams();
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<any>();
 
   useEffect(() => {
     getProductsToteat();
@@ -38,7 +38,7 @@ function ProductsPage() {
       <div className="products_page">
         <div className="container-product">
           <div className="grid-4_lg-4_md-3_sm-3_xs-2">
-            {products.map((product: any) => {
+            {products?.items.map((product: any) => {
               let image;
               if (product.image == "{}") {
                 image = no_found;

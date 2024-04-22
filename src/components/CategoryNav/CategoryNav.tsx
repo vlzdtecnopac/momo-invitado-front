@@ -74,23 +74,23 @@ const CategoryNav: React.FC<{ cart: boolean }> = ({ cart }) => {
                     navigate(`../merch-or-coffee/`);
                     return;
                   }
-                  if (category.name_category == "Café") {
+                  if (category.sub_category == "Cafe") {
                     navigate(`../hot-or-cold/cafe`);
                     return;
                   }
-                  if (category.name_category == "Té") {
+                  if (category.sub_category == "Te") {
                     navigate(`../hot-or-cold/te`);
                     return;
                   }
-                  if (category.name_category == "Café con Té") {
+                  if (category.sub_category == "Cafe con Te") {
                     navigate(`../hot-or-cold/cafe con te`);
                     return;
                   }
-                  if (category.name_category == "Especiales MOMO") {
+                  if (category.sub_category == "MOMO Specials") {
                     navigate(`../hot-or-cold/especiales MOMO`);
                     return;
                   }
-                  if (category.name_category == "Alimentos") {
+                  if (category.sub_category == "Alimentos") {
                     navigate(`../sweet-salty-snacks/`);
                     return;
                   } else {

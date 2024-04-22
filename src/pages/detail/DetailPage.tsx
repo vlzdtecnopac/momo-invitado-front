@@ -65,19 +65,19 @@ function DrinkDetailPage() {
   }
 
   const getDetailProduct = async () => {
-    let response = await axiosInstance(`/product/?product_id=${product_id}`);
-    if (response.data[0].image == "{}") {
-      response.data[0].image = no_found;
+    let response: any = await axiosInstance(`/product/?product_id=${product_id}`);
+    if (response.data.items[0].image == "{}") {
+      response.data.items[0].image = no_found;
     } else {
-      response.data[0].image.replace(/(^"|"$|&quot;)/g, "");
-      response.data[0].image = response.data[0].image
+      response.data.items[0].image.replace(/(^"|"$|&quot;)/g, "");
+      response.data.items[0].image = response.data.items[0].image
         .replace(/\{"/g, "")
         .replace(/\"}/g, "");
-      if (response.data[0].image.includes('","')) {
-        response.data[0].image = response.data[0].image.split('","')[0];
+      if (response.data.items[0].image.includes('","')) {
+        response.data.items[0].image = response.data.items[0].image.split('","')[0];
       }
     }
-    setProduct(response.data[0]);
+    setProduct(response.data.items[0]);
   };
 
   const optionHandler = (position: number) => {
