@@ -38,7 +38,7 @@ export const useShoppingStore = create<DesignStoreInterface>((set) => ({
       axiosInstance
         .get(`/shopping/?shopping_id=${shopping_id}`)
         .then((response) => {
-          set((state) => ({ ...state, dataStore: response.data }));
+          set((state) => ({ ...state, dataStore: response.data.items }));
           resolve(response.data);
         })
         .catch((error) => {
