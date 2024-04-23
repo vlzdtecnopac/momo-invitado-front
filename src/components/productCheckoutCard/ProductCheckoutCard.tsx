@@ -120,7 +120,7 @@ const ProductCheckoutCard: React.FC<OrderResumeCardProp> = ({ data }) => {
         {getExtraOptions()}
         {getListExtraOptions()}
         <div className="end">
-          <div className="subtotal"> ${data.price.toFixed(2)} </div>
+          <div className="subtotal"> ${(data.price * Number(data?.quanty)).toFixed(2)} </div>
         </div>
       </div>
     </div>
