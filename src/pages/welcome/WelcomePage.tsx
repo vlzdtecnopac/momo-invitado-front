@@ -142,7 +142,7 @@ function WelcomePage() {
                     <Card
                       icon={kdsOnIcon}
                       text={item.name_shopping}
-                      subText={`No. ${item.no_shooping}`}
+                      subText={`No. ${item.no_shopping}`}
                       state={true}
                     />
                   </motion.div>

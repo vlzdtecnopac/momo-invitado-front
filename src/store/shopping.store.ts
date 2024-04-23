@@ -5,7 +5,7 @@ interface ShoppingInterface {
   id: number;
   shopping_id: string;
   name_shopping: string;
-  no_shooping: string;
+  no_shopping: string;
   address: string;
   email: string;
   idenfication: string;
