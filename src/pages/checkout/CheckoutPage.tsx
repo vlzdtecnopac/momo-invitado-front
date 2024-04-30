@@ -328,7 +328,6 @@ function CheckoutPage() {
           product: JSON.stringify(products),
           columns_pending: 4,
         };
-        console.log(dataJson);
         await axiosInstance.post(`/pedido/create`, dataJson).finally(() => {
          db.product.clear();
          setIsModalOpen(true);
