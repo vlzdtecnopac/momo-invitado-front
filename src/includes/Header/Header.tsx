@@ -33,7 +33,7 @@ function Header() {
       const response = await axiosInstance.get(
         `/users/client?client_id=${localStorage.getItem("client-id")}`
       );
-      setClient(response.data[0]);
+      setClient(response.data.items[0]);
     } catch (e) {
       console.error(e);
     }
