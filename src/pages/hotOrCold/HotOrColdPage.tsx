@@ -33,7 +33,7 @@ function HotOrColdPage() {
               <div className="container">
                 <div className="options">
                   <button
-                    onClick={() => handleClick("caliente")}
+                    onClick={() => handleClick("Caliente")}
                     className="custom-btn hot"
                   >
                     <span className="icon"></span>
@@ -42,7 +42,7 @@ function HotOrColdPage() {
 
                   <button
                     className="custom-btn cold"
-                    onClick={() => handleClick("frio")}
+                    onClick={() => handleClick("Frio")}
                   >
                     <span className="icon"></span>
                     <span className="text"> {translate("cold")}</span>
